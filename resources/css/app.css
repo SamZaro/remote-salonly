@@ -1,0 +1,21 @@
+@import 'tailwindcss';
+@import './colors.css';
+@import './styles.css';
+@plugin "daisyui" {
+    themes: light --default;
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 4rem; /* Account for fixed navbar height */
+}
+
+/* Sources */
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+@source '../../vendor/filament/**/*.blade.php';

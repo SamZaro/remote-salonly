@@ -1,0 +1,74 @@
+Als je steeds platform errors krijgt zoals Horizon en ext-posix, ext-pcntl of ext-sockets.
+Verwijder de composer.lock bestand. Installeer dan composer met de volgende command.
+(Command Staat in SaaSykit website Docs )
+
+composer install --ignore-platform-reqs --no-interaction --no-scripts --prefer-dist
+
+-------------------------------------------------------------------------------------------------------
+
+CLAUDE Commands:
+
+/exit
+Sluit de chat volledig af — alsof je de sessie beëindigt. De hele context gaat verloren.
+
+/clear
+Leegt de huidige sessiecontext en chatgeschiedenis. De sessie blijft open, maar zonder context.
+
+/compact
+Maakt een samenvatting (compact summary) van het hele gesprek tot nu toe en verwijdert de rest van de context.
+Je behoudt de belangrijkste informatie in beknopte vorm. Zeer nuttig om lange sessies “licht” te houden.
+
+2 keer ESC
+Laat je terugspoelen naar een eerder punt in de sessie (revert). Je kunt daarna verder werken vanaf dat punt
+Gebruik wanneer:
+Je merkt dat Claude een verkeerde richting is ingeslagen in de context of verkeerde aannames heeft gemaakt.
+
+/resume
+Herlaadt de laatste sessie (ook als je Claude of de terminal hebt afgesloten).
+Herstelt het gesprek met de vorige context.
+Gebruik wanneer:
+Je een project later opnieuw wilt oppakken, zonder alles opnieuw te moeten uitleggen.
+
+
+CONTEXT WINDOW:
+
+Het context window bepaalt hoeveel informatie het AI-model tegelijk kan “onthouden” of verwerken tijdens een sessie.
+Je kunt het zien als het werkgeheugen van het model.
+
+Now the context window is about 200000 tokens in Claude Code at this time.
+But if your sessions last a long time, have a lot of manually added context and back and forths,
+then that context window is eventually going to fill up.
+
+
+Pro tip voor volgende keer: Na het ophalen van een Laravel project van GitHub, vergeet niet deze setup stappen:
+composer install
+npm install
+cp .env.example .env  # Als .env niet bestaat
+php artisan key:generate
+php artisan storage:link  # Dit was de ontbrekende stap!
+php artisan migrate --seed
+npm run build
+
+
+Wanneer bij automatische deployment, nadat de data en de home pagina geseed is, maar je op de homepage / toch een 404 error krijgt.
+Zorg ervoor dat je de Fabricator route cache cleared in je script!
+Command hieronder:
+php artisan optimize:clear && php artisan config:clear && php artisan route:clear && php artisan cache:clear
+
+Dit was de volledige Claude Code oplossing:
+
+● Ik zie het probleem! De FilamentFabricator route {filamentFabricatorPage?} staat er wel, maar laat me de cache clearen en de
+  Fabricator routes cache vernieuwen:
+
+● Bash(php artisan optimize:clear && php artisan config:clear && php artisan route:clear && php artisan cache:clear)
+  ⎿     INFO  Clearing cached bootstrap files.
+
+       config ................................................................................................. 3.69ms DONE
+     … +17 lines (ctrl+o to expand)
+
+
+
+ICONS:
+
+https://www.flaticon.com/free-icons/salon
+

@@ -1,0 +1,50 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cat:*)",
+      "Bash(composer remove:*)",
+      "Bash(composer update:*)",
+      "mcp__laravel-boost__database-schema",
+      "Bash(php artisan:*)",
+      "Bash(vendor/bin/pint:*)",
+      "Bash(php vendor/bin/pint:*)",
+      "Bash(npm run build:*)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:filamentphp.com)",
+      "mcp__laravel-boost__tinker",
+      "Bash(composer show:*)",
+      "mcp__laravel-boost__database-query",
+      "mcp__laravel-boost__get-config",
+      "Bash(if [ -d \"storage/framework/sessions\" ])",
+      "Bash(then find storage/framework/sessions -type f -name \"sess_*\" -delete)",
+      "Bash(else echo \"Sessions directory not found\")",
+      "Bash(fi)",
+      "Bash(composer require:*)",
+      "mcp__laravel-boost__search-docs",
+      "Bash(composer clear-cache:*)",
+      "mcp__laravel-boost__application-info",
+      "Bash(./vendor/bin/pint:*)",
+      "Bash(php vendor/bin/phpstan:*)",
+      "Bash(rm:*)",
+      "Bash(composer dump-autoload:*)",
+      "mcp__laravel-boost__list-artisan-commands",
+      "mcp__laravel-boost__list-routes",
+      "Bash(find:*)",
+      "Bash(ls:*)",
+      "Bash(php -r:*)",
+      "Bash(git restore:*)",
+      "Bash(wc:*)",
+      "Bash(C:UsersSamirHerdoaas-mediumvendorbinphp artisan media-library:regenerate --only=\"images\")",
+      "Bash(grep:*)",
+      "Bash(dir /b \"C:\\\\Users\\\\Samir\\\\Herd\\\\oaas-medium\\\\public\")",
+      "Bash(php:*)",
+      "Bash(php -l:*)"
+    ],
+    "deny": [],
+    "ask": []
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "laravel-boost"
+  ]
+}

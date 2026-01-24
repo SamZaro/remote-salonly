@@ -1,0 +1,34 @@
+- Filament Fabricator v3 met Filament 4 werkt met blade component props via de @props directive.
+- Ik heb de @props directive toegevoegd, wat de correcte manier is in Filament Fabricator v3 om de data van het PageBlock te ontvangen.
+- Ik zie nu hoe Filament Fabricator v3 werkt. De data wordt doorgegeven via mutateData() en dan als attributes aan de blade component.
+
+Dit is de DaisyUI configuratie in jouw project:
+
+  DaisyUI Locaties
+
+  | Bestand                                    | DaisyUI | Gebruikt voor                     |
+  |--------------------------------------------|---------|-----------------------------------|
+  | resources/css/app.css                      | ✅ Ja   | Frontend (homepage, public pages) |
+  | resources/css/filament/dashboard/theme.css | ✅ Ja   | User Dashboard (Filament)         |
+  | resources/css/filament/admin/theme.css     | ❌ Nee  | Admin panel (puur Filament)       |
+
+  Layout Files
+
+  Frontend (app.css met DaisyUI):
+  - resources/views/components/layouts/app.blade.php - Hoofd layout
+  - resources/views/components/layouts/simple.blade.php
+  - resources/views/components/layouts/focus.blade.php
+  - resources/views/components/layouts/focus-center.blade.php
+
+  Filament Panels (eigen theme.css):
+  - Dashboard panel → resources/css/filament/dashboard/theme.css (met DaisyUI)
+  - Admin panel → resources/css/filament/admin/theme.css (zonder DaisyUI)
+
+  Samenvatting
+
+  DaisyUI (v5.0.50) wordt gebruikt voor:
+  - ✅ Frontend - alle publieke pagina's
+  - ✅ User Dashboard - het klanten dashboard (Filament)
+  - ❌ Admin panel - alleen standaard Filament styling
+
+  De DaisyUI configuratie staat op themes: light --default in beide CSS bestanden waar het actief is.
