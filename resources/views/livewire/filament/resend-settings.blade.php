@@ -8,7 +8,7 @@
                 {{ __('Save Changes') }}
             </x-filament::button>
 
-            <x-filament::button tag="a" href="{{ \App\Filament\Admin\Resources\EmailProviders\Pages\ListEmailProviders::getUrl()  }}" color="gray">
+            <x-filament::button tag="a" href="{{ filament()->getCurrentPanel()->getId() === 'dashboard' ? \App\Filament\Dashboard\Resources\EmailProviders\EmailProviderResource::getUrl('index') : \App\Filament\Admin\Resources\EmailProviders\Pages\ListEmailProviders::getUrl() }}" color="gray">
                 {{ __('Cancel') }}
             </x-filament::button>
         </diV>

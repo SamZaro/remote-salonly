@@ -12,7 +12,7 @@ class EmailProviderPolicy
      */
     public function viewAny(User $user): bool
     {
-        return $user->hasPermissionTo('update settings');
+        return $user->hasPermissionTo('update settings') || $user->hasPermissionTo('manage email providers');
     }
 
     /**
@@ -20,7 +20,7 @@ class EmailProviderPolicy
      */
     public function view(User $user, EmailProvider $emailProvider): bool
     {
-        return $user->hasPermissionTo('update settings');
+        return $user->hasPermissionTo('update settings') || $user->hasPermissionTo('manage email providers');
     }
 
     /**
@@ -28,7 +28,7 @@ class EmailProviderPolicy
      */
     public function create(User $user): bool
     {
-        return $user->hasPermissionTo('update settings');
+        return $user->hasPermissionTo('update settings') || $user->hasPermissionTo('manage email providers');
     }
 
     /**
@@ -36,7 +36,7 @@ class EmailProviderPolicy
      */
     public function update(User $user, EmailProvider $emailProvider): bool
     {
-        return $user->hasPermissionTo('update settings');
+        return $user->hasPermissionTo('update settings') || $user->hasPermissionTo('manage email providers');
     }
 
     /**

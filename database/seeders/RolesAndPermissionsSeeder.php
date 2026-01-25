@@ -96,6 +96,7 @@ class RolesAndPermissionsSeeder extends Seeder
 
         // General settings permissions (for customers)
         Permission::findOrCreate('manage general settings');
+        Permission::findOrCreate('manage email providers');
 
         // Admin role gets all permissions
         $adminRole = Role::findOrCreate('admin');
@@ -111,6 +112,7 @@ class RolesAndPermissionsSeeder extends Seeder
             'manage template theme',
             'manage template media',
             'manage general settings',
+            'manage email providers',
         ]);
     }
 }
