@@ -23,6 +23,22 @@ class HomeController extends Controller
                 ->first();
 
             if ($previewTemplate) {
+                // Check for unsaved form data in session
+                $sessionPreview = session()->pull('template_preview_data');
+
+                if ($sessionPreview && $sessionPreview['slug'] === $previewSlug) {
+                    // Merge unsaved theme_config over the database values
+                    $previewTemplate->theme_config = array_merge(
+                        $previewTemplate->theme_config ?? [],
+                        $sessionPreview['theme_config'] ?? []
+                    );
+
+                    // Override navigation items if provided
+                    if (! empty($sessionPreview['navigation_items'])) {
+                        $previewTemplate->navigation_items = $sessionPreview['navigation_items'];
+                    }
+                }
+
                 // Temporarily set the preview template
                 $this->templateService->setActiveTemplate($previewTemplate);
             }

@@ -42,8 +42,18 @@ class EditTemplate extends EditRecord
                 ->label(__('Preview'))
                 ->icon('heroicon-o-eye')
                 ->color('gray')
-                ->url(fn () => route('home', ['preview' => $this->record->slug]))
-                ->openUrlInNewTab(),
+                ->action(function () {
+                    // Store unsaved form data in session for preview
+                    $formData = $this->form->getState();
+                    session()->put('template_preview_data', [
+                        'slug' => $this->record->slug,
+                        'theme_config' => $formData['theme_config'] ?? [],
+                        'navigation_items' => $formData['navigation_items'] ?? [],
+                    ]);
+
+                    // Open preview in new tab via JavaScript
+                    $this->js('window.open("'.route('home', ['preview' => $this->record->slug]).'", "_blank")');
+                }),
         ];
     }
 
