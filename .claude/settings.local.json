@@ -39,7 +39,8 @@
       "Bash(dir /b \"C:\\\\Users\\\\Samir\\\\Herd\\\\oaas-medium\\\\public\")",
       "Bash(php:*)",
       "Bash(php -l:*)",
-      "WebFetch(domain:saasykit.com)"
+      "WebFetch(domain:saasykit.com)",
+      "mcp__laravel-boost__list-available-env-vars"
     ],
     "deny": [],
     "ask": []
