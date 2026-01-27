@@ -2,6 +2,7 @@
 
 namespace App\Filament\Schemas;
 
+use App\Settings\SiteSettings;
 use Filament\Forms\Components\ColorPicker;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Select;
@@ -78,11 +79,22 @@ class TemplateFormSchema
                     'image' => __('Image'),
                 ])
                 ->default('text')
+                ->afterStateHydrated(function (Select $component, ?string $state) {
+                    if (empty($state)) {
+                        $component->state('text');
+                    }
+                })
                 ->live()
                 ->required(),
             TextInput::make('theme_config.logo.text')
                 ->label(__('Logo Text'))
                 ->placeholder(__('Company Name'))
+                ->afterStateHydrated(function (TextInput $component, ?string $state) {
+                    if (empty($state)) {
+                        $siteName = app(SiteSettings::class)->site_name;
+                        $component->state($siteName);
+                    }
+                })
                 ->visible(fn ($get) => $get('theme_config.logo.type') === 'text')
                 ->helperText(__('Text to display as logo. Leave empty to use template name.')),
             SpatieMediaLibraryFileUpload::make('logo')
@@ -344,6 +356,31 @@ class TemplateFormSchema
     }
 
     /**
+     * Normalize a font family value by extracting the primary font name.
+     * Handles CSS font-family strings like "Playfair Display, serif" -> "Playfair Display"
+     */
+    public static function normalizeFontFamily(?string $fontFamily): ?string
+    {
+        if (empty($fontFamily)) {
+            return null;
+        }
+
+        // Split by comma and take the first font
+        $primaryFont = explode(',', $fontFamily)[0];
+
+        // Remove quotes and trim whitespace
+        $primaryFont = trim($primaryFont, " \t\n\r\0\x0B'\"");
+
+        // Check if this font exists in our options
+        $availableFonts = self::getGoogleFonts();
+        if (array_key_exists($primaryFont, $availableFonts)) {
+            return $primaryFont;
+        }
+
+        return null;
+    }
+
+    /**
      * Generate option label with color swatches.
      */
     public static function getSchemeLabel(string $schemeKey): HtmlString
@@ -522,12 +559,20 @@ class TemplateFormSchema
                             ->label(__('Heading Font Family'))
                             ->options(self::getGoogleFonts())
                             ->default('Poppins')
+                            ->afterStateHydrated(function (Select $component, ?string $state) {
+                                $normalized = self::normalizeFontFamily($state);
+                                $component->state($normalized ?? 'Poppins');
+                            })
                             ->searchable()
                             ->live(),
                         Select::make('theme_config.font_family')
                             ->label(__('Font Family'))
                             ->options(self::getGoogleFonts())
                             ->default('Inter')
+                            ->afterStateHydrated(function (Select $component, ?string $state) {
+                                $normalized = self::normalizeFontFamily($state);
+                                $component->state($normalized ?? 'Inter');
+                            })
                             ->searchable()
                             ->live(),
                         Select::make('theme_config.font_size_base')
