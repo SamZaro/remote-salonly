@@ -16,3 +16,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('/provision-user', [ProvisionController::class, 'createUser']);
 Route::post('/provision-template', [ProvisionController::class, 'setTemplate']);
+Route::post('/sync-modules', [ProvisionController::class, 'syncModules']);

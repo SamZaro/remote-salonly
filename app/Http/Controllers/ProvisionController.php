@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Services\TemplateService;
+use App\Settings\BookingSettings;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
@@ -151,6 +152,48 @@ class ProvisionController extends Controller
             return response()->json([
                 'success' => false,
                 'message' => 'Failed to save template configuration',
+            ], 500);
+        }
+    }
+
+    public function syncModules(Request $request)
+    {
+        if ($request->header('X-Provision-Token') !== config('app.provision_token')) {
+            Log::warning('Invalid provision token for sync-modules', [
+                'ip' => $request->ip(),
+            ]);
+            abort(403, 'Invalid provision token');
+        }
+
+        $validated = $request->validate([
+            'modules' => 'required|array',
+        ]);
+
+        $modules = $validated['modules'];
+
+        try {
+            $bookingSettings = app(BookingSettings::class);
+            $bookingSettings->is_active = ($modules['booking_widget'] ?? 'false') === 'true';
+            $bookingSettings->save();
+
+            Log::info('Modules synced successfully', [
+                'booking_widget' => $bookingSettings->is_active,
+            ]);
+
+            return response()->json([
+                'success' => true,
+                'modules' => [
+                    'booking_widget' => $bookingSettings->is_active,
+                ],
+            ]);
+        } catch (\Exception $e) {
+            Log::error('Failed to sync modules', [
+                'error' => $e->getMessage(),
+            ]);
+
+            return response()->json([
+                'success' => false,
+                'message' => 'Failed to sync modules',
             ], 500);
         }
     }
