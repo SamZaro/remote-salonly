@@ -36,16 +36,7 @@ class BookingPermissionsSeeder extends Seeder
             'availability.manage',
         ]);
 
-        // Customer role gets booking permissions for dashboard
-        $customerRole = Role::findOrCreate('customer');
-        $customerRole->givePermissionTo([
-            'booking.view',
-            'booking.create',
-            'booking.update',
-            'booking.delete',
-            'booking.manage',
-            'availability.view',
-            'availability.manage',
-        ]);
+        // Customer role - no booking permissions by default
+        Role::findOrCreate('customer');
     }
 }
