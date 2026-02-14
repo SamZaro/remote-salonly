@@ -1,5 +1,5 @@
 {{--
-    Template-specifieke features/diensten voor Projecto (Aannemer)
+    Template-specifieke features/diensten voor Shadow (Barbershop)
 
     Dit component overschrijft de default demo-sections.features
     Props zijn identiek: $content en $theme

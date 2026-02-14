@@ -17,7 +17,7 @@
     $ctaLink = $content['cta_link'] ?? '#contact';
     $backgroundImage = $section?->getFirstMediaUrl('background') ?: ($content['background_image'] ?? null);
 
-    // Theme kleuren met defaults (consistent met projecto pattern)
+    // Theme kleuren met defaults (consistent met shadow pattern)
     $primaryColor = $theme['primary_color'] ?? '#b8860b';
     $secondaryColor = $theme['secondary_color'] ?? '#0f0f0f';
     // Lichte tekstkleur voor donkere achtergronden (consistent patroon)

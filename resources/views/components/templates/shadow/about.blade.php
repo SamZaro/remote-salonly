@@ -1,5 +1,5 @@
 {{--
-    Template-specifieke about sectie voor Projecto (Barbershop)
+    Template-specifieke about sectie voor Shadow (Barbershop)
 
     Dit component overschrijft de default demo-sections.features (about variant)
     Props zijn identiek: $content en $theme

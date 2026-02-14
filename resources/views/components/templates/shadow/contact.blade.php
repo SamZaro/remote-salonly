@@ -1,5 +1,5 @@
 {{--
-    Template-specifieke contact sectie voor Projecto (Barbershop)
+    Template-specifieke contact sectie voor Shadow (Barbershop)
 
     Props: $content, $theme, $section
 --}}
@@ -14,7 +14,7 @@
     $subtitle = $content['subtitle'] ?? 'Neem contact op';
     $featuredImage = $section?->getFirstMediaUrl('background') ?: null;
 
-    // Theme kleuren met defaults (zelfde als andere Projecto sections)
+    // Theme kleuren met defaults (zelfde als andere Shadow sections)
     $primaryColor = $theme['primary_color'] ?? '#f59e0b';
     $secondaryColor = $theme['secondary_color'] ?? '#1f2937';
     $textColor = $theme['text_color'] ?? '#333333';

@@ -1,5 +1,5 @@
 {{--
-    Template-specifieke gallery voor Projecto (Aannemer)
+    Template-specifieke gallery voor Shadow (Barbershop)
 
 
 --}}

@@ -1,7 +1,7 @@
 {{--
-    Template-specifieke text_image sectie voor Projecto (Aannemer)
+    Template-specifieke image_text sectie voor Shadow (Barbershop)
 
-    Tekst links, afbeelding rechts met section header.
+    Afbeelding links, tekst rechts met section header.
     Props: $content, $theme, $section
 --}}
 @props([
@@ -32,7 +32,7 @@
     $backgroundColor = $theme['background_color'] ?? '#ffffff';
 @endphp
 
-<section id="text-image" class="py-20 lg:py-28" style="background-color: {{ $backgroundColor }};">
+<section id="image-text" class="py-20 lg:py-28" style="background-color: {{ $backgroundColor }};">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {{-- Section Header --}}
         @if($title || $subtitle)
@@ -56,9 +56,36 @@
             </div>
         @endif
 
-        {{-- Two Column Layout: Text Left, Image Right --}}
+        {{-- Two Column Layout: Image Left, Text Right --}}
         <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-            {{-- Left: Text Content --}}
+            {{-- Left: Image with background effect --}}
+            <div class="relative max-w-md lg:max-w-lg mx-auto">
+                {{-- Black square behind image - offset to left and bottom --}}
+                <div
+                    class="absolute -left-6 -bottom-6 w-full h-full bg-black"
+                ></div>
+
+                {{-- Image --}}
+                @if($image)
+                    <img
+                        src="{{ $image }}"
+                        alt="{{ $blockTitle ?? $title ?? '' }}"
+                        class="relative w-full h-auto object-cover"
+                    />
+                @else
+                    {{-- Placeholder --}}
+                    <div
+                        class="relative w-full h-[300px] flex items-center justify-center"
+                        style="background-color: {{ $secondaryColor }};"
+                    >
+                        <svg class="w-24 h-24 opacity-20" style="color: {{ $primaryColor }};" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                @endif
+            </div>
+
+            {{-- Right: Text Content --}}
             <div>
                 @if($blockTitle)
                     <h3
@@ -89,33 +116,6 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                         </svg>
                     </a>
-                @endif
-            </div>
-
-            {{-- Right: Image with background effect --}}
-            <div class="relative max-w-md lg:max-w-lg mx-auto">
-                {{-- Black square behind image - offset to right and bottom --}}
-                <div
-                    class="absolute -right-6 -bottom-6 w-full h-full bg-black"
-                ></div>
-
-                {{-- Image --}}
-                @if($image)
-                    <img
-                        src="{{ $image }}"
-                        alt="{{ $blockTitle ?? $title ?? '' }}"
-                        class="relative w-full h-auto object-cover"
-                    />
-                @else
-                    {{-- Placeholder --}}
-                    <div
-                        class="relative w-full h-[300px] flex items-center justify-center"
-                        style="background-color: {{ $secondaryColor }};"
-                    >
-                        <svg class="w-24 h-24 opacity-20" style="color: {{ $primaryColor }};" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                        </svg>
-                    </div>
                 @endif
             </div>
         </div>

@@ -20,7 +20,7 @@
         ['question' => 'Wat zijn de betaalmogelijkheden?', 'answer' => 'We accepteren contant, pin en alle gangbare creditcards. Contactloos betalen is ook mogelijk.'],
     ];
 
-    // Theme kleuren met defaults (consistent met projecto pattern)
+    // Theme kleuren met defaults (consistent met shadow pattern)
     $primaryColor = $theme['primary_color'] ?? '#b8860b';
     $secondaryColor = $theme['secondary_color'] ?? '#0f0f0f';
     $textColor = $theme['text_color'] ?? '#333333';

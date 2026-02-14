@@ -1,5 +1,5 @@
 {{--
-    Template-specifieke parallax voor Projecto (Aannemer)
+    Template-specifieke parallax voor Shadow (Barbershop)
 
     Professionele bouw en constructie stijl
     Props: $content, $theme, $section

@@ -1,5 +1,5 @@
 {{--
-    Template-specifieke services sectie voor Projecto (Barbershop)
+    Template-specifieke services sectie voor Shadow (Barbershop)
 
     Professionele barbershop diensten in strakke stijl
     Props: $content, $theme

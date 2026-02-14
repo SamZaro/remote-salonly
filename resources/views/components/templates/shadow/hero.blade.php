@@ -1,5 +1,5 @@
 {{--
-    Template-specifieke hero voor Projecto (Barbershop)
+    Template-specifieke hero voor Shadow (Barbershop)
 
     Dit component overschrijft de default demo-sections.hero
     Props zijn identiek: $content en $theme

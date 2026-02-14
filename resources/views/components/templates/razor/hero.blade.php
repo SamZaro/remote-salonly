@@ -19,7 +19,7 @@
     $backgroundImage = $section?->getFirstMediaUrl('background') ?: ($content['background_image'] ?? null);
     $overlayOpacity = $content['overlay_opacity'] ?? 0.85;
 
-    // Theme kleuren met defaults (consistent met projecto pattern)
+    // Theme kleuren met defaults (consistent met shadow pattern)
     $primaryColor = $theme['primary_color'] ?? '#b8860b';
     $secondaryColor = $theme['secondary_color'] ?? '#0f0f0f';
     // Lichte tekstkleur voor donkere hero achtergrond (consistent patroon)

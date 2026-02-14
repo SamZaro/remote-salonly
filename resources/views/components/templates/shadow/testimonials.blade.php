@@ -1,5 +1,5 @@
 {{--
-    Template-specifieke testimonials sectie voor Projecto
+    Template-specifieke testimonials sectie voor Shadow
 
     Content structure:
     - title: Section title

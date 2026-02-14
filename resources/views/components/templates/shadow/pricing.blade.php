@@ -1,5 +1,5 @@
 {{--
-    Template-specifieke pricing sectie voor Projecto (Aannemer)
+    Template-specifieke pricing sectie voor Shadow (Barbershop)
 
     Dit component overschrijft de default demo-sections.pricing
     Props zijn identiek: $content en $theme

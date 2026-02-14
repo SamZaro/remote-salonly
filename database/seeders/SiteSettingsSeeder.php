@@ -45,7 +45,7 @@ class SiteSettingsSeeder extends Seeder
                 'group' => 'site',
                 'name' => 'template_slug',
                 'locked' => false,
-                'payload' => json_encode('projecto'),
+                'payload' => json_encode('shadow'),
                 'created_at' => now(),
                 'updated_at' => now(),
             ],

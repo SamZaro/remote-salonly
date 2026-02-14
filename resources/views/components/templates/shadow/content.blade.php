@@ -1,5 +1,5 @@
 {{--
-    Template-specifieke content sectie voor Projecto (Aannemer)
+    Template-specifieke content sectie voor Shadow (Barbershop)
 
     Free-form rich text content sectie met optionele titel en achtergrondafbeelding.
     Props: $content, $theme, $section
