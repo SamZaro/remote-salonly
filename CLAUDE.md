@@ -284,6 +284,9 @@ Voor gedetailleerde informatie, zie:
 - `docs/DAISYUI-V5.md` - Quick reference voor DaisyUI v5, componenten, themes, configuratie met Tailwind CSS v4
 - `docs/DAISYUI-LLMS.md` - Uitgebreide LLM-optimized documentatie - alle componenten, classes, modifiers, colors
 
+### Template & Color Scheme Systeem
+- `docs/template-system.md` - Volledige analyse van het template systeem: models, color schemes, theme_config merge, view resolutie, navbar, seeder structuur, data flow
+
 ### Configuration System
 
 The app stores dynamic configuration in the database (`Config` model) and caches it for performance. Access configs through `ConfigService` rather than directly.
@@ -409,3 +412,4 @@ Laravel Horizon is used for queue management. Background jobs should be dispatch
 - "Lees docs/tailwindcss.md voor Tailwind CSS 4.1 utilities, configuratie en migratie"
 - "Lees docs/DAISYUI-V5.md voor DaisyUI v5 quick reference en configuratie"
 - "Lees docs/DAISYUI-LLMS.md voor complete DaisyUI component referentie en classes"
+- "Lees docs/template-system.md voor het template systeem, color schemes, theme_config en seeder structuur"
