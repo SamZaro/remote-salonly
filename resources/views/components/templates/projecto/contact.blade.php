@@ -1,5 +1,5 @@
 {{--
-    Template-specifieke contact sectie voor Projecto (Aannemer)
+    Template-specifieke contact sectie voor Projecto (Barbershop)
 
     Props: $content, $theme, $section
 --}}
@@ -65,7 +65,7 @@
                     class="text-lg block transition-opacity hover:opacity-80"
                     style="color: {{ $textColor }};"
                 >
-                    stefan@hamminkbouw.nl
+                    info@uwbarbershop.nl
                 </a>
                 <p class="text-sm mt-4 opacity-60" style="color: {{ $textColor }};">
                     KvK: 12345678

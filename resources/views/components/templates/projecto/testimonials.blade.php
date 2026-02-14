@@ -18,9 +18,9 @@
     $subtitle = $content['subtitle'] ?? 'Wat anderen zeggen';
 
     $defaultItems = [
-        ['name' => 'Jan de Vries', 'role' => 'Particulier', 'quote' => 'Uitstekende service en vakmanschap. Het eindresultaat heeft onze verwachtingen overtroffen.'],
-        ['name' => 'Lisa Bakker', 'role' => 'Ondernemer', 'quote' => 'Betrouwbaar, punctueel en oog voor detail. Absoluut een aanrader voor iedereen.'],
-        ['name' => 'Peter Jansen', 'role' => 'Woningeigenaar', 'quote' => 'Van offerte tot oplevering perfect verzorgd. Wij zijn zeer tevreden met het resultaat.'],
+        ['name' => 'Mark de Boer', 'role' => 'Vaste klant', 'quote' => 'Beste barbershop in de stad. De sfeer is top en mijn fade zit altijd perfect. Kom hier al jaren en ga niet meer weg.'],
+        ['name' => 'Thomas Visser', 'role' => 'Vaste klant', 'quote' => 'Eindelijk een barbershop die begrijpt wat ik wil. Goede service, scherpe prijzen en altijd een goed gesprek.'],
+        ['name' => 'Kevin Bakker', 'role' => 'Nieuwe klant', 'quote' => 'Op aanraden van een vriend hier geweest. De hot towel shave was een geweldige ervaring. Zeker een aanrader!'],
     ];
     $items = !empty($content['items']) ? $content['items'] : $defaultItems;
 

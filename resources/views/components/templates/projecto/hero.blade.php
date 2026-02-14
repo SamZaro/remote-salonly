@@ -1,5 +1,5 @@
 {{--
-    Template-specifieke hero voor Projecto (Aannemer)
+    Template-specifieke hero voor Projecto (Barbershop)
 
     Dit component overschrijft de default demo-sections.hero
     Props zijn identiek: $content en $theme
@@ -12,9 +12,9 @@
 
 @php
     // Content met defaults
-    $title = $content['title'] ?? 'Bouw met vertrouwen';
-    $subtitle = $content['subtitle'] ?? 'Vakmanschap en kwaliteit voor elk project';
-    $ctaText = $content['cta_text'] ?? 'Vraag een offerte aan';
+    $title = $content['title'] ?? 'Jouw barbershop ervaring';
+    $subtitle = $content['subtitle'] ?? 'Waar traditie en moderne stijl samenkomen';
+    $ctaText = $content['cta_text'] ?? 'Maak een afspraak';
     $ctaLink = $content['cta_link'] ?? '#contact';
     // Get background image from Spatie Media Library or fallback to content
     $backgroundImage = $section?->getFirstMediaUrl('background') ?: ($content['background_image'] ?? null);
@@ -69,9 +69,9 @@
             {{-- Badge --}}
             <div class="inline-flex items-center gap-2 px-4 py-2 rounded-sm mb-8 bg-gray-100" style="border-left: 3px solid {{ $primaryColor }};">
                 <svg class="w-5 h-5" style="color: {{ $primaryColor }};" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m7.848 8.25 1.536.887M7.848 8.25a3 3 0 1 1-5.196-3 3 3 0 0 1 5.196 3Zm1.536.887a2.165 2.165 0 0 1 1.083 1.839c.005.351.054.695.14 1.024M9.384 9.137l2.077 1.199M7.848 15.75l1.536-.887m-1.536.887a3 3 0 1 1-5.196 3 3 3 0 0 1 5.196-3Zm1.536-.887a2.165 2.165 0 0 0 1.083-1.838c.005-.352.054-.695.14-1.025m-1.223 2.863 2.077-1.199"/>
                 </svg>
-                <span class="text-sm font-medium uppercase tracking-wider" style="color: {{ $primaryColor }};">Aannemer & Bouwbedrijf</span>
+                <span class="text-sm font-medium uppercase tracking-wider" style="color: {{ $primaryColor }};">Barbershop</span>
             </div>
 
             {{-- Titel --}}
@@ -107,7 +107,7 @@
                     class="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold border-2 transition-all duration-300 hover:bg-white/10"
                     style="border-color: {{ $textColor }}; color: {{ $textColor }}; border-radius: {{ $buttonRadius }};"
                 >
-                    Bekijk onze projecten
+                    Bekijk onze diensten
                 </a>
             </div>
 

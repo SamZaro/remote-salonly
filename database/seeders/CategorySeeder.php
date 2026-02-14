@@ -16,38 +16,33 @@ class CategorySeeder extends Seeder
 
         $categories = [
             [
-                'name' => 'Kappers',
-                'slug' => 'kappers',
-                'description' => 'Templates voor kapperszaken, barbershops en haarsalons.',
+                'name' => 'Kapsalons',
+                'slug' => 'kapsalons',
+                'description' => 'Templates voor kapsalons en haarsalons.',
                 'icon' => 'heroicon-o-scissors',
                 'sort_order' => 1,
                 'is_active' => true,
             ],
             [
-                'name' => 'Zakelijk',
-                'slug' => 'zakelijk',
-                'description' => 'Professionele templates voor zakelijke dienstverlening.',
-                'icon' => 'heroicon-o-building-office',
+                'name' => 'Barbershops',
+                'slug' => 'barbershops',
+                'description' => 'Templates voor barbershops en herenkapsalons.',
+                'icon' => 'heroicon-o-scissors',
                 'sort_order' => 2,
                 'is_active' => true,
             ],
             [
-                'name' => 'Horeca',
-                'slug' => 'horeca',
-                'description' => 'Templates voor restaurants, cafés en horecabedrijven.',
-                'icon' => 'heroicon-o-building-storefront',
+                'name' => 'Schoonheidssalons',
+                'slug' => 'schoonheidssalons',
+                'description' => 'Templates voor schoonheidssalons en beautysalons.',
+                'icon' => 'heroicon-o-sparkles',
                 'sort_order' => 3,
                 'is_active' => true,
             ],
-            [
-                'name' => 'Automotive',
-                'slug' => 'automotive',
-                'description' => 'Templates voor garages, autobedrijven en dealers.',
-                'icon' => 'heroicon-o-truck',
-                'sort_order' => 4,
-                'is_active' => true,
-            ],
         ];
+
+        // Remove old categories that are no longer used
+        Category::whereNotIn('slug', collect($categories)->pluck('slug'))->delete();
 
         foreach ($categories as $data) {
             Category::updateOrCreate(

@@ -1,5 +1,5 @@
 {{--
-    Template-specifieke about sectie voor Projecto (Aannemer)
+    Template-specifieke about sectie voor Projecto (Barbershop)
 
     Dit component overschrijft de default demo-sections.features (about variant)
     Props zijn identiek: $content en $theme
@@ -13,12 +13,12 @@
 @php
     // Content met defaults
     $title = $content['title'] ?? 'Over Ons';
-    $subtitle = $content['subtitle'] ?? 'Vakmanschap door generaties heen';
-    $description = $content['description'] ?? 'Met meer dan 25 jaar ervaring in de bouw zijn wij uw betrouwbare partner voor elk project. Van kleine verbouwingen tot grote nieuwbouwprojecten, wij leveren kwaliteit waar u op kunt bouwen.';
+    $subtitle = $content['subtitle'] ?? 'Ons verhaal';
+    $description = $content['description'] ?? 'Wij zijn een team van gepassioneerde barbers met jarenlange ervaring. Bij ons draait alles om het perfecte kapsel, een ontspannen sfeer en persoonlijke aandacht. Van een klassieke fade tot een stijlvolle baardtrim - wij zorgen ervoor dat je er op je best uitziet.';
     $items = $content['items'] ?? [
-        ['title' => 'Ervaren Vakmensen', 'description' => 'Ons team bestaat uit gecertificeerde professionals', 'icon' => 'users'],
-        ['title' => 'Kwaliteitsgarantie', 'description' => 'Wij staan achter ons werk met garantie', 'icon' => 'shield'],
-        ['title' => 'Transparante Prijzen', 'description' => 'Geen verrassingen, duidelijke offertes', 'icon' => 'check'],
+        ['title' => 'Ervaren Barbers', 'description' => 'Ons team bestaat uit gecertificeerde professionals met oog voor detail', 'icon' => 'users'],
+        ['title' => 'Premium Producten', 'description' => 'Wij werken uitsluitend met hoogwaardige producten', 'icon' => 'shield'],
+        ['title' => 'Scherpe Prijzen', 'description' => 'Topkwaliteit voor een eerlijke prijs', 'icon' => 'check'],
     ];
     $backgroundImage = $section?->getFirstMediaUrl('background') ?: ($content['background_image'] ?? null);
 
@@ -62,7 +62,7 @@
                             style="background-color: {{ $secondaryColor }};"
                         >
                             <svg class="w-32 h-32 opacity-20" style="color: {{ $primaryColor }};" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="m7.848 8.25 1.536.887M7.848 8.25a3 3 0 1 1-5.196-3 3 3 0 0 1 5.196 3Zm1.536.887a2.165 2.165 0 0 1 1.083 1.839c.005.351.054.695.14 1.024M9.384 9.137l2.077 1.199M7.848 15.75l1.536-.887m-1.536.887a3 3 0 1 1-5.196 3 3 3 0 0 1 5.196-3Zm1.536-.887a2.165 2.165 0 0 0 1.083-1.838c.005-.352.054-.695.14-1.025m-1.223 2.863 2.077-1.199"/>
                             </svg>
                         </div>
                         {{-- Accent block --}}
@@ -78,7 +78,7 @@
                     class="absolute top-8 -left-4 p-6 shadow-xl"
                     style="background-color: {{ $backgroundColor }};"
                 >
-                    <span class="block text-4xl font-bold" style="color: {{ $primaryColor }};">15+</span>
+                    <span class="block text-4xl font-bold" style="color: {{ $primaryColor }};">10+</span>
                     <span class="block text-sm font-medium uppercase tracking-wider" style="color: {{ $textColor }};">Jaar Ervaring</span>
                 </div>
             </div>
