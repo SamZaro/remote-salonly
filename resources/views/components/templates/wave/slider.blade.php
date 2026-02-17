@@ -1,5 +1,5 @@
 {{--
-    Coupe (Kapsalon) Slider Section
+    Wave (Kapsalon) Slider Section
 
     Elegant en klassiek met schaar/kam thema
     Props: $content, $theme, $section

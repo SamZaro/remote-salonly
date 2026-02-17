@@ -211,7 +211,7 @@ $isTransparent = $theme['navbar_transparent']   ?? false;
 
 | Template | Categorie | Color Scheme | Font Family | Heading Font |
 |---|---|---|---|---|
-| **coupe** | kapsalons | `modern` | Poppins | Playfair Display |
+| **wave** | kapsalons | `modern` | Poppins | Playfair Display |
 | **icon** | kapsalons | `vintage` | Montserrat | Cormorant Garamond |
 | **nova** | kapsalons | `trendy` | Inter | Outfit |
 | **pure** | kapsalons | `minimal` | DM Sans | DM Serif Display |

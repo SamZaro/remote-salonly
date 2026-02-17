@@ -1,5 +1,5 @@
 {{--
-    Template-specifieke contact sectie voor Coupe (High-End Salon)
+    Template-specifieke contact sectie voor Wave (High-End Salon)
 
     Luxe & Chic met editorial fashion feel
     Kleuren: Zwart #0F0F0F, Off-white #F5F3EF, Champagne goud #C8B88A, Warm grijs #8A8A8A
@@ -16,7 +16,7 @@
     $subtitle = $content['subtitle'] ?? 'Bezoek Ons';
     $address = $content['address'] ?? 'Herengracht 456, 1017 CA Amsterdam';
     $phone = $content['phone'] ?? '020 - 123 4567';
-    $email = $content['email'] ?? 'info@coupe-salon.nl';
+    $email = $content['email'] ?? 'info@wave-salon.nl';
     $openingHours = $content['opening_hours'] ?? [
         ['day' => 'Maandag', 'hours' => 'Gesloten'],
         ['day' => 'Dinsdag', 'hours' => '09:00 - 18:00'],

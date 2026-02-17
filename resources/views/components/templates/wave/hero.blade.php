@@ -1,5 +1,5 @@
 {{--
-    Template-specifieke hero voor Coupe (Kapsalon)
+    Template-specifieke hero voor Wave (Kapsalon)
 
     Dit component overschrijft de default demo-sections.hero
     Props zijn identiek: $content en $theme

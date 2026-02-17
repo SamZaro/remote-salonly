@@ -1,5 +1,5 @@
 {{--
-    Template-specifieke footer voor Coupe (Kapsalon)
+    Template-specifieke footer voor Wave (Kapsalon)
 
     Elegante kapsalon stijl met warme bruintinten
     Props: $content, $theme

@@ -29,7 +29,7 @@ class SiteSettingsSeeder extends Seeder
                 'group' => 'site',
                 'name' => 'site_name',
                 'locked' => false,
-                'payload' => json_encode('Oasis Templator'),
+                'payload' => json_encode('SalonBlaze'),
                 'created_at' => now(),
                 'updated_at' => now(),
             ],

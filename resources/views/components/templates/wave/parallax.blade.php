@@ -1,5 +1,5 @@
 {{--
-    Template-specifieke parallax voor Coupe (Kapsalon)
+    Template-specifieke parallax voor Wave (Kapsalon)
 
     Elegante kapsalon stijl met warme bruintinten
     Props: $content, $theme, $section

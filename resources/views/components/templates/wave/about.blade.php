@@ -1,5 +1,5 @@
 {{--
-    Template-specifieke about sectie voor Coupe (High-End Salon)
+    Template-specifieke about sectie voor Wave (High-End Salon)
 
     Luxe & Chic met editorial fashion feel
     Kleuren: Zwart #0F0F0F, Off-white #F5F3EF, Champagne goud #C8B88A, Warm grijs #8A8A8A

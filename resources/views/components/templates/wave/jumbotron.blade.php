@@ -1,5 +1,5 @@
 {{--
-    Template-specifieke jumbotron voor Coupe (Kapsalon)
+    Template-specifieke jumbotron voor Wave (Kapsalon)
 
     Elegante kapsalon stijl met warme bruintinten
     Props: $content, $theme, $section

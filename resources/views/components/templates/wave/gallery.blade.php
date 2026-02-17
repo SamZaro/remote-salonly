@@ -1,5 +1,5 @@
 {{--
-    Template-specifieke gallery voor Coupe (Kapsalon)
+    Template-specifieke gallery voor Wave (Kapsalon)
 
     Elegante kapsalon stijl met warme bruintinten
     Props: $content, $theme, $section

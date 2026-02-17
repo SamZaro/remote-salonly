@@ -1,5 +1,5 @@
 {{--
-    Template-specifieke accordion voor Coupe (Kapsalon)
+    Template-specifieke accordion voor Wave (Kapsalon)
 
     Elegante kapsalon stijl met warme bruintinten
     Props: $content, $theme, $section
