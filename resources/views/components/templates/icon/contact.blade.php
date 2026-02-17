@@ -1,12 +1,12 @@
 {{--
-    Template-specifieke contact sectie voor Icon (Hair Salon)
-
-    Adres, telefoonnummer en openingstijden (geen contactformulier)
-    Props: $content, $theme
+    Icon Template: Contact Section
+    "Warm Atelier" — warm canvas, gold accents, editorial info cards, sharp edges
+    Props: $content, $theme, $section
 --}}
 @props([
     'content' => [],
     'theme' => [],
+    'section' => null,
 ])
 
 @php
@@ -27,119 +27,175 @@
     ];
     $mapEmbed = $content['map_embed'] ?? '';
 
-    // Theme kleuren - frisse, zachte kleuren (lichtblauw + mint)
-    $primaryColor = $theme['primary_color'] ?? '#0ea5e9';
-    $secondaryColor = $theme['secondary_color'] ?? '#14b8a6';
-    $textColor = $theme['text_color'] ?? '#1f2937';
+    // Theme kleuren — Warm Atelier palette
+    $primaryColor = $theme['primary_color'] ?? '#c9a227';
+    $secondaryColor = $theme['secondary_color'] ?? '#1a1a1a';
+    $accentColor = $theme['accent_color'] ?? '#d4af37';
+    $textColor = $theme['text_color'] ?? '#555555';
+    $headingColor = $theme['heading_color'] ?? '#1a1a1a';
     $backgroundColor = $theme['background_color'] ?? '#ffffff';
+    $headingFont = $theme['heading_font_family'] ?? 'Cormorant Garamond';
+    $bodyFont = $theme['font_family'] ?? 'Montserrat';
 @endphp
 
-<section id="contact" class="py-20 lg:py-28" style="background-color: {{ $backgroundColor }};">
+<section id="contact" class="py-24 lg:py-36" style="background-color: {{ $primaryColor }}04; font-family: '{{ $bodyFont }}', sans-serif;">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
         {{-- Section header --}}
-        <div class="text-center mb-16">
-            <span
-                class="inline-block text-sm font-semibold mb-4 px-4 py-1 rounded-full"
-                style="background: linear-gradient(135deg, {{ $primaryColor }}15, {{ $secondaryColor }}15); color: {{ $primaryColor }};"
+        <div
+            class="text-center mb-16 lg:mb-20"
+            x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+            style="opacity: 0; transform: translateY(14px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);"
+        >
+            <div class="inline-flex items-center gap-3 mb-8">
+                <span class="w-10 h-px" style="background-color: {{ $primaryColor }};"></span>
+                <span class="uppercase text-[11px] tracking-[0.3em] font-medium" style="color: {{ $primaryColor }};">
+                    Contact
+                </span>
+                <span class="w-10 h-px" style="background-color: {{ $primaryColor }};"></span>
+            </div>
+            <h2
+                class="text-3xl sm:text-4xl lg:text-[2.6rem] leading-[1.15] mb-4"
+                style="color: {{ $headingColor }}; font-family: '{{ $headingFont }}', serif; font-weight: 600;"
             >
-                Contact
-            </span>
-            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6" style="color: {{ $textColor }};">
                 {{ $title }}
             </h2>
-            <p class="text-lg text-gray-600">
+            <p class="text-[15px] max-w-lg mx-auto leading-relaxed" style="color: {{ $textColor }};">
                 {{ $subtitle }}
             </p>
         </div>
 
-        {{-- Contact cards --}}
-        <div class="grid gap-6 md:grid-cols-3 mb-12">
-            {{-- Adres --}}
+        {{-- Contact info cards --}}
+        <div class="grid gap-6 lg:gap-8 md:grid-cols-3 mb-14">
+
+            {{-- Address card --}}
             <div
-                class="p-8 rounded-2xl text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-xl bg-white"
-                style="box-shadow: 0 4px 20px rgba(0,0,0,0.05);"
+                class="group relative p-8 lg:p-10 text-center transition-all duration-500 hover:shadow-lg"
+                x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+                style="background-color: {{ $backgroundColor }}; border: 1px solid {{ $headingColor }}06; box-shadow: 0 1px 8px rgba(0,0,0,0.03); opacity: 0; transform: translateY(18px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0s;"
             >
+                {{-- Gold top accent — expands on hover --}}
                 <div
-                    class="w-16 h-16 mx-auto mb-6 rounded-2xl flex items-center justify-center"
-                    style="background: linear-gradient(135deg, {{ $primaryColor }}15, {{ $secondaryColor }}15);"
+                    class="absolute top-0 left-0 h-px w-0 group-hover:w-full transition-all duration-700"
+                    style="background-color: {{ $primaryColor }};"
+                ></div>
+
+                {{-- Icon --}}
+                <div
+                    class="w-11 h-11 rounded-full flex items-center justify-center mx-auto mb-6"
+                    style="background-color: {{ $primaryColor }}08; border: 1px solid {{ $primaryColor }}12;"
                 >
-                    <svg class="w-8 h-8" style="color: {{ $primaryColor }};" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-5 h-5" style="color: {{ $primaryColor }};" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
                     </svg>
                 </div>
-                <h3 class="text-lg font-semibold mb-3" style="color: {{ $textColor }};">
+
+                <h3
+                    class="text-xl mb-3"
+                    style="color: {{ $headingColor }}; font-family: '{{ $headingFont }}', serif; font-weight: 600;"
+                >
                     Adres
                 </h3>
-                <p class="text-gray-600 mb-4">
+                <p class="text-[14px] leading-[1.7] mb-5" style="color: {{ $textColor }};">
                     {{ $address }}
                 </p>
                 <a
                     href="https://maps.google.com/?q={{ urlencode($address) }}"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="inline-flex items-center gap-1 text-sm font-semibold transition-colors"
+                    class="group/link inline-flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.15em] transition-all duration-300 hover:gap-3"
                     style="color: {{ $primaryColor }};"
                 >
                     Route plannen
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
                     </svg>
                 </a>
             </div>
 
-            {{-- Telefoon --}}
+            {{-- Phone card (dark variant) --}}
             <div
-                class="p-8 rounded-2xl text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-xl text-white"
-                style="background: linear-gradient(135deg, {{ $primaryColor }}, {{ $secondaryColor }}); box-shadow: 0 10px 40px {{ $primaryColor }}30;"
+                class="group relative p-8 lg:p-10 text-center transition-all duration-500 hover:shadow-lg"
+                x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+                style="background-color: {{ $secondaryColor }}; border: 1px solid {{ $secondaryColor }}; box-shadow: 0 1px 8px rgba(0,0,0,0.08); opacity: 0; transform: translateY(18px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.12s;"
             >
-                <div class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-white/20 flex items-center justify-center">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {{-- Gold top accent — expands on hover --}}
+                <div
+                    class="absolute top-0 left-0 h-px w-0 group-hover:w-full transition-all duration-700"
+                    style="background-color: {{ $primaryColor }};"
+                ></div>
+
+                {{-- Icon --}}
+                <div
+                    class="w-11 h-11 rounded-full flex items-center justify-center mx-auto mb-6"
+                    style="background-color: {{ $primaryColor }}08; border: 1px solid {{ $primaryColor }}12;"
+                >
+                    <svg class="w-5 h-5" style="color: {{ $primaryColor }};" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
                     </svg>
                 </div>
-                <h3 class="text-lg font-semibold mb-3">
+
+                <h3
+                    class="text-xl mb-3"
+                    style="color: {{ $backgroundColor }}; font-family: '{{ $headingFont }}', serif; font-weight: 600;"
+                >
                     Bel Ons
                 </h3>
                 <a
                     href="tel:{{ preg_replace('/[^0-9+]/', '', $phone) }}"
-                    class="text-2xl font-bold block transition-opacity hover:opacity-80"
+                    class="block text-2xl mb-3 transition-opacity duration-300 hover:opacity-80"
+                    style="color: {{ $primaryColor }}; font-family: '{{ $headingFont }}', serif; font-weight: 600;"
                 >
                     {{ $phone }}
                 </a>
-                <p class="text-sm mt-3 opacity-80">
+                <p class="text-[13px]" style="color: {{ $backgroundColor }}40;">
                     Direct een afspraak maken
                 </p>
             </div>
 
-            {{-- Openingstijden --}}
+            {{-- Opening hours card --}}
             <div
-                class="p-8 rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl bg-white"
-                style="box-shadow: 0 4px 20px rgba(0,0,0,0.05);"
+                class="group relative p-8 lg:p-10 transition-all duration-500 hover:shadow-lg"
+                x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+                style="background-color: {{ $backgroundColor }}; border: 1px solid {{ $headingColor }}06; box-shadow: 0 1px 8px rgba(0,0,0,0.03); opacity: 0; transform: translateY(18px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.24s;"
             >
+                {{-- Gold top accent — expands on hover --}}
                 <div
-                    class="w-16 h-16 mx-auto mb-6 rounded-2xl flex items-center justify-center"
-                    style="background: linear-gradient(135deg, {{ $primaryColor }}15, {{ $secondaryColor }}15);"
+                    class="absolute top-0 left-0 h-px w-0 group-hover:w-full transition-all duration-700"
+                    style="background-color: {{ $primaryColor }};"
+                ></div>
+
+                {{-- Icon --}}
+                <div
+                    class="w-11 h-11 rounded-full flex items-center justify-center mx-auto mb-6"
+                    style="background-color: {{ $primaryColor }}08; border: 1px solid {{ $primaryColor }}12;"
                 >
-                    <svg class="w-8 h-8" style="color: {{ $primaryColor }};" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-5 h-5" style="color: {{ $primaryColor }};" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
                     </svg>
                 </div>
-                <h3 class="text-lg font-semibold mb-4 text-center" style="color: {{ $textColor }};">
+
+                <h3
+                    class="text-xl mb-5 text-center"
+                    style="color: {{ $headingColor }}; font-family: '{{ $headingFont }}', serif; font-weight: 600;"
+                >
                     Openingstijden
                 </h3>
-                <div class="space-y-2">
+                <div class="space-y-2.5">
                     @foreach($openingHours as $entry)
                         @php
                             $day = is_array($entry) ? ($entry['day'] ?? '') : $entry;
                             $hours = is_array($entry) ? ($entry['hours'] ?? '') : '';
                             $isClosed = str_contains(strtolower($hours), 'gesloten');
                         @endphp
-                        <div class="flex justify-between items-center text-sm py-1">
-                            <span class="text-gray-600">{{ $day }}</span>
-                            <span class="{{ $isClosed ? 'text-gray-400' : '' }}" style="{{ !$isClosed ? 'color: ' . $primaryColor . '; font-weight: 600;' : '' }}">
-                                {{ $hours }}
-                            </span>
+                        <div class="flex justify-between items-center text-[13px] py-0.5">
+                            <span style="color: {{ $textColor }};">{{ $day }}</span>
+                            @if($isClosed)
+                                <span style="color: {{ $textColor }}50;">{{ $hours }}</span>
+                            @else
+                                <span style="color: {{ $primaryColor }}; font-weight: 600;">{{ $hours }}</span>
+                            @endif
                         </div>
                     @endforeach
                 </div>
@@ -147,71 +203,90 @@
         </div>
 
         {{-- Map --}}
-        @if($mapEmbed)
-            <div class="rounded-2xl overflow-hidden" style="box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
-                <div class="aspect-[21/9] w-full">
-                    {!! $mapEmbed !!}
-                </div>
-            </div>
-        @else
-            {{-- Placeholder map --}}
-            <div
-                class="rounded-2xl aspect-[21/9] w-full flex items-center justify-center"
-                style="background: linear-gradient(135deg, {{ $primaryColor }}05, {{ $secondaryColor }}05);"
-            >
-                <div class="text-center">
-                    <svg class="w-16 h-16 mx-auto mb-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>
-                    </svg>
-                    <span class="text-gray-400">Google Maps</span>
-                </div>
-            </div>
-        @endif
-
-        {{-- Contact Form Section --}}
-        <div class="mt-16 max-w-2xl mx-auto">
-            <div
-                class="p-8 lg:p-12 rounded-2xl bg-white relative overflow-hidden"
-                style="box-shadow: 0 10px 40px rgba(0,0,0,0.08);"
-            >
-                {{-- Decorative gradient border --}}
-                <div
-                    class="absolute inset-0 rounded-2xl opacity-10"
-                    style="background: linear-gradient(135deg, {{ $primaryColor }}, {{ $secondaryColor }}); padding: 2px;"
-                ></div>
-
-                <div class="relative">
-                    <div class="text-center mb-8">
-                        <div
-                            class="w-14 h-14 mx-auto mb-4 rounded-xl flex items-center justify-center"
-                            style="background: linear-gradient(135deg, {{ $primaryColor }}15, {{ $secondaryColor }}15);"
-                        >
-                            <svg class="w-7 h-7" style="color: {{ $primaryColor }};" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                            </svg>
-                        </div>
-                        <h3 class="text-2xl font-bold mb-3" style="color: {{ $textColor }};">
-                            {{ __('Stuur ons een bericht') }}
-                        </h3>
-                        <p class="text-gray-600 text-sm">
-                            {{ __('Heeft u een vraag of wilt u een afspraak maken? Laat het ons weten!') }}
-                        </p>
+        <div
+            class="mb-16"
+            x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+            style="opacity: 0; transform: translateY(14px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.1s;"
+        >
+            @if($mapEmbed)
+                <div class="overflow-hidden" style="border: 1px solid {{ $headingColor }}06; box-shadow: 0 1px 8px rgba(0,0,0,0.05);">
+                    <div class="aspect-[21/9] w-full">
+                        {!! $mapEmbed !!}
                     </div>
-
-                    <livewire:contact-form :theme="[
-                        'primary_color' => $primaryColor,
-                        'secondary_color' => $secondaryColor,
-                        'background_color' => $backgroundColor,
-                        'text_color' => $textColor,
-                        'heading_color' => $textColor,
-                    ]" />
                 </div>
+            @else
+                {{-- Placeholder map --}}
+                <div
+                    class="aspect-[21/9] w-full flex items-center justify-center"
+                    style="background-color: {{ $primaryColor }}03; border: 1px solid {{ $primaryColor }}08;"
+                >
+                    <div class="text-center">
+                        <svg class="w-14 h-14 mx-auto mb-3" style="color: {{ $primaryColor }}18;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>
+                        </svg>
+                        <span class="text-[11px] uppercase tracking-[0.2em]" style="color: {{ $textColor }}50;">Google Maps</span>
+                    </div>
+                </div>
+            @endif
+        </div>
+
+        {{-- Contact form --}}
+        <div
+            class="max-w-2xl mx-auto"
+            x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+            style="opacity: 0; transform: translateY(14px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.15s;"
+        >
+            <div
+                class="relative p-8 lg:p-12"
+                style="background-color: {{ $backgroundColor }}; border: 1px solid {{ $headingColor }}06; box-shadow: 0 1px 8px rgba(0,0,0,0.03);"
+            >
+                {{-- Label above form --}}
+                <div class="text-center mb-8">
+                    <div class="inline-flex items-center gap-3 mb-6">
+                        <span class="w-8 h-px" style="background-color: {{ $primaryColor }};"></span>
+                        <span class="uppercase text-[11px] tracking-[0.3em] font-medium" style="color: {{ $primaryColor }};">
+                            Stuur ons een bericht
+                        </span>
+                        <span class="w-8 h-px" style="background-color: {{ $primaryColor }};"></span>
+                    </div>
+                    <h3
+                        class="text-2xl sm:text-3xl mb-3"
+                        style="color: {{ $headingColor }}; font-family: '{{ $headingFont }}', serif; font-weight: 600;"
+                    >
+                        {{ __('Neem Contact Op') }}
+                    </h3>
+                    <p class="text-[14px] leading-relaxed" style="color: {{ $textColor }};">
+                        {{ __('Heeft u een vraag of wilt u een afspraak maken? Laat het ons weten!') }}
+                    </p>
+                </div>
+
+                {{-- Gold divider --}}
+                <div class="flex items-center justify-center gap-0 mb-8">
+                    <div class="w-8 h-px" style="background-color: {{ $primaryColor }};"></div>
+                    <div class="w-1 h-1 rounded-full mx-1.5" style="background-color: {{ $primaryColor }};"></div>
+                    <div class="w-8 h-px" style="background-color: {{ $primaryColor }};"></div>
+                </div>
+
+                <livewire:contact-form :theme="[
+                    'primary_color' => $primaryColor,
+                    'secondary_color' => $secondaryColor,
+                    'accent_color' => $accentColor,
+                    'background_color' => $backgroundColor,
+                    'text_color' => $textColor,
+                    'heading_color' => $headingColor,
+                    'heading_font_family' => $headingFont,
+                    'font_family' => $bodyFont,
+                ]" />
             </div>
         </div>
 
         {{-- Bottom note --}}
-        <div class="mt-8 text-center">
-            <p class="text-sm text-gray-500">
+        <div
+            class="mt-10 text-center"
+            x-data x-intersect.once="$el.style.opacity = 1"
+            style="opacity: 0; transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.2s;"
+        >
+            <p class="text-[13px]" style="color: {{ $textColor }}60;">
                 Gratis parkeren in de buurt. Rolstoeltoegankelijk.
             </p>
         </div>

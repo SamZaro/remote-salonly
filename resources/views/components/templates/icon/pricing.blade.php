@@ -1,12 +1,12 @@
 {{--
-    Template-specifieke pricing voor Icon (Hair Salon)
-
-    Moderne menu-stijl prijslijst
-    Props: $content, $theme
+    Icon Template: Pricing Section
+    "Warm Atelier" — editorial menu-style price list, gold accents on dark canvas
+    Props: $content, $theme, $section
 --}}
 @props([
     'content' => [],
     'theme' => [],
+    'section' => null,
 ])
 
 @php
@@ -46,18 +46,15 @@
         ],
     ];
 
-    // Theme kleuren - frisse, zachte kleuren (lichtblauw + mint)
-    $primaryColor = $theme['primary_color'] ?? '#0ea5e9';
-    $secondaryColor = $theme['secondary_color'] ?? '#14b8a6';
-    $textColor = $theme['text_color'] ?? '#1f2937';
+    // Theme kleuren — Warm Atelier palette
+    $primaryColor = $theme['primary_color'] ?? '#c9a227';
+    $secondaryColor = $theme['secondary_color'] ?? '#1a1a1a';
+    $accentColor = $theme['accent_color'] ?? '#d4af37';
+    $textColor = $theme['text_color'] ?? '#555555';
+    $headingColor = $theme['heading_color'] ?? '#1a1a1a';
     $backgroundColor = $theme['background_color'] ?? '#ffffff';
-
-    // Gradient colors per category - zachte, gebalanceerde kleuren
-    $gradients = [
-        ['from' => '#0ea5e9', 'to' => '#38bdf8'],
-        ['from' => '#14b8a6', 'to' => '#2dd4bf'],
-        ['from' => '#8b5cf6', 'to' => '#a78bfa'],
-    ];
+    $headingFont = $theme['heading_font_family'] ?? 'Cormorant Garamond';
+    $bodyFont = $theme['font_family'] ?? 'Montserrat';
 
     // Icons
     $icons = [
@@ -69,101 +66,130 @@
     // Helper functie voor prijs formatting
     $formatPrice = function($price) {
         if (empty($price)) return '';
-        // Als de prijs niet begint met €, voeg deze toe
         return str_starts_with($price, '€') ? $price : '€' . $price;
     };
 @endphp
 
-<section id="pricing" class="py-20 lg:py-28" style="background-color: {{ $backgroundColor }};">
+<section id="pricing" class="py-24 lg:py-36" style="background-color: {{ $secondaryColor }}; font-family: '{{ $bodyFont }}', sans-serif;">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
         {{-- Section header --}}
-        <div class="text-center mb-16">
-            <span
-                class="inline-block text-sm font-semibold mb-4 px-4 py-1 rounded-full"
-                style="background: linear-gradient(135deg, {{ $primaryColor }}15, {{ $secondaryColor }}15); color: {{ $primaryColor }};"
+        <div
+            class="text-center mb-16 lg:mb-20"
+            x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+            style="opacity: 0; transform: translateY(14px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);"
+        >
+            <div class="inline-flex items-center gap-3 mb-8">
+                <span class="w-10 h-px" style="background-color: {{ $primaryColor }};"></span>
+                <span class="uppercase text-[11px] tracking-[0.3em] font-medium" style="color: {{ $primaryColor }};">
+                    Prijslijst
+                </span>
+                <span class="w-10 h-px" style="background-color: {{ $primaryColor }};"></span>
+            </div>
+            <h2
+                class="text-3xl sm:text-4xl lg:text-[2.6rem] leading-[1.15] mb-4"
+                style="color: {{ $backgroundColor }}; font-family: '{{ $headingFont }}', serif; font-weight: 600;"
             >
-                Prijslijst
-            </span>
-            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6" style="color: {{ $textColor }};">
                 {{ $title }}
             </h2>
-            <p class="text-lg max-w-2xl mx-auto text-gray-600">
+            <p class="text-[15px] max-w-lg mx-auto leading-relaxed" style="color: {{ $backgroundColor }}50;">
                 {{ $subtitle }}
             </p>
         </div>
 
         {{-- Pricing categories --}}
-        <div class="grid gap-8 lg:grid-cols-3">
+        <div class="grid gap-6 lg:gap-8 lg:grid-cols-3">
             @foreach($categories as $index => $category)
-                @php
-                    $gradient = $gradients[$index % count($gradients)];
-                @endphp
                 <div
-                    class="bg-white rounded-3xl overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
-                    style="box-shadow: 0 4px 20px rgba(0,0,0,0.05);"
+                    class="group relative transition-all duration-500"
+                    x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+                    style="background-color: {{ $backgroundColor }}; border: 1px solid {{ $backgroundColor }}10; opacity: 0; transform: translateY(18px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) {{ $index * 0.12 }}s;"
                 >
-                    {{-- Category header --}}
+                    {{-- Gold top accent — expands on hover --}}
                     <div
-                        class="p-6 text-center text-white"
-                        style="background: linear-gradient(135deg, {{ $gradient['from'] }}, {{ $gradient['to'] }});"
-                    >
-                        <div class="w-14 h-14 mx-auto mb-4 rounded-2xl bg-white/20 flex items-center justify-center">
-                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        class="absolute top-0 left-0 h-px w-0 group-hover:w-full transition-all duration-700"
+                        style="background-color: {{ $primaryColor }};"
+                    ></div>
+
+                    {{-- Category header inside card --}}
+                    <div class="pt-10 pb-6 px-8 text-center">
+                        {{-- Icon in gold circle --}}
+                        <div
+                            class="w-14 h-14 mx-auto mb-5 rounded-full flex items-center justify-center"
+                            style="background-color: {{ $primaryColor }}08; border: 1px solid {{ $primaryColor }}20;"
+                        >
+                            <svg class="w-6 h-6" style="color: {{ $primaryColor }};" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 {!! $icons[$category['icon'] ?? 'women'] ?? $icons['women'] !!}
                             </svg>
                         </div>
-                        <h3 class="text-xl font-bold">{{ $category['name'] }}</h3>
+
+                        {{-- Category name --}}
+                        <h3
+                            class="text-xl mb-4"
+                            style="color: {{ $headingColor }}; font-family: '{{ $headingFont }}', serif; font-weight: 600;"
+                        >
+                            {{ $category['name'] }}
+                        </h3>
+
+                        {{-- Thin gold separator --}}
+                        <div class="flex items-center justify-center gap-0">
+                            <div class="w-8 h-px" style="background-color: {{ $primaryColor }};"></div>
+                            <div class="w-1 h-1 rounded-full mx-1.5" style="background-color: {{ $primaryColor }};"></div>
+                            <div class="w-8 h-px" style="background-color: {{ $primaryColor }};"></div>
+                        </div>
                     </div>
 
                     {{-- Price items --}}
-                    <div class="p-6">
-                        <div class="space-y-4">
-                            @foreach($category['items'] as $item)
-                                @php
-                                    $isPopular = $item['popular'] ?? false;
-                                @endphp
-                                <div
-                                    class="relative p-4 rounded-xl transition-colors {{ $isPopular ? '' : 'hover:bg-gray-50' }}"
-                                    style="{{ $isPopular ? 'background: linear-gradient(135deg, ' . $gradient['from'] . '08, ' . $gradient['to'] . '08);' : '' }}"
-                                >
-                                    {{-- Popular badge --}}
-                                    @if($isPopular)
-                                        <span
-                                            class="absolute -top-2 right-4 px-3 py-1 rounded-full text-xs font-bold text-white"
-                                            style="background: linear-gradient(135deg, {{ $gradient['from'] }}, {{ $gradient['to'] }});"
-                                        >
-                                            Populair
-                                        </span>
-                                    @endif
-
-                                    <div class="flex items-center justify-between gap-4">
-                                        <div class="flex-1 min-w-0">
-                                            <h4 class="font-semibold truncate" style="color: {{ $textColor }};">
+                    <div class="px-8 pb-4">
+                        @foreach($category['items'] as $itemIndex => $item)
+                            @php
+                                $isPopular = $item['popular'] ?? false;
+                            @endphp
+                            <div
+                                class="py-4 {{ $itemIndex < count($category['items']) - 1 ? '' : '' }}"
+                                style="{{ $itemIndex < count($category['items']) - 1 ? 'border-bottom: 1px solid ' . $headingColor . '06;' : '' }}"
+                            >
+                                <div class="flex items-start justify-between gap-4">
+                                    <div class="flex-1 min-w-0">
+                                        <div class="flex items-center gap-2">
+                                            <h4
+                                                class="text-[14px] font-semibold"
+                                                style="color: {{ $headingColor }};"
+                                            >
                                                 {{ $item['service'] }}
                                             </h4>
-                                            <p class="text-sm text-gray-500 truncate">
-                                                {{ $item['description'] }}
-                                            </p>
+                                            {{-- Popular indicator --}}
+                                            @if($isPopular)
+                                                <span class="inline-flex items-center gap-1.5 text-[11px] font-medium" style="color: {{ $primaryColor }};">
+                                                    <span class="w-1 h-1 rounded-full" style="background-color: {{ $primaryColor }};"></span>
+                                                    Populair
+                                                </span>
+                                            @endif
                                         </div>
-                                        <span
-                                            class="text-lg font-bold shrink-0"
-                                            style="color: {{ $gradient['from'] }};"
-                                        >
-                                            {{ $formatPrice($item['price']) }}
-                                        </span>
+                                        <p class="text-[13px] mt-0.5 leading-relaxed" style="color: {{ $textColor }};">
+                                            {{ $item['description'] }}
+                                        </p>
                                     </div>
+                                    <span
+                                        class="text-base shrink-0 mt-0.5"
+                                        style="color: {{ $primaryColor }}; font-family: '{{ $headingFont }}', serif; font-weight: 600;"
+                                    >
+                                        {{ $formatPrice($item['price']) }}
+                                    </span>
                                 </div>
-                            @endforeach
-                        </div>
+                            </div>
+                        @endforeach
+                    </div>
 
-                        {{-- Book button --}}
+                    {{-- Book button --}}
+                    <div class="px-8 pb-8 pt-2">
                         <a
                             href="#contact"
-                            class="mt-6 w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:shadow-lg"
-                            style="background: linear-gradient(135deg, {{ $gradient['from'] }}10, {{ $gradient['to'] }}10); color: {{ $gradient['from'] }};"
+                            class="group/link inline-flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.15em] transition-all duration-300 hover:gap-3"
+                            style="color: {{ $primaryColor }};"
                         >
                             Boek nu
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                             </svg>
                         </a>
@@ -173,15 +199,14 @@
         </div>
 
         {{-- Footer note --}}
-        <div class="mt-12 text-center">
-            <div class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gray-50">
-                <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                </svg>
-                <p class="text-sm text-gray-600">
-                    Alle prijzen zijn inclusief BTW. Lang haar vanaf +€5. Vraag naar onze combideals!
-                </p>
-            </div>
+        <div
+            class="text-center mt-14"
+            x-data x-intersect.once="$el.style.opacity = 1"
+            style="opacity: 0; transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1);"
+        >
+            <p class="text-[13px] leading-relaxed" style="color: {{ $backgroundColor }}35;">
+                Alle prijzen zijn inclusief BTW. Lang haar vanaf +€5. Vraag naar onze combideals!
+            </p>
         </div>
     </div>
 </section>

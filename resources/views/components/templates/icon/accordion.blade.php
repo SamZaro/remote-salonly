@@ -1,7 +1,6 @@
 {{--
-    Template-specifieke accordion voor Icon (Hair Salon)
-
-    Modern en fris met lichtblauw/mint thema
+    Icon Template: Accordion Section
+    "Warm Atelier" — editorial FAQ, gold accents, serif numbers, subtle open-state border
     Props: $content, $theme, $section
 --}}
 @props([
@@ -12,7 +11,7 @@
 
 @php
     $title = $content['title'] ?? 'Veelgestelde Vragen';
-    $subtitle = $content['subtitle'] ?? 'Heb je een vraag?';
+    $subtitle = $content['subtitle'] ?? 'Heb je een vraag? Wij hebben het antwoord.';
     $items = $content['items'] ?? [
         ['question' => 'Moet ik vooraf reserveren?', 'answer' => 'Je kunt online reserveren via onze website of bellen voor een afspraak. Walk-ins zijn welkom maar een reservering garandeert je plek.'],
         ['question' => 'Wat als ik te laat ben?', 'answer' => 'We begrijpen dat het soms druk kan zijn. Bij meer dan 15 minuten vertraging kan het zijn dat we je afspraak moeten inkorten.'],
@@ -20,57 +19,78 @@
         ['question' => 'Hebben jullie producten te koop?', 'answer' => 'Ja, we verkopen professionele haarproducten zodat je thuis je look kunt onderhouden.'],
     ];
 
-    // Theme kleuren - fresh modern salon
-    $primaryColor = $theme['primary_color'] ?? '#0ea5e9';
-    $secondaryColor = $theme['secondary_color'] ?? '#14b8a6';
-    $textColor = $theme['text_color'] ?? '#1f2937';
+    $primaryColor = $theme['primary_color'] ?? '#c9a227';
+    $secondaryColor = $theme['secondary_color'] ?? '#1a1a1a';
+    $accentColor = $theme['accent_color'] ?? '#d4af37';
+    $textColor = $theme['text_color'] ?? '#555555';
+    $headingColor = $theme['heading_color'] ?? '#1a1a1a';
     $backgroundColor = $theme['background_color'] ?? '#ffffff';
-    $sectionBg = $theme['accordion_background'] ?? '#f8fafc';
+    $headingFont = $theme['heading_font_family'] ?? 'Cormorant Garamond';
+    $bodyFont = $theme['font_family'] ?? 'Montserrat';
 @endphp
 
-<section id="accordion" class="py-20 lg:py-28" style="background-color: {{ $sectionBg }};">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        {{-- Header --}}
-        <div class="text-center mb-16">
-            <span
-                class="inline-block text-sm font-semibold mb-4 px-4 py-1 rounded-full"
-                style="background: linear-gradient(135deg, {{ $primaryColor }}15, {{ $secondaryColor }}15); color: {{ $primaryColor }};"
+<section id="accordion" class="py-24 lg:py-36" style="background-color: {{ $backgroundColor }}; font-family: '{{ $bodyFont }}', sans-serif;">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+
+        {{-- Section header --}}
+        <div
+            class="text-center mb-16 lg:mb-20"
+            x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+            style="opacity: 0; transform: translateY(14px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);"
+        >
+            <div class="inline-flex items-center gap-3 mb-8">
+                <span class="w-10 h-px" style="background-color: {{ $primaryColor }};"></span>
+                <span class="uppercase text-[11px] tracking-[0.3em] font-medium" style="color: {{ $primaryColor }};">
+                    FAQ
+                </span>
+                <span class="w-10 h-px" style="background-color: {{ $primaryColor }};"></span>
+            </div>
+            <h2
+                class="text-3xl sm:text-4xl lg:text-[2.6rem] leading-[1.15] mb-4"
+                style="color: {{ $headingColor }}; font-family: '{{ $headingFont }}', serif; font-weight: 600;"
             >
-                {{ $subtitle }}
-            </span>
-            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold" style="color: {{ $textColor }};">
                 {{ $title }}
             </h2>
+            <p class="text-[15px] max-w-lg mx-auto leading-relaxed" style="color: {{ $textColor }};">
+                {{ $subtitle }}
+            </p>
         </div>
 
-        {{-- Accordion Items --}}
+        {{-- Accordion items --}}
         @if(count($items) > 0)
             <div class="space-y-4" x-data="{ openItem: 0 }">
                 @foreach($items as $index => $item)
                     <div
-                        class="rounded-2xl overflow-hidden transition-all duration-300"
-                        :style="openItem === {{ $index }} ? 'box-shadow: 0 10px 40px rgba(14,165,233,0.15)' : 'box-shadow: 0 2px 10px rgba(0,0,0,0.05)'"
-                        style="background-color: {{ $backgroundColor }};"
+                        class="overflow-hidden transition-all duration-500"
+                        x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+                        :style="openItem === {{ $index }}
+                            ? 'border: 1px solid {{ $headingColor }}06; border-left: 2px solid {{ $primaryColor }}; box-shadow: 0 2px 12px rgba(0,0,0,0.04); background-color: {{ $backgroundColor }};'
+                            : 'border: 1px solid {{ $headingColor }}06; border-left: 2px solid transparent; box-shadow: none; background-color: {{ $backgroundColor }};'"
+                        style="background-color: {{ $backgroundColor }}; border: 1px solid {{ $headingColor }}06; opacity: 0; transform: translateY(14px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) {{ $index * 0.08 }}s;"
                     >
                         <button
                             @click="openItem = openItem === {{ $index }} ? null : {{ $index }}"
-                            class="w-full px-6 py-5 text-left flex items-center justify-between gap-4"
+                            class="w-full px-6 py-5 text-left flex items-center justify-between gap-4 cursor-pointer"
                         >
                             <div class="flex items-center gap-4">
+                                {{-- Serif number --}}
                                 <span
-                                    class="flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold transition-all duration-300"
-                                    :style="openItem === {{ $index }} ? 'background: linear-gradient(135deg, {{ $primaryColor }}, {{ $secondaryColor }}); color: white' : 'background: {{ $primaryColor }}15; color: {{ $primaryColor }}'"
+                                    class="shrink-0 text-lg select-none"
+                                    style="color: {{ $primaryColor }}0c; font-family: '{{ $headingFont }}', serif; font-weight: 600;"
                                 >
-                                    {{ $index + 1 }}
+                                    {{ str_pad($index + 1, 2, '0', STR_PAD_LEFT) }}
                                 </span>
-                                <span class="font-semibold text-lg" style="color: {{ $textColor }};">
+                                <span
+                                    class="text-[15px] font-semibold"
+                                    style="color: {{ $headingColor }};"
+                                >
                                     {{ $item['question'] ?? $item['title'] ?? '' }}
                                 </span>
                             </div>
                             <svg
-                                class="w-5 h-5 transition-transform duration-300 flex-shrink-0"
+                                class="w-4 h-4 shrink-0 transition-transform duration-300"
                                 :class="{ 'rotate-180': openItem === {{ $index }} }"
-                                :style="openItem === {{ $index }} ? 'color: {{ $primaryColor }}' : 'color: #9ca3af'"
+                                :style="openItem === {{ $index }} ? 'color: {{ $primaryColor }}' : 'color: {{ $textColor }}40'"
                                 fill="none"
                                 stroke="currentColor"
                                 viewBox="0 0 24 24"
@@ -83,8 +103,8 @@
                             x-collapse
                             x-cloak
                         >
-                            <div class="px-6 pb-6 pl-[4.5rem]">
-                                <p class="leading-relaxed text-gray-600">
+                            <div class="px-6 pb-6 pl-[4.25rem]">
+                                <p class="text-[14px] leading-[1.7]" style="color: {{ $textColor }};">
                                     {{ $item['answer'] ?? $item['content'] ?? '' }}
                                 </p>
                             </div>
@@ -95,12 +115,16 @@
         @endif
 
         {{-- CTA --}}
-        <div class="mt-12 text-center">
-            <p class="text-gray-500 mb-4">Staat je vraag er niet tussen?</p>
+        <div
+            class="mt-14 text-center"
+            x-data x-intersect.once="$el.style.opacity = 1"
+            style="opacity: 0; transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1);"
+        >
+            <p class="text-[14px] mb-5" style="color: {{ $textColor }};">Staat je vraag er niet tussen?</p>
             <a
                 href="#contact"
-                class="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-white font-medium transition-all duration-300 hover:scale-105"
-                style="background: linear-gradient(135deg, {{ $primaryColor }}, {{ $secondaryColor }});"
+                class="group inline-flex items-center gap-3 text-[12px] font-semibold uppercase tracking-[0.15em] transition-all duration-300 hover:gap-4"
+                style="color: {{ $primaryColor }};"
             >
                 Neem contact op
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
