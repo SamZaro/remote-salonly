@@ -196,7 +196,7 @@
                 @else
                     <div
                         class="rounded-2xl w-full h-full min-h-[350px] flex items-center justify-center relative overflow-hidden"
-                        style="background: linear-gradient(135deg, {{ $primaryColor }}08, {{ $secondaryColor }}08);"
+                        style="background: linear-gradient(135deg, {{ $primaryColor }}25, {{ $secondaryColor }}25);"
                     >
                         <div class="absolute top-10 left-10 w-32 h-32 rounded-full opacity-10" style="background: {{ $primaryColor }};"></div>
                         <div class="absolute bottom-10 right-10 w-48 h-48 rounded-full opacity-10" style="background: {{ $secondaryColor }};"></div>
