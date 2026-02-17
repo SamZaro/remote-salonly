@@ -352,6 +352,20 @@ class TemplateFormSchema
                     'navbar_underline_color' => '#171717',
                 ],
             ],
+            'ocean' => [
+                'label' => __('Ocean'),
+                'colors' => [
+                    'primary_color' => '#0077b6',      // Deep ocean blue - accents
+                    'secondary_color' => '#0d1b2a',    // Dark navy - dark sections
+                    'accent_color' => '#48cae4',       // Light cyan - hover
+                    'background_color' => '#f0f7ff',   // Ice blue - light sections
+                    'text_color' => '#4a6a8a',         // Steel blue - body text
+                    'heading_color' => '#0d1b2a',      // Dark navy - headings
+                    'navbar_background' => '#0d1b2a',
+                    'navbar_text_color' => '#f0f7ff',
+                    'navbar_underline_color' => '#0077b6',
+                ],
+            ],
         ];
     }
 
@@ -497,6 +511,8 @@ class TemplateFormSchema
                                 'rose' => 'danger',
                                 'beauty' => 'warning',
                                 'peach' => 'danger',
+                                'minimal' => 'gray',
+                                'ocean' => 'info',
                             ])
                             ->columnSpanFull(),
                     ]),

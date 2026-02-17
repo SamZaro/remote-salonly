@@ -58,7 +58,7 @@ class TemplateSeeder extends Seeder
     {
         return [
             // Kapsalons
-            ['slug' => 'wave',     'category' => 'kapsalons',         'name' => 'Wave',     'description' => 'Moderne en stijlvolle template voor kapsalons.',          'scheme' => 'modern',  'font' => 'Poppins',       'heading_font' => 'Playfair Display, serif',   'hero_title' => 'Welkom bij onze salon',              'hero_subtitle' => 'Waar stijl en vakmanschap samenkomen'],
+            ['slug' => 'wave',     'category' => 'kapsalons',         'name' => 'Wave',     'description' => 'Moderne en stijlvolle template voor kapsalons.',          'scheme' => 'ocean',  'font' => 'Poppins',       'heading_font' => 'Playfair Display, serif',   'hero_title' => 'Welkom bij onze salon',              'hero_subtitle' => 'Waar stijl en vakmanschap samenkomen'],
             ['slug' => 'icon',     'category' => 'kapsalons',         'name' => 'Icon',     'description' => 'Iconische en opvallende template voor kapsalons.',         'scheme' => 'vintage', 'font' => 'Montserrat',    'heading_font' => 'Cormorant Garamond, serif', 'hero_title' => 'Jouw stijl, ons vakmanschap',        'hero_subtitle' => 'Ontdek de iconische look die bij jou past'],
             ['slug' => 'nova',     'category' => 'kapsalons',         'name' => 'Nova',     'description' => 'Frisse en moderne template voor kapsalons.',               'scheme' => 'trendy',  'font' => 'Inter',         'heading_font' => 'Outfit, sans-serif',        'hero_title' => 'Een frisse look begint hier',        'hero_subtitle' => 'Moderne technieken voor een stralend resultaat'],
             ['slug' => 'pure',     'category' => 'kapsalons',         'name' => 'Pure',     'description' => 'Minimalistisch en elegant design voor kapsalons.',          'scheme' => 'minimal', 'font' => 'DM Sans',       'heading_font' => 'DM Serif Display, serif',   'hero_title' => 'Puur vakmanschap',                   'hero_subtitle' => 'Eenvoud en elegantie in elk detail'],
@@ -131,6 +131,7 @@ class TemplateSeeder extends Seeder
             'peach'   => ['primary_color' => '#FF6F61', 'secondary_color' => '#2B2B2B', 'accent_color' => '#FFD6C9', 'background_color' => '#FAFAFA', 'text_color' => '#6B6B6B', 'heading_color' => '#2B2B2B', 'navbar_background' => '#2B2B2B', 'navbar_text_color' => '#FAFAFA', 'navbar_underline_color' => '#FF6F61'],
             'minimal' => ['primary_color' => '#171717', 'secondary_color' => '#0a0a0a', 'accent_color' => '#404040', 'background_color' => '#FAFAFA', 'text_color' => '#737373', 'heading_color' => '#171717', 'navbar_background' => '#0a0a0a', 'navbar_text_color' => '#FAFAFA', 'navbar_underline_color' => '#171717'],
             'natural' => ['primary_color' => '#14b8a6', 'secondary_color' => '#1c1917', 'accent_color' => '#99f6e4', 'background_color' => '#44403c', 'text_color' => '#78716c', 'heading_color' => '#1c1917', 'navbar_background' => '#1c1917', 'navbar_text_color' => '#fafaf9', 'navbar_underline_color' => '#14b8a6'],
+            'ocean'   => ['primary_color' => '#0077b6', 'secondary_color' => '#0d1b2a', 'accent_color' => '#48cae4', 'background_color' => '#f0f7ff', 'text_color' => '#4a6a8a', 'heading_color' => '#0d1b2a', 'navbar_background' => '#0d1b2a', 'navbar_text_color' => '#f0f7ff', 'navbar_underline_color' => '#0077b6'],
         ];
     }
 

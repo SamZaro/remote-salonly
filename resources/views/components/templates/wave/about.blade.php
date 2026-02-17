@@ -1,8 +1,6 @@
 {{--
-    Template-specifieke about sectie voor Wave (High-End Salon)
-
-    Luxe & Chic met editorial fashion feel
-    Kleuren: Zwart #0F0F0F, Off-white #F5F3EF, Champagne goud #C8B88A, Warm grijs #8A8A8A
+    Wave Template: About Section
+    "Coastal Minimal" — asymmetric layout, rounded image, floating stats, wave accent
     Props: $content, $theme, $section
 --}}
 @props([
@@ -12,91 +10,105 @@
 ])
 
 @php
-    // Content met defaults
-    $title = $content['title'] ?? 'Over Ons';
-    $subtitle = $content['subtitle'] ?? 'Meer dan knippen. Een stijl die bij jou past.';
-    $description = $content['description'] ?? 'Bij ons draait alles om vakmanschap en persoonlijke aandacht. Wij geloven dat je haar meer is dan alleen een kapsel - het is een uitdrukking van wie je bent.';
-    $description2 = $content['description2'] ?? 'Ons team van ervaren stylisten combineert klassieke technieken met hedendaagse trends om jouw unieke stijl tot leven te brengen.';
+    $title = $content['title'] ?? 'Over Onze Salon';
+    $subtitle = $content['subtitle'] ?? 'Waar creativiteit en vakmanschap samenkomen';
+    $description = $content['description'] ?? 'Bij ons draait alles om jou. Ons team van ervaren stylisten combineert de nieuwste trends met tijdloze technieken om een look te creëren die perfect bij jou past.';
+    $description2 = $content['description2'] ?? 'Met jarenlange ervaring en een passie voor ons vak zorgen we ervoor dat je onze salon altijd verlaat met een glimlach en fantastisch haar.';
     $image = $section?->getFirstMediaUrl('background') ?: ($content['image'] ?? null);
     $stats = $content['stats'] ?? [
-        ['value' => '15+', 'label' => 'Jaar ervaring'],
-        ['value' => '3000+', 'label' => 'Tevreden klanten'],
-        ['value' => '8', 'label' => 'Vakspecialisten'],
+        ['value' => '10+', 'label' => 'Jaar ervaring'],
+        ['value' => '5000+', 'label' => 'Tevreden klanten'],
+        ['value' => '6', 'label' => 'Stylisten'],
     ];
 
-    // Theme kleuren - consistent met color scheme
-    $primaryColor = $theme['primary_color'] ?? '#C8B88A';      // Accents, decoratieve elementen
-    $secondaryColor = $theme['secondary_color'] ?? '#0F0F0F'; // Donkere secties
-    $accentColor = $theme['accent_color'] ?? '#D4C4A0';       // Hover states
-    $backgroundColor = $theme['background_color'] ?? '#F5F3EF'; // Lichte secties
-    $textColor = $theme['text_color'] ?? '#6B6B6B';           // Body tekst
-    $headingColor = $theme['heading_color'] ?? '#0F0F0F';     // Headings
+    $primaryColor = $theme['primary_color'] ?? '#0077b6';
+    $secondaryColor = $theme['secondary_color'] ?? '#0d1b2a';
+    $accentColor = $theme['accent_color'] ?? '#48cae4';
+    $textColor = $theme['text_color'] ?? '#4a6a8a';
+    $headingColor = $theme['heading_color'] ?? '#0d1b2a';
+    $backgroundColor = $theme['background_color'] ?? '#f0f7ff';
+    $headingFont = $theme['heading_font_family'] ?? 'Playfair Display';
+    $bodyFont = $theme['font_family'] ?? 'Poppins';
 @endphp
 
-<section id="about" class="py-24 lg:py-32" style="background-color: {{ $backgroundColor }};">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-            {{-- Image --}}
-            <div class="relative order-2 lg:order-1">
+<section id="about" class="relative py-24 lg:py-36 overflow-hidden" style="background-color: {{ $backgroundColor }}; font-family: '{{ $bodyFont }}', sans-serif;">
+
+    {{-- Decorative wave accent top-right --}}
+    <div class="absolute top-0 right-0 w-1/3 h-full pointer-events-none opacity-[0.03]">
+        <svg class="w-full h-full" viewBox="0 0 400 800" preserveAspectRatio="none" fill="none">
+            <path d="M200,0 C350,100 100,200 300,300 C500,400 50,500 250,600 C450,700 100,800 400,800 L400,0 Z" fill="{{ $primaryColor }}"/>
+        </svg>
+    </div>
+
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+            {{-- Image column --}}
+            <div
+                class="relative order-2 lg:order-1"
+                x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateX(0)'"
+                style="opacity: 0; transform: translateX(-20px); transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);"
+            >
                 @if($image)
                     <div class="relative">
-                        {{-- Decorative frame --}}
+                        {{-- Blue glow behind image --}}
                         <div
-                            class="absolute -top-4 -left-4 w-full h-full border"
-                            style="border-color: {{ $primaryColor }};"
+                            class="absolute -inset-4 rounded-3xl blur-2xl opacity-10"
+                            style="background: linear-gradient(135deg, {{ $primaryColor }}, {{ $accentColor }});"
                         ></div>
-                        {{-- Main image --}}
+
                         <img
                             src="{{ $image }}"
                             alt="Over ons"
-                            class="relative w-full h-[550px] lg:h-[650px] object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                            class="relative w-full h-[420px] lg:h-[540px] object-cover rounded-2xl"
+                            style="box-shadow: 0 20px 50px {{ $secondaryColor }}15;"
                         />
-                        {{-- Gold accent corner --}}
+
+                        {{-- Accent border strip --}}
                         <div
-                            class="absolute -bottom-4 -right-4 w-24 h-24"
-                            style="background-color: {{ $primaryColor }};"
+                            class="absolute -right-3 top-8 bottom-8 w-1 rounded-full"
+                            style="background: linear-gradient(to bottom, {{ $primaryColor }}, {{ $accentColor }}40);"
                         ></div>
                     </div>
                 @else
-                    {{-- Placeholder --}}
                     <div class="relative">
                         <div
-                            class="absolute -top-4 -left-4 w-full h-full border"
-                            style="border-color: {{ $primaryColor }};"
+                            class="absolute -inset-4 rounded-3xl blur-2xl opacity-5"
+                            style="background: linear-gradient(135deg, {{ $primaryColor }}, {{ $accentColor }});"
                         ></div>
                         <div
-                            class="relative w-full h-[550px] lg:h-[650px] flex items-center justify-center"
-                            style="background-color: {{ $secondaryColor }}10;"
+                            class="relative w-full h-[420px] lg:h-[540px] flex items-center justify-center rounded-2xl"
+                            style="background-color: {{ $primaryColor }}05; border: 1px dashed {{ $primaryColor }}15;"
                         >
                             <div class="text-center">
-                                <svg class="w-20 h-20 mx-auto mb-4" style="color: {{ $textColor }};" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg class="w-14 h-14 mx-auto mb-3" style="color: {{ $primaryColor }}20;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                                 </svg>
-                                <span style="color: {{ $textColor }};">Salon foto</span>
+                                <span class="text-[11px] uppercase tracking-[0.2em]" style="color: {{ $textColor }}60;">Team foto</span>
                             </div>
                         </div>
-                        <div
-                            class="absolute -bottom-4 -right-4 w-24 h-24"
-                            style="background-color: {{ $primaryColor }};"
-                        ></div>
                     </div>
                 @endif
 
-                {{-- Stats bar --}}
+                {{-- Floating stats card --}}
                 <div
-                    class="absolute bottom-8 left-8 right-8 lg:left-12 lg:right-auto p-8 backdrop-blur-sm"
-                    style="background-color: {{ $secondaryColor }}F0;"
+                    class="absolute -bottom-6 left-4 right-4 lg:left-8 lg:right-8"
+                    x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+                    style="opacity: 0; transform: translateY(10px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.3s;"
                 >
-                    <div class="flex items-center gap-8">
+                    <div
+                        class="flex items-center justify-between rounded-xl p-5 lg:p-6"
+                        style="background-color: #ffffff; box-shadow: 0 8px 30px {{ $secondaryColor }}10; border: 1px solid {{ $primaryColor }}08;"
+                    >
                         @foreach($stats as $index => $stat)
-                            <div class="text-center {{ $index > 0 ? 'border-l border-white/20 pl-8' : '' }}">
+                            <div class="text-center flex-1" style="{{ $index < count($stats) - 1 ? 'border-right: 1px solid ' . $primaryColor . '10;' : '' }}">
                                 <span
-                                    class="block text-3xl lg:text-4xl font-light tracking-tight"
-                                    style="color: {{ $primaryColor }}; font-family: 'Playfair Display', Georgia, serif;"
+                                    class="block text-2xl lg:text-3xl font-bold"
+                                    style="color: {{ $primaryColor }}; font-family: '{{ $headingFont }}', serif;"
                                 >
                                     {{ $stat['value'] }}
                                 </span>
-                                <span class="block text-xs uppercase tracking-widest mt-1 text-white/60">
+                                <span class="block text-[10px] uppercase tracking-[0.12em] mt-1" style="color: {{ $textColor }};">
                                     {{ $stat['label'] }}
                                 </span>
                             </div>
@@ -105,56 +117,56 @@
                 </div>
             </div>
 
-            {{-- Content --}}
-            <div class="order-1 lg:order-2">
-                {{-- Label --}}
-                <div class="flex items-center gap-4 mb-8">
-                    <div class="h-px w-12" style="background-color: {{ $primaryColor }};"></div>
-                    <span
-                        class="text-xs font-medium uppercase tracking-[0.3em]"
-                        style="color: {{ $primaryColor }};"
-                    >
-                        Onze Salon
+            {{-- Content column --}}
+            <div
+                class="order-1 lg:order-2"
+                x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+                style="opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.15s;"
+            >
+                {{-- Overline --}}
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-8 h-[2px] rounded-full" style="background: linear-gradient(to right, {{ $primaryColor }}, {{ $accentColor }});"></div>
+                    <span class="uppercase text-[11px] tracking-[0.2em] font-semibold" style="color: {{ $primaryColor }};">
+                        Over Ons
                     </span>
                 </div>
 
                 {{-- Title --}}
                 <h2
-                    class="text-4xl sm:text-5xl lg:text-6xl font-light mb-8 leading-tight"
-                    style="color: {{ $headingColor }}; font-family: 'Playfair Display', Georgia, serif;"
+                    class="text-3xl sm:text-4xl lg:text-[2.75rem] leading-[1.15] mb-4"
+                    style="color: {{ $headingColor }}; font-family: '{{ $headingFont }}', serif; font-weight: 700;"
                 >
                     {{ $title }}
                 </h2>
 
                 {{-- Subtitle --}}
                 <p
-                    class="text-xl lg:text-2xl mb-8 font-light italic"
-                    style="color: {{ $primaryColor }}; font-family: 'Playfair Display', Georgia, serif;"
+                    class="text-lg mb-6 font-medium"
+                    style="color: {{ $accentColor }};"
                 >
-                    "{{ $subtitle }}"
+                    {{ $subtitle }}
                 </p>
 
-                {{-- Description --}}
-                <p class="text-lg mb-6 leading-relaxed" style="color: {{ $textColor }};">
+                {{-- Body text --}}
+                <p class="text-[15px] mb-4 leading-[1.8]" style="color: {{ $textColor }};">
                     {{ $description }}
                 </p>
-                <p class="text-lg mb-12 leading-relaxed" style="color: {{ $textColor }};">
+                <p class="text-[15px] mb-8 leading-[1.8]" style="color: {{ $textColor }};">
                     {{ $description2 }}
                 </p>
 
-                {{-- Features --}}
-                <div class="grid sm:grid-cols-2 gap-6 mb-12">
-                    @foreach(['Persoonlijk advies', 'Premium producten', 'Ervaren stylisten', 'Ontspannen sfeer'] as $feature)
-                        <div class="flex items-center gap-4">
-                            <div
-                                class="w-10 h-10 flex items-center justify-center"
-                                style="background-color: {{ $primaryColor }}15;"
-                            >
-                                <svg class="w-5 h-5" style="color: {{ $primaryColor }};" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 13l4 4L19 7"/>
-                                </svg>
-                            </div>
-                            <span class="font-medium" style="color: {{ $headingColor }};">{{ $feature }}</span>
+                {{-- Feature highlights --}}
+                <div class="grid sm:grid-cols-2 gap-3 mb-8">
+                    @foreach(['Gecertificeerde stylisten', 'Premium producten', 'Persoonlijk advies', 'Ontspannen sfeer'] as $index => $feature)
+                        <div
+                            class="flex items-center gap-3 px-4 py-3 rounded-lg"
+                            x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateX(0)'"
+                            style="background-color: {{ $primaryColor }}05; opacity: 0; transform: translateX(-8px); transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1) {{ 0.4 + ($index * 0.08) }}s;"
+                        >
+                            <svg class="w-4 h-4 shrink-0" style="color: {{ $primaryColor }};" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-[13px] font-medium" style="color: {{ $headingColor }};">{{ $feature }}</span>
                         </div>
                     @endforeach
                 </div>
@@ -162,14 +174,12 @@
                 {{-- CTA --}}
                 <a
                     href="#contact"
-                    class="group inline-flex items-center gap-4 text-sm font-medium uppercase tracking-widest transition-all duration-300"
-                    style="color: {{ $headingColor }};"
+                    class="group inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold rounded-full transition-all duration-300 hover:shadow-md hover:-translate-y-0.5"
+                    style="background-color: {{ $primaryColor }}; color: #ffffff; box-shadow: 0 2px 12px {{ $primaryColor }}30;"
                 >
-                    <span class="border-b-2 pb-1 transition-colors" style="border-color: {{ $primaryColor }};">
-                        Ontdek onze salon
-                    </span>
-                    <svg class="w-5 h-5 transition-transform group-hover:translate-x-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                    Maak kennis met ons team
+                    <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                     </svg>
                 </a>
             </div>
