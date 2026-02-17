@@ -209,57 +209,61 @@
             </div>
         </div>
 
-        {{-- Map --}}
-        @if($mapEmbed)
-            <div
-                class="mb-14 rounded-2xl overflow-hidden"
-                style="box-shadow: 0 4px 20px {{ $secondaryColor }}08;"
-            >
-                <div class="aspect-[21/9] w-full">
-                    {!! $mapEmbed !!}
-                </div>
-            </div>
-        @else
-            <div
-                class="aspect-[21/9] w-full flex items-center justify-center mb-14 rounded-2xl"
-                style="background-color: {{ $primaryColor }}04; border: 1px dashed {{ $primaryColor }}15;"
-            >
-                <div class="text-center">
-                    <svg class="w-12 h-12 mx-auto mb-3" style="color: {{ $primaryColor }}15;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>
-                    </svg>
-                    <span class="text-[11px] uppercase tracking-[0.2em]" style="color: {{ $textColor }}60;">Google Maps</span>
-                </div>
-            </div>
-        @endif
+        {{-- Map + Contact Form naast elkaar op groot scherm --}}
+        <div class="grid lg:grid-cols-2 gap-8 items-stretch mb-14">
 
-        {{-- Contact Form --}}
-        <div
-            class="max-w-2xl mx-auto"
-            x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
-            style="opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);"
-        >
-            <div class="rounded-2xl p-8 lg:p-12" style="background-color: #ffffff; box-shadow: 0 4px 20px {{ $secondaryColor }}06;">
-                <div class="text-center mb-8">
-                    <h3
-                        class="text-2xl mb-2"
-                        style="color: {{ $headingColor }}; font-family: '{{ $headingFont }}', serif; font-weight: 700;"
+            {{-- Map --}}
+            <div
+                x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+                style="opacity: 0; transform: translateY(12px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);"
+            >
+                @if($mapEmbed)
+                    <div class="rounded-2xl overflow-hidden h-full min-h-[350px]" style="box-shadow: 0 4px 20px {{ $secondaryColor }}08;">
+                        <div class="h-full w-full">{!! $mapEmbed !!}</div>
+                    </div>
+                @else
+                    <div
+                        class="w-full h-full min-h-[350px] flex items-center justify-center rounded-2xl"
+                        style="background-color: {{ $primaryColor }}04; border: 1px dashed {{ $primaryColor }}15;"
                     >
-                        {{ __('Stuur een bericht') }}
-                    </h3>
-                    <p class="text-[14px]" style="color: {{ $textColor }};">
-                        {{ __('Vragen of opmerkingen? Wij horen graag van u.') }}
-                    </p>
-                </div>
-
-                <livewire:contact-form :theme="[
-                    'primary_color' => $primaryColor,
-                    'secondary_color' => $secondaryColor,
-                    'background_color' => $backgroundColor,
-                    'text_color' => $textColor,
-                    'heading_color' => $headingColor,
-                ]" />
+                        <div class="text-center">
+                            <svg class="w-12 h-12 mx-auto mb-3" style="color: {{ $primaryColor }}15;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>
+                            </svg>
+                            <span class="text-[11px] uppercase tracking-[0.2em]" style="color: {{ $textColor }}60;">Google Maps</span>
+                        </div>
+                    </div>
+                @endif
             </div>
+
+            {{-- Contact Form --}}
+            <div
+                x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+                style="opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);"
+            >
+                <div class="rounded-2xl p-8 lg:p-12 h-full" style="background-color: #ffffff; box-shadow: 0 4px 20px {{ $secondaryColor }}06;">
+                    <div class="text-center mb-8">
+                        <h3
+                            class="text-2xl mb-2"
+                            style="color: {{ $headingColor }}; font-family: '{{ $headingFont }}', serif; font-weight: 700;"
+                        >
+                            {{ __('Stuur een bericht') }}
+                        </h3>
+                        <p class="text-[14px]" style="color: {{ $textColor }};">
+                            {{ __('Vragen of opmerkingen? Wij horen graag van u.') }}
+                        </p>
+                    </div>
+
+                    <livewire:contact-form :theme="[
+                        'primary_color' => $primaryColor,
+                        'secondary_color' => $secondaryColor,
+                        'background_color' => $backgroundColor,
+                        'text_color' => $textColor,
+                        'heading_color' => $headingColor,
+                    ]" />
+                </div>
+            </div>
+
         </div>
 
         {{-- Bottom note --}}
