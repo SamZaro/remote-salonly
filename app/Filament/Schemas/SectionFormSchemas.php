@@ -63,7 +63,8 @@ class SectionFormSchemas
             'gallery', 'portfolio' => self::multipleImagesMediaSchema(),
             'about', 'contact', 'content' => self::optionalBackgroundMediaSchema(),
             'image_text', 'text_image' => self::imageTextMediaSchema(),
-            'services', 'pricing', 'testimonials', 'team', 'faq', 'accordion', 'stats', 'newsletter', 'features', 'blog', 'footer' => [],
+            'team' => self::teamMemberImagesMediaSchema(),
+            'services', 'pricing', 'testimonials', 'faq', 'accordion', 'stats', 'newsletter', 'features', 'blog', 'footer' => [],
             default => self::defaultMediaSchema(),
         };
     }
@@ -74,7 +75,7 @@ class SectionFormSchemas
     public static function hasMedia(string $sectionType): bool
     {
         return match ($sectionType) {
-            'hero', 'slider', 'cta', 'jumbotron', 'parallax', 'gallery', 'portfolio', 'about', 'contact', 'content', 'image_text', 'text_image', 'custom' => true,
+            'hero', 'slider', 'cta', 'jumbotron', 'parallax', 'gallery', 'portfolio', 'about', 'contact', 'content', 'image_text', 'text_image', 'team', 'custom' => true,
             default => false,
         };
     }
@@ -390,16 +391,14 @@ class SectionFormSchemas
                             Textarea::make('bio')
                                 ->label(__('Bio'))
                                 ->rows(2),
-                            TextInput::make('image')
-                                ->label(__('Image URL'))
-                                ->url(),
                         ])
-                        ->columns(2)
+                        ->columns(3)
                         ->collapsible()
                         ->collapsed()
                         ->itemLabel(fn (array $state): ?string => $state['name'] ?? null)
                         ->defaultItems(0)
-                        ->columnSpanFull(),
+                        ->columnSpanFull()
+                        ->helperText(__('Upload member photos in the Media section below. Photos are matched to members by order (first photo → first member, etc.).')),
                 ])->columns(2),
         ];
     }
@@ -864,6 +863,33 @@ class SectionFormSchemas
                         ->imageEditor()
                         ->multiple()
                         ->reorderable()
+                        ->columnSpanFull(),
+                ]),
+        ];
+    }
+
+    protected static function teamMemberImagesMediaSchema(): array
+    {
+        return [
+            Section::make(__('Team Member Photos'))
+                ->description(__('Upload photos for each team member. The order of photos should match the order of members above.'))
+                ->schema([
+                    SpatieMediaLibraryFileUpload::make('images')
+                        ->label(__('Member Photos'))
+                        ->collection('images')
+                        ->image()
+                        ->imageEditor()
+                        ->imageEditorAspectRatios([
+                            null,
+                            '1:1',
+                            '3:4',
+                        ])
+                        ->multiple()
+                        ->reorderable()
+                        ->conversion('thumb')
+                        ->panelLayout('grid')
+                        ->columns(2)
+                        ->helperText(__('Recommended: Square (1:1) or portrait (3:4) photos. Order matches team members above.'))
                         ->columnSpanFull(),
                 ]),
         ];

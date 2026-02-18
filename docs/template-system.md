@@ -114,14 +114,19 @@ Elke laag overschrijft de vorige via `array_merge()`.
 |---|---|---|---|---|---|---|---|---|---|
 | **custom** | — | — | — | — | — | — | — | — | — |
 | **luxury** | `#C8B88A` | `#0F0F0F` | `#D4C4A0` | `#F5F3EF` | `#6B6B6B` | `#0F0F0F` | `#0F0F0F` | `#C8B88A` | `#C8B88A` |
-| **vintage** | `#c9a227` | `#1a1a1a` | `#d4af37` | `#ffffff` | `#555555` | `#1a1a1a` | `#1a1a1a` | `#c9a227` | `#c9a227` |
+| **vintage** | `#8B4513` | `#3E2723` | `#D2691E` | `#FDF5E6` | `#6D4C41` | `#3E2723` | `#3E2723` | `#FDF5E6` | `#8B4513` |
 | **modern** | `#2563eb` | `#1e293b` | `#3b82f6` | `#f8fafc` | `#64748b` | `#0f172a` | `#1e293b` | `#f8fafc` | `#2563eb` |
 | **trendy** | `#8b5cf6` | `#18181b` | `#a78bfa` | `#fafafa` | `#71717a` | `#18181b` | `#18181b` | `#fafafa` | `#8b5cf6` |
 | **natural** | `#14b8a6` | `#1c1917` | `#99f6e4` | `#44403c` | `#78716c` | `#1c1917` | `#1c1917` | `#fafaf9` | `#14b8a6` |
-| **rose** | `#e11d48` | `#1f1f1f` | `#fb7185` | `#fff1f2` | `#737373` | `#171717` | `#1f1f1f` | `#fff1f2` | `#e11d48` |
+| **rose** | `#e11d48` | `#1f1f1f` | `#fb7185` | `#fafafa` | `#737373` | `#171717` | `#1f1f1f` | `#fafafa` | `#e11d48` |
 | **beauty** | `#E8D8D3` | `#6E5F5B` | `#F2E7E4` | `#FBF9F8` | `#8A7B76` | `#6E5F5B` | `#6E5F5B` | `#FBF9F8` | `#E8D8D3` |
 | **peach** | `#FF6F61` | `#2B2B2B` | `#FFD6C9` | `#FAFAFA` | `#6B6B6B` | `#2B2B2B` | `#2B2B2B` | `#FAFAFA` | `#FF6F61` |
 | **minimal** | `#171717` | `#0a0a0a` | `#404040` | `#FAFAFA` | `#737373` | `#171717` | `#0a0a0a` | `#FAFAFA` | `#171717` |
+| **ocean** | `#0077b6` | `#0d1b2a` | `#48cae4` | `#f0f7ff` | `#4a6a8a` | `#0d1b2a` | `#0d1b2a` | `#f0f7ff` | `#0077b6` |
+| **forest** | `#2d6a4f` | `#1b1b1b` | `#52b788` | `#f9faf8` | `#6b7280` | `#1b1b1b` | `#1b1b1b` | `#f9faf8` | `#2d6a4f` |
+| **dark** | `#6366f1` | `#0f0f0f` | `#818cf8` | `#111111` | `#a1a1aa` | `#f4f4f5` | `#0a0a0a` | `#f4f4f5` | `#6366f1` |
+
+> **Opmerking:** De `beauty` scheme heeft in de TemplateSeeder afwijkende waarden (`primary_color: #B5908A`, `accent_color: #E8D8D3`). De TemplateFormSchema is leidend voor het admin-formulier.
 
 ### Color Role Definities
 
@@ -155,7 +160,7 @@ Elke laag overschrijft de vorige via `array_merge()`.
 
 ### Beschikbare Section Types
 
-`hero`, `about`, `services`, `testimonials`, `contact`, `footer`, `gallery`, `pricing`, `slider`, `accordion`, `faq`, `content`, `jumbotron`, `portfolio`
+`hero`, `about`, `services`, `testimonials`, `contact`, `footer`, `gallery`, `pricing`, `slider`, `accordion`, `faq`, `content`, `jumbotron`, `portfolio`, `features`, `parallax`, `team`, `cta`
 
 ### Blade View Props (standaard voor elke sectie)
 
@@ -211,14 +216,14 @@ $isTransparent = $theme['navbar_transparent']   ?? false;
 
 | Template | Categorie | Color Scheme | Font Family | Heading Font |
 |---|---|---|---|---|
-| **wave** | kapsalons | `modern` | Poppins | Playfair Display |
+| **wave** | kapsalons | `ocean` | Poppins | Playfair Display |
 | **icon** | kapsalons | `vintage` | Montserrat | Cormorant Garamond |
 | **nova** | kapsalons | `trendy` | Inter | Outfit |
 | **pure** | kapsalons | `minimal` | DM Sans | DM Serif Display |
 | **studio** | kapsalons | `rose` | Nunito | Abril Fatface |
 | **barbero** | barbershops | `luxury` | Roboto | Oswald |
 | **razor** | barbershops | `vintage` | Barlow | Bebas Neue |
-| **projecto** | barbershops | `minimal` | Inter | Inter |
+| **shadow** | barbershops | `minimal` | Inter | Inter |
 | **blossom** | schoonheidssalons | `beauty` | Lato | Playfair Display |
 | **essence** | schoonheidssalons | `luxury` | Source Sans 3 | Cormorant |
 
@@ -230,22 +235,36 @@ $isTransparent = $theme['navbar_transparent']   ?? false;
 | `barbershops` | Barbershops | heroicon-o-scissors |
 | `schoonheidssalons` | Schoonheidssalons | heroicon-o-sparkles |
 
-### Standaard Secties per Template (5 stuks, order 1-5)
+### Standaard Secties per Template (15 stuks, order 1-15)
 
-1. `hero` — Titel, subtitel, CTA button
-2. `about` — Titel, subtitel, beschrijving, items (optioneel)
-3. `services` — Titel, subtitel, diensten items (optioneel)
-4. `testimonials` — Titel, subtitel, reviews items (optioneel)
-5. `contact` — Titel, subtitel
+| Order | Section Type | Inhoud |
+|---|---|---|
+| 1 | `hero` | Titel, subtitel, CTA button + URL |
+| 2 | `slider` | Titel, subtitel |
+| 3 | `about` | Titel, subtitel, beschrijving |
+| 4 | `features` | Titel, subtitel |
+| 5 | `jumbotron` | Titel, subtitel |
+| 6 | `services` | Titel, subtitel |
+| 7 | `gallery` | Titel, subtitel |
+| 8 | `pricing` | Titel, subtitel |
+| 9 | `parallax` | Titel, subtitel |
+| 10 | `team` | Titel, subtitel |
+| 11 | `accordion` | Titel, subtitel |
+| 12 | `cta` | Titel, subtitel, CTA button + URL |
+| 13 | `testimonials` | Titel, subtitel |
+| 14 | `contact` | Titel, subtitel |
+| 15 | `footer` | Titel, subtitel |
+
+Section defaults (titles/descriptions) zijn per categorie geconfigureerd in `TemplateSeeder::sectionDefaults()`.
 
 ### Standaard Navigatie (alle templates)
 
 ```php
-['label' => 'Home',       'target' => '#hero',         'is_active' => true],
-['label' => 'Over Ons',   'target' => '#about',        'is_active' => true],
-['label' => 'Diensten',   'target' => '#services',     'is_active' => true],
-['label' => 'Reviews',    'target' => '#testimonials',  'is_active' => true],
-['label' => 'Contact',    'target' => '#contact',      'is_active' => true],
+['label' => 'Home',       'target' => '#hero',         'icon' => null, 'is_active' => true],
+['label' => 'Over Ons',   'target' => '#about',        'icon' => null, 'is_active' => true],
+['label' => 'Diensten',   'target' => '#services',     'icon' => null, 'is_active' => true],
+['label' => 'Reviews',    'target' => '#testimonials', 'icon' => null, 'is_active' => true],
+['label' => 'Contact',    'target' => '#contact',      'icon' => null, 'is_active' => true],
 ```
 
 ---

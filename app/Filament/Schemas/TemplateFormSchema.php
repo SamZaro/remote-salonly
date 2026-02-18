@@ -243,15 +243,15 @@ class TemplateFormSchema
             'vintage' => [
                 'label' => __('Vintage'),
                 'colors' => [
-                    'primary_color' => '#c9a227',     // Gold - accents
-                    'secondary_color' => '#1a1a1a',  // Black - dark sections
-                    'accent_color' => '#d4af37',     // Light gold - hover
-                    'background_color' => '#ffffff', // White - light sections
-                    'text_color' => '#555555',       // Grey - body text
-                    'heading_color' => '#1a1a1a',   // Black - headings
-                    'navbar_background' => '#1a1a1a',
-                    'navbar_text_color' => '#c9a227',
-                    'navbar_underline_color' => '#c9a227',
+                    'primary_color' => '#8B4513',     // Saddle brown - accents
+                    'secondary_color' => '#3E2723',  // Dark brown - dark sections
+                    'accent_color' => '#D2691E',     // Chocolate - hover
+                    'background_color' => '#FDF5E6', // Old lace - light sections
+                    'text_color' => '#6D4C41',       // Brown grey - body text
+                    'heading_color' => '#3E2723',   // Dark brown - headings
+                    'navbar_background' => '#3E2723',
+                    'navbar_text_color' => '#FDF5E6',
+                    'navbar_underline_color' => '#8B4513',
                 ],
             ],
             'modern' => [
@@ -302,11 +302,11 @@ class TemplateFormSchema
                     'primary_color' => '#e11d48',    // Rose - accents
                     'secondary_color' => '#1f1f1f', // Neutral dark - dark sections
                     'accent_color' => '#fb7185',    // Light rose - hover
-                    'background_color' => '#fff1f2', // Rose light - light sections
+                    'background_color' => '#fafafa', // Near white - light sections
                     'text_color' => '#737373',      // Neutral grey - body text
                     'heading_color' => '#171717',   // Neutral dark - headings
                     'navbar_background' => '#1f1f1f',
-                    'navbar_text_color' => '#fff1f2',
+                    'navbar_text_color' => '#fafafa',
                     'navbar_underline_color' => '#e11d48',
                 ],
             ],
@@ -364,6 +364,34 @@ class TemplateFormSchema
                     'navbar_background' => '#0d1b2a',
                     'navbar_text_color' => '#f0f7ff',
                     'navbar_underline_color' => '#0077b6',
+                ],
+            ],
+            'forest' => [
+                'label' => __('Forest'),
+                'colors' => [
+                    'primary_color' => '#2d6a4f',      // Forest green - accents
+                    'secondary_color' => '#1b1b1b',    // Near black - dark sections
+                    'accent_color' => '#52b788',       // Light green - hover
+                    'background_color' => '#f9faf8',   // Off white - light sections
+                    'text_color' => '#6b7280',         // Cool grey - body text
+                    'heading_color' => '#1b1b1b',      // Near black - headings
+                    'navbar_background' => '#1b1b1b',
+                    'navbar_text_color' => '#f9faf8',
+                    'navbar_underline_color' => '#2d6a4f',
+                ],
+            ],
+            'dark' => [
+                'label' => __('Dark'),
+                'colors' => [
+                    'primary_color' => '#6366f1',      // Indigo - accents
+                    'secondary_color' => '#0f0f0f',    // Near black - dark sections
+                    'accent_color' => '#818cf8',       // Light indigo - hover
+                    'background_color' => '#111111',   // Dark background
+                    'text_color' => '#a1a1aa',         // Zinc grey - body text
+                    'heading_color' => '#f4f4f5',      // Zinc light - headings
+                    'navbar_background' => '#0a0a0a',
+                    'navbar_text_color' => '#f4f4f5',
+                    'navbar_underline_color' => '#6366f1',
                 ],
             ],
         ];
@@ -513,6 +541,8 @@ class TemplateFormSchema
                                 'peach' => 'danger',
                                 'minimal' => 'gray',
                                 'ocean' => 'info',
+                                'forest' => 'success',
+                                'dark' => 'gray',
                             ])
                             ->columnSpanFull(),
                     ]),

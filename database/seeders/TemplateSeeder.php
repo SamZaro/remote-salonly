@@ -59,14 +59,14 @@ class TemplateSeeder extends Seeder
         return [
             // Kapsalons
             ['slug' => 'wave',     'category' => 'kapsalons',         'name' => 'Wave',     'description' => 'Moderne en stijlvolle template voor kapsalons.',          'scheme' => 'ocean',  'font' => 'Poppins',       'heading_font' => 'Playfair Display, serif',   'hero_title' => 'Welkom bij onze salon',              'hero_subtitle' => 'Waar stijl en vakmanschap samenkomen'],
-            ['slug' => 'icon',     'category' => 'kapsalons',         'name' => 'Icon',     'description' => 'Iconische en opvallende template voor kapsalons.',         'scheme' => 'vintage', 'font' => 'Montserrat',    'heading_font' => 'Cormorant Garamond, serif', 'hero_title' => 'Jouw stijl, ons vakmanschap',        'hero_subtitle' => 'Ontdek de iconische look die bij jou past'],
+            ['slug' => 'icon',     'category' => 'kapsalons',         'name' => 'Icon',     'description' => 'Iconische en opvallende template voor kapsalons.',         'scheme' => 'modern', 'font' => 'Montserrat',    'heading_font' => 'Cormorant Garamond, serif', 'hero_title' => 'Jouw stijl, ons vakmanschap',        'hero_subtitle' => 'Ontdek de iconische look die bij jou past'],
             ['slug' => 'nova',     'category' => 'kapsalons',         'name' => 'Nova',     'description' => 'Frisse en moderne template voor kapsalons.',               'scheme' => 'trendy',  'font' => 'Inter',         'heading_font' => 'Outfit, sans-serif',        'hero_title' => 'Een frisse look begint hier',        'hero_subtitle' => 'Moderne technieken voor een stralend resultaat'],
             ['slug' => 'pure',     'category' => 'kapsalons',         'name' => 'Pure',     'description' => 'Minimalistisch en elegant design voor kapsalons.',          'scheme' => 'minimal', 'font' => 'DM Sans',       'heading_font' => 'DM Serif Display, serif',   'hero_title' => 'Puur vakmanschap',                   'hero_subtitle' => 'Eenvoud en elegantie in elk detail'],
             ['slug' => 'studio',   'category' => 'kapsalons',         'name' => 'Studio',   'description' => 'Creatieve en trendy template voor kapsalons.',             'scheme' => 'rose',    'font' => 'Nunito',        'heading_font' => 'Abril Fatface, serif',      'hero_title' => 'Welkom in onze studio',              'hero_subtitle' => 'Creatief, trendy en altijd op maat'],
 
             // Barbershops
             ['slug' => 'barbero',  'category' => 'barbershops',       'name' => 'Barbero',  'description' => 'Stoere en mannelijke template voor barbershops.',           'scheme' => 'luxury',  'font' => 'Roboto',        'heading_font' => 'Oswald, sans-serif',        'hero_title' => 'De Beste Barbershop',                'hero_subtitle' => 'Traditioneel vakmanschap met een moderne twist'],
-            ['slug' => 'razor',    'category' => 'barbershops',       'name' => 'Razor',    'description' => 'Scherpe en krachtige template voor barbershops.',           'scheme' => 'vintage', 'font' => 'Barlow',        'heading_font' => 'Bebas Neue, sans-serif',    'hero_title' => 'Scherp in stijl',                    'hero_subtitle' => 'Precisie en kracht in elke knipbeurt'],
+            ['slug' => 'razor',    'category' => 'barbershops',       'name' => 'Razor',    'description' => 'Scherpe en krachtige template voor barbershops.',           'scheme' => 'forest', 'font' => 'Barlow',        'heading_font' => 'Bebas Neue, sans-serif',    'hero_title' => 'Scherp in stijl',                    'hero_subtitle' => 'Precisie en kracht in elke knipbeurt'],
             ['slug' => 'shadow',   'category' => 'barbershops',       'name' => 'Shadow',    'description' => 'Professionele en strakke template voor barbershops.',       'scheme' => 'minimal', 'font' => 'Inter',         'heading_font' => 'Inter, sans-serif',         'hero_title' => 'Jouw barbershop ervaring',           'hero_subtitle' => 'Waar traditie en moderne stijl samenkomen'],
 
             // Schoonheidssalons
@@ -91,6 +91,11 @@ class TemplateSeeder extends Seeder
                 'parallax'     => ['title' => 'Ervaar Onze Salon',  'subtitle' => 'Sfeerimpressie'],
                 'accordion'    => ['title' => 'Veelgestelde Vragen','subtitle' => 'FAQ'],
                 'cta'          => ['title' => 'Klaar voor een nieuwe look?', 'subtitle' => 'Maak vandaag nog een afspraak', 'cta_text' => 'Maak een afspraak', 'cta_url' => '#contact'],
+                'team'         => ['title' => 'Ons Team',           'subtitle' => 'Maak kennis met onze stylisten', 'members' => [
+                    ['name' => 'Sophie de Vries',   'role' => 'Hoofdstylist',      'bio' => 'Met meer dan 10 jaar ervaring creëert Sophie de perfecte look voor elke klant.'],
+                    ['name' => 'Liam Bakker',       'role' => 'Colorist',          'bio' => 'Gespecialiseerd in balayage en kleuradvies op maat.'],
+                    ['name' => 'Emma Jansen',       'role' => 'Stylist',           'bio' => 'Creatief met de schaar en altijd op de hoogte van de nieuwste trends.'],
+                ]],
                 'testimonials' => ['title' => 'Wat Klanten Zeggen', 'subtitle' => 'Reviews'],
                 'contact'      => ['title' => 'Contact',            'subtitle' => 'Neem contact op'],
                 'footer'       => ['title' => 'Jouw Salon Naam',    'subtitle' => 'Stijlvol genieten van het beste'],
@@ -107,6 +112,11 @@ class TemplateSeeder extends Seeder
                 'parallax'     => ['title' => 'Beleef de Sfeer',        'subtitle' => 'Onze barbershop'],
                 'accordion'    => ['title' => 'Veelgestelde Vragen',    'subtitle' => 'FAQ'],
                 'cta'          => ['title' => 'Tijd voor een nieuwe look?', 'subtitle' => 'Reserveer nu jouw plek', 'cta_text' => 'Reserveer Nu', 'cta_url' => '#contact'],
+                'team'         => ['title' => 'Ons Team',                'subtitle' => 'De mannen achter de schaar', 'members' => [
+                    ['name' => 'Daan van Dijk',     'role' => 'Head Barber',       'bio' => 'Meester in klassieke en moderne kapsels met oog voor detail.'],
+                    ['name' => 'Jayden Smit',       'role' => 'Barber',            'bio' => 'Gespecialiseerd in fades en beard trims met een persoonlijke touch.'],
+                    ['name' => 'Noah de Groot',     'role' => 'Junior Barber',     'bio' => 'Jong talent met een passie voor het vak en frisse ideeën.'],
+                ]],
                 'testimonials' => ['title' => 'Tevreden Klanten',       'subtitle' => 'Ervaringen'],
                 'contact'      => ['title' => 'Bezoek Ons',             'subtitle' => 'Locatie & Contact'],
                 'footer'       => ['title' => 'Jouw Barbershop Naam',   'subtitle' => 'Traditioneel vakmanschap, moderne stijl'],
@@ -123,6 +133,11 @@ class TemplateSeeder extends Seeder
                 'parallax'     => ['title' => 'Ontdek Onze Wereld',     'subtitle' => 'Sfeerimpressie'],
                 'accordion'    => ['title' => 'Veelgestelde Vragen',    'subtitle' => 'FAQ'],
                 'cta'          => ['title' => 'Klaar om te stralen?',   'subtitle' => 'Boek vandaag nog een behandeling', 'cta_text' => 'Boek een behandeling', 'cta_url' => '#contact'],
+                'team'         => ['title' => 'Ons Team',               'subtitle' => 'Maak kennis met onze specialisten', 'members' => [
+                    ['name' => 'Lisa Vermeer',      'role' => 'Schoonheidsspecialist', 'bio' => 'Expert in gezichtsbehandelingen en huidverzorging met een holistische aanpak.'],
+                    ['name' => 'Noa van den Berg',  'role' => 'Nagelstyliste',         'bio' => 'Creatief in nail art en gespecialiseerd in gel en acryl technieken.'],
+                    ['name' => 'Fleur Mulder',      'role' => 'Massagetherapeut',      'bio' => 'Brengt lichaam en geest in balans met ontspannende en therapeutische massages.'],
+                ]],
                 'testimonials' => ['title' => 'Wat Klanten Zeggen',     'subtitle' => 'Ervaringen'],
                 'contact'      => ['title' => 'Contact',                'subtitle' => 'Neem contact op'],
                 'footer'       => ['title' => 'Jouw Salon Naam',        'subtitle' => 'Schoonheid en zelfzorg op zijn best'],
@@ -135,15 +150,17 @@ class TemplateSeeder extends Seeder
     {
         return [
             'luxury'  => ['primary_color' => '#C8B88A', 'secondary_color' => '#0F0F0F', 'accent_color' => '#D4C4A0', 'background_color' => '#F5F3EF', 'text_color' => '#6B6B6B', 'heading_color' => '#0F0F0F', 'navbar_background' => '#0F0F0F', 'navbar_text_color' => '#f0eeeb', 'navbar_underline_color' => '#C8B88A'],
-            'vintage' => ['primary_color' => '#c9a227', 'secondary_color' => '#1a1a1a', 'accent_color' => '#d4af37', 'background_color' => '#ffffff', 'text_color' => '#555555', 'heading_color' => '#1a1a1a', 'navbar_background' => '#1a1a1a', 'navbar_text_color' => '#f1f0ec', 'navbar_underline_color' => '#c9a227'],
+            'vintage' => ['primary_color' => '#8B4513', 'secondary_color' => '#3E2723', 'accent_color' => '#D2691E', 'background_color' => '#FDF5E6', 'text_color' => '#6D4C41', 'heading_color' => '#3E2723', 'navbar_background' => '#3E2723', 'navbar_text_color' => '#FDF5E6', 'navbar_underline_color' => '#8B4513'],
             'modern'  => ['primary_color' => '#2563eb', 'secondary_color' => '#1e293b', 'accent_color' => '#3b82f6', 'background_color' => '#f8fafc', 'text_color' => '#64748b', 'heading_color' => '#0f172a', 'navbar_background' => '#1e293b', 'navbar_text_color' => '#f8fafc', 'navbar_underline_color' => '#2563eb'],
             'trendy'  => ['primary_color' => '#8b5cf6', 'secondary_color' => '#18181b', 'accent_color' => '#a78bfa', 'background_color' => '#fafafa', 'text_color' => '#71717a', 'heading_color' => '#18181b', 'navbar_background' => '#18181b', 'navbar_text_color' => '#fafafa', 'navbar_underline_color' => '#8b5cf6'],
-            'rose'    => ['primary_color' => '#e11d48', 'secondary_color' => '#1f1f1f', 'accent_color' => '#fb7185', 'background_color' => '#fff1f2', 'text_color' => '#737373', 'heading_color' => '#171717', 'navbar_background' => '#1f1f1f', 'navbar_text_color' => '#fff1f2', 'navbar_underline_color' => '#e11d48'],
-            'beauty'  => ['primary_color' => '#E8D8D3', 'secondary_color' => '#6E5F5B', 'accent_color' => '#F2E7E4', 'background_color' => '#FBF9F8', 'text_color' => '#8A7B76', 'heading_color' => '#6E5F5B', 'navbar_background' => '#6E5F5B', 'navbar_text_color' => '#FBF9F8', 'navbar_underline_color' => '#E8D8D3'],
+            'rose'    => ['primary_color' => '#e11d48', 'secondary_color' => '#1f1f1f', 'accent_color' => '#fb7185', 'background_color' => '#fafafa', 'text_color' => '#737373', 'heading_color' => '#171717', 'navbar_background' => '#1f1f1f', 'navbar_text_color' => '#fafafa', 'navbar_underline_color' => '#e11d48'],
+            'beauty'  => ['primary_color' => '#B5908A', 'secondary_color' => '#6E5F5B', 'accent_color' => '#E8D8D3', 'background_color' => '#FBF9F8', 'text_color' => '#8A7B76', 'heading_color' => '#6E5F5B', 'navbar_background' => '#6E5F5B', 'navbar_text_color' => '#FBF9F8', 'navbar_underline_color' => '#B5908A'],
             'peach'   => ['primary_color' => '#FF6F61', 'secondary_color' => '#2B2B2B', 'accent_color' => '#FFD6C9', 'background_color' => '#FAFAFA', 'text_color' => '#6B6B6B', 'heading_color' => '#2B2B2B', 'navbar_background' => '#2B2B2B', 'navbar_text_color' => '#FAFAFA', 'navbar_underline_color' => '#FF6F61'],
             'minimal' => ['primary_color' => '#171717', 'secondary_color' => '#0a0a0a', 'accent_color' => '#404040', 'background_color' => '#FAFAFA', 'text_color' => '#737373', 'heading_color' => '#171717', 'navbar_background' => '#0a0a0a', 'navbar_text_color' => '#FAFAFA', 'navbar_underline_color' => '#171717'],
-            'natural' => ['primary_color' => '#14b8a6', 'secondary_color' => '#1c1917', 'accent_color' => '#99f6e4', 'background_color' => '#44403c', 'text_color' => '#78716c', 'heading_color' => '#1c1917', 'navbar_background' => '#1c1917', 'navbar_text_color' => '#fafaf9', 'navbar_underline_color' => '#14b8a6'],
+            'natural' => ['primary_color' => '#14b8a6', 'secondary_color' => '#1c1917', 'accent_color' => '#99f6e4', 'background_color' => '#f5f0eb', 'text_color' => '#57534e', 'heading_color' => '#1c1917', 'navbar_background' => '#1c1917', 'navbar_text_color' => '#fafaf9', 'navbar_underline_color' => '#14b8a6'],
             'ocean'   => ['primary_color' => '#0077b6', 'secondary_color' => '#0d1b2a', 'accent_color' => '#48cae4', 'background_color' => '#f0f7ff', 'text_color' => '#4a6a8a', 'heading_color' => '#0d1b2a', 'navbar_background' => '#0d1b2a', 'navbar_text_color' => '#f0f7ff', 'navbar_underline_color' => '#0077b6'],
+            'forest'  => ['primary_color' => '#2d6a4f', 'secondary_color' => '#1b1b1b', 'accent_color' => '#52b788', 'background_color' => '#f9faf8', 'text_color' => '#6b7280', 'heading_color' => '#1b1b1b', 'navbar_background' => '#1b1b1b', 'navbar_text_color' => '#f9faf8', 'navbar_underline_color' => '#2d6a4f'],
+            'dark'    => ['primary_color' => '#6366f1', 'secondary_color' => '#0f0f0f', 'accent_color' => '#818cf8', 'background_color' => '#111111', 'text_color' => '#a1a1aa', 'heading_color' => '#f4f4f5', 'navbar_background' => '#0a0a0a', 'navbar_text_color' => '#f4f4f5', 'navbar_underline_color' => '#6366f1'],
         ];
     }
 
@@ -162,11 +179,12 @@ class TemplateSeeder extends Seeder
             ['section_type' => 'gallery',      'order' => 7, 'content' => $defaults['gallery']],
             ['section_type' => 'pricing',      'order' => 8, 'content' => $defaults['pricing']],
             ['section_type' => 'parallax',     'order' => 9, 'content' => $defaults['parallax']],
-            ['section_type' => 'accordion',    'order' => 10, 'content' => $defaults['accordion']],
-            ['section_type' => 'cta',          'order' => 11, 'content' => $defaults['cta']],
-            ['section_type' => 'testimonials', 'order' => 12, 'content' => $defaults['testimonials']],
-            ['section_type' => 'contact',      'order' => 13, 'content' => $defaults['contact']],
-            ['section_type' => 'footer',      'order' => 14, 'content' => $defaults['footer']],
+            ['section_type' => 'team',         'order' => 10, 'content' => $defaults['team']],
+            ['section_type' => 'accordion',    'order' => 11, 'content' => $defaults['accordion']],
+            ['section_type' => 'cta',          'order' => 12, 'content' => $defaults['cta']],
+            ['section_type' => 'testimonials', 'order' => 13, 'content' => $defaults['testimonials']],
+            ['section_type' => 'contact',      'order' => 14, 'content' => $defaults['contact']],
+            ['section_type' => 'footer',       'order' => 15, 'content' => $defaults['footer']],
         ];
 
 
