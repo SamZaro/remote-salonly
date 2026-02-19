@@ -36,11 +36,6 @@
     {{-- Gradient Overlay --}}
     <div class="absolute inset-0" style="background: linear-gradient(135deg, {{ $primaryColor }}e6 0%, {{ $secondaryColor }}cc 100%);"></div>
 
-    {{-- Floating petals decorations --}}
-    <div class="absolute top-20 left-[15%] w-4 h-4 rounded-full opacity-30 animate-bounce" style="background: white; animation-delay: 0s; animation-duration: 3s;"></div>
-    <div class="absolute top-32 right-[20%] w-3 h-3 rounded-full opacity-20 animate-bounce" style="background: white; animation-delay: 0.5s; animation-duration: 4s;"></div>
-    <div class="absolute bottom-24 left-[25%] w-2 h-2 rounded-full opacity-25 animate-bounce" style="background: white; animation-delay: 1s; animation-duration: 3.5s;"></div>
-
     {{-- Content --}}
     <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
         {{-- Badge --}}

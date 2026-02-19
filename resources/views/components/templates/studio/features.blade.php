@@ -60,10 +60,7 @@
     {{-- Background pattern --}}
     <div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(white 2px, transparent 2px); background-size: 40px 40px;"></div>
 
-    {{-- Decorative shapes --}}
-    <div class="absolute top-20 left-20 w-32 h-32 rounded-full" style="background: {{ $primaryColor }}30;"></div>
-    <div class="absolute bottom-20 right-20 w-48 h-48 rotate-45" style="background: {{ $accentColor }}20;"></div>
-    <div class="absolute top-1/2 right-10 w-24 h-24 rounded-full" style="background: {{ $primaryColor }}15;"></div>
+
 
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
         {{-- Header --}}
@@ -111,7 +108,7 @@
                     </h3>
 
                     {{-- Description --}}
-                    <p style="color: {{ $index === 1 || $index === 2 ? $textColor : 'white' }}; opacity: 0.9;">
+                    <p style="color: {{ $index === 1 || $index === 2 ? $headingColor : 'white' }};">
                         {{ $feature['description'] }}
                     </p>
                 </div>

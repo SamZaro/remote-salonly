@@ -31,16 +31,6 @@
     {{-- Geometric patterns --}}
     <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(white 3px, transparent 3px); background-size: 50px 50px;"></div>
 
-    {{-- Floating shapes --}}
-    <div class="absolute top-10 left-10 w-40 h-40 rounded-full" style="background: {{ $accentColor }}30;"></div>
-    <div class="absolute bottom-10 right-10 w-32 h-32 rotate-45" style="background: white; opacity: 0.1;"></div>
-    <div class="absolute top-1/2 left-1/4 w-20 h-20 rounded-full animate-pulse" style="background: white; opacity: 0.1;"></div>
-    <div class="absolute top-20 right-1/4 w-16 h-16 rotate-12" style="background: {{ $secondaryColor }}; opacity: 0.2;"></div>
-
-    {{-- Playful elements --}}
-    <div class="absolute top-16 left-[20%] w-4 h-4 rounded-full animate-bounce" style="background: white; animation-duration: 2s;"></div>
-    <div class="absolute bottom-20 right-[30%] w-6 h-6 rotate-45 animate-pulse" style="background: {{ $accentColor }};"></div>
-
     <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="text-center">
             {{-- Badge --}}

@@ -29,10 +29,6 @@
 @endphp
 
 <section id="accordion" class="py-20 lg:py-28 relative overflow-hidden" style="background-color: {{ $sectionBg }};">
-    {{-- Decorative elements --}}
-    <div class="absolute top-10 right-10 w-48 h-48 rounded-full opacity-20" style="background: {{ $primaryColor }};"></div>
-    <div class="absolute bottom-10 left-10 w-32 h-32 rounded-full opacity-20" style="background: {{ $secondaryColor }};"></div>
-
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {{-- Header --}}
         <div class="text-center mb-16">

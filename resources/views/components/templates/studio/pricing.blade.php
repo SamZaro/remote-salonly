@@ -62,11 +62,6 @@
 @endphp
 
 <section id="pricing" class="py-24 lg:py-32 relative overflow-hidden" style="background-color: {{ $backgroundColor }};">
-    {{-- Background elements --}}
-    <div class="absolute top-0 left-0 w-full h-32" style="background: linear-gradient(to bottom, {{ $accentColor }}30, transparent);"></div>
-    <div class="absolute bottom-40 right-0 w-64 h-64 rounded-full" style="background: {{ $primaryColor }}15;"></div>
-    <div class="absolute top-40 left-10 w-20 h-20 rotate-45" style="background: {{ $accentColor }};"></div>
-
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
         {{-- Header --}}
         <div class="text-center mb-16">

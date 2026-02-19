@@ -32,20 +32,6 @@
     class="relative min-h-screen flex items-center overflow-hidden"
     style="background-color: {{ $backgroundColor }};"
 >
-    {{-- Geometric background shapes --}}
-    <div class="absolute top-0 right-0 w-1/2 h-full" style="background: linear-gradient(135deg, {{ $primaryColor }}15, {{ $accentColor }}30);"></div>
-    <div class="absolute bottom-0 left-0 w-72 h-72 rounded-full -translate-x-1/2 translate-y-1/2" style="background: {{ $accentColor }};"></div>
-    <div class="absolute top-20 right-20 w-40 h-40 rotate-45" style="background: {{ $primaryColor }}20;"></div>
-
-    {{-- Dotted pattern --}}
-    <div class="absolute inset-0 opacity-30" style="background-image: radial-gradient({{ $primaryColor }} 2px, transparent 2px); background-size: 30px 30px;"></div>
-
-    {{-- Playful floating elements --}}
-    <div class="absolute top-32 left-[15%] w-4 h-4 rounded-full animate-pulse" style="background: {{ $primaryColor }};"></div>
-    <div class="absolute top-48 right-[30%] w-6 h-6 rotate-45 animate-bounce" style="background: {{ $accentColor }}; animation-duration: 3s;"></div>
-    <div class="absolute bottom-32 left-[25%] w-3 h-3 rounded-full animate-ping" style="background: {{ $primaryColor }}; animation-duration: 2s;"></div>
-    <div class="absolute top-1/3 right-[20%] w-8 h-2 rounded-full animate-pulse" style="background: {{ $accentColor }};"></div>
-
     <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
         <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {{-- Content --}}
@@ -161,28 +147,7 @@
                     </div>
                 @endif
 
-                {{-- Floating badge --}}
-                <div
-                    class="absolute -bottom-4 -left-4 px-6 py-4 rounded-2xl bg-white hidden lg:block transform -rotate-3"
-                    style="box-shadow: 4px 4px 0 {{ $primaryColor }};"
-                >
-                    <div class="flex items-center gap-3">
-                        <div
-                            class="w-12 h-12 rounded-xl flex items-center justify-center"
-                            style="background: {{ $primaryColor }};"
-                        >
-                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <p class="font-bold" style="color: {{ $headingColor }};">Walk-ins Welcome!</p>
-                            <p class="text-sm" style="color: {{ $textColor }};">Of boek online</p>
-                        </div>
-                    </div>
-                </div>
-
-                {{-- Social icons floating --}}
+{{-- Social icons floating --}}
                 <div class="absolute -top-4 -right-4 hidden lg:flex flex-col gap-3">
                     @foreach(['instagram', 'tiktok'] as $social)
                         <div
@@ -205,13 +170,4 @@
         </div>
     </div>
 
-    {{-- Scroll indicator --}}
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
-        <div
-            class="w-10 h-14 rounded-full border-3 flex items-start justify-center p-2"
-            style="border-color: {{ $secondaryColor }};"
-        >
-            <div class="w-2 h-3 rounded-full animate-bounce" style="background: {{ $primaryColor }};"></div>
-        </div>
-    </div>
 </section>

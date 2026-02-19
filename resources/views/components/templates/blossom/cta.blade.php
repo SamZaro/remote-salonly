@@ -44,16 +44,6 @@
         </div>
     @endif
 
-    {{-- Decorative elements --}}
-    <div class="absolute top-0 left-0 w-72 h-72 rounded-full bg-white/10 -translate-x-1/2 -translate-y-1/2"></div>
-    <div class="absolute bottom-0 right-0 w-96 h-96 rounded-full bg-white/10 translate-x-1/2 translate-y-1/2"></div>
-    <div class="absolute top-1/4 right-1/4 w-32 h-32 rounded-full bg-white/5"></div>
-
-    {{-- Floating petals --}}
-    <div class="absolute top-20 left-[20%] w-3 h-3 rounded-full bg-white/20 animate-bounce" style="animation-duration: 3s;"></div>
-    <div class="absolute bottom-32 right-[25%] w-4 h-4 rounded-full bg-white/15 animate-bounce" style="animation-delay: 0.5s; animation-duration: 4s;"></div>
-    <div class="absolute top-1/2 left-[10%] w-2 h-2 rounded-full bg-white/25 animate-bounce" style="animation-delay: 1s; animation-duration: 3.5s;"></div>
-
     {{-- Content --}}
     <div class="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
         {{-- Decorative icon --}}

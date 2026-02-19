@@ -40,9 +40,7 @@
     {{-- Background pattern --}}
     <div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(white 2px, transparent 2px); background-size: 40px 40px;"></div>
 
-    {{-- Decorative shapes --}}
-    <div class="absolute top-10 left-10 w-32 h-32 rounded-full" style="background: {{ $primaryColor }}20;"></div>
-    <div class="absolute bottom-10 right-10 w-24 h-24 rotate-45" style="background: {{ $accentColor }}20;"></div>
+
 
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="grid gap-12 lg:grid-cols-4">

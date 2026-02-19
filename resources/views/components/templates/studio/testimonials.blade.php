@@ -46,9 +46,7 @@
 @endphp
 
 <section id="testimonials" class="py-24 lg:py-32 relative overflow-hidden" style="background: linear-gradient(135deg, {{ $accentColor }}50, {{ $backgroundColor }});">
-    {{-- Decorative elements --}}
-    <div class="absolute top-10 right-10 w-32 h-32 rounded-full" style="background: {{ $primaryColor }}20;"></div>
-    <div class="absolute bottom-10 left-10 w-24 h-24 rotate-45" style="background: {{ $primaryColor }}30;"></div>
+
 
     {{-- Quote marks background --}}
     <div class="absolute top-20 left-1/4 text-[200px] font-serif leading-none opacity-5" style="color: {{ $primaryColor }};">"</div>

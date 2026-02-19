@@ -111,10 +111,6 @@
                         class="p-8 text-center text-white relative overflow-hidden"
                         style="background: linear-gradient(135deg, {{ $gradient['from'] }}, {{ $gradient['to'] }});"
                     >
-                        {{-- Decorative circles --}}
-                        <div class="absolute top-0 right-0 w-32 h-32 rounded-full bg-white/10 -translate-y-1/2 translate-x-1/2"></div>
-                        <div class="absolute bottom-0 left-0 w-24 h-24 rounded-full bg-white/10 translate-y-1/2 -translate-x-1/2"></div>
-
                         <div class="relative">
                             <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-white/20 flex items-center justify-center">
                                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">

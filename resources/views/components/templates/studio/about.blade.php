@@ -40,10 +40,6 @@
 @endphp
 
 <section id="about" class="py-24 lg:py-32 relative overflow-hidden" style="background-color: {{ $backgroundColor }};">
-    {{-- Background elements --}}
-    <div class="absolute top-0 right-0 w-96 h-96 rounded-full translate-x-1/2 -translate-y-1/2" style="background: {{ $accentColor }}40;"></div>
-    <div class="absolute bottom-0 left-0 w-64 h-64 -translate-x-1/2 translate-y-1/2" style="background: {{ $primaryColor }}20;"></div>
-
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="grid lg:grid-cols-2 gap-16 items-center">
             {{-- Image side --}}

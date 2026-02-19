@@ -36,16 +36,6 @@
     {{-- Vibrant gradient overlay --}}
     <div class="absolute inset-0" style="background: linear-gradient(135deg, {{ $primaryColor }}e6 0%, {{ $secondaryColor }}ee 100%);"></div>
 
-    {{-- Creative geometric shapes --}}
-    <div class="absolute top-10 left-[10%] w-20 h-20 border-4 border-white/20 rounded-full"></div>
-    <div class="absolute bottom-16 right-[15%] w-16 h-16 bg-white/10 rotate-45"></div>
-    <div class="absolute top-1/3 right-[10%] w-8 h-8 bg-white/15 rounded-full"></div>
-    <div class="absolute bottom-1/3 left-[20%] w-12 h-12 border-2 border-white/15 rotate-12"></div>
-
-    {{-- Floating dots --}}
-    <div class="absolute top-20 right-[30%] w-3 h-3 rounded-full animate-bounce" style="background: {{ $accentColor }}; animation-delay: 0s; animation-duration: 2s;"></div>
-    <div class="absolute bottom-24 left-[25%] w-2 h-2 rounded-full animate-bounce" style="background: {{ $accentColor }}; animation-delay: 0.5s; animation-duration: 2.5s;"></div>
-
     {{-- Content --}}
     <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
         {{-- Creative badge --}}

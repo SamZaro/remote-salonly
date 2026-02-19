@@ -39,10 +39,6 @@
 @endphp
 
 <footer id="footer" class="py-20 relative overflow-hidden" style="background-color: {{ $backgroundColor }};">
-    {{-- Decorative elements --}}
-    <div class="absolute top-0 left-0 w-64 h-64 rounded-full opacity-20" style="background: {{ $primaryColor }}; transform: translate(-50%, -50%);"></div>
-    <div class="absolute bottom-0 right-0 w-48 h-48 rounded-full opacity-20" style="background: {{ $secondaryColor }}; transform: translate(50%, 50%);"></div>
-
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {{-- Top section with logo --}}
         <div class="text-center mb-16">

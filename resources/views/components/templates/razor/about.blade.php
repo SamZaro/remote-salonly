@@ -126,10 +126,10 @@
                 </p>
 
                 {{-- Description --}}
-                <p class="text-lg mb-6 leading-relaxed opacity-80" style="color: {{ $textColor }};">
+                <p class="text-lg mb-6 leading-relaxed" style="color: {{ $headingColor }}; opacity: 0.75;">
                     {{ $description }}
                 </p>
-                <p class="text-lg mb-10 leading-relaxed opacity-80" style="color: {{ $textColor }};">
+                <p class="text-lg mb-10 leading-relaxed" style="color: {{ $headingColor }}; opacity: 0.75;">
                     {{ $description2 }}
                 </p>
 
@@ -140,7 +140,7 @@
                             <svg class="w-5 h-5 shrink-0" style="color: {{ $primaryColor }};" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                             </svg>
-                            <span style="color: {{ $textColor }};">{{ $feature }}</span>
+                            <span style="color: {{ $headingColor }};">{{ $feature }}</span>
                         </div>
                     @endforeach
                 </div>

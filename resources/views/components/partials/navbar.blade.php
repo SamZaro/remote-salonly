@@ -78,8 +78,8 @@
                     <div class="hidden md:block">
                         <livewire:booking.booking-trigger
                             style="navbar"
-                            :background-color="$theme['primary_color'] ?? '#3b82f6'"
-                            :text-color="$theme['secondary_color'] ?? '#ffffff'"
+                            :background-color="$theme['navbar_cta_background'] ?? $theme['primary_color'] ?? '#3b82f6'"
+                            :text-color="$theme['navbar_cta_text_color'] ?? $theme['secondary_color'] ?? '#ffffff'"
                         />
                     </div>
                 @endbookingEnabled

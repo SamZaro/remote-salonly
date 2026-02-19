@@ -31,17 +31,6 @@
     class="relative min-h-screen flex items-center overflow-hidden"
     style="background: linear-gradient(135deg, {{ $lightBg }} 0%, #fff 40%, {{ $primaryColor }}08 100%);"
 >
-    {{-- Decoratieve bloemblaadjes/cirkels --}}
-    <div class="absolute top-20 right-16 w-72 h-72 rounded-full opacity-20 blur-3xl" style="background: {{ $primaryColor }};"></div>
-    <div class="absolute bottom-32 left-16 w-96 h-96 rounded-full opacity-15 blur-3xl" style="background: {{ $secondaryColor }};"></div>
-    <div class="absolute top-1/3 right-1/3 w-48 h-48 rounded-full opacity-10 blur-2xl" style="background: {{ $accentColor }};"></div>
-
-    {{-- Floating flower petals --}}
-    <div class="absolute top-24 left-[20%] w-3 h-3 rounded-full animate-bounce opacity-40" style="background: {{ $primaryColor }}; animation-delay: 0s; animation-duration: 3s;"></div>
-    <div class="absolute top-40 right-[25%] w-4 h-4 rounded-full animate-bounce opacity-30" style="background: {{ $secondaryColor }}; animation-delay: 0.5s; animation-duration: 4s;"></div>
-    <div class="absolute bottom-40 left-[30%] w-2 h-2 rounded-full animate-bounce opacity-50" style="background: {{ $primaryColor }}; animation-delay: 1s; animation-duration: 3.5s;"></div>
-    <div class="absolute top-1/2 right-[15%] w-3 h-3 rounded-full animate-bounce opacity-35" style="background: {{ $secondaryColor }}; animation-delay: 1.5s; animation-duration: 4.5s;"></div>
-
     {{-- Subtle floral pattern overlay --}}
     <div class="absolute inset-0 opacity-[0.02]" style="background-image: radial-gradient({{ $primaryColor }} 1px, transparent 1px); background-size: 40px 40px;"></div>
 
@@ -183,12 +172,4 @@
         </div>
     </div>
 
-    {{-- Scroll indicator --}}
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
-        <div class="flex flex-col items-center gap-2">
-            <div class="w-8 h-12 rounded-full border-2 flex items-start justify-center p-2" style="border-color: {{ $primaryColor }}40;">
-                <div class="w-1.5 h-3 rounded-full animate-bounce" style="background: {{ $primaryColor }};"></div>
-            </div>
-        </div>
-    </div>
 </section>

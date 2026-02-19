@@ -34,11 +34,6 @@
         <div class="absolute inset-0" style="background: linear-gradient(135deg, {{ $primaryColor }}, {{ $secondaryColor }});"></div>
     @endif
 
-    {{-- Decorative circles --}}
-    <div class="absolute top-10 left-10 w-64 h-64 rounded-full bg-white/10"></div>
-    <div class="absolute bottom-10 right-10 w-48 h-48 rounded-full bg-white/10"></div>
-    <div class="absolute top-1/2 left-1/4 w-32 h-32 rounded-full bg-white/5"></div>
-
     <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {{-- Decorative icon --}}
         <div class="w-16 h-16 mx-auto mb-8 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-sm">

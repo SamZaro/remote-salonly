@@ -30,9 +30,7 @@
 @endphp
 
 <section id="gallery" class="py-24 lg:py-32 relative overflow-hidden" style="background-color: {{ $backgroundColor }};">
-    {{-- Background elements --}}
-    <div class="absolute top-20 right-20 w-40 h-40 rounded-full" style="background: {{ $accentColor }}50;"></div>
-    <div class="absolute bottom-20 left-20 w-32 h-32 rotate-45" style="background: {{ $primaryColor }}30;"></div>
+
 
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
         {{-- Header --}}
