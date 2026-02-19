@@ -114,32 +114,16 @@
                 </div>
             </div>
 
-            {{-- Opening hours & Map --}}
-            <div class="lg:col-span-2 space-y-8">
-                {{-- Opening hours --}}
-                <div class="bg-white p-8 lg:p-10" style="box-shadow: 0 2px 20px {{ $secondaryColor }}05;">
-                    <h4 class="text-sm font-medium uppercase tracking-wider mb-6" style="color: {{ $secondaryColor }};">Openingstijden</h4>
-                    <div class="space-y-4">
-                        @foreach($openingHours as $time)
-                            <div class="flex items-center justify-between py-3 border-b" style="border-color: {{ $primaryColor }}40;">
-                                <span class="text-sm" style="color: {{ $textColor }};">{{ $time['day'] }}</span>
-                                <span class="text-sm font-medium" style="color: {{ $secondaryColor }};">{{ $time['hours'] }}</span>
-                            </div>
-                        @endforeach
-                    </div>
-                </div>
-
-                {{-- Map placeholder --}}
-                <div
-                    class="relative h-64 lg:h-80 flex items-center justify-center"
-                    style="background-color: {{ $accentColor }}50;"
-                >
-                    <div class="text-center">
-                        <svg class="w-12 h-12 mx-auto mb-3" style="color: {{ $secondaryColor }}30;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>
-                        </svg>
-                        <span class="text-sm" style="color: {{ $secondaryColor }}50;">Kaart integratie</span>
-                    </div>
+            {{-- Opening hours --}}
+            <div class="lg:col-span-2 bg-white p-8 lg:p-10 h-fit" style="box-shadow: 0 2px 20px {{ $secondaryColor }}05;">
+                <h4 class="text-sm font-medium uppercase tracking-wider mb-6" style="color: {{ $secondaryColor }};">Openingstijden</h4>
+                <div class="space-y-4">
+                    @foreach($openingHours as $time)
+                        <div class="flex items-center justify-between py-3 border-b" style="border-color: {{ $primaryColor }}40;">
+                            <span class="text-sm" style="color: {{ $textColor }};">{{ $time['day'] }}</span>
+                            <span class="text-sm font-medium" style="color: {{ $secondaryColor }};">{{ $time['hours'] }}</span>
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </div>

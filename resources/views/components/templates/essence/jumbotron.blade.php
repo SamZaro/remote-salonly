@@ -41,10 +41,6 @@
         <div class="absolute inset-0" style="background: linear-gradient(135deg, {{ $accentColor }} 0%, {{ $primaryColor }}60 100%);"></div>
     @endif
 
-    {{-- Decoratieve elementen --}}
-    <div class="absolute top-1/4 left-16 w-32 h-32 border opacity-20 hidden lg:block" style="border-color: {{ $secondaryColor }};"></div>
-    <div class="absolute bottom-1/4 right-16 w-48 h-48 border opacity-10 hidden lg:block" style="border-color: {{ $secondaryColor }};"></div>
-
     <div class="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
         {{-- Decoratieve lijn --}}
         <div class="flex items-center justify-center gap-6 mb-10">

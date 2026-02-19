@@ -175,14 +175,4 @@
             </div>
         </div>
     </div>
-
-    {{-- Scroll indicator --}}
-    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-10">
-        <div class="flex flex-col items-center gap-3">
-            <span class="text-xs uppercase tracking-widest" style="color: {{ $secondaryColor }}50;">Scroll</span>
-            <div class="w-px h-10 relative overflow-hidden" style="background-color: {{ $secondaryColor }}20;">
-                <div class="absolute top-0 left-0 w-full h-4 animate-bounce" style="background: linear-gradient(180deg, {{ $secondaryColor }}, transparent);"></div>
-            </div>
-        </div>
-    </div>
 </section>
