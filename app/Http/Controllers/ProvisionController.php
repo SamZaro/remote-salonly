@@ -9,8 +9,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Validation\ValidationException;
-use Spatie\Permission\Models\Permission;
-use Spatie\Permission\Models\Role;
 
 class ProvisionController extends Controller
 {
@@ -177,20 +175,6 @@ class ProvisionController extends Controller
             $bookingSettings = app(BookingSettings::class);
             $bookingSettings->is_active = ($modules['booking_widget'] ?? 'false') === 'true';
             $bookingSettings->save();
-
-            // Ensure booking permissions exist and sync for customer role
-            $bookingPermissions = ['booking.view', 'booking.manage'];
-            foreach ($bookingPermissions as $permission) {
-                Permission::findOrCreate($permission);
-            }
-
-            $customerRole = Role::findOrCreate('customer');
-
-            if ($bookingSettings->is_active) {
-                $customerRole->givePermissionTo($bookingPermissions);
-            } else {
-                $customerRole->revokePermissionTo($bookingPermissions);
-            }
 
             Log::info('Modules synced successfully', [
                 'booking_widget' => $bookingSettings->is_active,
