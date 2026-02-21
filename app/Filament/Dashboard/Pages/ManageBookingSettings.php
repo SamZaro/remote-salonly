@@ -36,7 +36,8 @@ class ManageBookingSettings extends SettingsPage
 
     public static function canAccess(): bool
     {
-        return auth()->user()?->hasPermissionTo('booking.manage') ?? false;
+        return \App\Booking\BookingModuleManager::isEnabled()
+            && (auth()->user()?->hasPermissionTo('booking.manage') ?? false);
     }
 
     public function form(Schema $schema): Schema

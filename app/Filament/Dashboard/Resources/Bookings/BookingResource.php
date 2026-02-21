@@ -45,7 +45,8 @@ class BookingResource extends Resource
 
     public static function canAccess(): bool
     {
-        return auth()->user()?->hasPermissionTo('booking.view') ?? false;
+        return \App\Booking\BookingModuleManager::isEnabled()
+            && (auth()->user()?->hasPermissionTo('booking.view') ?? false);
     }
 
     public static function canCreate(): bool

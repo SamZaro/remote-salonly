@@ -62,8 +62,14 @@ class TemplateSectionResource extends Resource
         $templateSlug = app(SiteSettings::class)->template_slug;
         $template = Template::where('slug', $templateSlug)->first();
 
-        return parent::getEloquentQuery()
+        $query = parent::getEloquentQuery()
             ->where('template_id', $template?->id);
+
+        if (! \App\ContactForm\ContactFormModuleManager::isEnabled()) {
+            $query->where('section_type', '!=', 'contact-form');
+        }
+
+        return $query;
     }
 
     public static function form(Schema $schema): Schema
@@ -90,10 +96,10 @@ class TemplateSectionResource extends Resource
                                 'jumbotron' => __('Jumbotron'),
                                 'contact' => __('Contact'),
                                 'cta' => __('Call to Action'),
-                                //'stats' => __('Statistics'),
+                                // 'stats' => __('Statistics'),
                                 'portfolio' => __('Portfolio'),
-                                //'blog' => __('Blog'),
-                                //'newsletter' => __('Newsletter'),
+                                // 'blog' => __('Blog'),
+                                // 'newsletter' => __('Newsletter'),
                                 'footer' => __('Footer'),
                                 'content' => __('Content'),
                                 'image_text' => __('Image + Text'),

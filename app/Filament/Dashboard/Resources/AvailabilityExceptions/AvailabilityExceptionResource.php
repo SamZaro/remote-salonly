@@ -51,7 +51,8 @@ class AvailabilityExceptionResource extends Resource
 
     public static function canAccess(): bool
     {
-        return auth()->user()?->hasPermissionTo('availability.view') ?? false;
+        return \App\Booking\BookingModuleManager::isEnabled()
+            && (auth()->user()?->hasPermissionTo('availability.view') ?? false);
     }
 
     public static function canCreate(): bool
