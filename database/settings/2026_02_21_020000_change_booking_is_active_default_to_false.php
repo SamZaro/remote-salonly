@@ -6,11 +6,11 @@ return new class extends SettingsMigration
 {
     public function up(): void
     {
-        $this->migrator->add('booking.is_active', false);
+        $this->migrator->update('booking.is_active', fn () => false);
     }
 
     public function down(): void
     {
-        $this->migrator->delete('booking.is_active');
+        $this->migrator->update('booking.is_active', fn () => true);
     }
 };
