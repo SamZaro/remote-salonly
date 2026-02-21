@@ -100,12 +100,46 @@
                 </div>
             </div>
 
-            {{-- Contact Form --}}
-            <div
-                class="p-8 rounded-lg"
-                style="background-color: {{ $theme['secondary_color'] ?? '#f3f4f6' }}15;"
-            >
-                <livewire:contact-form :theme="$theme" />
+            {{-- Opening Hours placeholder --}}
+            <div class="flex flex-col justify-center">
+                <h3
+                    class="text-2xl font-bold mb-6"
+                    style="
+                        font-family: {{ $theme['heading_font_family'] ?? 'inherit' }};
+                        color: {{ $theme['heading_color'] ?? '#111827' }};
+                    "
+                >
+                    Openingstijden
+                </h3>
+                <div class="space-y-3">
+                    @php
+                        $openingHours = $content['opening_hours'] ?? [
+                            ['day' => 'Maandag', 'hours' => 'Gesloten'],
+                            ['day' => 'Dinsdag', 'hours' => '09:00 - 18:00'],
+                            ['day' => 'Woensdag', 'hours' => '09:00 - 18:00'],
+                            ['day' => 'Donderdag', 'hours' => '09:00 - 21:00'],
+                            ['day' => 'Vrijdag', 'hours' => '09:00 - 18:00'],
+                            ['day' => 'Zaterdag', 'hours' => '09:00 - 17:00'],
+                            ['day' => 'Zondag', 'hours' => 'Gesloten'],
+                        ];
+                    @endphp
+                    @foreach($openingHours as $entry)
+                        @php
+                            $day = is_array($entry) ? ($entry['day'] ?? '') : $entry;
+                            $hours = is_array($entry) ? ($entry['hours'] ?? '') : '';
+                            $isClosed = str_contains(strtolower($hours), 'gesloten');
+                        @endphp
+                        <div class="flex justify-between items-center text-sm py-1">
+                            <span style="color: {{ $theme['text_color'] ?? '#1f2937' }};">{{ $day }}</span>
+                            <span
+                                class="{{ $isClosed ? 'opacity-50' : 'font-semibold' }}"
+                                style="color: {{ $isClosed ? ($theme['text_color'] ?? '#1f2937') : ($theme['primary_color'] ?? '#3b82f6') }};"
+                            >
+                                {{ $hours }}
+                            </span>
+                        </div>
+                    @endforeach
+                </div>
             </div>
         </div>
     </div>

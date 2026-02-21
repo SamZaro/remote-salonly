@@ -22,7 +22,8 @@ class DatabaseSeeder extends Seeder
             CategorySeeder::class,
             TemplateSeeder::class,
             BookingPermissionsSeeder::class,
-            BusinessHoursSeeder::class
+            ContactFormPermissionsSeeder::class,
+            BusinessHoursSeeder::class,
         ]);
     }
 }

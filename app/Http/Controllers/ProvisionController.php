@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Services\TemplateService;
 use App\Settings\BookingSettings;
+use App\Settings\ContactFormSettings;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
@@ -176,14 +177,20 @@ class ProvisionController extends Controller
             $bookingSettings->is_active = ($modules['booking_widget'] ?? 'false') === 'true';
             $bookingSettings->save();
 
+            $contactFormSettings = app(ContactFormSettings::class);
+            $contactFormSettings->is_active = ($modules['contact_form'] ?? 'false') === 'true';
+            $contactFormSettings->save();
+
             Log::info('Modules synced successfully', [
                 'booking_widget' => $bookingSettings->is_active,
+                'contact_form' => $contactFormSettings->is_active,
             ]);
 
             return response()->json([
                 'success' => true,
                 'modules' => [
                     'booking_widget' => $bookingSettings->is_active,
+                    'contact_form' => $contactFormSettings->is_active,
                 ],
             ]);
         } catch (\Exception $e) {

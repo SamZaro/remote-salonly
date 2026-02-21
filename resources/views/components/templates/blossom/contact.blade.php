@@ -183,60 +183,25 @@
             </div>
         </div>
 
-        {{-- Map + Contact Form naast elkaar op groot scherm --}}
-        <div class="grid lg:grid-cols-2 gap-8 items-stretch">
-
-            {{-- Map --}}
-            <div>
-                @if($mapEmbed)
-                    <div class="rounded-2xl overflow-hidden h-full min-h-[350px]" style="box-shadow: 0 10px 40px {{ $primaryColor }}10;">
-                        <div class="h-full w-full">{!! $mapEmbed !!}</div>
-                    </div>
-                @else
-                    <div
-                        class="rounded-2xl w-full h-full min-h-[350px] flex items-center justify-center relative overflow-hidden"
-                        style="background: linear-gradient(135deg, {{ $primaryColor }}25, {{ $secondaryColor }}25);"
-                    >
-                        <div class="text-center relative">
-                            <svg class="w-16 h-16 mx-auto mb-4" style="color: {{ $primaryColor }}40;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>
-                            </svg>
-                            <span style="color: {{ $primaryColor }}60;">Google Maps</span>
-                        </div>
-                    </div>
-                @endif
-            </div>
-
-            {{-- Contact Form --}}
-            <div>
+        {{-- Map --}}
+        <div class="mb-8">
+            @if($mapEmbed)
+                <div class="rounded-2xl overflow-hidden min-h-[350px]" style="box-shadow: 0 10px 40px {{ $primaryColor }}10;">
+                    <div class="h-full w-full">{!! $mapEmbed !!}</div>
+                </div>
+            @else
                 <div
-                    class="p-8 lg:p-12 rounded-3xl relative overflow-hidden h-full"
-                    style="background: linear-gradient(135deg, {{ $primaryColor }}08, {{ $secondaryColor }}08); border: 1px solid {{ $primaryColor }}20;"
+                    class="rounded-2xl w-full min-h-[350px] flex items-center justify-center relative overflow-hidden"
+                    style="background: linear-gradient(135deg, {{ $primaryColor }}25, {{ $secondaryColor }}25);"
                 >
-                    <div class="relative">
-                        <div class="text-center mb-8">
-                            <h3
-                                class="text-2xl font-bold mb-3"
-                                style="color: {{ $textColor }}; font-family: 'Playfair Display', Georgia, serif;"
-                            >
-                                {{ __('Stuur ons een bericht') }}
-                            </h3>
-                            <p class="text-sm" style="color: {{ $textColor }}; opacity: 0.7;">
-                                {{ __('Heeft u een vraag? Wij helpen u graag verder.') }}
-                            </p>
-                        </div>
-
-                        <livewire:contact-form :theme="[
-                            'primary_color' => $primaryColor,
-                            'secondary_color' => $secondaryColor,
-                            'background_color' => $backgroundColor,
-                            'text_color' => $textColor,
-                            'heading_color' => $textColor,
-                        ]" />
+                    <div class="text-center relative">
+                        <svg class="w-16 h-16 mx-auto mb-4" style="color: {{ $primaryColor }}40;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>
+                        </svg>
+                        <span style="color: {{ $primaryColor }}60;">Google Maps</span>
                     </div>
                 </div>
-            </div>
-
+            @endif
         </div>
 
         {{-- Bottom note --}}

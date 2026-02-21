@@ -202,82 +202,29 @@
             </div>
         </div>
 
-        {{-- Map + Contact Form naast elkaar op groot scherm --}}
-        <div class="grid lg:grid-cols-2 gap-8 items-stretch mb-16">
-
-            {{-- Map --}}
-            <div
-                x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
-                style="opacity: 0; transform: translateY(14px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.1s;"
-            >
-                @if($mapEmbed)
-                    <div class="overflow-hidden h-full min-h-[350px]" style="border: 1px solid {{ $headingColor }}06; box-shadow: 0 1px 8px rgba(0,0,0,0.05);">
-                        <div class="h-full w-full">{!! $mapEmbed !!}</div>
-                    </div>
-                @else
-                    <div
-                        class="w-full h-full min-h-[350px] flex items-center justify-center"
-                        style="background-color: {{ $primaryColor }}15; border: 1px solid {{ $primaryColor }}25;"
-                    >
-                        <div class="text-center">
-                            <svg class="w-14 h-14 mx-auto mb-3" style="color: {{ $primaryColor }}50;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>
-                            </svg>
-                            <span class="text-[11px] uppercase tracking-[0.2em]" style="color: {{ $textColor }}90;">Google Maps</span>
-                        </div>
-                    </div>
-                @endif
-            </div>
-
-            {{-- Contact form --}}
-            <div
-                x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
-                style="opacity: 0; transform: translateY(14px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.15s;"
-            >
-                <div
-                    class="relative p-8 lg:p-12 h-full"
-                    style="background-color: {{ $backgroundColor }}; border: 1px solid {{ $headingColor }}06; box-shadow: 0 1px 8px rgba(0,0,0,0.03);"
-                >
-                    {{-- Label above form --}}
-                    <div class="text-center mb-8">
-                        <div class="inline-flex items-center gap-3 mb-6">
-                            <span class="w-8 h-px" style="background-color: {{ $primaryColor }};"></span>
-                            <span class="uppercase text-[11px] tracking-[0.3em] font-medium" style="color: {{ $primaryColor }};">
-                                Stuur ons een bericht
-                            </span>
-                            <span class="w-8 h-px" style="background-color: {{ $primaryColor }};"></span>
-                        </div>
-                        <h3
-                            class="text-2xl sm:text-3xl mb-3"
-                            style="color: {{ $headingColor }}; font-family: '{{ $headingFont }}', serif; font-weight: 600;"
-                        >
-                            {{ __('Neem Contact Op') }}
-                        </h3>
-                        <p class="text-[14px] leading-relaxed" style="color: {{ $textColor }};">
-                            {{ __('Heeft u een vraag of wilt u een afspraak maken? Laat het ons weten!') }}
-                        </p>
-                    </div>
-
-                    {{-- Gold divider --}}
-                    <div class="flex items-center justify-center gap-0 mb-8">
-                        <div class="w-8 h-px" style="background-color: {{ $primaryColor }};"></div>
-                        <div class="w-1 h-1 rounded-full mx-1.5" style="background-color: {{ $primaryColor }};"></div>
-                        <div class="w-8 h-px" style="background-color: {{ $primaryColor }};"></div>
-                    </div>
-
-                    <livewire:contact-form :theme="[
-                        'primary_color' => $primaryColor,
-                        'secondary_color' => $secondaryColor,
-                        'accent_color' => $accentColor,
-                        'background_color' => $backgroundColor,
-                        'text_color' => $textColor,
-                        'heading_color' => $headingColor,
-                        'heading_font_family' => $headingFont,
-                        'font_family' => $bodyFont,
-                    ]" />
+        {{-- Map --}}
+        <div
+            class="mb-16"
+            x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+            style="opacity: 0; transform: translateY(14px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.1s;"
+        >
+            @if($mapEmbed)
+                <div class="overflow-hidden min-h-[350px]" style="border: 1px solid {{ $headingColor }}06; box-shadow: 0 1px 8px rgba(0,0,0,0.05);">
+                    <div class="h-full w-full">{!! $mapEmbed !!}</div>
                 </div>
-            </div>
-
+            @else
+                <div
+                    class="w-full min-h-[350px] flex items-center justify-center"
+                    style="background-color: {{ $primaryColor }}15; border: 1px solid {{ $primaryColor }}25;"
+                >
+                    <div class="text-center">
+                        <svg class="w-14 h-14 mx-auto mb-3" style="color: {{ $primaryColor }}50;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>
+                        </svg>
+                        <span class="text-[11px] uppercase tracking-[0.2em]" style="color: {{ $textColor }}90;">Google Maps</span>
+                    </div>
+                </div>
+            @endif
         </div>
 
         {{-- Bottom note --}}

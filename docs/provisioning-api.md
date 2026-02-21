@@ -76,11 +76,12 @@ Waarden zijn strings (`"true"` / `"false"`), afkomstig uit de `Product.metadata`
 
 **Wat er gebeurt:**
 1. `BookingSettings::is_active` wordt gezet op basis van `modules.booking_widget`
-2. Alleen de feature flag wordt bijgewerkt — permissions worden **niet** gemanipuleerd
+2. `ContactFormSettings::is_active` wordt gezet op basis van `modules.contact_form`
+3. Alleen de feature flags worden bijgewerkt — permissions worden **niet** gemanipuleerd
 
 **Response:**
 ```json
-{ "success": true, "modules": { "booking_widget": true } }
+{ "success": true, "modules": { "booking_widget": true, "contact_form": true } }
 ```
 
 ---
@@ -91,21 +92,24 @@ Module-toegang wordt op twee lagen gecontroleerd:
 
 | Laag | Vraag | Bron |
 |------|-------|------|
-| **Feature flag** | Is de module actief voor deze site? | `syncModules` → `BookingSettings::is_active` |
-| **Permissions** | Mag de customer-rol deze module gebruiken? | `BookingPermissionsSeeder` (statisch, altijd aanwezig) |
+| **Feature flag** | Is de module actief voor deze site? | `syncModules` → `BookingSettings::is_active` / `ContactFormSettings::is_active` |
+| **Permissions** | Mag de customer-rol deze module gebruiken? | `BookingPermissionsSeeder` / `ContactFormPermissionsSeeder` (statisch, altijd aanwezig) |
 
 **Gate-check:**
 ```php
 BookingModuleManager::isEnabled() && $user->can('booking.view')
+ContactFormModuleManager::isEnabled() && $user->can('contact_form.view')
 ```
 
 - `BookingModuleManager::isEnabled()` = `config('booking-module.enabled')` **AND** `BookingSettings::is_active`
-- Permissions zijn statisch: de customer-rol heeft altijd booking permissions via de seeder
-- De feature flag (via `syncModules`) bepaalt of de module zichtbaar is op basis van het abonnementstype
+- `ContactFormModuleManager::isEnabled()` = `config('contact-form-module.enabled')` **AND** `ContactFormSettings::is_active`
+- Permissions zijn statisch: de customer-rol heeft altijd permissions via de seeders
+- De feature flags (via `syncModules`) bepalen of modules zichtbaar zijn op basis van het abonnementstype
 
 **Voorbeeld:**
-- Klant met Starter/Pro abonnement → `booking_widget: "false"` → `is_active = false` → module verborgen
-- Klant met Premium abonnement → `booking_widget: "true"` → `is_active = true` → module zichtbaar
+- Klant met Starter abonnement → `booking_widget: "false"`, `contact_form: "false"` → modules verborgen
+- Klant met Pro/Premium abonnement → `contact_form: "true"` → contact formulier zichtbaar
+- Klant met Premium abonnement → `booking_widget: "true"` → booking widget zichtbaar
 
 ---
 
@@ -122,7 +126,10 @@ BookingModuleManager::isEnabled() && $user->can('booking.view')
 |---------|-----|
 | `app/Http/Controllers/ProvisionController.php` | Alle provisioning endpoints |
 | `app/Booking/BookingModuleManager.php` | `isEnabled()` — combineert env + settings |
-| `app/Settings/BookingSettings.php` | Persistent module-status |
-| `database/seeders/BookingPermissionsSeeder.php` | Statische permissions voor admin + customer |
+| `app/ContactForm/ContactFormModuleManager.php` | `isEnabled()` — combineert env + settings |
+| `app/Settings/BookingSettings.php` | Persistent module-status (booking) |
+| `app/Settings/ContactFormSettings.php` | Persistent module-status (contact form) |
+| `database/seeders/BookingPermissionsSeeder.php` | Statische permissions voor admin + customer (booking) |
+| `database/seeders/ContactFormPermissionsSeeder.php` | Statische permissions voor admin + customer (contact form) |
 | `database/seeders/RolesAndPermissionsSeeder.php` | Basis rollen en template permissions |
 | `routes/api.php` | Route registratie provisioning endpoints |

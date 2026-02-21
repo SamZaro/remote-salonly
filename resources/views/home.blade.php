@@ -35,6 +35,12 @@
     @if($template && $sections->isNotEmpty())
         @foreach($sections as $section)
             @php
+                // Skip contact-form section als module niet actief is
+                if ($section->section_type === 'contact-form'
+                    && !\App\ContactForm\ContactFormModuleManager::isEnabled()) {
+                    continue;
+                }
+
                 $viewName = $templateService->resolveSectionView($section->section_type, $template->slug);
                 // Remove 'components.' prefix for x-dynamic-component
                 $componentName = str_starts_with($viewName, 'components.')

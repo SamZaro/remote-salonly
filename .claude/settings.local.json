@@ -42,7 +42,14 @@
       "WebFetch(domain:saasykit.com)",
       "mcp__laravel-boost__list-available-env-vars",
       "Bash(npx skills:*)",
-      "Bash(git mv:*)"
+      "Bash(git mv:*)",
+      "Bash(xargs -I {} sh -c \"echo ''=== {} ==='' && wc -l {}\")",
+      "Bash(/c/Users/Samir/AppData/Local/Programs/Herd/resources/bin/php artisan migrate:*)",
+      "Bash(/c/Users/Samir/.config/herd/bin/php artisan migrate:*)",
+      "Bash(/c/Users/Samir/.config/herd/bin/php84 artisan migrate:*)",
+      "Bash(/c/Users/Samir/.config/herd/bin/php84/php.exe artisan migrate:*)",
+      "Bash(/c/Users/Samir/.config/herd/bin/php84/php.exe artisan:*)",
+      "Bash(/c/Users/Samir/.config/herd/bin/php84/php.exe vendor/bin/pint --dirty)"
     ],
     "deny": [],
     "ask": []
