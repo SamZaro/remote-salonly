@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-OAAS-Small (Onepager As A Service) is a Laravel-based application built with the TALL stack (Tailwind, Alpine.js, Laravel, Livewire). It provides a foundation for building one-page websites using a dynamic template system. The application includes a comprehensive admin panel powered by Filament, user dashboard, OAuth authentication, and two-factor authentication.
+Remote Salon (Onepager As A Service) is a Laravel-based application built with the TALL stack (Tailwind, Alpine.js, Laravel, Livewire). It provides a foundation for building one-page websites using a dynamic template system. The application includes a comprehensive admin panel powered by Filament, user dashboard, OAuth authentication, and two-factor authentication.
 
 ## Tech Stack
 - Laravel 12 (streamlined structure)

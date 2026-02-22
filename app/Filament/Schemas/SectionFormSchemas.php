@@ -3,6 +3,7 @@
 namespace App\Filament\Schemas;
 
 use Filament\Forms\Components\KeyValue;
+use Filament\Schemas\Components\Grid;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
@@ -62,10 +63,10 @@ class SectionFormSchemas
             'hero', 'cta', 'jumbotron', 'parallax' => self::singleBackgroundMediaSchema(),
             'slider' => self::sliderMediaSchema(),
             'gallery', 'portfolio' => self::multipleImagesMediaSchema(),
-            'about', 'contact', 'content' => self::optionalBackgroundMediaSchema(),
+            'about', 'contact', 'contact-form', 'content' => self::optionalBackgroundMediaSchema(),
             'image_text', 'text_image' => self::imageTextMediaSchema(),
             'team' => self::teamMemberImagesMediaSchema(),
-            'services', 'pricing', 'testimonials', 'faq', 'accordion', 'stats', 'newsletter', 'features', 'blog', 'footer', 'contact-form' => [],
+            'services', 'pricing', 'testimonials', 'faq', 'accordion', 'stats', 'newsletter', 'features', 'blog', 'footer' => [],
             default => self::defaultMediaSchema(),
         };
     }
@@ -76,7 +77,7 @@ class SectionFormSchemas
     public static function hasMedia(string $sectionType): bool
     {
         return match ($sectionType) {
-            'hero', 'slider', 'cta', 'jumbotron', 'parallax', 'gallery', 'portfolio', 'about', 'contact', 'content', 'image_text', 'text_image', 'team', 'custom' => true,
+            'hero', 'slider', 'cta', 'jumbotron', 'parallax', 'gallery', 'portfolio', 'about', 'contact', 'contact-form', 'content', 'image_text', 'text_image', 'team', 'custom' => true,
             default => false,
         };
     }
@@ -340,15 +341,30 @@ class SectionFormSchemas
     protected static function contactFormContentSchema(): array
     {
         return [
-            Section::make(__('Contact Form Content'))
+            Grid::make(2)
                 ->schema([
-                    TextInput::make('content.title')
-                        ->label(__('Title'))
-                        ->placeholder('Stuur ons een bericht'),
-                    TextInput::make('content.subtitle')
-                        ->label(__('Subtitle'))
-                        ->placeholder('Heeft u een vraag? Wij helpen u graag verder.'),
-                ])->columns(2),
+                    Section::make(__('CTA (Left Column)'))
+                        ->schema([
+                            TextInput::make('content.cta_label')
+                                ->label(__('Label'))
+                                ->placeholder('Persoonlijk contact')
+                                ->helperText(__('Small label above the heading.')),
+                            TextInput::make('content.cta_heading')
+                                ->label(__('Heading'))
+                                ->placeholder('Wij maken graag kennis')
+                                ->helperText(__('Main heading. Use <br> for line breaks.')),
+                            TextInput::make('content.cta_highlight')
+                                ->label(__('Highlight Text'))
+                                ->placeholder('graag kennis')
+                                ->helperText(__('Accent-colored word(s) in the heading.')),
+                        ]),
+                    Section::make(__('Form Heading (Right Column)'))
+                        ->schema([
+                            TextInput::make('content.title')
+                                ->label(__('Form Title'))
+                                ->placeholder('Stuur ons een bericht'),
+                        ]),
+                ]),
         ];
     }
 
