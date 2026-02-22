@@ -33,6 +33,7 @@ class SectionFormSchemas
             'services' => self::servicesContentSchema($categorySlug),
             'pricing' => self::pricingContentSchema(),
             'contact' => self::contactContentSchema(),
+            'contact-form' => self::contactFormContentSchema(),
             'testimonials' => self::testimonialsContentSchema(),
             'team' => self::teamContentSchema(),
             'gallery' => self::galleryContentSchema(),
@@ -64,7 +65,7 @@ class SectionFormSchemas
             'about', 'contact', 'content' => self::optionalBackgroundMediaSchema(),
             'image_text', 'text_image' => self::imageTextMediaSchema(),
             'team' => self::teamMemberImagesMediaSchema(),
-            'services', 'pricing', 'testimonials', 'faq', 'accordion', 'stats', 'newsletter', 'features', 'blog', 'footer' => [],
+            'services', 'pricing', 'testimonials', 'faq', 'accordion', 'stats', 'newsletter', 'features', 'blog', 'footer', 'contact-form' => [],
             default => self::defaultMediaSchema(),
         };
     }
@@ -332,6 +333,21 @@ class SectionFormSchemas
                         ->itemLabel(fn (array $state): ?string => ($state['day'] ?? '').': '.($state['hours'] ?? ''))
                         ->defaultItems(0)
                         ->columnSpanFull(),
+                ])->columns(2),
+        ];
+    }
+
+    protected static function contactFormContentSchema(): array
+    {
+        return [
+            Section::make(__('Contact Form Content'))
+                ->schema([
+                    TextInput::make('content.title')
+                        ->label(__('Title'))
+                        ->placeholder('Stuur ons een bericht'),
+                    TextInput::make('content.subtitle')
+                        ->label(__('Subtitle'))
+                        ->placeholder('Heeft u een vraag? Wij helpen u graag verder.'),
                 ])->columns(2),
         ];
     }

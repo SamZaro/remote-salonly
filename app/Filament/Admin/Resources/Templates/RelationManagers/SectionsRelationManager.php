@@ -36,32 +36,37 @@ class SectionsRelationManager extends RelationManager
                     ->schema([
                         Select::make('section_type')
                             ->label(__('Section Type'))
-                            ->options([
-                                'hero' => __('Hero'),
-                                'slider' => __('Slider'),
-                                'about' => __('About'),
-                                'services' => __('Services'),
-                                'features' => __('Features'),
-                                'pricing' => __('Pricing'),
-                                'testimonials' => __('Testimonials'),
-                                'team' => __('Team'),
-                                'gallery' => __('Gallery'),
-                                'parallax' => __('Parallax'),
-                                'faq' => __('FAQ'),
-                                'accordion' => __('Accordion'),
-                                'jumbotron' => __('Jumbotron'),
-                                'contact' => __('Contact'),
-                                'cta' => __('Call to Action'),
-                                //'stats' => __('Statistics'),
-                                'portfolio' => __('Portfolio'),
-                                //'blog' => __('Blog'),
-                                //'newsletter' => __('Newsletter'),
-                                'footer' => __('Footer'),
-                                'content' => __('Content'),
-                                'image_text' => __('Image + Text'),
-                                'text_image' => __('Text + Image'),
-                                'custom' => __('Custom'),
-                            ])
+                            ->options(function () {
+                                $options = [
+                                    'hero' => __('Hero'),
+                                    'slider' => __('Slider'),
+                                    'about' => __('About'),
+                                    'services' => __('Services'),
+                                    'features' => __('Features'),
+                                    'pricing' => __('Pricing'),
+                                    'testimonials' => __('Testimonials'),
+                                    'team' => __('Team'),
+                                    'gallery' => __('Gallery'),
+                                    'parallax' => __('Parallax'),
+                                    'faq' => __('FAQ'),
+                                    'accordion' => __('Accordion'),
+                                    'jumbotron' => __('Jumbotron'),
+                                    'contact' => __('Contact'),
+                                    'contact-form' => __('Contact Form'),
+                                    'cta' => __('Call to Action'),
+                                    //'stats' => __('Statistics'),
+                                    'portfolio' => __('Portfolio'),
+                                    //'blog' => __('Blog'),
+                                    //'newsletter' => __('Newsletter'),
+                                    'footer' => __('Footer'),
+                                    'content' => __('Content'),
+                                    'image_text' => __('Image + Text'),
+                                    'text_image' => __('Text + Image'),
+                                    'custom' => __('Custom'),
+                                ];
+
+                                return $options;
+                            })
                             ->required()
                             ->searchable()
                             ->live()
