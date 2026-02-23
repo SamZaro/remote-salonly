@@ -42,7 +42,11 @@
 <section id="features" class="py-20 lg:py-28" style="background-color: {{ $secondaryColor }};">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {{-- Section header --}}
-        <div class="text-center mb-16">
+        <div
+            class="text-center mb-16"
+            x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+            style="opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);"
+        >
             <div class="flex items-center justify-center gap-4 mb-6">
                 <div class="w-12 h-px" style="background-color: {{ $primaryColor }};"></div>
                 <svg class="w-8 h-8" style="color: {{ $primaryColor }};" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -66,10 +70,11 @@
 
         {{-- Features grid --}}
         <div class="grid gap-6 md:grid-cols-2">
-            @foreach($items as $item)
+            @foreach($items as $index => $item)
                 <div
                     class="group relative p-8 border transition-all duration-300 hover:border-opacity-100"
-                    style="border-color: {{ $primaryColor }}40; background-color: {{ $secondaryColor }};"
+                    style="border-color: {{ $primaryColor }}40; background-color: {{ $secondaryColor }}; opacity: 0; transform: translateY(20px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) {{ $index * 0.12 }}s;"
+                    x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
                 >
                     {{-- Corner accents --}}
                     <div class="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2" style="border-color: {{ $primaryColor }};"></div>
@@ -115,7 +120,11 @@
         </div>
 
         {{-- CTA --}}
-        <div class="text-center mt-12">
+        <div
+            class="text-center mt-12"
+            x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+            style="opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.3s;"
+        >
             <a
                 href="{{ $ctaUrl }}"
                 class="inline-flex items-center justify-center px-10 py-4 text-sm font-bold uppercase tracking-widest border-2 transition-all duration-300 hover:bg-opacity-100"

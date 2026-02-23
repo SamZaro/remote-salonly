@@ -67,7 +67,9 @@
     <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 w-full">
         <div class="max-w-3xl">
             {{-- Badge --}}
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-sm mb-8 bg-gray-100" style="border-left: 3px solid {{ $primaryColor }};">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-sm mb-8 bg-gray-100" style="border-left: 3px solid {{ $primaryColor }}; opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0s;"
+                x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+            >
                 <svg class="w-5 h-5" style="color: {{ $primaryColor }};" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m7.848 8.25 1.536.887M7.848 8.25a3 3 0 1 1-5.196-3 3 3 0 0 1 5.196 3Zm1.536.887a2.165 2.165 0 0 1 1.083 1.839c.005.351.054.695.14 1.024M9.384 9.137l2.077 1.199M7.848 15.75l1.536-.887m-1.536.887a3 3 0 1 1-5.196 3 3 3 0 0 1 5.196-3Zm1.536-.887a2.165 2.165 0 0 0 1.083-1.838c.005-.352.054-.695.14-1.025m-1.223 2.863 2.077-1.199"/>
                 </svg>
@@ -77,7 +79,8 @@
             {{-- Titel --}}
             <h1
                 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
-                style="color: {{ $textColor }};"
+                style="color: {{ $textColor }}; opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.1s;"
+                x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
             >
                 {!! $title !!}
             </h1>
@@ -91,7 +94,10 @@
             </p>
 
             {{-- CTA Buttons --}}
-            <div class="flex flex-col sm:flex-row items-start gap-4">
+            <div class="flex flex-col sm:flex-row items-start gap-4"
+                x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+                style="opacity: 0; transform: translateY(10px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.3s;"
+            >
                 <a
                     href="{{ $ctaLink }}"
                     class="inline-flex items-center justify-center px-8 py-4 text-lg font-bold uppercase tracking-wide border-2 transition-all duration-300 hover:scale-105"

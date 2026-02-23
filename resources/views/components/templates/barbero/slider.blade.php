@@ -71,29 +71,50 @@
     {{-- Content --}}
     <div class="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center py-20">
         {{-- Vintage badge --}}
-        <div class="flex items-center justify-center gap-4 mb-8">
+        <div
+            class="flex items-center justify-center gap-4 mb-8"
+            x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+            style="opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0s;"
+        >
             <div class="w-16 h-px" style="background-color: {{ $primaryColor }};"></div>
             <div class="px-4 py-2 border-2 text-xs font-bold uppercase tracking-[0.3em]" style="border-color: {{ $primaryColor }}; color: {{ $primaryColor }};">Est. 2024</div>
             <div class="w-16 h-px" style="background-color: {{ $primaryColor }};"></div>
         </div>
 
         {{-- Scissors icon --}}
-        <div class="flex justify-center mb-6">
+        <div
+            class="flex justify-center mb-6"
+            x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+            style="opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.15s;"
+        >
             <svg class="w-12 h-12" style="color: {{ $primaryColor }};" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m7.848 8.25 1.536.887M7.848 8.25a3 3 0 1 1-5.196-3 3 3 0 0 1 5.196 3Zm1.536.887a2.165 2.165 0 0 1 1.083 1.839c.005.351.054.695.14 1.024M9.384 9.137l2.077 1.199M7.848 15.75l1.536-.887m-1.536.887a3 3 0 1 1-5.196 3 3 3 0 0 1 5.196-3Zm1.536-.887a2.165 2.165 0 0 0 1.083-1.838c.005-.352.054-.695.14-1.025m-1.223 2.863 2.077-1.199m0-3.328a4.323 4.323 0 0 1 2.068-1.379l5.325-1.628a4.5 4.5 0 0 1 2.48-.044l.803.215-7.794 4.5m-2.882-1.664A4.33 4.33 0 0 0 10.607 12m3.736 0 7.794 4.5-.802.215a4.5 4.5 0 0 1-2.48-.043l-5.326-1.629a4.324 4.324 0 0 1-2.068-1.379M14.343 12l-2.882 1.664"/>
             </svg>
         </div>
 
         @if($title)
-            <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 uppercase tracking-wider" style="color: {{ $textColor }}; font-family: 'Playfair Display', Georgia, serif;">{!! $title !!}</h1>
+            <h1
+                class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 uppercase tracking-wider"
+                style="color: {{ $textColor }}; font-family: 'Playfair Display', Georgia, serif; opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.3s;"
+                x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+            >{!! $title !!}</h1>
         @endif
 
         @if($subtitle)
-            <p class="text-lg sm:text-xl mb-12 max-w-xl mx-auto uppercase tracking-[0.2em] opacity-80" style="color: {{ $textColor }};">{{ $subtitle }}</p>
+            <p
+                class="text-lg sm:text-xl mb-12 max-w-xl mx-auto uppercase tracking-[0.2em] opacity-80"
+                style="color: {{ $textColor }}; opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.45s;"
+                x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+            >{{ $subtitle }}</p>
         @endif
 
         @if($ctaText)
-            <a href="{{ $ctaLink }}" class="inline-flex items-center justify-center px-10 py-5 text-lg font-bold uppercase tracking-widest transition-all duration-300 hover:scale-105 border-2" style="background-color: {{ $primaryColor }}; color: {{ $secondaryColor }}; border-color: {{ $primaryColor }};">{{ $ctaText }}</a>
+            <a
+                href="{{ $ctaLink }}"
+                class="inline-flex items-center justify-center px-10 py-5 text-lg font-bold uppercase tracking-widest transition-all duration-300 hover:scale-105 border-2"
+                style="background-color: {{ $primaryColor }}; color: {{ $secondaryColor }}; border-color: {{ $primaryColor }}; opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.6s;"
+                x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+            >{{ $ctaText }}</a>
         @endif
 
         {{-- Stars --}}

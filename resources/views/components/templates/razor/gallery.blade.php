@@ -29,7 +29,10 @@
 <section id="gallery" class="py-20 lg:py-28" style="background-color: {{ $backgroundColor }};">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {{-- Header --}}
-        <div class="text-center mb-16">
+        <div class="text-center mb-16"
+            x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+            style="opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);"
+        >
             <span class="inline-block text-xs font-bold uppercase tracking-[0.3em] mb-4" style="color: {{ $primaryColor }};">
                 {{ $subtitle }}
             </span>
@@ -56,6 +59,8 @@
                     <div
                         class="group cursor-pointer relative"
                         @click="currentIndex = {{ $index }}; lightboxOpen = true"
+                        x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+                        style="opacity: 0; transform: translateY(20px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) {{ $loop->index * 0.08 }}s;"
                     >
                         <div class="relative aspect-square overflow-hidden">
                             <img

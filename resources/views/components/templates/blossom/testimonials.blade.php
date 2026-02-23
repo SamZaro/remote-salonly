@@ -58,7 +58,11 @@
 <section id="testimonials" class="py-20 lg:py-28" style="background-color: {{ $lightBg }};">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {{-- Section header --}}
-        <div class="text-center mb-16">
+        <div
+            class="text-center mb-16"
+            x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+            style="opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);"
+        >
             <span
                 class="inline-flex items-center gap-2 text-sm font-medium mb-4 px-5 py-2 rounded-full"
                 style="background: linear-gradient(135deg, {{ $primaryColor }}15, {{ $secondaryColor }}15); color: {{ $primaryColor }};"
@@ -103,10 +107,11 @@
 
         {{-- Reviews grid --}}
         <div class="grid gap-6 md:grid-cols-2">
-            @foreach($reviews as $review)
+            @foreach($reviews as $index => $review)
                 <div
                     class="bg-white p-8 rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl relative overflow-hidden"
-                    style="box-shadow: 0 4px 20px {{ $primaryColor }}10;"
+                    style="box-shadow: 0 4px 20px {{ $primaryColor }}10; opacity: 0; transform: translateY(20px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) {{ $index * 0.12 }}s;"
+                    x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
                 >
                     {{-- Decorative corner --}}
                     <div
@@ -170,7 +175,11 @@
         </div>
 
         {{-- Bottom CTA --}}
-        <div class="text-center mt-12">
+        <div
+            class="text-center mt-12"
+            x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+            style="opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.3s;"
+        >
             <a
                 href="#contact"
                 class="inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:shadow-lg"

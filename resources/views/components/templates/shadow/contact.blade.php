@@ -32,7 +32,10 @@
 <section id="contact" class="py-20 lg:py-28 bg-gray-100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {{-- Header --}}
-        <div class="text-center mb-24">
+        <div class="text-center mb-24"
+            x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+            style="opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);"
+        >
             <span
                 class="inline-block px-4 py-1 text-sm font-semibold uppercase tracking-wider rounded-sm mb-4"
                 style="background-color: {{ $primaryColor }}20; color: {{ $primaryColor }};"
@@ -49,7 +52,8 @@
             {{-- E-mail --}}
             <div
                 class="text-center p-10 transition-all duration-300 hover:-translate-y-1"
-                style="background-color: {{ $backgroundColor }}; border-left: 4px solid {{ $primaryColor }};"
+                style="background-color: {{ $backgroundColor }}; border-left: 4px solid {{ $primaryColor }}; opacity: 0; transform: translateY(20px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0s;"
+                x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
             >
                 {{-- Icon --}}
                 <div class="w-16 h-16 mx-auto mb-6 flex items-center justify-center bg-gray-200">
@@ -75,7 +79,8 @@
             {{-- Featured Image --}}
             <div
                 class="transition-all duration-300 hover:-translate-y-1 overflow-hidden"
-                style="background-color: {{ $secondaryColor }};"
+                style="background-color: {{ $secondaryColor }}; opacity: 0; transform: translateY(20px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.12s;"
+                x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
             >
                 @if($featuredImage)
                     <img
@@ -95,7 +100,8 @@
             {{-- Social Media --}}
             <div
                 class="text-center p-10 transition-all duration-300 hover:-translate-y-1"
-                style="background-color: {{ $backgroundColor }}; border-left: 4px solid {{ $primaryColor }};"
+                style="background-color: {{ $backgroundColor }}; border-left: 4px solid {{ $primaryColor }}; opacity: 0; transform: translateY(20px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.24s;"
+                x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
             >
                 {{-- Logo --}}
                 <div class="mx-auto mb-6 flex items-center justify-center">

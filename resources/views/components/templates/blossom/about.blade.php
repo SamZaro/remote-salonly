@@ -36,7 +36,11 @@
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {{-- Image --}}
-            <div class="relative order-2 lg:order-1">
+            <div
+                class="relative order-2 lg:order-1"
+                x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateX(0)'"
+                style="opacity: 0; transform: translateX(-20px); transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);"
+            >
                 @if($image)
                     <div class="relative">
                         {{-- Decorative background --}}
@@ -75,7 +79,8 @@
                 {{-- Stats card --}}
                 <div
                     class="absolute -bottom-6 left-6 right-6 lg:left-auto lg:right-auto lg:-right-6 lg:w-80 p-6 rounded-2xl bg-white shadow-xl grid grid-cols-3 gap-4"
-                    style="box-shadow: 0 20px 60px {{ $primaryColor }}15;"
+                    x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+                    style="box-shadow: 0 20px 60px {{ $primaryColor }}15; opacity: 0; transform: translateY(10px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.3s;"
                 >
                     @foreach($stats as $stat)
                         <div class="text-center">
@@ -104,7 +109,11 @@
             </div>
 
             {{-- Content --}}
-            <div class="order-1 lg:order-2">
+            <div
+                class="order-1 lg:order-2"
+                x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+                style="opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.15s;"
+            >
                 {{-- Label --}}
                 <span
                     class="inline-flex items-center gap-2 text-sm font-medium mb-6 px-5 py-2 rounded-full"

@@ -36,7 +36,10 @@
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {{-- Section Header --}}
         @if($title || $subtitle)
-            <div class="mb-24 text-center">
+            <div class="mb-24 text-center"
+                x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+                style="opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);"
+            >
                 @if($subtitle)
                     <span
                         class="inline-block px-4 py-1 text-sm font-semibold uppercase tracking-wider rounded-sm mb-4"
@@ -59,7 +62,10 @@
         {{-- Two Column Layout: Image Left, Text Right --}}
         <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
             {{-- Left: Image with background effect --}}
-            <div class="relative max-w-md lg:max-w-lg mx-auto">
+            <div class="relative max-w-md lg:max-w-lg mx-auto"
+                x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateX(0)'"
+                style="opacity: 0; transform: translateX(-20px); transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);"
+            >
                 {{-- Black square behind image - offset to left and bottom --}}
                 <div
                     class="absolute -left-6 -bottom-6 w-full h-full bg-black"
@@ -86,7 +92,10 @@
             </div>
 
             {{-- Right: Text Content --}}
-            <div>
+            <div
+                x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+                style="opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.15s;"
+            >
                 @if($blockTitle)
                     <h3
                         class="text-2xl sm:text-3xl font-bold mb-6"

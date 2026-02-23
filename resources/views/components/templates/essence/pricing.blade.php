@@ -40,7 +40,10 @@
 <section id="pricing" class="py-24 lg:py-32" style="background-color: {{ $backgroundColor }};">
     <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         {{-- Section header --}}
-        <div class="text-center mb-16">
+        <div class="text-center mb-16"
+            x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+            style="opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);"
+        >
             <div class="flex items-center justify-center gap-4 mb-8">
                 <div class="w-12 h-px" style="background-color: {{ $secondaryColor }}40;"></div>
                 <span class="text-xs font-medium uppercase tracking-[0.3em]" style="color: {{ $secondaryColor }};">Prijzen</span>
@@ -58,7 +61,10 @@
         </div>
 
         {{-- Pricing card --}}
-        <div class="relative bg-white p-10 lg:p-14" style="box-shadow: 0 4px 40px {{ $secondaryColor }}08;">
+        <div class="relative bg-white p-10 lg:p-14"
+            style="box-shadow: 0 4px 40px {{ $secondaryColor }}08; opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.15s;"
+            x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+        >
             {{-- Decoratieve hoeken --}}
             <div class="absolute top-6 left-6 w-12 h-12">
                 <div class="absolute top-0 left-0 w-full h-px" style="background-color: {{ $primaryColor }};"></div>
@@ -132,7 +138,10 @@
         </div>
 
         {{-- CTA --}}
-        <div class="text-center mt-12">
+        <div class="text-center mt-12"
+            x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+            style="opacity: 0; transform: translateY(10px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.3s;"
+        >
             <a
                 href="#contact"
                 class="inline-flex items-center justify-center px-10 py-4 text-sm font-medium uppercase tracking-widest transition-all duration-300 hover:opacity-90"

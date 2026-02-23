@@ -48,7 +48,10 @@
 <section id="services" class="py-20 lg:py-28" style="background-color: {{ $backgroundColor }};">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {{-- Section header --}}
-        <div class="text-center mb-16">
+        <div class="text-center mb-16"
+            x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+            style="opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);"
+        >
             <span class="inline-block text-xs font-bold uppercase tracking-[0.3em] mb-4" style="color: {{ $primaryColor }};">
                 Wat wij bieden
             </span>
@@ -75,7 +78,8 @@
             @foreach($items as $item)
                 <div
                     class="group relative p-8 transition-all duration-300 hover:-translate-y-1"
-                    style="background-color: {{ $secondaryColor }};"
+                    style="background-color: {{ $secondaryColor }}; opacity: 0; transform: translateY(20px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) {{ $loop->index * 0.12 }}s;"
+                    x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
                 >
                     {{-- Hover accent line --}}
                     <div

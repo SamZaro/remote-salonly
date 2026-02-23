@@ -35,7 +35,10 @@
 <section id="contact" class="py-24 lg:py-32" style="background-color: {{ $backgroundColor }};">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {{-- Section header --}}
-        <div class="text-center mb-16">
+        <div class="text-center mb-16"
+            x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+            style="opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);"
+        >
             <div
                 class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium mb-6"
                 style="background-color: {{ $primaryColor }}15; color: {{ $primaryColor }};"
@@ -59,7 +62,10 @@
 
         <div class="grid lg:grid-cols-3 gap-8">
             {{-- Contact cards --}}
-            <div class="space-y-6">
+            <div class="space-y-6"
+                x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateX(0)'"
+                style="opacity: 0; transform: translateX(-20px); transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);"
+            >
                 {{-- Address --}}
                 <div class="bg-white p-6 rounded-2xl" style="box-shadow: 0 4px 20px {{ $primaryColor }}08;">
                     <div class="flex items-start gap-4">
@@ -121,7 +127,10 @@
             </div>
 
             {{-- Opening hours & Map --}}
-            <div class="lg:col-span-2 space-y-6">
+            <div class="lg:col-span-2 space-y-6"
+                x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+                style="opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.15s;"
+            >
                 {{-- Opening hours --}}
                 <div class="bg-white p-8 rounded-2xl" style="box-shadow: 0 4px 20px {{ $primaryColor }}08;">
                     <h4 class="font-medium mb-6" style="color: {{ $headingColor }};">Openingstijden</h4>

@@ -45,7 +45,10 @@
 <section id="testimonials" class="py-24 lg:py-32" style="background-color: {{ $accentColor }}40;">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {{-- Section header --}}
-        <div class="text-center mb-20">
+        <div class="text-center mb-20"
+            x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+            style="opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);"
+        >
             <div class="flex items-center justify-center gap-4 mb-8">
                 <div class="w-12 h-px" style="background-color: {{ $secondaryColor }}40;"></div>
                 <span class="text-xs font-medium uppercase tracking-[0.3em]" style="color: {{ $secondaryColor }};">Recensies</span>
@@ -67,7 +70,8 @@
             @foreach($items as $index => $item)
                 <div
                     class="relative bg-white p-8 lg:p-10 transition-all duration-300 hover:shadow-lg"
-                    style="box-shadow: 0 2px 20px {{ $secondaryColor }}05;"
+                    style="box-shadow: 0 2px 20px {{ $secondaryColor }}05; opacity: 0; transform: translateY(20px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) {{ $index * 0.12 }}s;"
+                    x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
                 >
                     {{-- Quote mark --}}
                     <div class="absolute top-8 right-8">
@@ -115,7 +119,10 @@
         </div>
 
         {{-- Rating summary --}}
-        <div class="mt-16 text-center">
+        <div class="mt-16 text-center"
+            x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+            style="opacity: 0; transform: translateY(10px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.3s;"
+        >
             <div class="inline-flex items-center gap-6 px-10 py-6 bg-white" style="box-shadow: 0 2px 20px {{ $secondaryColor }}05;">
                 <div class="flex gap-1">
                     @for($i = 0; $i < 5; $i++)

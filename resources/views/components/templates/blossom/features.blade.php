@@ -64,7 +64,11 @@
 <section id="features" class="py-20 lg:py-28" style="background-color: {{ $backgroundColor }};">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {{-- Section header --}}
-        <div class="text-center mb-16">
+        <div
+            class="text-center mb-16"
+            x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+            style="opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);"
+        >
             <span
                 class="inline-flex items-center gap-2 text-sm font-medium mb-4 px-5 py-2 rounded-full"
                 style="background: linear-gradient(135deg, {{ $primaryColor }}15, {{ $secondaryColor }}15); color: {{ $primaryColor }};"
@@ -93,7 +97,8 @@
                 @endphp
                 <div
                     class="group relative bg-white p-8 rounded-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
-                    style="box-shadow: 0 4px 20px {{ $primaryColor }}10;"
+                    style="box-shadow: 0 4px 20px {{ $primaryColor }}10; opacity: 0; transform: translateY(20px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) {{ $index * 0.12 }}s;"
+                    x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
                 >
                     {{-- Decorative corner --}}
                     <div

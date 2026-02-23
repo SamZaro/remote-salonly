@@ -70,7 +70,10 @@
 <section id="services" class="py-20 bg-gray-100 lg:py-28">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {{-- Section header --}}
-        <div class="text-center mb-16">
+        <div class="text-center mb-16"
+            x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+            style="opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);"
+        >
             <span
                 class="inline-block px-4 py-1 text-sm font-semibold uppercase tracking-wider rounded-sm mb-4"
                 style="background-color: {{ $primaryColor }}20; color: {{ $primaryColor }};"
@@ -90,7 +93,8 @@
             @foreach($items as $index => $item)
                 <div
                     class="group relative bg-white p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
-                    style="border-left: 4px solid {{ $primaryColor }};"
+                    style="border-left: 4px solid {{ $primaryColor }}; opacity: 0; transform: translateY(20px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) {{ $loop->index * 0.12 }}s;"
+                    x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
                 >
 
                     {{-- Icon --}}

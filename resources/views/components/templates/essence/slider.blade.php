@@ -65,7 +65,10 @@
     <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
         <div class="grid lg:grid-cols-2 gap-16 items-center">
             {{-- Content --}}
-            <div class="text-center lg:text-left">
+            <div class="text-center lg:text-left"
+                x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+                style="opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);"
+            >
                 <div class="inline-flex items-center gap-3 mb-10">
                     <div class="w-12 h-px" style="background-color: {{ $secondaryColor }}40;"></div>
                     <span class="text-xs font-medium uppercase tracking-[0.3em]" style="color: {{ $secondaryColor }};">Exclusive Beauty</span>
@@ -100,7 +103,10 @@
             </div>
 
             {{-- Image Slider --}}
-            <div class="relative">
+            <div class="relative"
+                x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateX(0)'"
+                style="opacity: 0; transform: translateX(-20px); transition: all 1s cubic-bezier(0.22, 1, 0.36, 1) 0.15s;"
+            >
                 <div class="absolute -inset-4 border opacity-30" style="border-color: {{ $secondaryColor }};"></div>
                 <div class="absolute -inset-8 border opacity-15" style="border-color: {{ $secondaryColor }};"></div>
                 <div class="relative w-full h-[550px] lg:h-[650px] overflow-hidden">

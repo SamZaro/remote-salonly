@@ -57,15 +57,35 @@
         <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {{-- Content --}}
             <div class="text-center lg:text-left">
-                <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium mb-8" style="background: linear-gradient(135deg, {{ $primaryColor }}20, {{ $secondaryColor }}20); color: {{ $primaryColor }};">
+                <div
+                    class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium mb-8"
+                    style="background: linear-gradient(135deg, {{ $primaryColor }}20, {{ $secondaryColor }}20); color: {{ $primaryColor }}; opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0s;"
+                    x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+                >
                     <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
                     Luxury Beauty Experience
                 </div>
 
-                @if($title)<h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight" style="color: {{ $textColor }}; font-family: 'Playfair Display', Georgia, serif;">{!! $title !!}</h1>@endif
-                @if($subtitle)<p class="text-lg sm:text-xl mb-10 max-w-xl mx-auto lg:mx-0" style="color: {{ $textColor }}; opacity: 0.7;">{{ $subtitle }}</p>@endif
+                @if($title)
+                    <h1
+                        class="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
+                        style="color: {{ $textColor }}; font-family: 'Playfair Display', Georgia, serif; opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.15s;"
+                        x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+                    >{!! $title !!}</h1>
+                @endif
+                @if($subtitle)
+                    <p
+                        class="text-lg sm:text-xl mb-10 max-w-xl mx-auto lg:mx-0"
+                        style="color: {{ $textColor }}; opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.3s;"
+                        x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+                    >{{ $subtitle }}</p>
+                @endif
 
-                <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                <div
+                    class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4"
+                    x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+                    style="opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.45s;"
+                >
                     @if($ctaText)
                         <a href="{{ $ctaLink }}" class="group inline-flex items-center justify-center px-8 py-4 text-base font-semibold rounded-full text-white transition-all duration-300 hover:scale-105 hover:shadow-xl" style="background: linear-gradient(135deg, {{ $primaryColor }}, {{ $secondaryColor }}); box-shadow: 0 10px 40px {{ $primaryColor }}40;">
                             {{ $ctaText }}
@@ -80,7 +100,11 @@
             </div>
 
             {{-- Image Slider --}}
-            <div class="relative">
+            <div
+                class="relative"
+                x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateX(0)'"
+                style="opacity: 0; transform: translateX(20px); transition: all 1s cubic-bezier(0.22, 1, 0.36, 1) 0.2s;"
+            >
                 <div class="absolute -inset-4 rounded-[2rem] opacity-30 blur-2xl" style="background: linear-gradient(135deg, {{ $primaryColor }}, {{ $secondaryColor }});"></div>
                 <div class="relative w-full h-[500px] lg:h-[600px] rounded-[2rem] overflow-hidden shadow-2xl">
                     @foreach($sliderImages as $index => $media)
@@ -92,7 +116,11 @@
                 </div>
 
                 {{-- Floating card --}}
-                <div class="absolute -bottom-6 -left-6 p-5 rounded-2xl bg-white shadow-xl hidden lg:block" style="box-shadow: 0 20px 60px {{ $primaryColor }}20;">
+                <div
+                    class="absolute -bottom-6 -left-6 p-5 rounded-2xl bg-white shadow-xl hidden lg:block"
+                    style="box-shadow: 0 20px 60px {{ $primaryColor }}20; opacity: 0; transform: translateY(10px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.5s;"
+                    x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+                >
                     <div class="flex items-center gap-4">
                         <div class="w-14 h-14 rounded-xl flex items-center justify-center" style="background: linear-gradient(135deg, {{ $primaryColor }}, {{ $secondaryColor }});">
                             <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>

@@ -44,7 +44,10 @@
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {{-- Left: Image/Visual --}}
-            <div class="relative">
+            <div class="relative"
+                x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateX(0)'"
+                style="opacity: 0; transform: translateX(-20px); transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);"
+            >
                 @if($backgroundImage)
                     <div class="relative">
                         <img
@@ -84,7 +87,10 @@
             </div>
 
             {{-- Right: Content --}}
-            <div>
+            <div
+                x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+                style="opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.15s;"
+            >
                 <h2
                     class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4"
                     style="color: {{ $headingColor }};"

@@ -43,7 +43,10 @@
 <section id="accordion" class="py-24 lg:py-32" style="background-color: {{ $accentColor }}40;">
     <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         {{-- Section header --}}
-        <div class="text-center mb-16">
+        <div class="text-center mb-16"
+            x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+            style="opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);"
+        >
             <div class="flex items-center justify-center gap-4 mb-8">
                 <div class="w-12 h-px" style="background-color: {{ $secondaryColor }}40;"></div>
                 <span class="text-xs font-medium uppercase tracking-[0.3em]" style="color: {{ $secondaryColor }};">FAQ</span>
@@ -61,7 +64,10 @@
         </div>
 
         {{-- Accordion items --}}
-        <div class="space-y-4" x-data="{ openItem: null }">
+        <div class="space-y-4" x-data="{ openItem: null }"
+            x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+            style="opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.15s;"
+        >
             @foreach($items as $index => $item)
                 <div
                     class="bg-white transition-all duration-300"
@@ -102,7 +108,10 @@
         </div>
 
         {{-- Contact prompt --}}
-        <div class="mt-12 text-center">
+        <div class="mt-12 text-center"
+            x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+            style="opacity: 0; transform: translateY(10px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.3s;"
+        >
             <p class="text-sm mb-4" style="color: {{ $textColor }}; opacity: 0.7;">
                 Heb je een andere vraag?
             </p>

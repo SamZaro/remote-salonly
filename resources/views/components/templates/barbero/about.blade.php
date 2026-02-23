@@ -42,7 +42,11 @@
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {{-- Left: Image/Visual --}}
-            <div class="relative">
+            <div
+                class="relative"
+                x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateX(0)'"
+                style="opacity: 0; transform: translateX(-20px); transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);"
+            >
                 @if($featuredImage)
                     <div class="relative">
                         <img
@@ -71,7 +75,8 @@
                 {{-- Experience badge --}}
                 <div
                     class="absolute -bottom-6 -right-6 p-6 text-center"
-                    style="background-color: {{ $primaryColor }};"
+                    x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+                    style="background-color: {{ $primaryColor }}; opacity: 0; transform: translateY(10px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.3s;"
                 >
                     <span class="block text-4xl font-bold" style="color: {{ $secondaryColor }}; font-family: 'Playfair Display', Georgia, serif;">15+</span>
                     <span class="block text-xs font-bold uppercase tracking-widest" style="color: {{ $secondaryColor }};">Jaar</span>
@@ -79,7 +84,10 @@
             </div>
 
             {{-- Right: Content --}}
-            <div>
+            <div
+                x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+                style="opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.15s;"
+            >
                 {{-- Header ornament --}}
                 <div class="flex items-center gap-4 mb-6">
                     <div class="w-8 h-px" style="background-color: {{ $primaryColor }};"></div>
@@ -109,8 +117,12 @@
 
                 {{-- Features --}}
                 <div class="grid sm:grid-cols-3 gap-6 mb-10">
-                    @foreach($items as $item)
-                        <div class="text-center p-6 border" style="border-color: {{ $primaryColor }}30;">
+                    @foreach($items as $index => $item)
+                        <div
+                            class="text-center p-6 border"
+                            style="border-color: {{ $primaryColor }}30; opacity: 0; transform: translateY(20px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) {{ $index * 0.12 }}s;"
+                            x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+                        >
                             <div
                                 class="w-14 h-14 mx-auto mb-4 border-2 flex items-center justify-center"
                                 style="border-color: {{ $primaryColor }};"

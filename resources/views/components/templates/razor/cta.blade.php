@@ -52,7 +52,10 @@
     {{-- Content --}}
     <div class="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
         {{-- Icon --}}
-        <div class="flex justify-center mb-8">
+        <div class="flex justify-center mb-8"
+            x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+            style="opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0s;"
+        >
             <div class="relative">
                 <div class="absolute -inset-3 border rotate-45 opacity-30" style="border-color: {{ $primaryColor }};"></div>
                 <svg class="w-12 h-12" style="color: {{ $primaryColor }};" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
@@ -64,7 +67,8 @@
         {{-- Title --}}
         <h2
             class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6"
-            style="color: {{ $lightTextColor }}; font-family: 'Playfair Display', Georgia, serif;"
+            style="color: {{ $lightTextColor }}; font-family: 'Playfair Display', Georgia, serif; opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.1s;"
+            x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
         >
             {{ $title }}
         </h2>
@@ -75,7 +79,10 @@
         </p>
 
         {{-- CTA Buttons --}}
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4"
+            x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+            style="opacity: 0; transform: translateY(10px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.3s;"
+        >
             <a
                 href="{{ $ctaLink }}"
                 class="group inline-flex items-center justify-center px-10 py-5 text-base font-bold uppercase tracking-widest transition-all duration-300 hover:scale-105"

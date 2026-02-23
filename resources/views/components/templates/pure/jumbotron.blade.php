@@ -48,7 +48,10 @@
 
     <div class="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
         {{-- Leaf icon --}}
-        <div class="flex justify-center mb-8">
+        <div class="flex justify-center mb-8"
+            x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+            style="opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0s;"
+        >
             <div
                 class="w-14 h-14 rounded-full flex items-center justify-center"
                 style="background-color: {{ $primaryColor }}20;"
@@ -62,7 +65,8 @@
         {{-- Title --}}
         <h2
             class="text-4xl sm:text-5xl lg:text-6xl font-light mb-6 leading-tight"
-            style="color: {{ $headingColor }}; font-family: 'Playfair Display', Georgia, serif;"
+            style="color: {{ $headingColor }}; font-family: 'Playfair Display', Georgia, serif; opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.1s;"
+            x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
         >
             {{ $title }}
         </h2>
@@ -79,7 +83,8 @@
         <a
             href="{{ $ctaLink }}"
             class="inline-flex items-center justify-center px-8 py-4 rounded-full text-base font-medium transition-all duration-300 hover:shadow-lg"
-            style="background-color: {{ $primaryColor }}; color: white;"
+            style="background-color: {{ $primaryColor }}; color: white; opacity: 0; transform: translateY(10px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.3s;"
+            x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
         >
             {{ $ctaText }}
             <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

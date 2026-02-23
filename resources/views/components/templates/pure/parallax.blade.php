@@ -43,7 +43,10 @@
     {{-- Content --}}
     <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
         {{-- Leaf icon --}}
-        <div class="inline-flex items-center justify-center mb-8">
+        <div class="inline-flex items-center justify-center mb-8"
+            x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+            style="opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0s;"
+        >
             <svg class="w-12 h-12" style="color: {{ $accentColor }};" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
             </svg>
@@ -51,7 +54,8 @@
 
         <h2
             class="text-4xl sm:text-5xl lg:text-6xl font-light mb-6 text-white tracking-tight"
-            style="font-family: 'Playfair Display', Georgia, serif;"
+            style="font-family: 'Playfair Display', Georgia, serif; opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.1s;"
+            x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
         >
             {!! $title !!}
         </h2>

@@ -50,7 +50,10 @@
 
     <div class="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
         {{-- Badge --}}
-        <div class="flex items-center justify-center gap-4 mb-10">
+        <div class="flex items-center justify-center gap-4 mb-10"
+            x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+            style="opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);"
+        >
             <div class="w-12 h-px" style="background-color: {{ $primaryColor }}60;"></div>
             <span
                 class="text-xs font-medium uppercase tracking-[0.3em]"
@@ -64,7 +67,8 @@
         {{-- Titel --}}
         <h2
             class="text-4xl sm:text-5xl lg:text-6xl font-light mb-6 leading-tight"
-            style="color: {{ $backgroundColor }}; font-family: 'Playfair Display', Georgia, serif;"
+            style="color: {{ $backgroundColor }}; font-family: 'Playfair Display', Georgia, serif; opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.15s;"
+            x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
         >
             {{ $title }}
         </h2>
@@ -86,7 +90,10 @@
         </p>
 
         {{-- CTA Buttons --}}
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4"
+            x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+            style="opacity: 0; transform: translateY(10px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.3s;"
+        >
             <a
                 href="{{ $ctaLink }}"
                 class="inline-flex items-center justify-center px-10 py-4 text-sm font-medium uppercase tracking-widest transition-all duration-300 hover:opacity-90"

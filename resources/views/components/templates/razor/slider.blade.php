@@ -132,7 +132,10 @@
     {{-- Content --}}
     <div class="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center py-20">
         {{-- Vintage razor icon --}}
-        <div class="flex justify-center mb-8">
+        <div class="flex justify-center mb-8"
+            x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+            style="opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0s;"
+        >
             <div class="relative">
                 <div class="absolute -inset-4 border rotate-45 opacity-30" style="border-color: {{ $primaryColor }};"></div>
                 <svg class="w-16 h-16 relative" style="color: {{ $primaryColor }};" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1">
@@ -143,7 +146,10 @@
         </div>
 
         {{-- Badge --}}
-        <div class="flex items-center justify-center gap-6 mb-10">
+        <div class="flex items-center justify-center gap-6 mb-10"
+            x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+            style="opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.1s;"
+        >
             <div class="h-px w-20" style="background: linear-gradient(to right, transparent, {{ $primaryColor }});"></div>
             <span class="text-xs font-bold uppercase tracking-[0.4em]" style="color: {{ $primaryColor }};">
                 Premium Barbershop

@@ -41,7 +41,10 @@
 <section id="pricing" class="py-24 lg:py-32" style="background-color: {{ $backgroundColor }};">
     <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         {{-- Section header --}}
-        <div class="text-center mb-16">
+        <div class="text-center mb-16"
+            x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+            style="opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);"
+        >
             <div
                 class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium mb-6"
                 style="background-color: {{ $primaryColor }}15; color: {{ $primaryColor }};"
@@ -63,7 +66,9 @@
         </div>
 
         {{-- Pricing card --}}
-        <div class="bg-white rounded-3xl p-8 lg:p-12" style="box-shadow: 0 10px 40px {{ $primaryColor }}10;">
+        <div class="bg-white rounded-3xl p-8 lg:p-12" style="box-shadow: 0 10px 40px {{ $primaryColor }}10; opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.15s;"
+            x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+        >
             {{-- Price items --}}
             <div class="space-y-0">
                 @foreach($items as $index => $item)

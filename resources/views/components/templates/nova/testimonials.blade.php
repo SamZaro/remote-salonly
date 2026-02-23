@@ -49,7 +49,10 @@
 <section id="testimonials" class="py-20 lg:py-28" style="background-color: {{ $secondaryColor }};">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {{-- Section header --}}
-        <div class="text-center mb-16">
+        <div class="text-center mb-16"
+            x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+            style="opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);"
+        >
             <div class="flex items-center justify-center gap-4 mb-6">
                 <div class="w-16 h-px" style="background-color: {{ $primaryColor }};"></div>
                 <svg class="w-6 h-6" style="color: {{ $primaryColor }};" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -88,10 +91,11 @@
 
         {{-- Reviews grid --}}
         <div class="grid gap-6 md:grid-cols-2">
-            @foreach($reviews as $review)
+            @foreach($reviews as $index => $review)
                 <div
                     class="p-8 transition-all duration-300 hover:-translate-y-1 rounded-sm"
-                    style="background-color: {{ $backgroundColor }}; box-shadow: 0 4px 20px rgba(0,0,0,0.05);"
+                    style="background-color: {{ $backgroundColor }}; box-shadow: 0 4px 20px rgba(0,0,0,0.05); opacity: 0; transform: translateY(20px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) {{ $index * 0.12 }}s;"
+                    x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
                 >
                     {{-- Header --}}
                     <div class="flex items-start justify-between mb-4">

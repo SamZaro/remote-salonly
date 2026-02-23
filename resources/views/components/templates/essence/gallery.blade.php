@@ -29,7 +29,10 @@
 <section id="gallery" class="py-24 lg:py-32" style="background-color: {{ $backgroundColor }};">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {{-- Section header --}}
-        <div class="text-center mb-16">
+        <div class="text-center mb-16"
+            x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+            style="opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);"
+        >
             <div class="flex items-center justify-center gap-4 mb-8">
                 <div class="w-12 h-px" style="background-color: {{ $secondaryColor }}40;"></div>
                 <span class="text-xs font-medium uppercase tracking-[0.3em]" style="color: {{ $secondaryColor }};">Portfolio</span>
@@ -52,7 +55,8 @@
                 @foreach($mediaItems as $index => $media)
                     <div
                         class="group relative aspect-square overflow-hidden cursor-pointer"
-                        style="background-color: {{ $accentColor }};"
+                        style="background-color: {{ $accentColor }}; opacity: 0; transform: translateY(20px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) {{ $index * 0.12 }}s;"
+                        x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
                     >
                         <img
                             src="{{ $media->getUrl() }}"
@@ -88,7 +92,10 @@
         @endif
 
         {{-- CTA --}}
-        <div class="text-center mt-12">
+        <div class="text-center mt-12"
+            x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+            style="opacity: 0; transform: translateY(10px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.3s;"
+        >
             <a
                 href="#contact"
                 class="inline-flex items-center gap-3 text-sm font-medium uppercase tracking-widest transition-all duration-300 group"

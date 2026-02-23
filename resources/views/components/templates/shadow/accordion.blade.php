@@ -33,7 +33,10 @@
 <section id="accordion" class="py-20 lg:py-28" style="background-color: {{ $backgroundColor }};">
     <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         {{-- Section header --}}
-        <div class="text-center mb-16">
+        <div class="text-center mb-16"
+            x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+            style="opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);"
+        >
             <span
                 class="inline-block px-4 py-1 text-sm font-semibold uppercase tracking-wider rounded-sm mb-4"
                 style="background-color: {{ $primaryColor }}20; color: {{ $primaryColor }};"

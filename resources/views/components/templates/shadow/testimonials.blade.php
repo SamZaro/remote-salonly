@@ -36,7 +36,10 @@
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {{-- Section Header --}}
         @if($title || $subtitle)
-            <div class="mb-24 text-center">
+            <div class="mb-24 text-center"
+                x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+                style="opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);"
+            >
                 @if($subtitle)
                     <span
                         class="inline-block px-4 py-1 text-sm font-semibold uppercase tracking-wider rounded-sm mb-4"
@@ -59,7 +62,10 @@
         {{-- Testimonials Grid --}}
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
             @foreach($items as $item)
-                <figure>
+                <figure
+                    x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+                    style="opacity: 0; transform: translateY(20px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) {{ $loop->index * 0.12 }}s;"
+                >
                     <svg
                         class="w-8 h-8 mb-4"
                         style="color: {{ $primaryColor }};"

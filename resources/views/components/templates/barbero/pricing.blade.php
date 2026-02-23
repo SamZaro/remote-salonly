@@ -65,7 +65,11 @@
 <section id="pricing" class="py-20 lg:py-28" style="background-color: {{ $accentColor }};">
     <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         {{-- Section header --}}
-        <div class="text-center mb-16">
+        <div
+            class="text-center mb-16"
+            x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+            style="opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);"
+        >
             <div class="flex items-center justify-center gap-4 mb-6">
                 <div class="w-12 h-px" style="background-color: {{ $textColor }};"></div>
                 <svg class="w-8 h-8" style="color: {{ $textColor }};" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -90,7 +94,8 @@
         {{-- Pricing menu card --}}
         <div
             class="relative p-8 lg:p-12"
-            style="background-color: {{ $backgroundColor }}; border: 2px solid {{ $primaryColor }};"
+            x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+            style="background-color: {{ $backgroundColor }}; border: 2px solid {{ $primaryColor }}; opacity: 0; transform: translateY(20px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.15s;"
         >
             {{-- Corner decorations --}}
             <div class="absolute top-4 left-4 w-8 h-8 border-t-2 border-l-2" style="border-color: {{ $primaryColor }};"></div>
@@ -145,7 +150,11 @@
         </div>
 
         {{-- CTA --}}
-        <div class="text-center mt-12">
+        <div
+            class="text-center mt-12"
+            x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+            style="opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.3s;"
+        >
             <a
                 href="#contact"
                 class="inline-flex items-center justify-center px-10 py-5 text-sm font-bold uppercase tracking-widest transition-all duration-300 hover:scale-105"

@@ -79,7 +79,10 @@
     <div class="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         {{-- Optional title with accent line --}}
         @if($title)
-            <div class="mb-12 text-center">
+            <div class="mb-12 text-center"
+                x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+                style="opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);"
+            >
                 <h2
                     class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4"
                     style="color: {{ $headingColor }};"
@@ -93,6 +96,7 @@
         {{-- Rich text content --}}
         @if($renderedBody)
             <div
+                x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
                 class="rich-content prose prose-lg lg:prose-xl max-w-none
                     prose-headings:font-bold prose-headings:mb-4
                     prose-p:leading-relaxed prose-p:mb-6
@@ -119,6 +123,7 @@
                     --tw-prose-code: {{ $secondaryColor }};
                     --tw-prose-th-borders: {{ $primaryColor }};
                     --tw-prose-td-borders: color-mix(in srgb, {{ $textColor }} 20%, transparent);
+                    opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.15s;
                 "
             >
                 {!! $renderedBody !!}

@@ -57,7 +57,10 @@
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
 
         {{-- Header --}}
-        <div class="text-center mb-24">
+        <div class="text-center mb-24"
+            x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+            style="opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);"
+        >
             <div class="flex items-center justify-center gap-4 mb-6">
                 <div class="w-16 h-px" style="background-color: {{ $primaryColor }};"></div>
                 <svg class="w-6 h-6" style="color: {{ $primaryColor }};" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -77,8 +80,11 @@
 
         {{-- Pricing grid --}}
         <div class="grid gap-12 lg:gap-8 {{ $gridCols }}">
-            @foreach($categories as $category)
-                <div>
+            @foreach($categories as $index => $category)
+                <div
+                    x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+                    style="opacity: 0; transform: translateY(20px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) {{ $index * 0.12 }}s;"
+                >
                     {{-- Category title --}}
                     <h3
                         class="text-xl font-semibold mb-6 pb-3 border-b"

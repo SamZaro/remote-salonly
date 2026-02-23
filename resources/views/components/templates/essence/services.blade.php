@@ -51,7 +51,10 @@
 <section id="services" class="py-24 lg:py-32" style="background-color: {{ $accentColor }}40;">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {{-- Section header --}}
-        <div class="text-center mb-20">
+        <div class="text-center mb-20"
+            x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+            style="opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);"
+        >
             <div class="flex items-center justify-center gap-4 mb-8">
                 <div class="w-12 h-px" style="background-color: {{ $secondaryColor }}40;"></div>
                 <span class="text-xs font-medium uppercase tracking-[0.3em]" style="color: {{ $secondaryColor }};">Services</span>
@@ -73,7 +76,8 @@
             @foreach($items as $index => $item)
                 <div
                     class="group relative p-8 bg-white transition-all duration-500 hover:shadow-xl"
-                    style="box-shadow: 0 2px 20px {{ $secondaryColor }}08;"
+                    style="box-shadow: 0 2px 20px {{ $secondaryColor }}08; opacity: 0; transform: translateY(20px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) {{ $index * 0.12 }}s;"
+                    x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
                 >
                     {{-- Subtle corner accent --}}
                     <div class="absolute top-0 right-0 w-16 h-16">
@@ -125,7 +129,10 @@
         </div>
 
         {{-- Bottom CTA --}}
-        <div class="text-center mt-16">
+        <div class="text-center mt-16"
+            x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+            style="opacity: 0; transform: translateY(10px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.3s;"
+        >
             <a
                 href="#pricing"
                 class="inline-flex items-center gap-3 px-8 py-4 text-sm font-medium uppercase tracking-widest border transition-all duration-300 hover:bg-white"

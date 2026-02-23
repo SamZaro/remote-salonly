@@ -30,7 +30,11 @@
 <section id="accordion" class="py-20 lg:py-28" style="background-color: {{ $backgroundColor }};">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {{-- Header --}}
-        <div class="text-center mb-16">
+        <div
+            class="text-center mb-16"
+            x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+            style="opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);"
+        >
             <div class="flex items-center justify-center gap-4 mb-6">
                 <div class="h-px w-16" style="background-color: {{ $primaryColor }};"></div>
                 <svg class="w-8 h-8" style="color: {{ $primaryColor }};" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -56,7 +60,8 @@
                     <div
                         class="border transition-all duration-300"
                         :style="openItem === {{ $index }} ? 'border-color: {{ $primaryColor }}' : 'border-color: {{ $primaryColor }}40'"
-                        style="background-color: {{ $secondaryColor }};"
+                        style="background-color: {{ $secondaryColor }}; opacity: 0; transform: translateY(20px); transition: border-color 0.3s, opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1) {{ $index * 0.1 }}s, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1) {{ $index * 0.1 }}s;"
+                        x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
                     >
                         <button
                             @click="openItem = openItem === {{ $index }} ? null : {{ $index }}"

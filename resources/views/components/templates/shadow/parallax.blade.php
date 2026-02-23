@@ -43,13 +43,18 @@
     {{-- Content --}}
     <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
         {{-- Construction icon --}}
-        <div class="inline-flex items-center justify-center w-16 h-16 rounded-lg mb-8" style="background-color: {{ $primaryColor }};">
+        <div class="inline-flex items-center justify-center w-16 h-16 rounded-lg mb-8" style="background-color: {{ $primaryColor }}; opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0s;"
+            x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+        >
             <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
             </svg>
         </div>
 
-        <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-white">
+        <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-white"
+            x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+            style="opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.1s;"
+        >
             {!! $title !!}
         </h2>
 

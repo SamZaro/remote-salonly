@@ -42,7 +42,10 @@
     <div class="absolute bottom-16 right-16 w-px h-24 hidden lg:block" style="background: linear-gradient(180deg, transparent, {{ $primaryColor }}60, transparent);"></div>
 
     {{-- Content --}}
-    <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
+    <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20"
+        x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+        style="opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);"
+    >
         {{-- Elegant badge --}}
         <div class="inline-flex items-center gap-3 mb-10">
             <div class="w-12 h-px" style="background-color: {{ $primaryColor }}80;"></div>

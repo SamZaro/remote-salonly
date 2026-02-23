@@ -64,7 +64,10 @@
 <section id="pricing" class="py-20 lg:py-28" style="background-color: {{ $secondaryColor }};">
     <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         {{-- Section header --}}
-        <div class="text-center mb-16">
+        <div class="text-center mb-16"
+            x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+            style="opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);"
+        >
             <span class="inline-block text-xs font-bold uppercase tracking-[0.3em] mb-4" style="color: {{ $primaryColor }};">
                 Tarieven
             </span>
@@ -89,7 +92,8 @@
         {{-- Menu card --}}
         <div
             class="relative p-8 lg:p-12"
-            style="background-color: {{ $backgroundColor }}; border: 3px solid {{ $primaryColor }};"
+            style="background-color: {{ $backgroundColor }}; border: 3px solid {{ $primaryColor }}; opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.15s;"
+            x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
         >
             {{-- Decorative corners --}}
             <div class="absolute top-3 left-3 w-6 h-6 border-t-2 border-l-2" style="border-color: {{ $primaryColor }};"></div>

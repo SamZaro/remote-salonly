@@ -54,7 +54,8 @@
                 {{-- Eco badge --}}
                 <div
                     class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium mb-8"
-                    style="background-color: {{ $primaryColor }}15; color: {{ $primaryColor }};"
+                    style="background-color: {{ $primaryColor }}15; color: {{ $primaryColor }}; opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0s;"
+                    x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
                 >
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
@@ -65,7 +66,8 @@
                 {{-- Titel --}}
                 <h1
                     class="text-5xl sm:text-6xl lg:text-7xl font-light mb-8 leading-tight"
-                    style="color: {{ $headingColor }}; font-family: 'Playfair Display', Georgia, serif;"
+                    style="color: {{ $headingColor }}; font-family: 'Playfair Display', Georgia, serif; opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.1s;"
+                    x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
                 >
                     {!! $title !!}
                 </h1>
@@ -73,13 +75,17 @@
                 {{-- Subtitel --}}
                 <p
                     class="text-lg sm:text-xl mb-10 max-w-lg mx-auto lg:mx-0 leading-relaxed"
-                    style="color: {{ $textColor }};"
+                    style="color: {{ $textColor }}; opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.2s;"
+                    x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
                 >
                     {{ $subtitle }}
                 </p>
 
                 {{-- CTA Buttons --}}
-                <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4"
+                    x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+                    style="opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.3s;"
+                >
                     <a
                         href="{{ $ctaLink }}"
                         class="group inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full text-white transition-all duration-300 hover:shadow-lg"
@@ -127,7 +133,10 @@
             </div>
 
             {{-- Image --}}
-            <div class="relative">
+            <div class="relative"
+                x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateX(0)'"
+                style="opacity: 0; transform: translateX(-20px); transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);"
+            >
                 @if($backgroundImage)
                     <div class="relative">
                         <div class="absolute -inset-4 rounded-[3rem] opacity-20 blur-2xl" style="background-color: {{ $primaryColor }};"></div>

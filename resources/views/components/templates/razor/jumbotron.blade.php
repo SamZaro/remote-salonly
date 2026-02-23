@@ -48,7 +48,10 @@
 
     <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {{-- Top badge --}}
-        <div class="inline-flex items-center gap-3 mb-10">
+        <div class="inline-flex items-center gap-3 mb-10"
+            x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+            style="opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0s;"
+        >
             <div class="h-px w-12" style="background-color: {{ $primaryColor }};"></div>
             <span class="text-xs font-bold uppercase tracking-[0.4em]" style="color: {{ $primaryColor }};">
                 {{ $subtitle }}
@@ -58,7 +61,8 @@
 
         <h2
             class="text-5xl sm:text-6xl lg:text-7xl font-bold mb-12 uppercase tracking-wider leading-tight"
-            style="color: {{ $lightTextColor }}; font-family: 'Playfair Display', Georgia, serif;"
+            style="color: {{ $lightTextColor }}; font-family: 'Playfair Display', Georgia, serif; opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.1s;"
+            x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
         >
             {!! $title !!}
         </h2>
@@ -66,7 +70,8 @@
         <a
             href="{{ $ctaLink }}"
             class="group inline-flex items-center gap-4 px-12 py-6 text-xl font-bold uppercase tracking-widest transition-all duration-300 border-2"
-            style="border-color: {{ $primaryColor }}; color: {{ $primaryColor }}; background: transparent;"
+            style="border-color: {{ $primaryColor }}; color: {{ $primaryColor }}; background: transparent; opacity: 0; transform: translateY(10px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.3s;"
+            x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
             onmouseover="this.style.background='{{ $primaryColor }}'; this.style.color='{{ $secondaryColor }}'"
             onmouseout="this.style.background='transparent'; this.style.color='{{ $primaryColor }}'"
         >

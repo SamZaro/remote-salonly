@@ -44,7 +44,10 @@
 <section id="accordion" class="py-24 lg:py-32" style="background-color: {{ $primaryColor }}08;">
     <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         {{-- Section header --}}
-        <div class="text-center mb-16">
+        <div class="text-center mb-16"
+            x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+            style="opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);"
+        >
             <div
                 class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium mb-6"
                 style="background-color: {{ $primaryColor }}15; color: {{ $primaryColor }};"
