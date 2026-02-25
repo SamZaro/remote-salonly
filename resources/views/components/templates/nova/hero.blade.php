@@ -72,7 +72,7 @@
 
         {{-- Titel met elegante typografie (gebruikt heading font via CSS) --}}
         <h1
-            class="text-5xl sm:text-6xl md:text-7xl font-extrabold mb-6"
+            class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6"
             style="color: {{ $textColor }}; font-family: var(--font-family-heading); opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.15s;"
             x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
         >
@@ -81,7 +81,7 @@
 
         {{-- Subtitel (ook heading font voor consistentie) --}}
         <p
-            class="text-5xl sm:text-6xl md:text-7xl mb-12 max-w-4xl mx-auto font-extrabold"
+            class="text-3xl sm:text-4xl md:text-5xl mb-12 max-w-4xl mx-auto font-extrabold"
             style="color: {{ $primaryColor }}; font-family: var(--font-family-heading); opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.3s;"
             x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
         >

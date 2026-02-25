@@ -437,7 +437,7 @@ class TemplateFormSchema
         $colors = $schemes[$schemeKey]['colors'];
         $swatches = collect(['primary_color', 'secondary_color', 'accent_color'])
             ->map(fn ($key) => sprintf(
-                '<span class="inline-block w-4 h-4 rounded-full border border-gray-300 dark:border-gray-600" style="background-color: %s;"></span>',
+                '<span class="inline-block w-6 h-4 rounded-medium border border-gray-300 dark:border-gray-600" style="background-color: %s;"></span>',
                 $colors[$key]
             ))
             ->implode('');
