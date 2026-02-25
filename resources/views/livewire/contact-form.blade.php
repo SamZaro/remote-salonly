@@ -35,11 +35,13 @@
         {{-- Contact Form --}}
         <form wire:submit="submit" class="space-y-4">
             {{-- Honeypot field (hidden from users, visible to bots) --}}
-            <div class="hidden" aria-hidden="true">
+            <div style="position: absolute; left: -9999px; opacity: 0; height: 0; overflow: hidden;" aria-hidden="true">
+                <label for="company_url">{{ __('Bedrijfswebsite') }}</label>
                 <input
                     type="text"
-                    name="website"
-                    wire:model="website"
+                    id="company_url"
+                    name="company_url"
+                    wire:model="company_url"
                     tabindex="-1"
                     autocomplete="off"
                 >

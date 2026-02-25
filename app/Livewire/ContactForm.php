@@ -17,29 +17,39 @@ class ContactForm extends Component
     #[Validate('required|email', message: 'Vul een geldig e-mailadres in')]
     public string $email = '';
 
-    #[Validate('nullable|max:20', message: 'Telefoonnummer mag maximaal 20 tekens bevatten')]
+    #[Validate('nullable|regex:/^[+]?[\d\s\-().]{7,20}$/', message: 'Vul een geldig telefoonnummer in')]
     public string $phone = '';
 
     #[Validate('required|min:10|max:2000', message: 'Vul een bericht in (minimaal 10 tekens)')]
     public string $message = '';
 
-    // Honeypot field for spam protection
-    public string $website = '';
+    // Honeypot field for spam protection (obscure name to fool bots)
+    public string $company_url = '';
 
     public array $theme = [];
 
     public bool $submitted = false;
 
+    public int $loadedAt = 0;
+
     public function mount(array $theme = []): void
     {
         $this->theme = $theme;
+        $this->loadedAt = time();
     }
 
     public function submit(): void
     {
         // Honeypot check - if filled, it's likely a bot
-        if (! empty($this->website)) {
+        if (! empty($this->company_url)) {
             // Silently "succeed" to not reveal the honeypot
+            $this->submitted = true;
+
+            return;
+        }
+
+        // Time-based check - humans need at least 3 seconds to fill a form
+        if ($this->loadedAt > 0 && (time() - $this->loadedAt) < 3) {
             $this->submitted = true;
 
             return;
