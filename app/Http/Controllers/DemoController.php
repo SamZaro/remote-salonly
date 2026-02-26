@@ -15,12 +15,12 @@ class DemoController extends Controller
 
     public function show(string $slug): View
     {
-        // Prevent access to demo if a template is already set in site settings
-        if (app(SiteSettings::class)->template_slug) {
-            abort(404);
-        }
+        //Voorkom toegang tot de demo als er al een template is ingesteld in de site-instellingen
+        //if (app(SiteSettings::class)->template_slug) {
+        //    abort(404);
+        //}
 
-        // Load the template with its active and ordered sections and category
+        // Laad de template met de actieve en geordende secties en categorie
         $template = Template::with(['sections' => fn ($q) => $q->active()->ordered(), 'category'])
             ->where('slug', $slug)
             ->firstOrFail();
