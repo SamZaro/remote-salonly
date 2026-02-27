@@ -50,7 +50,8 @@
       "Bash(/c/Users/Samir/.config/herd/bin/php84/php.exe artisan migrate:*)",
       "Bash(/c/Users/Samir/.config/herd/bin/php84/php.exe artisan:*)",
       "Bash(/c/Users/Samir/.config/herd/bin/php84/php.exe vendor/bin/pint --dirty)",
-      "mcp__laravel-boost__browser-logs"
+      "mcp__laravel-boost__browser-logs",
+      "Bash(\"C:\\\\Users\\\\Samir\\\\.config\\\\herd\\\\bin\\\\php.bat\" artisan:*)"
     ],
     "deny": [],
     "ask": []

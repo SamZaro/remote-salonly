@@ -73,6 +73,7 @@ class TemplateSeeder extends Seeder
             // Schoonheidssalons
             ['slug' => 'blossom',  'category' => 'schoonheidssalons', 'name' => 'Blossom',  'description' => 'Zachte en elegante template voor schoonheidssalons.',       'scheme' => 'beauty',  'font' => 'Lato',          'heading_font' => 'Playfair Display, serif',   'hero_title' => 'Ontdek jouw natuurlijke schoonheid', 'hero_subtitle' => 'Zachte verzorging en stralende resultaten'],
             ['slug' => 'essence',  'category' => 'schoonheidssalons', 'name' => 'Essence',  'description' => 'Verfijnd en luxueus design voor schoonheidssalons.',        'scheme' => 'luxury',  'font' => 'Source Sans 3', 'heading_font' => 'Cormorant, serif',          'hero_title' => 'De essentie van schoonheid',         'hero_subtitle' => 'Luxueuze behandelingen voor een stralende uitstraling'],
+            ['slug' => 'glow',     'category' => 'schoonheidssalons', 'name' => 'Glow',     'description' => 'Warm minimalistisch design voor schoonheidssalons.',         'scheme' => 'beauty',  'font' => 'Raleway',       'heading_font' => 'Raleway, sans-serif',       'hero_title' => 'Mooi haar begint bij vakmanschap',   'hero_subtitle' => 'Persoonlijke verzorging in een ontspannen sfeer'],
         ];
     }
 
