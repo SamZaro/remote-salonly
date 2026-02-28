@@ -36,6 +36,8 @@
         'home' => '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>',
         'clock' => '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>',
     ];
+    $headingFont = $theme['heading_font_family'] ?? 'Oswald';
+    $bodyFont = $theme['font_family'] ?? 'Roboto';
 @endphp
 
 <section id="about" class="py-20 lg:py-28" style="background-color: {{ $backgroundColor }};">
@@ -78,7 +80,7 @@
                     x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
                     style="background-color: {{ $primaryColor }}; opacity: 0; transform: translateY(10px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.3s;"
                 >
-                    <span class="block text-4xl font-bold" style="color: {{ $secondaryColor }}; font-family: 'Playfair Display', Georgia, serif;">15+</span>
+                    <span class="block text-4xl font-bold" style="color: {{ $secondaryColor }}; font-family: '{{ $headingFont }}', Georgia, serif;">15+</span>
                     <span class="block text-xs font-bold uppercase tracking-widest" style="color: {{ $secondaryColor }};">Jaar</span>
                 </div>
             </div>
@@ -96,7 +98,7 @@
 
                 <h2
                     class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 uppercase tracking-wide"
-                    style="color: {{ $textColor }}; font-family: 'Playfair Display', Georgia, serif;"
+                    style="color: {{ $textColor }}; font-family: '{{ $headingFont }}', Georgia, serif;"
                 >
                     {{ $title }}
                 </h2>

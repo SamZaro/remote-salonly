@@ -24,6 +24,8 @@
     $accentColor = $theme['accent_color'] ?? '#FFD6C9';
     $backgroundColor = $theme['background_color'] ?? '#FAFAFA';
     $headingColor = $theme['heading_color'] ?? '#2B2B2B';
+    $headingFont = $theme['heading_font_family'] ?? 'Abril Fatface';
+    $bodyFont = $theme['font_family'] ?? 'Nunito';
 @endphp
 
 <section id="jumbotron" class="relative py-32 lg:py-40 overflow-hidden" style="background: {{ $secondaryColor }};">
@@ -58,7 +60,7 @@
         {{-- Title --}}
         <h2
             class="text-5xl sm:text-6xl lg:text-7xl font-black mb-6 leading-tight text-white"
-            style="font-family: 'Montserrat', 'Poppins', sans-serif;"
+            style="font-family: '{{ $headingFont }}', sans-serif;"
         >
             {{ $title }}
         </h2>

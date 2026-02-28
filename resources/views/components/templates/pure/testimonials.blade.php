@@ -41,6 +41,8 @@
     $backgroundColor = $theme['background_color'] ?? '#fafaf9';
     $textColor = $theme['text_color'] ?? '#78716c';
     $headingColor = $theme['heading_color'] ?? '#1c1917';
+    $headingFont = $theme['heading_font_family'] ?? 'DM Serif Display';
+    $bodyFont = $theme['font_family'] ?? 'DM Sans';
 @endphp
 
 <section id="testimonials" class="py-24 lg:py-32" style="background-color: {{ $primaryColor }}08;">
@@ -61,7 +63,7 @@
             </div>
             <h2
                 class="text-3xl sm:text-4xl lg:text-5xl font-light mb-6"
-                style="color: {{ $headingColor }}; font-family: 'Playfair Display', Georgia, serif;"
+                style="color: {{ $headingColor }}; font-family: '{{ $headingFont }}', Georgia, serif;"
             >
                 {{ $title }}
             </h2>

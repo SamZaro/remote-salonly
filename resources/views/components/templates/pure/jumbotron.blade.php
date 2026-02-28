@@ -24,6 +24,8 @@
     $accentColor = $theme['accent_color'] ?? '#10b981';
     $backgroundColor = $theme['background_color'] ?? '#fafaf9';
     $headingColor = $theme['heading_color'] ?? '#1c1917';
+    $headingFont = $theme['heading_font_family'] ?? 'DM Serif Display';
+    $bodyFont = $theme['font_family'] ?? 'DM Sans';
 @endphp
 
 <section id="jumbotron" class="relative py-32 lg:py-40 overflow-hidden" style="background: linear-gradient(135deg, {{ $primaryColor }}15, {{ $accentColor }}10);">
@@ -65,7 +67,7 @@
         {{-- Title --}}
         <h2
             class="text-4xl sm:text-5xl lg:text-6xl font-light mb-6 leading-tight"
-            style="color: {{ $headingColor }}; font-family: 'Playfair Display', Georgia, serif; opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.1s;"
+            style="color: {{ $headingColor }}; font-family: '{{ $headingFont }}', Georgia, serif; opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.1s;"
             x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
         >
             {{ $title }}

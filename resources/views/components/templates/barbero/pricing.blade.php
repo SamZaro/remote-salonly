@@ -60,6 +60,8 @@
         // Als de prijs niet begint met €, voeg deze toe
         return str_starts_with($price, '€') ? $price : '€' . $price;
     };
+    $headingFont = $theme['heading_font_family'] ?? 'Oswald';
+    $bodyFont = $theme['font_family'] ?? 'Roboto';
 @endphp
 
 <section id="pricing" class="py-20 lg:py-28" style="background-color: {{ $accentColor }};">
@@ -79,7 +81,7 @@
             </div>
             <h2
                 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 uppercase tracking-wider"
-                style="color: {{ $textColor }}; font-family: 'Playfair Display', Georgia, serif;"
+                style="color: {{ $textColor }}; font-family: '{{ $headingFont }}', Georgia, serif;"
             >
                 {{ $title }}
             </h2>
@@ -139,7 +141,7 @@
                             {{-- Price --}}
                             <div
                                 class="text-2xl font-bold"
-                                style="color: {{ $primaryColor }}; font-family: 'Playfair Display', Georgia, serif;"
+                                style="color: {{ $primaryColor }}; font-family: '{{ $headingFont }}', Georgia, serif;"
                             >
                                 {{ $formatPrice($item['price']) }}
                             </div>

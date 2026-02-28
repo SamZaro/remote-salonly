@@ -38,6 +38,8 @@
         'color' => '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/>',
         'child' => '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>',
     ];
+    $headingFont = $theme['heading_font_family'] ?? 'Oswald';
+    $bodyFont = $theme['font_family'] ?? 'Roboto';
 @endphp
 
 <section id="services" class="py-20 lg:py-28" style="background-color: {{ $secondaryColor }};">
@@ -57,7 +59,7 @@
             </div>
             <h2
                 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 uppercase tracking-wider"
-                style="color: #ffffff; font-family: 'Playfair Display', Georgia, serif;"
+                style="color: #ffffff; font-family: '{{ $headingFont }}', Georgia, serif;"
             >
                 {{ $title }}
             </h2>
@@ -122,7 +124,7 @@
                         @if(isset($item['price']))
                             <div
                                 class="flex-shrink-0 text-2xl font-bold"
-                                style="color: {{ $primaryColor }}; font-family: 'Playfair Display', Georgia, serif;"
+                                style="color: {{ $primaryColor }}; font-family: '{{ $headingFont }}', Georgia, serif;"
                             >
                                 {{ $item['price'] }}
                             </div>

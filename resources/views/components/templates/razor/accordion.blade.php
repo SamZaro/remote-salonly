@@ -27,6 +27,8 @@
     $headingColor = $theme['heading_color'] ?? $textColor;
     $backgroundColor = $theme['background_color'] ?? '#ffffff';
     $accentColor = $theme['accent_color'] ?? '#f8f8f8';
+    $headingFont = $theme['heading_font_family'] ?? 'Bebas Neue';
+    $bodyFont = $theme['font_family'] ?? 'Barlow';
 @endphp
 
 <section id="accordion" class="py-20 lg:py-28" style="background-color: {{ $backgroundColor }};">
@@ -41,7 +43,7 @@
             </span>
             <h2
                 class="text-4xl sm:text-5xl lg:text-6xl font-bold"
-                style="color: {{ $headingColor }}; font-family: 'Playfair Display', Georgia, serif;"
+                style="color: {{ $headingColor }}; font-family: '{{ $headingFont }}', Georgia, serif;"
             >
                 {{ $title }}
             </h2>
@@ -68,7 +70,7 @@
                                 <span
                                     class="text-4xl font-bold transition-colors"
                                     :style="openItem === {{ $index }} ? 'color: {{ $primaryColor }}' : 'color: {{ $primaryColor }}40'"
-                                    style="font-family: 'Playfair Display', Georgia, serif;"
+                                    style="font-family: '{{ $headingFont }}', Georgia, serif;"
                                 >
                                     {{ str_pad($index + 1, 2, '0', STR_PAD_LEFT) }}
                                 </span>

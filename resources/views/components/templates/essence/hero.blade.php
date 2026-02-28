@@ -24,6 +24,9 @@
     $secondaryColor = $theme['secondary_color'] ?? '#6E5F5B';  // Donker taupe
     $backgroundColor = $theme['background_color'] ?? '#FBF9F8'; // Roomwit
     $textColor = $theme['text_color'] ?? '#6E5F5B';
+
+    $headingFont = $theme['heading_font_family'] ?? 'Cormorant';
+    $bodyFont = $theme['font_family'] ?? 'Source Sans 3';
 @endphp
 
 <section
@@ -61,7 +64,7 @@
                 {{-- Titel --}}
                 <h1
                     class="text-5xl sm:text-6xl lg:text-7xl font-light mb-8 leading-tight tracking-tight"
-                    style="color: {{ $secondaryColor }}; font-family: 'Playfair Display', Georgia, serif;"
+                    style="color: {{ $secondaryColor }}; font-family: '{{ $headingFont }}', Georgia, serif;"
                 >
                     {!! $title !!}
                 </h1>
@@ -98,12 +101,12 @@
                 {{-- Trust indicators --}}
                 <div class="flex items-center justify-center lg:justify-start gap-8 mt-16">
                     <div class="text-center">
-                        <span class="block text-2xl font-light" style="color: {{ $secondaryColor }}; font-family: 'Playfair Display', Georgia, serif;">15+</span>
+                        <span class="block text-2xl font-light" style="color: {{ $secondaryColor }}; font-family: '{{ $headingFont }}', Georgia, serif;">15+</span>
                         <span class="text-xs uppercase tracking-wider" style="color: {{ $textColor }}; opacity: 0.6;">Jaar ervaring</span>
                     </div>
                     <div class="w-px h-10" style="background-color: {{ $secondaryColor }}20;"></div>
                     <div class="text-center">
-                        <span class="block text-2xl font-light" style="color: {{ $secondaryColor }}; font-family: 'Playfair Display', Georgia, serif;">2000+</span>
+                        <span class="block text-2xl font-light" style="color: {{ $secondaryColor }}; font-family: '{{ $headingFont }}', Georgia, serif;">2000+</span>
                         <span class="text-xs uppercase tracking-wider" style="color: {{ $textColor }}; opacity: 0.6;">Happy clients</span>
                     </div>
                     <div class="w-px h-10" style="background-color: {{ $secondaryColor }}20;"></div>

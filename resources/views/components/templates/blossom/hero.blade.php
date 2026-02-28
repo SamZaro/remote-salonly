@@ -24,6 +24,8 @@
     $accentColor = $theme['accent_color'] ?? '#f5e6d3';
     $textColor = '#4a3f44';
     $lightBg = '#fdf8f8';
+    $headingFont = $theme['heading_font_family'] ?? 'Playfair Display';
+    $bodyFont = $theme['font_family'] ?? 'Lato';
 @endphp
 
 <section
@@ -52,7 +54,7 @@
                 {{-- Titel --}}
                 <h1
                     class="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
-                    style="color: {{ $textColor }}; font-family: 'Playfair Display', Georgia, serif;"
+                    style="color: {{ $textColor }}; font-family: '{{ $headingFont }}', Georgia, serif;"
                 >
                     {!! $title !!}
                 </h1>

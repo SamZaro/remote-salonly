@@ -27,6 +27,8 @@
     $secondaryColor = $theme['secondary_color'] ?? '#2B2B2B';
     $accentColor = $theme['accent_color'] ?? '#FFD6C9';
     $backgroundColor = $theme['background_color'] ?? '#FAFAFA';
+    $headingFont = $theme['heading_font_family'] ?? 'Abril Fatface';
+    $bodyFont = $theme['font_family'] ?? 'Nunito';
 
     // Social icons
     $socialIcons = [
@@ -56,7 +58,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.121 14.121L19 19m-7-7l7-7m-7 7l-2.879 2.879M12 12L9.121 9.121m0 5.758a3 3 0 10-4.243 4.243 3 3 0 004.243-4.243zm0-5.758a3 3 0 10-4.243-4.243 3 3 0 004.243 4.243z"/>
                         </svg>
                     </div>
-                    <span class="text-2xl font-black text-white" style="font-family: 'Montserrat', 'Poppins', sans-serif;">
+                    <span class="text-2xl font-black text-white" style="font-family: '{{ $headingFont }}', sans-serif;">
                         {{ $companyName }}
                     </span>
                 </div>

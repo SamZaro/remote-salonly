@@ -24,6 +24,8 @@
     $backgroundColor = $theme['background_color'] ?? '#fafafa';
     $textColor = $theme['text_color'] ?? '#737373';
     $headingColor = $theme['heading_color'] ?? '#171717';
+    $headingFont = $theme['heading_font_family'] ?? 'Abril Fatface';
+    $bodyFont = $theme['font_family'] ?? 'Nunito';
 
     $memberCount = count($members);
     $gridCols = match(true) {
@@ -53,7 +55,7 @@
             </div>
             <h2
                 class="text-4xl sm:text-5xl lg:text-6xl font-black mb-6"
-                style="color: {{ $headingColor }}; font-family: 'Montserrat', 'Poppins', sans-serif;"
+                style="color: {{ $headingColor }}; font-family: '{{ $headingFont }}', sans-serif;"
             >
                 {{ $title }}
             </h2>

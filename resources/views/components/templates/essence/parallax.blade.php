@@ -20,6 +20,9 @@
     $accentColor = $theme['accent_color'] ?? '#F2E7E4';
     $secondaryColor = $theme['secondary_color'] ?? '#6E5F5B';
     $backgroundColor = $theme['background_color'] ?? '#FBF9F8';
+
+    $headingFont = $theme['heading_font_family'] ?? 'Cormorant';
+    $bodyFont = $theme['font_family'] ?? 'Source Sans 3';
 @endphp
 
 <section
@@ -57,7 +60,7 @@
 
         <h2
             class="text-4xl sm:text-5xl lg:text-6xl font-light mb-6 leading-tight tracking-tight"
-            style="color: {{ $backgroundColor }}; font-family: 'Playfair Display', Georgia, serif;"
+            style="color: {{ $backgroundColor }}; font-family: '{{ $headingFont }}', Georgia, serif;"
         >
             {!! $title !!}
         </h2>

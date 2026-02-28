@@ -21,6 +21,8 @@
     $primaryColor = $theme['primary_color'] ?? '#d4919d';
     $secondaryColor = $theme['secondary_color'] ?? '#c9b8d4';
     $textColor = $theme['text_color'] ?? '#4a3f44';
+    $headingFont = $theme['heading_font_family'] ?? 'Playfair Display';
+    $bodyFont = $theme['font_family'] ?? 'Lato';
 @endphp
 
 <section id="jumbotron" class="relative py-24 lg:py-36 overflow-hidden">
@@ -44,7 +46,7 @@
 
         <h2
             class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-8 text-white"
-            style="font-family: 'Playfair Display', Georgia, serif;"
+            style="font-family: '{{ $headingFont }}', Georgia, serif;"
         >
             {{ $title }}
         </h2>

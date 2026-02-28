@@ -22,6 +22,8 @@
     $secondaryColor = $theme['secondary_color'] ?? '#0f0f0f';
     // Lichte tekstkleur voor donkere achtergronden (consistent patroon)
     $lightTextColor = '#ffffff';
+    $headingFont = $theme['heading_font_family'] ?? 'Bebas Neue';
+    $bodyFont = $theme['font_family'] ?? 'Barlow';
 @endphp
 
 <section id="jumbotron" class="relative py-24 lg:py-40 overflow-hidden">
@@ -61,7 +63,7 @@
 
         <h2
             class="text-5xl sm:text-6xl lg:text-7xl font-bold mb-12 uppercase tracking-wider leading-tight"
-            style="color: {{ $lightTextColor }}; font-family: 'Playfair Display', Georgia, serif; opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.1s;"
+            style="color: {{ $lightTextColor }}; font-family: '{{ $headingFont }}', Georgia, serif; opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.1s;"
             x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
         >
             {!! $title !!}

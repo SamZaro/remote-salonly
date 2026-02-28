@@ -19,6 +19,8 @@
     $primaryColor = $theme['primary_color'] ?? '#c9a227';
     $secondaryColor = $theme['secondary_color'] ?? '#1a1a1a';
     $backgroundColor = $theme['gallery_background'] ?? '#0f0f0f';
+    $headingFont = $theme['heading_font_family'] ?? 'Oswald';
+    $bodyFont = $theme['font_family'] ?? 'Roboto';
 @endphp
 
 <section id="gallery" class="py-20 lg:py-28" style="background-color: {{ $backgroundColor }};">
@@ -41,7 +43,7 @@
             </span>
             <h2
                 class="text-3xl sm:text-4xl lg:text-5xl font-bold uppercase tracking-wider text-white"
-                style="font-family: 'Playfair Display', Georgia, serif;"
+                style="font-family: '{{ $headingFont }}', Georgia, serif;"
             >
                 {{ $title }}
             </h2>

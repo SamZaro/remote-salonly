@@ -24,6 +24,8 @@
     $secondaryColor = $theme['secondary_color'] ?? '#c9b8d4';
     $accentColor = $theme['accent_color'] ?? '#f5e6d3';
     $textColor = $theme['text_color'] ?? '#4a3f44';
+    $headingFont = $theme['heading_font_family'] ?? 'Playfair Display';
+    $bodyFont = $theme['font_family'] ?? 'Lato';
 @endphp
 
 <section class="relative py-24 lg:py-32 overflow-hidden">
@@ -58,7 +60,7 @@
         {{-- Title --}}
         <h2
             class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 text-white"
-            style="font-family: 'Playfair Display', Georgia, serif;"
+            style="font-family: '{{ $headingFont }}', Georgia, serif;"
         >
             {{ $title }}
         </h2>

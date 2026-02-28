@@ -36,6 +36,8 @@
     $accentColor = $theme['accent_color'] ?? '#f5e6d3';
     $textColor = $theme['text_color'] ?? '#4a3f44';
     $backgroundColor = $theme['footer_background'] ?? '#faf8f5';
+    $headingFont = $theme['heading_font_family'] ?? 'Playfair Display';
+    $bodyFont = $theme['font_family'] ?? 'Lato';
 @endphp
 
 <footer id="footer" class="py-20 relative overflow-hidden" style="background-color: {{ $backgroundColor }};">
@@ -44,7 +46,7 @@
         <div class="text-center mb-16">
             <h3
                 class="text-3xl font-bold mb-4"
-                style="color: {{ $textColor }}; font-family: 'Playfair Display', Georgia, serif;"
+                style="color: {{ $textColor }}; font-family: '{{ $headingFont }}', Georgia, serif;"
             >
                 {{ $companyName }}
             </h3>
@@ -68,7 +70,7 @@
                 </div>
                 <h4
                     class="text-lg font-semibold mb-4"
-                    style="color: {{ $textColor }}; font-family: 'Playfair Display', Georgia, serif;"
+                    style="color: {{ $textColor }}; font-family: '{{ $headingFont }}', Georgia, serif;"
                 >
                     {{ __('Navigatie') }}
                 </h4>
@@ -101,7 +103,7 @@
                 </div>
                 <h4
                     class="text-lg font-semibold mb-4"
-                    style="color: {{ $textColor }}; font-family: 'Playfair Display', Georgia, serif;"
+                    style="color: {{ $textColor }}; font-family: '{{ $headingFont }}', Georgia, serif;"
                 >
                     {{ __('Contact') }}
                 </h4>
@@ -152,7 +154,7 @@
                 </div>
                 <h4
                     class="text-lg font-semibold mb-4"
-                    style="color: {{ $textColor }}; font-family: 'Playfair Display', Georgia, serif;"
+                    style="color: {{ $textColor }}; font-family: '{{ $headingFont }}', Georgia, serif;"
                 >
                     {{ __('Volg Ons') }}
                 </h4>

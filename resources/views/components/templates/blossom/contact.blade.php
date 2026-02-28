@@ -33,6 +33,8 @@
     $accentColor = $theme['accent_color'] ?? '#f5e6d3';
     $textColor = $theme['text_color'] ?? '#4a3f44';
     $backgroundColor = $theme['background_color'] ?? '#ffffff';
+    $headingFont = $theme['heading_font_family'] ?? 'Playfair Display';
+    $bodyFont = $theme['font_family'] ?? 'Lato';
 @endphp
 
 <section id="contact" class="py-20 lg:py-28" style="background-color: {{ $backgroundColor }};">
@@ -51,7 +53,7 @@
             </span>
             <h2
                 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6"
-                style="color: {{ $textColor }}; font-family: 'Playfair Display', Georgia, serif;"
+                style="color: {{ $textColor }}; font-family: '{{ $headingFont }}', Georgia, serif;"
             >
                 {{ $title }}
             </h2>
@@ -84,7 +86,7 @@
                 </div>
                 <h3
                     class="text-lg font-bold mb-3"
-                    style="color: {{ $textColor }}; font-family: 'Playfair Display', Georgia, serif;"
+                    style="color: {{ $textColor }}; font-family: '{{ $headingFont }}', Georgia, serif;"
                 >
                     Adres
                 </h3>
@@ -121,7 +123,7 @@
                     </div>
                     <h3
                         class="text-lg font-bold mb-3"
-                        style="font-family: 'Playfair Display', Georgia, serif;"
+                        style="font-family: '{{ $headingFont }}', Georgia, serif;"
                     >
                         Bel Ons
                     </h3>
@@ -158,7 +160,7 @@
                 </div>
                 <h3
                     class="text-lg font-bold mb-4 text-center"
-                    style="color: {{ $textColor }}; font-family: 'Playfair Display', Georgia, serif;"
+                    style="color: {{ $textColor }}; font-family: '{{ $headingFont }}', Georgia, serif;"
                 >
                     Openingstijden
                 </h3>

@@ -39,6 +39,8 @@
     $accentColor = $theme['accent_color'] ?? '#f8f8f8';
     // Lichte tekstkleur voor donkere footer (consistent patroon)
     $lightTextColor = '#ffffff';
+    $headingFont = $theme['heading_font_family'] ?? 'Bebas Neue';
+    $bodyFont = $theme['font_family'] ?? 'Barlow';
 @endphp
 
 <footer id="footer" class="py-20" style="background-color: {{ $backgroundColor }};">
@@ -57,7 +59,7 @@
 
             <h3
                 class="text-4xl font-bold uppercase tracking-[0.2em] mb-4"
-                style="color: {{ $primaryColor }}; font-family: 'Playfair Display', Georgia, serif;"
+                style="color: {{ $primaryColor }}; font-family: '{{ $headingFont }}', Georgia, serif;"
             >
                 {{ $companyName }}
             </h3>
@@ -109,7 +111,7 @@
                             <a
                                 href="tel:{{ preg_replace('/[^0-9+]/', '', $phone) }}"
                                 class="text-2xl font-bold transition-colors hover:opacity-80"
-                                style="color: {{ $primaryColor }}; font-family: 'Playfair Display', Georgia, serif;"
+                                style="color: {{ $primaryColor }}; font-family: '{{ $headingFont }}', Georgia, serif;"
                             >
                                 {{ $phone }}
                             </a>

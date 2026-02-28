@@ -32,6 +32,8 @@
     $accentColor = $theme['accent_color'] ?? '#f8f8f8';
     // Lichte tekstkleur voor donkere achtergronden (consistent patroon)
     $lightTextColor = '#ffffff';
+    $headingFont = $theme['heading_font_family'] ?? 'Bebas Neue';
+    $bodyFont = $theme['font_family'] ?? 'Barlow';
 @endphp
 
 <section id="about" class="py-20 lg:py-28" style="background-color: {{ $accentColor }};">
@@ -87,7 +89,7 @@
                         <div class="text-center">
                             <span
                                 class="block text-2xl lg:text-3xl font-bold"
-                                style="color: {{ $primaryColor }}; font-family: 'Playfair Display', Georgia, serif;"
+                                style="color: {{ $primaryColor }}; font-family: '{{ $headingFont }}', Georgia, serif;"
                             >
                                 {{ $stat['value'] }}
                             </span>
@@ -112,7 +114,7 @@
                 {{-- Title --}}
                 <h2
                     class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6"
-                    style="color: {{ $headingColor }}; font-family: 'Playfair Display', Georgia, serif;"
+                    style="color: {{ $headingColor }}; font-family: '{{ $headingFont }}', Georgia, serif;"
                 >
                     {{ $title }}
                 </h2>

@@ -29,6 +29,8 @@
     $backgroundColor = $theme['background_color'] ?? '#fafaf9';
     $textColor = $theme['text_color'] ?? '#78716c';
     $headingColor = $theme['heading_color'] ?? '#1c1917';
+    $headingFont = $theme['heading_font_family'] ?? 'DM Serif Display';
+    $bodyFont = $theme['font_family'] ?? 'DM Sans';
 @endphp
 
 @if($sliderImages->isNotEmpty())
@@ -68,7 +70,7 @@
                     100% Natuurlijk
                 </div>
 
-                @if($title)<h1 class="text-5xl sm:text-6xl lg:text-7xl font-light mb-8 leading-tight" style="color: {{ $headingColor }}; font-family: 'Playfair Display', Georgia, serif;">{!! $title !!}</h1>@endif
+                @if($title)<h1 class="text-5xl sm:text-6xl lg:text-7xl font-light mb-8 leading-tight" style="color: {{ $headingColor }}; font-family: '{{ $headingFont }}', Georgia, serif;">{!! $title !!}</h1>@endif
                 @if($subtitle)<p class="text-lg sm:text-xl mb-10 max-w-lg mx-auto lg:mx-0 leading-relaxed" style="color: {{ $textColor }};">{{ $subtitle }}</p>@endif
 
                 <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
@@ -151,7 +153,7 @@
 @else
 <section id="slider" class="relative min-h-screen flex items-center" style="background-color: {{ $backgroundColor }};">
     <div class="mx-auto max-w-4xl text-center px-4">
-        @if($title)<h1 class="text-5xl sm:text-6xl font-light mb-8" style="color: {{ $headingColor }}; font-family: 'Playfair Display', Georgia, serif;">{!! $title !!}</h1>@endif
+        @if($title)<h1 class="text-5xl sm:text-6xl font-light mb-8" style="color: {{ $headingColor }}; font-family: '{{ $headingFont }}', Georgia, serif;">{!! $title !!}</h1>@endif
         @if($subtitle)<p class="text-lg mb-8" style="color: {{ $textColor }};">{{ $subtitle }}</p>@endif
         <p class="text-sm opacity-50" style="color: {{ $textColor }};">{{ __('Upload slider images in the admin panel.') }}</p>
     </div>

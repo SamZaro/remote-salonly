@@ -39,6 +39,8 @@
     $backgroundColor = $theme['background_color'] ?? '#FAFAFA';
     $textColor = $theme['text_color'] ?? '#6B6B6B';
     $headingColor = $theme['heading_color'] ?? '#2B2B2B';
+    $headingFont = $theme['heading_font_family'] ?? 'Abril Fatface';
+    $bodyFont = $theme['font_family'] ?? 'Nunito';
 @endphp
 
 <section id="accordion" class="py-24 lg:py-32 relative overflow-hidden" style="background: {{ $accentColor }}50;">
@@ -58,7 +60,7 @@
             </div>
             <h2
                 class="text-4xl sm:text-5xl lg:text-6xl font-black mb-4"
-                style="color: {{ $headingColor }}; font-family: 'Montserrat', 'Poppins', sans-serif;"
+                style="color: {{ $headingColor }}; font-family: '{{ $headingFont }}', sans-serif;"
             >
                 {{ $title }}
             </h2>

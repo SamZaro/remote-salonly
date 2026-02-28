@@ -25,6 +25,9 @@
     $textColor = $theme['text_color'] ?? '#8A7B76';
     $headingColor = $theme['heading_color'] ?? '#6E5F5B';
 
+    $headingFont = $theme['heading_font_family'] ?? 'Cormorant';
+    $bodyFont = $theme['font_family'] ?? 'Source Sans 3';
+
     $memberCount = count($members);
     $gridCols = match(true) {
         $memberCount <= 2 => 'md:grid-cols-2 max-w-3xl mx-auto',
@@ -44,7 +47,7 @@
             </div>
             <h2
                 class="text-3xl sm:text-4xl lg:text-5xl font-light mb-6"
-                style="color: {{ $secondaryColor }}; font-family: 'Playfair Display', Georgia, serif;"
+                style="color: {{ $secondaryColor }}; font-family: '{{ $headingFont }}', Georgia, serif;"
             >
                 {{ $title }}
             </h2>
@@ -89,7 +92,7 @@
                         {{-- Name --}}
                         <h3
                             class="text-lg font-light mb-1"
-                            style="color: {{ $secondaryColor }}; font-family: 'Playfair Display', Georgia, serif;"
+                            style="color: {{ $secondaryColor }}; font-family: '{{ $headingFont }}', Georgia, serif;"
                         >
                             {{ $member['name'] ?? '' }}
                         </h3>

@@ -32,6 +32,8 @@
     $secondaryColor = $theme['secondary_color'] ?? '#1a1a1a';
     $textColor = '#ffffff';
     $buttonRadius = $theme['button_border_radius'] ?? '0px';
+    $headingFont = $theme['heading_font_family'] ?? 'Oswald';
+    $bodyFont = $theme['font_family'] ?? 'Roboto';
 @endphp
 
 <section
@@ -80,7 +82,7 @@
         {{-- Titel met vintage serif font --}}
         <h1
             class="text-4xl sm:text-3xl md:text-5xl lg:text-7xl font-bold mb-6 uppercase tracking-wider"
-            style="color: {{ $textColor }}; font-family: 'Playfair Display', Georgia, serif; opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.3s;"
+            style="color: {{ $textColor }}; font-family: '{{ $headingFont }}', Georgia, serif; opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.3s;"
             x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
         >
             {!! $title !!}

@@ -26,6 +26,9 @@
     $accentColor = $theme['accent_color'] ?? '#F2E7E4';
     $secondaryColor = $theme['secondary_color'] ?? '#6E5F5B';
     $backgroundColor = $theme['background_color'] ?? '#FBF9F8';
+
+    $headingFont = $theme['heading_font_family'] ?? 'Cormorant';
+    $bodyFont = $theme['font_family'] ?? 'Source Sans 3';
 @endphp
 
 <section id="cta" class="relative py-24 lg:py-32 overflow-hidden" style="background-color: {{ $secondaryColor }};">
@@ -67,7 +70,7 @@
         {{-- Titel --}}
         <h2
             class="text-4xl sm:text-5xl lg:text-6xl font-light mb-6 leading-tight"
-            style="color: {{ $backgroundColor }}; font-family: 'Playfair Display', Georgia, serif; opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.15s;"
+            style="color: {{ $backgroundColor }}; font-family: '{{ $headingFont }}', Georgia, serif; opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.15s;"
             x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
         >
             {{ $title }}

@@ -32,6 +32,8 @@
     $textColor = $theme['text_color'] ?? '#8A7B76';
     $headingColor = $theme['heading_color'] ?? '#6E5F5B';
     $backgroundColor = $theme['footer_background'] ?? '#FBF9F8';
+    $headingFont = $theme['heading_font_family'] ?? 'Raleway';
+    $bodyFont = $theme['font_family'] ?? 'Raleway';
 @endphp
 
 <footer id="footer" class="py-16" style="background-color: {{ $secondaryColor }};">
@@ -40,7 +42,7 @@
         <div class="grid md:grid-cols-3 gap-12 mb-12">
             {{-- Brand --}}
             <div>
-                <h3 class="text-xl font-bold mb-3" style="color: {{ $backgroundColor }}; font-family: 'Raleway', sans-serif;">
+                <h3 class="text-xl font-bold mb-3" style="color: {{ $backgroundColor }}; font-family: '{{ $headingFont }}', sans-serif;">
                     {{ $companyName }}
                 </h3>
                 @if($description)

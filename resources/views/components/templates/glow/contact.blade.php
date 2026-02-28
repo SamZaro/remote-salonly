@@ -31,6 +31,8 @@
     $textColor = $theme['text_color'] ?? '#8A7B76';
     $headingColor = $theme['heading_color'] ?? '#6E5F5B';
     $backgroundColor = $theme['background_color'] ?? '#FBF9F8';
+    $headingFont = $theme['heading_font_family'] ?? 'Raleway';
+    $bodyFont = $theme['font_family'] ?? 'Raleway';
 @endphp
 
 <section id="contact" class="py-20 lg:py-28" style="background-color: {{ $accentColor }};">
@@ -44,7 +46,7 @@
             <span class="text-xs font-semibold uppercase tracking-[0.2em] mb-4 block" style="color: {{ $secondaryColor }};">
                 Contact
             </span>
-            <h2 class="text-4xl sm:text-5xl font-bold mb-4" style="color: {{ $headingColor }}; font-family: 'Raleway', sans-serif;">
+            <h2 class="text-4xl sm:text-5xl font-bold mb-4" style="color: {{ $headingColor }}; font-family: '{{ $headingFont }}', sans-serif;">
                 {{ $title }}
             </h2>
             <p class="text-lg" style="color: {{ $textColor }};">{{ $subtitle }}</p>

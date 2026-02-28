@@ -49,6 +49,8 @@
     $headingColor = $theme['heading_color'] ?? $textColor;
     $backgroundColor = $theme['background_color'] ?? '#ffffff';
     $accentColor = $theme['accent_color'] ?? '#f8f8f8';
+    $headingFont = $theme['heading_font_family'] ?? 'Bebas Neue';
+    $bodyFont = $theme['font_family'] ?? 'Barlow';
 @endphp
 
 <section id="testimonials" class="py-20 lg:py-28" style="background-color: {{ $accentColor }};">
@@ -63,7 +65,7 @@
             </span>
             <h2
                 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6"
-                style="color: {{ $headingColor }}; font-family: 'Playfair Display', Georgia, serif;"
+                style="color: {{ $headingColor }}; font-family: '{{ $headingFont }}', Georgia, serif;"
             >
                 {{ $title }}
             </h2>

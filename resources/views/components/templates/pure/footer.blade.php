@@ -26,6 +26,8 @@
     $secondaryColor = $theme['secondary_color'] ?? '#1c1917';
     $accentColor = $theme['accent_color'] ?? '#10b981';
     $backgroundColor = $theme['background_color'] ?? '#fafaf9';
+    $headingFont = $theme['heading_font_family'] ?? 'DM Serif Display';
+    $bodyFont = $theme['font_family'] ?? 'DM Sans';
 
     // Social icons
     $socialIcons = [
@@ -49,7 +51,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
                         </svg>
                     </div>
-                    <span class="text-xl font-light" style="color: {{ $backgroundColor }}; font-family: 'Playfair Display', Georgia, serif;">
+                    <span class="text-xl font-light" style="color: {{ $backgroundColor }}; font-family: '{{ $headingFont }}', Georgia, serif;">
                         {{ $companyName }}
                     </span>
                 </div>

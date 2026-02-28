@@ -20,6 +20,8 @@
     $secondaryColor = $theme['secondary_color'] ?? '#c9b8d4';
     $textColor = $theme['text_color'] ?? '#4a3f44';
     $backgroundColor = $theme['background_color'] ?? '#faf8f5';
+    $headingFont = $theme['heading_font_family'] ?? 'Playfair Display';
+    $bodyFont = $theme['font_family'] ?? 'Lato';
 @endphp
 
 <section id="gallery" class="py-20 lg:py-28 relative overflow-hidden" style="background-color: {{ $backgroundColor }};">
@@ -41,7 +43,7 @@
             </span>
             <h2
                 class="text-3xl sm:text-4xl lg:text-5xl font-bold"
-                style="color: {{ $textColor }}; font-family: 'Playfair Display', Georgia, serif;"
+                style="color: {{ $textColor }}; font-family: '{{ $headingFont }}', Georgia, serif;"
             >
                 {{ $title }}
             </h2>

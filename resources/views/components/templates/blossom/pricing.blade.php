@@ -70,6 +70,8 @@
         'nails' => '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V11m0-5.5v-1a1.5 1.5 0 013 0v1m0 0V11m0-5.5a1.5 1.5 0 013 0v3m0 0V11"/>',
         'lash' => '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>',
     ];
+    $headingFont = $theme['heading_font_family'] ?? 'Playfair Display';
+    $bodyFont = $theme['font_family'] ?? 'Lato';
 @endphp
 
 <section id="pricing" class="py-20 lg:py-28" style="background-color: {{ $backgroundColor }};">
@@ -87,7 +89,7 @@
             </span>
             <h2
                 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6"
-                style="color: {{ $textColor }}; font-family: 'Playfair Display', Georgia, serif;"
+                style="color: {{ $textColor }}; font-family: '{{ $headingFont }}', Georgia, serif;"
             >
                 {{ $title }}
             </h2>
@@ -117,7 +119,7 @@
                                     {!! $icons[$category['icon'] ?? 'hair'] ?? $icons['hair'] !!}
                                 </svg>
                             </div>
-                            <h3 class="text-2xl font-bold" style="font-family: 'Playfair Display', Georgia, serif;">
+                            <h3 class="text-2xl font-bold" style="font-family: '{{ $headingFont }}', Georgia, serif;">
                                 {{ $category['name'] }}
                             </h3>
                         </div>

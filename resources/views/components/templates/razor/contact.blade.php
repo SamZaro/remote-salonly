@@ -36,6 +36,8 @@
     $accentColor = $theme['accent_color'] ?? '#f8f8f8';
     // Lichte tekstkleur voor donkere achtergronden (consistent patroon)
     $lightTextColor = '#ffffff';
+    $headingFont = $theme['heading_font_family'] ?? 'Bebas Neue';
+    $bodyFont = $theme['font_family'] ?? 'Barlow';
 @endphp
 
 <section id="contact" class="py-20 lg:py-28" style="background-color: {{ $backgroundColor }};">
@@ -47,7 +49,7 @@
             </span>
             <h2
                 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6"
-                style="color: {{ $headingColor }}; font-family: 'Playfair Display', Georgia, serif;"
+                style="color: {{ $headingColor }}; font-family: '{{ $headingFont }}', Georgia, serif;"
             >
                 {{ $title }}
             </h2>
@@ -118,7 +120,7 @@
                 <a
                     href="tel:{{ preg_replace('/[^0-9+]/', '', $phone) }}"
                     class="text-2xl font-bold block transition-colors hover:opacity-80"
-                    style="color: {{ $secondaryColor }}; font-family: 'Playfair Display', Georgia, serif;"
+                    style="color: {{ $secondaryColor }}; font-family: '{{ $headingFont }}', Georgia, serif;"
                 >
                     {{ $phone }}
                 </a>

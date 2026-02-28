@@ -30,6 +30,8 @@
     $primaryColor = $theme['primary_color'] ?? '#b8860b';
     $secondaryColor = $theme['secondary_color'] ?? '#0f0f0f';
     $textColor = '#ffffff';
+    $headingFont = $theme['heading_font_family'] ?? 'Bebas Neue';
+    $bodyFont = $theme['font_family'] ?? 'Barlow';
 @endphp
 
 @if($sliderImages->isNotEmpty())
@@ -161,7 +163,7 @@
         @if($title)
             <h1
                 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-8 uppercase tracking-tight leading-none"
-                style="color: {{ $textColor }}; font-family: 'Playfair Display', Georgia, serif;"
+                style="color: {{ $textColor }}; font-family: '{{ $headingFont }}', Georgia, serif;"
             >
                 {!! $title !!}
             </h1>
@@ -271,7 +273,7 @@
         @if($title)
             <h1
                 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-8 uppercase tracking-tight leading-none"
-                style="color: {{ $textColor }}; font-family: 'Playfair Display', Georgia, serif;"
+                style="color: {{ $textColor }}; font-family: '{{ $headingFont }}', Georgia, serif;"
             >
                 {!! $title !!}
             </h1>

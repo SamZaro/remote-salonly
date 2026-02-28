@@ -59,6 +59,8 @@
         // Als de prijs niet begint met €, voeg deze toe
         return str_starts_with($price, '€') ? $price : '€' . $price;
     };
+    $headingFont = $theme['heading_font_family'] ?? 'Bebas Neue';
+    $bodyFont = $theme['font_family'] ?? 'Barlow';
 @endphp
 
 <section id="pricing" class="py-20 lg:py-28" style="background-color: {{ $secondaryColor }};">
@@ -73,7 +75,7 @@
             </span>
             <h2
                 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6"
-                style="color: {{ $lightTextColor }}; font-family: 'Playfair Display', Georgia, serif;"
+                style="color: {{ $lightTextColor }}; font-family: '{{ $headingFont }}', Georgia, serif;"
             >
                 {{ $title }}
             </h2>
@@ -109,7 +111,7 @@
                         <div class="text-center mb-8">
                             <h3
                                 class="text-2xl font-bold uppercase tracking-wider inline-block px-6 relative"
-                                style="color: {{ $headingColor }}; font-family: 'Playfair Display', Georgia, serif;"
+                                style="color: {{ $headingColor }}; font-family: '{{ $headingFont }}', Georgia, serif;"
                             >
                                 <span class="absolute left-0 top-1/2 w-full h-px -z-10" style="background-color: {{ $primaryColor }}30;"></span>
                                 <span class="px-4" style="background-color: {{ $backgroundColor }};">{{ $category['name'] }}</span>
@@ -153,7 +155,7 @@
                                     {{-- Price --}}
                                     <div
                                         class="text-xl font-bold shrink-0"
-                                        style="color: {{ $primaryColor }}; font-family: 'Playfair Display', Georgia, serif;"
+                                        style="color: {{ $primaryColor }}; font-family: '{{ $headingFont }}', Georgia, serif;"
                                     >
                                         {{ $formatPrice($item['price']) }}
                                     </div>

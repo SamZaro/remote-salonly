@@ -44,6 +44,8 @@
     $backgroundColor = $theme['background_color'] ?? '#FAFAFA';
     $textColor = $theme['text_color'] ?? '#6B6B6B';
     $headingColor = $theme['heading_color'] ?? '#2B2B2B';
+    $headingFont = $theme['heading_font_family'] ?? 'Abril Fatface';
+    $bodyFont = $theme['font_family'] ?? 'Nunito';
 
     // Icons - Heroicons outline 24x24
     $icons = [
@@ -76,7 +78,7 @@
             </div>
             <h2
                 class="text-4xl sm:text-5xl lg:text-6xl font-black mb-6"
-                style="color: white; font-family: 'Montserrat', 'Poppins', sans-serif;"
+                style="color: white; font-family: '{{ $headingFont }}', sans-serif;"
             >
                 {{ $title }}
             </h2>

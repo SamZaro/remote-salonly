@@ -29,6 +29,9 @@
     $backgroundColor = $theme['background_color'] ?? '#FBF9F8';
     $textColor = $theme['text_color'] ?? '#6E5F5B';
 
+    $headingFont = $theme['heading_font_family'] ?? 'Cormorant';
+    $bodyFont = $theme['font_family'] ?? 'Source Sans 3';
+
     // Helper functie voor prijs formatting
     $formatPrice = function($price) {
         if (empty($price)) return '';
@@ -51,7 +54,7 @@
             </div>
             <h2
                 class="text-3xl sm:text-4xl lg:text-5xl font-light mb-6"
-                style="color: {{ $secondaryColor }}; font-family: 'Playfair Display', Georgia, serif;"
+                style="color: {{ $secondaryColor }}; font-family: '{{ $headingFont }}', Georgia, serif;"
             >
                 {{ $title }}
             </h2>
@@ -121,7 +124,7 @@
                             <div class="flex-1 border-b border-dotted hidden sm:block" style="border-color: {{ $primaryColor }};"></div>
 
                             {{-- Price --}}
-                            <div class="text-lg font-light" style="color: {{ $secondaryColor }}; font-family: 'Playfair Display', Georgia, serif;">
+                            <div class="text-lg font-light" style="color: {{ $secondaryColor }}; font-family: '{{ $headingFont }}', Georgia, serif;">
                                 {{ $formatPrice($item['price']) }}
                             </div>
                         </div>

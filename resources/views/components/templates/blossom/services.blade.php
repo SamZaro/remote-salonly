@@ -86,6 +86,8 @@
         ['from' => '#d4919d', 'to' => '#c9b8d4'],
         ['from' => '#c9b8d4', 'to' => '#d4919d'],
     ];
+    $headingFont = $theme['heading_font_family'] ?? 'Playfair Display';
+    $bodyFont = $theme['font_family'] ?? 'Lato';
 @endphp
 
 <section id="services" class="py-20 lg:py-28" style="background-color: {{ $backgroundColor }};">
@@ -107,7 +109,7 @@
             </span>
             <h2
                 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6"
-                style="color: {{ $textColor }}; font-family: 'Playfair Display', Georgia, serif;"
+                style="color: {{ $textColor }}; font-family: '{{ $headingFont }}', Georgia, serif;"
             >
                 {{ $title }}
             </h2>
@@ -150,7 +152,7 @@
                     </div>
 
                     {{-- Title --}}
-                    <h3 class="text-xl font-bold mb-3" style="color: {{ $textColor }}; font-family: 'Playfair Display', Georgia, serif;">
+                    <h3 class="text-xl font-bold mb-3" style="color: {{ $textColor }}; font-family: '{{ $headingFont }}', Georgia, serif;">
                         {{ $item['title'] }}
                     </h3>
 

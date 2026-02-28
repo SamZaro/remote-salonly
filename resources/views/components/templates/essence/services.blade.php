@@ -29,6 +29,9 @@
     $backgroundColor = $theme['background_color'] ?? '#FBF9F8';
     $textColor = $theme['text_color'] ?? '#6E5F5B';
 
+    $headingFont = $theme['heading_font_family'] ?? 'Cormorant';
+    $bodyFont = $theme['font_family'] ?? 'Source Sans 3';
+
     // Icon mapping - synced with IconSets::kappersIcons() + luxury salon icons
     $icons = [
         // Kappers icons (from IconSets)
@@ -62,7 +65,7 @@
             </div>
             <h2
                 class="text-3xl sm:text-4xl lg:text-5xl font-light mb-6"
-                style="color: {{ $secondaryColor }}; font-family: 'Playfair Display', Georgia, serif;"
+                style="color: {{ $secondaryColor }}; font-family: '{{ $headingFont }}', Georgia, serif;"
             >
                 {{ $title }}
             </h2>
@@ -98,7 +101,7 @@
                     {{-- Title --}}
                     <h3
                         class="text-lg font-medium mb-3"
-                        style="color: {{ $secondaryColor }}; font-family: 'Playfair Display', Georgia, serif;"
+                        style="color: {{ $secondaryColor }}; font-family: '{{ $headingFont }}', Georgia, serif;"
                     >
                         {{ $item['title'] }}
                     </h3>

@@ -54,6 +54,8 @@
     $textColor = $theme['text_color'] ?? '#8A7B76';
     $headingColor = $theme['heading_color'] ?? '#6E5F5B';
     $backgroundColor = $theme['background_color'] ?? '#FBF9F8';
+    $headingFont = $theme['heading_font_family'] ?? 'Raleway';
+    $bodyFont = $theme['font_family'] ?? 'Raleway';
 @endphp
 
 <section id="pricing" class="py-20 lg:py-28" style="background-color: {{ $backgroundColor }};">
@@ -67,7 +69,7 @@
             <span class="text-xs font-semibold uppercase tracking-[0.2em] mb-4 block" style="color: {{ $secondaryColor }};">
                 Prijzen
             </span>
-            <h2 class="text-4xl sm:text-5xl font-bold mb-5" style="color: {{ $headingColor }}; font-family: 'Raleway', sans-serif;">
+            <h2 class="text-4xl sm:text-5xl font-bold mb-5" style="color: {{ $headingColor }}; font-family: '{{ $headingFont }}', sans-serif;">
                 {{ $title }}
             </h2>
             <p class="text-lg max-w-2xl mx-auto" style="color: {{ $textColor }};">
@@ -87,7 +89,7 @@
                     {{-- Category header --}}
                     <h3
                         class="text-2xl font-bold mb-6 pb-4"
-                        style="color: {{ $headingColor }}; font-family: 'Raleway', sans-serif; border-bottom: 2px solid {{ $primaryColor }};"
+                        style="color: {{ $headingColor }}; font-family: '{{ $headingFont }}', sans-serif; border-bottom: 2px solid {{ $primaryColor }};"
                     >
                         {{ $category['name'] }}
                     </h3>

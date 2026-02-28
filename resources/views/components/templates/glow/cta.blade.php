@@ -20,6 +20,8 @@
     $primaryColor = $theme['primary_color'] ?? '#E8D8D3';
     $secondaryColor = $theme['secondary_color'] ?? '#6E5F5B';
     $backgroundColor = $theme['background_color'] ?? '#FBF9F8';
+    $headingFont = $theme['heading_font_family'] ?? 'Raleway';
+    $bodyFont = $theme['font_family'] ?? 'Raleway';
 @endphp
 
 <section class="relative py-24 lg:py-32 overflow-hidden">
@@ -34,7 +36,7 @@
     <div class="relative z-10 mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
         <h2
             class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6"
-            style="color: {{ $backgroundColor }}; font-family: 'Raleway', sans-serif;"
+            style="color: {{ $backgroundColor }}; font-family: '{{ $headingFont }}', sans-serif;"
         >
             {{ $title }}
         </h2>

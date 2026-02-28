@@ -24,6 +24,8 @@
     $secondaryColor = $theme['secondary_color'] ?? '#0f0f0f';
     // Lichte tekstkleur voor donkere hero achtergrond (consistent patroon)
     $textColor = '#ffffff';
+    $headingFont = $theme['heading_font_family'] ?? 'Bebas Neue';
+    $bodyFont = $theme['font_family'] ?? 'Barlow';
 @endphp
 
 <section
@@ -99,7 +101,7 @@
         {{-- Titel --}}
         <h1
             class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-8 uppercase tracking-tight leading-none"
-            style="color: {{ $textColor }}; font-family: 'Playfair Display', Georgia, serif; opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.2s;"
+            style="color: {{ $textColor }}; font-family: '{{ $headingFont }}', Georgia, serif; opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.2s;"
             x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
         >
             {!! $title !!}

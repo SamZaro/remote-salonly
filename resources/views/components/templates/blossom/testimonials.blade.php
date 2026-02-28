@@ -53,6 +53,8 @@
     $textColor = $theme['text_color'] ?? '#4a3f44';
     $backgroundColor = $theme['background_color'] ?? '#ffffff';
     $lightBg = '#fdf8f8';
+    $headingFont = $theme['heading_font_family'] ?? 'Playfair Display';
+    $bodyFont = $theme['font_family'] ?? 'Lato';
 @endphp
 
 <section id="testimonials" class="py-20 lg:py-28" style="background-color: {{ $lightBg }};">
@@ -74,7 +76,7 @@
             </span>
             <h2
                 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6"
-                style="color: {{ $textColor }}; font-family: 'Playfair Display', Georgia, serif;"
+                style="color: {{ $textColor }}; font-family: '{{ $headingFont }}', Georgia, serif;"
             >
                 {{ $title }}
             </h2>
@@ -87,7 +89,7 @@
                 <div class="flex items-center gap-3">
                     <span
                         class="text-4xl font-bold"
-                        style="color: {{ $textColor }}; font-family: 'Playfair Display', Georgia, serif;"
+                        style="color: {{ $textColor }}; font-family: '{{ $headingFont }}', Georgia, serif;"
                     >
                         {{ $rating }}
                     </span>

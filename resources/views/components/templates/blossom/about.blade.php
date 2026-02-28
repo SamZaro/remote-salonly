@@ -30,6 +30,8 @@
     $textColor = $theme['text_color'] ?? '#4a3f44';
     $backgroundColor = $theme['background_color'] ?? '#ffffff';
     $lightBg = '#fdf8f8';
+    $headingFont = $theme['heading_font_family'] ?? 'Playfair Display';
+    $bodyFont = $theme['font_family'] ?? 'Lato';
 @endphp
 
 <section id="about" class="py-20 lg:py-28" style="background-color: {{ $lightBg }};">
@@ -86,7 +88,7 @@
                         <div class="text-center">
                             <span
                                 class="block text-2xl lg:text-3xl font-bold"
-                                style="background: linear-gradient(135deg, {{ $primaryColor }}, {{ $secondaryColor }}); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-family: 'Playfair Display', Georgia, serif;"
+                                style="background: linear-gradient(135deg, {{ $primaryColor }}, {{ $secondaryColor }}); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-family: '{{ $headingFont }}', Georgia, serif;"
                             >
                                 {{ $stat['value'] }}
                             </span>
@@ -128,7 +130,7 @@
                 {{-- Title --}}
                 <h2
                     class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6"
-                    style="color: {{ $textColor }}; font-family: 'Playfair Display', Georgia, serif;"
+                    style="color: {{ $textColor }}; font-family: '{{ $headingFont }}', Georgia, serif;"
                 >
                     {{ $title }}
                 </h2>

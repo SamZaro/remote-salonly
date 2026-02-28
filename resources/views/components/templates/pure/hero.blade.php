@@ -25,6 +25,8 @@
     $backgroundColor = $theme['background_color'] ?? '#fafaf9'; // Stone light
     $textColor = $theme['text_color'] ?? '#78716c';            // Stone grey
     $headingColor = $theme['heading_color'] ?? '#1c1917';      // Stone dark
+    $headingFont = $theme['heading_font_family'] ?? 'DM Serif Display';
+    $bodyFont = $theme['font_family'] ?? 'DM Sans';
 @endphp
 
 <section
@@ -66,7 +68,7 @@
                 {{-- Titel --}}
                 <h1
                     class="text-5xl sm:text-6xl lg:text-7xl font-light mb-8 leading-tight"
-                    style="color: {{ $headingColor }}; font-family: 'Playfair Display', Georgia, serif; opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.1s;"
+                    style="color: {{ $headingColor }}; font-family: '{{ $headingFont }}', Georgia, serif; opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.1s;"
                     x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
                 >
                     {!! $title !!}

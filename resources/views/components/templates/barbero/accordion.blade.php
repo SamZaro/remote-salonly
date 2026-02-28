@@ -25,6 +25,8 @@
     $secondaryColor = $theme['secondary_color'] ?? '#1a1a1a';
     $textColor = '#ffffff';
     $backgroundColor = $theme['accordion_background'] ?? '#0f0f0f';
+    $headingFont = $theme['heading_font_family'] ?? 'Oswald';
+    $bodyFont = $theme['font_family'] ?? 'Roboto';
 @endphp
 
 <section id="accordion" class="py-20 lg:py-28" style="background-color: {{ $backgroundColor }};">
@@ -47,7 +49,7 @@
             </span>
             <h2
                 class="text-3xl sm:text-4xl lg:text-5xl font-bold uppercase tracking-wider"
-                style="color: {{ $textColor }}; font-family: 'Playfair Display', Georgia, serif;"
+                style="color: {{ $textColor }}; font-family: '{{ $headingFont }}', Georgia, serif;"
             >
                 {{ $title }}
             </h2>

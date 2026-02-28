@@ -29,6 +29,8 @@
     $backgroundColor = $theme['background_color'] ?? '#FAFAFA';
     $textColor = $theme['text_color'] ?? '#6B6B6B';
     $headingColor = $theme['heading_color'] ?? '#2B2B2B';
+    $headingFont = $theme['heading_font_family'] ?? 'Abril Fatface';
+    $bodyFont = $theme['font_family'] ?? 'Nunito';
 @endphp
 
 @if($sliderImages->isNotEmpty())
@@ -61,7 +63,7 @@
                     NEW VIBES ONLY
                 </div>
 
-                @if($title)<h1 class="text-5xl sm:text-6xl lg:text-7xl font-black mb-6 leading-tight tracking-tight" style="color: {{ $headingColor }}; font-family: 'Montserrat', 'Poppins', sans-serif;">{!! $title !!}</h1>@endif
+                @if($title)<h1 class="text-5xl sm:text-6xl lg:text-7xl font-black mb-6 leading-tight tracking-tight" style="color: {{ $headingColor }}; font-family: '{{ $headingFont }}', sans-serif;">{!! $title !!}</h1>@endif
                 @if($subtitle)<p class="text-lg sm:text-xl mb-10 max-w-xl mx-auto lg:mx-0" style="color: {{ $textColor }};">{{ $subtitle }}</p>@endif
 
                 <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
@@ -143,7 +145,7 @@
 @else
 <section id="slider" class="relative min-h-screen flex items-center" style="background-color: {{ $backgroundColor }};">
     <div class="mx-auto max-w-4xl text-center px-4">
-        @if($title)<h1 class="text-5xl sm:text-6xl font-black mb-6" style="color: {{ $headingColor }}; font-family: 'Montserrat', 'Poppins', sans-serif;">{!! $title !!}</h1>@endif
+        @if($title)<h1 class="text-5xl sm:text-6xl font-black mb-6" style="color: {{ $headingColor }}; font-family: '{{ $headingFont }}', sans-serif;">{!! $title !!}</h1>@endif
         @if($subtitle)<p class="text-lg mb-8" style="color: {{ $textColor }};">{{ $subtitle }}</p>@endif
         <p class="text-sm opacity-50" style="color: {{ $textColor }};">{{ __('Upload slider images in the admin panel.') }}</p>
     </div>

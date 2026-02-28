@@ -38,6 +38,9 @@
     $secondaryColor = $theme['secondary_color'] ?? '#6E5F5B';
     $backgroundColor = $theme['background_color'] ?? '#FBF9F8';
     $textColor = $theme['text_color'] ?? '#6E5F5B';
+
+    $headingFont = $theme['heading_font_family'] ?? 'Cormorant';
+    $bodyFont = $theme['font_family'] ?? 'Source Sans 3';
 @endphp
 
 <section id="accordion" class="py-24 lg:py-32" style="background-color: {{ $accentColor }}40;">
@@ -54,7 +57,7 @@
             </div>
             <h2
                 class="text-3xl sm:text-4xl lg:text-5xl font-light mb-6"
-                style="color: {{ $secondaryColor }}; font-family: 'Playfair Display', Georgia, serif;"
+                style="color: {{ $secondaryColor }}; font-family: '{{ $headingFont }}', Georgia, serif;"
             >
                 {{ $title }}
             </h2>

@@ -19,6 +19,8 @@
     $primaryColor = $theme['primary_color'] ?? '#FF6F61';
     $secondaryColor = $theme['secondary_color'] ?? '#2B2B2B';
     $accentColor = $theme['accent_color'] ?? '#FFD6C9';
+    $headingFont = $theme['heading_font_family'] ?? 'Abril Fatface';
+    $bodyFont = $theme['font_family'] ?? 'Nunito';
 @endphp
 
 <section

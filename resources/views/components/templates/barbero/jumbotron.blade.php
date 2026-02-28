@@ -20,6 +20,8 @@
     // Theme kleuren - vintage barbershop
     $primaryColor = $theme['primary_color'] ?? '#c9a227';
     $secondaryColor = $theme['secondary_color'] ?? '#1a1a1a';
+    $headingFont = $theme['heading_font_family'] ?? 'Oswald';
+    $bodyFont = $theme['font_family'] ?? 'Roboto';
 @endphp
 
 <section id="jumbotron" class="relative py-24 lg:py-36 overflow-hidden">
@@ -52,7 +54,7 @@
 
         <h2
             class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-8 uppercase tracking-wider text-white"
-            style="font-family: 'Playfair Display', Georgia, serif; opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.15s;"
+            style="font-family: '{{ $headingFont }}', Georgia, serif; opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.15s;"
             x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
         >
             {!! $title !!}

@@ -28,6 +28,9 @@
     $accentColor = $theme['accent_color'] ?? '#F2E7E4';
     $backgroundColor = $theme['background_color'] ?? '#FBF9F8';
     $textColor = $theme['text_color'] ?? '#6E5F5B';
+
+    $headingFont = $theme['heading_font_family'] ?? 'Cormorant';
+    $bodyFont = $theme['font_family'] ?? 'Source Sans 3';
 @endphp
 
 @if($sliderImages->isNotEmpty())
@@ -75,7 +78,7 @@
                     <div class="w-12 h-px" style="background-color: {{ $secondaryColor }}40;"></div>
                 </div>
 
-                @if($title)<h1 class="text-5xl sm:text-6xl lg:text-7xl font-light mb-8 leading-tight tracking-tight" style="color: {{ $secondaryColor }}; font-family: 'Playfair Display', Georgia, serif;">{!! $title !!}</h1>@endif
+                @if($title)<h1 class="text-5xl sm:text-6xl lg:text-7xl font-light mb-8 leading-tight tracking-tight" style="color: {{ $secondaryColor }}; font-family: '{{ $headingFont }}', Georgia, serif;">{!! $title !!}</h1>@endif
                 @if($subtitle)<p class="text-lg sm:text-xl mb-12 max-w-md mx-auto lg:mx-0 font-light leading-relaxed" style="color: {{ $textColor }}; opacity: 0.8;">{{ $subtitle }}</p>@endif
 
                 <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-5">
@@ -91,12 +94,12 @@
                 {{-- Trust indicators --}}
                 <div class="flex items-center justify-center lg:justify-start gap-8 mt-16">
                     <div class="text-center">
-                        <span class="block text-2xl font-light" style="color: {{ $secondaryColor }}; font-family: 'Playfair Display', Georgia, serif;">15+</span>
+                        <span class="block text-2xl font-light" style="color: {{ $secondaryColor }}; font-family: '{{ $headingFont }}', Georgia, serif;">15+</span>
                         <span class="text-xs uppercase tracking-wider" style="color: {{ $textColor }}; opacity: 0.6;">Jaar ervaring</span>
                     </div>
                     <div class="w-px h-10" style="background-color: {{ $secondaryColor }}20;"></div>
                     <div class="text-center">
-                        <span class="block text-2xl font-light" style="color: {{ $secondaryColor }}; font-family: 'Playfair Display', Georgia, serif;">2000+</span>
+                        <span class="block text-2xl font-light" style="color: {{ $secondaryColor }}; font-family: '{{ $headingFont }}', Georgia, serif;">2000+</span>
                         <span class="text-xs uppercase tracking-wider" style="color: {{ $textColor }}; opacity: 0.6;">Happy clients</span>
                     </div>
                 </div>
@@ -156,7 +159,7 @@
 @else
 <section id="slider" class="relative min-h-screen flex items-center" style="background-color: {{ $backgroundColor }};">
     <div class="mx-auto max-w-4xl text-center px-4">
-        @if($title)<h1 class="text-5xl sm:text-6xl font-light mb-8" style="color: {{ $secondaryColor }}; font-family: 'Playfair Display', Georgia, serif;">{!! $title !!}</h1>@endif
+        @if($title)<h1 class="text-5xl sm:text-6xl font-light mb-8" style="color: {{ $secondaryColor }}; font-family: '{{ $headingFont }}', Georgia, serif;">{!! $title !!}</h1>@endif
         @if($subtitle)<p class="text-lg mb-8" style="color: {{ $textColor }}; opacity: 0.8;">{{ $subtitle }}</p>@endif
         <p class="text-sm opacity-50" style="color: {{ $textColor }};">{{ __('Upload slider images in the admin panel.') }}</p>
     </div>

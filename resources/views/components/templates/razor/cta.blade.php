@@ -25,6 +25,8 @@
     $secondaryColor = $theme['secondary_color'] ?? '#0f0f0f';
     // Lichte tekstkleur voor donkere achtergronden (consistent patroon)
     $lightTextColor = '#ffffff';
+    $headingFont = $theme['heading_font_family'] ?? 'Bebas Neue';
+    $bodyFont = $theme['font_family'] ?? 'Barlow';
 @endphp
 
 <section class="relative py-24 lg:py-32 overflow-hidden" style="background-color: {{ $secondaryColor }};">
@@ -67,7 +69,7 @@
         {{-- Title --}}
         <h2
             class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6"
-            style="color: {{ $lightTextColor }}; font-family: 'Playfair Display', Georgia, serif; opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.1s;"
+            style="color: {{ $lightTextColor }}; font-family: '{{ $headingFont }}', Georgia, serif; opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.1s;"
             x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
         >
             {{ $title }}

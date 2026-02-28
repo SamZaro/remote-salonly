@@ -34,6 +34,8 @@
     $primaryColor = $theme['primary_color'] ?? '#c9a227';
     $secondaryColor = $theme['secondary_color'] ?? '#1a1a1a';
     $backgroundColor = $theme['footer_background'] ?? '#0f0f0f';
+    $headingFont = $theme['heading_font_family'] ?? 'Oswald';
+    $bodyFont = $theme['font_family'] ?? 'Roboto';
 @endphp
 
 <footer id="footer" class="py-20" style="background-color: {{ $backgroundColor }};">
@@ -52,7 +54,7 @@
             <div class="lg:col-span-1">
                 <h3
                     class="text-2xl font-bold mb-4 uppercase tracking-wider"
-                    style="color: {{ $primaryColor }}; font-family: 'Playfair Display', Georgia, serif;"
+                    style="color: {{ $primaryColor }}; font-family: '{{ $headingFont }}', Georgia, serif;"
                 >
                     {{ $companyName }}
                 </h3>

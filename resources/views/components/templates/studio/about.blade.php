@@ -29,6 +29,8 @@
     $backgroundColor = $theme['background_color'] ?? '#FAFAFA';
     $textColor = $theme['text_color'] ?? '#6B6B6B';
     $headingColor = $theme['heading_color'] ?? '#2B2B2B';
+    $headingFont = $theme['heading_font_family'] ?? 'Abril Fatface';
+    $bodyFont = $theme['font_family'] ?? 'Nunito';
 
     // Icons mapping
     $icons = [
@@ -96,7 +98,7 @@
                 {{-- Title --}}
                 <h2
                     class="text-4xl sm:text-5xl font-black mb-6 leading-tight"
-                    style="color: {{ $headingColor }}; font-family: 'Montserrat', 'Poppins', sans-serif;"
+                    style="color: {{ $headingColor }}; font-family: '{{ $headingFont }}', sans-serif;"
                 >
                     {{ $title }}
                 </h2>

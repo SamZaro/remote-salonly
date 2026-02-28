@@ -19,6 +19,8 @@
     $primaryColor = $theme['primary_color'] ?? '#d4919d';
     $secondaryColor = $theme['secondary_color'] ?? '#c9b8d4';
     $accentColor = $theme['accent_color'] ?? '#f5e6d3';
+    $headingFont = $theme['heading_font_family'] ?? 'Playfair Display';
+    $bodyFont = $theme['font_family'] ?? 'Lato';
 @endphp
 
 <section
@@ -48,7 +50,7 @@
 
         <h2
             class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-white leading-tight"
-            style="font-family: 'Playfair Display', Georgia, serif;"
+            style="font-family: '{{ $headingFont }}', Georgia, serif;"
         >
             {!! $title !!}
         </h2>
