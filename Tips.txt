@@ -79,3 +79,8 @@ TEMPLATE INSPIRATIES:
 URBAN:
 https://madebydesignesia.com/themes/blaxcut/index-select.html?storefront=envato-elements#section-preview
 https://madebydesignesia.com/themes/blaxcut/index.html#
+
+
+SPA:
+https://jthemes.net/themes/html/spamagic/?storefront=envato-elements
+https://jthemes.net/themes/html/spamagic/files/demo-4.html#
