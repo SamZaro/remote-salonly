@@ -324,6 +324,20 @@ class TemplateFormSchema
                     'navbar_underline_color' => '#E8D8D3',
                 ],
             ],
+            'orange' => [
+                'label' => __('Orange'),
+                'colors' => [
+                    'primary_color' => '#f97316',    // Orange 500 - accents
+                    'secondary_color' => '#1c1917', // Stone 900 - dark sections
+                    'accent_color' => '#ffedd5',    // Orange 100 - hover/highlights
+                    'background_color' => '#fafaf9', // Stone 50 - light sections
+                    'text_color' => '#78716c',      // Stone 500 - body text
+                    'heading_color' => '#1c1917',   // Stone 900 - headings
+                    'navbar_background' => '#1c1917',
+                    'navbar_text_color' => '#fafaf9',
+                    'navbar_underline_color' => '#f97316',
+                ],
+            ],
             'peach' => [
                 'label' => __('Peach'),
                 'colors' => [
