@@ -1,7 +1,7 @@
 {{--
     Spa Template: Contact Section
     Serene spa & wellness — elegant three-card layout with opening hours and map
-    Fonts: Playfair Display (headings) + Lato (body)
+    Fonts: Lustria (headings) + Lato (body)
     Props: $content, $theme
 --}}
 @props([
@@ -32,6 +32,8 @@
     $textColor = $theme['text_color'] ?? '#8A7B76';
     $headingColor = $theme['heading_color'] ?? '#6E5F5B';
     $backgroundColor = $theme['background_color'] ?? '#FBF9F8';
+    $headingFont = $theme['heading_font_family'] ?? 'Lustria';
+    $bodyFont = $theme['font_family'] ?? 'Lato';
 @endphp
 
 <section id="contact" class="py-20 lg:py-28" style="background-color: {{ $accentColor }};">
@@ -42,13 +44,13 @@
             x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
             style="opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out;"
         >
-            <span class="text-xs font-semibold uppercase tracking-[0.25em] mb-4 block" style="color: {{ $primaryColor }}; font-family: 'Lato', sans-serif;">
+            <span class="text-xs font-semibold uppercase tracking-[0.25em] mb-4 block" style="color: {{ $primaryColor }}; font-family: '{{ $bodyFont }}', sans-serif;">
                 Contact
             </span>
-            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4" style="color: {{ $headingColor }}; font-family: 'Playfair Display', serif;">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4" style="color: {{ $headingColor }}; font-family: '{{ $headingFont }}', serif;">
                 {{ $title }}
             </h2>
-            <p class="text-lg" style="color: {{ $textColor }}; font-family: 'Lato', sans-serif;">{{ $subtitle }}</p>
+            <p class="text-lg" style="color: {{ $textColor }}; font-family: '{{ $bodyFont }}', sans-serif;">{{ $subtitle }}</p>
         </div>
 
         {{-- Contact grid --}}
@@ -66,14 +68,14 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
                     </svg>
                 </div>
-                <h3 class="text-sm font-bold uppercase tracking-wider mb-4" style="color: {{ $headingColor }}; font-family: 'Lato', sans-serif;">Adres</h3>
-                <p class="text-lg mb-4 leading-relaxed" style="color: {{ $textColor }}; font-family: 'Lato', sans-serif;">{{ $address }}</p>
+                <h3 class="text-sm font-bold uppercase tracking-wider mb-4" style="color: {{ $headingColor }}; font-family: '{{ $bodyFont }}', sans-serif;">Adres</h3>
+                <p class="text-lg mb-4 leading-relaxed" style="color: {{ $textColor }}; font-family: '{{ $bodyFont }}', sans-serif;">{{ $address }}</p>
                 <a
                     href="https://maps.google.com/?q={{ urlencode($address) }}"
                     target="_blank"
                     rel="noopener noreferrer"
                     class="text-sm font-semibold transition-opacity hover:opacity-70"
-                    style="color: {{ $secondaryColor }}; font-family: 'Lato', sans-serif;"
+                    style="color: {{ $secondaryColor }}; font-family: '{{ $bodyFont }}', sans-serif;"
                 >
                     Route plannen &rarr;
                 </a>
@@ -91,11 +93,11 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
                     </svg>
                 </div>
-                <h3 class="text-sm font-bold uppercase tracking-wider mb-4" style="color: {{ $primaryColor }}; font-family: 'Lato', sans-serif;">Bel ons</h3>
+                <h3 class="text-sm font-bold uppercase tracking-wider mb-4" style="color: {{ $primaryColor }}; font-family: '{{ $bodyFont }}', sans-serif;">Bel ons</h3>
                 <a
                     href="tel:{{ preg_replace('/[^0-9+]/', '', $phone) }}"
                     class="text-2xl font-bold block mb-3 transition-opacity hover:opacity-80"
-                    style="font-family: 'Playfair Display', serif;"
+                    style="font-family: '{{ $headingFont }}', serif;"
                 >
                     {{ $phone }}
                 </a>
@@ -103,7 +105,7 @@
                     <a
                         href="mailto:{{ $email }}"
                         class="text-sm transition-opacity hover:opacity-80"
-                        style="color: {{ $primaryColor }}; font-family: 'Lato', sans-serif;"
+                        style="color: {{ $primaryColor }}; font-family: '{{ $bodyFont }}', sans-serif;"
                     >
                         {{ $email }}
                     </a>
@@ -122,7 +124,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
                     </svg>
                 </div>
-                <h3 class="text-sm font-bold uppercase tracking-wider mb-4" style="color: {{ $headingColor }}; font-family: 'Lato', sans-serif;">Openingstijden</h3>
+                <h3 class="text-sm font-bold uppercase tracking-wider mb-4" style="color: {{ $headingColor }}; font-family: '{{ $bodyFont }}', sans-serif;">Openingstijden</h3>
                 <div class="space-y-2">
                     @foreach($openingHours as $entry)
                         @php
@@ -131,10 +133,10 @@
                             $isClosed = str_contains(strtolower($hours), 'gesloten');
                         @endphp
                         <div class="flex justify-between items-center">
-                            <span style="color: {{ $textColor }}; font-family: 'Lato', sans-serif;">{{ $day }}</span>
+                            <span style="color: {{ $textColor }}; font-family: '{{ $bodyFont }}', sans-serif;">{{ $day }}</span>
                             <span
                                 class="{{ $isClosed ? 'opacity-50' : 'font-medium' }}"
-                                style="color: {{ $isClosed ? $textColor : $headingColor }}; font-family: 'Lato', sans-serif;"
+                                style="color: {{ $isClosed ? $textColor : $headingColor }}; font-family: '{{ $bodyFont }}', sans-serif;"
                             >
                                 {{ $hours }}
                             </span>
@@ -162,7 +164,7 @@
                         <svg class="w-12 h-12 mx-auto mb-3" style="color: {{ $secondaryColor }}30;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>
                         </svg>
-                        <span class="text-sm" style="color: {{ $textColor }}; font-family: 'Lato', sans-serif;">Google Maps</span>
+                        <span class="text-sm" style="color: {{ $textColor }}; font-family: '{{ $bodyFont }}', sans-serif;">Google Maps</span>
                     </div>
                 </div>
             @endif

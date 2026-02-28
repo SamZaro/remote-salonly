@@ -1,7 +1,7 @@
 {{--
     Spa Template: Jumbotron Section
     Serene spa & wellness — elegant banner with warm overlay and centered typography
-    Fonts: Playfair Display (headings) + Lato (body)
+    Fonts: Lustria (headings) + Lato (body)
     Props: $content, $theme, $section
 --}}
 @props([
@@ -21,6 +21,8 @@
     $secondaryColor = $theme['secondary_color'] ?? '#6E5F5B';
     $headingColor = $theme['heading_color'] ?? '#6E5F5B';
     $backgroundColor = $theme['background_color'] ?? '#FBF9F8';
+    $headingFont = $theme['heading_font_family'] ?? 'Lustria';
+    $bodyFont = $theme['font_family'] ?? 'Lato';
 @endphp
 
 <section id="jumbotron" class="relative py-24 lg:py-32 overflow-hidden">
@@ -36,7 +38,7 @@
     {{-- Decorative watermark --}}
     <span
         class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap pointer-events-none select-none font-bold"
-        style="font-size: clamp(4rem, 12vw, 8rem); opacity: 0.04; color: #ffffff; font-family: 'Playfair Display', serif;"
+        style="font-size: clamp(4rem, 12vw, 8rem); opacity: 0.04; color: #ffffff; font-family: '{{ $headingFont }}', serif;"
     >Spa & Wellness</span>
 
     <div
@@ -48,13 +50,13 @@
 
         <h2
             class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
-            style="color: #ffffff; font-family: 'Playfair Display', serif;"
+            style="color: #ffffff; font-family: '{{ $headingFont }}', serif;"
         >
             {{ $title }}
         </h2>
 
         @if($subtitle)
-            <p class="text-xl mb-10 max-w-xl mx-auto leading-relaxed" style="color: {{ $primaryColor }}; font-family: 'Lato', sans-serif; font-weight: 300;">
+            <p class="text-xl mb-10 max-w-xl mx-auto leading-relaxed" style="color: {{ $primaryColor }}; font-family: '{{ $bodyFont }}', sans-serif; font-weight: 300;">
                 {{ $subtitle }}
             </p>
         @endif
@@ -62,7 +64,7 @@
         <a
             href="{{ $ctaLink }}"
             class="inline-flex items-center px-10 py-4 text-sm font-semibold tracking-widest uppercase transition-all duration-300 hover:shadow-lg"
-            style="background-color: {{ $primaryColor }}; color: {{ $secondaryColor }}; border-radius: 4px; font-family: 'Lato', sans-serif;"
+            style="background-color: {{ $primaryColor }}; color: {{ $secondaryColor }}; border-radius: 4px; font-family: '{{ $bodyFont }}', sans-serif;"
             onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='{{ $secondaryColor }}';"
             onmouseout="this.style.backgroundColor='{{ $primaryColor }}'; this.style.color='{{ $secondaryColor }}';"
         >

@@ -1,7 +1,7 @@
 {{--
     Spa Template: Parallax Section
     Serene spa & wellness — fixed background with elegant overlay and bold promo text
-    Fonts: Playfair Display (headings) + Lato (body)
+    Fonts: Lustria (headings) + Lato (body)
     Props: $content, $theme, $section
 --}}
 @props([
@@ -18,6 +18,8 @@
     $primaryColor = $theme['primary_color'] ?? '#E8D8D3';
     $secondaryColor = $theme['secondary_color'] ?? '#6E5F5B';
     $backgroundColor = $theme['background_color'] ?? '#FBF9F8';
+    $headingFont = $theme['heading_font_family'] ?? 'Lustria';
+    $bodyFont = $theme['font_family'] ?? 'Lato';
 @endphp
 
 <section
@@ -43,13 +45,13 @@
 
         <h2
             class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-4"
-            style="color: #ffffff; font-family: 'Playfair Display', serif;"
+            style="color: #ffffff; font-family: '{{ $headingFont }}', serif;"
         >
             {!! $title !!}
         </h2>
 
         @if($subtitle)
-            <p class="text-xl md:text-2xl max-w-2xl mx-auto leading-relaxed" style="color: {{ $primaryColor }}; font-family: 'Lato', sans-serif; font-weight: 300;">
+            <p class="text-xl md:text-2xl max-w-2xl mx-auto leading-relaxed" style="color: {{ $primaryColor }}; font-family: '{{ $bodyFont }}', sans-serif; font-weight: 300;">
                 {{ $subtitle }}
             </p>
         @endif

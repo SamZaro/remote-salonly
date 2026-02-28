@@ -1,7 +1,7 @@
 {{--
     Spa Template: Services Section
     Serene spa & wellness — elegant service cards with image overlay and hover effects
-    Fonts: Playfair Display (headings) + Lato (body)
+    Fonts: Lustria (headings) + Lato (body)
     Props: $content, $theme
 --}}
 @props([
@@ -27,6 +27,8 @@
     $textColor = $theme['text_color'] ?? '#8A7B76';
     $headingColor = $theme['heading_color'] ?? '#6E5F5B';
     $backgroundColor = $theme['background_color'] ?? '#FBF9F8';
+    $headingFont = $theme['heading_font_family'] ?? 'Lustria';
+    $bodyFont = $theme['font_family'] ?? 'Lato';
 
     $icons = [
         'scissors' => '<circle cx="8" cy="18" r="3" stroke-width="1.5"/><circle cx="16" cy="14" r="4" stroke-width="1.5"/><circle cx="12" cy="8" r="5" stroke-width="1.5"/>',
@@ -48,16 +50,16 @@
         >
             <span
                 class="absolute top-[-20px] left-1/2 -translate-x-1/2 whitespace-nowrap pointer-events-none select-none font-bold"
-                style="font-size: clamp(3rem, 8vw, 5rem); opacity: 0.05; color: {{ $secondaryColor }}; font-family: 'Playfair Display', serif;"
+                style="font-size: clamp(3rem, 8vw, 5rem); opacity: 0.05; color: {{ $secondaryColor }}; font-family: '{{ $headingFont }}', serif;"
             >Our Services</span>
 
-            <span class="text-xs font-semibold uppercase tracking-[0.25em] mb-4 block" style="color: {{ $primaryColor }}; font-family: 'Lato', sans-serif;">
+            <span class="text-xs font-semibold uppercase tracking-[0.25em] mb-4 block" style="color: {{ $primaryColor }}; font-family: '{{ $bodyFont }}', sans-serif;">
                 {{ $subtitle }}
             </span>
-            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-5" style="color: {{ $headingColor }}; font-family: 'Playfair Display', serif;">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-5" style="color: {{ $headingColor }}; font-family: '{{ $headingFont }}', serif;">
                 {{ $title }}
             </h2>
-            <p class="text-lg max-w-2xl mx-auto" style="color: {{ $textColor }}; font-family: 'Lato', sans-serif;">
+            <p class="text-lg max-w-2xl mx-auto" style="color: {{ $textColor }}; font-family: '{{ $bodyFont }}', sans-serif;">
                 Aliquam a augue suscipit, luctus neque purus ipsum neque undo dolor primis libero tempus
             </p>
         </div>
@@ -82,17 +84,17 @@
                     </div>
 
                     {{-- Title --}}
-                    <h3 class="text-xl font-bold mb-3" style="color: {{ $headingColor }}; font-family: 'Playfair Display', serif;">
+                    <h3 class="text-xl font-bold mb-3" style="color: {{ $headingColor }}; font-family: '{{ $headingFont }}', serif;">
                         {{ $item['title'] }}
                     </h3>
 
                     {{-- Description --}}
-                    <p class="mb-5 leading-relaxed" style="color: {{ $textColor }}; font-family: 'Lato', sans-serif;">
+                    <p class="mb-5 leading-relaxed" style="color: {{ $textColor }}; font-family: '{{ $bodyFont }}', sans-serif;">
                         {{ $item['description'] }}
                     </p>
 
                     {{-- Price --}}
-                    <span class="text-sm font-bold block mb-5" style="color: {{ $secondaryColor }}; font-family: 'Lato', sans-serif;">
+                    <span class="text-sm font-bold block mb-5" style="color: {{ $secondaryColor }}; font-family: '{{ $bodyFont }}', sans-serif;">
                         {{ $item['price'] }}
                     </span>
 
@@ -100,7 +102,7 @@
                     <a
                         href="#contact"
                         class="inline-flex items-center justify-center px-6 py-2.5 text-xs font-semibold tracking-widest uppercase transition-all duration-300 rounded"
-                        style="border: 1.5px solid {{ $secondaryColor }}; color: {{ $secondaryColor }}; font-family: 'Lato', sans-serif;"
+                        style="border: 1.5px solid {{ $secondaryColor }}; color: {{ $secondaryColor }}; font-family: '{{ $bodyFont }}', sans-serif;"
                         onmouseover="this.style.backgroundColor='{{ $primaryColor }}'; this.style.borderColor='{{ $primaryColor }}';"
                         onmouseout="this.style.backgroundColor='transparent'; this.style.borderColor='{{ $secondaryColor }}';"
                     >
@@ -119,7 +121,7 @@
             <a
                 href="#pricing"
                 class="inline-flex items-center text-sm font-semibold tracking-widest uppercase transition-opacity hover:opacity-70"
-                style="color: {{ $secondaryColor }}; font-family: 'Lato', sans-serif;"
+                style="color: {{ $secondaryColor }}; font-family: '{{ $bodyFont }}', sans-serif;"
             >
                 Bekijk volledige prijslijst
                 <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

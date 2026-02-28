@@ -1,7 +1,7 @@
 {{--
     Spa Template: Testimonials Section
     Serene spa & wellness — elegant review cards with star ratings
-    Fonts: Playfair Display (headings) + Lato (body)
+    Fonts: Lustria (headings) + Lato (body)
     Props: $content, $theme
 --}}
 @props([
@@ -27,6 +27,8 @@
     $textColor = $theme['text_color'] ?? '#8A7B76';
     $headingColor = $theme['heading_color'] ?? '#6E5F5B';
     $backgroundColor = $theme['background_color'] ?? '#FBF9F8';
+    $headingFont = $theme['heading_font_family'] ?? 'Lustria';
+    $bodyFont = $theme['font_family'] ?? 'Lato';
 @endphp
 
 <section id="testimonials" class="py-20 lg:py-28" style="background-color: {{ $backgroundColor }};">
@@ -39,17 +41,17 @@
         >
             <span
                 class="absolute top-[-20px] left-1/2 -translate-x-1/2 whitespace-nowrap pointer-events-none select-none font-bold"
-                style="font-size: clamp(3rem, 8vw, 5rem); opacity: 0.05; color: {{ $secondaryColor }}; font-family: 'Playfair Display', serif;"
+                style="font-size: clamp(3rem, 8vw, 5rem); opacity: 0.05; color: {{ $secondaryColor }}; font-family: '{{ $headingFont }}', serif;"
             >Testimonials</span>
 
-            <span class="text-xs font-semibold uppercase tracking-[0.25em] mb-4 block" style="color: {{ $primaryColor }}; font-family: 'Lato', sans-serif;">
+            <span class="text-xs font-semibold uppercase tracking-[0.25em] mb-4 block" style="color: {{ $primaryColor }}; font-family: '{{ $bodyFont }}', sans-serif;">
                 Reviews
             </span>
-            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-5" style="color: {{ $headingColor }}; font-family: 'Playfair Display', serif;">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-5" style="color: {{ $headingColor }}; font-family: '{{ $headingFont }}', serif;">
                 {{ $title }}
             </h2>
             <div class="flex items-center justify-center gap-3">
-                <span class="text-2xl font-bold" style="color: {{ $headingColor }}; font-family: 'Playfair Display', serif;">{{ $rating }}</span>
+                <span class="text-2xl font-bold" style="color: {{ $headingColor }}; font-family: '{{ $headingFont }}', serif;">{{ $rating }}</span>
                 <div class="flex items-center gap-0.5">
                     @for($i = 0; $i < 5; $i++)
                         <svg class="w-4 h-4" style="color: {{ $primaryColor }};" fill="currentColor" viewBox="0 0 24 24">
@@ -57,7 +59,7 @@
                         </svg>
                     @endfor
                 </div>
-                <span class="text-sm" style="color: {{ $textColor }}; font-family: 'Lato', sans-serif;">{{ $totalReviews }} reviews</span>
+                <span class="text-sm" style="color: {{ $textColor }}; font-family: '{{ $bodyFont }}', sans-serif;">{{ $totalReviews }} reviews</span>
             </div>
         </div>
 
@@ -85,20 +87,20 @@
                     </svg>
 
                     {{-- Review text --}}
-                    <p class="text-lg leading-relaxed mb-6 italic" style="color: {{ $textColor }}; font-family: 'Lato', sans-serif;">
+                    <p class="text-lg leading-relaxed mb-6 italic" style="color: {{ $textColor }}; font-family: '{{ $bodyFont }}', sans-serif;">
                         "{{ $review['text'] }}"
                     </p>
 
                     {{-- Author --}}
                     <div class="flex items-center justify-between">
                         <div>
-                            <span class="text-sm font-bold block" style="color: {{ $headingColor }}; font-family: 'Playfair Display', serif;">{{ $review['name'] }}</span>
-                            <span class="text-xs" style="color: {{ $textColor }}; font-family: 'Lato', sans-serif;">{{ $review['date'] }}</span>
+                            <span class="text-sm font-bold block" style="color: {{ $headingColor }}; font-family: '{{ $headingFont }}', serif;">{{ $review['name'] }}</span>
+                            <span class="text-xs" style="color: {{ $textColor }}; font-family: '{{ $bodyFont }}', sans-serif;">{{ $review['date'] }}</span>
                         </div>
                         @if(isset($review['service']))
                             <span
                                 class="text-xs font-medium px-3 py-1 rounded"
-                                style="background-color: {{ $accentColor }}; color: {{ $secondaryColor }}; font-family: 'Lato', sans-serif;"
+                                style="background-color: {{ $accentColor }}; color: {{ $secondaryColor }}; font-family: '{{ $bodyFont }}', sans-serif;"
                             >
                                 {{ $review['service'] }}
                             </span>

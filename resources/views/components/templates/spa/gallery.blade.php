@@ -1,7 +1,7 @@
 {{--
     Spa Template: Gallery Section
     Serene spa & wellness — horizontal scrolling gallery with hover captions and lightbox
-    Fonts: Playfair Display (headings) + Lato (body)
+    Fonts: Lustria (headings) + Lato (body)
     Props: $content, $theme, $section
 --}}
 @props([
@@ -21,6 +21,8 @@
     $textColor = $theme['text_color'] ?? '#8A7B76';
     $headingColor = $theme['heading_color'] ?? '#6E5F5B';
     $backgroundColor = $theme['background_color'] ?? '#FBF9F8';
+    $headingFont = $theme['heading_font_family'] ?? 'Lustria';
+    $bodyFont = $theme['font_family'] ?? 'Lato';
 @endphp
 
 <section id="gallery" class="py-20 lg:py-28" style="background-color: {{ $accentColor }};">
@@ -38,13 +40,13 @@
                     <div class="relative">
                         <span
                             class="absolute top-[-20px] left-0 whitespace-nowrap pointer-events-none select-none font-bold"
-                            style="font-size: clamp(3rem, 8vw, 5rem); opacity: 0.05; color: {{ $secondaryColor }}; font-family: 'Playfair Display', serif;"
+                            style="font-size: clamp(3rem, 8vw, 5rem); opacity: 0.05; color: {{ $secondaryColor }}; font-family: '{{ $headingFont }}', serif;"
                         >Gallery</span>
 
-                        <span class="text-xs font-semibold uppercase tracking-[0.25em] mb-4 block" style="color: {{ $primaryColor }}; font-family: 'Lato', sans-serif;">
+                        <span class="text-xs font-semibold uppercase tracking-[0.25em] mb-4 block" style="color: {{ $primaryColor }}; font-family: '{{ $bodyFont }}', sans-serif;">
                             {{ $subtitle }}
                         </span>
-                        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-2" style="color: {{ $headingColor }}; font-family: 'Playfair Display', serif;">
+                        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-2" style="color: {{ $headingColor }}; font-family: '{{ $headingFont }}', serif;">
                             {{ $title }}
                         </h2>
                     </div>
@@ -100,8 +102,8 @@
                                 style="background: linear-gradient(transparent 40%, rgba(0,0,0,0.5) 100%);"
                             >
                                 <div>
-                                    <h6 class="text-white text-base font-bold" style="font-family: 'Playfair Display', serif;">{{ $image->name ?: 'Spa & Wellness' }}</h6>
-                                    <p class="text-white/70 text-sm" style="font-family: 'Lato', sans-serif;">Spa & Beauty</p>
+                                    <h6 class="text-white text-base font-bold" style="font-family: '{{ $headingFont }}', serif;">{{ $image->name ?: 'Spa & Wellness' }}</h6>
+                                    <p class="text-white/70 text-sm" style="font-family: '{{ $bodyFont }}', sans-serif;">Spa & Beauty</p>
                                 </div>
                             </div>
                         </div>
@@ -144,10 +146,10 @@
         {{-- Empty state --}}
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="mb-12">
-                <span class="text-xs font-semibold uppercase tracking-[0.25em] mb-4 block" style="color: {{ $primaryColor }}; font-family: 'Lato', sans-serif;">
+                <span class="text-xs font-semibold uppercase tracking-[0.25em] mb-4 block" style="color: {{ $primaryColor }}; font-family: '{{ $bodyFont }}', sans-serif;">
                     {{ $subtitle }}
                 </span>
-                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-2" style="color: {{ $headingColor }}; font-family: 'Playfair Display', serif;">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-2" style="color: {{ $headingColor }}; font-family: '{{ $headingFont }}', serif;">
                     {{ $title }}
                 </h2>
             </div>

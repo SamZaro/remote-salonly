@@ -1,7 +1,7 @@
 {{--
     Spa Template: Slider Section
     Serene spa & wellness — fullscreen slider with elegant overlay and smooth transitions
-    Fonts: Playfair Display (headings) + Lato (body)
+    Fonts: Lustria (headings) + Lato (body)
     Props: $content, $theme, $section
 --}}
 @props([
@@ -29,6 +29,8 @@
     $textColor = $theme['text_color'] ?? '#8A7B76';
     $headingColor = $theme['heading_color'] ?? '#6E5F5B';
     $backgroundColor = $theme['background_color'] ?? '#FBF9F8';
+    $headingFont = $theme['heading_font_family'] ?? 'Lustria';
+    $bodyFont = $theme['font_family'] ?? 'Lato';
 @endphp
 
 @if($sliderImages->isNotEmpty())
@@ -84,7 +86,7 @@
             @if($title)
                 <h1
                     class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
-                    style="color: #ffffff; font-family: 'Playfair Display', serif;"
+                    style="color: #ffffff; font-family: '{{ $headingFont }}', serif;"
                     x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
                     x-bind:style="'opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out;'"
                 >{!! $title !!}</h1>
@@ -93,7 +95,7 @@
             @if($subtitle)
                 <p
                     class="text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed"
-                    style="color: rgba(255,255,255,0.8); font-family: 'Lato', sans-serif; font-weight: 300;"
+                    style="color: rgba(255,255,255,0.8); font-family: '{{ $bodyFont }}', sans-serif; font-weight: 300;"
                     x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
                     x-bind:style="'opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out 0.2s;'"
                 >{{ $subtitle }}</p>
@@ -104,7 +106,7 @@
                     <a
                         href="{{ $ctaLink }}"
                         class="inline-flex items-center justify-center px-10 py-4 text-sm font-semibold tracking-widest uppercase transition-all duration-300 hover:shadow-lg"
-                        style="background-color: {{ $primaryColor }}; color: {{ $secondaryColor }}; border-radius: 4px; font-family: 'Lato', sans-serif;"
+                        style="background-color: {{ $primaryColor }}; color: {{ $secondaryColor }}; border-radius: 4px; font-family: '{{ $bodyFont }}', sans-serif;"
                         onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='{{ $secondaryColor }}';"
                         onmouseout="this.style.backgroundColor='{{ $primaryColor }}'; this.style.color='{{ $secondaryColor }}';"
                     >
@@ -114,7 +116,7 @@
                 <a
                     href="#services"
                     class="inline-flex items-center justify-center px-10 py-4 text-sm font-semibold tracking-widest uppercase transition-all duration-300 hover:bg-white/10"
-                    style="border: 1.5px solid rgba(255,255,255,0.4); color: #ffffff; border-radius: 4px; font-family: 'Lato', sans-serif;"
+                    style="border: 1.5px solid rgba(255,255,255,0.4); color: #ffffff; border-radius: 4px; font-family: '{{ $bodyFont }}', sans-serif;"
                 >
                     Onze diensten
                 </a>
@@ -181,13 +183,13 @@
         @if($title)
             <h1
                 class="text-4xl sm:text-5xl lg:text-7xl font-bold mb-6 leading-tight"
-                style="color: #ffffff; font-family: 'Playfair Display', serif;"
+                style="color: #ffffff; font-family: '{{ $headingFont }}', serif;"
             >{!! $title !!}</h1>
         @endif
         @if($subtitle)
-            <p class="text-lg mb-8 leading-relaxed" style="color: {{ $primaryColor }}; font-family: 'Lato', sans-serif;">{{ $subtitle }}</p>
+            <p class="text-lg mb-8 leading-relaxed" style="color: {{ $primaryColor }}; font-family: '{{ $bodyFont }}', sans-serif;">{{ $subtitle }}</p>
         @endif
-        <p class="text-sm" style="color: rgba(255,255,255,0.4); font-family: 'Lato', sans-serif;">{{ __('Upload slider images in the admin panel.') }}</p>
+        <p class="text-sm" style="color: rgba(255,255,255,0.4); font-family: '{{ $bodyFont }}', sans-serif;">{{ __('Upload slider images in the admin panel.') }}</p>
     </div>
 </section>
 @endif

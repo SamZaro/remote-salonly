@@ -1,7 +1,7 @@
 {{--
     Spa Template: Team Section
     Serene spa & wellness — elegant team cards with soft hover effects
-    Fonts: Playfair Display (headings) + Lato (body)
+    Fonts: Lustria (headings) + Lato (body)
     Props: $content, $theme, $section
 --}}
 @props([
@@ -22,6 +22,8 @@
     $backgroundColor = $theme['background_color'] ?? '#FBF9F8';
     $textColor = $theme['text_color'] ?? '#8A7B76';
     $headingColor = $theme['heading_color'] ?? '#6E5F5B';
+    $headingFont = $theme['heading_font_family'] ?? 'Lustria';
+    $bodyFont = $theme['font_family'] ?? 'Lato';
 
     $memberCount = count($members);
     $gridCols = match(true) {
@@ -41,16 +43,16 @@
         >
             <span
                 class="absolute top-[-20px] left-1/2 -translate-x-1/2 whitespace-nowrap pointer-events-none select-none font-bold"
-                style="font-size: clamp(3rem, 8vw, 5rem); opacity: 0.05; color: {{ $secondaryColor }}; font-family: 'Playfair Display', serif;"
+                style="font-size: clamp(3rem, 8vw, 5rem); opacity: 0.05; color: {{ $secondaryColor }}; font-family: '{{ $headingFont }}', serif;"
             >Our Team</span>
 
-            <span class="text-xs font-semibold uppercase tracking-[0.25em] mb-4 block" style="color: {{ $primaryColor }}; font-family: 'Lato', sans-serif;">
+            <span class="text-xs font-semibold uppercase tracking-[0.25em] mb-4 block" style="color: {{ $primaryColor }}; font-family: '{{ $bodyFont }}', sans-serif;">
                 {{ $subtitle }}
             </span>
-            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4" style="color: {{ $headingColor }}; font-family: 'Playfair Display', serif;">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4" style="color: {{ $headingColor }}; font-family: '{{ $headingFont }}', serif;">
                 {{ $title }}
             </h2>
-            <p class="text-lg max-w-xl mx-auto" style="color: {{ $textColor }}; font-family: 'Lato', sans-serif;">
+            <p class="text-lg max-w-xl mx-auto" style="color: {{ $textColor }}; font-family: '{{ $bodyFont }}', sans-serif;">
                 Maak kennis met onze specialisten
             </p>
         </div>
@@ -83,7 +85,7 @@
                             @else
                                 <div
                                     class="w-full h-72 flex items-center justify-center text-3xl font-bold"
-                                    style="background-color: {{ $primaryColor }}; color: {{ $secondaryColor }}; font-family: 'Playfair Display', serif;"
+                                    style="background-color: {{ $primaryColor }}; color: {{ $secondaryColor }}; font-family: '{{ $headingFont }}', serif;"
                                 >
                                     {{ $initials }}
                                 </div>
@@ -96,20 +98,20 @@
                         </div>
 
                         {{-- Name --}}
-                        <h3 class="text-lg font-bold mb-1" style="color: {{ $headingColor }}; font-family: 'Playfair Display', serif;">
+                        <h3 class="text-lg font-bold mb-1" style="color: {{ $headingColor }}; font-family: '{{ $headingFont }}', serif;">
                             {{ $member['name'] ?? '' }}
                         </h3>
 
                         {{-- Role --}}
                         @if(!empty($member['role']))
-                            <span class="text-sm font-medium uppercase tracking-wider" style="color: {{ $textColor }}; font-family: 'Lato', sans-serif;">
+                            <span class="text-sm font-medium uppercase tracking-wider" style="color: {{ $textColor }}; font-family: '{{ $bodyFont }}', sans-serif;">
                                 {{ $member['role'] }}
                             </span>
                         @endif
 
                         {{-- Bio --}}
                         @if(!empty($member['bio']))
-                            <p class="mt-3 leading-relaxed" style="color: {{ $textColor }}; font-family: 'Lato', sans-serif;">
+                            <p class="mt-3 leading-relaxed" style="color: {{ $textColor }}; font-family: '{{ $bodyFont }}', sans-serif;">
                                 {{ $member['bio'] }}
                             </p>
                         @endif
@@ -117,7 +119,7 @@
                 @endforeach
             </div>
         @else
-            <p class="text-center" style="color: {{ $textColor }}; font-family: 'Lato', sans-serif;">
+            <p class="text-center" style="color: {{ $textColor }}; font-family: '{{ $bodyFont }}', sans-serif;">
                 {{ __('Voeg teamleden toe via het dashboard.') }}
             </p>
         @endif

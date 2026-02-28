@@ -28,7 +28,7 @@
     $fontSize = $theme['font_size_base'] ?? '16px';
 
     // Determine fallback font type
-    $serifFonts = ['Playfair Display', 'Merriweather', 'Libre Baskerville', 'Lora', 'Cormorant Garamond', 'DM Serif Display'];
+    $serifFonts = ['Playfair Display', 'Merriweather', 'Libre Baskerville', 'Lora', 'Lustria', 'Cormorant Garamond', 'DM Serif Display'];
     $fontFallback = ($fontFamily === 'system-ui') ? 'sans-serif' : (in_array($fontFamily, $serifFonts) ? 'serif' : 'sans-serif');
     $headingFallback = ($headingFontFamily === 'system-ui') ? 'sans-serif' : (in_array($headingFontFamily, $serifFonts) ? 'serif' : 'sans-serif');
 

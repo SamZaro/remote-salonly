@@ -1,7 +1,7 @@
 {{--
     Spa Template: Accordion/FAQ Section
     Serene spa & wellness — clean accordion with elegant toggle indicators
-    Fonts: Playfair Display (headings) + Lato (body)
+    Fonts: Lustria (headings) + Lato (body)
     Props: $content, $theme, $section
 --}}
 @props([
@@ -26,6 +26,8 @@
     $textColor = $theme['text_color'] ?? '#8A7B76';
     $headingColor = $theme['heading_color'] ?? '#6E5F5B';
     $backgroundColor = $theme['background_color'] ?? '#FBF9F8';
+    $headingFont = $theme['heading_font_family'] ?? 'Lustria';
+    $bodyFont = $theme['font_family'] ?? 'Lato';
 @endphp
 
 <section id="accordion" class="py-20 lg:py-28" style="background-color: {{ $backgroundColor }};">
@@ -36,10 +38,10 @@
             x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
             style="opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out;"
         >
-            <span class="text-xs font-semibold uppercase tracking-[0.25em] mb-4 block" style="color: {{ $primaryColor }}; font-family: 'Lato', sans-serif;">
+            <span class="text-xs font-semibold uppercase tracking-[0.25em] mb-4 block" style="color: {{ $primaryColor }}; font-family: '{{ $bodyFont }}', sans-serif;">
                 {{ $subtitle }}
             </span>
-            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-5" style="color: {{ $headingColor }}; font-family: 'Playfair Display', serif;">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-5" style="color: {{ $headingColor }}; font-family: '{{ $headingFont }}', serif;">
                 {{ $title }}
             </h2>
             <div class="w-16 h-px mx-auto" style="background-color: {{ $primaryColor }};"></div>
@@ -58,7 +60,7 @@
                             @click="openItem = openItem === {{ $index }} ? null : {{ $index }}"
                             class="w-full px-7 py-5 text-left flex items-center justify-between gap-4"
                         >
-                            <span class="text-lg font-semibold" style="color: {{ $headingColor }}; font-family: 'Playfair Display', serif;">
+                            <span class="text-lg font-semibold" style="color: {{ $headingColor }}; font-family: '{{ $headingFont }}', serif;">
                                 {{ $item['question'] ?? $item['title'] ?? '' }}
                             </span>
                             <div
@@ -85,7 +87,7 @@
                         >
                             <div class="px-7 pb-6">
                                 <div class="w-12 h-px mb-4" style="background-color: {{ $primaryColor }};"></div>
-                                <p class="text-lg leading-relaxed" style="color: {{ $textColor }}; font-family: 'Lato', sans-serif;">
+                                <p class="text-lg leading-relaxed" style="color: {{ $textColor }}; font-family: '{{ $bodyFont }}', sans-serif;">
                                     {{ $item['answer'] ?? $item['content'] ?? '' }}
                                 </p>
                             </div>

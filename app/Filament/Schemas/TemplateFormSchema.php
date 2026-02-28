@@ -201,6 +201,7 @@ class TemplateFormSchema
             'Merriweather' => 'Merriweather (Serif)',
             'Libre Baskerville' => 'Libre Baskerville (Serif)',
             'Lora' => 'Lora (Serif)',
+            'Lustria' => 'Lustria (Serif)',
             'Cormorant Garamond' => 'Cormorant Garamond (Serif)',
             'DM Serif Display' => 'DM Serif Display (Serif)',
             // System fonts

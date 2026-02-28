@@ -1,7 +1,7 @@
 {{--
     Spa Template: About Section
     Serene spa & wellness — elegant two-column layout with warm accent band
-    Fonts: Playfair Display (headings) + Lato (body)
+    Fonts: Lustria (headings) + Lato (body)
     Props: $content, $theme, $section
 --}}
 @props([
@@ -23,6 +23,8 @@
     $textColor = $theme['text_color'] ?? '#8A7B76';
     $headingColor = $theme['heading_color'] ?? '#6E5F5B';
     $backgroundColor = $theme['background_color'] ?? '#FBF9F8';
+    $headingFont = $theme['heading_font_family'] ?? 'Lustria';
+    $bodyFont = $theme['font_family'] ?? 'Lato';
 @endphp
 
 <section id="about" class="py-20 lg:py-28" style="background-color: {{ $backgroundColor }};">
@@ -35,13 +37,13 @@
         >
             <span
                 class="text-xs font-semibold uppercase tracking-[0.25em] mb-4 block"
-                style="color: {{ $primaryColor }}; font-family: 'Lato', sans-serif;"
+                style="color: {{ $primaryColor }}; font-family: '{{ $bodyFont }}', sans-serif;"
             >
                 {{ $subtitle }}
             </span>
             <h2
                 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-5"
-                style="color: {{ $headingColor }}; font-family: 'Playfair Display', serif;"
+                style="color: {{ $headingColor }}; font-family: '{{ $headingFont }}', serif;"
             >
                 {{ $title }}
             </h2>
@@ -90,13 +92,13 @@
             >
                 <p
                     class="text-lg mb-6 leading-relaxed"
-                    style="color: {{ $textColor }}; font-family: 'Lato', sans-serif;"
+                    style="color: {{ $textColor }}; font-family: '{{ $bodyFont }}', sans-serif;"
                 >
                     {{ $description }}
                 </p>
                 <p
                     class="text-lg mb-10 leading-relaxed"
-                    style="color: {{ $textColor }}; font-family: 'Lato', sans-serif;"
+                    style="color: {{ $textColor }}; font-family: '{{ $bodyFont }}', sans-serif;"
                 >
                     {{ $description2 }}
                 </p>
@@ -109,7 +111,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
                             </svg>
                         </div>
-                        <span class="text-sm font-semibold" style="color: {{ $headingColor }}; font-family: 'Lato', sans-serif;">Gecertificeerd team</span>
+                        <span class="text-sm font-semibold" style="color: {{ $headingColor }}; font-family: '{{ $bodyFont }}', sans-serif;">Gecertificeerd team</span>
                     </div>
                     <div class="flex items-center gap-3">
                         <div class="w-10 h-10 rounded-full flex items-center justify-center shrink-0" style="background-color: {{ $accentColor }};">
@@ -117,14 +119,14 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
                             </svg>
                         </div>
-                        <span class="text-sm font-semibold" style="color: {{ $headingColor }}; font-family: 'Lato', sans-serif;">Premium producten</span>
+                        <span class="text-sm font-semibold" style="color: {{ $headingColor }}; font-family: '{{ $bodyFont }}', sans-serif;">Premium producten</span>
                     </div>
                 </div>
 
                 <a
                     href="#contact"
                     class="inline-flex items-center justify-center px-8 py-4 text-sm font-semibold tracking-widest uppercase transition-all duration-300"
-                    style="background-color: {{ $secondaryColor }}; color: {{ $backgroundColor }}; border-radius: 4px; font-family: 'Lato', sans-serif;"
+                    style="background-color: {{ $secondaryColor }}; color: {{ $backgroundColor }}; border-radius: 4px; font-family: '{{ $bodyFont }}', sans-serif;"
                     onmouseover="this.style.backgroundColor='{{ $primaryColor }}'; this.style.color='{{ $secondaryColor }}';"
                     onmouseout="this.style.backgroundColor='{{ $secondaryColor }}'; this.style.color='{{ $backgroundColor }}';"
                 >

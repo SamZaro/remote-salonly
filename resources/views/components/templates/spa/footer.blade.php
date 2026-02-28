@@ -1,7 +1,7 @@
 {{--
     Spa Template: Footer Section
     Serene spa & wellness — elegant dark footer with warm accent tones
-    Fonts: Playfair Display (headings) + Lato (body)
+    Fonts: Lustria (headings) + Lato (body)
     Props: $content, $theme, $section
 --}}
 @props([
@@ -33,6 +33,8 @@
     $textColor = $theme['text_color'] ?? '#8A7B76';
     $headingColor = $theme['heading_color'] ?? '#6E5F5B';
     $backgroundColor = $theme['footer_background'] ?? '#FBF9F8';
+    $headingFont = $theme['heading_font_family'] ?? 'Lustria';
+    $bodyFont = $theme['font_family'] ?? 'Lato';
 @endphp
 
 <footer id="footer" class="py-16" style="background-color: {{ $secondaryColor }};">
@@ -41,11 +43,11 @@
         <div class="grid md:grid-cols-3 gap-12 mb-12">
             {{-- Brand --}}
             <div>
-                <h3 class="text-xl font-bold mb-4" style="color: #ffffff; font-family: 'Playfair Display', serif;">
+                <h3 class="text-xl font-bold mb-4" style="color: #ffffff; font-family: '{{ $headingFont }}', serif;">
                     {{ $companyName }}
                 </h3>
                 @if($description)
-                    <p class="text-sm leading-relaxed mb-6" style="color: {{ $primaryColor }}; font-family: 'Lato', sans-serif;">
+                    <p class="text-sm leading-relaxed mb-6" style="color: {{ $primaryColor }}; font-family: '{{ $bodyFont }}', sans-serif;">
                         {{ $description }}
                     </p>
                 @endif
@@ -85,7 +87,7 @@
 
             {{-- Navigation --}}
             <div>
-                <h4 class="text-sm font-bold uppercase tracking-widest mb-5" style="color: #ffffff; font-family: 'Lato', sans-serif;">
+                <h4 class="text-sm font-bold uppercase tracking-widest mb-5" style="color: #ffffff; font-family: '{{ $bodyFont }}', sans-serif;">
                     {{ __('Navigatie') }}
                 </h4>
                 <ul class="space-y-3">
@@ -94,7 +96,7 @@
                             <a
                                 href="#{{ $item['slug'] }}"
                                 class="text-sm transition-opacity hover:opacity-70"
-                                style="color: {{ $primaryColor }}; font-family: 'Lato', sans-serif;"
+                                style="color: {{ $primaryColor }}; font-family: '{{ $bodyFont }}', sans-serif;"
                             >
                                 {{ $item['title'] }}
                             </a>
@@ -105,23 +107,23 @@
 
             {{-- Contact --}}
             <div>
-                <h4 class="text-sm font-bold uppercase tracking-widest mb-5" style="color: #ffffff; font-family: 'Lato', sans-serif;">
+                <h4 class="text-sm font-bold uppercase tracking-widest mb-5" style="color: #ffffff; font-family: '{{ $bodyFont }}', sans-serif;">
                     {{ __('Contact') }}
                 </h4>
                 <ul class="space-y-3">
                     @if($address)
-                        <li class="text-sm" style="color: {{ $primaryColor }}; font-family: 'Lato', sans-serif;">{{ $address }}</li>
+                        <li class="text-sm" style="color: {{ $primaryColor }}; font-family: '{{ $bodyFont }}', sans-serif;">{{ $address }}</li>
                     @endif
                     @if($phone)
                         <li>
-                            <a href="tel:{{ preg_replace('/[^0-9+]/', '', $phone) }}" class="text-sm transition-opacity hover:opacity-70" style="color: {{ $primaryColor }}; font-family: 'Lato', sans-serif;">
+                            <a href="tel:{{ preg_replace('/[^0-9+]/', '', $phone) }}" class="text-sm transition-opacity hover:opacity-70" style="color: {{ $primaryColor }}; font-family: '{{ $bodyFont }}', sans-serif;">
                                 {{ $phone }}
                             </a>
                         </li>
                     @endif
                     @if($email)
                         <li>
-                            <a href="mailto:{{ $email }}" class="text-sm transition-opacity hover:opacity-70" style="color: {{ $primaryColor }}; font-family: 'Lato', sans-serif;">
+                            <a href="mailto:{{ $email }}" class="text-sm transition-opacity hover:opacity-70" style="color: {{ $primaryColor }}; font-family: '{{ $bodyFont }}', sans-serif;">
                                 {{ $email }}
                             </a>
                         </li>
@@ -132,7 +134,7 @@
 
         {{-- Bottom bar --}}
         <div class="pt-8" style="border-top: 1px solid {{ $primaryColor }}15;">
-            <p class="text-xs" style="color: {{ $primaryColor }}50; font-family: 'Lato', sans-serif;">
+            <p class="text-xs" style="color: {{ $primaryColor }}50; font-family: '{{ $bodyFont }}', sans-serif;">
                 {{ $copyright }}
             </p>
         </div>

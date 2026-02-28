@@ -1,7 +1,7 @@
 {{--
     Spa Template: Contact Form Section
     Serene spa & wellness — split layout with CTA left, form right
-    Fonts: Playfair Display (headings) + Lato (body)
+    Fonts: Lustria (headings) + Lato (body)
     Props: $content, $theme, $section
 --}}
 @props([
@@ -17,7 +17,7 @@
     $textColor = $theme['text_color'] ?? '#8A7B76';
     $headingColor = $theme['heading_color'] ?? '#6E5F5B';
     $backgroundColor = $theme['background_color'] ?? '#FBF9F8';
-    $headingFont = $theme['heading_font_family'] ?? 'Playfair Display';
+    $headingFont = $theme['heading_font_family'] ?? 'Lustria';
     $bodyFont = $theme['font_family'] ?? 'Lato';
 
     $ctaLabel = $content['cta_label'] ?? __('Contact');

@@ -10,7 +10,7 @@
         ->map(fn($font) => str_replace(' ', '+', $font) . ':wght@400;600;700')
         ->implode('&family=');
 
-    $serifFonts = ['Playfair Display', 'Merriweather', 'Libre Baskerville', 'Lora', 'Cormorant Garamond', 'DM Serif Display'];
+    $serifFonts = ['Playfair Display', 'Merriweather', 'Libre Baskerville', 'Lora', 'Lustria', 'Cormorant Garamond', 'DM Serif Display'];
     $getFallback = fn($font) => $font === 'system-ui' ? 'sans-serif' : (in_array($font, $serifFonts) ? 'serif' : 'sans-serif');
 @endphp
 
