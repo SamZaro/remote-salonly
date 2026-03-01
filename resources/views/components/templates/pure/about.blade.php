@@ -1,8 +1,8 @@
 {{--
-    Template-specifieke about voor Pure (Natural & Wellness Salon)
-
-    Natuurlijk, rustgevend, calm, eco, wellness
-    Props: $content, $theme
+    Pure Template: About Section
+    Natural & Botanical — split layout with transparent watermark text
+    Fonts: Lustria (headings) + Roboto (body)
+    Props: $content, $theme, $section
 --}}
 @props([
     'content' => [],
@@ -11,161 +11,145 @@
 ])
 
 @php
-    // Content met defaults
     $title = $content['title'] ?? 'Onze Filosofie';
-    $subtitle = $content['subtitle'] ?? 'Schoonheid in harmonie met de natuur';
-    $description = $content['description'] ?? 'Bij Pure geloven we dat echte schoonheid begint bij gezond haar en een gezonde planeet. Wij gebruiken uitsluitend biologische en plantaardige producten die zacht zijn voor jou én het milieu.';
+    $subtitle = $content['subtitle'] ?? 'Welkom bij onze salon';
+    $description = $content['description'] ?? 'Wij zijn gepassioneerde kappers met jarenlange ervaring. Ons team staat klaar om jou de beste service te bieden.';
+    $description2 = $content['description2'] ?? 'Met de juiste technieken en kwalitatieve producten zorgen we ervoor dat je altijd met een goed gevoel naar huis gaat.';
     $image = $section?->getFirstMediaUrl('background') ?: ($content['image'] ?? null);
-    $items = $content['items'] ?? [
-        ['title' => 'Biologisch', 'description' => '100% natuurlijke ingrediënten', 'icon' => 'leaf'],
-        ['title' => 'Duurzaam', 'description' => 'Eco-vriendelijke salon', 'icon' => 'globe'],
-        ['title' => 'Mindful', 'description' => 'Rustgevende ervaring', 'icon' => 'heart'],
-    ];
 
-    // Theme kleuren - Natural palette
-    $primaryColor = $theme['primary_color'] ?? '#059669';
+    $primaryColor = $theme['primary_color'] ?? '#14b8a6';
     $secondaryColor = $theme['secondary_color'] ?? '#1c1917';
-    $accentColor = $theme['accent_color'] ?? '#10b981';
-    $backgroundColor = $theme['background_color'] ?? '#fafaf9';
-    $textColor = $theme['text_color'] ?? '#78716c';
+    $accentColor = $theme['accent_color'] ?? '#99f6e4';
+    $textColor = $theme['text_color'] ?? '#57534e';
     $headingColor = $theme['heading_color'] ?? '#1c1917';
-    $headingFont = $theme['heading_font_family'] ?? 'DM Serif Display';
-    $bodyFont = $theme['font_family'] ?? 'DM Sans';
-
-    // Icon mapping
-    $icons = [
-        'leaf' => '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>',
-        'globe' => '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>',
-        'heart' => '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>',
-    ];
+    $backgroundColor = $theme['background_color'] ?? '#f0f0f0';
+    $headingFont = $theme['heading_font_family'] ?? 'Lustria';
+    $bodyFont = $theme['font_family'] ?? 'Roboto';
 @endphp
 
-<section id="about" class="py-24 lg:py-32" style="background-color: {{ $backgroundColor }};">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="grid lg:grid-cols-2 gap-16 items-center">
-            {{-- Image side --}}
-            <div class="relative order-2 lg:order-1"
-                x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateX(0)'"
-                style="opacity: 0; transform: translateX(-20px); transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);"
-            >
-                <div class="relative">
-                    {{-- Organic shape background --}}
-                    <div class="absolute -inset-8 opacity-10">
-                        <svg viewBox="0 0 200 200" class="w-full h-full" style="color: {{ $primaryColor }};">
-                            <path fill="currentColor" d="M45.3,-51.2C58.3,-40.9,68.2,-25.3,71.2,-8.2C74.2,8.9,70.3,27.5,59.5,40.6C48.7,53.7,31,61.3,12.7,65.2C-5.6,69.1,-24.5,69.3,-40.1,61.1C-55.7,52.9,-68,36.3,-72.1,18.1C-76.2,-0.1,-72.1,-19.9,-62,-35.1C-51.9,-50.3,-35.8,-60.9,-19.2,-64.8C-2.6,-68.7,14.5,-65.9,29.9,-59.6C45.3,-53.3,59,-46.5,45.3,-51.2Z" transform="translate(100 100)" />
-                        </svg>
-                    </div>
+<section id="about" class="relative py-20 lg:py-28 overflow-hidden" style="background-color: {{ $backgroundColor }};">
+    {{-- Botanical leaf decoration --}}
+    <div class="absolute top-12 right-8 opacity-[0.04]">
+        <svg class="w-36 h-36" viewBox="0 0 100 100" fill="none" style="color: {{ $primaryColor }};">
+            <path d="M50 5 C50 5, 90 30, 85 70 C80 95, 50 95, 50 95 C50 95, 20 95, 15 70 C10 30, 50 5, 50 5z" fill="currentColor"/>
+            <path d="M50 15 L50 85" stroke="currentColor" stroke-width="0.5" opacity="0.5"/>
+        </svg>
+    </div>
+    <div class="absolute bottom-16 left-6 opacity-[0.03]">
+        <svg class="w-24 h-24" viewBox="0 0 100 100" fill="none" style="color: {{ $primaryColor }};">
+            <path d="M50 5 C50 5, 90 30, 85 70 C80 95, 50 95, 50 95 C50 95, 20 95, 15 70 C10 30, 50 5, 50 5z" fill="currentColor"/>
+        </svg>
+    </div>
 
-                    @if($image)
-                        {{-- Main image --}}
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        {{-- Section header with watermark --}}
+        <div
+            class="text-center mb-16 relative"
+            x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+            style="opacity: 0; transform: translateY(20px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);"
+        >
+            <span
+                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap pointer-events-none select-none font-bold"
+                style="font-size: clamp(3rem, 8vw, 5rem); opacity: 0.04; color: {{ $secondaryColor }}; font-family: '{{ $headingFont }}', serif;"
+            >About Us</span>
+
+            <span
+                class="text-xs font-semibold uppercase tracking-[0.25em] mb-4 block"
+                style="color: {{ $primaryColor }}; font-family: '{{ $bodyFont }}', sans-serif;"
+            >
+                {{ $subtitle }}
+            </span>
+            <h2
+                class="text-3xl sm:text-4xl md:text-5xl font-bold mb-5"
+                style="color: {{ $headingColor }}; font-family: '{{ $headingFont }}', serif;"
+            >
+                {{ $title }}
+            </h2>
+            <div class="w-16 h-px mx-auto" style="background-color: {{ $primaryColor }};"></div>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            {{-- Image --}}
+            <div
+                x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateX(0)'"
+                style="opacity: 0; transform: translateX(-30px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);"
+            >
+                @if($image)
+                    <div class="relative">
                         <img
                             src="{{ $image }}"
                             alt="Over ons"
-                            class="relative w-full h-[500px] lg:h-[550px] rounded-[2rem] object-cover"
+                            class="w-full h-[460px] lg:h-[560px] object-cover rounded-none"
                         />
-                    @else
-                        {{-- Image placeholder --}}
+                        {{-- Accent border frame --}}
                         <div
-                            class="relative w-full h-[500px] lg:h-[550px] rounded-[2rem] flex items-center justify-center"
-                            style="background: linear-gradient(135deg, {{ $primaryColor }}15, {{ $accentColor }}10);"
-                        >
-                            <svg class="w-16 h-16" style="color: {{ $primaryColor }}30;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                            </svg>
-                        </div>
-                    @endif
-                </div>
-
-                {{-- Stats card --}}
-                <div
-                    class="absolute -bottom-8 -right-8 p-6 rounded-2xl bg-white hidden lg:block"
-                    style="box-shadow: 0 20px 60px {{ $primaryColor }}15;"
-                >
-                    <div class="grid grid-cols-2 gap-6">
-                        <div class="text-center">
-                            <span class="block text-3xl font-light" style="color: {{ $primaryColor }};">10+</span>
-                            <span class="text-xs" style="color: {{ $textColor }};">Jaar ervaring</span>
-                        </div>
-                        <div class="text-center">
-                            <span class="block text-3xl font-light" style="color: {{ $primaryColor }};">100%</span>
-                            <span class="text-xs" style="color: {{ $textColor }};">Natuurlijk</span>
-                        </div>
+                            class="absolute -bottom-4 -right-4 w-full h-full rounded-none -z-10"
+                            style="border: 2px solid {{ $primaryColor }};"
+                        ></div>
                     </div>
-                </div>
+                @else
+                    <div
+                        class="w-full h-[460px] lg:h-[560px] flex items-center justify-center rounded-none relative"
+                        style="background-color: {{ $accentColor }}30;"
+                    >
+                        <svg class="w-16 h-16" style="color: {{ $primaryColor }}40;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        </svg>
+                        <div
+                            class="absolute -bottom-4 -right-4 w-full h-full rounded-none -z-10"
+                            style="border: 2px solid {{ $primaryColor }};"
+                        ></div>
+                    </div>
+                @endif
             </div>
 
-            {{-- Content side --}}
-            <div class="order-1 lg:order-2"
-                x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
-                style="opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.15s;"
+            {{-- Content --}}
+            <div
+                x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateX(0)'"
+                style="opacity: 0; transform: translateX(30px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.15s;"
             >
-                {{-- Section label --}}
-                <div
-                    class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium mb-6"
-                    style="background-color: {{ $primaryColor }}15; color: {{ $primaryColor }};"
-                >
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
-                    </svg>
-                    Over Ons
-                </div>
-
-                {{-- Title --}}
-                <h2
-                    class="text-3xl sm:text-4xl lg:text-5xl font-light mb-6 leading-tight"
-                    style="color: {{ $headingColor }}; font-family: '{{ $headingFont }}', Georgia, serif;"
-                >
-                    {{ $title }}
-                </h2>
-
-                {{-- Subtitle --}}
                 <p
-                    class="text-xl mb-6 italic"
-                    style="color: {{ $primaryColor }};"
-                >
-                    "{{ $subtitle }}"
-                </p>
-
-                {{-- Description --}}
-                <p
-                    class="text-base mb-10 leading-relaxed"
-                    style="color: {{ $textColor }};"
+                    class="text-lg mb-6 leading-relaxed"
+                    style="color: {{ $textColor }}; font-family: '{{ $bodyFont }}', sans-serif;"
                 >
                     {{ $description }}
                 </p>
+                <p
+                    class="text-lg mb-10 leading-relaxed"
+                    style="color: {{ $textColor }}; font-family: '{{ $bodyFont }}', sans-serif;"
+                >
+                    {{ $description2 }}
+                </p>
 
-                {{-- Features --}}
-                <div class="space-y-6 mb-10">
-                    @foreach($items as $item)
-                        <div class="flex items-start gap-4">
-                            <div
-                                class="w-12 h-12 rounded-full flex-shrink-0 flex items-center justify-center"
-                                style="background-color: {{ $primaryColor }}15;"
-                            >
-                                <svg class="w-5 h-5" style="color: {{ $primaryColor }};" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    {!! $icons[$item['icon'] ?? 'leaf'] ?? $icons['leaf'] !!}
-                                </svg>
-                            </div>
-                            <div>
-                                <h4 class="font-medium mb-1" style="color: {{ $headingColor }};">
-                                    {{ $item['title'] }}
-                                </h4>
-                                <p class="text-sm" style="color: {{ $textColor }};">
-                                    {{ $item['description'] }}
-                                </p>
-                            </div>
+                {{-- Small feature highlights --}}
+                <div class="grid grid-cols-2 gap-6 mb-10">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full flex items-center justify-center shrink-0" style="background-color: {{ $accentColor }}30;">
+                            <svg class="w-5 h-5" style="color: {{ $primaryColor }};" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                            </svg>
                         </div>
-                    @endforeach
+                        <span class="text-sm font-semibold" style="color: {{ $headingColor }}; font-family: '{{ $bodyFont }}', sans-serif;">Gecertificeerd team</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full flex items-center justify-center shrink-0" style="background-color: {{ $accentColor }}30;">
+                            <svg class="w-5 h-5" style="color: {{ $primaryColor }};" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
+                            </svg>
+                        </div>
+                        <span class="text-sm font-semibold" style="color: {{ $headingColor }}; font-family: '{{ $bodyFont }}', sans-serif;">Natuurlijke producten</span>
+                    </div>
                 </div>
 
-                {{-- CTA --}}
                 <a
                     href="#contact"
-                    class="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 hover:shadow-lg"
-                    style="background-color: {{ $primaryColor }}; color: white;"
+                    class="inline-flex items-center justify-center px-8 py-4 text-sm font-semibold tracking-widest uppercase transition-all duration-300 rounded-none"
+                    style="background-color: {{ $secondaryColor }}; color: {{ $backgroundColor }}; font-family: '{{ $bodyFont }}', sans-serif;"
+                    onmouseover="this.style.backgroundColor='{{ $primaryColor }}'; this.style.color='#ffffff';"
+                    onmouseout="this.style.backgroundColor='{{ $secondaryColor }}'; this.style.color='{{ $backgroundColor }}';"
                 >
-                    Maak kennis
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    Neem contact op
+                    <svg class="w-4 h-4 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                     </svg>
                 </a>

@@ -1,7 +1,7 @@
 {{--
-    Template-specifieke team voor Pure (Natural & Wellness Salon)
-
-    Rounded-2xl, organisch, pill badges, natuur-kleuren, Playfair font-light
+    Pure Template: Team Section
+    Natural & Botanical — team cards with hover effect and transparent watermark
+    Fonts: Lustria (headings) + Roboto (body)
     Props: $content, $theme, $section
 --}}
 @props([
@@ -14,18 +14,16 @@
     $title = $content['title'] ?? 'Ons Team';
     $subtitle = $content['subtitle'] ?? 'Maak kennis met onze stylisten';
     $members = $content['members'] ?? [];
-
     $memberPhotos = $section?->getMedia('images') ?? collect();
 
-    // Theme kleuren - Natural
-    $primaryColor = $theme['primary_color'] ?? '#171717';
-    $secondaryColor = $theme['secondary_color'] ?? '#0a0a0a';
-    $accentColor = $theme['accent_color'] ?? '#404040';
-    $backgroundColor = $theme['background_color'] ?? '#FAFAFA';
-    $textColor = $theme['text_color'] ?? '#737373';
-    $headingColor = $theme['heading_color'] ?? '#171717';
-    $headingFont = $theme['heading_font_family'] ?? 'DM Serif Display';
-    $bodyFont = $theme['font_family'] ?? 'DM Sans';
+    $primaryColor = $theme['primary_color'] ?? '#14b8a6';
+    $secondaryColor = $theme['secondary_color'] ?? '#1c1917';
+    $accentColor = $theme['accent_color'] ?? '#99f6e4';
+    $backgroundColor = $theme['background_color'] ?? '#f0f0f0';
+    $textColor = $theme['text_color'] ?? '#57534e';
+    $headingColor = $theme['heading_color'] ?? '#1c1917';
+    $headingFont = $theme['heading_font_family'] ?? 'Lustria';
+    $bodyFont = $theme['font_family'] ?? 'Roboto';
 
     $memberCount = count($members);
     $gridCols = match(true) {
@@ -35,27 +33,27 @@
     };
 @endphp
 
-<section id="team" class="py-24 lg:py-32" style="background-color: {{ $primaryColor }}08;">
+<section id="team" class="py-20 lg:py-28" style="background-color: {{ $accentColor }}20;">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {{-- Header --}}
-        <div class="text-center mb-16">
-            <div
-                class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium mb-6"
-                style="background-color: {{ $primaryColor }}15; color: {{ $primaryColor }};"
-            >
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z"/>
-                </svg>
-                Team
-            </div>
-            <h2
-                class="text-3xl sm:text-4xl lg:text-5xl font-light mb-6"
-                style="color: {{ $headingColor }}; font-family: '{{ $headingFont }}', Georgia, serif;"
-            >
+        <div
+            class="text-center mb-16 relative"
+            x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+            style="opacity: 0; transform: translateY(20px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);"
+        >
+            <span
+                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap pointer-events-none select-none font-bold"
+                style="font-size: clamp(3rem, 8vw, 5rem); opacity: 0.04; color: {{ $secondaryColor }}; font-family: '{{ $headingFont }}', serif;"
+            >Our Team</span>
+
+            <span class="text-xs font-semibold uppercase tracking-[0.25em] mb-4 block" style="color: {{ $primaryColor }}; font-family: '{{ $bodyFont }}', sans-serif;">
+                {{ $subtitle }}
+            </span>
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4" style="color: {{ $headingColor }}; font-family: '{{ $headingFont }}', serif;">
                 {{ $title }}
             </h2>
-            <p class="text-lg max-w-xl mx-auto" style="color: {{ $textColor }};">
-                {{ $subtitle }}
+            <p class="text-lg max-w-xl mx-auto" style="color: {{ $textColor }}; font-family: '{{ $bodyFont }}', sans-serif;">
+                Maak kennis met onze specialisten
             </p>
         </div>
 
@@ -72,44 +70,48 @@
                             ->implode('');
                     @endphp
                     <div
-                        class="text-center bg-white p-8 rounded-2xl transition-all duration-300 hover:shadow-xl group"
-                        style="box-shadow: 0 4px 20px {{ $primaryColor }}08;"
+                        class="text-center group"
+                        x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+                        x-bind:style="'opacity: 0; transform: translateY(20px); transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1) {{ $index * 0.1 }}s;'"
                     >
                         {{-- Photo --}}
-                        <div class="mx-auto mb-6 w-32 h-32 rounded-full overflow-hidden">
+                        <div class="relative mb-6 overflow-hidden rounded-none">
                             @if($photoUrl)
                                 <img
                                     src="{{ $photoUrl }}"
                                     alt="{{ $member['name'] ?? '' }}"
-                                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                    class="w-full h-72 object-cover transition-transform duration-700 group-hover:scale-105"
                                 />
                             @else
                                 <div
-                                    class="w-full h-full flex items-center justify-center text-white"
-                                    style="background-color: {{ $primaryColor }};"
+                                    class="w-full h-72 flex items-center justify-center text-3xl font-bold"
+                                    style="background-color: {{ $accentColor }}30; color: {{ $primaryColor }}; font-family: '{{ $headingFont }}', serif;"
                                 >
-                                    <svg class="w-14 h-14 opacity-70" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/>
-                                    </svg>
+                                    {{ $initials }}
                                 </div>
                             @endif
+                            {{-- Hover overlay --}}
+                            <div
+                                class="absolute inset-0 flex items-center justify-center transition-opacity duration-300 opacity-0 group-hover:opacity-100"
+                                style="background-color: {{ $primaryColor }}40;"
+                            ></div>
                         </div>
 
                         {{-- Name --}}
-                        <h3 class="text-lg font-medium mb-1" style="color: {{ $headingColor }};">
+                        <h3 class="text-lg font-bold mb-1" style="color: {{ $headingColor }}; font-family: '{{ $headingFont }}', serif;">
                             {{ $member['name'] ?? '' }}
                         </h3>
 
                         {{-- Role --}}
                         @if(!empty($member['role']))
-                            <span class="text-sm" style="color: {{ $primaryColor }};">
+                            <span class="text-sm font-medium uppercase tracking-wider" style="color: {{ $primaryColor }}; font-family: '{{ $bodyFont }}', sans-serif;">
                                 {{ $member['role'] }}
                             </span>
                         @endif
 
                         {{-- Bio --}}
                         @if(!empty($member['bio']))
-                            <p class="mt-4 text-sm leading-relaxed max-w-xs mx-auto" style="color: {{ $textColor }};">
+                            <p class="mt-3 leading-relaxed" style="color: {{ $textColor }}; font-family: '{{ $bodyFont }}', sans-serif;">
                                 {{ $member['bio'] }}
                             </p>
                         @endif
@@ -117,7 +119,7 @@
                 @endforeach
             </div>
         @else
-            <p class="text-center" style="color: {{ $textColor }};">
+            <p class="text-center" style="color: {{ $textColor }}; font-family: '{{ $bodyFont }}', sans-serif;">
                 {{ __('Voeg teamleden toe via het dashboard.') }}
             </p>
         @endif

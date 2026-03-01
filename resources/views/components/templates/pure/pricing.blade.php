@@ -1,7 +1,7 @@
 {{--
-    Template-specifieke pricing voor Pure (Natural & Wellness Salon)
-
-    Natuurlijk, rustgevend, calm, eco, wellness
+    Pure Template: Pricing Section
+    Natural & Botanical — massive pricing with dark header per category
+    Fonts: Lustria (headings) + Roboto (body)
     Props: $content, $theme
 --}}
 @props([
@@ -10,133 +10,160 @@
 ])
 
 @php
-    // Content met defaults
-    $title = $content['title'] ?? 'Onze Prijzen';
-    $subtitle = $content['subtitle'] ?? 'Eerlijke prijzen voor eerlijke producten';
-    $items = $content['items'] ?? [
-        ['service' => 'Organic Cut', 'price' => '€55', 'description' => 'Inclusief natuurlijke styling'],
-        ['service' => 'Cut & Blow-dry', 'price' => '€70', 'description' => 'Knippen en föhnen'],
-        ['service' => 'Plant Color', 'price' => '€85', 'description' => '100% plantaardig', 'popular' => true],
-        ['service' => 'Highlights', 'price' => '€95', 'description' => 'Natuurlijke accenten'],
-        ['service' => 'Scalp Treatment', 'price' => '€45', 'description' => 'Ontspannende hoofdhuidmassage'],
-        ['service' => 'Hair Detox', 'price' => '€55', 'description' => 'Zuiverende behandeling'],
+    $title = $content['title'] ?? 'Prijzen';
+    $subtitle = $content['subtitle'] ?? 'Onze tarieven';
+    $categories = $content['categories'] ?? [
+        [
+            'name' => 'Knippen',
+            'icon' => 'hair',
+            'items' => [
+                ['service' => 'Organic Cut', 'description' => 'Inclusief natuurlijke styling', 'price' => '€55'],
+                ['service' => 'Cut & Blow-dry', 'description' => 'Knippen en föhnen', 'price' => '€70'],
+                ['service' => 'Kids Cut', 'description' => 'Tot 12 jaar', 'price' => '€30'],
+                ['service' => 'Ponyknippen', 'description' => 'Quick trim', 'price' => '€15'],
+                ['service' => 'Bruidsstyling', 'description' => 'Proefkapsel inbegrepen', 'price' => '€125', 'popular' => true],
+            ],
+        ],
+        [
+            'name' => 'Kleuring',
+            'icon' => 'nails',
+            'items' => [
+                ['service' => 'Plant Color', 'description' => '100% plantaardig', 'price' => '€85', 'popular' => true],
+                ['service' => 'Highlights', 'description' => 'Natuurlijke accenten', 'price' => '€95'],
+                ['service' => 'Balayage', 'description' => 'Handgeschilderde technieken', 'price' => '€120'],
+                ['service' => 'Gloss Treatment', 'description' => 'Kleur opfrissing', 'price' => '€45'],
+                ['service' => 'Roots Touch-up', 'description' => 'Uitgroei bijwerken', 'price' => '€65'],
+            ],
+        ],
+        [
+            'name' => 'Treatments',
+            'icon' => 'lash',
+            'items' => [
+                ['service' => 'Scalp Wellness', 'description' => 'Hoofdhuidbehandeling', 'price' => '€45'],
+                ['service' => 'Hair Detox', 'description' => 'Zuiverende behandeling', 'price' => '€55'],
+                ['service' => 'Herbal Treatment', 'description' => 'Intensieve kruidenbehandeling', 'price' => '€65', 'popular' => true],
+                ['service' => 'Keratine Behandeling', 'description' => 'Natuurlijk glad haar', 'price' => '€95'],
+                ['service' => 'Hoofdhuidmassage', 'description' => '20 minuten ontspanning', 'price' => '€35'],
+            ],
+        ],
     ];
 
-    // Theme kleuren - Natural palette
-    $primaryColor = $theme['primary_color'] ?? '#059669';
+    $primaryColor = $theme['primary_color'] ?? '#14b8a6';
     $secondaryColor = $theme['secondary_color'] ?? '#1c1917';
-    $accentColor = $theme['accent_color'] ?? '#10b981';
-    $backgroundColor = $theme['background_color'] ?? '#fafaf9';
-    $textColor = $theme['text_color'] ?? '#78716c';
+    $accentColor = $theme['accent_color'] ?? '#99f6e4';
+    $textColor = $theme['text_color'] ?? '#57534e';
     $headingColor = $theme['heading_color'] ?? '#1c1917';
-    $headingFont = $theme['heading_font_family'] ?? 'DM Serif Display';
-    $bodyFont = $theme['font_family'] ?? 'DM Sans';
+    $backgroundColor = $theme['background_color'] ?? '#f0f0f0';
+    $headingFont = $theme['heading_font_family'] ?? 'Lustria';
+    $bodyFont = $theme['font_family'] ?? 'Roboto';
 
-    // Helper functie voor prijs formatting
-    $formatPrice = function($price) {
-        if (empty($price)) return '';
-        // Als de prijs niet begint met €, voeg deze toe
-        return str_starts_with($price, '€') ? $price : '€' . $price;
-    };
+    $formatPrice = fn($price) => str_starts_with((string) $price, '€') ? $price : '€' . $price;
 @endphp
 
-<section id="pricing" class="py-24 lg:py-32" style="background-color: {{ $backgroundColor }};">
-    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+<section id="pricing" class="relative py-20 lg:py-28 overflow-hidden" style="background-color: {{ $backgroundColor }};">
+    {{-- Botanical leaf decoration --}}
+    <div class="absolute top-20 right-10 opacity-[0.04]">
+        <svg class="w-32 h-32" viewBox="0 0 100 100" fill="none" style="color: {{ $primaryColor }};">
+            <path d="M50 5 C50 5, 90 30, 85 70 C80 95, 50 95, 50 95 C50 95, 20 95, 15 70 C10 30, 50 5, 50 5z" fill="currentColor"/>
+            <path d="M50 15 L50 85" stroke="currentColor" stroke-width="0.5" opacity="0.5"/>
+            <path d="M50 35 L30 25" stroke="currentColor" stroke-width="0.5" opacity="0.3"/>
+            <path d="M50 50 L70 38" stroke="currentColor" stroke-width="0.5" opacity="0.3"/>
+        </svg>
+    </div>
+    <div class="absolute bottom-16 left-8 opacity-[0.03]">
+        <svg class="w-24 h-24" viewBox="0 0 100 100" fill="none" style="color: {{ $primaryColor }};">
+            <path d="M50 5 C50 5, 90 30, 85 70 C80 95, 50 95, 50 95 C50 95, 20 95, 15 70 C10 30, 50 5, 50 5z" fill="currentColor"/>
+        </svg>
+    </div>
+
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {{-- Section header --}}
-        <div class="text-center mb-16"
+        <div
+            class="text-center mb-16 relative"
             x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
-            style="opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);"
+            style="opacity: 0; transform: translateY(20px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);"
         >
-            <div
-                class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium mb-6"
-                style="background-color: {{ $primaryColor }}15; color: {{ $primaryColor }};"
-            >
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                </svg>
+            <span
+                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap pointer-events-none select-none font-bold"
+                style="font-size: clamp(3rem, 8vw, 5rem); opacity: 0.04; color: {{ $secondaryColor }}; font-family: '{{ $headingFont }}', serif;"
+            >Pricing</span>
+
+            <span class="text-xs font-semibold uppercase tracking-[0.25em] mb-4 block" style="color: {{ $primaryColor }}; font-family: '{{ $bodyFont }}', sans-serif;">
                 Prijzen
-            </div>
-            <h2
-                class="text-3xl sm:text-4xl lg:text-5xl font-light mb-6"
-                style="color: {{ $headingColor }}; font-family: '{{ $headingFont }}', Georgia, serif;"
-            >
+            </span>
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-5" style="color: {{ $headingColor }}; font-family: '{{ $headingFont }}', serif;">
                 {{ $title }}
             </h2>
-            <p class="text-lg max-w-xl mx-auto" style="color: {{ $textColor }};">
+            <p class="text-lg max-w-2xl mx-auto" style="color: {{ $textColor }}; font-family: '{{ $bodyFont }}', sans-serif;">
                 {{ $subtitle }}
             </p>
         </div>
 
-        {{-- Pricing card --}}
-        <div class="bg-white rounded-3xl p-8 lg:p-12" style="box-shadow: 0 10px 40px {{ $primaryColor }}10; opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.15s;"
-            x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
-        >
-            {{-- Price items --}}
-            <div class="space-y-0">
-                @foreach($items as $index => $item)
-                    @php
-                        $isPopular = $item['popular'] ?? false;
-                    @endphp
-                    <div class="relative py-5 {{ $index > 0 ? 'border-t' : '' }}" style="border-color: {{ $primaryColor }}15;">
-                        {{-- Popular badge --}}
-                        @if($isPopular)
-                            <span
-                                class="absolute -right-2 top-1/2 -translate-y-1/2 px-3 py-1 text-xs font-medium rounded-full hidden sm:block"
-                                style="background-color: {{ $primaryColor }}; color: white;"
-                            >
-                                Populair
-                            </span>
-                        @endif
-
-                        <div class="flex items-center justify-between gap-4 {{ $isPopular ? 'pr-20' : '' }}">
-                            <div class="flex-1">
-                                <div class="flex items-center gap-2">
-                                    <h3 class="font-medium" style="color: {{ $headingColor }};">
-                                        {{ $item['service'] }}
-                                    </h3>
-                                    @if($isPopular)
-                                        <span class="sm:hidden text-xs font-medium px-2 py-0.5 rounded-full" style="background-color: {{ $primaryColor }}; color: white;">
-                                            Top
-                                        </span>
-                                    @endif
-                                </div>
-                                <p class="text-sm mt-1" style="color: {{ $textColor }};">
-                                    {{ $item['description'] }}
-                                </p>
-                            </div>
-
-                            {{-- Dotted line --}}
-                            <div class="flex-1 border-b border-dotted hidden sm:block" style="border-color: {{ $primaryColor }}30;"></div>
-
-                            {{-- Price --}}
-                            <div class="text-xl font-light" style="color: {{ $primaryColor }};">
-                                {{ $formatPrice($item['price']) }}
-                            </div>
-                        </div>
+        {{-- Pricing categories --}}
+        <div class="grid gap-8 lg:grid-cols-3">
+            @foreach($categories as $index => $category)
+                <div
+                    class="rounded-none overflow-hidden"
+                    x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
+                    x-bind:style="'opacity: 0; transform: translateY(20px); transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1) {{ $index * 0.1 }}s;'"
+                >
+                    {{-- Category header — dark block --}}
+                    <div class="px-8 lg:px-10 py-8" style="background-color: {{ $secondaryColor }};">
+                        <div class="w-10 h-px mb-5" style="background-color: {{ $primaryColor }};"></div>
+                        <h3
+                            class="text-2xl lg:text-3xl font-bold"
+                            style="color: #ffffff; font-family: '{{ $headingFont }}', serif;"
+                        >
+                            {{ $category['name'] }}
+                        </h3>
                     </div>
-                @endforeach
-            </div>
 
-            {{-- Note --}}
-            <div class="mt-8 pt-6 border-t text-center" style="border-color: {{ $primaryColor }}15;">
-                <div class="flex items-center justify-center gap-2 text-sm" style="color: {{ $textColor }};">
-                    <svg class="w-4 h-4" style="color: {{ $primaryColor }};" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                    </svg>
-                    <span>Alle prijzen inclusief BTW • Alleen biologische producten</span>
+                    {{-- Price items — white block --}}
+                    <div class="px-8 lg:px-10 py-6" style="background-color: #ffffff;">
+                        @foreach($category['items'] as $item)
+                            <div class="flex items-start justify-between gap-4 py-5" @if(!$loop->last) style="border-bottom: 1px solid {{ $accentColor }}30;" @endif>
+                                <div class="flex-1 min-w-0">
+                                    <div class="flex items-center gap-2">
+                                        <h4 class="text-base lg:text-lg font-bold" style="color: {{ $headingColor }}; font-family: '{{ $headingFont }}', serif;">
+                                            {{ $item['service'] }}
+                                        </h4>
+                                        @if($item['popular'] ?? false)
+                                            <span
+                                                class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-none"
+                                                style="background-color: {{ $primaryColor }}; color: #ffffff; font-family: '{{ $bodyFont }}', sans-serif;"
+                                            >
+                                                Populair
+                                            </span>
+                                        @endif
+                                    </div>
+                                    <p class="text-sm mt-1" style="color: {{ $textColor }}; font-family: '{{ $bodyFont }}', sans-serif;">
+                                        {{ $item['description'] }}
+                                    </p>
+                                </div>
+                                <span class="text-xl lg:text-2xl font-bold shrink-0" style="color: {{ $primaryColor }}; font-family: '{{ $headingFont }}', serif;">
+                                    {{ $formatPrice($item['price']) }}
+                                </span>
+                            </div>
+                        @endforeach
+                    </div>
+
+                    {{-- Book button — teal block --}}
+                    <a
+                        href="#contact"
+                        class="block w-full px-8 lg:px-10 py-5 text-center text-sm font-semibold tracking-widest uppercase transition-all duration-300"
+                        style="background-color: {{ $primaryColor }}; color: #ffffff; font-family: '{{ $bodyFont }}', sans-serif;"
+                        onmouseover="this.style.backgroundColor='{{ $secondaryColor }}';"
+                        onmouseout="this.style.backgroundColor='{{ $primaryColor }}';"
+                    >
+                        Afspraak maken
+                    </a>
                 </div>
-            </div>
+            @endforeach
         </div>
 
-        {{-- CTA --}}
-        <div class="text-center mt-10">
-            <a
-                href="#contact"
-                class="inline-flex items-center justify-center px-8 py-4 rounded-full text-base font-medium transition-all duration-300 hover:shadow-lg"
-                style="background-color: {{ $primaryColor }}; color: white;"
-            >
-                Boek Je Afspraak
-            </a>
-        </div>
+        {{-- Footer note --}}
+        <p class="mt-10 text-center text-sm" style="color: {{ $textColor }}; font-family: '{{ $bodyFont }}', sans-serif;">
+            Alle prijzen zijn inclusief BTW. Alleen biologische producten.
+        </p>
     </div>
 </section>

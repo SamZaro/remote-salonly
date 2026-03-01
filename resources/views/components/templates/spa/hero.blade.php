@@ -23,6 +23,8 @@
     $textColor = $theme['text_color'] ?? '#8A7B76';
     $headingColor = $theme['heading_color'] ?? '#6E5F5B';
     $backgroundColor = $theme['background_color'] ?? '#FBF9F8';
+    $headingFont = $theme['heading_font_family'] ?? 'Lustria';
+    $bodyFont = $theme['font_family'] ?? 'Lato';
 @endphp
 
 <section
@@ -56,7 +58,7 @@
             <h1
                 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight transition-all duration-1000 delay-200"
                 :class="loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'"
-                style="color: #ffffff; font-family: 'Playfair Display', serif;"
+                style="color: #ffffff; font-family: '{{ $headingFont }}', serif;"
             >
                 {!! $title !!}
             </h1>
@@ -64,7 +66,7 @@
             <p
                 class="text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed transition-all duration-1000 delay-400"
                 :class="loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'"
-                style="color: rgba(255,255,255,0.8); font-family: 'Lato', sans-serif; font-weight: 300;"
+                style="color: rgba(255,255,255,0.8); font-family: '{{ $bodyFont }}', sans-serif; font-weight: 300;"
             >
                 {{ $subtitle }}
             </p>
@@ -76,7 +78,7 @@
                 <a
                     href="{{ $ctaLink }}"
                     class="inline-flex items-center justify-center px-10 py-4 text-sm font-semibold tracking-widest uppercase transition-all duration-300 hover:shadow-lg"
-                    style="background-color: {{ $primaryColor }}; color: {{ $secondaryColor }}; border-radius: 4px; font-family: 'Lato', sans-serif;"
+                    style="background-color: {{ $primaryColor }}; color: {{ $secondaryColor }}; border-radius: 4px; font-family: '{{ $bodyFont }}', sans-serif;"
                     onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='{{ $secondaryColor }}';"
                     onmouseout="this.style.backgroundColor='{{ $primaryColor }}'; this.style.color='{{ $secondaryColor }}';"
                 >
@@ -85,7 +87,7 @@
                 <a
                     href="#services"
                     class="inline-flex items-center justify-center px-10 py-4 text-sm font-semibold tracking-widest uppercase transition-all duration-300 hover:bg-white/10"
-                    style="border: 1.5px solid rgba(255,255,255,0.4); color: #ffffff; border-radius: 4px; font-family: 'Lato', sans-serif;"
+                    style="border: 1.5px solid rgba(255,255,255,0.4); color: #ffffff; border-radius: 4px; font-family: '{{ $bodyFont }}', sans-serif;"
                 >
                     Onze diensten
                 </a>

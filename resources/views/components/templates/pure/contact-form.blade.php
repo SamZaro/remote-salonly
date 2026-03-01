@@ -1,6 +1,7 @@
 {{--
-    Pure Template: Contact Form section
-    "Natural & Wellness" — organic shapes, green tones, calm, eco
+    Pure Template: Contact Form Section
+    Natural & Botanical — split layout with botanical decorations
+    Fonts: Lustria (headings) + Roboto (body)
     Props: $content, $theme, $section
 --}}
 @props([
@@ -10,14 +11,14 @@
 ])
 
 @php
-    $primaryColor = $theme['primary_color'] ?? '#059669';
+    $primaryColor = $theme['primary_color'] ?? '#14b8a6';
     $secondaryColor = $theme['secondary_color'] ?? '#1c1917';
-    $accentColor = $theme['accent_color'] ?? '#10b981';
-    $textColor = $theme['text_color'] ?? '#78716c';
+    $accentColor = $theme['accent_color'] ?? '#99f6e4';
+    $textColor = $theme['text_color'] ?? '#57534e';
     $headingColor = $theme['heading_color'] ?? '#1c1917';
-    $backgroundColor = $theme['background_color'] ?? '#fafaf9';
-    $headingFont = $theme['heading_font_family'] ?? 'Playfair Display';
-    $bodyFont = $theme['font_family'] ?? 'Montserrat';
+    $backgroundColor = $theme['background_color'] ?? '#f0f0f0';
+    $headingFont = $theme['heading_font_family'] ?? 'Lustria';
+    $bodyFont = $theme['font_family'] ?? 'Roboto';
 
     // CTA content (left column)
     $ctaLabel = $content['cta_label'] ?? __('Neem contact op');
@@ -31,7 +32,7 @@
 
 <section id="contact-form" class="py-24 lg:py-32" style="background-color: {{ $backgroundColor }}; font-family: '{{ $bodyFont }}', sans-serif;">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="grid lg:grid-cols-2 gap-0 rounded-2xl overflow-hidden" style="box-shadow: 0 4px 24px {{ $primaryColor }}0a;">
+        <div class="grid lg:grid-cols-2 gap-0 rounded-sm overflow-hidden" style="box-shadow: 0 4px 24px {{ $primaryColor }}0a;">
 
             {{-- Left: CTA / Jumbotron --}}
             <div
@@ -46,14 +47,14 @@
                         class="absolute inset-0 w-full h-full object-cover"
                     />
                 @else
-                    <div class="absolute inset-0" style="background: linear-gradient(170deg, #064e3b, {{ $secondaryColor }});"></div>
+                    <div class="absolute inset-0" style="background: linear-gradient(170deg, {{ $secondaryColor }}, {{ $secondaryColor }}dd);"></div>
                     {{-- Organic leaf-like shapes --}}
                     <div class="absolute top-16 right-16 w-40 h-40 rounded-full opacity-[0.06]" style="background-color: {{ $accentColor }};"></div>
                     <div class="absolute top-32 right-8 w-20 h-20 rounded-full opacity-[0.04]" style="background-color: {{ $accentColor }};"></div>
                     <div class="absolute bottom-24 left-10 w-28 h-28 rounded-full opacity-[0.05]" style="background-color: {{ $accentColor }};"></div>
                 @endif
 
-                <div class="absolute inset-0" style="background: linear-gradient(to top, #000000dd 0%, #064e3b99 40%, #064e3b50 100%);"></div>
+                <div class="absolute inset-0" style="background: linear-gradient(to top, {{ $secondaryColor }}dd 0%, {{ $secondaryColor }}99 40%, {{ $secondaryColor }}50 100%);"></div>
 
                 {{-- Content --}}
                 <div class="relative z-10 p-8 lg:p-12 w-full">
