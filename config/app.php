@@ -173,7 +173,7 @@ return [
     'datetime_format' => 'd/m/Y H:i',
     'date_format' => 'd/m/Y',
 
-    'support_email' => 'info@webvue.nl',
+    'support_email' => env('APP_SUPPORT_EMAIL', 'info@webvue.nl'),
 
     'email_color_tint' => '#6f27e5',
 
