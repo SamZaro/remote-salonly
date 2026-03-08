@@ -5,7 +5,11 @@ namespace App\Filament\Dashboard\Resources\Bookings;
 use App\Enums\BookingStatus;
 use App\Filament\Dashboard\Resources\Bookings\Pages\ListBookings;
 use App\Filament\Dashboard\Resources\Bookings\Pages\ViewBooking;
+use App\Mail\Booking\BookingStatusCancelled;
+use App\Mail\Booking\BookingStatusConfirmed;
 use App\Models\Booking;
+use Filament\Actions\Action;
+use Filament\Actions\DeleteAction;
 use Filament\Actions\ViewAction;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
@@ -14,6 +18,7 @@ use Filament\Tables\Filters\Filter;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Support\Facades\Mail;
 
 class BookingResource extends Resource
 {
@@ -61,7 +66,7 @@ class BookingResource extends Resource
 
     public static function canDelete($record): bool
     {
-        return false;
+        return auth()->user()?->hasPermissionTo('booking.delete') ?? false;
     }
 
     public static function form(Schema $schema): Schema
@@ -125,6 +130,37 @@ class BookingResource extends Resource
             ])
             ->recordActions([
                 ViewAction::make(),
+                Action::make('confirm')
+                    ->label(__('Bevestigen'))
+                    ->icon('heroicon-o-check-circle')
+                    ->color('success')
+                    ->visible(fn ($record) => $record->status === BookingStatus::Pending
+                        && auth()->user()?->hasPermissionTo('booking.update'))
+                    ->requiresConfirmation()
+                    ->modalHeading(__('Reservering bevestigen'))
+                    ->modalDescription(__('Weet je zeker dat je deze reservering wilt bevestigen?'))
+                    ->modalSubmitActionLabel(__('Bevestigen'))
+                    ->action(function ($record) {
+                        $record->update(['status' => BookingStatus::Confirmed]);
+                        Mail::to($record->customer_email)->send(new BookingStatusConfirmed($record));
+                    }),
+                Action::make('cancel')
+                    ->label(__('Annuleren'))
+                    ->icon('heroicon-o-x-circle')
+                    ->color('danger')
+                    ->visible(fn ($record) => in_array($record->status, [BookingStatus::Pending, BookingStatus::Confirmed])
+                        && auth()->user()?->hasPermissionTo('booking.update'))
+                    ->requiresConfirmation()
+                    ->modalHeading(__('Reservering annuleren'))
+                    ->modalDescription(__('Weet je zeker dat je deze reservering wilt annuleren?'))
+                    ->modalSubmitActionLabel(__('Annuleren'))
+                    ->action(function ($record) {
+                        $record->update(['status' => BookingStatus::Cancelled]);
+                        Mail::to($record->customer_email)->send(new BookingStatusCancelled($record));
+                    }),
+                DeleteAction::make()
+                    ->label(__('Verwijderen'))
+                    ->visible(fn ($record) => auth()->user()?->hasPermissionTo('booking.delete')),
             ])
             ->defaultSort('booking_date', 'asc');
     }

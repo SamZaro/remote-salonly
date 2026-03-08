@@ -42,7 +42,7 @@ class SubscriptionTierSeeder extends Seeder
 
         // 3. Maak customer user aan
         $user = User::updateOrCreate(
-            ['email' => 'customer@test.com'],
+            ['email' => 'unitedonlinemedia@gmail.com'],
             [
                 'name' => 'Test Customer',
                 'password' => Hash::make('password'),
@@ -76,7 +76,7 @@ class SubscriptionTierSeeder extends Seeder
 
         // 7. Overzicht
         $this->command->newLine();
-        $this->command->info("Provisioning gesimuleerd voor customer@test.com");
+        $this->command->info('Provisioning gesimuleerd voor customer@test.com');
         $this->command->table(
             ['Instelling', 'Waarde'],
             [

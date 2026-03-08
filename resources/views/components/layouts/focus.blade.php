@@ -8,7 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @include('components.layouts.partials.head')
 </head>
-<body class="text-primary-900">
+<body class="text-orange-900">
     <div id="app">
 
         <div class="w-full">
@@ -16,13 +16,13 @@
                  <div class="md:basis-3/5 flex flex-col">
                      <div class="hidden md:block">
                          <a href="{{url('/')}}">
-                            <img src="{{ url('/images/logos/webvue_logo.png')}}" class="inline-block h-10 m-10" alt="Logo" />
+                            <img src="{{ url('/images/logos/salon-blaze-black.png')}}" class="h-14 m-14" alt="Logo" />
                          </a>
                      </div>
 
                      {{$left}}
                  </div>
-                <div class="md:basis-2/5 md:min-h-screen md:bg-linear-to-r md:from-primary-400 md:to-primary-700 flex flex-col md:text-white text-primary-900 text-center md:text-left left-shadow">
+                <div class="md:basis-2/5 md:min-h-screen md:bg-linear-to-r md:from-orange-400 md:to-orange-700 flex flex-col md:text-white text-orange-900 text-center md:text-left left-shadow">
                     <div class="flex justify-between md:justify-end">
                         <div class="md:hidden">
                             <a href="{{url('/')}}">
@@ -30,8 +30,8 @@
                             </a>
                         </div>
 
-                        <div class="self-end text-primary-200 m-4 text-xs">
-                            <x-link href="{{url('/')}}" class="flex items-center text-primary-100">{{__('< back home')}}</x-link>
+                        <div class="self-end text-orange-200 m-4 text-xs">
+                            <x-link href="{{url('/')}}" class="flex items-center text-orange-100">{{__('< back home')}}</x-link>
                         </div>
                     </div>
 

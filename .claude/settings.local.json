@@ -53,7 +53,10 @@
       "mcp__laravel-boost__browser-logs",
       "Bash(\"C:\\\\Users\\\\Samir\\\\.config\\\\herd\\\\bin\\\\php.bat\" artisan:*)",
       "mcp__laravel-boost__last-error",
-      "mcp__laravel-boost__read-log-entries"
+      "mcp__laravel-boost__read-log-entries",
+      "Bash(where php)",
+      "Read(//c/Users/Samir/Herd//**)",
+      "Bash(/c/Users/Samir/.config/herd/bin/php.bat:*)"
     ],
     "deny": [],
     "ask": []
