@@ -17,7 +17,11 @@
     $navigation      = $templateService->getNavigationItems();
 
     $companyName  = $content['company_name'] ?? $template?->name ?? config('app.name');
-    $description  = $content['description'] ?? 'Premium barbershop voor de moderne gentleman.';
+
+    // Logo configuratie op basis van theme_config
+    $logoType = $theme['logo']['type'] ?? 'text';
+    $logoText = $theme['logo']['text'] ?? $template?->name ?? config('app.name');
+    $logoImage = ($logoType === 'image') ? $template?->logo_url : null;
     $address      = $content['address'] ?? '';
     $phone        = $content['phone'] ?? '';
     $email        = $content['email'] ?? '';
@@ -39,16 +43,15 @@
         {{-- Brand row --}}
         <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 pb-14 border-b mb-14" style="border-color: rgba(255,255,255,0.06);">
             <div>
-                <h3
-                    class="font-black uppercase leading-none tracking-tight mb-2"
-                    style="font-family: '{{ $headingFont }}'; font-size: clamp(2rem, 4vw, 3.5rem); letter-spacing: -0.03em; color: {{ $primaryColor }};"
-                >
-                    {{ $companyName }}
-                </h3>
-                @if($description)
-                    <p class="text-sm uppercase tracking-widest" style="color: rgba(255,255,255,0.25); font-family: '{{ $bodyFont }}';">
-                        {{ $description }}
-                    </p>
+                @if($logoType === 'image' && $logoImage)
+                    <img src="{{ $logoImage }}" alt="{{ $logoText }}" class="h-16 sm:h-20 mb-2">
+                @else
+                    <h3
+                        class="font-black uppercase leading-none tracking-tight mb-2"
+                        style="font-family: '{{ $headingFont }}'; font-size: clamp(2rem, 4vw, 3.5rem); letter-spacing: -0.03em; color: {{ $primaryColor }};"
+                    >
+                        {{ $companyName }}
+                    </h3>
                 @endif
             </div>
 

@@ -19,7 +19,11 @@
 
     // Content met defaults
     $companyName = $content['company_name'] ?? $template?->name ?? config('app.name');
-    $description = $content['description'] ?? 'Premium barbershop voor de moderne gentleman.';
+
+    // Logo configuratie op basis van theme_config
+    $logoType = $theme['logo']['type'] ?? 'text';
+    $logoText = $theme['logo']['text'] ?? $template?->name ?? config('app.name');
+    $logoImage = ($logoType === 'image') ? $template?->logo_url : null;
     $address = $content['address'] ?? '';
     $phone = $content['phone'] ?? '';
     $email = $content['email'] ?? '';
@@ -57,18 +61,17 @@
                 <div class="h-px w-20" style="background-color: {{ $primaryColor }};"></div>
             </div>
 
-            <h3
-                class="text-4xl font-bold uppercase tracking-[0.2em] mb-4"
-                style="color: {{ $primaryColor }}; font-family: '{{ $headingFont }}', Georgia, serif;"
-            >
-                {{ $companyName }}
-            </h3>
-
-            @if($description)
-                <p class="uppercase tracking-widest text-sm" style="color: {{ $lightTextColor }}; opacity: 0.5;">
-                    {{ $description }}
-                </p>
+            @if($logoType === 'image' && $logoImage)
+                <img src="{{ $logoImage }}" alt="{{ $logoText }}" class="h-16 sm:h-20 mx-auto mb-4">
+            @else
+                <h3
+                    class="text-4xl font-bold uppercase tracking-[0.2em] mb-4"
+                    style="color: {{ $primaryColor }}; font-family: '{{ $headingFont }}', Georgia, serif;"
+                >
+                    {{ $companyName }}
+                </h3>
             @endif
+
         </div>
 
         {{-- Main content grid --}}

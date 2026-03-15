@@ -37,18 +37,6 @@
 @endphp
 
 <section id="contact" class="relative py-20 lg:py-28 overflow-hidden" style="background-color: {{ $backgroundColor }};">
-    {{-- Botanical leaf decoration --}}
-    <div class="absolute top-12 left-10 opacity-[0.04]">
-        <svg class="w-32 h-32" viewBox="0 0 100 100" fill="none" style="color: {{ $primaryColor }};">
-            <path d="M50 5 C50 5, 90 30, 85 70 C80 95, 50 95, 50 95 C50 95, 20 95, 15 70 C10 30, 50 5, 50 5z" fill="currentColor"/>
-            <path d="M50 15 L50 85" stroke="currentColor" stroke-width="0.5" opacity="0.5"/>
-        </svg>
-    </div>
-    <div class="absolute bottom-8 right-8 opacity-[0.03]">
-        <svg class="w-24 h-24" viewBox="0 0 100 100" fill="none" style="color: {{ $primaryColor }};">
-            <path d="M50 5 C50 5, 90 30, 85 70 C80 95, 50 95, 50 95 C50 95, 20 95, 15 70 C10 30, 50 5, 50 5z" fill="currentColor"/>
-        </svg>
-    </div>
 
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {{-- Section header with watermark --}}
@@ -186,31 +174,6 @@
                     @endforeach
                 </div>
             </div>
-        </div>
-
-        {{-- Map --}}
-        <div
-            class="mt-8"
-            x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
-            style="opacity: 0; transform: translateY(20px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.3s;"
-        >
-            @if($mapEmbed)
-                <div class="overflow-hidden min-h-[320px] rounded-none">
-                    <div class="h-full w-full">{!! $mapEmbed !!}</div>
-                </div>
-            @else
-                <div
-                    class="w-full min-h-[320px] flex items-center justify-center rounded-none"
-                    style="background-color: {{ $accentColor }}30;"
-                >
-                    <div class="text-center">
-                        <svg class="w-12 h-12 mx-auto mb-3" style="color: {{ $primaryColor }}30;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>
-                        </svg>
-                        <span class="text-sm" style="color: {{ $textColor }}; font-family: '{{ $bodyFont }}', sans-serif;">Google Maps</span>
-                    </div>
-                </div>
-            @endif
         </div>
     </div>
 </section>

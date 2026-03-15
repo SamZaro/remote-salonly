@@ -53,16 +53,6 @@
 
     <div class="relative z-10 mx-auto max-w-7xl w-full px-4 sm:px-6 lg:px-8 py-20">
         <div class="max-w-3xl mx-auto text-center">
-            {{-- Small botanical accent --}}
-            <div
-                class="mb-8 transition-all duration-1000"
-                :class="loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'"
-            >
-                <svg class="w-8 h-8 mx-auto" style="color: {{ $primaryColor }};" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
-                </svg>
-            </div>
-
             <h1
                 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight transition-all duration-1000 delay-200"
                 :class="loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'"
@@ -104,24 +94,25 @@
     </div>
 
     {{-- Bottom scroll indicator --}}
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
-        <div
-            class="w-6 h-10 rounded-full border-2 border-white/30 flex items-start justify-center p-1.5"
-            x-data="{ show: false }"
-            x-init="setTimeout(() => show = true, 1200)"
-            x-show="show"
-            x-transition:enter="transition ease-out duration-700"
-            x-transition:enter-start="opacity-0 translate-y-4"
-            x-transition:enter-end="opacity-100 translate-y-0"
-        >
-            <div class="w-1 h-2.5 rounded-full bg-white/60" style="animation: pureScrollBounce 2s ease-in-out infinite;"></div>
-        </div>
-    </div>
+    <a
+        href="#about"
+        class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
+        x-data="{ show: false }"
+        x-init="setTimeout(() => show = true, 1200)"
+        x-show="show"
+        x-transition:enter="transition ease-out duration-700"
+        x-transition:enter-start="opacity-0 translate-y-4"
+        x-transition:enter-end="opacity-100 translate-y-0"
+    >
+        <svg class="w-6 h-6 text-white/60" style="animation: pureScrollBounce 2s ease-in-out infinite;" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+        </svg>
+    </a>
 
     <style>
         @keyframes pureScrollBounce {
             0%, 100% { transform: translateY(0); opacity: 0.6; }
-            50% { transform: translateY(6px); opacity: 1; }
+            50% { transform: translateY(8px); opacity: 1; }
         }
     </style>
 </section>

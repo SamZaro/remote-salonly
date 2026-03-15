@@ -19,7 +19,11 @@
 
     // Content met defaults
     $companyName = $content['company_name'] ?? $template?->name ?? config('app.name');
-    $description = $content['description'] ?? 'Uw bestemming voor luxe schoonheidsbehandelingen en ultieme ontspanning.';
+
+    // Logo configuratie op basis van theme_config
+    $logoType = $theme['logo']['type'] ?? 'text';
+    $logoText = $theme['logo']['text'] ?? $template?->name ?? config('app.name');
+    $logoImage = ($logoType === 'image') ? $template?->logo_url : null;
     $address = $content['address'] ?? '';
     $phone = $content['phone'] ?? '';
     $email = $content['email'] ?? '';
@@ -44,16 +48,15 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {{-- Top section with logo --}}
         <div class="text-center mb-16">
-            <h3
-                class="text-3xl font-bold mb-4"
-                style="color: {{ $textColor }}; font-family: '{{ $headingFont }}', Georgia, serif;"
-            >
-                {{ $companyName }}
-            </h3>
-            @if($description)
-                <p class="text-lg max-w-xl mx-auto" style="color: {{ $textColor }}; opacity: 0.7;">
-                    {{ $description }}
-                </p>
+            @if($logoType === 'image' && $logoImage)
+                <img src="{{ $logoImage }}" alt="{{ $logoText }}" class="h-16 sm:h-20 mx-auto mb-4">
+            @else
+                <h3
+                    class="text-3xl font-bold mb-4"
+                    style="color: {{ $textColor }}; font-family: '{{ $headingFont }}', Georgia, serif;"
+                >
+                    {{ $companyName }}
+                </h3>
             @endif
         </div>
 

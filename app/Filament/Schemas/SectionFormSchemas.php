@@ -555,10 +555,6 @@ class SectionFormSchemas
                     TextInput::make('content.company_name')
                         ->label(__('Company Name'))
                         ->placeholder('Your Company'),
-                    Textarea::make('content.description')
-                        ->label(__('Description'))
-                        ->rows(2)
-                        ->columnSpanFull(),
                     TextInput::make('content.address')
                         ->label(__('Address')),
                     TextInput::make('content.phone')

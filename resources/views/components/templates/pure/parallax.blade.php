@@ -43,13 +43,6 @@
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full opacity-[0.08]" style="border: 2px solid #ffffff;"></div>
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] rounded-full opacity-[0.10]" style="border: 1px solid #ffffff;"></div>
 
-    {{-- Botanical leaf decoration --}}
-    <div class="absolute bottom-8 left-8 opacity-[0.10]">
-        <svg class="w-32 h-32" viewBox="0 0 100 100" fill="none" style="color: #ffffff;">
-            <path d="M50 5 C50 5, 90 30, 85 70 C80 95, 50 95, 50 95 C50 95, 20 95, 15 70 C10 30, 50 5, 50 5z" fill="currentColor"/>
-            <path d="M50 15 L50 85" stroke="currentColor" stroke-width="0.5" opacity="0.5"/>
-        </svg>
-    </div>
 
     <div
         class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20"

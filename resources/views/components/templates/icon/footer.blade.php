@@ -18,7 +18,11 @@
 
     // Content met defaults
     $companyName = $content['company_name'] ?? $template?->name ?? config('app.name');
-    $description = $content['description'] ?? 'Moderne haarstyling met oog voor detail en persoonlijke service.';
+
+    // Logo configuratie op basis van theme_config
+    $logoType = $theme['logo']['type'] ?? 'text';
+    $logoText = $theme['logo']['text'] ?? $template?->name ?? config('app.name');
+    $logoImage = ($logoType === 'image') ? $template?->logo_url : null;
     $address = $content['address'] ?? '';
     $phone = $content['phone'] ?? '';
     $email = $content['email'] ?? '';
@@ -52,17 +56,15 @@
 
             {{-- Column 1: Company info + Social --}}
             <div class="lg:col-span-4">
-                <h3
-                    class="text-xl mb-4"
-                    style="color: {{ $primaryColor }}; font-family: '{{ $headingFont }}', serif; font-weight: 600;"
-                >
-                    {{ $companyName }}
-                </h3>
-
-                @if($description)
-                    <p class="text-[13px] leading-relaxed mb-6" style="color: {{ $backgroundColor }}35;">
-                        {{ $description }}
-                    </p>
+                @if($logoType === 'image' && $logoImage)
+                    <img src="{{ $logoImage }}" alt="{{ $logoText }}" class="h-14 mb-4">
+                @else
+                    <h3
+                        class="text-xl mb-4"
+                        style="color: {{ $primaryColor }}; font-family: '{{ $headingFont }}', serif; font-weight: 600;"
+                    >
+                        {{ $companyName }}
+                    </h3>
                 @endif
 
                 {{-- Social Links --}}

@@ -10,9 +10,18 @@
 ])
 
 @php
+    use App\Services\TemplateService;
+
+    $templateService = app(TemplateService::class);
+    $template = $templateService->getActiveTemplate();
+
     // Content met defaults
-    $companyName = $content['company_name'] ?? 'Essence';
-    $description = $content['description'] ?? 'Waar schoonheid en verfijning samenkomen. Luxury hair & beauty voor de moderne vrouw.';
+    $companyName = $content['company_name'] ?? $template?->name ?? config('app.name');
+
+    // Logo configuratie op basis van theme_config
+    $logoType = $theme['logo']['type'] ?? 'text';
+    $logoText = $theme['logo']['text'] ?? $template?->name ?? config('app.name');
+    $logoImage = ($logoType === 'image') ? $template?->logo_url : null;
     $address = $content['address'] ?? 'Keizersgracht 123, Amsterdam';
     $phone = $content['phone'] ?? '+31 20 123 4567';
     $email = $content['email'] ?? 'info@essence-salon.nl';
@@ -43,16 +52,16 @@
         <div class="grid gap-12 lg:grid-cols-4">
             {{-- Brand --}}
             <div class="lg:col-span-2">
-                <h3
-                    class="text-2xl font-light mb-4"
-                    style="color: {{ $backgroundColor }}; font-family: '{{ $headingFont }}', Georgia, serif;"
-                >
-                    {{ $companyName }}
-                </h3>
-                <p class="text-sm mb-6 max-w-md leading-relaxed" style="color: {{ $backgroundColor }}; opacity: 0.7;">
-                    {{ $description }}
-                </p>
-
+                @if($logoType === 'image' && $logoImage)
+                    <img src="{{ $logoImage }}" alt="{{ $logoText }}" class="h-14 mb-4">
+                @else
+                    <h3
+                        class="text-2xl font-light mb-4"
+                        style="color: {{ $backgroundColor }}; font-family: '{{ $headingFont }}', Georgia, serif;"
+                    >
+                        {{ $companyName }}
+                    </h3>
+                @endif
                 {{-- Social links --}}
                 <div class="flex items-center gap-4">
                     @foreach($socialLinks as $platform => $url)

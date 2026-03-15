@@ -17,7 +17,11 @@
     $navigation      = $templateService->getNavigationItems();
 
     $companyName  = $content['company_name'] ?? $template?->name ?? config('app.name');
-    $description  = $content['description'] ?? 'Creatieve kapsalon voor de moderne stijl.';
+
+    // Logo configuratie op basis van theme_config
+    $logoType = $theme['logo']['type'] ?? 'text';
+    $logoText = $theme['logo']['text'] ?? $template?->name ?? config('app.name');
+    $logoImage = ($logoType === 'image') ? $template?->logo_url : null;
     $address      = $content['address'] ?? '';
     $phone        = $content['phone'] ?? '';
     $email        = $content['email'] ?? '';
@@ -42,16 +46,15 @@
         {{-- Brand row --}}
         <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 pb-14 border-b mb-14" style="border-color: rgba(255,255,255,0.06);">
             <div class="max-w-sm">
-                <h3
-                    class="font-black leading-none tracking-tight mb-3"
-                    style="font-family: '{{ $headingFont }}'; font-size: clamp(2rem, 4vw, 3.5rem); letter-spacing: -0.04em; color: #ffffff;"
-                >
-                    {{ $companyName }}
-                </h3>
-                @if($description)
-                    <p class="text-sm font-light leading-relaxed" style="color: rgba(255,255,255,0.3); font-family: '{{ $bodyFont }}';">
-                        {{ $description }}
-                    </p>
+                @if($logoType === 'image' && $logoImage)
+                    <img src="{{ $logoImage }}" alt="{{ $logoText }}" class="h-16 sm:h-20 mb-3">
+                @else
+                    <h3
+                        class="font-black leading-none tracking-tight mb-3"
+                        style="font-family: '{{ $headingFont }}'; font-size: clamp(2rem, 4vw, 3.5rem); letter-spacing: -0.04em; color: #ffffff;"
+                    >
+                        {{ $companyName }}
+                    </h3>
                 @endif
             </div>
 

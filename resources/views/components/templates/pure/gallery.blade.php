@@ -25,22 +25,10 @@
     $bodyFont = $theme['font_family'] ?? 'Roboto';
 
     // Alternate heights for masonry effect
-    $heights = ['h-[380px]', 'h-[480px]', 'h-[420px]', 'h-[500px]', 'h-[360px]', 'h-[450px]'];
+    $heights = ['h-[300px]', 'h-[380px]', 'h-[340px]', 'h-[400px]', 'h-[280px]', 'h-[360px]'];
 @endphp
 
 <section id="gallery" class="relative py-20 lg:py-28 overflow-hidden" style="background-color: {{ $accentColor }}20;">
-    {{-- Botanical leaf decoration --}}
-    <div class="absolute top-16 right-12 opacity-[0.04]">
-        <svg class="w-28 h-28" viewBox="0 0 100 100" fill="none" style="color: {{ $primaryColor }};">
-            <path d="M50 5 C50 5, 90 30, 85 70 C80 95, 50 95, 50 95 C50 95, 20 95, 15 70 C10 30, 50 5, 50 5z" fill="currentColor"/>
-            <path d="M50 15 L50 85" stroke="currentColor" stroke-width="0.5" opacity="0.5"/>
-        </svg>
-    </div>
-    <div class="absolute bottom-20 left-8 opacity-[0.03]">
-        <svg class="w-24 h-24" viewBox="0 0 100 100" fill="none" style="color: {{ $primaryColor }};">
-            <path d="M50 5 C50 5, 90 30, 85 70 C80 95, 50 95, 50 95 C50 95, 20 95, 15 70 C10 30, 50 5, 50 5z" fill="currentColor"/>
-        </svg>
-    </div>
 
     @if($images->isNotEmpty())
         <div

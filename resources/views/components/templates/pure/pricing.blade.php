@@ -61,20 +61,6 @@
 @endphp
 
 <section id="pricing" class="relative py-20 lg:py-28 overflow-hidden" style="background-color: {{ $backgroundColor }};">
-    {{-- Botanical leaf decoration --}}
-    <div class="absolute top-20 right-10 opacity-[0.04]">
-        <svg class="w-32 h-32" viewBox="0 0 100 100" fill="none" style="color: {{ $primaryColor }};">
-            <path d="M50 5 C50 5, 90 30, 85 70 C80 95, 50 95, 50 95 C50 95, 20 95, 15 70 C10 30, 50 5, 50 5z" fill="currentColor"/>
-            <path d="M50 15 L50 85" stroke="currentColor" stroke-width="0.5" opacity="0.5"/>
-            <path d="M50 35 L30 25" stroke="currentColor" stroke-width="0.5" opacity="0.3"/>
-            <path d="M50 50 L70 38" stroke="currentColor" stroke-width="0.5" opacity="0.3"/>
-        </svg>
-    </div>
-    <div class="absolute bottom-16 left-8 opacity-[0.03]">
-        <svg class="w-24 h-24" viewBox="0 0 100 100" fill="none" style="color: {{ $primaryColor }};">
-            <path d="M50 5 C50 5, 90 30, 85 70 C80 95, 50 95, 50 95 C50 95, 20 95, 15 70 C10 30, 50 5, 50 5z" fill="currentColor"/>
-        </svg>
-    </div>
 
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {{-- Section header --}}

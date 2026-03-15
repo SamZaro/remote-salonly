@@ -19,7 +19,11 @@
 
     // Content met defaults
     $companyName = $content['company_name'] ?? $template?->name ?? config('app.name');
-    $description = $content['description'] ?? 'Waar traditie en vakmanschap samenkomen voor de perfecte knipbeurt.';
+
+    // Logo configuratie op basis van theme_config
+    $logoType = $theme['logo']['type'] ?? 'text';
+    $logoText = $theme['logo']['text'] ?? $template?->name ?? config('app.name');
+    $logoImage = ($logoType === 'image') ? $template?->logo_url : null;
     $address = $content['address'] ?? '';
     $phone = $content['phone'] ?? '';
     $email = $content['email'] ?? '';
@@ -52,16 +56,15 @@
         <div class="grid lg:grid-cols-4 gap-12 mb-16">
             {{-- Logo & Description --}}
             <div class="lg:col-span-1">
-                <h3
-                    class="text-2xl font-bold mb-4 uppercase tracking-wider"
-                    style="color: {{ $primaryColor }}; font-family: '{{ $headingFont }}', Georgia, serif;"
-                >
-                    {{ $companyName }}
-                </h3>
-                @if($description)
-                    <p class="text-gray-400 text-sm leading-relaxed">
-                        {{ $description }}
-                    </p>
+                @if($logoType === 'image' && $logoImage)
+                    <img src="{{ $logoImage }}" alt="{{ $logoText }}" class="h-14 mb-4">
+                @else
+                    <h3
+                        class="text-2xl font-bold mb-4 uppercase tracking-wider"
+                        style="color: {{ $primaryColor }}; font-family: '{{ $headingFont }}', Georgia, serif;"
+                    >
+                        {{ $companyName }}
+                    </h3>
                 @endif
             </div>
 

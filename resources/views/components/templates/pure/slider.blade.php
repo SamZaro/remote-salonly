@@ -78,10 +78,6 @@
     {{-- Overlay --}}
     <div class="absolute inset-0" style="background: linear-gradient(135deg, rgba(0,0,0,{{ $overlayOpacity + 0.1 }}) 0%, rgba(0,0,0,{{ $overlayOpacity - 0.1 }}) 50%, rgba(0,0,0,{{ $overlayOpacity }}) 100%);"></div>
 
-    {{-- Botanical leaf decoration --}}
-    <svg class="absolute top-16 right-12 w-24 h-24 opacity-[0.08] z-10" viewBox="0 0 100 100" fill="#ffffff">
-        <path d="M50 5C50 5 20 30 20 60C20 80 35 95 50 95C65 95 80 80 80 60C80 30 50 5 50 5Z"/>
-    </svg>
 
     {{-- Content --}}
     <div class="relative z-10 mx-auto max-w-7xl w-full px-4 sm:px-6 lg:px-8 py-20">

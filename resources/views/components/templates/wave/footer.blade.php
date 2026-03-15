@@ -17,7 +17,11 @@
     $navigation = $templateService->getNavigationItems();
 
     $companyName = $content['company_name'] ?? $template?->name ?? config('app.name');
-    $description = $content['description'] ?? 'Waar stijl en vakmanschap samenkomen voor de perfecte look.';
+
+    // Logo configuratie op basis van theme_config
+    $logoType = $theme['logo']['type'] ?? 'text';
+    $logoText = $theme['logo']['text'] ?? $template?->name ?? config('app.name');
+    $logoImage = ($logoType === 'image') ? $template?->logo_url : null;
     $address = $content['address'] ?? '';
     $phone = $content['phone'] ?? '';
     $email = $content['email'] ?? '';
@@ -56,18 +60,17 @@
                 <div class="w-8 h-[2px] rounded-full" style="background: linear-gradient(to left, transparent, {{ $primaryColor }});"></div>
             </div>
 
-            <h3
-                class="text-2xl sm:text-3xl tracking-wide mb-3"
-                style="color: {{ $backgroundColor }}; font-family: '{{ $headingFont }}', serif; font-weight: 700;"
-            >
-                {{ $companyName }}
-            </h3>
-
-            @if($description)
-                <p class="text-center max-w-md text-[14px] leading-relaxed" style="color: {{ $backgroundColor }}60;">
-                    {{ $description }}
-                </p>
+            @if($logoType === 'image' && $logoImage)
+                <img src="{{ $logoImage }}" alt="{{ $logoText }}" class="h-16 sm:h-20 mb-3">
+            @else
+                <h3
+                    class="text-2xl sm:text-3xl tracking-wide mb-3"
+                    style="color: {{ $backgroundColor }}; font-family: '{{ $headingFont }}', serif; font-weight: 700;"
+                >
+                    {{ $companyName }}
+                </h3>
             @endif
+
         </div>
 
         <div class="grid md:grid-cols-4 gap-8 mb-14">

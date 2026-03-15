@@ -17,7 +17,11 @@
     $navigation = $templateService->getNavigationItems();
 
     $companyName = $content['company_name'] ?? $template?->name ?? config('app.name');
-    $description = $content['description'] ?? 'Uw bestemming voor persoonlijke schoonheidsbehandelingen en ontspanning.';
+
+    // Logo configuratie op basis van theme_config
+    $logoType = $theme['logo']['type'] ?? 'text';
+    $logoText = $theme['logo']['text'] ?? $template?->name ?? config('app.name');
+    $logoImage = ($logoType === 'image') ? $template?->logo_url : null;
     $address = $content['address'] ?? '';
     $phone = $content['phone'] ?? '';
     $email = $content['email'] ?? '';
@@ -42,15 +46,13 @@
         <div class="grid md:grid-cols-3 gap-12 mb-12">
             {{-- Brand --}}
             <div>
-                <h3 class="text-xl font-bold mb-3" style="color: {{ $backgroundColor }}; font-family: '{{ $headingFont }}', sans-serif;">
-                    {{ $companyName }}
-                </h3>
-                @if($description)
-                    <p class="text-sm leading-relaxed" style="color: {{ $primaryColor }};">
-                        {{ $description }}
-                    </p>
+                @if($logoType === 'image' && $logoImage)
+                    <img src="{{ $logoImage }}" alt="{{ $logoText }}" class="h-14 mb-3">
+                @else
+                    <h3 class="text-xl font-bold mb-3" style="color: {{ $backgroundColor }}; font-family: '{{ $headingFont }}', sans-serif;">
+                        {{ $companyName }}
+                    </h3>
                 @endif
-
                 {{-- Social --}}
                 @if($facebookUrl || $instagramUrl)
                     <div class="flex items-center gap-3 mt-5">
