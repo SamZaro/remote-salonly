@@ -56,7 +56,13 @@
       "mcp__laravel-boost__read-log-entries",
       "Bash(where php)",
       "Read(//c/Users/Samir/Herd//**)",
-      "Bash(/c/Users/Samir/.config/herd/bin/php.bat:*)"
+      "Bash(/c/Users/Samir/.config/herd/bin/php.bat:*)",
+      "Bash(for dir:*)",
+      "Bash(cd C:/Users/Samir/Herd/remote-salonly && /c/Users/Samir/AppData/Local/Programs/Herd/resources/bin/php/php-8.4/php artisan app:seed-template-images pure --dry-run 2>&1)",
+      "Read(//c/Users/Samir/AppData/Local/Programs/Herd/resources/bin/**)",
+      "Read(//c/Users/Samir/AppData/Local/Programs/Herd/**)",
+      "Bash(cd C:/Users/Samir/Herd/remote-salonly && \"C:\\\\Users\\\\Samir\\\\.config\\\\herd\\\\bin\\\\php.bat\" artisan app:seed-template-images pure --dry-run 2>&1)",
+      "Bash(for template:*)"
     ],
     "deny": [],
     "ask": []

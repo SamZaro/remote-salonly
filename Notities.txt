@@ -32,3 +32,55 @@ Dit is de DaisyUI configuratie in jouw project:
   - ❌ Admin panel - alleen standaard Filament styling
 
   De DaisyUI configuratie staat op themes: light --default in beide CSS bestanden waar het actief is.
+
+--------------------------------------------------------------------------------------------------------------
+
+
+IMAGES PLACEHOLDERS SEEDEN
+
+  Het command toont alle MISSING afbeeldingen. Nu zie je precies welke bestanden je moet plaatsen:
+
+  Folder structuur voor Pure template
+
+  database/seeders/images/templates/pure/
+  ├── preview.jpg                    ← Template preview (admin)
+  ├── logo.png                       ← Template logo
+  ├── hero-background.jpg            ← Hero section
+  ├── about-background.jpg           ← About section
+  ├── jumbotron-background.jpg       ← Jumbotron section
+  ├── parallax-background.jpg        ← Parallax section
+  ├── cta-background.jpg             ← CTA section
+  ├── contact-form-background.jpg    ← Contact form section
+  ├── slider/
+  │   ├── slide-1.jpg
+  │   ├── slide-2.jpg
+  │   └── slide-3.jpg                ← Max 6 slider images
+  ├── gallery/
+  │   ├── gallery-1.jpg
+  │   ├── gallery-2.jpg
+  │   └── ...                        ← Zo veel als je wilt
+  └── team/
+      ├── member-1.jpg
+      ├── member-2.jpg
+      └── member-3.jpg               ← Per teamlid
+
+  Gebruik
+
+  # Dry-run — toont wat er geseed zou worden + warnings voor missende afbeeldingen
+  php artisan app:seed-template-images pure --dry-run
+
+  # Seed alleen Pure template
+  php artisan app:seed-template-images pure
+
+  # Seed alle templates (later wanneer de rest klaar is)
+  php artisan app:seed-template-images
+
+  Kenmerken
+
+  - Extensie-prioriteit: jpg → jpeg → png (eerste match wint)
+  - Geen webp: Alleen jpg, jpeg, png toegestaan
+  - Validatie: Elke missende afbeelding wordt getoond als MISSING in geel
+  - Idempotent: clearMediaCollection() voorkomt duplicaten bij re-run
+  - preservingOriginal(): Bronbestanden blijven intact in de seeders folder
+
+  Plaats je afbeeldingen in de folders en run php artisan app:seed-template-images pure om te testen.

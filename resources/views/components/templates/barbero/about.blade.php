@@ -54,7 +54,7 @@
                         <img
                             src="{{ $featuredImage }}"
                             alt="Over ons"
-                            class="w-full h-[600px] object-cover grayscale"
+                            class="w-full h-[600px] object-cover"
                         />
                         {{-- Gold frame overlay --}}
                         <div class="absolute inset-4 border-2 pointer-events-none" style="border-color: {{ $primaryColor }};"></div>

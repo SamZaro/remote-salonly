@@ -1,6 +1,6 @@
 {{--
     Level Template: About Section
-    Light section — text LEFT, full-height image RIGHT (reversed from urban)
+    Light section — image LEFT, text RIGHT (mirrors hero layout)
     Props: $content, $theme, $section
 --}}
 @props([
@@ -31,13 +31,13 @@
 @endphp
 
 <section id="about" class="relative overflow-hidden" style="background-color: {{ $backgroundColor }};">
-    <div class="grid lg:grid-cols-2 min-h-[80vh]">
+    <div class="flex flex-col lg:grid min-h-[80vh]" style="grid-template-columns: 48% 52%;">
 
-        {{-- Text column — LEFT --}}
+        {{-- Text column — RIGHT --}}
         <div
-            class="flex flex-col justify-center px-8 sm:px-12 lg:px-16 xl:px-20 py-20 lg:py-28 order-2 lg:order-1"
+            class="flex flex-col justify-center px-8 sm:px-12 lg:px-16 xl:px-20 py-20 lg:py-28 order-2"
             x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateX(0)'"
-            style="opacity: 0; transform: translateX(-20px); transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);"
+            style="opacity: 0; transform: translateX(20px); transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);"
         >
             {{-- Eyebrow --}}
             <div class="flex items-center gap-3 mb-8">
@@ -99,8 +99,8 @@
             </div>
         </div>
 
-        {{-- Image column — RIGHT --}}
-        <div class="relative order-1 lg:order-2 min-h-[420px] lg:min-h-auto overflow-hidden">
+        {{-- Image column — LEFT --}}
+        <div class="relative order-1 min-h-[420px] lg:min-h-auto overflow-hidden">
             @if($image)
                 <img
                     src="{{ $image }}"

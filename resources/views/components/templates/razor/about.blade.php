@@ -47,7 +47,7 @@
                         <img
                             src="{{ $image }}"
                             alt="Over ons"
-                            class="w-full h-[500px] lg:h-[600px] object-cover grayscale"
+                            class="w-full h-[500px] lg:h-[600px] object-cover"
                         />
                         {{-- Overlay accent --}}
                         <div

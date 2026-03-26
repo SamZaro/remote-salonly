@@ -31,7 +31,7 @@
     @if($backgroundImage)
         <div class="absolute inset-0">
             <img src="{{ $backgroundImage }}" alt="" class="w-full h-full object-cover" />
-            <div class="absolute inset-0" style="background: {{ $secondaryColor }}e5;"></div>
+            <div class="absolute inset-0" style="background: {{ $secondaryColor }}99;"></div>
         </div>
     @else
         <div class="absolute inset-0" style="background-color: {{ $secondaryColor }};"></div>

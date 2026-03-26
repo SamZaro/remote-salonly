@@ -36,7 +36,7 @@
      <div class="absolute inset-0 bg-(--overlay-color)/60" style="--overlay-color: {{ $secondaryColor }};"></div>
 
     {{-- Decorative border --}}
-    <div class="absolute inset-6 border opacity-20" style="border-color: {{ $primaryColor }};"></div>
+    <div class="absolute inset-6 border opacity-40" style="border-color: {{ $primaryColor }};"></div>
 
     {{-- Content --}}
     <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20"
@@ -55,7 +55,8 @@
 
         @if($title)
             <h2
-                class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6 text-white"
+                class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6"
+                style="color: transparent; -webkit-text-stroke: 2px {{ $primaryColor }}; font-family: var(--font-family-heading);"
             >
                 {!! $title !!}
             </h2>

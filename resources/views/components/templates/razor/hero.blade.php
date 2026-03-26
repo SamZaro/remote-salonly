@@ -41,23 +41,13 @@
                 alt="Hero background"
                 class="w-full h-full object-cover"
             />
-            <div class="absolute inset-0" style="background: linear-gradient(135deg, rgba(15,15,15,0.95) 0%, rgba(15,15,15,0.8) 100%);"></div>
+            <div class="absolute inset-0" style="background: linear-gradient(135deg, rgba(15,15,15,0.2) 0%, rgba(15,15,15,0.3) 100%);"></div>
         </div>
     @endif
 
     {{-- Subtiele lijn patronen --}}
     <div class="absolute inset-0 z-0 opacity-[0.03]">
         <div class="absolute inset-0" style="background-image: repeating-linear-gradient(0deg, {{ $primaryColor }} 0, {{ $primaryColor }} 1px, transparent 1px, transparent 80px);"></div>
-    </div>
-
-    {{-- Decoratieve scheermes element links --}}
-    <div class="absolute left-8 top-1/2 -translate-y-1/2 hidden xl:block opacity-10">
-        <svg class="w-32 h-64" viewBox="0 0 60 120" fill="none" stroke="{{ $primaryColor }}" stroke-width="0.5">
-            {{-- Straight razor silhouette --}}
-            <rect x="25" y="10" width="10" height="80" rx="2"/>
-            <path d="M25 90 Q30 110 35 90" />
-            <rect x="20" y="5" width="20" height="10" rx="1"/>
-        </svg>
     </div>
 
     {{-- Decoratieve scheermes element rechts (gespiegeld) --}}
@@ -71,31 +61,16 @@
 
     {{-- Content --}}
     <div class="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center py-20">
-        {{-- Vintage scheermes icon --}}
-        <div class="flex justify-center mb-8"
-            x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
-            style="opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0s;"
-        >
-            <div class="relative">
-                <div class="absolute -inset-4 border rotate-45 opacity-30" style="border-color: {{ $primaryColor }};"></div>
-                <svg class="w-16 h-16 relative" style="color: {{ $primaryColor }};" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1">
-                    {{-- Straight razor icon --}}
-                    <path d="M4 4h16v3H4z M7 7v10a3 3 0 0 0 3 3h4a3 3 0 0 0 3-3V7"/>
-                    <path d="M9 7v8a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1V7"/>
-                </svg>
-            </div>
-        </div>
-
         {{-- Badge --}}
         <div class="flex items-center justify-center gap-6 mb-10"
             x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
             style="opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.1s;"
         >
-            <div class="h-px w-20" style="background: linear-gradient(to right, transparent, {{ $primaryColor }});"></div>
-            <span class="text-xs font-bold uppercase tracking-[0.4em]" style="color: {{ $primaryColor }};">
+            <div class="h-px w-28" style="background: linear-gradient(to right, transparent, {{ $primaryColor }});"></div>
+            <span class="text-sm font-bold uppercase tracking-[0.4em]" style="color: {{ $primaryColor }};">
                 Premium Barbershop
             </span>
-            <div class="h-px w-20" style="background: linear-gradient(to left, transparent, {{ $primaryColor }});"></div>
+            <div class="h-px w-28" style="background: linear-gradient(to left, transparent, {{ $primaryColor }});"></div>
         </div>
 
         {{-- Titel --}}
@@ -139,21 +114,6 @@
             </a>
         </div>
 
-        {{-- Trust indicators --}}
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-8 mt-16 pt-16 border-t" style="border-color: {{ $primaryColor }}20;">
-            <div class="flex items-center gap-2">
-                @for($i = 0; $i < 5; $i++)
-                    <svg class="w-5 h-5" style="color: {{ $primaryColor }};" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/>
-                    </svg>
-                @endfor
-                <span class="ml-2 text-sm opacity-70" style="color: {{ $textColor }};">4.9/5 Google</span>
-            </div>
-            <div class="hidden sm:block w-px h-6 opacity-30" style="background-color: {{ $primaryColor }};"></div>
-            <span class="text-sm opacity-70" style="color: {{ $textColor }};">1000+ tevreden klanten</span>
-            <div class="hidden sm:block w-px h-6 opacity-30" style="background-color: {{ $primaryColor }};"></div>
-            <span class="text-sm opacity-70" style="color: {{ $textColor }};">Est. 2015</span>
-        </div>
     </div>
 
     {{-- Scroll indicator --}}

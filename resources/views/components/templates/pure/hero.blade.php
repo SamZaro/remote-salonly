@@ -53,13 +53,13 @@
 
     <div class="relative z-10 mx-auto max-w-7xl w-full px-4 sm:px-6 lg:px-8 py-20">
         <div class="max-w-3xl mx-auto text-center">
-            <h1
-                class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight transition-all duration-1000 delay-200"
+            <h2
+                class="text-base md:text-lg font-bold mb-6 leading-tight transition-all duration-1000 delay-200"
                 :class="loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'"
                 style="color: #ffffff; font-family: '{{ $headingFont }}', serif;"
             >
                 {!! $title !!}
-            </h1>
+            </h2>
 
             <p
                 class="text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed transition-all duration-1000 delay-400"

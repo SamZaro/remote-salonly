@@ -51,7 +51,7 @@
                     <div class="absolute inset-0 opacity-[0.03]" style="background-image: repeating-linear-gradient(45deg, {{ $primaryColor }} 0, {{ $primaryColor }} 1px, transparent 0, transparent 20px), repeating-linear-gradient(-45deg, {{ $primaryColor }} 0, {{ $primaryColor }} 1px, transparent 0, transparent 20px);"></div>
                 @endif
 
-                <div class="absolute inset-0" style="background: linear-gradient(to top, #000000ee 0%, #000000aa 40%, {{ $secondaryColor }}60 100%);"></div>
+                <div class="absolute inset-0" style="background: linear-gradient(to top, #000000bb 0%, #00000066 40%, {{ $secondaryColor }}30 100%);"></div>
 
                 {{-- Gold corner accents --}}
                 <div class="absolute top-6 left-6 w-12 h-12" style="border-top: 2px solid {{ $primaryColor }}; border-left: 2px solid {{ $primaryColor }};"></div>

@@ -29,7 +29,7 @@
     @if($backgroundImage)
         <div class="absolute inset-0">
             <img src="{{ $backgroundImage }}" alt="" class="w-full h-full object-cover" />
-            <div class="absolute inset-0" style="background: linear-gradient(to right, {{ $secondaryColor }}f0, {{ $secondaryColor }}a0);"></div>
+            <div class="absolute inset-0" style="background: linear-gradient(to right, {{ $secondaryColor }}b0, {{ $secondaryColor }}70);"></div>
         </div>
     @else
         <div class="absolute inset-0" style="background-color: {{ $secondaryColor }};"></div>
