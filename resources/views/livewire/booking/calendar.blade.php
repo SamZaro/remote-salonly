@@ -38,13 +38,13 @@
 
     {{-- Weekday headers --}}
     <div class="mb-2 grid grid-cols-7 gap-1 text-center text-xs font-medium text-gray-500">
-        <div>{{ __('Ma') }}</div>
-        <div>{{ __('Di') }}</div>
-        <div>{{ __('Wo') }}</div>
-        <div>{{ __('Do') }}</div>
-        <div>{{ __('Vr') }}</div>
-        <div>{{ __('Za') }}</div>
-        <div>{{ __('Zo') }}</div>
+        <div>{{ __('Mo') }}</div>
+        <div>{{ __('Tu') }}</div>
+        <div>{{ __('We') }}</div>
+        <div>{{ __('Th') }}</div>
+        <div>{{ __('Fr') }}</div>
+        <div>{{ __('Sa') }}</div>
+        <div>{{ __('Su') }}</div>
     </div>
 
     {{-- Calendar grid --}}
@@ -85,17 +85,17 @@
     <div class="mt-4 flex flex-wrap items-center gap-4 text-xs text-gray-500">
         <div class="flex items-center gap-1">
             <span class="h-3 w-3 rounded-full bg-primary-600"></span>
-            <span>{{ __('Geselecteerd') }}</span>
+            <span>{{ __('Selected') }}</span>
         </div>
         <div class="flex items-center gap-1">
             <span class="relative flex h-3 w-3 items-center justify-center rounded-full bg-gray-100">
                 <span class="h-1 w-1 rounded-full bg-primary-600"></span>
             </span>
-            <span>{{ __('Vandaag') }}</span>
+            <span>{{ __('Today') }}</span>
         </div>
         <div class="flex items-center gap-1">
             <span class="h-3 w-3 rounded-full bg-gray-200"></span>
-            <span>{{ __('Niet beschikbaar') }}</span>
+            <span>{{ __('Not available') }}</span>
         </div>
     </div>
 </div>

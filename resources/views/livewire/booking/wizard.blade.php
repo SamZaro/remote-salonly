@@ -2,8 +2,8 @@
     <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         {{-- Header --}}
         <div class="mb-8 text-center">
-            <h1 class="text-3xl font-bold text-gray-900">{{ __('Maak een reservering') }}</h1>
-            <p class="mt-2 text-gray-600">{{ __('Kies een datum en tijd die u het beste uitkomt') }}</p>
+            <h1 class="text-3xl font-bold text-gray-900">{{ __('Make a reservation') }}</h1>
+            <p class="mt-2 text-gray-600">{{ __('Choose a date and time that suits you best') }}</p>
         </div>
 
         {{-- Progress indicator --}}
@@ -25,7 +25,7 @@
                                 1
                             @endif
                         </div>
-                        <span class="ml-2 text-sm font-medium text-gray-900">{{ __('Datum & Tijd') }}</span>
+                        <span class="ml-2 text-sm font-medium text-gray-900">{{ __('Date & Time') }}</span>
                     </div>
 
                     {{-- Connector --}}
@@ -44,7 +44,7 @@
                         ])>
                             2
                         </div>
-                        <span class="ml-2 text-sm font-medium text-gray-900">{{ __('Uw gegevens') }}</span>
+                        <span class="ml-2 text-sm font-medium text-gray-900">{{ __('Your details') }}</span>
                     </div>
                 </div>
             </div>
@@ -56,11 +56,11 @@
                 {{-- Step 1: Date & Time selection --}}
                 <div class="grid gap-8 lg:grid-cols-2">
                     <div>
-                        <h2 class="mb-4 text-lg font-semibold text-gray-900">{{ __('Kies een datum') }}</h2>
+                        <h2 class="mb-4 text-lg font-semibold text-gray-900">{{ __('Choose a date') }}</h2>
                         <livewire:booking.calendar :selected-date="$selectedDate" />
                     </div>
                     <div>
-                        <h2 class="mb-4 text-lg font-semibold text-gray-900">{{ __('Kies een tijd') }}</h2>
+                        <h2 class="mb-4 text-lg font-semibold text-gray-900">{{ __('Choose a time') }}</h2>
                         <livewire:booking.time-slots :selected-date="$selectedDate" />
                     </div>
                 </div>
@@ -88,7 +88,7 @@
                             <svg class="mr-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
                             </svg>
-                            {{ __('Terug naar datum & tijd') }}
+                            {{ __('Back to date & time') }}
                         </button>
                     </div>
 
@@ -100,13 +100,13 @@
                             </svg>
                             <span class="ml-2 font-medium text-primary-900">
                                 {{ \Carbon\Carbon::parse($selectedDate)->translatedFormat('l j F Y') }}
-                                {{ __('om') }}
+                                {{ __('at') }}
                                 {{ $selectedTime }}
                             </span>
                         </div>
                     </div>
 
-                    <h2 class="mb-4 text-lg font-semibold text-gray-900">{{ __('Vul uw gegevens in') }}</h2>
+                    <h2 class="mb-4 text-lg font-semibold text-gray-900">{{ __('Enter your details') }}</h2>
 
                     <form wire:submit="submit" class="space-y-6">
                         {{-- Honeypot field - hidden from users, catches bots --}}
@@ -124,14 +124,14 @@
 
                         <div>
                             <label for="customerName" class="block text-sm font-medium text-gray-700">
-                                {{ __('Naam') }} <span class="text-red-500">*</span>
+                                {{ __('Name') }} <span class="text-red-500">*</span>
                             </label>
                             <input
                                 type="text"
                                 id="customerName"
                                 wire:model.blur="customerName"
                                 class="mt-1 block w-full rounded-lg border-gray-300 px-4 py-3 shadow-sm focus:border-primary-500 focus:ring-primary-500"
-                                placeholder="{{ __('Uw volledige naam') }}"
+                                placeholder="{{ __('Your full name') }}"
                             />
                             @error('customerName')
                                 <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
@@ -140,14 +140,14 @@
 
                         <div>
                             <label for="customerEmail" class="block text-sm font-medium text-gray-700">
-                                {{ __('E-mailadres') }} <span class="text-red-500">*</span>
+                                {{ __('Email address') }} <span class="text-red-500">*</span>
                             </label>
                             <input
                                 type="email"
                                 id="customerEmail"
                                 wire:model.blur="customerEmail"
                                 class="mt-1 block w-full rounded-lg border-gray-300 px-4 py-3 shadow-sm focus:border-primary-500 focus:ring-primary-500"
-                                placeholder="{{ __('uw@email.nl') }}"
+                                placeholder="{{ __('your@email.com') }}"
                             />
                             @error('customerEmail')
                                 <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
@@ -156,7 +156,7 @@
 
                         <div>
                             <label for="customerPhone" class="block text-sm font-medium text-gray-700">
-                                {{ __('Telefoonnummer') }} <span class="text-red-500">*</span>
+                                {{ __('Phone number') }} <span class="text-red-500">*</span>
                             </label>
                             <input
                                 type="tel"
@@ -172,14 +172,14 @@
 
                         <div>
                             <label for="notes" class="block text-sm font-medium text-gray-700">
-                                {{ __('Opmerkingen') }}
+                                {{ __('Notes') }}
                             </label>
                             <textarea
                                 id="notes"
                                 wire:model.blur="notes"
                                 rows="4"
                                 class="mt-1 block w-full rounded-lg border-gray-300 px-4 py-3 shadow-sm focus:border-primary-500 focus:ring-primary-500"
-                                placeholder="{{ __('Heeft u nog speciale wensen of opmerkingen?') }}"
+                                placeholder="{{ __('Any special requests or comments?') }}"
                             ></textarea>
                             @error('notes')
                                 <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
@@ -192,7 +192,7 @@
                                 wire:click="previousStep"
                                 class="rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
                             >
-                                {{ __('Terug') }}
+                                {{ __('Back') }}
                             </button>
                             <button
                                 type="submit"
@@ -200,13 +200,13 @@
                                 wire:loading.class="opacity-75 cursor-not-allowed"
                                 class="inline-flex items-center rounded-md bg-primary-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
                             >
-                                <span wire:loading.remove wire:target="submit">{{ __('Reservering bevestigen') }}</span>
+                                <span wire:loading.remove wire:target="submit">{{ __('Confirm booking') }}</span>
                                 <span wire:loading wire:target="submit" class="inline-flex items-center">
                                     <svg class="mr-2 h-4 w-4 animate-spin" fill="none" viewBox="0 0 24 24">
                                         <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                                         <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                                     </svg>
-                                    {{ __('Bezig...') }}
+                                    {{ __('Processing...') }}
                                 </span>
                             </button>
                         </div>
