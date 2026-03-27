@@ -5,13 +5,13 @@
 ])
 
 @php
-    $title = $content['title'] ?? 'Veelgestelde Vragen';
+    $title = $content['title'] ?? __('Frequently Asked Questions');
     $subtitle = $content['subtitle'] ?? 'FAQ';
     $items = $content['items'] ?? [
-        ['question' => 'Moet ik vooraf reserveren?', 'answer' => 'Reserveren is aan te raden maar niet verplicht. Walk-ins zijn welkom, maar met een reservering ben je verzekerd van je plek.'],
-        ['question' => 'Wat zijn de openingstijden?', 'answer' => 'We zijn geopend van dinsdag tot en met zaterdag. Kijk op onze contactpagina voor de exacte tijden.'],
-        ['question' => 'Welke betaalmethodes accepteren jullie?', 'answer' => 'We accepteren pin, contant en de meeste creditcards. Contactloos betalen is ook mogelijk.'],
-        ['question' => 'Kan ik mijn afspraak annuleren?', 'answer' => 'Ja, we vragen je om minimaal 24 uur van tevoren te annuleren zodat we de tijd aan andere klanten kunnen aanbieden.'],
+        ['question' => __('Do I need to book in advance?'), 'answer' => __('Booking is recommended but not required. Walk-ins are welcome, but with a reservation you are guaranteed your spot.')],
+        ['question' => __('What are the opening hours?'), 'answer' => __('We are open Tuesday through Saturday. Check our contact page for exact times.')],
+        ['question' => __('What payment methods do you accept?'), 'answer' => __('We accept debit card, cash and most credit cards. Contactless payment is also possible.')],
+        ['question' => __('Can I cancel my appointment?'), 'answer' => __('Yes, we ask that you cancel at least 24 hours in advance so we can offer the time to other customers.')],
     ];
 
     // Theme kleuren
@@ -91,7 +91,7 @@
             </div>
         @else
             <p class="text-center" style="color: {{ $textColor }};">
-                Geen vragen gedefinieerd.
+                {{ __('No questions defined.') }}
             </p>
         @endif
 

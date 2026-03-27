@@ -11,34 +11,34 @@
 
 @php
     // Content met defaults
-    $title = $content['title'] ?? 'Prijslijst';
-    $subtitle = $content['subtitle'] ?? 'Kwaliteit tegen eerlijke prijzen';
+    $title = $content['title'] ?? __('Price List');
+    $subtitle = $content['subtitle'] ?? __('Quality at fair prices');
     $categories = $content['categories'] ?? [
         [
-            'name' => 'Knippen',
+            'name' => __('Haircuts'),
             'items' => [
-                ['service' => 'Heren Knippen', 'description' => 'Schaar of tondeuse, inclusief styling', 'price' => '€27'],
-                ['service' => 'Fade / Skin Fade', 'description' => 'Strakke fade van laag naar hoog', 'price' => '€30'],
-                ['service' => 'Knippen + Wassen', 'description' => 'Inclusief ontspannende hoofdmassage', 'price' => '€32'],
-                ['service' => 'Kids Knippen', 'description' => 'Tot en met 12 jaar', 'price' => '€19'],
-                ['service' => 'Senior 65+', 'description' => 'Speciaal senioren tarief', 'price' => '€22'],
+                ['service' => __('Men\'s Haircut'), 'description' => __('Scissors or clippers, including styling'), 'price' => '€27'],
+                ['service' => __('Fade / Skin Fade'), 'description' => __('Sharp fade from low to high'), 'price' => '€30'],
+                ['service' => __('Cut + Wash'), 'description' => __('Including relaxing head massage'), 'price' => '€32'],
+                ['service' => __('Kids Haircut'), 'description' => __('Up to 12 years old'), 'price' => '€19'],
+                ['service' => __('Senior 65+'), 'description' => __('Special senior rate'), 'price' => '€22'],
             ],
         ],
         [
-            'name' => 'Baard & Scheren',
+            'name' => __('Beard & Shave'),
             'items' => [
-                ['service' => 'Baard Trimmen', 'description' => 'Vormen en bijwerken van de baard', 'price' => '€22'],
-                ['service' => 'Baard Modelleren', 'description' => 'Complete baardverzorging met lijn', 'price' => '€25'],
-                ['service' => 'Hot Towel Shave', 'description' => 'Klassieke scheerbeurt met warme doeken', 'price' => '€32'],
-                ['service' => 'Scheren Gezicht', 'description' => 'Compleet glad scheren', 'price' => '€28'],
+                ['service' => __('Beard Trim'), 'description' => __('Shaping and tidying the beard'), 'price' => '€22'],
+                ['service' => __('Beard Styling'), 'description' => __('Complete beard care with line'), 'price' => '€25'],
+                ['service' => __('Hot Towel Shave'), 'description' => __('Classic shave with warm towels'), 'price' => '€32'],
+                ['service' => __('Face Shave'), 'description' => __('Complete clean shave'), 'price' => '€28'],
             ],
         ],
         [
-            'name' => 'Combinaties',
+            'name' => __('Combinations'),
             'items' => [
-                ['service' => 'Knippen + Baard', 'description' => 'Onze populairste behandeling', 'price' => '€45', 'popular' => true],
-                ['service' => 'The Full Package', 'description' => 'Knippen, baard, hot towel shave', 'price' => '€65'],
-                ['service' => 'Vader & Zoon', 'description' => 'Samen knippen, samen besparen', 'price' => '€40'],
+                ['service' => __('Cut + Beard'), 'description' => __('Our most popular treatment'), 'price' => '€45', 'popular' => true],
+                ['service' => __('The Full Package'), 'description' => __('Haircut, beard, hot towel shave'), 'price' => '€65'],
+                ['service' => __('Father & Son'), 'description' => __('Cut together, save together'), 'price' => '€40'],
             ],
         ],
     ];
@@ -71,7 +71,7 @@
             style="opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);"
         >
             <span class="inline-block text-xs font-bold uppercase tracking-[0.3em] mb-4" style="color: {{ $primaryColor }};">
-                Tarieven
+                {{ __('Rates') }}
             </span>
             <h2
                 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6"
@@ -140,7 +140,7 @@
                                                     class="text-xs font-bold uppercase tracking-wider px-2 py-0.5"
                                                     style="background-color: {{ $primaryColor }}; color: {{ $secondaryColor }};"
                                                 >
-                                                    Populair
+                                                    {{ __('Popular') }}
                                                 </span>
                                             @endif
                                         </div>
@@ -178,7 +178,7 @@
             {{-- Footer note --}}
             <div class="mt-12 pt-8 border-t text-center" style="border-color: {{ $primaryColor }}20;">
                 <p class="text-sm italic opacity-60" style="color: {{ $textColor }};">
-                    Alle prijzen zijn inclusief BTW. Contante betaling of pin mogelijk.
+                    {{ __('All prices include VAT. Cash or card payment possible.') }}
                 </p>
             </div>
         </div>
@@ -190,7 +190,7 @@
                 class="inline-flex items-center gap-3 px-10 py-5 font-bold uppercase tracking-widest text-sm transition-all duration-300 hover:scale-105"
                 style="background-color: {{ $primaryColor }}; color: {{ $secondaryColor }};"
             >
-                Maak Afspraak
+                {{ __('Make Appointment') }}
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                 </svg>

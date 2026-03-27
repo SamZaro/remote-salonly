@@ -5,13 +5,13 @@
 ])
 
 @php
-    $title = $content['title'] ?? 'Waarom Ons Kiezen';
-    $subtitle = $content['subtitle'] ?? 'Onze kwaliteiten';
+    $title = $content['title'] ?? __('Why Choose Us');
+    $subtitle = $content['subtitle'] ?? __('Our qualities');
     $items = $content['items'] ?? [
-        ['title' => 'Vakmanschap', 'description' => 'Ons team bestaat uit ervaren stylisten die continu bijgeschoold worden in de nieuwste technieken.', 'icon' => 'scissors'],
-        ['title' => 'Persoonlijk advies', 'description' => 'We nemen de tijd om jouw wensen te bespreken en geven eerlijk advies over wat bij jou past.', 'icon' => 'chat'],
-        ['title' => 'Premium producten', 'description' => 'We werken uitsluitend met hoogwaardige producten voor het beste resultaat en gezond haar.', 'icon' => 'sparkles'],
-        ['title' => 'Ontspannen sfeer', 'description' => 'Geniet van een kopje koffie in een rustige, stijlvolle omgeving terwijl wij ons werk doen.', 'icon' => 'heart'],
+        ['title' => __('Craftsmanship'), 'description' => __('Our team consists of experienced stylists who continuously train in the latest techniques.'), 'icon' => 'scissors'],
+        ['title' => __('Personal advice'), 'description' => __('We take the time to discuss your wishes and give honest advice about what suits you.'), 'icon' => 'chat'],
+        ['title' => __('Premium products'), 'description' => __('We work exclusively with high-quality products for the best result and healthy hair.'), 'icon' => 'sparkles'],
+        ['title' => __('Relaxed atmosphere'), 'description' => __('Enjoy a cup of coffee in a calm, stylish environment while we do our work.'), 'icon' => 'heart'],
     ];
 
     // Theme kleuren

@@ -12,28 +12,28 @@
 
 @php
     // Content met defaults
-    $title = $content['title'] ?? 'Waarom Wij?';
-    $subtitle = $content['subtitle'] ?? 'Dit maakt ons uniek in de game';
+    $title = $content['title'] ?? __('Why Us?');
+    $subtitle = $content['subtitle'] ?? __('This makes us unique in the game');
     $features = $content['features'] ?? [
         [
             'icon' => 'sparkles',
-            'title' => 'Creatieve Visie',
-            'description' => 'Wij zien haar als een canvas. Elke look is een uniek kunstwerk, afgestemd op jouw persoonlijkheid en vibe.',
+            'title' => __('Creative Vision'),
+            'description' => __('We see hair as a canvas. Every look is a unique work of art, tailored to your personality and vibe.'),
         ],
         [
             'icon' => 'star',
-            'title' => 'Trendsettend',
-            'description' => 'Altijd up-to-date met de laatste trends. Van TikTok-viral looks tot runway-inspired styles - wij kennen ze allemaal.',
+            'title' => __('Trendsetting'),
+            'description' => __('Always up-to-date with the latest trends. From TikTok-viral looks to runway-inspired styles - we know them all.'),
         ],
         [
             'icon' => 'check',
-            'title' => 'Premium Kwaliteit',
-            'description' => 'Alleen de beste producten en technieken. Olaplex, K18, en premium color lines voor een result dat blijft.',
+            'title' => __('Premium Quality'),
+            'description' => __('Only the best products and techniques. Olaplex, K18, and premium color lines for a result that lasts.'),
         ],
         [
             'icon' => 'heart',
-            'title' => 'Persoonlijk & Fun',
-            'description' => 'Bij ons geen stijve sfeer. Goede muziek, leuke gesprekken en een experience waar je blij van wordt.',
+            'title' => __('Personal & Fun'),
+            'description' => __('No stiff atmosphere here. Good music, fun conversations and an experience that makes you happy.'),
         ],
     ];
 

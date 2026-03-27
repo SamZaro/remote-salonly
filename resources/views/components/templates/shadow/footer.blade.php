@@ -20,7 +20,7 @@
     $address = $content['address'] ?? '';
     $phone = $content['phone'] ?? '';
     $email = $content['email'] ?? '';
-    $copyright = $content['copyright'] ?? '© ' . date('Y') . ' ' . $companyName . '. Alle rechten voorbehouden.';
+    $copyright = $content['copyright'] ?? '© ' . date('Y') . ' ' . $companyName . '. ' . __('All rights reserved.');
 
     $socialLinks = $content['social_links'] ?? [];
     $facebookUrl = $socialLinks['facebook'] ?? '';
@@ -68,7 +68,7 @@
                 class="group inline-flex items-center gap-3 px-8 py-4 text-sm font-semibold uppercase tracking-widest transition-all duration-300 hover:opacity-85 shrink-0"
                 style="background-color: {{ $backgroundColor }}; color: {{ $secondaryColor }}; border-radius: 2px;"
             >
-                Maak afspraak
+                {{ __('Make appointment') }}
                 <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                 </svg>
@@ -84,7 +84,7 @@
                     class="text-xs font-semibold uppercase tracking-widest mb-6"
                     style="color: {{ $backgroundColor }};"
                 >
-                    Navigatie
+                    {{ __('Navigation') }}
                 </h4>
                 <ul class="space-y-4">
                     @foreach($navigation as $item)
@@ -112,13 +112,13 @@
                 <ul class="space-y-5">
                     @if($address)
                         <li>
-                            <span class="text-[11px] font-semibold uppercase tracking-wider block mb-1" style="color: rgba(255,255,255,0.20);">Adres</span>
+                            <span class="text-[11px] font-semibold uppercase tracking-wider block mb-1" style="color: rgba(255,255,255,0.20);">{{ __('Address') }}</span>
                             <span class="text-sm" style="color: rgba(255,255,255,0.50);">{{ $address }}</span>
                         </li>
                     @endif
                     @if($phone)
                         <li>
-                            <span class="text-[11px] font-semibold uppercase tracking-wider block mb-1" style="color: rgba(255,255,255,0.20);">Telefoon</span>
+                            <span class="text-[11px] font-semibold uppercase tracking-wider block mb-1" style="color: rgba(255,255,255,0.20);">{{ __('Phone') }}</span>
                             <a
                                 href="tel:{{ preg_replace('/[^0-9+]/', '', $phone) }}"
                                 class="text-sm transition-colors duration-200 hover:text-white"
@@ -130,7 +130,7 @@
                     @endif
                     @if($email)
                         <li>
-                            <span class="text-[11px] font-semibold uppercase tracking-wider block mb-1" style="color: rgba(255,255,255,0.20);">E-mail</span>
+                            <span class="text-[11px] font-semibold uppercase tracking-wider block mb-1" style="color: rgba(255,255,255,0.20);">{{ __('Email') }}</span>
                             <a
                                 href="mailto:{{ $email }}"
                                 class="text-sm transition-colors duration-200 hover:text-white"
@@ -149,7 +149,7 @@
                     class="text-xs font-semibold uppercase tracking-widest mb-6"
                     style="color: {{ $backgroundColor }};"
                 >
-                    Volg ons
+                    {{ __('Follow us') }}
                 </h4>
 
                 @if($facebookUrl || $instagramUrl)

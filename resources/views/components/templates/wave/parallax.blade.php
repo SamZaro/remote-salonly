@@ -10,8 +10,8 @@
 ])
 
 @php
-    $title = $content['title'] ?? 'Stijl & Elegantie';
-    $subtitle = $content['subtitle'] ?? 'Waar vakmanschap en schoonheid samenkomen';
+    $title = $content['title'] ?? __('Style & Elegance');
+    $subtitle = $content['subtitle'] ?? __('Where craftsmanship and beauty meet');
     $backgroundImage = $section?->getFirstMediaUrl('background') ?: ($content['background_image'] ?? null);
 
     $primaryColor = $theme['primary_color'] ?? '#0077b6';

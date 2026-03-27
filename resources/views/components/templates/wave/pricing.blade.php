@@ -9,37 +9,37 @@
 ])
 
 @php
-    $title = $content['title'] ?? 'Prijslijst';
-    $subtitle = $content['subtitle'] ?? 'Transparante Tarieven';
+    $title = $content['title'] ?? __('Price List');
+    $subtitle = $content['subtitle'] ?? __('Transparent Rates');
     $categories = $content['categories'] ?? [
         [
-            'name' => 'Dames',
+            'name' => __('Ladies'),
             'icon' => 'women',
             'items' => [
-                ['service' => 'Knippen', 'description' => 'Inclusief wasbeurt & styling', 'price' => '€55'],
-                ['service' => 'Knippen & Föhnen', 'description' => 'Volledige behandeling', 'price' => '€65'],
-                ['service' => 'Föhnen / Brushen', 'description' => 'Wassen & stylen', 'price' => '€35'],
-                ['service' => 'Bruidskapsel', 'description' => 'Op afspraak', 'price' => 'Op aanvraag', 'popular' => true],
+                ['service' => __('Haircut'), 'description' => __('Including wash & styling'), 'price' => '€55'],
+                ['service' => __('Cut & Blow-dry'), 'description' => __('Full treatment'), 'price' => '€65'],
+                ['service' => __('Blow-dry / Brush'), 'description' => __('Wash & style'), 'price' => '€35'],
+                ['service' => __('Bridal Hairstyle'), 'description' => __('By appointment'), 'price' => __('On request'), 'popular' => true],
             ],
         ],
         [
-            'name' => 'Kleuring',
+            'name' => __('Colouring'),
             'icon' => 'color',
             'items' => [
-                ['service' => 'Uitgroei bijwerken', 'description' => 'Tot 2cm uitgroei', 'price' => '€65'],
-                ['service' => 'Volledige kleuring', 'description' => 'Hele lengte', 'price' => '€85'],
-                ['service' => 'Balayage / Highlights', 'description' => 'Handgeschilderd of folies', 'price' => 'Vanaf €95', 'popular' => true],
-                ['service' => 'Toner / Gloss', 'description' => 'Kleurverfrissing', 'price' => '€40'],
+                ['service' => __('Root touch-up'), 'description' => __('Up to 2cm regrowth'), 'price' => '€65'],
+                ['service' => __('Full colour'), 'description' => __('Full length'), 'price' => '€85'],
+                ['service' => __('Balayage / Highlights'), 'description' => __('Hand-painted or foils'), 'price' => __('From €95'), 'popular' => true],
+                ['service' => __('Toner / Gloss'), 'description' => __('Colour refresh'), 'price' => '€40'],
             ],
         ],
         [
-            'name' => 'Heren',
+            'name' => __('Men'),
             'icon' => 'men',
             'items' => [
-                ['service' => 'Knippen', 'description' => 'Wassen & knippen', 'price' => '€35'],
-                ['service' => 'Knippen & Baard', 'description' => 'Volledige behandeling', 'price' => '€48'],
-                ['service' => 'Baard trimmen', 'description' => 'Vormgeven & verzorgen', 'price' => '€18'],
-                ['service' => 'Kids (t/m 12)', 'description' => 'Kinderknippen', 'price' => '€25'],
+                ['service' => __('Haircut'), 'description' => __('Wash & cut'), 'price' => '€35'],
+                ['service' => __('Cut & Beard'), 'description' => __('Full treatment'), 'price' => '€48'],
+                ['service' => __('Beard trim'), 'description' => __('Shape & groom'), 'price' => '€18'],
+                ['service' => __('Kids (up to 12)'), 'description' => __("Children's cut"), 'price' => '€25'],
             ],
         ],
     ];
@@ -125,7 +125,7 @@
                                         class="absolute -top-2.5 right-0 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-[0.1em] rounded-full"
                                         style="background: linear-gradient(135deg, {{ $primaryColor }}, {{ $accentColor }}); color: #ffffff;"
                                     >
-                                        Populair
+                                        {{ __('Popular') }}
                                     </span>
                                 @endif
 
@@ -155,7 +155,7 @@
                         class="group mt-8 w-full inline-flex items-center justify-center gap-2 py-3.5 text-sm font-semibold rounded-full transition-all duration-300 hover:shadow-md hover:-translate-y-0.5"
                         style="color: {{ $primaryColor }}; border: 1px solid {{ $primaryColor }}30;"
                     >
-                        Reserveren
+                        {{ __('Book') }}
                         <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                         </svg>
@@ -178,7 +178,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
                 </svg>
                 <p class="text-[13px]" style="color: {{ $textColor }};">
-                    Alle prijzen zijn inclusief BTW. Lang haar vanaf +€10.
+                    {{ __('All prices include VAT. Long hair from +€10.') }}
                 </p>
             </div>
         </div>

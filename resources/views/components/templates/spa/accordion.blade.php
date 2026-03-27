@@ -11,13 +11,13 @@
 ])
 
 @php
-    $title = $content['title'] ?? 'Veelgestelde Vragen';
-    $subtitle = $content['subtitle'] ?? 'We helpen je graag';
+    $title = $content['title'] ?? __('Frequently Asked Questions');
+    $subtitle = $content['subtitle'] ?? __('We are happy to help');
     $items = $content['items'] ?? [
-        ['question' => 'Moet ik vooraf reserveren?', 'answer' => 'Reserveren is aan te raden om teleurstelling te voorkomen. Je kunt online of telefonisch een afspraak maken. Walk-ins zijn welkom, maar we kunnen beschikbaarheid niet garanderen.'],
-        ['question' => 'Hoe lang duurt een behandeling?', 'answer' => 'Dit varieert per behandeling. Een massage duurt 45-90 minuten, een gezichtsbehandeling 60-90 minuten, en een manicure 45 minuten. We raden aan om 10 minuten voor uw afspraak aanwezig te zijn.'],
-        ['question' => 'Gebruiken jullie natuurlijke producten?', 'answer' => 'Ja, we werken uitsluitend met hoogwaardige, natuurlijke en dierproefvrije producten. Onze merken zijn zorgvuldig geselecteerd voor hun effectiviteit en duurzaamheid.'],
-        ['question' => 'Kan ik cadeaubonnen kopen?', 'answer' => 'Absoluut! Onze cadeaubonnen zijn het perfecte cadeau en zijn verkrijgbaar in elke gewenste waarde. U kunt ze zowel online als in de salon aanschaffen.'],
+        ['question' => __('Do I need to book in advance?'), 'answer' => __('Booking in advance is recommended to avoid disappointment. You can make an appointment online or by phone. Walk-ins are welcome, but availability cannot be guaranteed.')],
+        ['question' => __('How long does a treatment take?'), 'answer' => __('This varies by treatment. A massage takes 45–90 minutes, a facial 60–90 minutes, and a manicure 45 minutes. We recommend arriving 10 minutes before your appointment.')],
+        ['question' => __('Do you use natural products?'), 'answer' => __('Yes, we work exclusively with high-quality, natural and cruelty-free products. Our brands are carefully selected for their effectiveness and sustainability.')],
+        ['question' => __('Can I purchase gift vouchers?'), 'answer' => __('Absolutely! Our gift vouchers make the perfect present and are available in any desired value. You can purchase them both online and in the salon.')],
     ];
 
     $primaryColor = $theme['primary_color'] ?? '#E8D8D3';

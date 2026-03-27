@@ -12,15 +12,15 @@
 
 @php
     // Content met defaults
-    $title = $content['title'] ?? 'Waarom Barbero';
-    $subtitle = $content['subtitle'] ?? 'Wat ons onderscheidt';
+    $title = $content['title'] ?? __('Why Barbero');
+    $subtitle = $content['subtitle'] ?? __('What sets us apart');
     $items = $content['items'] ?? [
-        ['title' => 'Traditioneel Vakmanschap', 'description' => 'Onze barbiers beheersen de klassieke technieken die van generatie op generatie zijn doorgegeven. Elk bezoek is een ambachtelijke ervaring.', 'icon' => 'scissors'],
-        ['title' => 'Persoonlijke Service', 'description' => 'Wij nemen de tijd om uw wensen te begrijpen en adviseren een stijl die perfect bij u past. Geen haast, alleen kwaliteit.', 'icon' => 'chat'],
-        ['title' => 'Premium Producten', 'description' => 'Wij werken uitsluitend met hoogwaardige producten die uw haar en baard verzorgen en beschermen.', 'icon' => 'sparkles'],
-        ['title' => 'Ontspannen Sfeer', 'description' => 'Stap binnen in onze warme, uitnodigende ruimte en geniet van een moment van rust in een authentieke barbershop setting.', 'icon' => 'heart'],
+        ['title' => __('Traditional Craftsmanship'), 'description' => __('Our barbers master the classic techniques passed down through generations. Every visit is a true craft experience.'), 'icon' => 'scissors'],
+        ['title' => __('Personal Service'), 'description' => __('We take the time to understand your wishes and advise a style that suits you perfectly. No rush, just quality.'), 'icon' => 'chat'],
+        ['title' => __('Premium Products'), 'description' => __('We work exclusively with high-quality products that care for and protect your hair and beard.'), 'icon' => 'sparkles'],
+        ['title' => __('Relaxed Atmosphere'), 'description' => __('Step into our warm, welcoming space and enjoy a moment of calm in an authentic barbershop setting.'), 'icon' => 'heart'],
     ];
-    $ctaText = $content['cta_text'] ?? 'Maak een afspraak';
+    $ctaText = $content['cta_text'] ?? __('Book an appointment');
     $ctaUrl = $content['cta_url'] ?? '#contact';
 
     // Theme kleuren met defaults

@@ -25,7 +25,7 @@
     $address = $content['address'] ?? '';
     $phone = $content['phone'] ?? '';
     $email = $content['email'] ?? '';
-    $copyright = $content['copyright'] ?? '© ' . date('Y') . ' ' . $companyName . '. Alle rechten voorbehouden.';
+    $copyright = $content['copyright'] ?? '© ' . date('Y') . ' ' . $companyName . '. ' . __('All rights reserved.');
 
     $socialLinks = $content['social_links'] ?? [];
     $facebookUrl = $socialLinks['facebook'] ?? '';
@@ -89,7 +89,7 @@
             {{-- Navigation --}}
             <div>
                 <h4 class="text-sm font-bold uppercase tracking-wider mb-4" style="color: {{ $backgroundColor }};">
-                    {{ __('Navigatie') }}
+                    {{ __('Navigation') }}
                 </h4>
                 <ul class="space-y-2">
                     @foreach($navigation as $item)

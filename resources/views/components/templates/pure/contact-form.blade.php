@@ -21,13 +21,13 @@
     $bodyFont = $theme['font_family'] ?? 'Roboto';
 
     // CTA content (left column)
-    $ctaLabel = $content['cta_label'] ?? __('Neem contact op');
-    $ctaHeading = $content['cta_heading'] ?? __('Natuurlijke verzorging begint met een gesprek');
-    $ctaHighlight = $content['cta_highlight'] ?? __('verzorging');
+    $ctaLabel = $content['cta_label'] ?? __('Get in touch');
+    $ctaHeading = $content['cta_heading'] ?? __('Natural care starts with a conversation');
+    $ctaHighlight = $content['cta_highlight'] ?? __('care');
     $backgroundImage = $section?->getFirstMediaUrl('background') ?: null;
 
     // Form content (right column)
-    $formTitle = $content['title'] ?? __('Stuur ons een bericht');
+    $formTitle = $content['title'] ?? __('Send us a message');
 @endphp
 
 <section id="contact-form" class="py-24 lg:py-32" style="background-color: {{ $backgroundColor }}; font-family: '{{ $bodyFont }}', sans-serif;">
@@ -116,7 +116,7 @@
                             class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium mb-4"
                             style="background-color: {{ $primaryColor }}12; color: {{ $primaryColor }};"
                         >
-                            {{ __('Formulier') }}
+                            {{ __('Form') }}
                         </div>
                         <h4
                             class="text-xl sm:text-2xl font-light mb-2"

@@ -11,34 +11,34 @@
 
 @php
     // Content met defaults
-    $title = $content['title'] ?? 'Wat Klanten Zeggen';
-    $subtitle = $content['subtitle'] ?? 'Beoordeeld met 4.9 sterren op Google';
+    $title = $content['title'] ?? __('What Customers Say');
+    $subtitle = $content['subtitle'] ?? __('Rated 4.9 stars on Google');
     $googleRating = $content['google_rating'] ?? '4.9';
     $totalReviews = $content['total_reviews'] ?? '127';
     $reviews = $content['reviews'] ?? [
         [
             'name' => 'Mark de Vries',
-            'date' => '2 weken geleden',
+            'date' => __('2 weeks ago'),
             'rating' => 5,
-            'text' => 'Eindelijk een barber die begrijpt wat ik wil. De fade is perfect en de sfeer is super relaxed. Kom hier al een jaar en ga nergens anders meer heen.',
+            'text' => __('Finally a barber who understands what I want. The fade is perfect and the atmosphere is super relaxed. Been coming here for a year and won\'t go anywhere else.'),
         ],
         [
             'name' => 'Thomas Bakker',
-            'date' => '1 maand geleden',
+            'date' => __('1 month ago'),
             'rating' => 5,
-            'text' => 'Top barbershop! De hot towel shave is echt een ervaring. Neem de tijd en doen hun werk met passie. Aanrader!',
+            'text' => __('Great barbershop! The hot towel shave is a real experience. They take their time and do their work with passion. Highly recommended!'),
         ],
         [
             'name' => 'Kevin Jansen',
-            'date' => '1 maand geleden',
+            'date' => __('1 month ago'),
             'rating' => 5,
-            'text' => 'Beste barbershop in de buurt. Altijd vriendelijk, professioneel en het resultaat is elke keer weer top. Prijs-kwaliteit is uitstekend.',
+            'text' => __('Best barbershop in the area. Always friendly, professional, and the result is great every time. Excellent value for money.'),
         ],
         [
             'name' => 'Rick Smits',
-            'date' => '2 maanden geleden',
+            'date' => __('2 months ago'),
             'rating' => 5,
-            'text' => 'Ga hier nu een half jaar en ben super tevreden. Ze onthouden hoe je het wilt en de baard trim is precies goed. Echte vakmannen!',
+            'text' => __('Been coming here for half a year and very happy. They remember how you like it and the beard trim is just right. Real craftsmen!'),
         ],
     ];
 
@@ -160,7 +160,7 @@
                 class="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest transition-colors hover:opacity-80"
                 style="color: {{ $primaryColor }};"
             >
-                Bekijk alle reviews op Google
+                {{ __('View all reviews on Google') }}
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
                 </svg>

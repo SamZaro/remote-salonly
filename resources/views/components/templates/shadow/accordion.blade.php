@@ -12,13 +12,13 @@
 
 @php
     // Content met defaults
-    $title = $content['title'] ?? 'Veelgestelde Vragen';
-    $subtitle = $content['subtitle'] ?? 'Alles wat je wilt weten';
+    $title = $content['title'] ?? __('Frequently Asked Questions');
+    $subtitle = $content['subtitle'] ?? __('Everything you want to know');
     $items = $content['items'] ?? [
-        ['question' => 'Moet ik vooraf reserveren?', 'answer' => 'Reserveren is aan te raden maar niet verplicht. Op drukke momenten zoals vrijdag en zaterdag raden wij het sterk aan om vooraf een afspraak te maken zodat je zeker bent van je plek.'],
-        ['question' => 'Wat zijn de openingstijden?', 'answer' => 'We zijn geopend van dinsdag tot en met zaterdag. Dinsdag tot en met vrijdag van 09:00 tot 18:00 uur en op zaterdag van 09:00 tot 17:00 uur. Op maandag en zondag zijn wij gesloten.'],
-        ['question' => 'Welke betaalmethodes accepteren jullie?', 'answer' => 'We accepteren pin, contant en de meeste creditcards. Contactloos betalen via Apple Pay en Google Pay is ook mogelijk.'],
-        ['question' => 'Kan ik mijn afspraak annuleren?', 'answer' => 'Ja, we vragen je om minimaal 24 uur van tevoren te annuleren. Zo kunnen we de vrijgekomen plek aanbieden aan andere klanten. Annuleren kan telefonisch of via onze website.'],
+        ['question' => __('Do I need to book in advance?'), 'answer' => __('Booking is recommended but not required. On busy days like Friday and Saturday we strongly advise making an appointment in advance to secure your spot.')],
+        ['question' => __('What are your opening hours?'), 'answer' => __('We are open Tuesday through Saturday. Tuesday to Friday from 09:00 to 18:00 and Saturday from 09:00 to 17:00. We are closed on Monday and Sunday.')],
+        ['question' => __('Which payment methods do you accept?'), 'answer' => __('We accept card, cash and most credit cards. Contactless payment via Apple Pay and Google Pay is also available.')],
+        ['question' => __('Can I cancel my appointment?'), 'answer' => __('Yes, we ask you to cancel at least 24 hours in advance. This allows us to offer the slot to other clients. You can cancel by phone or via our website.')],
     ];
 
     // Theme kleuren met defaults (consistent met shadow pattern)
@@ -103,14 +103,14 @@
         {{-- Bottom CTA --}}
         <div class="mt-14 text-center">
             <p class="text-sm mb-4 opacity-60" style="color: {{ $textColor }};">
-                Staat je vraag er niet bij?
+                {{ __("Don't see your question?") }}
             </p>
             <a
                 href="#contact"
                 class="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold uppercase tracking-wider rounded-sm transition-all duration-300 hover:opacity-90"
                 style="background-color: {{ $primaryColor }}; color: #ffffff;"
             >
-                Neem contact op
+                {{ __('Contact us') }}
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                 </svg>

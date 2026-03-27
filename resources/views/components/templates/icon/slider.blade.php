@@ -11,8 +11,8 @@
 
 @php
     $title = $content['title'] ?? 'Your Hair,<br>Your Style';
-    $subtitle = $content['subtitle'] ?? 'Professionele haarverzorging voor mannen en vrouwen';
-    $ctaText = $content['cta_text'] ?? 'Maak Afspraak';
+    $subtitle = $content['subtitle'] ?? __('Professional hair care for men and women');
+    $ctaText = $content['cta_text'] ?? __('Make Appointment');
     $ctaLink = $content['cta_link'] ?? '#contact';
     $autoplay = (bool) ($content['autoplay'] ?? true);
     $interval = (int) ($content['interval'] ?? 5000);
@@ -97,7 +97,7 @@
         >
             <span class="w-10 h-px" style="background-color: {{ $primaryColor }};"></span>
             <span class="uppercase text-[14px] tracking-[0.3em] font-medium" style="color: {{ $primaryColor }};">
-                Hairstyling & Verzorging
+                {{ __('Hairstyling & Care') }}
             </span>
             <span class="w-10 h-px" style="background-color: {{ $primaryColor }};"></span>
         </div>
@@ -157,7 +157,7 @@
                 class="inline-flex items-center justify-center px-8 py-4 text-[12px] font-medium uppercase tracking-[0.2em] transition-all duration-300 hover:bg-white/5"
                 style="color: {{ $primaryColor }}; border: 1px solid {{ $primaryColor }}30;"
             >
-                Bekijk diensten
+                {{ __('View services') }}
             </a>
         </div>
     </div>
@@ -227,7 +227,7 @@
         <div class="inline-flex items-center gap-3 mb-10">
             <span class="w-10 h-px" style="background-color: {{ $primaryColor }};"></span>
             <span class="uppercase text-[11px] tracking-[0.3em] font-medium" style="color: {{ $primaryColor }};">
-                Hairstyling & Verzorging
+                {{ __('Hairstyling & Care') }}
             </span>
             <span class="w-10 h-px" style="background-color: {{ $primaryColor }};"></span>
         </div>

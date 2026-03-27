@@ -10,13 +10,13 @@
 ])
 
 @php
-    $title    = $content['title'] ?? 'Waarom Level';
-    $subtitle = $content['subtitle'] ?? 'Wat ons onderscheidt';
+    $title    = $content['title'] ?? __('Why Level');
+    $subtitle = $content['subtitle'] ?? __('What sets us apart');
     $items    = $content['items'] ?? [
-        ['title' => 'Creatieve Stylisten',     'description' => 'Ons team volgt voortdurend de nieuwste trends en technieken voor het perfecte resultaat.', 'icon' => 'scissors'],
-        ['title' => 'Persoonlijk Advies',      'description' => 'Elk bezoek begint met een gratis consult. We luisteren naar jou.', 'icon' => 'chat'],
-        ['title' => 'Kwaliteitsproducten',     'description' => 'Wij werken uitsluitend met professionele producten van topmerken.', 'icon' => 'sparkles'],
-        ['title' => 'Relaxte Sfeer',           'description' => 'Een warm welkom, heerlijke koffie en een omgeving waar je tot rust komt.', 'icon' => 'heart'],
+        ['title' => __('Creative Stylists'),      'description' => __('Our team continuously follows the latest trends and techniques for the perfect result.'), 'icon' => 'scissors'],
+        ['title' => __('Personal Advice'),        'description' => __('Every visit starts with a free consultation. We listen to you.'), 'icon' => 'chat'],
+        ['title' => __('Quality Products'),       'description' => __('We work exclusively with professional products from top brands.'), 'icon' => 'sparkles'],
+        ['title' => __('Relaxed Atmosphere'),     'description' => __('A warm welcome, great coffee and an environment where you can unwind.'), 'icon' => 'heart'],
     ];
 
     $primaryColor    = $theme['primary_color'] ?? '#f97316';
@@ -48,7 +48,7 @@
                 <div class="flex items-center gap-3 mb-6">
                     <div class="w-9 h-1 shrink-0" style="background-color: {{ $primaryColor }};"></div>
                     <span class="text-xs font-semibold uppercase tracking-[0.3em]" style="color: {{ $primaryColor }}; font-family: '{{ $bodyFont }}';">
-                        Onze kwaliteiten
+                        {{ __('Our qualities') }}
                     </span>
                 </div>
                 <h2

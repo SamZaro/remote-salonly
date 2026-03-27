@@ -10,13 +10,13 @@
 ])
 
 @php
-    $title = $content['title'] ?? 'Waarom Bij Ons';
-    $subtitle = $content['subtitle'] ?? 'Wat ons onderscheidt';
+    $title = $content['title'] ?? __('Why Choose Us');
+    $subtitle = $content['subtitle'] ?? __('What sets us apart');
     $items = $content['items'] ?? [
-        ['title' => 'Luxe Ervaring', 'description' => 'Een ontspannen sfeer waar je jezelf kunt verwennen en tot rust kunt komen', 'icon' => 'sparkles'],
-        ['title' => 'Gecertificeerd Team', 'description' => 'Vakmensen die continu bijscholen voor het beste resultaat', 'icon' => 'shield'],
-        ['title' => 'Premium Producten', 'description' => 'Alleen hoogwaardige, professionele producten voor langdurig resultaat', 'icon' => 'star'],
-        ['title' => 'Persoonlijke Aandacht', 'description' => 'Elke behandeling wordt zorgvuldig afgestemd op jouw wensen', 'icon' => 'heart'],
+        ['title' => __('Luxury Experience'), 'description' => __('A relaxed atmosphere where you can treat yourself and unwind'), 'icon' => 'sparkles'],
+        ['title' => __('Certified Team'), 'description' => __('Specialists who continuously train to deliver the best results'), 'icon' => 'shield'],
+        ['title' => __('Premium Products'), 'description' => __('Only high-quality, professional products for lasting results'), 'icon' => 'star'],
+        ['title' => __('Personal Attention'), 'description' => __('Every treatment is carefully tailored to your wishes'), 'icon' => 'heart'],
     ];
 
     $primaryColor = $theme['primary_color'] ?? '#E8D8D3';
@@ -45,7 +45,7 @@
             style="opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out;"
         >
             <span class="text-xs font-semibold uppercase tracking-[0.2em] mb-4 block" style="color: {{ $secondaryColor }};">
-                Kenmerken
+                {{ __('Features') }}
             </span>
             <h2 class="text-4xl sm:text-5xl font-bold mb-5" style="color: {{ $headingColor }}; font-family: '{{ $headingFont }}', sans-serif;">
                 {{ $title }}

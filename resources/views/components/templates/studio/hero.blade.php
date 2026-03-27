@@ -13,8 +13,8 @@
 @php
     // Content met defaults
     $title = $content['title'] ?? 'Create Your<br>Signature Look';
-    $subtitle = $content['subtitle'] ?? 'Waar creativiteit en stijl samenkomen. Jouw haar, jouw statement.';
-    $ctaText = $content['cta_text'] ?? 'Book Nu';
+    $subtitle = $content['subtitle'] ?? __('Where creativity and style meet. Your hair, your statement.');
+    $ctaText = $content['cta_text'] ?? __('Book Now');
     $ctaLink = $content['cta_link'] ?? '#contact';
     $backgroundImage = $section?->getFirstMediaUrl('background') ?: ($content['background_image'] ?? null);
 
@@ -83,7 +83,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/>
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
                         </svg>
-                        Bekijk ons werk
+                        {{ __('View our work') }}
                     </a>
                 </div>
 
@@ -143,7 +143,7 @@
                                 <svg class="w-24 h-24 mx-auto mb-4" style="color: {{ $primaryColor }};" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.121 14.121L19 19m-7-7l7-7m-7 7l-2.879 2.879M12 12L9.121 9.121m0 5.758a3 3 0 10-4.243 4.243 3 3 0 004.243-4.243zm0-5.758a3 3 0 10-4.243-4.243 3 3 0 004.243 4.243z"/>
                                 </svg>
-                                <span class="font-bold" style="color: {{ $primaryColor }};">Hero afbeelding</span>
+                                <span class="font-bold" style="color: {{ $primaryColor }};">{{ __('Hero image') }}</span>
                             </div>
                         </div>
                     </div>

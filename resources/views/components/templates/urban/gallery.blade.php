@@ -10,8 +10,8 @@
 ])
 
 @php
-    $title    = $content['title'] ?? 'Ons Werk';
-    $subtitle = $content['subtitle'] ?? 'Bekijk onze recente resultaten';
+    $title    = $content['title'] ?? __('Our Work');
+    $subtitle = $content['subtitle'] ?? __('View our recent results');
     $images   = $section?->getMedia('images') ?? collect();
 
     $primaryColor    = $theme['primary_color'] ?? '#C8B88A';
@@ -37,7 +37,7 @@
                         <div class="flex items-center gap-4 mb-6">
                             <div class="w-10 h-px" style="background-color: {{ $primaryColor }};"></div>
                             <span class="text-xs font-bold uppercase tracking-[0.35em]" style="color: {{ $primaryColor }}; font-family: '{{ $bodyFont }}';">
-                                Galerij
+                                {{ __('Gallery') }}
                             </span>
                         </div>
                         <h2
@@ -55,7 +55,7 @@
                                 class="w-12 h-12 flex items-center justify-center border transition-all duration-300 hover:bg-white/5"
                                 style="border-color: rgba(255,255,255,0.2); color: #ffffff;"
                                 @click="$refs.carousel.scrollBy({ left: -360, behavior: 'smooth' })"
-                                aria-label="Vorige"
+                                aria-label="{{ __('Previous') }}"
                             >
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
@@ -65,7 +65,7 @@
                                 class="w-12 h-12 flex items-center justify-center transition-all duration-300 hover:opacity-85"
                                 style="background-color: {{ $primaryColor }}; color: {{ $secondaryColor }};"
                                 @click="$refs.carousel.scrollBy({ left: 360, behavior: 'smooth' })"
-                                aria-label="Volgende"
+                                aria-label="{{ __('Next') }}"
                             >
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
@@ -146,7 +146,7 @@
         <div class="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
             <div class="flex items-center gap-4 mb-6">
                 <div class="w-10 h-px" style="background-color: {{ $primaryColor }};"></div>
-                <span class="text-xs font-bold uppercase tracking-[0.35em]" style="color: {{ $primaryColor }}; font-family: '{{ $bodyFont }}';">Galerij</span>
+                <span class="text-xs font-bold uppercase tracking-[0.35em]" style="color: {{ $primaryColor }}; font-family: '{{ $bodyFont }}';">{{ __('Gallery') }}</span>
             </div>
             <h2 class="font-black uppercase leading-[0.9] mb-10" style="font-family: '{{ $headingFont }}'; font-size: clamp(2.2rem, 4vw, 3.8rem); letter-spacing: -0.02em; color: #ffffff;">
                 {{ $title }}

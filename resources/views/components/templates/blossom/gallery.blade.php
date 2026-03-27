@@ -11,8 +11,8 @@
 ])
 
 @php
-    $title = $content['title'] ?? 'Onze Gallerij';
-    $subtitle = $content['subtitle'] ?? 'Schoonheid in elk detail';
+    $title = $content['title'] ?? __('Our Gallery');
+    $subtitle = $content['subtitle'] ?? __('Beauty in every detail');
     $images = $section?->getMedia('images') ?? collect();
 
     // Theme kleuren - luxury beauty salon

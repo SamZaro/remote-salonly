@@ -10,8 +10,8 @@
 ])
 
 @php
-    $title           = $content['title'] ?? 'Mooi Haar Begint Hier';
-    $subtitle        = $content['subtitle'] ?? 'Vakmanschap en persoonlijke aandacht';
+    $title           = $content['title'] ?? __('Beautiful Hair Starts Here');
+    $subtitle        = $content['subtitle'] ?? __('Craftsmanship and personal attention');
     $backgroundImage = $section?->getFirstMediaUrl('background') ?: ($content['background_image'] ?? null);
 
     $primaryColor   = $theme['primary_color'] ?? '#f97316';

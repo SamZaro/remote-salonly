@@ -11,8 +11,8 @@
 
 @php
     $title      = $content['title'] ?? 'Sharp Looks.<br>Clean Cuts.';
-    $subtitle   = $content['subtitle'] ?? 'Traditioneel vakmanschap met moderne flair';
-    $ctaText    = $content['cta_text'] ?? 'Maak Afspraak';
+    $subtitle   = $content['subtitle'] ?? __('Traditional craftsmanship with modern flair');
+    $ctaText    = $content['cta_text'] ?? __('Book Appointment');
     $ctaLink    = $content['cta_link'] ?? '#contact';
     $autoplay   = (bool) ($content['autoplay'] ?? true);
     $interval   = (int) ($content['interval'] ?? 5000);
@@ -84,7 +84,7 @@
                 @click="prevSlide()"
                 class="w-11 h-11 flex items-center justify-center border transition-all duration-300 hover:bg-white/10"
                 style="border-color: rgba(255,255,255,0.2); color: #ffffff;"
-                aria-label="Vorige slide"
+                aria-label="{{ __('Previous slide') }}"
             >
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" transform="rotate(0)"/>
@@ -94,7 +94,7 @@
                 @click="nextSlide()"
                 class="w-11 h-11 flex items-center justify-center transition-all duration-300 hover:opacity-85"
                 style="background-color: {{ $primaryColor }}; color: {{ $secondaryColor }};"
-                aria-label="Volgende slide"
+                aria-label="{{ __('Next slide') }}"
             >
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
@@ -152,7 +152,7 @@
                     @click="currentSlide = {{ $index }}; stopAutoplay();"
                     class="h-0.5 transition-all duration-300"
                     :style="currentSlide === {{ $index }} ? 'width: 48px; background-color: {{ $primaryColor }};' : 'width: 20px; background-color: rgba(255,255,255,0.3);'"
-                    aria-label="Ga naar slide {{ $index + 1 }}"
+                    aria-label="{{ __('Go to slide') }} {{ $index + 1 }}"
                 ></button>
             @endforeach
         </div>

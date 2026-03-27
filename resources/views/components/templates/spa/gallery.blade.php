@@ -12,7 +12,7 @@
 
 @php
     $title = $content['title'] ?? 'Beautiful Skin Starts Here';
-    $subtitle = $content['subtitle'] ?? 'Onze galerij';
+    $subtitle = $content['subtitle'] ?? __('Our gallery');
     $images = $section?->getMedia('images') ?? collect();
 
     $primaryColor = $theme['primary_color'] ?? '#E8D8D3';
@@ -57,7 +57,7 @@
                                 class="w-12 h-12 flex items-center justify-center rounded-full transition-all duration-300 hover:shadow-sm"
                                 style="border: 1.5px solid {{ $secondaryColor }}30; color: {{ $secondaryColor }};"
                                 @click="$refs.carousel.scrollBy({ left: -340, behavior: 'smooth' })"
-                                aria-label="Vorige"
+                                aria-label="{{ __('Previous') }}"
                             >
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 19l-7-7 7-7"/>
@@ -67,7 +67,7 @@
                                 class="w-12 h-12 flex items-center justify-center rounded-full transition-all duration-300"
                                 style="background-color: {{ $secondaryColor }}; color: {{ $backgroundColor }};"
                                 @click="$refs.carousel.scrollBy({ left: 340, behavior: 'smooth' })"
-                                aria-label="Volgende"
+                                aria-label="{{ __('Next') }}"
                             >
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7"/>

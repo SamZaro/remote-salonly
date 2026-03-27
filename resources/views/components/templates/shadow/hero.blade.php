@@ -12,9 +12,9 @@
 
 @php
     // Content met defaults
-    $title = $content['title'] ?? 'Jouw barbershop ervaring';
-    $subtitle = $content['subtitle'] ?? 'Waar traditie en moderne stijl samenkomen';
-    $ctaText = $content['cta_text'] ?? 'Maak een afspraak';
+    $title = $content['title'] ?? __('Your barbershop experience');
+    $subtitle = $content['subtitle'] ?? __('Where tradition and modern style come together');
+    $ctaText = $content['cta_text'] ?? __('Make an Appointment');
     $ctaLink = $content['cta_link'] ?? '#contact';
     // Get background image from Spatie Media Library or fallback to content
     $backgroundImage = $section?->getFirstMediaUrl('background') ?: ($content['background_image'] ?? null);
@@ -113,7 +113,7 @@
                     class="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold border-2 transition-all duration-300 hover:bg-white/10"
                     style="border-color: {{ $textColor }}; color: {{ $textColor }}; border-radius: {{ $buttonRadius }};"
                 >
-                    Bekijk onze diensten
+                    {{ __('View our services') }}
                 </a>
             </div>
 

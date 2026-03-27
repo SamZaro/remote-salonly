@@ -11,13 +11,13 @@
 ])
 
 @php
-    $title = $content['title'] ?? 'Veelgestelde Vragen';
-    $subtitle = $content['subtitle'] ?? 'We helpen je graag';
+    $title = $content['title'] ?? __('Frequently Asked Questions');
+    $subtitle = $content['subtitle'] ?? __('Happy to help');
     $items = $content['items'] ?? [
-        ['question' => 'Zijn jullie producten echt 100% natuurlijk?', 'answer' => 'Ja! Wij werken uitsluitend met gecertificeerde biologische en plantaardige producten. Geen parabenen, sulfaten of synthetische geurstoffen.'],
-        ['question' => 'Moet ik vooraf reserveren?', 'answer' => 'Reserveren is aan te raden om teleurstelling te voorkomen. Je kunt online of telefonisch een afspraak maken. Walk-ins zijn welkom, maar we kunnen beschikbaarheid niet garanderen.'],
-        ['question' => 'Hoe lang gaat een plantaardige kleuring mee?', 'answer' => 'Plantaardige kleuringen houden gemiddeld 4-6 weken, vergelijkbaar met chemische alternatieven. Het grote verschil is dat je haar gezonder blijft.'],
-        ['question' => 'Kan ik cadeaubonnen kopen?', 'answer' => 'Absoluut! Onze cadeaubonnen zijn het perfecte cadeau en zijn verkrijgbaar in elke gewenste waarde. U kunt ze zowel online als in de salon aanschaffen.'],
+        ['question' => __('Are your products truly 100% natural?'), 'answer' => __('Yes! We work exclusively with certified organic and plant-based products. No parabens, sulfates, or synthetic fragrances.')],
+        ['question' => __('Do I need to book in advance?'), 'answer' => __('Booking is recommended to avoid disappointment. You can make an appointment online or by phone. Walk-ins are welcome, but availability cannot be guaranteed.')],
+        ['question' => __('How long does a plant-based color treatment last?'), 'answer' => __('Plant-based colors typically last 4 to 6 weeks, comparable to chemical alternatives. The big difference is that your hair stays healthier.')],
+        ['question' => __('Can I buy gift vouchers?'), 'answer' => __('Absolutely! Our gift vouchers make the perfect present and are available in any value. You can purchase them online or in the salon.')],
     ];
 
     $primaryColor = $theme['primary_color'] ?? '#14b8a6';

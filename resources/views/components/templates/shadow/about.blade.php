@@ -12,13 +12,13 @@
 
 @php
     // Content met defaults
-    $title = $content['title'] ?? 'Over Ons';
-    $subtitle = $content['subtitle'] ?? 'Ons verhaal';
-    $description = $content['description'] ?? 'Wij zijn een team van gepassioneerde barbers met jarenlange ervaring. Bij ons draait alles om het perfecte kapsel, een ontspannen sfeer en persoonlijke aandacht. Van een klassieke fade tot een stijlvolle baardtrim - wij zorgen ervoor dat je er op je best uitziet.';
+    $title = $content['title'] ?? __('About Us');
+    $subtitle = $content['subtitle'] ?? __('Our Story');
+    $description = $content['description'] ?? __('We are a team of passionate barbers with years of experience. Everything we do is about the perfect cut, a relaxed atmosphere and personal attention. From a classic fade to a stylish beard trim, we make sure you look your best.');
     $items = $content['items'] ?? [
-        ['title' => 'Ervaren Barbers', 'description' => 'Ons team bestaat uit gecertificeerde professionals met oog voor detail', 'icon' => 'users'],
-        ['title' => 'Premium Producten', 'description' => 'Wij werken uitsluitend met hoogwaardige producten', 'icon' => 'shield'],
-        ['title' => 'Scherpe Prijzen', 'description' => 'Topkwaliteit voor een eerlijke prijs', 'icon' => 'check'],
+        ['title' => __('Experienced Barbers'), 'description' => __('Our team consists of certified professionals with an eye for detail'), 'icon' => 'users'],
+        ['title' => __('Premium Products'), 'description' => __('We work exclusively with high-quality products'), 'icon' => 'shield'],
+        ['title' => __('Great Value'), 'description' => __('Top quality at a fair price'), 'icon' => 'check'],
     ];
     $backgroundImage = $section?->getFirstMediaUrl('background') ?: ($content['background_image'] ?? null);
 
@@ -52,7 +52,7 @@
                     <div class="relative">
                         <img
                             src="{{ $backgroundImage }}"
-                            alt="Over ons"
+                            alt="{{ __('About us') }}"
                             class="w-full h-[500px] object-cover"
                         />
 
@@ -82,7 +82,7 @@
                     style="background-color: {{ $backgroundColor }};"
                 >
                     <span class="block text-4xl font-bold" style="color: {{ $primaryColor }};">10+</span>
-                    <span class="block text-sm font-medium uppercase tracking-wider" style="color: {{ $textColor }};">Jaar Ervaring</span>
+                    <span class="block text-sm font-medium uppercase tracking-wider" style="color: {{ $textColor }};">{{ __('Years of Experience') }}</span>
                 </div>
             </div>
 

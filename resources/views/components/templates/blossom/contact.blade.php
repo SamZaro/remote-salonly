@@ -11,19 +11,19 @@
 
 @php
     // Content met defaults
-    $title = $content['title'] ?? 'Bezoek Onze Salon';
-    $subtitle = $content['subtitle'] ?? 'Wij verwelkomen je graag voor een heerlijke behandeling';
+    $title = $content['title'] ?? __('Visit Our Salon');
+    $subtitle = $content['subtitle'] ?? __('We warmly welcome you for a wonderful treatment');
     $address = $content['address'] ?? 'Prinsengracht 456, 1017 KE Amsterdam';
     $phone = $content['phone'] ?? '020 - 123 4567';
     $email = $content['email'] ?? 'info@blossomsalon.nl';
     $openingHours = $content['opening_hours'] ?? [
-        ['day' => 'Maandag', 'hours' => 'Gesloten'],
-        ['day' => 'Dinsdag', 'hours' => '09:00 - 18:00'],
-        ['day' => 'Woensdag', 'hours' => '09:00 - 18:00'],
-        ['day' => 'Donderdag', 'hours' => '09:00 - 21:00'],
-        ['day' => 'Vrijdag', 'hours' => '09:00 - 18:00'],
-        ['day' => 'Zaterdag', 'hours' => '09:00 - 17:00'],
-        ['day' => 'Zondag', 'hours' => 'Gesloten'],
+        ['day' => __('Monday'), 'hours' => __('Closed')],
+        ['day' => __('Tuesday'), 'hours' => '09:00 - 18:00'],
+        ['day' => __('Wednesday'), 'hours' => '09:00 - 18:00'],
+        ['day' => __('Thursday'), 'hours' => '09:00 - 21:00'],
+        ['day' => __('Friday'), 'hours' => '09:00 - 18:00'],
+        ['day' => __('Saturday'), 'hours' => '09:00 - 17:00'],
+        ['day' => __('Sunday'), 'hours' => __('Closed')],
     ];
     $mapEmbed = $content['map_embed'] ?? '';
 
@@ -88,7 +88,7 @@
                     class="text-lg font-bold mb-3"
                     style="color: {{ $textColor }}; font-family: '{{ $headingFont }}', Georgia, serif;"
                 >
-                    Adres
+                    {{ __('Address') }}
                 </h3>
                 <p class="mb-4" style="color: {{ $textColor }}; opacity: 0.7;">
                     {{ $address }}
@@ -100,7 +100,7 @@
                     class="inline-flex items-center gap-1 text-sm font-semibold transition-colors"
                     style="color: {{ $primaryColor }};"
                 >
-                    Route plannen
+                    {{ __('Plan route') }}
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
                     </svg>
@@ -125,7 +125,7 @@
                         class="text-lg font-bold mb-3"
                         style="font-family: '{{ $headingFont }}', Georgia, serif;"
                     >
-                        Bel Ons
+                        {{ __('Call Us') }}
                     </h3>
                     <a
                         href="tel:{{ preg_replace('/[^0-9+]/', '', $phone) }}"
@@ -134,7 +134,7 @@
                         {{ $phone }}
                     </a>
                     <p class="text-sm mt-3 opacity-80">
-                        Wij helpen je graag!
+                        {{ __('Happy to help!') }}
                     </p>
                 </div>
             </div>
@@ -162,14 +162,14 @@
                     class="text-lg font-bold mb-4 text-center"
                     style="color: {{ $textColor }}; font-family: '{{ $headingFont }}', Georgia, serif;"
                 >
-                    Openingstijden
+                    {{ __('Opening Hours') }}
                 </h3>
                 <div class="space-y-2">
                     @foreach($openingHours as $entry)
                         @php
                             $day = is_array($entry) ? ($entry['day'] ?? '') : $entry;
                             $hours = is_array($entry) ? ($entry['hours'] ?? '') : '';
-                            $isClosed = str_contains(strtolower($hours), 'gesloten');
+                            $isClosed = str_contains(strtolower($hours), 'closed') || str_contains(strtolower($hours), 'gesloten');
                         @endphp
                         <div class="flex justify-between items-center text-sm py-1">
                             <span style="color: {{ $textColor }}; opacity: 0.7;">{{ $day }}</span>
@@ -216,7 +216,7 @@
                     <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
                 </svg>
                 <p class="text-sm" style="color: {{ $textColor }};">
-                    Gratis parkeren in de buurt. Rolstoeltoegankelijk. Thee & koffie van het huis.
+                    {{ __('Free parking nearby. Wheelchair accessible. Tea & coffee on the house.') }}
                 </p>
             </div>
         </div>

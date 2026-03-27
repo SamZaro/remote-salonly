@@ -9,41 +9,41 @@
 ])
 
 @php
-    $title = $content['title'] ?? 'Prijslijst';
-    $subtitle = $content['subtitle'] ?? 'Onze behandelingen en tarieven';
+    $title = $content['title'] ?? __('Price List');
+    $subtitle = $content['subtitle'] ?? __('Our treatments and rates');
     $categories = $content['categories'] ?? [
         [
-            'name' => 'Haar',
+            'name' => __('Hair'),
             'icon' => 'hair',
             'items' => [
-                ['service' => 'Knippen & Föhnen', 'description' => 'Inclusief wasbeurt en styling', 'price' => '€55'],
-                ['service' => 'Knippen & Stylen Deluxe', 'description' => 'Met behandeling en finishing', 'price' => '€75'],
-                ['service' => 'Kleuren Uitgroei', 'description' => 'Bijwerken van de aanzet', 'price' => '€65'],
-                ['service' => 'Full Colour', 'description' => 'Volledige haarkleuring', 'price' => '€85'],
-                ['service' => 'Balayage / Highlights', 'description' => 'Hand-painted highlights', 'price' => 'Vanaf €120', 'popular' => true],
-                ['service' => 'Keratine Behandeling', 'description' => 'Glad, glanzend haar', 'price' => 'Vanaf €150'],
+                ['service' => __('Cut & Blow-dry'), 'description' => __('Including wash and styling'), 'price' => '€55'],
+                ['service' => __('Cut & Style Deluxe'), 'description' => __('With treatment and finishing'), 'price' => '€75'],
+                ['service' => __('Root Colour'), 'description' => __('Touch up the roots'), 'price' => '€65'],
+                ['service' => __('Full Colour'), 'description' => __('Full hair colouring'), 'price' => '€85'],
+                ['service' => __('Balayage / Highlights'), 'description' => __('Hand-painted highlights'), 'price' => __('From €120'), 'popular' => true],
+                ['service' => __('Keratin Treatment'), 'description' => __('Smooth, glossy hair'), 'price' => __('From €150')],
             ],
         ],
         [
-            'name' => 'Nagels',
+            'name' => __('Nails'),
             'icon' => 'nails',
             'items' => [
-                ['service' => 'Manicure Classic', 'description' => 'Verzorging en lakken', 'price' => '€35'],
-                ['service' => 'Manicure Deluxe', 'description' => 'Met scrub en masker', 'price' => '€50'],
-                ['service' => 'Gel Nagels', 'description' => 'Nieuw set of bijwerken', 'price' => 'Vanaf €55'],
-                ['service' => 'Nail Art', 'description' => 'Creatieve designs', 'price' => 'Vanaf €15'],
-                ['service' => 'Pedicure Spa', 'description' => 'Complete voetverzorging', 'price' => '€55'],
+                ['service' => __('Classic Manicure'), 'description' => __('Care and polish'), 'price' => '€35'],
+                ['service' => __('Deluxe Manicure'), 'description' => __('With scrub and mask'), 'price' => '€50'],
+                ['service' => __('Gel Nails'), 'description' => __('New set or infill'), 'price' => __('From €55')],
+                ['service' => __('Nail Art'), 'description' => __('Creative designs'), 'price' => __('From €15')],
+                ['service' => __('Spa Pedicure'), 'description' => __('Complete foot care'), 'price' => '€55'],
             ],
         ],
         [
             'name' => 'Lash & Brow',
             'icon' => 'lash',
             'items' => [
-                ['service' => 'Brow Design', 'description' => 'Wax, epileren & shapen', 'price' => '€25'],
-                ['service' => 'Brow Lamination', 'description' => 'Volle, gedefinieerde wenkbrauwen', 'price' => '€45', 'popular' => true],
-                ['service' => 'Lash Lift', 'description' => 'Natuurlijke wimper-lift', 'price' => '€55'],
-                ['service' => 'Wimperextensions Classic', 'description' => 'Natuurlijke look', 'price' => '€85'],
-                ['service' => 'Wimperextensions Volume', 'description' => 'Volle, dramatische look', 'price' => '€110'],
+                ['service' => __('Brow Design'), 'description' => __('Wax, threading & shaping'), 'price' => '€25'],
+                ['service' => __('Brow Lamination'), 'description' => __('Full, defined brows'), 'price' => '€45', 'popular' => true],
+                ['service' => __('Lash Lift'), 'description' => __('Natural lash lift'), 'price' => '€55'],
+                ['service' => __('Lash Extensions Classic'), 'description' => __('Natural look'), 'price' => '€85'],
+                ['service' => __('Lash Extensions Volume'), 'description' => __('Full, dramatic look'), 'price' => '€110'],
             ],
         ],
     ];
@@ -67,7 +67,7 @@
             style="opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out;"
         >
             <span class="text-xs font-semibold uppercase tracking-[0.2em] mb-4 block" style="color: {{ $secondaryColor }};">
-                Prijzen
+                {{ __('Prices') }}
             </span>
             <h2 class="text-4xl sm:text-5xl font-bold mb-5" style="color: {{ $headingColor }}; font-family: '{{ $headingFont }}', sans-serif;">
                 {{ $title }}
@@ -108,7 +108,7 @@
                                                 class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5"
                                                 style="background-color: {{ $primaryColor }}; color: {{ $secondaryColor }}; border-radius: 3px;"
                                             >
-                                                Populair
+                                                {{ __('Popular') }}
                                             </span>
                                         @endif
                                     </div>
@@ -129,7 +129,7 @@
                         class="mt-8 w-full inline-flex items-center justify-center py-3 text-sm font-semibold tracking-wide uppercase transition-opacity hover:opacity-80"
                         style="background-color: {{ $accentColor }}; color: {{ $secondaryColor }}; border-radius: 6px;"
                     >
-                        Afspraak maken
+                        {{ __('Make Appointment') }}
                     </a>
                 </div>
             @endforeach
@@ -137,7 +137,7 @@
 
         {{-- Footer note --}}
         <p class="mt-10 text-center text-sm" style="color: {{ $textColor }};">
-            Alle prijzen zijn inclusief BTW. Lang haar vanaf +€10.
+            {{ __('All prices include VAT. Long hair from +€10.') }}
         </p>
     </div>
 </section>

@@ -10,18 +10,18 @@
 
 @php
     $title = $content['title'] ?? 'Contact';
-    $subtitle = $content['subtitle'] ?? 'Bezoek Ons';
+    $subtitle = $content['subtitle'] ?? __('Visit Us');
     $address = $content['address'] ?? 'Herengracht 456, 1017 CA Amsterdam';
     $phone = $content['phone'] ?? '020 - 123 4567';
     $email = $content['email'] ?? 'info@wave-salon.nl';
     $openingHours = $content['opening_hours'] ?? [
-        ['day' => 'Maandag', 'hours' => 'Gesloten'],
-        ['day' => 'Dinsdag', 'hours' => '09:00 - 18:00'],
-        ['day' => 'Woensdag', 'hours' => '09:00 - 18:00'],
-        ['day' => 'Donderdag', 'hours' => '09:00 - 21:00'],
-        ['day' => 'Vrijdag', 'hours' => '09:00 - 18:00'],
-        ['day' => 'Zaterdag', 'hours' => '09:00 - 17:00'],
-        ['day' => 'Zondag', 'hours' => 'Gesloten'],
+        ['day' => __('Monday'), 'hours' => __('Closed')],
+        ['day' => __('Tuesday'), 'hours' => '09:00 - 18:00'],
+        ['day' => __('Wednesday'), 'hours' => '09:00 - 18:00'],
+        ['day' => __('Thursday'), 'hours' => '09:00 - 21:00'],
+        ['day' => __('Friday'), 'hours' => '09:00 - 18:00'],
+        ['day' => __('Saturday'), 'hours' => '09:00 - 17:00'],
+        ['day' => __('Sunday'), 'hours' => __('Closed')],
     ];
     $mapEmbed = $content['map_embed'] ?? '';
 
@@ -87,7 +87,7 @@
                     class="text-lg mb-3"
                     style="color: {{ $headingColor }}; font-family: '{{ $headingFont }}', serif; font-weight: 700;"
                 >
-                    Adres
+                    {{ __('Address') }}
                 </h3>
                 <p class="text-[14px] mb-4 leading-relaxed" style="color: {{ $textColor }};">
                     {{ $address }}
@@ -99,7 +99,7 @@
                     class="inline-flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.1em] transition-colors duration-300"
                     style="color: {{ $primaryColor }};"
                 >
-                    Route plannen
+                    {{ __('Plan route') }}
                     <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
                     </svg>
@@ -124,7 +124,7 @@
                     class="text-lg mb-3 text-white"
                     style="font-family: '{{ $headingFont }}', serif; font-weight: 700;"
                 >
-                    Bel Ons
+                    {{ __('Call Us') }}
                 </h3>
                 <a
                     href="tel:{{ preg_replace('/[^0-9+]/', '', $phone) }}"
@@ -134,7 +134,7 @@
                     {{ $phone }}
                 </a>
                 <p class="text-[13px] text-white/70">
-                    Direct een afspraak maken
+                    {{ __('Book an appointment directly') }}
                 </p>
             </div>
 
@@ -166,7 +166,7 @@
                     {{ $email }}
                 </a>
                 <p class="text-[13px]" style="color: {{ $textColor }};">
-                    We reageren binnen 24 uur
+                    {{ __('We respond within 24 hours') }}
                 </p>
             </div>
         </div>
@@ -182,7 +182,7 @@
                     class="text-2xl"
                     style="color: {{ $headingColor }}; font-family: '{{ $headingFont }}', serif; font-weight: 700;"
                 >
-                    Openingstijden
+                    {{ __('Opening Hours') }}
                 </h3>
                 <div class="w-10 h-[2px] mx-auto mt-4 rounded-full" style="background: linear-gradient(to right, {{ $primaryColor }}, {{ $accentColor }});"></div>
             </div>
@@ -191,7 +191,7 @@
                     @php
                         $day = is_array($entry) ? ($entry['day'] ?? '') : $entry;
                         $hours = is_array($entry) ? ($entry['hours'] ?? '') : '';
-                        $isClosed = str_contains(strtolower($hours), 'gesloten');
+                        $isClosed = str_contains(strtolower($hours), 'closed') || str_contains(strtolower($hours), 'gesloten');
                     @endphp
                     <div
                         class="flex justify-between items-center py-3.5"
@@ -237,7 +237,7 @@
         {{-- Bottom note --}}
         <div class="mt-10 text-center">
             <p class="text-[13px]" style="color: {{ $textColor }};">
-                Gratis parkeren in de buurt &bull; Rolstoeltoegankelijk
+                {{ __('Free parking nearby') }} &bull; {{ __('Wheelchair accessible') }}
             </p>
         </div>
     </div>

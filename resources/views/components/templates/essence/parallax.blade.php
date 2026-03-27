@@ -12,7 +12,7 @@
 
 @php
     $title = $content['title'] ?? 'Pure Elegance';
-    $subtitle = $content['subtitle'] ?? 'Ervaar de ultieme verfijning';
+    $subtitle = $content['subtitle'] ?? __('Experience the ultimate refinement');
     $backgroundImage = $section?->getFirstMediaUrl('background') ?: ($content['background_image'] ?? null);
 
     // Theme kleuren - Soft Luxury palette

@@ -11,14 +11,14 @@
 
 @php
     $title = $content['title'] ?? 'The Art Of Natural Beauty';
-    $subtitle = $content['subtitle'] ?? 'Onze behandelingen';
+    $subtitle = $content['subtitle'] ?? __('Our treatments');
     $items = $content['items'] ?? [
-        ['title' => 'Massage Therapy', 'description' => 'Ontspannende en therapeutische massages voor lichaam en geest', 'price' => 'Vanaf €60', 'icon' => 'scissors'],
-        ['title' => 'Skin Care', 'description' => 'Gezichtsbehandelingen en huidverzorging op maat', 'price' => 'Vanaf €85', 'icon' => 'color'],
-        ['title' => 'Body Treatments', 'description' => 'Luxe lichaamsbehandelingen voor totale ontspanning', 'price' => 'Vanaf €75', 'icon' => 'curls'],
-        ['title' => 'Manicure & Pedicure', 'description' => 'Verzorging voor mooie handen en voeten', 'price' => 'Vanaf €35', 'icon' => 'nails'],
-        ['title' => 'Aromatherapy', 'description' => 'Holistische behandelingen met essentiële oliën', 'price' => 'Vanaf €70', 'icon' => 'polish'],
-        ['title' => 'Lash & Brow', 'description' => 'Wimperextensions, lifting & brow design', 'price' => 'Vanaf €40', 'icon' => 'lash'],
+        ['title' => 'Massage Therapy', 'description' => __('Relaxing and therapeutic massages for body and mind'), 'price' => __('From €60'), 'icon' => 'scissors'],
+        ['title' => 'Skin Care', 'description' => __('Facial treatments and personalized skin care'), 'price' => __('From €85'), 'icon' => 'color'],
+        ['title' => 'Body Treatments', 'description' => __('Luxury body treatments for total relaxation'), 'price' => __('From €75'), 'icon' => 'curls'],
+        ['title' => 'Manicure & Pedicure', 'description' => __('Care for beautiful hands and feet'), 'price' => __('From €35'), 'icon' => 'nails'],
+        ['title' => 'Aromatherapy', 'description' => __('Holistic treatments with essential oils'), 'price' => __('From €70'), 'icon' => 'polish'],
+        ['title' => 'Lash & Brow', 'description' => __('Lash extensions, lifting & brow design'), 'price' => __('From €40'), 'icon' => 'lash'],
     ];
 
     $primaryColor = $theme['primary_color'] ?? '#E8D8D3';
@@ -106,7 +106,7 @@
                         onmouseover="this.style.backgroundColor='{{ $primaryColor }}'; this.style.borderColor='{{ $primaryColor }}';"
                         onmouseout="this.style.backgroundColor='transparent'; this.style.borderColor='{{ $secondaryColor }}';"
                     >
-                        Boeken
+                        {{ __('Book') }}
                     </a>
                 </div>
             @endforeach
@@ -123,7 +123,7 @@
                 class="inline-flex items-center text-sm font-semibold tracking-widest uppercase transition-opacity hover:opacity-70"
                 style="color: {{ $secondaryColor }}; font-family: '{{ $bodyFont }}', sans-serif;"
             >
-                Bekijk volledige prijslijst
+                {{ __('View full price list') }}
                 <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                 </svg>

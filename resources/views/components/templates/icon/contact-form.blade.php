@@ -20,13 +20,13 @@
     $bodyFont = $theme['font_family'] ?? 'Montserrat';
 
     // CTA content (left column)
-    $ctaLabel = $content['cta_label'] ?? __('Persoonlijk contact');
-    $ctaHeading = $content['cta_heading'] ?? __('Wij maken graag kennis');
-    $ctaHighlight = $content['cta_highlight'] ?? __('graag kennis');
+    $ctaLabel = $content['cta_label'] ?? __('Personal contact');
+    $ctaHeading = $content['cta_heading'] ?? __('We would love to meet you');
+    $ctaHighlight = $content['cta_highlight'] ?? __('love to meet');
     $backgroundImage = $section?->getFirstMediaUrl('background') ?: null;
 
     // Form content (right column)
-    $formTitle = $content['title'] ?? __('Stuur ons een bericht');
+    $formTitle = $content['title'] ?? __('Send us a message');
 @endphp
 
 <section id="contact-form" class="py-24 lg:py-36" style="background-color: {{ $backgroundColor }}; font-family: '{{ $bodyFont }}', sans-serif;">
@@ -113,7 +113,7 @@
                         <div class="inline-flex items-center gap-3 mb-5">
                             <span class="w-8 h-px" style="background-color: {{ $primaryColor }};"></span>
                             <span class="uppercase text-[11px] tracking-[0.3em] font-medium" style="color: {{ $primaryColor }};">
-                                {{ __('Contactformulier') }}
+                                {{ __('Contact form') }}
                             </span>
                         </div>
                         <h4

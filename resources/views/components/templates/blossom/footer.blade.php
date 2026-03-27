@@ -27,7 +27,7 @@
     $address = $content['address'] ?? '';
     $phone = $content['phone'] ?? '';
     $email = $content['email'] ?? '';
-    $copyright = $content['copyright'] ?? '© ' . date('Y') . ' ' . $companyName . '. Alle rechten voorbehouden.';
+    $copyright = $content['copyright'] ?? '© ' . date('Y') . ' ' . $companyName . '. ' . __('All rights reserved.');
 
     // Social media links
     $socialLinks = $content['social_links'] ?? [];
@@ -75,7 +75,7 @@
                     class="text-lg font-semibold mb-4"
                     style="color: {{ $textColor }}; font-family: '{{ $headingFont }}', Georgia, serif;"
                 >
-                    {{ __('Navigatie') }}
+                    {{ __('Navigation') }}
                 </h4>
                 <ul class="space-y-2">
                     @foreach($navigation as $item)
@@ -159,7 +159,7 @@
                     class="text-lg font-semibold mb-4"
                     style="color: {{ $textColor }}; font-family: '{{ $headingFont }}', Georgia, serif;"
                 >
-                    {{ __('Volg Ons') }}
+                    {{ __('Follow Us') }}
                 </h4>
                 <div class="flex items-center justify-center gap-4">
                     @if($facebookUrl)

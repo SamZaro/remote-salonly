@@ -12,8 +12,8 @@
 
 @php
     $title = $content['title'] ?? 'Classic Cuts.<br>Modern Style.';
-    $subtitle = $content['subtitle'] ?? 'Waar traditie en vakmanschap samenkomen';
-    $ctaText = $content['cta_text'] ?? 'Boek een afspraak';
+    $subtitle = $content['subtitle'] ?? __('Where tradition and craftsmanship meet');
+    $ctaText = $content['cta_text'] ?? __('Book an appointment');
     $ctaLink = $content['cta_link'] ?? '#contact';
     $autoplay = (bool) ($content['autoplay'] ?? true);
     $interval = (int) ($content['interval'] ?? 5000);

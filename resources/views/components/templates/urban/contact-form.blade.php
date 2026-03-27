@@ -11,9 +11,9 @@
 
 @php
     $ctaLabel        = $content['cta_label'] ?? __('Contact');
-    $ctaHeading      = $content['cta_heading'] ?? __('Laat van u horen');
-    $ctaHighlight    = $content['cta_highlight'] ?? __('horen');
-    $formTitle       = $content['title'] ?? __('Stuur ons een bericht');
+    $ctaHeading      = $content['cta_heading'] ?? __('Let us hear from you');
+    $ctaHighlight    = $content['cta_highlight'] ?? __('hear');
+    $formTitle       = $content['title'] ?? __('Send us a message');
     $backgroundImage = $section?->getFirstMediaUrl('background') ?: null;
 
     $primaryColor    = $theme['primary_color'] ?? '#C8B88A';

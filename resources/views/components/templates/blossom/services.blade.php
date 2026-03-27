@@ -11,43 +11,43 @@
 
 @php
     // Content met defaults
-    $title = $content['title'] ?? 'Onze Beauty Services';
-    $subtitle = $content['subtitle'] ?? 'Ontdek ons complete aanbod van luxe behandelingen';
+    $title = $content['title'] ?? __('Our Beauty Services');
+    $subtitle = $content['subtitle'] ?? __('Discover our full range of luxury treatments');
     $items = $content['items'] ?? [
         [
-            'title' => 'Knippen & Stylen',
-            'description' => 'Van klassiek tot trendy - jouw perfecte coupe',
-            'price' => 'Vanaf €55',
+            'title' => __('Cut & Styling'),
+            'description' => __('From classic to trendy, your perfect cut'),
+            'price' => __('From') . ' €55',
             'icon' => 'scissors',
         ],
         [
-            'title' => 'Kleuren & Highlights',
-            'description' => 'Balayage, ombre, full colour & meer',
-            'price' => 'Vanaf €85',
+            'title' => __('Coloring & Highlights'),
+            'description' => __('Balayage, ombre, full color & more'),
+            'price' => __('From') . ' €85',
             'icon' => 'color',
         ],
         [
-            'title' => 'Krullen & Styling',
-            'description' => 'Permanenten, krulbehandelingen & blowouts',
-            'price' => 'Vanaf €75',
+            'title' => __('Curls & Styling'),
+            'description' => __('Perms, curl treatments & blowouts'),
+            'price' => __('From') . ' €75',
             'icon' => 'curls',
         ],
         [
-            'title' => 'Manicure & Pedicure',
-            'description' => 'Verzorging voor prachtige handen en voeten',
-            'price' => 'Vanaf €35',
+            'title' => __('Manicure & Pedicure'),
+            'description' => __('Care for beautiful hands and feet'),
+            'price' => __('From') . ' €35',
             'icon' => 'nails',
         ],
         [
-            'title' => 'Nagelstyling',
-            'description' => 'Gel, acryl, nail art & extensions',
-            'price' => 'Vanaf €45',
+            'title' => __('Nail Styling'),
+            'description' => __('Gel, acrylic, nail art & extensions'),
+            'price' => __('From') . ' €45',
             'icon' => 'polish',
         ],
         [
             'title' => 'Lash & Brow',
-            'description' => 'Wimperextensions, lifting & brow design',
-            'price' => 'Vanaf €40',
+            'description' => __('Lash extensions, lifting & brow design'),
+            'price' => __('From') . ' €40',
             'icon' => 'lash',
         ],
     ];
@@ -105,7 +105,7 @@
                 <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
                 </svg>
-                Onze Services
+                {{ __('Our Services') }}
             </span>
             <h2
                 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6"
@@ -171,7 +171,7 @@
                             class="inline-flex items-center gap-1 text-sm font-semibold transition-colors group-hover:gap-2"
                             style="color: {{ $gradient['from'] }};"
                         >
-                            Boeken
+                            {{ __('Book') }}
                             <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                             </svg>
@@ -192,7 +192,7 @@
                 class="inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:shadow-lg"
                 style="background: linear-gradient(135deg, {{ $primaryColor }}15, {{ $secondaryColor }}15); color: {{ $primaryColor }};"
             >
-                Bekijk volledige prijslijst
+                {{ __('View full price list') }}
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                 </svg>

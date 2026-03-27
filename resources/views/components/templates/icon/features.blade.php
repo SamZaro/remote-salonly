@@ -10,26 +10,26 @@
 ])
 
 @php
-    $title = $content['title'] ?? 'Waarom Kiezen Voor Ons';
-    $subtitle = $content['subtitle'] ?? 'Ontdek wat ons onderscheidt van de rest';
+    $title = $content['title'] ?? __('Why Choose Us');
+    $subtitle = $content['subtitle'] ?? __('Discover what sets us apart from the rest');
     $items = $content['items'] ?? [
         [
-            'title' => 'Vakmanschap',
-            'description' => 'Onze stylisten zijn opgeleid bij de beste academies en blijven continu hun vaardigheden verfijnen met de nieuwste technieken.',
+            'title' => __('Craftsmanship'),
+            'description' => __('Our stylists are trained at the best academies and continually refine their skills with the latest techniques.'),
             'icon' => 'scissors',
-            'features' => ['Jarenlange ervaring', 'Gecertificeerde stylisten', 'Voortdurende bijscholing'],
+            'features' => [__('Years of experience'), __('Certified stylists'), __('Ongoing training')],
         ],
         [
-            'title' => 'Persoonlijk Advies',
-            'description' => 'Elk bezoek begint met een uitgebreide consultatie zodat we jouw wensen en haartype perfect begrijpen.',
+            'title' => __('Personal Advice'),
+            'description' => __('Every visit begins with a thorough consultation so we fully understand your wishes and hair type.'),
             'icon' => 'chat',
-            'features' => ['Gratis consultatie', 'Op maat gemaakt plan', 'Nazorg & tips'],
+            'features' => [__('Free consultation'), __('Tailored plan'), __('Aftercare & tips')],
         ],
         [
-            'title' => 'Premium Producten',
-            'description' => 'Wij werken uitsluitend met hoogwaardige, professionele producten die je haar gezond en stralend houden.',
+            'title' => __('Premium Products'),
+            'description' => __('We work exclusively with high-quality, professional products that keep your hair healthy and radiant.'),
             'icon' => 'sparkles',
-            'features' => ['Sulfaatvrije formules', 'Dierproefvrij & vegan', 'Salon-exclusieve merken'],
+            'features' => [__('Sulfate-free formulas'), __('Cruelty-free & vegan'), __('Salon-exclusive brands')],
         ],
     ];
 
@@ -62,7 +62,7 @@
             <div class="inline-flex items-center gap-3 mb-8">
                 <span class="w-10 h-px" style="background-color: {{ $primaryColor }};"></span>
                 <span class="uppercase text-[11px] tracking-[0.3em] font-medium" style="color: {{ $primaryColor }};">
-                    Waarom wij
+                    {{ __('Why us') }}
                 </span>
                 <span class="w-10 h-px" style="background-color: {{ $primaryColor }};"></span>
             </div>

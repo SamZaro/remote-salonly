@@ -10,9 +10,9 @@
 ])
 
 @php
-    $title = $content['title'] ?? 'Mooi haar begint<br>bij vakmanschap';
-    $subtitle = $content['subtitle'] ?? 'Persoonlijke haarverzorging en beauty in een ontspannen sfeer';
-    $ctaText = $content['cta_text'] ?? 'Maak een afspraak';
+    $title = $content['title'] ?? __('Beautiful hair starts<br>with craftsmanship');
+    $subtitle = $content['subtitle'] ?? __('Personal hair care and beauty in a relaxed atmosphere');
+    $ctaText = $content['cta_text'] ?? __('Make an Appointment');
     $ctaLink = $content['cta_link'] ?? '#contact';
     $backgroundImage = $section?->getFirstMediaUrl('background') ?: ($content['background_image'] ?? null);
 

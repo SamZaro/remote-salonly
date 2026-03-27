@@ -9,15 +9,15 @@
 ])
 
 @php
-    $title    = $content['title'] ?? 'Onze Diensten';
-    $subtitle = $content['subtitle'] ?? 'Van klassiek tot modern — wij beheersen elke stijl';
+    $title    = $content['title'] ?? __('Our Services');
+    $subtitle = $content['subtitle'] ?? __('From classic to contemporary, we master every style');
     $items    = $content['items'] ?? [
-        ['title' => 'Heren Knippen',    'description' => 'Precisie knippen met schaar of tondeuse', 'price' => '€27', 'icon' => 'scissors'],
-        ['title' => 'Baard Verzorging', 'description' => 'Trimmen, vormen en verzorgen',             'price' => '€22', 'icon' => 'razor'],
-        ['title' => 'Hot Towel Shave',  'description' => 'Luxueuze scheerbeurt met warme doeken',   'price' => '€32', 'icon' => 'towel'],
-        ['title' => 'Knippen & Baard',  'description' => 'Complete verzorging in één behandeling',   'price' => '€45', 'icon' => 'star'],
-        ['title' => 'Grijs Camouflage', 'description' => 'Subtiele kleurbehandeling voor grijs haar','price' => '€35', 'icon' => 'color'],
-        ['title' => 'Kids Knippen',     'description' => 'Voor onze jongste gentlemen (t/m 12 jr)', 'price' => '€19', 'icon' => 'child'],
+        ['title' => __('Men\'s Haircut'),    'description' => __('Precision cut with scissors or clippers'),           'price' => '€27', 'icon' => 'scissors'],
+        ['title' => __('Beard Grooming'),    'description' => __('Trimming, shaping, and caring for your beard'),      'price' => '€22', 'icon' => 'razor'],
+        ['title' => __('Hot Towel Shave'),   'description' => __('Luxurious shave with warm towels'),                  'price' => '€32', 'icon' => 'towel'],
+        ['title' => __('Cut + Beard'),       'description' => __('Complete grooming in one treatment'),                'price' => '€45', 'icon' => 'star'],
+        ['title' => __('Grey Camouflage'),   'description' => __('Subtle color treatment for grey hair'),              'price' => '€35', 'icon' => 'color'],
+        ['title' => __('Kids Cut'),          'description' => __('For our youngest gentlemen, up to 12 years old'),   'price' => '€19', 'icon' => 'child'],
     ];
 
     $primaryColor    = $theme['primary_color'] ?? '#C8B88A';
@@ -51,7 +51,7 @@
             <div class="flex items-center gap-4 mb-6">
                 <div class="w-10 h-px" style="background-color: {{ $primaryColor }};"></div>
                 <span class="text-xs font-bold uppercase tracking-[0.35em]" style="color: {{ $primaryColor }}; font-family: '{{ $bodyFont }}';">
-                    Wat wij bieden
+                    {{ __('What we offer') }}
                 </span>
             </div>
             <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4">
@@ -66,7 +66,7 @@
                     class="group inline-flex items-center gap-3 text-sm font-bold uppercase tracking-widest shrink-0"
                     style="color: {{ $primaryColor }}; font-family: '{{ $bodyFont }}';"
                 >
-                    Volledige prijslijst
+                    {{ __('Full price list') }}
                     <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                     </svg>
@@ -105,7 +105,7 @@
 
                     {{-- Price --}}
                     <div class="flex items-center justify-between pt-5 border-t" style="border-color: rgba(255,255,255,0.08);">
-                        <span class="text-xs uppercase tracking-widest" style="color: rgba(255,255,255,0.3); font-family: '{{ $bodyFont }}';">Vanaf</span>
+                        <span class="text-xs uppercase tracking-widest" style="color: rgba(255,255,255,0.3); font-family: '{{ $bodyFont }}';">{{ __('From') }}</span>
                         <span
                             class="font-black text-2xl"
                             style="color: {{ $primaryColor }}; font-family: '{{ $headingFont }}'; letter-spacing: -0.02em;"
@@ -119,7 +119,7 @@
 
         {{-- Bottom note --}}
         <p class="mt-10 text-sm" style="color: {{ $textColor }}; font-family: '{{ $bodyFont }}';">
-            Alle prijzen zijn inclusief BTW. Vraag naar onze combideals.
+            {{ __('All prices include VAT. Ask about our combination deals.') }}
         </p>
     </div>
 </section>

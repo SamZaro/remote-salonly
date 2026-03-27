@@ -12,9 +12,9 @@
 
 @php
     $title = $content['title'] ?? 'Your Beauty And Success Starts Here';
-    $subtitle = $content['subtitle'] ?? 'Welkom in onze salon';
-    $description = $content['description'] ?? 'Wij geloven dat iedereen verdient om zich goed te voelen. Onze salon is een plek waar je kunt ontspannen en jezelf kunt laten verwennen door ervaren vakmensen die passie hebben voor hun vak.';
-    $description2 = $content['description2'] ?? 'Met de juiste technieken en kwalitatieve producten zorgen we ervoor dat je altijd met een goed gevoel naar huis gaat.';
+    $subtitle = $content['subtitle'] ?? __('Welcome to our salon');
+    $description = $content['description'] ?? __('We believe everyone deserves to feel good. Our salon is a place where you can relax and be pampered by experienced professionals who are passionate about their craft.');
+    $description2 = $content['description2'] ?? __('With the right techniques and quality products, we make sure you always leave feeling great.');
     $image = $section?->getFirstMediaUrl('background') ?: ($content['image'] ?? null);
 
     $primaryColor = $theme['primary_color'] ?? '#E8D8D3';
@@ -60,7 +60,7 @@
                     <div class="relative">
                         <img
                             src="{{ $image }}"
-                            alt="Over ons"
+                            alt="{{ __('About us') }}"
                             class="w-full h-[460px] lg:h-[560px] object-cover rounded-lg"
                         />
                         {{-- Accent border frame --}}
@@ -111,7 +111,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
                             </svg>
                         </div>
-                        <span class="text-sm font-semibold" style="color: {{ $headingColor }}; font-family: '{{ $bodyFont }}', sans-serif;">Gecertificeerd team</span>
+                        <span class="text-sm font-semibold" style="color: {{ $headingColor }}; font-family: '{{ $bodyFont }}', sans-serif;">{{ __('Certified team') }}</span>
                     </div>
                     <div class="flex items-center gap-3">
                         <div class="w-10 h-10 rounded-full flex items-center justify-center shrink-0" style="background-color: {{ $accentColor }};">
@@ -119,7 +119,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
                             </svg>
                         </div>
-                        <span class="text-sm font-semibold" style="color: {{ $headingColor }}; font-family: '{{ $bodyFont }}', sans-serif;">Premium producten</span>
+                        <span class="text-sm font-semibold" style="color: {{ $headingColor }}; font-family: '{{ $bodyFont }}', sans-serif;">{{ __('Premium products') }}</span>
                     </div>
                 </div>
 
@@ -130,7 +130,7 @@
                     onmouseover="this.style.backgroundColor='{{ $primaryColor }}'; this.style.color='{{ $secondaryColor }}';"
                     onmouseout="this.style.backgroundColor='{{ $secondaryColor }}'; this.style.color='{{ $backgroundColor }}';"
                 >
-                    Neem contact op
+                    {{ __('Contact us') }}
                     <svg class="w-4 h-4 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                     </svg>

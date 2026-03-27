@@ -10,29 +10,29 @@
 ])
 
 @php
-    $title = $content['title'] ?? 'Onze Diensten';
-    $subtitle = $content['subtitle'] ?? 'Professionele haarverzorging voor iedereen';
+    $title = $content['title'] ?? __('Our Services');
+    $subtitle = $content['subtitle'] ?? __('Professional hair care for everyone');
     $items = $content['items'] ?? [
         [
-            'title' => "Women's Haircut",
-            'description' => 'Van klassiek tot trendy - wij creëren de perfecte look die bij jou past',
-            'price' => 'Vanaf €45',
+            'title' => __("Women's Haircut"),
+            'description' => __('From classic to trendy, we create the perfect look that suits you'),
+            'price' => __('From') . ' €45',
             'icon' => 'women',
-            'features' => ['Wasbeurt', 'Knippen', 'Föhnen & Stylen'],
+            'features' => [__('Wash'), __('Cut'), __('Blowdry & Styling')],
         ],
         [
-            'title' => 'Kleuren & Highlights',
-            'description' => 'Breng je haar tot leven met onze premium kleurbehandelingen',
-            'price' => 'Vanaf €65',
+            'title' => __('Coloring & Highlights'),
+            'description' => __('Bring your hair to life with our premium color treatments'),
+            'price' => __('From') . ' €65',
             'icon' => 'color',
-            'features' => ['Balayage', 'Highlights', 'Full colour'],
+            'features' => ['Balayage', 'Highlights', __('Full color')],
         ],
         [
-            'title' => "Men's Haircut",
-            'description' => 'Strakke cuts en moderne stijlen voor de man van nu',
-            'price' => 'Vanaf €28',
+            'title' => __("Men's Haircut"),
+            'description' => __('Sharp cuts and modern styles for the contemporary man'),
+            'price' => __('From') . ' €28',
             'icon' => 'men',
-            'features' => ['Knippen', 'Styling', 'Baard trim'],
+            'features' => [__('Cut'), __('Styling'), __('Beard trim')],
         ],
     ];
 
@@ -70,7 +70,7 @@
             <div class="inline-flex items-center gap-3 mb-8">
                 <span class="w-10 h-px" style="background-color: {{ $primaryColor }};"></span>
                 <span class="uppercase text-[11px] tracking-[0.3em] font-medium" style="color: {{ $primaryColor }};">
-                    Diensten
+                    {{ __('Services') }}
                 </span>
                 <span class="w-10 h-px" style="background-color: {{ $primaryColor }};"></span>
             </div>
@@ -147,7 +147,7 @@
                             class="group/link inline-flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.15em] transition-all duration-300 hover:gap-3"
                             style="color: {{ $primaryColor }};"
                         >
-                            Boeken
+                            {{ __('Book') }}
                             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                             </svg>
@@ -168,7 +168,7 @@
                 class="group inline-flex items-center gap-3 text-[12px] font-semibold uppercase tracking-[0.15em] transition-all duration-300 hover:gap-4"
                 style="color: {{ $primaryColor }};"
             >
-                Bekijk alle prijzen
+                {{ __('View all prices') }}
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                 </svg>

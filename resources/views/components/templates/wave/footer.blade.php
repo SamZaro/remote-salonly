@@ -25,7 +25,7 @@
     $address = $content['address'] ?? '';
     $phone = $content['phone'] ?? '';
     $email = $content['email'] ?? '';
-    $copyright = $content['copyright'] ?? '© ' . date('Y') . ' ' . $companyName . '. Alle rechten voorbehouden.';
+    $copyright = $content['copyright'] ?? '© ' . date('Y') . ' ' . $companyName . '. ' . __('All rights reserved.');
 
     $socialLinks = $content['social_links'] ?? [];
     $facebookUrl = $socialLinks['facebook'] ?? '';
@@ -133,17 +133,17 @@
             {{-- Opening Hours Teaser --}}
             <div>
                 <h4 class="text-[12px] font-semibold uppercase tracking-[0.15em] mb-5" style="color: {{ $primaryColor }};">
-                    {{ __('Openingstijden') }}
+                    {{ __('Opening Hours') }}
                 </h4>
                 <p class="text-[14px] mb-4 leading-relaxed" style="color: {{ $backgroundColor }}50;">
-                    {{ __('Bekijk onze openingstijden en maak direct een afspraak.') }}
+                    {{ __('Check our opening hours and make an appointment directly.') }}
                 </p>
                 <a
                     href="#contact"
                     class="group inline-flex items-center gap-2 text-[13px] font-semibold transition-opacity duration-300 hover:opacity-80"
                     style="color: {{ $primaryColor }};"
                 >
-                    {{ __('Afspraak maken') }}
+                    {{ __('Make an Appointment') }}
                     <svg class="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                     </svg>
@@ -153,7 +153,7 @@
             {{-- Social --}}
             <div>
                 <h4 class="text-[12px] font-semibold uppercase tracking-[0.15em] mb-5" style="color: {{ $primaryColor }};">
-                    {{ __('Volg Ons') }}
+                    {{ __('Follow Us') }}
                 </h4>
                 <div class="flex items-center gap-3">
                     @if($facebookUrl)

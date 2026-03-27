@@ -11,9 +11,9 @@
 ])
 
 @php
-    $title = $content['title'] ?? 'Bouw met vertrouwen';
-    $subtitle = $content['subtitle'] ?? 'Vakmanschap en kwaliteit voor elk project';
-    $ctaText = $content['cta_text'] ?? 'Vraag een offerte aan';
+    $title = $content['title'] ?? __('Build with confidence');
+    $subtitle = $content['subtitle'] ?? __('Craftsmanship and quality for every project');
+    $ctaText = $content['cta_text'] ?? __('Request a quote');
     $ctaLink = $content['cta_link'] ?? '#contact';
     $autoplay = (bool) ($content['autoplay'] ?? true);
     $interval = (int) ($content['interval'] ?? 5000);
@@ -93,7 +93,7 @@
                         <svg class="ml-3 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                     </a>
                 @endif
-                <a href="#services" class="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold border-2 transition-all duration-300 hover:bg-white/10" style="border-color: {{ $textColor }}; color: {{ $textColor }}; border-radius: {{ $buttonRadius }};">Bekijk onze projecten</a>
+                <a href="#services" class="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold border-2 transition-all duration-300 hover:bg-white/10" style="border-color: {{ $textColor }}; color: {{ $textColor }}; border-radius: {{ $buttonRadius }};">{{ __('View our projects') }}</a>
             </div>
         </div>
     </div>

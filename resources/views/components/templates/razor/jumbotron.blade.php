@@ -11,9 +11,9 @@
 ])
 
 @php
-    $title = $content['title'] ?? 'WORD DE BESTE<br>VERSIE VAN JEZELF';
-    $subtitle = $content['subtitle'] ?? 'Premium grooming voor de moderne man';
-    $ctaText = $content['cta_text'] ?? 'BOEK NU';
+    $title = $content['title'] ?? __('BECOME THE BEST<br>VERSION OF YOURSELF');
+    $subtitle = $content['subtitle'] ?? __('Premium grooming for the modern man');
+    $ctaText = $content['cta_text'] ?? __('BOOK NOW');
     $ctaLink = $content['cta_link'] ?? '#contact';
     $backgroundImage = $section?->getFirstMediaUrl('background') ?: ($content['background_image'] ?? null);
 

@@ -10,15 +10,15 @@
 ])
 
 @php
-    $title        = $content['title'] ?? 'Wie Wij Zijn';
-    $subtitle     = $content['subtitle'] ?? 'Passie voor haar, oog voor detail';
-    $description  = $content['description'] ?? 'Wij geloven dat een goede knipbeurt meer is dan alleen een bezoek aan de kapper. Het is een moment van aandacht — voor jouw haar, jouw stijl en jou als persoon. Ons team bestaat uit gedreven stylisten die voortdurend bijblijven met de nieuwste trends.';
-    $description2 = $content['description2'] ?? 'Met jarenlange ervaring en een scherp oog voor wat bij jou past, creëren wij looks die echt bij je aansluiten. Modern of klassiek, kort of lang — we zorgen dat jij er op jouw best uitziet.';
+    $title        = $content['title'] ?? __('Who We Are');
+    $subtitle     = $content['subtitle'] ?? __('Passion for hair, eye for detail');
+    $description  = $content['description'] ?? __('We believe a great haircut is more than just a visit to the salon. It is a moment of attention — for your hair, your style and you as a person. Our team consists of driven stylists who continuously keep up with the latest trends.');
+    $description2 = $content['description2'] ?? __('With years of experience and a sharp eye for what suits you, we create looks that truly match who you are. Modern or classic, short or long — we make sure you look your best.');
     $image        = $section?->getFirstMediaUrl('background') ?: ($content['image'] ?? null);
     $stats        = $content['stats'] ?? [
-        ['value' => '10+',  'label' => 'Jaar ervaring'],
-        ['value' => '3k+',  'label' => 'Blije klanten'],
-        ['value' => '6',    'label' => 'Expert stylisten'],
+        ['value' => '10+',  'label' => __('Years experience')],
+        ['value' => '3k+',  'label' => __('Happy clients')],
+        ['value' => '6',    'label' => __('Expert stylists')],
     ];
 
     $primaryColor    = $theme['primary_color'] ?? '#f97316';
@@ -43,7 +43,7 @@
             <div class="flex items-center gap-3 mb-8">
                 <div class="w-9 h-1 shrink-0" style="background-color: {{ $primaryColor }};"></div>
                 <span class="text-xs font-semibold uppercase tracking-[0.3em]" style="color: {{ $primaryColor }}; font-family: '{{ $bodyFont }}';">
-                    Over Ons
+                    {{ __('About Us') }}
                 </span>
             </div>
 
@@ -74,7 +74,7 @@
                     onmouseover="this.style.color='{{ $primaryColor }}'"
                     onmouseout="this.style.color='{{ $secondaryColor }}'"
                 >
-                    Kennismaken
+                    {{ __('Get in touch') }}
                     <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                     </svg>
@@ -104,7 +104,7 @@
             @if($image)
                 <img
                     src="{{ $image }}"
-                    alt="Over ons"
+                    alt="{{ __('About us') }}"
                     class="absolute inset-0 w-full h-full object-cover"
                 />
                 {{-- Subtle orange top accent --}}

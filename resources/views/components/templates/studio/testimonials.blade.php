@@ -12,24 +12,24 @@
 @php
     // Content met defaults
     $title = $content['title'] ?? 'Love From Our Clients';
-    $subtitle = $content['subtitle'] ?? 'Wat onze happy customers zeggen';
+    $subtitle = $content['subtitle'] ?? __('What our happy customers say');
     $testimonials = $content['testimonials'] ?? [
         [
             'name' => 'Lisa M.',
             'role' => '@lisa.styles',
-            'quote' => 'Beste balayage ooit! Het team snapt precies wat je wilt en maakt het nog beter dan je had voorgesteld.',
+            'quote' => __('Best balayage ever! The team knows exactly what you want and makes it even better than you imagined.'),
             'rating' => 5,
         ],
         [
             'name' => 'Emma K.',
             'role' => '@emmak_',
-            'quote' => 'Super relaxte sfeer, goede muziek en een waanzinnig resultaat. Dit is my go-to salon!',
+            'quote' => __('Super relaxed atmosphere, good music and an amazing result. This is my go-to salon!'),
             'rating' => 5,
         ],
         [
             'name' => 'Sophie V.',
             'role' => '@sophiev.nl',
-            'quote' => 'Durfde eindelijk voor die bold color te gaan en ik ben OBSESSED. Kom hier nooit meer weg!',
+            'quote' => __('Finally dared to go for that bold colour and I am OBSESSED. Never leaving!'),
             'rating' => 5,
         ],
     ];

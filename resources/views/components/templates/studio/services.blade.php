@@ -11,32 +11,32 @@
 
 @php
     // Content met defaults
-    $title = $content['title'] ?? 'Onze Services';
-    $subtitle = $content['subtitle'] ?? 'Van bold colors tot precision cuts';
+    $title = $content['title'] ?? __('Our Services');
+    $subtitle = $content['subtitle'] ?? __('From bold colors to precision cuts');
     $services = $content['services'] ?? [
         [
             'icon' => 'scissors',
             'title' => 'Cuts & Styling',
-            'description' => 'Van classic tot edgy - wij snijden elke stijl.',
-            'price' => 'Vanaf €35',
+            'description' => __('From classic to edgy - we cut every style.'),
+            'price' => __('From €35'),
         ],
         [
             'icon' => 'color',
             'title' => 'Color Studio',
-            'description' => 'Balayage, highlights, vivids - jouw kleur, jouw rules.',
-            'price' => 'Vanaf €75',
+            'description' => __('Balayage, highlights, vivids - your colour, your rules.'),
+            'price' => __('From €75'),
         ],
         [
             'icon' => 'sparkles',
             'title' => 'Treatments',
-            'description' => 'Olaplex, keratine en deep conditioning voor healthy hair.',
-            'price' => 'Vanaf €45',
+            'description' => __('Olaplex, keratin and deep conditioning for healthy hair.'),
+            'price' => __('From €45'),
         ],
         [
             'icon' => 'star',
             'title' => 'Styling Events',
             'description' => 'Bridal, prom, photoshoots - we make you shine!',
-            'price' => 'Op aanvraag',
+            'price' => __('On request'),
         ],
     ];
 
@@ -142,7 +142,7 @@
                 class="inline-flex items-center gap-3 px-8 py-4 rounded-full font-bold text-lg transition-all hover:scale-105"
                 style="background: white; color: {{ $secondaryColor }}; box-shadow: 6px 6px 0 {{ $primaryColor }};"
             >
-                Bekijk alle prijzen
+                {{ __('View all prices') }}
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                 </svg>

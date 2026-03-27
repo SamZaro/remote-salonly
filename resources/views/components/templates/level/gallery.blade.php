@@ -10,8 +10,8 @@
 ])
 
 @php
-    $title    = $content['title'] ?? 'Ons Werk';
-    $subtitle = $content['subtitle'] ?? 'Bekijk onze meest recente looks';
+    $title    = $content['title'] ?? __('Our Work');
+    $subtitle = $content['subtitle'] ?? __('View our most recent looks');
     $images   = $section?->getMedia('images') ?? collect();
 
     $primaryColor    = $theme['primary_color'] ?? '#f97316';
@@ -39,7 +39,7 @@
                         <div class="flex items-center gap-3 mb-6">
                             <div class="w-9 h-1 shrink-0" style="background-color: {{ $primaryColor }};"></div>
                             <span class="text-xs font-semibold uppercase tracking-[0.3em]" style="color: {{ $primaryColor }}; font-family: '{{ $bodyFont }}';">
-                                Galerij
+                                {{ __('Gallery') }}
                             </span>
                         </div>
                         <h2
@@ -59,7 +59,7 @@
                                 onmouseover="this.style.borderColor='{{ $primaryColor }}'; this.style.color='{{ $primaryColor }}'"
                                 onmouseout="this.style.borderColor='#e0e0e0'; this.style.color='{{ $secondaryColor }}'"
                                 @click="$refs.carousel.scrollBy({ left: -380, behavior: 'smooth' })"
-                                aria-label="Vorige"
+                                aria-label="{{ __('Previous') }}"
                             >
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
@@ -69,7 +69,7 @@
                                 class="w-12 h-12 flex items-center justify-center transition-all duration-200 hover:opacity-85"
                                 style="background-color: {{ $primaryColor }}; color: #ffffff;"
                                 @click="$refs.carousel.scrollBy({ left: 380, behavior: 'smooth' })"
-                                aria-label="Volgende"
+                                aria-label="{{ __('Next') }}"
                             >
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>

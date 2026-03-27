@@ -11,15 +11,15 @@
 
 @php
     // Content met defaults
-    $title = $content['title'] ?? 'Prijslijst';
-    $subtitle = $content['subtitle'] ?? 'Transparante prijzen voor onze verfijnde behandelingen';
+    $title = $content['title'] ?? __('Price List');
+    $subtitle = $content['subtitle'] ?? __('Transparent prices for our refined treatments');
     $items = $content['items'] ?? [
-        ['service' => 'Knippen', 'price' => '€65', 'description' => 'Inclusief consult en styling'],
-        ['service' => 'Knippen + Föhnen', 'price' => '€85', 'description' => 'Complete behandeling'],
-        ['service' => 'Balayage', 'price' => '€145', 'description' => 'Natuurlijke highlights', 'popular' => true],
-        ['service' => 'Full Colour', 'price' => '€95', 'description' => 'Volledige kleuring'],
-        ['service' => 'Bridal Package', 'price' => '€295', 'description' => 'Proefkap + trouwdag styling'],
-        ['service' => 'Luxury Treatment', 'price' => '€55', 'description' => 'Intensieve haarverzorging'],
+        ['service' => __('Haircut'), 'price' => '€65', 'description' => __('Including consultation and styling')],
+        ['service' => __('Haircut + Blowdry'), 'price' => '€85', 'description' => __('Complete treatment')],
+        ['service' => 'Balayage', 'price' => '€145', 'description' => __('Natural highlights'), 'popular' => true],
+        ['service' => 'Full Colour', 'price' => '€95', 'description' => __('Full color treatment')],
+        ['service' => 'Bridal Package', 'price' => '€295', 'description' => __('Trial style + wedding day styling')],
+        ['service' => 'Luxury Treatment', 'price' => '€55', 'description' => __('Intensive hair care')],
     ];
 
     // Theme kleuren - Soft Luxury palette
@@ -49,7 +49,7 @@
         >
             <div class="flex items-center justify-center gap-4 mb-8">
                 <div class="w-12 h-px" style="background-color: {{ $secondaryColor }}40;"></div>
-                <span class="text-xs font-medium uppercase tracking-[0.3em]" style="color: {{ $secondaryColor }};">Prijzen</span>
+                <span class="text-xs font-medium uppercase tracking-[0.3em]" style="color: {{ $secondaryColor }};">{{ __('Prices') }}</span>
                 <div class="w-12 h-px" style="background-color: {{ $secondaryColor }}40;"></div>
             </div>
             <h2
@@ -99,7 +99,7 @@
                                 class="absolute -right-2 top-1/2 -translate-y-1/2 px-3 py-1 text-xs font-medium uppercase tracking-wider hidden sm:block"
                                 style="background-color: {{ $secondaryColor }}; color: {{ $backgroundColor }};"
                             >
-                                Populair
+                                {{ __('Popular') }}
                             </div>
                         @endif
 
@@ -135,7 +135,7 @@
             {{-- Note --}}
             <div class="mt-10 pt-8 border-t text-center" style="border-color: {{ $primaryColor }}60;">
                 <p class="text-sm italic" style="color: {{ $textColor }}; opacity: 0.6;">
-                    Prijzen zijn inclusief BTW • Consult altijd inbegrepen
+                    {{ __('Prices include VAT') }} • {{ __('Consultation always included') }}
                 </p>
             </div>
         </div>
@@ -150,7 +150,7 @@
                 class="inline-flex items-center justify-center px-10 py-4 text-sm font-medium uppercase tracking-widest transition-all duration-300 hover:opacity-90"
                 style="background-color: {{ $secondaryColor }}; color: {{ $backgroundColor }};"
             >
-                Reserveer Nu
+                {{ __('Reserve Now') }}
             </a>
         </div>
     </div>

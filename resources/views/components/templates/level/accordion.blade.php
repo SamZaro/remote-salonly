@@ -10,13 +10,13 @@
 ])
 
 @php
-    $title    = $content['title'] ?? 'Veelgestelde Vragen';
-    $subtitle = $content['subtitle'] ?? 'Alles wat je wilt weten';
+    $title    = $content['title'] ?? __('Frequently Asked Questions');
+    $subtitle = $content['subtitle'] ?? __('Everything you want to know');
     $items    = $content['items'] ?? [
-        ['question' => 'Moet ik vooraf reserveren?',            'answer' => 'Reserveren is aanbevolen, maar walk-ins zijn altijd welkom — zolang er plek is. Via onze website of telefoon maak je eenvoudig een afspraak.'],
-        ['question' => 'Hoe lang duurt een knipbeurt?',         'answer' => 'Een standaard knipbeurt duurt 45-60 minuten inclusief wassen en föhnen. Kleurbehandelingen nemen meer tijd in beslag; hier informeren we je vooraf over.'],
-        ['question' => 'Bieden jullie ook kleurbehandelingen?', 'answer' => 'Absoluut! Van highlights tot volledige kleurbehandelingen — we geven je eerlijk advies over wat het beste bij jou past.'],
-        ['question' => 'Wat zijn de betaalmogelijkheden?',      'answer' => 'We accepteren contant, pin en alle gangbare creditcards. Contactloos betalen is ook mogelijk.'],
+        ['question' => __('Do I need to book in advance?'),          'answer' => __('Booking is recommended, but walk-ins are always welcome — as long as there is availability. You can easily make an appointment via our website or phone.')],
+        ['question' => __('How long does a haircut take?'),          'answer' => __('A standard haircut takes 45-60 minutes including washing and blow-drying. Colour treatments take more time; we will inform you in advance.')],
+        ['question' => __('Do you also offer colour treatments?'),   'answer' => __('Absolutely! From highlights to full colour treatments — we give you honest advice on what suits you best.')],
+        ['question' => __('What payment methods do you accept?'),    'answer' => __('We accept cash, debit card and all major credit cards. Contactless payment is also possible.')],
     ];
 
     $primaryColor    = $theme['primary_color'] ?? '#f97316';
@@ -104,13 +104,13 @@
 
         {{-- CTA --}}
         <div class="mt-14 flex flex-wrap items-center gap-5">
-            <span class="text-xs uppercase tracking-widest font-light" style="color: rgba(255,255,255,0.4); font-family: '{{ $bodyFont }}';">Nog vragen?</span>
+            <span class="text-xs uppercase tracking-widest font-light" style="color: rgba(255,255,255,0.4); font-family: '{{ $bodyFont }}';">{{ __('Still have questions?') }}</span>
             <a
                 href="#contact"
                 class="group inline-flex items-center gap-3 font-semibold uppercase tracking-widest text-sm transition-colors"
                 style="color: {{ $primaryColor }}; font-family: '{{ $bodyFont }}';"
             >
-                Neem Contact Op
+                {{ __('Contact Us') }}
                 <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                 </svg>

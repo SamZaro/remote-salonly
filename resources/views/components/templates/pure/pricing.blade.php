@@ -10,40 +10,40 @@
 ])
 
 @php
-    $title = $content['title'] ?? 'Prijzen';
-    $subtitle = $content['subtitle'] ?? 'Onze tarieven';
+    $title = $content['title'] ?? __('Pricing');
+    $subtitle = $content['subtitle'] ?? __('Our rates');
     $categories = $content['categories'] ?? [
         [
-            'name' => 'Knippen',
+            'name' => __('Cutting'),
             'icon' => 'hair',
             'items' => [
-                ['service' => 'Organic Cut', 'description' => 'Inclusief natuurlijke styling', 'price' => '€55'],
-                ['service' => 'Cut & Blow-dry', 'description' => 'Knippen en föhnen', 'price' => '€70'],
-                ['service' => 'Kids Cut', 'description' => 'Tot 12 jaar', 'price' => '€30'],
-                ['service' => 'Ponyknippen', 'description' => 'Quick trim', 'price' => '€15'],
-                ['service' => 'Bruidsstyling', 'description' => 'Proefkapsel inbegrepen', 'price' => '€125', 'popular' => true],
+                ['service' => __('Organic Cut'), 'description' => __('Includes natural styling'), 'price' => '€55'],
+                ['service' => __('Cut & Blow-dry'), 'description' => __('Cut and blow-dry'), 'price' => '€70'],
+                ['service' => __('Kids Cut'), 'description' => __('Up to 12 years'), 'price' => '€30'],
+                ['service' => __('Fringe Trim'), 'description' => __('Quick trim'), 'price' => '€15'],
+                ['service' => __('Bridal Styling'), 'description' => __('Trial session included'), 'price' => '€125', 'popular' => true],
             ],
         ],
         [
-            'name' => 'Kleuring',
+            'name' => __('Color'),
             'icon' => 'nails',
             'items' => [
-                ['service' => 'Plant Color', 'description' => '100% plantaardig', 'price' => '€85', 'popular' => true],
-                ['service' => 'Highlights', 'description' => 'Natuurlijke accenten', 'price' => '€95'],
-                ['service' => 'Balayage', 'description' => 'Handgeschilderde technieken', 'price' => '€120'],
-                ['service' => 'Gloss Treatment', 'description' => 'Kleur opfrissing', 'price' => '€45'],
-                ['service' => 'Roots Touch-up', 'description' => 'Uitgroei bijwerken', 'price' => '€65'],
+                ['service' => __('Plant Color'), 'description' => __('100% plant-based'), 'price' => '€85', 'popular' => true],
+                ['service' => __('Highlights'), 'description' => __('Natural accents'), 'price' => '€95'],
+                ['service' => __('Balayage'), 'description' => __('Hand-painted technique'), 'price' => '€120'],
+                ['service' => __('Gloss Treatment'), 'description' => __('Color refresh'), 'price' => '€45'],
+                ['service' => __('Roots Touch-up'), 'description' => __('Touch up outgrowth'), 'price' => '€65'],
             ],
         ],
         [
-            'name' => 'Treatments',
+            'name' => __('Treatments'),
             'icon' => 'lash',
             'items' => [
-                ['service' => 'Scalp Wellness', 'description' => 'Hoofdhuidbehandeling', 'price' => '€45'],
-                ['service' => 'Hair Detox', 'description' => 'Zuiverende behandeling', 'price' => '€55'],
-                ['service' => 'Herbal Treatment', 'description' => 'Intensieve kruidenbehandeling', 'price' => '€65', 'popular' => true],
-                ['service' => 'Keratine Behandeling', 'description' => 'Natuurlijk glad haar', 'price' => '€95'],
-                ['service' => 'Hoofdhuidmassage', 'description' => '20 minuten ontspanning', 'price' => '€35'],
+                ['service' => __('Scalp Wellness'), 'description' => __('Scalp treatment'), 'price' => '€45'],
+                ['service' => __('Hair Detox'), 'description' => __('Purifying treatment'), 'price' => '€55'],
+                ['service' => __('Herbal Treatment'), 'description' => __('Intensive herbal treatment'), 'price' => '€65', 'popular' => true],
+                ['service' => __('Keratin Treatment'), 'description' => __('Naturally smooth hair'), 'price' => '€95'],
+                ['service' => __('Scalp Massage'), 'description' => __('20 minutes of relaxation'), 'price' => '€35'],
             ],
         ],
     ];
@@ -75,7 +75,7 @@
             >Pricing</span>
 
             <span class="text-xs font-semibold uppercase tracking-[0.25em] mb-4 block" style="color: {{ $primaryColor }}; font-family: '{{ $bodyFont }}', sans-serif;">
-                Prijzen
+                {{ __('Pricing') }}
             </span>
             <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-5" style="color: {{ $headingColor }}; font-family: '{{ $headingFont }}', serif;">
                 {{ $title }}
@@ -118,7 +118,7 @@
                                                 class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-none"
                                                 style="background-color: {{ $primaryColor }}; color: #ffffff; font-family: '{{ $bodyFont }}', sans-serif;"
                                             >
-                                                Populair
+                                                {{ __('Popular') }}
                                             </span>
                                         @endif
                                     </div>
@@ -141,7 +141,7 @@
                         onmouseover="this.style.backgroundColor='{{ $secondaryColor }}';"
                         onmouseout="this.style.backgroundColor='{{ $primaryColor }}';"
                     >
-                        Afspraak maken
+                        {{ __('Book an appointment') }}
                     </a>
                 </div>
             @endforeach
@@ -149,7 +149,7 @@
 
         {{-- Footer note --}}
         <p class="mt-10 text-center text-sm" style="color: {{ $textColor }}; font-family: '{{ $bodyFont }}', sans-serif;">
-            Alle prijzen zijn inclusief BTW. Alleen biologische producten.
+            {{ __('All prices include VAT. Only organic products.') }}
         </p>
     </div>
 </section>

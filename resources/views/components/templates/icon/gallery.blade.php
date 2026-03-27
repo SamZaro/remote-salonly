@@ -10,8 +10,8 @@
 ])
 
 @php
-    $title = $content['title'] ?? 'Onze Looks';
-    $subtitle = $content['subtitle'] ?? 'Inspiratie voor jouw nieuwe stijl';
+    $title = $content['title'] ?? __('Our Looks');
+    $subtitle = $content['subtitle'] ?? __('Inspiration for your new style');
     $images = $section?->getMedia('images') ?? collect();
 
     $primaryColor = $theme['primary_color'] ?? '#c9a227';
@@ -37,7 +37,7 @@
             <div class="inline-flex items-center gap-3 mb-8">
                 <span class="w-10 h-px" style="background-color: {{ $primaryColor }};"></span>
                 <span class="uppercase text-[11px] tracking-[0.3em] font-medium" style="color: {{ $primaryColor }};">
-                    Galerij
+                    {{ __('Gallery') }}
                 </span>
                 <span class="w-10 h-px" style="background-color: {{ $primaryColor }};"></span>
             </div>

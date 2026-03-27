@@ -21,12 +21,12 @@
 
     // CTA content (left column)
     $ctaLabel = $content['cta_label'] ?? __('Contact');
-    $ctaHeading = $content['cta_heading'] ?? __('Uw schoonheid begint hier');
-    $ctaHighlight = $content['cta_highlight'] ?? __('Persoonlijke aandacht, altijd');
+    $ctaHeading = $content['cta_heading'] ?? __('Your beauty begins here');
+    $ctaHighlight = $content['cta_highlight'] ?? __('beauty');
     $backgroundImage = $section?->getFirstMediaUrl('background') ?: null;
 
     // Form content (right column)
-    $formTitle = $content['title'] ?? __('Stuur ons een bericht');
+    $formTitle = $content['title'] ?? __('Send us a message');
 @endphp
 
 <section id="contact-form" class="py-24 lg:py-32" style="background-color: {{ $backgroundColor }}; font-family: '{{ $bodyFont }}', sans-serif;">
@@ -115,7 +115,7 @@
                         <div class="flex items-center gap-4 mb-6">
                             <div class="w-8 h-px" style="background-color: {{ $secondaryColor }}30;"></div>
                             <span class="text-xs font-medium uppercase tracking-[0.3em]" style="color: {{ $secondaryColor }}80;">
-                                {{ __('Bericht') }}
+                                {{ __('Message') }}
                             </span>
                         </div>
                         <h4

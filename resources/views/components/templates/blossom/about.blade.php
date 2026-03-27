@@ -12,15 +12,15 @@
 
 @php
     // Content met defaults
-    $title = $content['title'] ?? 'Onze Beauty Salon';
-    $subtitle = $content['subtitle'] ?? 'Waar schoonheid en welzijn samenkomen';
-    $description = $content['description'] ?? 'Bij Blossom geloven we dat elke vrouw verdient om zich prachtig te voelen. Onze salon is een oase van rust waar je kunt ontsnappen aan de drukte van alledag en jezelf kunt laten verwennen door onze ervaren beauty experts.';
-    $description2 = $content['description2'] ?? 'Met de nieuwste technieken en premium producten zorgen we ervoor dat je onze salon altijd verlaat met een stralende glimlach en het perfecte resultaat.';
+    $title = $content['title'] ?? __('Our Beauty Salon');
+    $subtitle = $content['subtitle'] ?? __('Where beauty and wellness come together');
+    $description = $content['description'] ?? __('At Blossom we believe every woman deserves to feel beautiful. Our salon is an oasis of calm where you can escape the hustle of everyday life and be pampered by our experienced beauty experts.');
+    $description2 = $content['description2'] ?? __('With the latest techniques and premium products, we make sure you always leave our salon with a radiant smile and the perfect result.');
     $image = $section?->getFirstMediaUrl('background') ?: ($content['image'] ?? null);
     $stats = $content['stats'] ?? [
-        ['value' => '12+', 'label' => 'Jaar ervaring'],
-        ['value' => '2000+', 'label' => 'Happy clients'],
-        ['value' => '8', 'label' => 'Beauty experts'],
+        ['value' => '12+', 'label' => __('Years of experience')],
+        ['value' => '2000+', 'label' => __('Happy clients')],
+        ['value' => '8', 'label' => __('Beauty experts')],
     ];
 
     // Theme kleuren
@@ -53,7 +53,7 @@
                         {{-- Main image --}}
                         <img
                             src="{{ $image }}"
-                            alt="Over ons"
+                            alt="{{ __('About us') }}"
                             class="relative w-full h-[500px] lg:h-[600px] object-cover rounded-[2rem] shadow-2xl"
                         />
                     </div>
@@ -72,7 +72,7 @@
                                 <svg class="w-24 h-24 mx-auto mb-4" style="color: {{ $primaryColor }}40;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                                 </svg>
-                                <span style="color: {{ $primaryColor }}60;">Salon foto</span>
+                                <span style="color: {{ $primaryColor }}60;">{{ __('Salon photo') }}</span>
                             </div>
                         </div>
                     </div>
@@ -124,7 +124,7 @@
                     <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
                     </svg>
-                    Over Ons
+                    {{ __('About Us') }}
                 </span>
 
                 {{-- Title --}}
@@ -153,7 +153,7 @@
 
                 {{-- Features --}}
                 <div class="grid sm:grid-cols-2 gap-4 mb-10">
-                    @foreach(['Premium producten', 'Ervaren stylisten', 'Persoonlijke aanpak', 'Ontspannen sfeer'] as $feature)
+                    @foreach([__('Premium products'), __('Experienced stylists'), __('Personal approach'), __('Relaxed atmosphere')] as $feature)
                         <div
                             class="flex items-center gap-3 p-4 rounded-xl"
                             style="background-color: {{ $backgroundColor }};"
@@ -177,7 +177,7 @@
                     class="inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-xl"
                     style="background: linear-gradient(135deg, {{ $primaryColor }}, {{ $secondaryColor }}); box-shadow: 0 10px 40px {{ $primaryColor }}40;"
                 >
-                    Maak kennis met ons team
+                    {{ __('Meet our team') }}
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                     </svg>

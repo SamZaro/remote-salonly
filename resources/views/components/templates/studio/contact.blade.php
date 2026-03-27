@@ -12,15 +12,15 @@
 @php
     // Content met defaults
     $title = $content['title'] ?? 'Let\'s Connect';
-    $subtitle = $content['subtitle'] ?? 'Kom langs, bel, of slide in onze DM\'s';
+    $subtitle = $content['subtitle'] ?? __('Come by, call, or slide into our DMs');
     $address = $content['address'] ?? "Creativelaan 42\n1012 AB Amsterdam";
     $phone = $content['phone'] ?? '+31 20 123 4567';
     $email = $content['email'] ?? 'hey@studio-hair.nl';
     $openingHours = $content['opening_hours'] ?? [
-        ['day' => 'Maandag', 'hours' => 'Gesloten'],
-        ['day' => 'Dinsdag - Vrijdag', 'hours' => '10:00 - 20:00'],
-        ['day' => 'Zaterdag', 'hours' => '09:00 - 18:00'],
-        ['day' => 'Zondag', 'hours' => '12:00 - 17:00'],
+        ['day' => __('Monday'), 'hours' => __('Closed')],
+        ['day' => __('Tuesday - Friday'), 'hours' => '10:00 - 20:00'],
+        ['day' => __('Saturday'), 'hours' => '09:00 - 18:00'],
+        ['day' => __('Sunday'), 'hours' => '12:00 - 17:00'],
     ];
 
     // Theme kleuren - dynamisch met Peach defaults
@@ -168,7 +168,7 @@
                         <svg class="w-6 h-6" style="color: {{ $primaryColor }};" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
                         </svg>
-                        Openingstijden
+                        {{ __('Opening Hours') }}
                     </h4>
                     <div class="space-y-4">
                         @foreach($openingHours as $index => $time)
@@ -179,7 +179,8 @@
                                 <span class="font-medium" style="color: {{ $headingColor }};">{{ $time['day'] }}</span>
                                 <span
                                     class="px-3 py-1 rounded-full text-sm font-bold"
-                                    style="background: {{ $time['hours'] === 'Gesloten' ? $accentColor : $primaryColor }}; color: {{ $time['hours'] === 'Gesloten' ? $headingColor : 'white' }};"
+                                    @php $isClosed = str_contains(strtolower($time['hours']), 'closed') || str_contains(strtolower($time['hours']), 'gesloten'); @endphp
+                                    style="background: {{ $isClosed ? $accentColor : $primaryColor }}; color: {{ $isClosed ? $headingColor : 'white' }};"
                                 >
                                     {{ $time['hours'] }}
                                 </span>

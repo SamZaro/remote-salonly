@@ -11,24 +11,24 @@
 
 @php
     // Content met defaults
-    $title = $content['title'] ?? 'Veelgestelde Vragen';
-    $subtitle = $content['subtitle'] ?? 'Alles wat je wilt weten';
+    $title = $content['title'] ?? __('Frequently Asked Questions');
+    $subtitle = $content['subtitle'] ?? __('Everything you want to know');
     $items = $content['items'] ?? [
         [
-            'question' => 'Hoe boek ik een afspraak?',
-            'answer' => 'Je kunt eenvoudig online reserveren via onze website, telefonisch contact opnemen of een bericht sturen via WhatsApp. Wij reageren altijd binnen 24 uur.',
+            'question' => __('How do I book an appointment?'),
+            'answer' => __('You can easily book online via our website, call us, or send a message via WhatsApp. We always respond within 24 hours.'),
         ],
         [
-            'question' => 'Wat kan ik verwachten bij een eerste bezoek?',
-            'answer' => 'Bij je eerste bezoek nemen we uitgebreid de tijd voor een persoonlijk consult. We bespreken je wensen, analyseren je haar en adviseren over de beste behandeling.',
+            'question' => __('What can I expect on my first visit?'),
+            'answer' => __('On your first visit we take plenty of time for a personal consultation. We discuss your wishes, analyze your hair and advise on the best treatment.'),
         ],
         [
-            'question' => 'Bieden jullie bruidsarrangementen aan?',
-            'answer' => 'Ja, we hebben speciale bridal packages inclusief proefkap, trouwdag styling en optioneel make-up. Neem contact op voor een persoonlijk gesprek.',
+            'question' => __('Do you offer bridal packages?'),
+            'answer' => __('Yes, we have special bridal packages including a trial style, wedding day styling and optional make-up. Contact us for a personal consultation.'),
         ],
         [
-            'question' => 'Welke producten gebruiken jullie?',
-            'answer' => 'Wij werken uitsluitend met premium, sulfaatvrije producten van gerenommeerde merken die zacht zijn voor haar en hoofdhuid.',
+            'question' => __('Which products do you use?'),
+            'answer' => __('We work exclusively with premium, sulfate-free products from renowned brands that are gentle on hair and scalp.'),
         ],
     ];
 
@@ -116,14 +116,14 @@
             style="opacity: 0; transform: translateY(10px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.3s;"
         >
             <p class="text-sm mb-4" style="color: {{ $textColor }}; opacity: 0.7;">
-                Heb je een andere vraag?
+                {{ __('Have another question?') }}
             </p>
             <a
                 href="#contact"
                 class="inline-flex items-center gap-3 text-sm font-medium uppercase tracking-widest transition-all duration-300 group"
                 style="color: {{ $secondaryColor }};"
             >
-                <span class="border-b" style="border-color: {{ $secondaryColor }};">Neem contact op</span>
+                <span class="border-b" style="border-color: {{ $secondaryColor }};">{{ __('Contact us') }}</span>
                 <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                 </svg>

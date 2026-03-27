@@ -9,34 +9,34 @@
 ])
 
 @php
-    $title      = $content['title'] ?? 'Prijslijst';
-    $subtitle   = $content['subtitle'] ?? 'Kwaliteit tegen eerlijke prijzen';
+    $title      = $content['title'] ?? __('Price List');
+    $subtitle   = $content['subtitle'] ?? __('Quality at fair prices');
     $categories = $content['categories'] ?? [
         [
-            'name'  => 'Knippen',
+            'name'  => __('Haircut'),
             'items' => [
-                ['service' => 'Heren Knippen',    'description' => 'Schaar of tondeuse, inclusief styling',       'price' => '€27'],
-                ['service' => 'Fade / Skin Fade',  'description' => 'Strakke fade van laag naar hoog',            'price' => '€30'],
-                ['service' => 'Knippen + Wassen',  'description' => 'Inclusief ontspannende hoofdmassage',        'price' => '€32'],
-                ['service' => 'Kids Knippen',       'description' => 'Tot en met 12 jaar',                        'price' => '€19'],
-                ['service' => 'Senior 65+',         'description' => 'Speciaal senioren tarief',                  'price' => '€22'],
+                ['service' => __('Men\'s Haircut'),   'description' => __('Scissors or clippers, including styling'),     'price' => '€27'],
+                ['service' => __('Fade / Skin Fade'),  'description' => __('Sharp fade from low to high'),                'price' => '€30'],
+                ['service' => __('Cut + Wash'),        'description' => __('Including a relaxing head massage'),           'price' => '€32'],
+                ['service' => __('Kids Cut'),          'description' => __('Up to 12 years old'),                          'price' => '€19'],
+                ['service' => __('Senior 65+'),        'description' => __('Special senior rate'),                         'price' => '€22'],
             ],
         ],
         [
-            'name'  => 'Baard & Scheren',
+            'name'  => __('Beard & Shave'),
             'items' => [
-                ['service' => 'Baard Trimmen',     'description' => 'Vormen en bijwerken van de baard',           'price' => '€22'],
-                ['service' => 'Baard Modelleren',  'description' => 'Complete baardverzorging met lijn',          'price' => '€25'],
-                ['service' => 'Hot Towel Shave',   'description' => 'Klassieke scheerbeurt met warme doeken',     'price' => '€32'],
-                ['service' => 'Scheren Gezicht',   'description' => 'Compleet glad scheren',                     'price' => '€28'],
+                ['service' => __('Beard Trim'),        'description' => __('Shape and tidy up the beard'),                 'price' => '€22'],
+                ['service' => __('Beard Sculpt'),      'description' => __('Full beard care with defined lines'),           'price' => '€25'],
+                ['service' => __('Hot Towel Shave'),   'description' => __('Classic shave with warm towels'),              'price' => '€32'],
+                ['service' => __('Face Shave'),        'description' => __('Completely smooth shave'),                     'price' => '€28'],
             ],
         ],
         [
-            'name'  => 'Combinaties',
+            'name'  => __('Combinations'),
             'items' => [
-                ['service' => 'Knippen + Baard',   'description' => 'Onze populairste behandeling',              'price' => '€45', 'popular' => true],
-                ['service' => 'The Full Package',  'description' => 'Knippen, baard, hot towel shave',            'price' => '€65'],
-                ['service' => 'Vader & Zoon',      'description' => 'Samen knippen, samen besparen',             'price' => '€40'],
+                ['service' => __('Cut + Beard'),       'description' => __('Our most popular treatment'),                  'price' => '€45', 'popular' => true],
+                ['service' => __('The Full Package'),  'description' => __('Haircut, beard, hot towel shave'),              'price' => '€65'],
+                ['service' => __('Father & Son'),      'description' => __('Cut together, save together'),                 'price' => '€40'],
             ],
         ],
     ];
@@ -64,7 +64,7 @@
         >
             <div class="flex items-center gap-4 mb-6">
                 <div class="w-10 h-px" style="background-color: {{ $primaryColor }};"></div>
-                <span class="text-xs font-bold uppercase tracking-[0.35em]" style="color: {{ $primaryColor }}; font-family: '{{ $bodyFont }}';">Tarieven</span>
+                <span class="text-xs font-bold uppercase tracking-[0.35em]" style="color: {{ $primaryColor }}; font-family: '{{ $bodyFont }}';">{{ __('Rates') }}</span>
             </div>
             <h2
                 class="font-black uppercase leading-[0.9] mb-4"
@@ -115,7 +115,7 @@
                                                 class="text-xs font-bold uppercase tracking-wider px-2 py-0.5 shrink-0"
                                                 style="background-color: {{ $primaryColor }}; color: {{ $secondaryColor }}; font-family: '{{ $bodyFont }}';"
                                             >
-                                                Populair
+                                                {{ __('Popular') }}
                                             </span>
                                         @endif
                                     </div>
@@ -148,7 +148,7 @@
             {{-- Footer note --}}
             <div class="pt-8 border-t" style="border-color: {{ $headingColor }}10;">
                 <p class="text-sm" style="color: {{ $textColor }}; font-family: '{{ $bodyFont }}';">
-                    Alle prijzen zijn inclusief BTW. Contante betaling of pin mogelijk.
+                    {{ __('All prices include VAT. Cash or card payment accepted.') }}
                 </p>
             </div>
         </div>
@@ -160,7 +160,7 @@
                 class="group inline-flex items-center gap-3 px-10 py-5 font-bold uppercase tracking-widest text-sm transition-all hover:opacity-85"
                 style="background-color: {{ $primaryColor }}; color: {{ $secondaryColor }}; font-family: '{{ $bodyFont }}';"
             >
-                Maak Afspraak
+                {{ __('Book Appointment') }}
                 <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                 </svg>

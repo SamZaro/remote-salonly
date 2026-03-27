@@ -11,8 +11,8 @@
 ])
 
 @php
-    $title = $content['title'] ?? 'Jouw Stijl, Onze Passie';
-    $subtitle = $content['subtitle'] ?? 'Professionele haarverzorging met een moderne twist';
+    $title = $content['title'] ?? __('Your Style, Our Passion');
+    $subtitle = $content['subtitle'] ?? __('Professional hair care with a modern twist');
     $backgroundImage = $section?->getFirstMediaUrl('background') ?: ($content['background_image'] ?? null);
 
     $primaryColor = $theme['primary_color'] ?? '#c9a227';
@@ -55,7 +55,7 @@
         >
             <span class="w-10 h-px" style="background-color: {{ $primaryColor }};"></span>
             <span class="uppercase text-[11px] tracking-[0.3em] font-medium" style="color: {{ $primaryColor }};">
-                Exclusief
+                {{ __('Exclusive') }}
             </span>
             <span class="w-10 h-px" style="background-color: {{ $primaryColor }};"></span>
         </div>

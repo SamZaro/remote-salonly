@@ -9,15 +9,15 @@
 ])
 
 @php
-    $title = $content['title'] ?? 'Wat Klanten Zeggen';
-    $subtitle = $content['subtitle'] ?? 'Ervaringen van onze bezoekers';
+    $title = $content['title'] ?? __('What Customers Say');
+    $subtitle = $content['subtitle'] ?? __('Experiences from our visitors');
     $rating = $content['rating'] ?? '4.9';
     $totalReviews = $content['total_reviews'] ?? '312';
     $reviews = $content['reviews'] ?? [
-        ['name' => 'Sophie van Dijk', 'date' => '1 week geleden', 'rating' => 5, 'text' => 'Absoluut de beste salon waar ik ooit ben geweest! Mijn balayage is precies wat ik wilde. Het team is professioneel en vriendelijk.', 'service' => 'Balayage'],
-        ['name' => 'Emma Bakker', 'date' => '2 weken geleden', 'rating' => 5, 'text' => 'Heerlijk ontspannen tijdens mijn behandeling. De manicure is perfect en de sfeer in de salon is geweldig.', 'service' => 'Manicure Deluxe'],
-        ['name' => 'Lisa de Groot', 'date' => '3 weken geleden', 'rating' => 5, 'text' => 'Mijn wimperextensions zijn prachtig! Ze luisteren echt naar wat je wilt en het resultaat overtreft mijn verwachtingen.', 'service' => 'Wimperextensions'],
-        ['name' => 'Anna Visser', 'date' => '1 maand geleden', 'rating' => 5, 'text' => 'De brow lamination heeft mijn ochtend routine zo veel makkelijker gemaakt. Super blij met het resultaat!', 'service' => 'Brow Lamination'],
+        ['name' => 'Sophie van Dijk', 'date' => __('1 week ago'), 'rating' => 5, 'text' => __('Absolutely the best salon I have ever been to! My balayage is exactly what I wanted. The team is professional and friendly.'), 'service' => 'Balayage'],
+        ['name' => 'Emma Bakker', 'date' => __('2 weeks ago'), 'rating' => 5, 'text' => __('Totally relaxed during my treatment. The manicure is perfect and the atmosphere in the salon is wonderful.'), 'service' => __('Deluxe Manicure')],
+        ['name' => 'Lisa de Groot', 'date' => __('3 weeks ago'), 'rating' => 5, 'text' => __('My lash extensions are beautiful! They really listen to what you want and the result exceeds my expectations.'), 'service' => __('Lash Extensions')],
+        ['name' => 'Anna Visser', 'date' => __('1 month ago'), 'rating' => 5, 'text' => __('The brow lamination has made my morning routine so much easier. Really happy with the result!'), 'service' => 'Brow Lamination'],
     ];
 
     $primaryColor = $theme['primary_color'] ?? '#E8D8D3';

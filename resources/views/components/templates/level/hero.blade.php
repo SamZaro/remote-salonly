@@ -10,9 +10,9 @@
 ])
 
 @php
-    $title = $content['title'] ?? 'Jouw Haar.<br>Jouw Verhaal.';
-    $subtitle = $content['subtitle'] ?? 'Creatief knippen met oog voor detail';
-    $ctaText = $content['cta_text'] ?? 'Maak Afspraak';
+    $title = $content['title'] ?? __('Your Hair.<br>Your Story.');
+    $subtitle = $content['subtitle'] ?? __('Creative cuts with an eye for detail');
+    $ctaText = $content['cta_text'] ?? __('Book Appointment');
     $ctaLink = $content['cta_link'] ?? '#contact';
     $backgroundImage = $section?->getFirstMediaUrl('background') ?: ($content['background_image'] ?? null);
 
@@ -51,7 +51,7 @@
                     class="text-xs font-semibold uppercase tracking-[0.3em]"
                     style="color: {{ $primaryColor }}; font-family: '{{ $bodyFont }}';"
                 >
-                    Premium Kapsalon
+                    {{ __('Premium Hair Salon') }}
                 </span>
             </div>
 
@@ -111,7 +111,7 @@
                     onmouseover="this.style.color='{{ $secondaryColor }}'"
                     onmouseout="this.style.color='#aaaaaa'"
                 >
-                    Ons verhaal
+                    {{ __('Our story') }}
                 </a>
             </div>
 
@@ -145,7 +145,7 @@
 
             {{-- Floating number indicator --}}
             <div class="absolute bottom-8 right-8 text-right">
-                <span class="block font-black text-xs uppercase tracking-widest" style="color: rgba(255,255,255,0.3); font-family: '{{ $bodyFont }}';">Kapsalon</span>
+                <span class="block font-black text-xs uppercase tracking-widest" style="color: rgba(255,255,255,0.3); font-family: '{{ $bodyFont }}';">{{ __('Hair Salon') }}</span>
                 <span class="block font-black leading-none" style="font-family: '{{ $headingFont }}'; font-size: 4rem; color: rgba(255,255,255,0.06);">01</span>
             </div>
         </div>

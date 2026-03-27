@@ -11,8 +11,8 @@
 ])
 
 @php
-    $title = $content['title'] ?? 'Vakmanschap & Stijl';
-    $subtitle = $content['subtitle'] ?? 'Al meer dan 10 jaar de beste barbershop in de regio';
+    $title = $content['title'] ?? __('Craftsmanship & Style');
+    $subtitle = $content['subtitle'] ?? __('Over 10 years the best barbershop in the region');
     $backgroundImage = $section?->getFirstMediaUrl('background') ?: ($content['background_image'] ?? null);
 
     // Theme kleuren - vintage barbershop

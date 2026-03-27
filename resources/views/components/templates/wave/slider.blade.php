@@ -10,9 +10,9 @@
 ])
 
 @php
-    $title = $content['title'] ?? 'Jouw Stijl,<br>Onze Passie';
-    $subtitle = $content['subtitle'] ?? 'Professionele haarverzorging in een ontspannen sfeer';
-    $ctaText = $content['cta_text'] ?? 'Maak Afspraak';
+    $title = $content['title'] ?? __('Your Style,') . '<br>' . __('Our Passion');
+    $subtitle = $content['subtitle'] ?? __('Professional hair care in a relaxed atmosphere');
+    $ctaText = $content['cta_text'] ?? __('Book Appointment');
     $ctaLink = $content['cta_link'] ?? '#contact';
     $autoplay = (bool) ($content['autoplay'] ?? true);
     $interval = (int) ($content['interval'] ?? 5000);
@@ -123,7 +123,7 @@
                 class="inline-block px-5 py-2 text-[11px] uppercase tracking-[0.25em] font-medium rounded-full"
                 style="color: {{ $backgroundColor }}; background: {{ $primaryColor }}25; border: 1px solid {{ $primaryColor }}40; backdrop-filter: blur(8px);"
             >
-                Kapsalon & Hairstyling
+                {{ __('Hair Salon & Styling') }}
             </span>
         </div>
 
@@ -172,7 +172,7 @@
                 class="inline-flex items-center justify-center px-8 py-4 text-sm font-medium tracking-wide rounded-full transition-all duration-300 hover:bg-white/10"
                 style="color: {{ $backgroundColor }}; border: 1px solid {{ $backgroundColor }}30;"
             >
-                Bekijk diensten
+                {{ __('View services') }}
             </a>
         </div>
     </div>
@@ -183,7 +183,7 @@
             class="absolute left-4 sm:left-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
             style="background: {{ $backgroundColor }}15; border: 1px solid {{ $backgroundColor }}20; color: {{ $backgroundColor }}; backdrop-filter: blur(8px);"
             @click="prevSlide()"
-            aria-label="Vorige slide"
+            aria-label="{{ __('Previous slide') }}"
         >
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 19l-7-7 7-7"/>
@@ -193,7 +193,7 @@
             class="absolute right-4 sm:right-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
             style="background: {{ $backgroundColor }}15; border: 1px solid {{ $backgroundColor }}20; color: {{ $backgroundColor }}; backdrop-filter: blur(8px);"
             @click="nextSlide()"
-            aria-label="Volgende slide"
+            aria-label="{{ __('Next slide') }}"
         >
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7"/>
@@ -209,7 +209,7 @@
                     class="relative h-1 rounded-full overflow-hidden transition-all duration-300"
                     :style="currentSlide === {{ $index }} ? 'width: 2.5rem; background: {{ $backgroundColor }}20;' : 'width: 1rem; background: {{ $backgroundColor }}15;'"
                     @click="goToSlide({{ $index }})"
-                    aria-label="Ga naar slide {{ $index + 1 }}"
+                    aria-label="{{ __('Go to slide') }} {{ $index + 1 }}"
                 >
                     <span
                         class="absolute inset-y-0 left-0 rounded-full"
@@ -248,7 +248,7 @@
                 class="inline-block px-5 py-2 text-[11px] uppercase tracking-[0.25em] font-medium rounded-full"
                 style="color: {{ $backgroundColor }}; background: {{ $primaryColor }}25; border: 1px solid {{ $primaryColor }}40;"
             >
-                Kapsalon & Hairstyling
+                {{ __('Hair Salon & Styling') }}
             </span>
         </div>
 

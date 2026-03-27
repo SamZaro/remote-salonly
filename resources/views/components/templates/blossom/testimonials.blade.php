@@ -11,37 +11,37 @@
 
 @php
     // Content met defaults
-    $title = $content['title'] ?? 'Wat Onze Klanten Zeggen';
-    $subtitle = $content['subtitle'] ?? 'Beoordeeld met 4.9 sterren door onze lovely clients';
+    $title = $content['title'] ?? __('What Our Customers Say');
+    $subtitle = $content['subtitle'] ?? __('Rated 4.9 stars by our lovely clients');
     $rating = $content['rating'] ?? '4.9';
     $totalReviews = $content['total_reviews'] ?? '312';
     $reviews = $content['reviews'] ?? [
         [
             'name' => 'Sophie van Dijk',
-            'date' => '1 week geleden',
+            'date' => __('1 week ago'),
             'rating' => 5,
-            'text' => 'Absoluut de beste salon waar ik ooit ben geweest! Mijn balayage is precies wat ik wilde. Het team is zo lief en professioneel.',
+            'text' => __('Absolutely the best salon I have ever been to! My balayage is exactly what I wanted. The team is so warm and professional.'),
             'service' => 'Balayage',
         ],
         [
             'name' => 'Emma Bakker',
-            'date' => '2 weken geleden',
+            'date' => __('2 weeks ago'),
             'rating' => 5,
-            'text' => 'Heerlijk ontspannen tijdens mijn behandeling. De manicure is perfect en de sfeer in de salon is geweldig. Aanrader!',
-            'service' => 'Manicure Deluxe',
+            'text' => __('So relaxing during my treatment. The manicure is perfect and the atmosphere in the salon is wonderful. Highly recommended!'),
+            'service' => __('Deluxe Manicure'),
         ],
         [
             'name' => 'Lisa de Groot',
-            'date' => '3 weken geleden',
+            'date' => __('3 weeks ago'),
             'rating' => 5,
-            'text' => 'Mijn wimperextensions zijn prachtig! Ze luisteren echt naar wat je wilt en het resultaat overtreft elke keer mijn verwachtingen.',
-            'service' => 'Wimperextensions',
+            'text' => __('My lash extensions are gorgeous! They really listen to what you want and the result exceeds my expectations every time.'),
+            'service' => __('Lash Extensions'),
         ],
         [
             'name' => 'Anna Visser',
-            'date' => '1 maand geleden',
+            'date' => __('1 month ago'),
             'rating' => 5,
-            'text' => 'De brow lamination heeft mijn ochtend routine zo veel makkelijker gemaakt. Super blij met het resultaat en de service!',
+            'text' => __('The brow lamination has made my morning routine so much easier. Really happy with the result and the service!'),
             'service' => 'Brow Lamination',
         ],
     ];
@@ -187,7 +187,7 @@
                 class="inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:shadow-lg"
                 style="background: linear-gradient(135deg, {{ $primaryColor }}15, {{ $secondaryColor }}15); color: {{ $primaryColor }};"
             >
-                Word ook een happy client
+                {{ __('Become a happy client too') }}
                 <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
                 </svg>

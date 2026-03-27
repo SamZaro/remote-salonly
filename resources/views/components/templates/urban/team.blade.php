@@ -10,8 +10,8 @@
 ])
 
 @php
-    $title        = $content['title'] ?? 'Ons Team';
-    $subtitle     = $content['subtitle'] ?? 'De mannen achter de schaar';
+    $title        = $content['title'] ?? __('Our Team');
+    $subtitle     = $content['subtitle'] ?? __('The men behind the scissors');
     $members      = $content['members'] ?? [];
     $memberPhotos = $section?->getMedia('images') ?? collect();
 
@@ -115,7 +115,7 @@
             </div>
         @else
             <p class="text-base" style="color: {{ $textColor }}; font-family: '{{ $bodyFont }}';">
-                {{ __('Voeg teamleden toe via het dashboard.') }}
+                {{ __('Add team members via the dashboard.') }}
             </p>
         @endif
 
@@ -126,7 +126,7 @@
                 class="group inline-flex items-center gap-3 font-bold uppercase tracking-widest text-sm transition-colors"
                 style="color: {{ $headingColor }}; font-family: '{{ $bodyFont }}';"
             >
-                Maak een afspraak
+                {{ __('Book an appointment') }}
                 <span class="w-8 h-px transition-all duration-300 group-hover:w-14" style="background-color: {{ $primaryColor }};"></span>
             </a>
         </div>

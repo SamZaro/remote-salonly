@@ -12,14 +12,14 @@
 
 @php
     // Content met defaults
-    $title = $content['title'] ?? 'Ons Verhaal';
-    $subtitle = $content['subtitle'] ?? 'Een passie voor perfectie';
-    $description = $content['description'] ?? 'Met meer dan vijftien jaar ervaring in de beauty industrie, creëren wij een verfijnde ervaring waar elke behandeling een moment van pure luxe is. Ons team van experts combineert vakmanschap met de nieuwste technieken.';
+    $title = $content['title'] ?? __('Our Story');
+    $subtitle = $content['subtitle'] ?? __('A passion for perfection');
+    $description = $content['description'] ?? __('With over fifteen years of experience in the beauty industry, we create a refined experience where every treatment is a moment of pure luxury. Our team of experts combines craftsmanship with the latest techniques.');
     $image = $section?->getFirstMediaUrl('background') ?: ($content['image'] ?? null);
     $items = $content['items'] ?? [
-        ['title' => 'Expertise', 'description' => 'Gecertificeerde specialisten', 'icon' => 'star'],
-        ['title' => 'Kwaliteit', 'description' => 'Premium producten', 'icon' => 'heart'],
-        ['title' => 'Ervaring', 'description' => 'Persoonlijke aandacht', 'icon' => 'sparkles'],
+        ['title' => __('Expertise'), 'description' => __('Certified specialists'), 'icon' => 'star'],
+        ['title' => __('Quality'), 'description' => __('Premium products'), 'icon' => 'heart'],
+        ['title' => __('Experience'), 'description' => __('Personal attention'), 'icon' => 'sparkles'],
     ];
 
     // Theme kleuren - Soft Luxury palette
@@ -53,7 +53,7 @@
                         {{-- Main image --}}
                         <img
                             src="{{ $image }}"
-                            alt="Over ons"
+                            alt="{{ __('About us') }}"
                             class="relative w-full h-[500px] lg:h-[600px] object-cover"
                         />
                         {{-- Decoratieve lijnen --}}
@@ -81,7 +81,7 @@
                         style="background-color: {{ $secondaryColor }};"
                     >
                         <span class="text-3xl font-light text-white" style="font-family: '{{ $headingFont }}', Georgia, serif;">15+</span>
-                        <span class="text-xs uppercase tracking-widest text-white opacity-80">Jaren</span>
+                        <span class="text-xs uppercase tracking-widest text-white opacity-80">{{ __('Years') }}</span>
                     </div>
                 </div>
             </div>
@@ -94,7 +94,7 @@
                 {{-- Section label --}}
                 <div class="flex items-center gap-4 mb-8">
                     <div class="w-10 h-px" style="background-color: {{ $secondaryColor }}40;"></div>
-                    <span class="text-xs font-medium uppercase tracking-[0.3em]" style="color: {{ $secondaryColor }};">Over Ons</span>
+                    <span class="text-xs font-medium uppercase tracking-[0.3em]" style="color: {{ $secondaryColor }};">{{ __('About Us') }}</span>
                 </div>
 
                 {{-- Title --}}
@@ -149,7 +149,7 @@
                     class="inline-flex items-center gap-3 text-sm font-medium uppercase tracking-widest transition-all duration-300 group"
                     style="color: {{ $secondaryColor }};"
                 >
-                    <span class="border-b" style="border-color: {{ $secondaryColor }};">Maak kennis</span>
+                    <span class="border-b" style="border-color: {{ $secondaryColor }};">{{ __('Get to know us') }}</span>
                     <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                     </svg>

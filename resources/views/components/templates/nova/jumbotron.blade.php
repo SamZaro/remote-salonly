@@ -11,9 +11,9 @@
 ])
 
 @php
-    $title = $content['title'] ?? 'Klaar om te beginnen?';
-    $subtitle = $content['subtitle'] ?? 'Neem vandaag nog contact met ons op';
-    $ctaText = $content['cta_text'] ?? 'Neem contact op';
+    $title = $content['title'] ?? __('Ready to get started?');
+    $subtitle = $content['subtitle'] ?? __('Contact us today');
+    $ctaText = $content['cta_text'] ?? __('Get in touch');
     $ctaLink = $content['cta_link'] ?? '#contact';
     $backgroundImage = $section?->getFirstMediaUrl('background') ?: ($content['background_image'] ?? null);
 

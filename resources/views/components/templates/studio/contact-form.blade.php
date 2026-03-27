@@ -93,7 +93,7 @@
                                 class="px-5 py-2.5 rounded-full text-sm font-bold transform rotate-1"
                                 style="background-color: {{ $primaryColor }}; color: #ffffff;"
                             >
-                                {{ __('Snel antwoord') }}
+                                {{ __('Quick response') }}
                             </div>
                             <div
                                 class="px-5 py-2.5 rounded-full text-sm font-bold transform -rotate-1"

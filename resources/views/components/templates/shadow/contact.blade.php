@@ -11,7 +11,7 @@
 
 @php
     $title = $content['title'] ?? 'Contact';
-    $subtitle = $content['subtitle'] ?? 'Neem contact op';
+    $subtitle = $content['subtitle'] ?? __('Get in touch');
     $featuredImage = $section?->getFirstMediaUrl('background') ?: null;
 
     // Theme kleuren met defaults (zelfde als andere Shadow sections)
@@ -112,7 +112,7 @@
                     @endif
                 </div>
                 <h3 class="text-lg font-bold mb-6" style="color: {{ $textColor }};">
-                    Volg ons
+                    {{ __('Follow us') }}
                 </h3>
                 {{-- Social icons --}}
                 <div class="flex items-center justify-center gap-4">

@@ -26,7 +26,7 @@
     $address = $content['address'] ?? '';
     $phone = $content['phone'] ?? '';
     $email = $content['email'] ?? '';
-    $copyright = $content['copyright'] ?? '© ' . date('Y') . ' ' . $companyName . '. Alle rechten voorbehouden.';
+    $copyright = $content['copyright'] ?? '© ' . date('Y') . ' ' . $companyName . '. ' . __('All rights reserved.');
 
     $socialLinks = $content['social_links'] ?? [];
     $facebookUrl = $socialLinks['facebook'] ?? '#';
@@ -73,7 +73,7 @@
                     class="text-xs font-bold uppercase tracking-[0.25em] mb-6"
                     style="color: {{ $primaryColor }}; font-family: '{{ $bodyFont }}', sans-serif;"
                 >
-                    Navigatie
+                    {{ __('Navigation') }}
                 </h4>
                 <ul class="space-y-4">
                     @foreach($navigation as $item)
@@ -102,13 +102,13 @@
                 <ul class="space-y-5">
                     @if($address)
                         <li>
-                            <span class="text-xs font-bold uppercase tracking-wider block mb-1" style="color: {{ $primaryColor }}; font-family: '{{ $bodyFont }}', sans-serif;">Adres</span>
+                            <span class="text-xs font-bold uppercase tracking-wider block mb-1" style="color: {{ $primaryColor }}; font-family: '{{ $bodyFont }}', sans-serif;">{{ __('Address') }}</span>
                             <span class="text-base leading-relaxed" style="color: rgba(255,255,255,0.70); font-family: '{{ $bodyFont }}', sans-serif;">{{ $address }}</span>
                         </li>
                     @endif
                     @if($phone)
                         <li>
-                            <span class="text-xs font-bold uppercase tracking-wider block mb-1" style="color: {{ $primaryColor }}; font-family: '{{ $bodyFont }}', sans-serif;">Telefoon</span>
+                            <span class="text-xs font-bold uppercase tracking-wider block mb-1" style="color: {{ $primaryColor }}; font-family: '{{ $bodyFont }}', sans-serif;">{{ __('Phone') }}</span>
                             <a
                                 href="tel:{{ preg_replace('/[^0-9+]/', '', $phone) }}"
                                 class="text-base transition-opacity hover:opacity-50"
@@ -120,7 +120,7 @@
                     @endif
                     @if($email)
                         <li>
-                            <span class="text-xs font-bold uppercase tracking-wider block mb-1" style="color: {{ $primaryColor }}; font-family: '{{ $bodyFont }}', sans-serif;">E-mail</span>
+                            <span class="text-xs font-bold uppercase tracking-wider block mb-1" style="color: {{ $primaryColor }}; font-family: '{{ $bodyFont }}', sans-serif;">{{ __('Email') }}</span>
                             <a
                                 href="mailto:{{ $email }}"
                                 class="text-base transition-opacity hover:opacity-50"
@@ -140,7 +140,7 @@
                     class="text-xs font-bold uppercase tracking-[0.25em] mb-6"
                     style="color: {{ $primaryColor }}; font-family: '{{ $bodyFont }}', sans-serif;"
                 >
-                    Volg ons
+                    {{ __('Follow us') }}
                 </h4>
 
                 <div class="flex items-center gap-3">
@@ -218,7 +218,7 @@
                 class="text-xs"
                 style="color: rgba(255,255,255,0.18); font-family: '{{ $bodyFont }}', sans-serif;"
             >
-                Alleen biologische producten
+                {{ __('Only organic products') }}
             </p>
         </div>
     </div>

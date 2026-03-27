@@ -10,10 +10,10 @@
 ])
 
 @php
-    $title = $content['title'] ?? 'Over Onze Salon';
-    $subtitle = $content['subtitle'] ?? 'Waar vakmanschap en persoonlijke aandacht samenkomen';
-    $description = $content['description'] ?? 'Wij geloven dat iedereen verdient om zich goed te voelen. Onze salon is een plek waar je kunt ontspannen en jezelf kunt laten verwennen door ervaren vakmensen.';
-    $description2 = $content['description2'] ?? 'Met de juiste technieken en kwalitatieve producten zorgen we ervoor dat je altijd met een goed gevoel naar huis gaat.';
+    $title = $content['title'] ?? __('About Our Salon');
+    $subtitle = $content['subtitle'] ?? __('Where craftsmanship and personal attention come together');
+    $description = $content['description'] ?? __('We believe everyone deserves to feel great. Our salon is a place where you can relax and be pampered by experienced professionals.');
+    $description2 = $content['description2'] ?? __('With the right techniques and quality products we make sure you always leave feeling wonderful.');
     $image = $section?->getFirstMediaUrl('background') ?: ($content['image'] ?? null);
 
     $primaryColor = $theme['primary_color'] ?? '#E8D8D3';
@@ -38,7 +38,7 @@
                 @if($image)
                     <img
                         src="{{ $image }}"
-                        alt="Over ons"
+                        alt="{{ __('About us') }}"
                         class="w-full h-[460px] lg:h-[560px] object-cover"
                         style="border-radius: 12px;"
                     />
@@ -64,7 +64,7 @@
                     class="text-xs font-semibold uppercase tracking-[0.2em] mb-4 block"
                     style="color: {{ $secondaryColor }};"
                 >
-                    Over Ons
+                    {{ __('About Us') }}
                 </span>
 
                 <h2
@@ -90,7 +90,7 @@
                     class="inline-flex items-center text-sm font-semibold tracking-wide uppercase transition-opacity hover:opacity-70"
                     style="color: {{ $secondaryColor }};"
                 >
-                    Neem contact op
+                    {{ __('Contact us') }}
                     <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                     </svg>

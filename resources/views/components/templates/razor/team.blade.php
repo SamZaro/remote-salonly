@@ -11,8 +11,8 @@
 ])
 
 @php
-    $title = $content['title'] ?? 'Ons Team';
-    $subtitle = $content['subtitle'] ?? 'De mannen achter de schaar';
+    $title = $content['title'] ?? __('Our Team');
+    $subtitle = $content['subtitle'] ?? __('The men behind the scissors');
     $members = $content['members'] ?? [];
 
     $memberPhotos = $section?->getMedia('images') ?? collect();
@@ -115,7 +115,7 @@
             </div>
         @else
             <p class="text-center" style="color: {{ $textColor }};">
-                {{ __('Voeg teamleden toe via het dashboard.') }}
+                {{ __('Add team members via the dashboard.') }}
             </p>
         @endif
 
@@ -126,7 +126,7 @@
                 class="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest transition-colors hover:opacity-80"
                 style="color: {{ $primaryColor }};"
             >
-                Maak een afspraak
+                {{ __('Make an appointment') }}
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                 </svg>

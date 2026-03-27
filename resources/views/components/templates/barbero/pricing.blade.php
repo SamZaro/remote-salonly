@@ -11,39 +11,39 @@
 
 @php
     // Content met defaults
-    $title = $content['title'] ?? 'Prijslijst';
-    $subtitle = $content['subtitle'] ?? 'Eerlijke prijzen voor premium service';
+    $title = $content['title'] ?? __('Price List');
+    $subtitle = $content['subtitle'] ?? __('Fair prices for premium service');
     $items = $content['items'] ?? [
         [
-            'service' => 'Knippen',
+            'service' => __('Haircut'),
             'price' => '€25',
-            'description' => 'Inclusief wassen en stylen',
+            'description' => __('Includes wash and styling'),
         ],
         [
-            'service' => 'Baard Trim',
+            'service' => __('Beard Trim'),
             'price' => '€18',
-            'description' => 'Perfecte lijnen en vorm',
+            'description' => __('Perfect lines and shape'),
         ],
         [
-            'service' => 'Knippen + Baard',
+            'service' => __('Haircut + Beard'),
             'price' => '€38',
-            'description' => 'Complete behandeling',
+            'description' => __('Complete treatment'),
             'popular' => true,
         ],
         [
-            'service' => 'Hot Towel Shave',
+            'service' => __('Hot Towel Shave'),
             'price' => '€30',
-            'description' => 'Luxe scheerervaring',
+            'description' => __('Luxury shaving experience'),
         ],
         [
-            'service' => 'Kids Knippen',
+            'service' => __('Kids Haircut'),
             'price' => '€18',
-            'description' => 'Tot 12 jaar',
+            'description' => __('Up to 12 years'),
         ],
         [
-            'service' => 'Senior Knippen',
+            'service' => __('Senior Haircut'),
             'price' => '€20',
-            'description' => '65+ korting',
+            'description' => __('65+ discount'),
         ],
     ];
 
@@ -126,7 +126,7 @@
                                     </h3>
                                     @if($isPopular)
                                         <span class="text-xs font-bold uppercase px-2 py-0.5" style="background-color: {{ $primaryColor }}; color: {{ $secondaryColor }};">
-                                            Populair
+                                            {{ __('Popular') }}
                                         </span>
                                     @endif
                                 </div>
@@ -162,7 +162,7 @@
                 class="inline-flex items-center justify-center px-10 py-5 text-sm font-bold uppercase tracking-widest transition-all duration-300 hover:scale-105"
                 style="background-color: {{ $primaryColor }}; color: {{ $secondaryColor }};"
             >
-                Boek Nu
+                {{ __('Book Now') }}
             </a>
         </div>
     </div>

@@ -12,10 +12,10 @@
 @php
     // Content met defaults
     $title = $content['title'] ?? 'Ready For Your Glow Up?';
-    $description = $content['description'] ?? 'Book vandaag nog en laat ons jouw nieuwe signature look creëren!';
-    $ctaText = $content['cta_text'] ?? 'Book Nu';
+    $description = $content['description'] ?? __('Book today and let us create your new signature look!');
+    $ctaText = $content['cta_text'] ?? __('Book Now');
     $ctaLink = $content['cta_link'] ?? '#contact';
-    $secondaryCtaText = $content['secondary_cta_text'] ?? 'Volg ons op Instagram';
+    $secondaryCtaText = $content['secondary_cta_text'] ?? __('Follow us on Instagram');
     $secondaryCtaLink = $content['secondary_cta_link'] ?? '#';
 
     // Theme kleuren - dynamisch met Peach defaults

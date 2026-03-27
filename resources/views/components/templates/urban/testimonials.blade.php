@@ -9,15 +9,15 @@
 ])
 
 @php
-    $title        = $content['title'] ?? 'Wat Klanten Zeggen';
-    $subtitle     = $content['subtitle'] ?? 'Beoordeeld met 4.9 sterren op Google';
+    $title        = $content['title'] ?? __('What Customers Say');
+    $subtitle     = $content['subtitle'] ?? __('Rated 4.9 stars on Google');
     $googleRating = $content['google_rating'] ?? '4.9';
     $totalReviews = $content['total_reviews'] ?? '127';
     $reviews      = $content['reviews'] ?? [
-        ['name' => 'Mark de Vries',    'date' => '2 weken geleden',  'rating' => 5, 'text' => 'Eindelijk een barber die begrijpt wat ik wil. De fade is perfect en de sfeer is super relaxed. Kom hier al een jaar en ga nergens anders meer heen.'],
-        ['name' => 'Thomas Bakker',    'date' => '1 maand geleden',  'rating' => 5, 'text' => 'Top barbershop! De hot towel shave is echt een ervaring. Ze nemen de tijd en doen hun werk met passie. Aanrader!'],
-        ['name' => 'Kevin Jansen',     'date' => '1 maand geleden',  'rating' => 5, 'text' => 'Beste barbershop in de buurt. Altijd vriendelijk, professioneel en het resultaat is elke keer weer top. Prijs-kwaliteit is uitstekend.'],
-        ['name' => 'Rick Smits',       'date' => '2 maanden geleden','rating' => 5, 'text' => 'Ga hier nu een half jaar en ben super tevreden. Ze onthouden hoe je het wilt en de baard trim is precies goed. Echte vakmannen!'],
+        ['name' => 'Mark de Vries',  'date' => __('2 weeks ago'),  'rating' => 5, 'text' => __('Finally a barber who gets exactly what I want. The fade is perfect and the vibe is super relaxed. Been coming here for a year and not going anywhere else.')],
+        ['name' => 'Thomas Bakker',  'date' => __('1 month ago'),  'rating' => 5, 'text' => __('Great barbershop! The hot towel shave is a real experience. They take their time and do their work with passion. Highly recommended!')],
+        ['name' => 'Kevin Jansen',   'date' => __('1 month ago'),  'rating' => 5, 'text' => __('Best barbershop in the area. Always friendly, professional, and the result is top notch every time. Excellent value for money.')],
+        ['name' => 'Rick Smits',     'date' => __('2 months ago'), 'rating' => 5, 'text' => __('Been coming here for six months and absolutely love it. They remember how you like it and the beard trim is always spot on. Real craftsmen!')],
     ];
 
     $primaryColor    = $theme['primary_color'] ?? '#C8B88A';
@@ -127,7 +127,7 @@
                 class="group inline-flex items-center gap-3 font-bold uppercase tracking-widest text-sm transition-colors"
                 style="color: {{ $headingColor }}; font-family: '{{ $bodyFont }}';"
             >
-                Bekijk alle reviews op Google
+                {{ __('View all reviews on Google') }}
                 <span class="w-8 h-px transition-all duration-300 group-hover:w-14" style="background-color: {{ $primaryColor }};"></span>
             </a>
         </div>

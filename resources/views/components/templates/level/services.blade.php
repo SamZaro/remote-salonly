@@ -9,15 +9,15 @@
 ])
 
 @php
-    $title    = $content['title'] ?? 'Onze Diensten';
-    $subtitle = $content['subtitle'] ?? 'Voor elk haar, elke stijl';
+    $title    = $content['title'] ?? __('Our Services');
+    $subtitle = $content['subtitle'] ?? __('For every hair, every style');
     $items    = $content['items'] ?? [
-        ['title' => 'Dames Knippen',      'description' => 'Maatwerkknipbeurt met styling',          'price' => '€45', 'icon' => 'scissors'],
-        ['title' => 'Heren Knippen',      'description' => 'Klassiek of modern — altijd scherp',      'price' => '€27', 'icon' => 'razor'],
-        ['title' => 'Föhnen & Stylen',    'description' => 'Professioneel föhnen voor jouw look',      'price' => '€22', 'icon' => 'towel'],
-        ['title' => 'Verven & Highlights','description' => 'Kleuradvies en behandeling op maat',      'price' => '€65', 'icon' => 'color'],
-        ['title' => 'Behandeling',        'description' => 'Intensieve haar- en hoofdhuidverzorging',  'price' => '€35', 'icon' => 'sparkles'],
-        ['title' => 'Kinderen',           'description' => 'Knippen voor de jongste klanten (t/m 12)','price' => '€19', 'icon' => 'child'],
+        ['title' => __('Women\'s Cut'),      'description' => __('Tailored haircut with styling'),            'price' => '€45', 'icon' => 'scissors'],
+        ['title' => __('Men\'s Cut'),        'description' => __('Classic or modern — always sharp'),         'price' => '€27', 'icon' => 'razor'],
+        ['title' => __('Blow-dry & Style'),  'description' => __('Professional blow-dry for your look'),      'price' => '€22', 'icon' => 'towel'],
+        ['title' => __('Colour & Highlights'),'description' => __('Colour advice and custom treatment'),      'price' => '€65', 'icon' => 'color'],
+        ['title' => __('Treatment'),         'description' => __('Intensive hair and scalp care'),             'price' => '€35', 'icon' => 'sparkles'],
+        ['title' => __('Children'),          'description' => __('Haircut for youngest clients (up to 12)'),  'price' => '€19', 'icon' => 'child'],
     ];
 
     $primaryColor    = $theme['primary_color'] ?? '#f97316';
@@ -52,7 +52,7 @@
             <div>
                 <div class="flex items-center gap-3 mb-6">
                     <div class="w-9 h-1 shrink-0" style="background-color: {{ $primaryColor }};"></div>
-                    <span class="text-xs font-semibold uppercase tracking-[0.3em]" style="color: {{ $primaryColor }}; font-family: '{{ $bodyFont }}';">Wat wij bieden</span>
+                    <span class="text-xs font-semibold uppercase tracking-[0.3em]" style="color: {{ $primaryColor }}; font-family: '{{ $bodyFont }}';">{{ __('What we offer') }}</span>
                 </div>
                 <h2
                     class="font-black leading-[0.9]"
@@ -66,7 +66,7 @@
                 class="group inline-flex items-center gap-3 text-sm font-semibold uppercase tracking-widest shrink-0 transition-colors"
                 style="color: {{ $primaryColor }}; font-family: '{{ $bodyFont }}';"
             >
-                Volledige prijslijst
+                {{ __('Full price list') }}
                 <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                 </svg>
@@ -124,7 +124,7 @@
 
         {{-- Note --}}
         <p class="mt-8 text-sm font-light" style="color: rgba(255,255,255,0.35); font-family: '{{ $bodyFont }}';">
-            Alle prijzen zijn inclusief BTW. Vraag naar onze combideals.
+            {{ __('All prices include VAT. Ask about our combination deals.') }}
         </p>
     </div>
 </section>

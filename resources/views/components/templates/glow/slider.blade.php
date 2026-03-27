@@ -10,9 +10,9 @@
 ])
 
 @php
-    $title = $content['title'] ?? 'Mooi haar begint<br>bij vakmanschap';
-    $subtitle = $content['subtitle'] ?? 'Persoonlijke haarverzorging en beauty in een ontspannen sfeer';
-    $ctaText = $content['cta_text'] ?? 'Maak een afspraak';
+    $title = $content['title'] ?? __('Beautiful hair starts<br>with craftsmanship');
+    $subtitle = $content['subtitle'] ?? __('Personal hair care and beauty in a relaxed atmosphere');
+    $ctaText = $content['cta_text'] ?? __('Make an Appointment');
     $ctaLink = $content['cta_link'] ?? '#contact';
     $autoplay = (bool) ($content['autoplay'] ?? true);
     $interval = (int) ($content['interval'] ?? 5000);
@@ -92,7 +92,7 @@
                         class="inline-flex items-center justify-center px-8 py-4 text-sm font-semibold tracking-wide uppercase transition-all duration-300 hover:opacity-70"
                         style="color: {{ $secondaryColor }}; border: 1.5px solid {{ $secondaryColor }}40; border-radius: 6px;"
                     >
-                        Onze services
+                        {{ __('Our services') }}
                     </a>
                 </div>
             </div>

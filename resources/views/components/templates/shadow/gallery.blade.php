@@ -10,8 +10,8 @@
 ])
 
 @php
-    $title = $content['title'] ?? 'Portfolio';
-    $subtitle = $content['subtitle'] ?? 'Onze creaties';
+    $title = $content['title'] ?? __('Portfolio');
+    $subtitle = $content['subtitle'] ?? __('Our creations');
     $images = $section?->getMedia('images') ?? collect();
 
     // Theme kleuren met defaults
@@ -34,7 +34,7 @@
                 class="inline-block px-4 py-1 text-sm font-semibold uppercase tracking-wider rounded-sm mb-4"
                 style="background-color: {{ $primaryColor }}20; color: {{ $primaryColor }};"
             >
-                Ons Werk
+                {{ __('Our Work') }}
             </span>
             <h2
                 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4"

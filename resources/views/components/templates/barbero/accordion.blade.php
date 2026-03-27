@@ -11,13 +11,13 @@
 ])
 
 @php
-    $title = $content['title'] ?? 'Veelgestelde Vragen';
-    $subtitle = $content['subtitle'] ?? 'Alles wat je wilt weten';
+    $title = $content['title'] ?? __('Frequently Asked Questions');
+    $subtitle = $content['subtitle'] ?? __('Everything you want to know');
     $items = $content['items'] ?? [
-        ['question' => 'Moet ik vooraf reserveren?', 'answer' => 'Reserveren is aan te raden maar niet verplicht. Walk-ins zijn welkom, maar met een reservering ben je verzekerd van je plek.'],
-        ['question' => 'Hoe lang duurt een knipbeurt?', 'answer' => 'Een standaard knipbeurt duurt ongeveer 30-45 minuten. Voor een complete behandeling met scheren moet je rekenen op 60-75 minuten.'],
-        ['question' => 'Welke betaalmethodes accepteren jullie?', 'answer' => 'We accepteren pin, contant en de meeste creditcards. Contactloos betalen is ook mogelijk.'],
-        ['question' => 'Bieden jullie ook baardverzorging aan?', 'answer' => 'Jazeker! We zijn gespecialiseerd in baardtrimmen, scheren met een klassiek mes en complete baardverzorging.'],
+        ['question' => __('Do I need to book in advance?'), 'answer' => __('Booking is recommended but not required. Walk-ins are welcome, but with a reservation you are guaranteed your spot.')],
+        ['question' => __('How long does a haircut take?'), 'answer' => __('A standard haircut takes about 30 to 45 minutes. For a complete treatment including a shave, plan for 60 to 75 minutes.')],
+        ['question' => __('What payment methods do you accept?'), 'answer' => __('We accept card, cash, and most credit cards. Contactless payment is also available.')],
+        ['question' => __('Do you also offer beard care?'), 'answer' => __('Absolutely! We specialize in beard trimming, straight razor shaves, and complete beard care.')],
     ];
 
     // Theme kleuren - vintage barbershop

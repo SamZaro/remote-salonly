@@ -5,34 +5,34 @@
 
 @php
     // Content met defaults
-    $title = $content['title'] ?? 'Wat Klanten Zeggen';
-    $subtitle = $content['subtitle'] ?? 'Beoordeeld met 4.9 sterren op Google';
+    $title = $content['title'] ?? __('What Customers Say');
+    $subtitle = $content['subtitle'] ?? __('Rated 4.9 stars on Google');
     $googleRating = $content['google_rating'] ?? '4.6';
     $totalReviews = $content['total_reviews'] ?? '50';
     $reviews = $content['reviews'] ?? [
         [
             'name' => 'Johan de Jong',
-            'date' => '2 weken geleden',
+            'date' => __('2 weeks ago'),
             'rating' => 5,
-            'text' => 'Fijne kapper, vriendelijke eigenaar, knipt lekker vlot en vakkundig.',
+            'text' => __('Great barber, friendly owner, cuts quickly and skillfully.'),
         ],
         [
             'name' => 'Maarten Oortman',
-            'date' => '1 maand geleden',
+            'date' => __('1 month ago'),
             'rating' => 5,
-            'text' => 'Goede kappers en vriendelijke service. Hier kom je niet alleen voor een goed kapsel maar ook voor de gezelligheid.',
+            'text' => __('Good barbers and friendly service. You come here not just for a great haircut but also for the atmosphere.'),
         ],
         [
             'name' => 'Bas van Os',
-            'date' => '1 maand geleden',
+            'date' => __('1 month ago'),
             'rating' => 5,
-            'text' => 'De beste kapper in huizen echt een aanrader',
+            'text' => __('The best barber in the area, highly recommended.'),
         ],
         [
             'name' => 'Claudia Boonstra',
-            'date' => '12 maanden geleden',
+            'date' => __('12 months ago'),
             'rating' => 5,
-            'text' => 'Goede kapper, binnen no time mijn 2 jongens geknipt. En nog een gezellige babbel ook!',
+            'text' => __('Great barber, had my 2 boys done in no time. And a nice chat too!'),
         ],
     ];
 

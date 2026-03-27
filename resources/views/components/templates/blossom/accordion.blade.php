@@ -11,13 +11,13 @@
 ])
 
 @php
-    $title = $content['title'] ?? 'Veelgestelde Vragen';
-    $subtitle = $content['subtitle'] ?? 'We helpen je graag';
+    $title = $content['title'] ?? __('Frequently Asked Questions');
+    $subtitle = $content['subtitle'] ?? __('We are happy to help');
     $items = $content['items'] ?? [
-        ['question' => 'Moet ik vooraf reserveren?', 'answer' => 'Reserveren is aan te raden om teleurstelling te voorkomen. Je kunt online of telefonisch een afspraak maken.'],
-        ['question' => 'Hoe lang duurt een behandeling?', 'answer' => 'Dit varieert per behandeling. Een gezichtsbehandeling duurt ongeveer 60-90 minuten, een manicure 45 minuten.'],
-        ['question' => 'Gebruiken jullie natuurlijke producten?', 'answer' => 'Ja, we werken uitsluitend met hoogwaardige, natuurlijke en dierproefvrije producten voor het beste resultaat.'],
-        ['question' => 'Kan ik cadeaubonnen kopen?', 'answer' => 'Absoluut! Onze cadeaubonnen zijn het perfecte cadeau en zijn verkrijgbaar in elke gewenste waarde.'],
+        ['question' => __('Do I need to book in advance?'), 'answer' => __('Booking ahead is recommended to avoid disappointment. You can make an appointment online or by phone.')],
+        ['question' => __('How long does a treatment take?'), 'answer' => __('This varies per treatment. A facial takes about 60-90 minutes, a manicure around 45 minutes.')],
+        ['question' => __('Do you use natural products?'), 'answer' => __('Yes, we work exclusively with high-quality, natural and cruelty-free products for the best results.')],
+        ['question' => __('Can I buy gift vouchers?'), 'answer' => __('Absolutely! Our gift vouchers are the perfect present and are available in any value you choose.')],
     ];
 
     // Theme kleuren - luxury beauty salon

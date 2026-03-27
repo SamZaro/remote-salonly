@@ -11,25 +11,25 @@
 
 @php
     // Content met defaults
-    $title = $content['title'] ?? 'Wat Onze Klanten Zeggen';
-    $subtitle = $content['subtitle'] ?? 'Echte verhalen van echte gentlemen';
+    $title = $content['title'] ?? __('What Our Customers Say');
+    $subtitle = $content['subtitle'] ?? __('Real stories from real gentlemen');
     $items = $content['items'] ?? [
         [
             'name' => 'Thomas van der Berg',
-            'role' => 'Vaste klant sinds 2020',
-            'quote' => 'De beste barbershop in de stad. Het team neemt echt de tijd voor je en het resultaat is altijd perfect. Die hot towel shave is een must!',
+            'role' => __('Regular customer since 2020'),
+            'quote' => __('The best barbershop in town. The team really takes their time and the result is always perfect. That hot towel shave is a must!'),
             'rating' => 5
         ],
         [
             'name' => 'Jeroen Bakker',
-            'role' => 'Ondernemer',
-            'quote' => 'Eindelijk een plek waar ze weten hoe ze met een baard moeten omgaan. Professioneel, relaxed en altijd een goed gesprek erbij.',
+            'role' => __('Entrepreneur'),
+            'quote' => __('Finally a place that knows how to handle a beard. Professional, relaxed, and always a good conversation on the side.'),
             'rating' => 5
         ],
         [
             'name' => 'Mark de Vries',
-            'role' => 'Vaste klant sinds 2019',
-            'quote' => 'Al jaren kom ik hier en het niveau blijft constant hoog. De sfeer is geweldig en je loopt er altijd scherp uit.',
+            'role' => __('Regular customer since 2019'),
+            'quote' => __('Been coming here for years and the quality stays consistently high. Great atmosphere, and you always leave looking sharp.'),
             'rating' => 5
         ],
     ];
@@ -161,7 +161,7 @@
                 <div class="w-px h-6" style="background-color: {{ $primaryColor }}40;"></div>
                 <span class="text-sm uppercase tracking-wider opacity-70" style="color: {{ $textColor }};">500+ Reviews</span>
                 <div class="w-px h-6" style="background-color: {{ $primaryColor }}40;"></div>
-                <span class="text-sm uppercase tracking-wider opacity-70" style="color: {{ $textColor }};">Sinds 2010</span>
+                <span class="text-sm uppercase tracking-wider opacity-70" style="color: {{ $textColor }};">{{ __('Since 2010') }}</span>
             </div>
         </div>
     </div>

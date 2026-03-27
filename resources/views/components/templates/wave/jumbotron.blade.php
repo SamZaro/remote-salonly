@@ -10,9 +10,9 @@
 ])
 
 @php
-    $title = $content['title'] ?? 'Jouw stijl, onze passie';
-    $subtitle = $content['subtitle'] ?? 'Laat je inspireren en boek je volgende afspraak';
-    $ctaText = $content['cta_text'] ?? 'Maak een Afspraak';
+    $title = $content['title'] ?? __('Your style, our passion');
+    $subtitle = $content['subtitle'] ?? __('Get inspired and book your next appointment');
+    $ctaText = $content['cta_text'] ?? __('Make an Appointment');
     $ctaLink = $content['cta_link'] ?? '#contact';
     $backgroundImage = $section?->getFirstMediaUrl('background') ?: ($content['background_image'] ?? null);
 
@@ -94,7 +94,7 @@
                 class="inline-flex items-center justify-center px-8 py-4 text-sm font-medium tracking-wide rounded-full transition-all duration-300 hover:bg-white/10"
                 style="color: {{ $backgroundColor }}; border: 1px solid {{ $backgroundColor }}25;"
             >
-                Bekijk diensten
+                {{ __('View services') }}
             </a>
         </div>
     </div>

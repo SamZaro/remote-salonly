@@ -9,29 +9,29 @@
 ])
 
 @php
-    $title = $content['title'] ?? 'Onze Diensten';
-    $subtitle = $content['subtitle'] ?? 'Vakmanschap & Stijl';
+    $title = $content['title'] ?? __('Our Services');
+    $subtitle = $content['subtitle'] ?? __('Craftsmanship & Style');
     $items = $content['items'] ?? [
         [
-            'title' => 'Knippen & Stylen',
-            'description' => 'Van klassieke elegantie tot moderne trends - wij creëren de perfecte look die bij jouw persoonlijkheid past.',
-            'price' => 'Vanaf €55',
+            'title' => __('Cut & Style'),
+            'description' => __('From classic elegance to modern trends — we create the perfect look that suits your personality.'),
+            'price' => __('From €55'),
             'icon' => 'scissors',
-            'features' => ['Wasbeurt', 'Knipbehandeling', 'Finishing & Styling'],
+            'features' => [__('Wash'), __('Cut treatment'), __('Finishing & Styling')],
         ],
         [
-            'title' => 'Kleuren & Balayage',
-            'description' => 'Subtiele highlights of een volledige transformatie - onze kleurspecialisten toveren elke wens werkelijkheid.',
-            'price' => 'Vanaf €85',
+            'title' => __('Colour & Balayage'),
+            'description' => __('Subtle highlights or a full transformation — our colour specialists make every wish a reality.'),
+            'price' => __('From €85'),
             'icon' => 'color',
-            'features' => ['Kleuradvies', 'Premium producten', 'Nabehandeling'],
+            'features' => [__('Colour advice'), __('Premium products'), __('After-treatment')],
         ],
         [
-            'title' => 'Treatments',
-            'description' => 'Intensieve verzorging voor beschadigd of droog haar. Geef je haar de luxe die het verdient.',
-            'price' => 'Vanaf €45',
+            'title' => __('Treatments'),
+            'description' => __('Intensive care for damaged or dry hair. Give your hair the luxury it deserves.'),
+            'price' => __('From €45'),
             'icon' => 'treatment',
-            'features' => ['Keratine', 'Olaplex', 'Deep conditioning'],
+            'features' => ['Keratin', 'Olaplex', 'Deep conditioning'],
         ],
     ];
 
@@ -154,7 +154,7 @@
                             class="group/link inline-flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.1em] transition-colors duration-300"
                             style="color: {{ $primaryColor }};"
                         >
-                            Reserveren
+                            {{ __('Book') }}
                             <svg class="w-3.5 h-3.5 transition-transform duration-300 group-hover/link:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                             </svg>
@@ -175,7 +175,7 @@
                 class="group inline-flex items-center gap-3 px-6 py-3 text-sm font-semibold rounded-full transition-all duration-300 hover:shadow-md hover:-translate-y-0.5"
                 style="color: {{ $primaryColor }}; border: 1px solid {{ $primaryColor }}30;"
             >
-                Bekijk volledige prijslijst
+                {{ __('View full price list') }}
                 <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                 </svg>

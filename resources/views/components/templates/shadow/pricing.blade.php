@@ -11,27 +11,27 @@
 
 @php
     // Content met defaults
-    $title = $content['title'] ?? 'Projecttypes & Indicaties';
-    $subtitle = $content['subtitle'] ?? 'Transparante richtprijzen voor uw bouwproject';
+    $title = $content['title'] ?? __('Service Types & Rates');
+    $subtitle = $content['subtitle'] ?? __('Transparent guide prices for your project');
     $items = $content['items'] ?? [
         [
-            'service' => 'Kleine Verbouwing',
-            'price' => 'Vanaf €5.000',
-            'description' => 'Badkamer, keuken of andere ruimtes',
-            'features' => ['Gratis inmeting', 'Vaste prijs offerte', 'Materiaal inclusief']
+            'service' => __('Small Renovation'),
+            'price' => __('From €5,000'),
+            'description' => __('Bathroom, kitchen or other rooms'),
+            'features' => [__('Free measurement'), __('Fixed price quote'), __('Materials included')]
         ],
         [
-            'service' => 'Aanbouw / Uitbouw',
-            'price' => 'Vanaf €25.000',
-            'description' => 'Vergroot uw woonruimte',
+            'service' => __('Extension / Loft Conversion'),
+            'price' => __('From €25,000'),
+            'description' => __('Expand your living space'),
             'popular' => true,
-            'features' => ['Complete begeleiding', 'Vergunningsaanvraag', 'Sleutelklaar opgeleverd']
+            'features' => [__('Full guidance'), __('Permit application'), __('Turnkey delivery')]
         ],
         [
-            'service' => 'Nieuwbouw',
-            'price' => 'Op aanvraag',
-            'description' => 'Uw droomhuis van de grond af',
-            'features' => ['Architect samenwerking', 'Volledig bouwmanagement', 'Alle garanties']
+            'service' => __('New Build'),
+            'price' => __('On request'),
+            'description' => __('Your dream home from the ground up'),
+            'features' => [__('Architect collaboration'), __('Full construction management'), __('All guarantees')]
         ],
     ];
 
@@ -56,7 +56,7 @@
                 class="inline-block px-4 py-1 text-sm font-semibold uppercase tracking-wider rounded-sm mb-4"
                 style="background-color: {{ $primaryColor }}20; color: {{ $primaryColor }};"
             >
-                Richtprijzen
+                {{ __('Guide prices') }}
             </span>
             <h2
                 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4"
@@ -92,7 +92,7 @@
                             class="absolute -top-4 left-1/2 -translate-x-1/2 px-6 py-2 text-sm font-bold uppercase tracking-wider"
                             style="background-color: {{ $primaryColor }}; color: {{ $secondaryColor }};"
                         >
-                            Meest gekozen
+                            {{ __('Most popular') }}
                         </div>
                     @endif
 
@@ -161,7 +161,7 @@
                             border-radius: {{ $buttonRadius }};
                         "
                     >
-                        Offerte aanvragen
+                        {{ __('Request a quote') }}
                     </a>
                 </div>
             @endforeach
@@ -169,7 +169,7 @@
 
         {{-- Disclaimer --}}
         <p class="text-center mt-12 text-sm opacity-60" style="color: {{ $textColor }};">
-            * Genoemde prijzen zijn indicatief. Exacte prijzen op basis van persoonlijke offerte.
+            {{ __('* Prices shown are indicative. Exact prices based on a personal quote.') }}
         </p>
     </div>
 </section>

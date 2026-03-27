@@ -12,7 +12,7 @@
 
 @php
     $title = $content['title'] ?? 'Relax, You\'re In Good Hands';
-    $subtitle = $content['subtitle'] ?? 'Ons team';
+    $subtitle = $content['subtitle'] ?? __('Our team');
     $members = $content['members'] ?? [];
     $memberPhotos = $section?->getMedia('images') ?? collect();
 
@@ -53,7 +53,7 @@
                 {{ $title }}
             </h2>
             <p class="text-lg max-w-xl mx-auto" style="color: {{ $textColor }}; font-family: '{{ $bodyFont }}', sans-serif;">
-                Maak kennis met onze specialisten
+                {{ __('Meet our specialists') }}
             </p>
         </div>
 
@@ -120,7 +120,7 @@
             </div>
         @else
             <p class="text-center" style="color: {{ $textColor }}; font-family: '{{ $bodyFont }}', sans-serif;">
-                {{ __('Voeg teamleden toe via het dashboard.') }}
+                {{ __('Add team members via the dashboard.') }}
             </p>
         @endif
     </div>

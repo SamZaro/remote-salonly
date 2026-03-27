@@ -11,37 +11,37 @@
 
 @php
     // Content met defaults
-    $title = $content['title'] ?? 'Wat Onze Klanten Zeggen';
-    $subtitle = $content['subtitle'] ?? 'Beoordeeld met een 4.9 op Google';
+    $title = $content['title'] ?? __('What Our Customers Say');
+    $subtitle = $content['subtitle'] ?? __('Rated 4.9 on Google');
     $googleRating = $content['google_rating'] ?? '4.9';
     $totalReviews = $content['total_reviews'] ?? '234';
     $reviews = $content['reviews'] ?? [
         [
             'name' => 'Lisa van der Berg',
-            'date' => '1 week geleden',
+            'date' => __('1 week ago'),
             'rating' => 5,
-            'text' => 'Fantastische ervaring! Mijn haar is nog nooit zo mooi geweest. Het team is super vriendelijk en de salon heeft een heerlijke sfeer.',
+            'text' => __('Fantastic experience! My hair has never looked this good. The team is super friendly and the salon has a wonderful atmosphere.'),
             'service' => 'Highlights',
         ],
         [
             'name' => 'Emma de Jong',
-            'date' => '2 weken geleden',
+            'date' => __('2 weeks ago'),
             'rating' => 5,
-            'text' => 'Eindelijk een kapper die naar je luistert! Ik ben zo blij met mijn nieuwe kleur. Kom hier zeker terug!',
-            'service' => 'Kleuren',
+            'text' => __('Finally a hairdresser who listens! I am so happy with my new color. Definitely coming back!'),
+            'service' => __('Coloring'),
         ],
         [
             'name' => 'Mark Jansen',
-            'date' => '3 weken geleden',
+            'date' => __('3 weeks ago'),
             'rating' => 5,
-            'text' => 'Top barbershop voor mannen. Goede service, eerlijke prijs en altijd tevreden met het resultaat. Aanrader!',
-            'service' => "Men's Haircut",
+            'text' => __('Great barbershop for men. Good service, fair price and always happy with the result. Highly recommended!'),
+            'service' => __("Men's Haircut"),
         ],
         [
             'name' => 'Sophie Bakker',
-            'date' => '1 maand geleden',
+            'date' => __('1 month ago'),
             'rating' => 5,
-            'text' => 'De balayage is precies geworden zoals ik wilde. Heel professioneel en ze nemen de tijd om alles uit te leggen.',
+            'text' => __('The balayage turned out exactly as I wanted. Very professional and they take the time to explain everything.'),
             'service' => 'Balayage',
         ],
     ];
@@ -217,7 +217,7 @@
                 class="group inline-flex items-center gap-3 text-[12px] font-semibold uppercase tracking-[0.15em] transition-all duration-300 hover:gap-4"
                 style="color: {{ $primaryColor }};"
             >
-                Bekijk alle reviews op Google
+                {{ __('View all reviews on Google') }}
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
                 </svg>

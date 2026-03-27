@@ -10,8 +10,8 @@
 ])
 
 @php
-    $title = $content['title'] ?? 'Ons Werk';
-    $subtitle = $content['subtitle'] ?? 'Een impressie van onze salon';
+    $title = $content['title'] ?? __('Our Work');
+    $subtitle = $content['subtitle'] ?? __('An impression of our salon');
     $images = $section?->getMedia('images') ?? collect();
 
     $primaryColor = $theme['primary_color'] ?? '#E8D8D3';
@@ -38,7 +38,7 @@
                 >
                     <div>
                         <span class="text-xs font-semibold uppercase tracking-[0.2em] mb-4 block" style="color: {{ $secondaryColor }};">
-                            Galerij
+                            {{ __('Gallery') }}
                         </span>
                         <h2 class="text-4xl sm:text-5xl font-bold mb-2" style="color: {{ $headingColor }}; font-family: '{{ $headingFont }}', sans-serif;">
                             {{ $title }}

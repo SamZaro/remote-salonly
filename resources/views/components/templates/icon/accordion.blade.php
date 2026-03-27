@@ -10,13 +10,13 @@
 ])
 
 @php
-    $title = $content['title'] ?? 'Veelgestelde Vragen';
-    $subtitle = $content['subtitle'] ?? 'Heb je een vraag? Wij hebben het antwoord.';
+    $title = $content['title'] ?? __('Frequently Asked Questions');
+    $subtitle = $content['subtitle'] ?? __('Have a question? We have the answer.');
     $items = $content['items'] ?? [
-        ['question' => 'Moet ik vooraf reserveren?', 'answer' => 'Je kunt online reserveren via onze website of bellen voor een afspraak. Walk-ins zijn welkom maar een reservering garandeert je plek.'],
-        ['question' => 'Wat als ik te laat ben?', 'answer' => 'We begrijpen dat het soms druk kan zijn. Bij meer dan 15 minuten vertraging kan het zijn dat we je afspraak moeten inkorten.'],
-        ['question' => 'Bieden jullie ook styling advies?', 'answer' => 'Absoluut! Onze stylisten geven graag persoonlijk advies over welke stijl het beste bij jou past.'],
-        ['question' => 'Hebben jullie producten te koop?', 'answer' => 'Ja, we verkopen professionele haarproducten zodat je thuis je look kunt onderhouden.'],
+        ['question' => __('Do I need to book in advance?'), 'answer' => __('You can book online via our website or call for an appointment. Walk-ins are welcome but a reservation guarantees your spot.')],
+        ['question' => __('What if I am running late?'), 'answer' => __('We understand things get busy. If you are more than 15 minutes late we may need to shorten your appointment.')],
+        ['question' => __('Do you offer styling advice?'), 'answer' => __('Absolutely! Our stylists are happy to give personal advice on which style suits you best.')],
+        ['question' => __('Do you sell products?'), 'answer' => __('Yes, we sell professional hair products so you can maintain your look at home.')],
     ];
 
     $primaryColor = $theme['primary_color'] ?? '#c9a227';
@@ -120,13 +120,13 @@
             x-data x-intersect.once="$el.style.opacity = 1"
             style="opacity: 0; transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1);"
         >
-            <p class="text-[14px] mb-5" style="color: {{ $textColor }};">Staat je vraag er niet tussen?</p>
+            <p class="text-[14px] mb-5" style="color: {{ $textColor }};">{{ __("Don't see your question?") }}</p>
             <a
                 href="#contact"
                 class="group inline-flex items-center gap-3 text-[12px] font-semibold uppercase tracking-[0.15em] transition-all duration-300 hover:gap-4"
                 style="color: {{ $primaryColor }};"
             >
-                Neem contact op
+                {{ __('Get in touch') }}
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                 </svg>

@@ -12,8 +12,8 @@
 
 @php
     $title = $content['title'] ?? 'Revitalize Your Beauty,<br>Revitalize Your Soul';
-    $subtitle = $content['subtitle'] ?? 'Ontdek pure ontspanning en persoonlijke schoonheidsbehandelingen in een sfeer van rust en luxe';
-    $ctaText = $content['cta_text'] ?? 'Maak een afspraak';
+    $subtitle = $content['subtitle'] ?? __('Discover pure relaxation and personal beauty treatments in an atmosphere of calm and luxury');
+    $ctaText = $content['cta_text'] ?? __('Make an Appointment');
     $ctaLink = $content['cta_link'] ?? '#contact';
     $backgroundImage = $section?->getFirstMediaUrl('background') ?: ($content['background_image'] ?? null);
 
@@ -89,7 +89,7 @@
                     class="inline-flex items-center justify-center px-10 py-4 text-sm font-semibold tracking-widest uppercase transition-all duration-300 hover:bg-white/10"
                     style="border: 1.5px solid rgba(255,255,255,0.4); color: #ffffff; border-radius: 4px; font-family: '{{ $bodyFont }}', sans-serif;"
                 >
-                    Onze diensten
+                    {{ __('Our services') }}
                 </a>
             </div>
         </div>

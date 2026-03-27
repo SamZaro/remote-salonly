@@ -10,8 +10,8 @@
 ])
 
 @php
-    $title = $content['title'] ?? 'Kom Langs';
-    $subtitle = $content['subtitle'] ?? 'Walk-ins welkom, afspraken gegarandeerd';
+    $title = $content['title'] ?? __('Visit Us');
+    $subtitle = $content['subtitle'] ?? __('Walk-ins welcome, appointments guaranteed');
     $address = $content['address'] ?? '';
     $phone = $content['phone'] ?? '';
     $email = $content['email'] ?? '';
@@ -67,7 +67,7 @@
                                 </svg>
                             </div>
                             <div>
-                                <span class="block text-sm font-bold uppercase tracking-widest mb-1" style="color: {{ $secondaryColor }}; opacity: 0.7;">Bel direct</span>
+                                <span class="block text-sm font-bold uppercase tracking-widest mb-1" style="color: {{ $secondaryColor }}; opacity: 0.7;">{{ __('Call directly') }}</span>
                                 <span class="block text-2xl font-bold" style="color: {{ $secondaryColor }};">{{ $phone }}</span>
                             </div>
                         </div>
@@ -85,7 +85,7 @@
                                 </svg>
                             </div>
                             <div>
-                                <span class="block text-sm font-bold uppercase tracking-widest mb-2" style="color: {{ $primaryColor }};">Adres</span>
+                                <span class="block text-sm font-bold uppercase tracking-widest mb-2" style="color: {{ $primaryColor }};">{{ __('Address') }}</span>
                                 <span class="block text-lg text-white opacity-90">{{ $address }}</span>
                             </div>
                         </div>
@@ -103,7 +103,7 @@
                         </svg>
                     </div>
                     <div class="flex-1">
-                        <span class="block text-sm font-bold uppercase tracking-widest mb-6" style="color: {{ $primaryColor }};">Openingstijden</span>
+                        <span class="block text-sm font-bold uppercase tracking-widest mb-6" style="color: {{ $primaryColor }};">{{ __('Opening Hours') }}</span>
                         @if(count($openingHours) > 0)
                             <div class="space-y-3">
                                 @foreach($openingHours as $key => $value)
@@ -121,7 +121,7 @@
                                 @endforeach
                             </div>
                         @else
-                            <p class="text-lg text-white opacity-90">{{ __('Neem contact op voor onze openingstijden.') }}</p>
+                            <p class="text-lg text-white opacity-90">{{ __('Contact us for our opening hours.') }}</p>
                         @endif
                     </div>
                 </div>

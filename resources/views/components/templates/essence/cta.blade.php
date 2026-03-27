@@ -12,12 +12,12 @@
 
 @php
     // Content met defaults
-    $title = $content['title'] ?? 'Begin Jouw Transformatie';
-    $subtitle = $content['subtitle'] ?? 'Boek vandaag nog een afspraak';
-    $description = $content['description'] ?? 'Laat je verwennen door ons team van experts en ontdek de perfecte look die bij jou past.';
-    $ctaText = $content['cta_text'] ?? 'Reserveer Nu';
+    $title = $content['title'] ?? __('Begin Your Transformation');
+    $subtitle = $content['subtitle'] ?? __('Book an appointment today');
+    $description = $content['description'] ?? __('Let our team of experts pamper you and discover the perfect look that suits you.');
+    $ctaText = $content['cta_text'] ?? __('Reserve Now');
     $ctaLink = $content['cta_link'] ?? '#contact';
-    $secondaryCtaText = $content['secondary_cta_text'] ?? 'Neem Contact Op';
+    $secondaryCtaText = $content['secondary_cta_text'] ?? __('Contact Us');
     $secondaryCtaLink = $content['secondary_cta_link'] ?? 'tel:+31612345678';
     $backgroundImage = $section?->getFirstMediaUrl('background') ?: ($content['background_image'] ?? null);
 
@@ -62,7 +62,7 @@
                 class="text-xs font-medium uppercase tracking-[0.3em]"
                 style="color: {{ $primaryColor }};"
             >
-                Reserveren
+                {{ __('Book') }}
             </span>
             <div class="w-12 h-px" style="background-color: {{ $primaryColor }}60;"></div>
         </div>
@@ -122,7 +122,7 @@
         {{-- Trust element --}}
         <div class="mt-12 pt-10 border-t" style="border-color: {{ $backgroundColor }}15;">
             <p class="text-sm" style="color: {{ $backgroundColor }}; opacity: 0.6;">
-                ✓ Gratis consult &nbsp;&nbsp; ✓ Flexibel omboeken &nbsp;&nbsp; ✓ Persoonlijke aandacht
+                ✓ {{ __('Free consultation') }} &nbsp;&nbsp; ✓ {{ __('Flexible rescheduling') }} &nbsp;&nbsp; ✓ {{ __('Personal attention') }}
             </p>
         </div>
     </div>

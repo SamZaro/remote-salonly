@@ -134,7 +134,7 @@
                 </h4>
                 <nav class="space-y-3">
                     <a href="#services" class="block text-sm transition-all hover:translate-x-2" style="color: white; opacity: 0.8;">Services</a>
-                    <a href="#pricing" class="block text-sm transition-all hover:translate-x-2" style="color: white; opacity: 0.8;">Prijzen</a>
+                    <a href="#pricing" class="block text-sm transition-all hover:translate-x-2" style="color: white; opacity: 0.8;">{{ __('Prices') }}</a>
                     <a href="#gallery" class="block text-sm transition-all hover:translate-x-2" style="color: white; opacity: 0.8;">Gallery</a>
                     <a href="#contact" class="block text-sm transition-all hover:translate-x-2" style="color: white; opacity: 0.8;">Contact</a>
                 </nav>

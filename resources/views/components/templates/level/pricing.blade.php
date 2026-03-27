@@ -9,32 +9,32 @@
 ])
 
 @php
-    $title      = $content['title'] ?? 'Prijslijst';
-    $subtitle   = $content['subtitle'] ?? 'Transparante prijzen, eerlijke kwaliteit';
+    $title      = $content['title'] ?? __('Price List');
+    $subtitle   = $content['subtitle'] ?? __('Transparent pricing, honest quality');
     $categories = $content['categories'] ?? [
         [
-            'name'  => 'Dames',
+            'name'  => __('Women'),
             'items' => [
-                ['service' => 'Knippen',                    'description' => 'Wassen, knippen en föhnen',                'price' => '€45'],
-                ['service' => 'Knippen Droog',              'description' => 'Alleen knippen, zonder wassen',            'price' => '€35'],
-                ['service' => 'Föhnen & Stylen',            'description' => 'Professioneel föhnen op maat',             'price' => '€22'],
-                ['service' => 'Kinderen (t/m 12)',          'description' => 'Knippen voor de allerkleinsten',           'price' => '€19'],
+                ['service' => __('Cut'),                        'description' => __('Wash, cut and blow-dry'),                   'price' => '€45'],
+                ['service' => __('Dry Cut'),                    'description' => __('Cut only, without washing'),                 'price' => '€35'],
+                ['service' => __('Blow-dry & Style'),           'description' => __('Professional blow-dry to suit your look'),   'price' => '€22'],
+                ['service' => __('Children (up to 12)'),        'description' => __('Haircut for the youngest clients'),          'price' => '€19'],
             ],
         ],
         [
-            'name'  => 'Heren',
+            'name'  => __('Men'),
             'items' => [
-                ['service' => 'Heren Knippen',              'description' => 'Klassiek of modern — altijd scherp',       'price' => '€27'],
-                ['service' => 'Knippen + Wassen',           'description' => 'Inclusief hoofdmassage en styling',        'price' => '€32'],
-                ['service' => 'Kinderen (t/m 12)',          'description' => 'Jongste klanten welkom',                   'price' => '€19'],
+                ['service' => __('Men\'s Cut'),                 'description' => __('Classic or modern — always sharp'),          'price' => '€27'],
+                ['service' => __('Cut + Wash'),                 'description' => __('Including head massage and styling'),        'price' => '€32'],
+                ['service' => __('Children (up to 12)'),        'description' => __('Youngest clients welcome'),                  'price' => '€19'],
             ],
         ],
         [
-            'name'  => 'Kleur & Behandeling',
+            'name'  => __('Colour & Treatment'),
             'items' => [
-                ['service' => 'Highlights',                 'description' => 'Partiële of volledige highlights',         'price' => '€65', 'popular' => true],
-                ['service' => 'Verven',                     'description' => 'Volledige haarkleurbehandeling',           'price' => '€55'],
-                ['service' => 'Intensieve Behandeling',     'description' => 'Voedende haar- en hoofdhuidverzorging',    'price' => '€30'],
+                ['service' => __('Highlights'),                 'description' => __('Partial or full highlights'),                'price' => '€65', 'popular' => true],
+                ['service' => __('Colour'),                     'description' => __('Full hair colour treatment'),                'price' => '€55'],
+                ['service' => __('Intensive Treatment'),        'description' => __('Nourishing hair and scalp care'),            'price' => '€30'],
             ],
         ],
     ];
@@ -63,7 +63,7 @@
             <div>
                 <div class="flex items-center gap-3 mb-6">
                     <div class="w-9 h-1 shrink-0" style="background-color: {{ $primaryColor }};"></div>
-                    <span class="text-xs font-semibold uppercase tracking-[0.3em]" style="color: {{ $primaryColor }}; font-family: '{{ $bodyFont }}';">Tarieven</span>
+                    <span class="text-xs font-semibold uppercase tracking-[0.3em]" style="color: {{ $primaryColor }}; font-family: '{{ $bodyFont }}';">{{ __('Rates') }}</span>
                 </div>
                 <h2
                     class="font-black leading-[0.9]"
@@ -77,7 +77,7 @@
                 class="group inline-flex items-center gap-3 text-sm font-semibold uppercase tracking-widest shrink-0 transition-colors"
                 style="color: {{ $primaryColor }}; font-family: '{{ $bodyFont }}';"
             >
-                Maak Afspraak
+                {{ __('Book Appointment') }}
                 <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                 </svg>
@@ -122,7 +122,7 @@
                                             <span
                                                 class="text-xs font-bold uppercase tracking-wider px-2 py-0.5 shrink-0"
                                                 style="background-color: {{ $primaryColor }}; color: #ffffff; font-family: '{{ $bodyFont }}';"
-                                            >Populair</span>
+                                            >{{ __('Popular') }}</span>
                                         @endif
                                     </div>
                                     @if(!empty($item['description']))
@@ -150,7 +150,7 @@
 
         {{-- Footer note --}}
         <p class="mt-10 text-sm font-light" style="color: rgba(255,255,255,0.35); font-family: '{{ $bodyFont }}';">
-            Alle prijzen zijn inclusief BTW. Contante betaling of pin mogelijk.
+            {{ __('All prices include VAT. Cash or card payment accepted.') }}
         </p>
 
     </div>

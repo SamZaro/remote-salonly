@@ -20,13 +20,13 @@
     $bodyFont = $theme['font_family'] ?? 'Inter';
 
     // CTA content (left column)
-    $ctaLabel = $content['cta_label'] ?? __('Neem contact op');
-    $ctaHeading = $content['cta_heading'] ?? __('Klaar om te starten?');
-    $ctaHighlight = $content['cta_highlight'] ?? __('starten');
+    $ctaLabel = $content['cta_label'] ?? __('Get in touch');
+    $ctaHeading = $content['cta_heading'] ?? __('Ready to get started?');
+    $ctaHighlight = $content['cta_highlight'] ?? __('started');
     $backgroundImage = $section?->getFirstMediaUrl('background') ?: null;
 
     // Form content (right column)
-    $formTitle = $content['title'] ?? __('Stuur een bericht');
+    $formTitle = $content['title'] ?? __('Send a message');
 @endphp
 
 <section id="contact-form" class="py-24 lg:py-36" style="background-color: {{ $backgroundColor }}; font-family: '{{ $bodyFont }}', sans-serif;">
@@ -91,12 +91,12 @@
                         >
                             <div>
                                 <div class="text-2xl font-extrabold text-white">24u</div>
-                                <div class="text-xs" style="color: {{ $accentColor }}90;">{{ __('Reactietijd') }}</div>
+                                <div class="text-xs" style="color: {{ $accentColor }}90;">{{ __('Response time') }}</div>
                             </div>
                             <div class="w-px h-10" style="background-color: {{ $accentColor }}30;"></div>
                             <div>
                                 <div class="text-2xl font-extrabold text-white">100%</div>
-                                <div class="text-xs" style="color: {{ $accentColor }}90;">{{ __('Persoonlijk') }}</div>
+                                <div class="text-xs" style="color: {{ $accentColor }}90;">{{ __('Personal') }}</div>
                             </div>
                         </div>
                     @endif

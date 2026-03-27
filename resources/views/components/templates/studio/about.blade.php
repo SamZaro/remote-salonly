@@ -12,13 +12,13 @@
 
 @php
     // Content met defaults
-    $title = $content['title'] ?? 'Dit Zijn Wij';
-    $subtitle = $content['subtitle'] ?? 'Een team van creatieve minds met een passie voor haar';
-    $description = $content['description'] ?? 'Bij Studio draait alles om jouw unieke stijl. Ons team van trendsetters en hair artists staat klaar om samen met jou de perfecte look te creëren. Of je nu komt voor een bold transformation of een fresh-up, wij maken er een ervaring van!';
+    $title = $content['title'] ?? __('This Is Us');
+    $subtitle = $content['subtitle'] ?? __('A team of creative minds with a passion for hair');
+    $description = $content['description'] ?? __('At Studio everything revolves around your unique style. Our team of trendsetters and hair artists is ready to create the perfect look with you. Whether you come for a bold transformation or a fresh-up, we make it an experience!');
     $features = $content['features'] ?? [
-        ['icon' => 'sparkles', 'title' => 'Creatief Team', 'description' => 'Award-winning stylisten'],
-        ['icon' => 'trending-up', 'title' => 'Trendsetting', 'description' => 'Altijd up-to-date'],
-        ['icon' => 'heart', 'title' => 'Good Vibes', 'description' => 'Relaxte sfeer'],
+        ['icon' => 'sparkles', 'title' => __('Creative Team'), 'description' => __('Award-winning stylists')],
+        ['icon' => 'trending-up', 'title' => __('Trendsetting'), 'description' => __('Always up-to-date')],
+        ['icon' => 'heart', 'title' => __('Good Vibes'), 'description' => __('Relaxed atmosphere')],
     ];
     $aboutImage = $section?->getFirstMediaUrl('background') ?: ($content['image'] ?? null);
 
@@ -51,7 +51,7 @@
                         <div class="absolute inset-0 rounded-3xl rotate-6" style="background: {{ $primaryColor }};"></div>
                         <img
                             src="{{ $aboutImage }}"
-                            alt="Over ons"
+                            alt="{{ __('About us') }}"
                             class="relative w-full h-[500px] object-cover rounded-3xl"
                             style="box-shadow: 8px 8px 0 {{ $secondaryColor }};"
                         />
@@ -77,7 +77,7 @@
                 >
                     <div class="text-center">
                         <p class="text-4xl font-black" style="color: {{ $primaryColor }};">10+</p>
-                        <p class="text-sm font-bold" style="color: {{ $headingColor }};">Jaar ervaring</p>
+                        <p class="text-sm font-bold" style="color: {{ $headingColor }};">{{ __('Years of experience') }}</p>
                     </div>
                 </div>
             </div>

@@ -5,15 +5,15 @@
 ])
 
 @php
-    $title = $content['title'] ?? 'Onze Diensten';
-    $subtitle = $content['subtitle'] ?? 'Wat wij bieden';
+    $title = $content['title'] ?? __('Our Services');
+    $subtitle = $content['subtitle'] ?? __('What we offer');
     $items = $content['items'] ?? [
-        ['title' => 'Knippen',         'description' => 'Precisieknippen afgestemd op jouw gezichtsvorm en persoonlijke stijl.', 'icon' => 'scissors'],
-        ['title' => 'Kleuren',         'description' => 'Van subtiele highlights tot volledige kleurveranderingen met premium producten.', 'icon' => 'swatch'],
-        ['title' => 'Styling',         'description' => 'Professionele styling voor elke gelegenheid, van casual tot feestelijk.', 'icon' => 'sparkles'],
-        ['title' => 'Behandelingen',   'description' => 'Herstellende treatments voor gezond, glanzend en sterk haar.', 'icon' => 'heart'],
-        ['title' => 'Bruidskapsels',   'description' => 'Maak jouw speciale dag compleet met een prachtig bruidskapsel.', 'icon' => 'star'],
-        ['title' => 'Advies',          'description' => 'Persoonlijk advies over haarverzorging en de juiste producten voor thuis.', 'icon' => 'chat'],
+        ['title' => __('Haircut'),        'description' => __('Precision cut tailored to your face shape and personal style.'), 'icon' => 'scissors'],
+        ['title' => __('Coloring'),       'description' => __('From subtle highlights to full color changes with premium products.'), 'icon' => 'swatch'],
+        ['title' => __('Styling'),        'description' => __('Professional styling for every occasion, from casual to festive.'), 'icon' => 'sparkles'],
+        ['title' => __('Treatments'),     'description' => __('Restorative treatments for healthy, shiny and strong hair.'), 'icon' => 'heart'],
+        ['title' => __('Bridal styles'),  'description' => __('Complete your special day with a beautiful bridal hairstyle.'), 'icon' => 'star'],
+        ['title' => __('Advice'),         'description' => __('Personal advice on hair care and the right products for home use.'), 'icon' => 'chat'],
     ];
 
     // Theme kleuren
@@ -97,7 +97,7 @@
             </div>
         @else
             <p class="text-center" style="color: {{ $textColor }};">
-                Geen diensten gedefinieerd.
+                {{ __('No services defined.') }}
             </p>
         @endif
     </div>

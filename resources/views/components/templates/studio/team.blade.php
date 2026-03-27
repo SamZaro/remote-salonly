@@ -12,7 +12,7 @@
 
 @php
     $title = $content['title'] ?? 'Meet The Crew';
-    $subtitle = $content['subtitle'] ?? 'De creatievelingen achter jouw look';
+    $subtitle = $content['subtitle'] ?? __('The creatives behind your look');
     $members = $content['members'] ?? [];
 
     $memberPhotos = $section?->getMedia('images') ?? collect();
@@ -125,7 +125,7 @@
             </div>
         @else
             <p class="text-center text-lg" style="color: {{ $textColor }};">
-                {{ __('Voeg teamleden toe via het dashboard.') }}
+                {{ __('Add team members via the dashboard.') }}
             </p>
         @endif
     </div>

@@ -13,8 +13,8 @@
 @php
     // Content met defaults
     $title = $content['title'] ?? 'New Season, New Look!';
-    $subtitle = $content['subtitle'] ?? 'Check onze latest trends en book jouw transformation';
-    $ctaText = $content['cta_text'] ?? 'Bekijk Trends';
+    $subtitle = $content['subtitle'] ?? __('Check our latest trends and book your transformation');
+    $ctaText = $content['cta_text'] ?? __('View Trends');
     $ctaLink = $content['cta_link'] ?? '#services';
     $backgroundImage = $section?->getFirstMediaUrl('background') ?: ($content['background_image'] ?? null);
 

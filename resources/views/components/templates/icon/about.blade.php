@@ -11,15 +11,15 @@
 ])
 
 @php
-    $title = $content['title'] ?? 'Over Icon Salon';
-    $subtitle = $content['subtitle'] ?? 'Waar passie en vakmanschap samenkomen';
-    $description = $content['description'] ?? 'Bij Icon geloven we dat iedereen een look verdient die past bij wie ze zijn. Ons team van ervaren stylisten combineert de nieuwste trends met tijdloze technieken om jouw perfecte stijl te creëren.';
-    $description2 = $content['description2'] ?? 'Met jarenlange ervaring en een passie voor ons vak, zorgen we ervoor dat je onze salon altijd verlaat met een glimlach én fantastisch haar.';
+    $title = $content['title'] ?? __('About Icon Salon');
+    $subtitle = $content['subtitle'] ?? __('Where passion and craftsmanship meet');
+    $description = $content['description'] ?? __('At Icon we believe everyone deserves a look that fits who they are. Our team of experienced stylists combines the latest trends with timeless techniques to create your perfect style.');
+    $description2 = $content['description2'] ?? __('With years of experience and a passion for our craft, we make sure you always leave our salon with a smile and fantastic hair.');
     $image = $section?->getFirstMediaUrl('background') ?: ($content['image'] ?? null);
     $stats = $content['stats'] ?? [
-        ['value' => '10+', 'label' => 'Jaar ervaring'],
-        ['value' => '5000+', 'label' => 'Tevreden klanten'],
-        ['value' => '6', 'label' => 'Stylisten'],
+        ['value' => '10+', 'label' => __('Years of experience')],
+        ['value' => '5000+', 'label' => __('Satisfied customers')],
+        ['value' => '6', 'label' => __('Stylists')],
     ];
 
     $primaryColor = $theme['primary_color'] ?? '#c9a227';
@@ -51,7 +51,7 @@
                         ></div>
                         <img
                             src="{{ $image }}"
-                            alt="Over ons"
+                            alt="{{ __('About us') }}"
                             class="relative w-full h-[400px] lg:h-[540px] object-cover"
                             style="box-shadow: 0 16px 48px rgba(0,0,0,0.08);"
                         />
@@ -70,7 +70,7 @@
                                 <svg class="w-14 h-14 mx-auto mb-3" style="color: {{ $primaryColor }}18;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                                 </svg>
-                                <span class="text-[11px] uppercase tracking-[0.2em]" style="color: {{ $textColor }}50;">Team foto</span>
+                                <span class="text-[11px] uppercase tracking-[0.2em]" style="color: {{ $textColor }}50;">{{ __('Team photo') }}</span>
                             </div>
                         </div>
                     </div>
@@ -107,7 +107,7 @@
                 <div class="flex items-center gap-4 mb-8">
                     <span class="w-10 h-px" style="background-color: {{ $primaryColor }};"></span>
                     <span class="uppercase text-[11px] tracking-[0.3em] font-medium" style="color: {{ $primaryColor }};">
-                        Over Ons
+                        {{ __('About Us') }}
                     </span>
                 </div>
 
@@ -144,7 +144,7 @@
 
                 {{-- Feature bullets --}}
                 <div class="grid sm:grid-cols-2 gap-x-8 gap-y-3 mb-9">
-                    @foreach(['Gecertificeerde stylisten', 'Premium producten', 'Persoonlijk advies', 'Ontspannen sfeer'] as $feature)
+                    @foreach([__('Certified stylists'), __('Premium products'), __('Personal advice'), __('Relaxed atmosphere')] as $feature)
                         <div class="flex items-center gap-3">
                             <div class="w-1.5 h-1.5 rounded-full shrink-0" style="background-color: {{ $primaryColor }};"></div>
                             <span class="text-[13px] font-medium" style="color: {{ $headingColor }};">{{ $feature }}</span>
@@ -158,7 +158,7 @@
                     class="group inline-flex items-center gap-3 text-[13px] font-semibold uppercase tracking-[0.15em] transition-all duration-300 hover:gap-4"
                     style="color: {{ $primaryColor }};"
                 >
-                    Maak kennis met ons team
+                    {{ __('Meet our team') }}
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                     </svg>

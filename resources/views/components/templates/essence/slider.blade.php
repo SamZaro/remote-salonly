@@ -12,8 +12,8 @@
 
 @php
     $title = $content['title'] ?? 'Timeless<br>Elegance';
-    $subtitle = $content['subtitle'] ?? 'Waar schoonheid en verfijning samenkomen';
-    $ctaText = $content['cta_text'] ?? 'Reserveer Nu';
+    $subtitle = $content['subtitle'] ?? __('Where beauty and refinement meet');
+    $ctaText = $content['cta_text'] ?? __('Reserve Now');
     $ctaLink = $content['cta_link'] ?? '#contact';
     $autoplay = (bool) ($content['autoplay'] ?? true);
     $interval = (int) ($content['interval'] ?? 5000);
@@ -88,14 +88,14 @@
                             <svg class="w-4 h-4 ml-3 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                         </a>
                     @endif
-                    <a href="#services" class="inline-flex items-center justify-center px-10 py-4 text-sm font-medium uppercase tracking-widest border transition-all duration-500" style="border-color: {{ $secondaryColor }}30; color: {{ $secondaryColor }};">Ontdek meer</a>
+                    <a href="#services" class="inline-flex items-center justify-center px-10 py-4 text-sm font-medium uppercase tracking-widest border transition-all duration-500" style="border-color: {{ $secondaryColor }}30; color: {{ $secondaryColor }};">{{ __('Discover more') }}</a>
                 </div>
 
                 {{-- Trust indicators --}}
                 <div class="flex items-center justify-center lg:justify-start gap-8 mt-16">
                     <div class="text-center">
                         <span class="block text-2xl font-light" style="color: {{ $secondaryColor }}; font-family: '{{ $headingFont }}', Georgia, serif;">15+</span>
-                        <span class="text-xs uppercase tracking-wider" style="color: {{ $textColor }}; opacity: 0.6;">Jaar ervaring</span>
+                        <span class="text-xs uppercase tracking-wider" style="color: {{ $textColor }}; opacity: 0.6;">{{ __('Years of experience') }}</span>
                     </div>
                     <div class="w-px h-10" style="background-color: {{ $secondaryColor }}20;"></div>
                     <div class="text-center">
@@ -128,8 +128,8 @@
                             <svg class="w-6 h-6" style="color: {{ $secondaryColor }};" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
                         </div>
                         <div>
-                            <p class="text-sm font-medium" style="color: {{ $secondaryColor }};">Online reserveren</p>
-                            <p class="text-xs" style="color: {{ $textColor }}; opacity: 0.6;">24/7 beschikbaar</p>
+                            <p class="text-sm font-medium" style="color: {{ $secondaryColor }};">{{ __('Book online') }}</p>
+                            <p class="text-xs" style="color: {{ $textColor }}; opacity: 0.6;">{{ __('Available 24/7') }}</p>
                         </div>
                     </div>
                 </div>

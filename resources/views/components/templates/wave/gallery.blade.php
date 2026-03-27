@@ -11,7 +11,7 @@
 
 @php
     $title = $content['title'] ?? 'Portfolio';
-    $subtitle = $content['subtitle'] ?? 'Onze creaties';
+    $subtitle = $content['subtitle'] ?? __('Our creations');
     $images = $section?->getMedia('images') ?? collect();
 
     $primaryColor = $theme['primary_color'] ?? '#0077b6';

@@ -9,20 +9,20 @@
 ])
 
 @php
-    $title        = $content['title'] ?? 'Bezoek Ons';
-    $subtitle     = $content['subtitle'] ?? 'Afspraken aanbevolen, walk-ins altijd welkom';
-    $address      = $content['address'] ?? 'Stijlstraat 45, 1012 AB Amsterdam';
+    $title        = $content['title'] ?? __('Visit Us');
+    $subtitle     = $content['subtitle'] ?? __('Appointments recommended, walk-ins always welcome');
+    $address      = $content['address'] ?? 'Style Street 45, 1012 AB Amsterdam';
     $phone        = $content['phone'] ?? '020 - 123 4567';
     $email        = $content['email'] ?? '';
     $mapEmbed     = $content['map_embed'] ?? '';
     $openingHours = $content['opening_hours'] ?? [
-        ['day' => 'Maandag',   'hours' => 'Gesloten'],
-        ['day' => 'Dinsdag',   'hours' => '09:00 - 18:00'],
-        ['day' => 'Woensdag',  'hours' => '09:00 - 18:00'],
-        ['day' => 'Donderdag', 'hours' => '09:00 - 20:00'],
-        ['day' => 'Vrijdag',   'hours' => '09:00 - 18:00'],
-        ['day' => 'Zaterdag',  'hours' => '09:00 - 17:00'],
-        ['day' => 'Zondag',    'hours' => 'Gesloten'],
+        ['day' => __('Monday'),    'hours' => __('Closed')],
+        ['day' => __('Tuesday'),   'hours' => '09:00 - 18:00'],
+        ['day' => __('Wednesday'), 'hours' => '09:00 - 18:00'],
+        ['day' => __('Thursday'),  'hours' => '09:00 - 20:00'],
+        ['day' => __('Friday'),    'hours' => '09:00 - 18:00'],
+        ['day' => __('Saturday'),  'hours' => '09:00 - 17:00'],
+        ['day' => __('Sunday'),    'hours' => __('Closed')],
     ];
 
     $primaryColor    = $theme['primary_color'] ?? '#f97316';
@@ -74,7 +74,7 @@
                     </svg>
                 </div>
                 <h3 class="font-bold uppercase tracking-wide text-sm mb-3" style="color: #ffffff; font-family: '{{ $headingFont }}';">
-                    Adres
+                    {{ __('Address') }}
                 </h3>
                 <p class="text-base leading-relaxed mb-6 font-light" style="color: rgba(255,255,255,0.6); font-family: '{{ $bodyFont }}';">
                     {{ $address }}
@@ -86,7 +86,7 @@
                     class="group inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest transition-colors"
                     style="color: {{ $primaryColor }}; font-family: '{{ $bodyFont }}';"
                 >
-                    Route plannen
+                    {{ __('Get directions') }}
                     <svg class="w-3 h-3 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
                     </svg>
@@ -105,7 +105,7 @@
                     </svg>
                 </div>
                 <h3 class="font-bold uppercase tracking-wide text-sm mb-3 text-white" style="font-family: '{{ $headingFont }}';">
-                    Bel Ons
+                    {{ __('Call Us') }}
                 </h3>
                 <a
                     href="tel:{{ preg_replace('/[^0-9+]/', '', $phone) }}"
@@ -115,7 +115,7 @@
                     {{ $phone }}
                 </a>
                 <p class="text-sm font-light" style="color: rgba(255,255,255,0.65); font-family: '{{ $bodyFont }}';">
-                    Direct een afspraak plannen?
+                    {{ __('Want to book an appointment?') }}
                 </p>
             </div>
 
@@ -133,14 +133,14 @@
                     </svg>
                 </div>
                 <h3 class="font-bold uppercase tracking-wide text-sm mb-5" style="color: #ffffff; font-family: '{{ $headingFont }}';">
-                    Openingstijden
+                    {{ __('Opening Hours') }}
                 </h3>
                 <div class="space-y-2">
                     @foreach($openingHours as $entry)
                         @php
                             $day      = is_array($entry) ? ($entry['day'] ?? '') : $entry;
                             $hours    = is_array($entry) ? ($entry['hours'] ?? '') : '';
-                            $isClosed = str_contains(strtolower($hours), 'gesloten');
+                            $isClosed = str_contains(strtolower($hours), 'closed') || str_contains(strtolower($hours), 'gesloten');
                         @endphp
                         <div class="flex justify-between items-center">
                             <span class="text-sm font-light" style="color: rgba(255,255,255,0.6); font-family: '{{ $bodyFont }}';">{{ $day }}</span>

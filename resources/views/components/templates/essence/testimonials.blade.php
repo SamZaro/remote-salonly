@@ -11,25 +11,25 @@
 
 @php
     // Content met defaults
-    $title = $content['title'] ?? 'Ervaringen';
-    $subtitle = $content['subtitle'] ?? 'Wat onze gasten zeggen';
+    $title = $content['title'] ?? __('Testimonials');
+    $subtitle = $content['subtitle'] ?? __('What our guests say');
     $items = $content['items'] ?? [
         [
             'name' => 'Sophie van den Berg',
-            'role' => 'Bruid',
-            'quote' => 'Mijn bruidskapsels was precies wat ik had gedroomd. Het team begreep perfect wat ik wilde en de proefafspraak gaf me zoveel vertrouwen.',
+            'role' => __('Bride'),
+            'quote' => __('My bridal hairstyle was exactly what I had dreamed of. The team understood perfectly what I wanted and the trial appointment gave me so much confidence.'),
             'rating' => 5,
         ],
         [
             'name' => 'Emma Jansen',
-            'role' => 'Vaste gast',
-            'quote' => 'Al jaren vaste klant. De sfeer, de expertise, de persoonlijke aandacht - alles klopt hier. Mijn balayage ziet er altijd prachtig uit.',
+            'role' => __('Regular guest'),
+            'quote' => __('A loyal client for years. The atmosphere, the expertise, the personal attention, everything is just right here. My balayage always looks stunning.'),
             'rating' => 5,
         ],
         [
             'name' => 'Lisa de Vries',
-            'role' => 'Nieuwe klant',
-            'quote' => 'Van begin tot eind een verwenervaring. Het consult was uitgebreid en het resultaat overtrof mijn verwachtingen.',
+            'role' => __('New client'),
+            'quote' => __('A pampering experience from start to finish. The consultation was thorough and the result exceeded my expectations.'),
             'rating' => 5,
         ],
     ];
@@ -54,7 +54,7 @@
         >
             <div class="flex items-center justify-center gap-4 mb-8">
                 <div class="w-12 h-px" style="background-color: {{ $secondaryColor }}40;"></div>
-                <span class="text-xs font-medium uppercase tracking-[0.3em]" style="color: {{ $secondaryColor }};">Recensies</span>
+                <span class="text-xs font-medium uppercase tracking-[0.3em]" style="color: {{ $secondaryColor }};">{{ __('Reviews') }}</span>
                 <div class="w-12 h-px" style="background-color: {{ $secondaryColor }}40;"></div>
             </div>
             <h2
@@ -137,7 +137,7 @@
                 <div class="w-px h-8" style="background-color: {{ $primaryColor }};"></div>
                 <div>
                     <span class="text-lg font-light" style="color: {{ $secondaryColor }}; font-family: '{{ $headingFont }}', Georgia, serif;">5.0</span>
-                    <span class="text-sm ml-1" style="color: {{ $textColor }}; opacity: 0.6;">uit 200+ reviews</span>
+                    <span class="text-sm ml-1" style="color: {{ $textColor }}; opacity: 0.6;">{{ __('from 200+ reviews') }}</span>
                 </div>
             </div>
         </div>

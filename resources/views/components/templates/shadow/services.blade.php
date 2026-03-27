@@ -11,37 +11,37 @@
 
 @php
     // Content met defaults
-    $title = $content['title'] ?? 'Onze Behandelingen';
-    $subtitle = $content['subtitle'] ?? 'Wat wij bieden';
+    $title = $content['title'] ?? __('Our Services');
+    $subtitle = $content['subtitle'] ?? __('What we offer');
     $items = $content['items'] ?? [
         [
-            'title' => 'Knippen',
-            'description' => 'Van klassieke coupes tot moderne fades en textured crops. Onze barbers luisteren naar jouw wensen en creëren de perfecte look.',
+            'title' => __('Haircut'),
+            'description' => __('From classic cuts to modern fades and textured crops. Our barbers listen to what you want and create the perfect look.'),
             'icon' => 'scissors',
         ],
         [
-            'title' => 'Baard Trimmen',
-            'description' => 'Een strakke baardtrim of een volledige baard verzorging. Wij brengen jouw baard in topvorm met precisie en vakmanschap.',
+            'title' => __('Beard Trim'),
+            'description' => __('A sharp beard trim or a full beard treatment. We get your beard in top shape with precision and craftsmanship.'),
             'icon' => 'razor',
         ],
         [
-            'title' => 'Hot Towel Shave',
-            'description' => 'De ultieme barbershop ervaring. Een traditionele scheerbeurt met warme handdoeken voor een gladde en verzorgde huid.',
+            'title' => __('Hot Towel Shave'),
+            'description' => __('The ultimate barbershop experience. A traditional shave with hot towels for smooth, well-groomed skin.'),
             'icon' => 'towel',
         ],
         [
-            'title' => 'Knippen & Baard',
-            'description' => 'Het complete pakket: een stijlvol kapsel gecombineerd met een verzorgde baard. De perfecte combi voor de moderne man.',
+            'title' => __('Cut & Beard'),
+            'description' => __('The complete package: a stylish haircut combined with a groomed beard. The perfect combo for the modern man.'),
             'icon' => 'star',
         ],
         [
-            'title' => 'Wenkbrauwen',
-            'description' => 'Netjes bijgewerkte wenkbrauwen voor een verzorgde uitstraling. Snel en pijnloos door onze ervaren barbers.',
+            'title' => __('Eyebrows'),
+            'description' => __('Neatly groomed eyebrows for a polished look. Quick and painless by our experienced barbers.'),
             'icon' => 'check',
         ],
         [
-            'title' => 'Haar & Huid Verzorging',
-            'description' => 'Advies en behandelingen voor gezond haar en een verzorgde huid. Met premium producten afgestemd op jouw behoeften.',
+            'title' => __('Hair & Skin Care'),
+            'description' => __('Advice and treatments for healthy hair and well-groomed skin. With premium products tailored to your needs.'),
             'icon' => 'shield',
         ],
     ];
@@ -78,7 +78,7 @@
                 class="inline-block px-4 py-1 text-sm font-semibold uppercase tracking-wider rounded-sm mb-4"
                 style="background-color: {{ $primaryColor }}20; color: {{ $primaryColor }};"
             >
-                Onze diensten
+                {{ __('Our services') }}
             </span>
             <h2
                 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4"

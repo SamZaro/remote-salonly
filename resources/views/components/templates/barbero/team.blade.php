@@ -11,8 +11,8 @@
 ])
 
 @php
-    $title = $content['title'] ?? 'Ons Team';
-    $subtitle = $content['subtitle'] ?? 'De mannen achter de schaar';
+    $title = $content['title'] ?? __('Our Team');
+    $subtitle = $content['subtitle'] ?? __('The men behind the scissors');
     $members = $content['members'] ?? [];
 
     $memberPhotos = $section?->getMedia('images') ?? collect();
@@ -119,7 +119,7 @@
             </div>
         @else
             <p class="text-center opacity-60" style="color: {{ $backgroundColor }};">
-                {{ __('Voeg teamleden toe via het dashboard.') }}
+                {{ __('Add team members via the dashboard.') }}
             </p>
         @endif
     </div>

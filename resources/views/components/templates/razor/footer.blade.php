@@ -27,7 +27,7 @@
     $address = $content['address'] ?? '';
     $phone = $content['phone'] ?? '';
     $email = $content['email'] ?? '';
-    $copyright = $content['copyright'] ?? '© ' . date('Y') . ' ' . $companyName . '. Alle rechten voorbehouden.';
+    $copyright = $content['copyright'] ?? '© ' . date('Y') . ' ' . $companyName . '. ' . __('All rights reserved.');
 
     // Social media links
     $socialLinks = $content['social_links'] ?? [];
@@ -177,7 +177,7 @@
                     onmouseover="this.style.background='{{ $primaryColor }}'; this.style.color='{{ $secondaryColor }}'"
                     onmouseout="this.style.background='transparent'; this.style.color='{{ $primaryColor }}'"
                 >
-                    {{ __('Maak een afspraak') }}
+                    {{ __('Make an appointment') }}
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                     </svg>

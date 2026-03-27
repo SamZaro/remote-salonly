@@ -13,8 +13,8 @@
 @php
     // Content met defaults
     $title = $content['title'] ?? 'Bloom Into<br>Your Beauty';
-    $subtitle = $content['subtitle'] ?? 'Luxe haarverzorging, beauty & wellness voor de moderne vrouw';
-    $ctaText = $content['cta_text'] ?? 'Boek Je Afspraak';
+    $subtitle = $content['subtitle'] ?? __('Luxury hair care, beauty & wellness for the modern woman');
+    $ctaText = $content['cta_text'] ?? __('Book Your Appointment');
     $ctaLink = $content['cta_link'] ?? '#contact';
     $backgroundImage = $section?->getFirstMediaUrl('background') ?: ($content['background_image'] ?? null);
 
@@ -84,7 +84,7 @@
                         <svg class="w-5 h-5 mr-2" style="color: {{ $primaryColor }};" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
                         </svg>
-                        Ontdek onze services
+                        {{ __('Discover our services') }}
                     </a>
                 </div>
 
@@ -137,7 +137,7 @@
                                 <svg class="w-24 h-24 mx-auto mb-4" style="color: {{ $primaryColor }}50;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
                                 </svg>
-                                <span style="color: {{ $primaryColor }}60;">Hero afbeelding</span>
+                                <span style="color: {{ $primaryColor }}60;">{{ __('Hero image') }}</span>
                             </div>
                         </div>
                     </div>
@@ -158,8 +158,8 @@
                             </svg>
                         </div>
                         <div>
-                            <p class="font-semibold" style="color: {{ $textColor }};">Vandaag beschikbaar</p>
-                            <p class="text-sm" style="color: {{ $textColor }}; opacity: 0.6;">Book nu online</p>
+                            <p class="font-semibold" style="color: {{ $textColor }};">{{ __('Available today') }}</p>
+                            <p class="text-sm" style="color: {{ $textColor }}; opacity: 0.6;">{{ __('Book now online') }}</p>
                         </div>
                     </div>
                 </div>

@@ -12,12 +12,12 @@
 
 @php
     // Content met defaults
-    $title = $content['title'] ?? 'Klaar Voor Een Fresh Look?';
-    $subtitle = $content['subtitle'] ?? 'Boek vandaag nog je afspraak';
-    $description = $content['description'] ?? 'Ervaar het verschil van een echte barbershop. Onze vakmannen staan klaar om je de beste behandeling te geven.';
-    $ctaText = $content['cta_text'] ?? 'Maak een afspraak';
+    $title = $content['title'] ?? __('Ready for a Fresh Look?');
+    $subtitle = $content['subtitle'] ?? __('Book your appointment today');
+    $description = $content['description'] ?? __('Experience the difference of a real barbershop. Our craftsmen are ready to give you the best treatment.');
+    $ctaText = $content['cta_text'] ?? __('Book an appointment');
     $ctaLink = $content['cta_link'] ?? '#contact';
-    $secondaryCtaText = $content['secondary_cta_text'] ?? 'Bel direct';
+    $secondaryCtaText = $content['secondary_cta_text'] ?? __('Call directly');
     $secondaryCtaLink = $content['secondary_cta_link'] ?? 'tel:+31612345678';
     // Get background image from Spatie Media Library or fallback to content
     $backgroundImage = $section?->getFirstMediaUrl('background') ?: ($content['background_image'] ?? null);
@@ -145,7 +145,7 @@
                     <svg class="w-5 h-5" style="color: {{ $primaryColor }};" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
                     </svg>
-                    <span>Ma-Za: 09:00 - 20:00</span>
+                    <span>{{ __('Mon-Sat: 09:00 - 20:00') }}</span>
                 </div>
                 <div class="hidden sm:block w-px h-4" style="background-color: {{ $primaryColor }}40;"></div>
                 <div class="flex items-center gap-2">
@@ -153,7 +153,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
                     </svg>
-                    <span>Walk-ins welkom</span>
+                    <span>{{ __('Walk-ins welcome') }}</span>
                 </div>
             </div>
         </div>

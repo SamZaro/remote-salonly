@@ -10,9 +10,9 @@
 ])
 
 @php
-    $title = $content['title'] ?? 'Klaar voor een nieuwe look?';
-    $subtitle = $content['subtitle'] ?? 'Onze stylisten staan voor je klaar om jouw droomkapsel te creëren';
-    $ctaText = $content['cta_text'] ?? 'Boek Nu';
+    $title = $content['title'] ?? __('Ready for a new look?');
+    $subtitle = $content['subtitle'] ?? __('Our stylists are ready to create your dream hairstyle');
+    $ctaText = $content['cta_text'] ?? __('Book Now');
     $ctaLink = $content['cta_link'] ?? '#contact';
     $backgroundImage = $section?->getFirstMediaUrl('background') ?: ($content['background_image'] ?? null);
 
@@ -26,10 +26,10 @@
     $bodyFont = $theme['font_family'] ?? 'Montserrat';
 
     $stats = $content['stats'] ?? [
-        ['value' => '10+', 'label' => 'Jaar ervaring'],
-        ['value' => '5000+', 'label' => 'Tevreden klanten'],
-        ['value' => '4.9', 'label' => 'Google rating'],
-        ['value' => '6', 'label' => 'Stylisten'],
+        ['value' => '10+', 'label' => __('Years of experience')],
+        ['value' => '5000+', 'label' => __('Satisfied customers')],
+        ['value' => '4.9', 'label' => __('Google rating')],
+        ['value' => '6', 'label' => __('Stylists')],
     ];
 @endphp
 
@@ -60,7 +60,7 @@
                 >
                     <span class="w-10 h-px" style="background-color: {{ $primaryColor }};"></span>
                     <span class="uppercase text-[11px] tracking-[0.3em] font-medium" style="color: {{ $primaryColor }};">
-                        Jouw nieuwe look wacht
+                        {{ __('Your new look awaits') }}
                     </span>
                 </div>
 
@@ -119,7 +119,7 @@
                         class="inline-flex items-center justify-center px-8 py-4 text-[12px] font-medium uppercase tracking-[0.2em] transition-all duration-300 hover:bg-white/5"
                         style="color: {{ $primaryColor }}; border: 1px solid {{ $primaryColor }}30;"
                     >
-                        Bekijk diensten
+                        {{ __('View services') }}
                     </a>
                 </div>
             </div>

@@ -26,7 +26,7 @@
     $address = $content['address'] ?? '';
     $phone = $content['phone'] ?? '';
     $email = $content['email'] ?? '';
-    $copyright = $content['copyright'] ?? '© ' . date('Y') . ' ' . $companyName . '. Alle rechten voorbehouden.';
+    $copyright = $content['copyright'] ?? '© ' . date('Y') . ' ' . $companyName . '. ' . __('All rights reserved.');
 
     // Social media links
     $socialLinks = $content['social_links'] ?? [];
@@ -108,7 +108,7 @@
                     class="uppercase text-[11px] tracking-[0.3em] font-medium mb-6"
                     style="color: {{ $primaryColor }};"
                 >
-                    {{ __('Navigatie') }}
+                    {{ __('Navigation') }}
                 </h4>
                 <ul class="space-y-3">
                     @foreach($navigation as $item)
@@ -186,17 +186,17 @@
                     class="uppercase text-[11px] tracking-[0.3em] font-medium mb-6"
                     style="color: {{ $primaryColor }};"
                 >
-                    {{ __('Afspraak maken') }}
+                    {{ __('Make appointment') }}
                 </h4>
                 <p class="text-[13px] leading-relaxed mb-6" style="color: {{ $backgroundColor }}35;">
-                    {{ __('Klaar voor een nieuwe look? Maak vandaag nog een afspraak!') }}
+                    {{ __('Ready for a new look? Book an appointment today!') }}
                 </p>
                 <a
                     href="#contact"
                     class="inline-flex items-center gap-3 px-6 py-3 text-[11px] font-semibold uppercase tracking-[0.2em] text-white transition-all duration-300 hover:brightness-110"
                     style="background-color: {{ $primaryColor }};"
                 >
-                    {{ __('Reserveren') }}
+                    {{ __('Book now') }}
                     <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                     </svg>

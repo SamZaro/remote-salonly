@@ -10,9 +10,9 @@
 ])
 
 @php
-    $title      = $content['title'] ?? 'Onze Stijlen';
-    $subtitle   = $content['subtitle'] ?? 'Creatief. Persoonlijk. On-trend.';
-    $ctaText    = $content['cta_text'] ?? 'Maak Afspraak';
+    $title      = $content['title'] ?? __('Our Styles');
+    $subtitle   = $content['subtitle'] ?? __('Creative. Personal. On-trend.');
+    $ctaText    = $content['cta_text'] ?? __('Book Appointment');
     $ctaLink    = $content['cta_link'] ?? '#contact';
     $autoplay   = (bool) ($content['autoplay'] ?? true);
     $interval   = (int) ($content['interval'] ?? 5000);
@@ -92,7 +92,7 @@
                 <div class="flex-1 min-w-0">
                     <div class="flex items-center gap-3 mb-4">
                         <div class="w-6 h-1 shrink-0" style="background-color: {{ $primaryColor }};"></div>
-                        <span class="text-xs font-semibold uppercase tracking-[0.3em]" style="color: {{ $primaryColor }}; font-family: '{{ $bodyFont }}';">Kapsalon</span>
+                        <span class="text-xs font-semibold uppercase tracking-[0.3em]" style="color: {{ $primaryColor }}; font-family: '{{ $bodyFont }}';">{{ __('Hair Salon') }}</span>
                     </div>
                     <h2
                         class="font-black leading-[0.9] mb-3"
@@ -128,7 +128,7 @@
                                 style="border-color: #e0e0e0; color: {{ $secondaryColor }};"
                                 onmouseover="this.style.borderColor='{{ $primaryColor }}'; this.style.color='{{ $primaryColor }}'"
                                 onmouseout="this.style.borderColor='#e0e0e0'; this.style.color='{{ $secondaryColor }}'"
-                                aria-label="Vorige"
+                                aria-label="{{ __('Previous') }}"
                             >
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
@@ -140,7 +140,7 @@
                                 style="background-color: {{ $secondaryColor }}; color: #ffffff;"
                                 onmouseover="this.style.backgroundColor='{{ $primaryColor }}'"
                                 onmouseout="this.style.backgroundColor='{{ $secondaryColor }}'"
-                                aria-label="Volgende"
+                                aria-label="{{ __('Next') }}"
                             >
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
@@ -180,7 +180,7 @@
             <div class="p-10 lg:p-14" style="background-color: {{ $backgroundColor }};">
                 <div class="flex items-center gap-3 mb-4">
                     <div class="w-6 h-1" style="background-color: {{ $primaryColor }};"></div>
-                    <span class="text-xs font-semibold uppercase tracking-[0.3em]" style="color: {{ $primaryColor }}; font-family: '{{ $bodyFont }}';">Kapsalon</span>
+                    <span class="text-xs font-semibold uppercase tracking-[0.3em]" style="color: {{ $primaryColor }}; font-family: '{{ $bodyFont }}';">{{ __('Hair Salon') }}</span>
                 </div>
                 <h2 class="font-black leading-[0.9] mb-4" style="font-family: '{{ $headingFont }}'; font-size: clamp(2rem, 5vw, 4rem); letter-spacing: -0.03em; color: {{ $secondaryColor }};">
                     {!! $title !!}

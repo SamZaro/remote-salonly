@@ -13,8 +13,8 @@
 @php
     // Content met defaults
     $title = $content['title'] ?? 'Timeless<br>Elegance';
-    $subtitle = $content['subtitle'] ?? 'Waar schoonheid en verfijning samenkomen';
-    $ctaText = $content['cta_text'] ?? 'Reserveer Nu';
+    $subtitle = $content['subtitle'] ?? __('Where beauty and refinement meet');
+    $ctaText = $content['cta_text'] ?? __('Reserve Now');
     $ctaLink = $content['cta_link'] ?? '#contact';
     $backgroundImage = $section?->getFirstMediaUrl('background') ?: ($content['background_image'] ?? null);
 
@@ -94,7 +94,7 @@
                         class="inline-flex items-center justify-center px-10 py-4 text-sm font-medium uppercase tracking-widest border transition-all duration-500"
                         style="border-color: {{ $secondaryColor }}30; color: {{ $secondaryColor }};"
                     >
-                        Ontdek meer
+                        {{ __('Discover more') }}
                     </a>
                 </div>
 
@@ -102,7 +102,7 @@
                 <div class="flex items-center justify-center lg:justify-start gap-8 mt-16">
                     <div class="text-center">
                         <span class="block text-2xl font-light" style="color: {{ $secondaryColor }}; font-family: '{{ $headingFont }}', Georgia, serif;">15+</span>
-                        <span class="text-xs uppercase tracking-wider" style="color: {{ $textColor }}; opacity: 0.6;">Jaar ervaring</span>
+                        <span class="text-xs uppercase tracking-wider" style="color: {{ $textColor }}; opacity: 0.6;">{{ __('Years of experience') }}</span>
                     </div>
                     <div class="w-px h-10" style="background-color: {{ $secondaryColor }}20;"></div>
                     <div class="text-center">
@@ -149,7 +149,7 @@
                                 <svg class="w-20 h-20 mx-auto mb-4" style="color: {{ $secondaryColor }}30;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                                 </svg>
-                                <span class="text-sm" style="color: {{ $secondaryColor }}50;">Hero afbeelding</span>
+                                <span class="text-sm" style="color: {{ $secondaryColor }}50;">{{ __('Hero image') }}</span>
                             </div>
                         </div>
                     </div>
@@ -170,8 +170,8 @@
                             </svg>
                         </div>
                         <div>
-                            <p class="text-sm font-medium" style="color: {{ $secondaryColor }};">Online reserveren</p>
-                            <p class="text-xs" style="color: {{ $textColor }}; opacity: 0.6;">24/7 beschikbaar</p>
+                            <p class="text-sm font-medium" style="color: {{ $secondaryColor }};">{{ __('Book online') }}</p>
+                            <p class="text-xs" style="color: {{ $textColor }}; opacity: 0.6;">{{ __('Available 24/7') }}</p>
                         </div>
                     </div>
                 </div>

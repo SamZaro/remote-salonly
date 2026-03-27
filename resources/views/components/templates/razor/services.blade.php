@@ -11,15 +11,15 @@
 
 @php
     // Content met defaults
-    $title = $content['title'] ?? 'Onze Diensten';
-    $subtitle = $content['subtitle'] ?? 'Van klassiek tot modern - wij beheersen elke stijl';
+    $title = $content['title'] ?? __('Our Services');
+    $subtitle = $content['subtitle'] ?? __('From classic to modern, we master every style');
     $items = $content['items'] ?? [
-        ['title' => 'Heren Knippen', 'description' => 'Precisie knippen met schaar of tondeuse', 'price' => '€27', 'icon' => 'scissors'],
-        ['title' => 'Baard Verzorging', 'description' => 'Trimmen, vormen en verzorgen', 'price' => '€22', 'icon' => 'razor'],
-        ['title' => 'Hot Towel Shave', 'description' => 'Luxueuze scheerbeurt met warme doeken', 'price' => '€32', 'icon' => 'towel'],
-        ['title' => 'Knippen & Baard', 'description' => 'Complete verzorging in één behandeling', 'price' => '€45', 'icon' => 'star'],
-        ['title' => 'Grijs Camouflage', 'description' => 'Subtiele kleurbehandeling voor grijs haar', 'price' => '€35', 'icon' => 'color'],
-        ['title' => 'Kids Knippen', 'description' => 'Voor onze jongste gentlemen (t/m 12 jaar)', 'price' => '€19', 'icon' => 'child'],
+        ['title' => __('Men\'s Haircut'), 'description' => __('Precision cut with scissors or clippers'), 'price' => '€27', 'icon' => 'scissors'],
+        ['title' => __('Beard Care'), 'description' => __('Trimming, shaping and grooming'), 'price' => '€22', 'icon' => 'razor'],
+        ['title' => __('Hot Towel Shave'), 'description' => __('Luxury shave with warm towels'), 'price' => '€32', 'icon' => 'towel'],
+        ['title' => __('Cut & Beard'), 'description' => __('Complete care in one treatment'), 'price' => '€45', 'icon' => 'star'],
+        ['title' => __('Grey Camouflage'), 'description' => __('Subtle color treatment for grey hair'), 'price' => '€35', 'icon' => 'color'],
+        ['title' => __('Kids Haircut'), 'description' => __('For our youngest gentlemen (up to 12 years)'), 'price' => '€19', 'icon' => 'child'],
     ];
 
     // Theme kleuren met defaults (consistent met shadow pattern)
@@ -55,7 +55,7 @@
             style="opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);"
         >
             <span class="inline-block text-xs font-bold uppercase tracking-[0.3em] mb-4" style="color: {{ $primaryColor }};">
-                Wat wij bieden
+                {{ __('What we offer') }}
             </span>
             <h2
                 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6"
@@ -115,7 +115,7 @@
 
                     {{-- Price --}}
                     <div class="flex items-center justify-between pt-6 border-t" style="border-color: {{ $primaryColor }}20;">
-                        <span class="text-xs font-bold uppercase tracking-wider" style="color: {{ $lightTextColor }}; opacity: 0.5;">Vanaf</span>
+                        <span class="text-xs font-bold uppercase tracking-wider" style="color: {{ $lightTextColor }}; opacity: 0.5;">{{ __('From') }}</span>
                         <span
                             class="text-2xl font-bold"
                             style="color: {{ $primaryColor }}; font-family: '{{ $headingFont }}', Georgia, serif;"
@@ -130,14 +130,14 @@
         {{-- Bottom CTA --}}
         <div class="text-center mt-14">
             <p class="text-sm opacity-60 mb-6" style="color: {{ $textColor }};">
-                Alle prijzen zijn inclusief BTW. Vraag naar onze combideals.
+                {{ __('All prices include VAT. Ask about our combo deals.') }}
             </p>
             <a
                 href="#pricing"
                 class="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest transition-colors hover:opacity-80"
                 style="color: {{ $primaryColor }};"
             >
-                Bekijk volledige prijslijst
+                {{ __('View full price list') }}
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                 </svg>

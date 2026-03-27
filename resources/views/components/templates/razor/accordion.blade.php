@@ -12,12 +12,12 @@
 
 @php
     $title = $content['title'] ?? 'FAQ';
-    $subtitle = $content['subtitle'] ?? 'Veelgestelde Vragen';
+    $subtitle = $content['subtitle'] ?? __('Frequently Asked Questions');
     $items = $content['items'] ?? [
-        ['question' => 'Moet ik vooraf reserveren?', 'answer' => 'Reserveren wordt aanbevolen, maar walk-ins zijn altijd welkom. Met een reservering ben je verzekerd van je plek.'],
-        ['question' => 'Hoe lang duurt een behandeling?', 'answer' => 'Een standaard knipbeurt duurt 30-45 minuten. Een hot towel shave neemt ongeveer 45 minuten in beslag.'],
-        ['question' => 'Bieden jullie ook baardverzorging?', 'answer' => 'Jazeker. Van trimmen tot een volledige hot towel shave - we verzorgen je baard met precisie.'],
-        ['question' => 'Wat zijn de betaalmogelijkheden?', 'answer' => 'We accepteren contant, pin en alle gangbare creditcards. Contactloos betalen is ook mogelijk.'],
+        ['question' => __('Do I need to book in advance?'), 'answer' => __('Booking is recommended, but walk-ins are always welcome. With a reservation you are guaranteed your spot.')],
+        ['question' => __('How long does a treatment take?'), 'answer' => __('A standard haircut takes 30-45 minutes. A hot towel shave takes approximately 45 minutes.')],
+        ['question' => __('Do you also offer beard care?'), 'answer' => __('Absolutely. From trimming to a full hot towel shave, we care for your beard with precision.')],
+        ['question' => __('What payment methods do you accept?'), 'answer' => __('We accept cash, debit card, and all major credit cards. Contactless payment is also possible.')],
     ];
 
     // Theme kleuren met defaults (consistent met shadow pattern)
@@ -115,7 +115,7 @@
 
         {{-- Bottom CTA --}}
         <div class="mt-16 text-center">
-            <p class="mb-6 uppercase tracking-wider text-sm" style="color: {{ $textColor }}; opacity: 0.5;">Nog vragen?</p>
+            <p class="mb-6 uppercase tracking-wider text-sm" style="color: {{ $textColor }}; opacity: 0.5;">{{ __('Still have questions?') }}</p>
             <a
                 href="#contact"
                 class="inline-flex items-center gap-3 px-8 py-4 text-sm font-bold uppercase tracking-wider transition-all duration-300 border-2 hover:scale-105"
@@ -123,7 +123,7 @@
                 onmouseover="this.style.background='{{ $primaryColor }}'; this.style.color='{{ $secondaryColor }}'"
                 onmouseout="this.style.background='transparent'; this.style.color='{{ $primaryColor }}'"
             >
-                Neem Contact Op
+                {{ __('Get in Touch') }}
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                 </svg>

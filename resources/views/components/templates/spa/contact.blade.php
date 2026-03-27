@@ -11,18 +11,18 @@
 
 @php
     $title = $content['title'] ?? 'Contact';
-    $subtitle = $content['subtitle'] ?? 'Wij verwelkomen je graag';
+    $subtitle = $content['subtitle'] ?? __('We warmly welcome you');
     $address = $content['address'] ?? 'Prinsengracht 456, 1017 KE Amsterdam';
     $phone = $content['phone'] ?? '020 - 123 4567';
     $email = $content['email'] ?? 'info@salon.nl';
     $openingHours = $content['opening_hours'] ?? [
-        ['day' => 'Maandag', 'hours' => 'Gesloten'],
-        ['day' => 'Dinsdag', 'hours' => '09:00 - 18:00'],
-        ['day' => 'Woensdag', 'hours' => '09:00 - 18:00'],
-        ['day' => 'Donderdag', 'hours' => '09:00 - 21:00'],
-        ['day' => 'Vrijdag', 'hours' => '09:00 - 18:00'],
-        ['day' => 'Zaterdag', 'hours' => '09:00 - 17:00'],
-        ['day' => 'Zondag', 'hours' => 'Gesloten'],
+        ['day' => __('Monday'), 'hours' => __('Closed')],
+        ['day' => __('Tuesday'), 'hours' => '09:00 - 18:00'],
+        ['day' => __('Wednesday'), 'hours' => '09:00 - 18:00'],
+        ['day' => __('Thursday'), 'hours' => '09:00 - 21:00'],
+        ['day' => __('Friday'), 'hours' => '09:00 - 18:00'],
+        ['day' => __('Saturday'), 'hours' => '09:00 - 17:00'],
+        ['day' => __('Sunday'), 'hours' => __('Closed')],
     ];
     $mapEmbed = $content['map_embed'] ?? '';
 
@@ -68,7 +68,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
                     </svg>
                 </div>
-                <h3 class="text-sm font-bold uppercase tracking-wider mb-4" style="color: {{ $headingColor }}; font-family: '{{ $bodyFont }}', sans-serif;">Adres</h3>
+                <h3 class="text-sm font-bold uppercase tracking-wider mb-4" style="color: {{ $headingColor }}; font-family: '{{ $bodyFont }}', sans-serif;">{{ __('Address') }}</h3>
                 <p class="text-lg mb-4 leading-relaxed" style="color: {{ $textColor }}; font-family: '{{ $bodyFont }}', sans-serif;">{{ $address }}</p>
                 <a
                     href="https://maps.google.com/?q={{ urlencode($address) }}"
@@ -77,7 +77,7 @@
                     class="text-sm font-semibold transition-opacity hover:opacity-70"
                     style="color: {{ $secondaryColor }}; font-family: '{{ $bodyFont }}', sans-serif;"
                 >
-                    Route plannen &rarr;
+                    {{ __('Plan route') }} &rarr;
                 </a>
             </div>
 
@@ -93,7 +93,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
                     </svg>
                 </div>
-                <h3 class="text-sm font-bold uppercase tracking-wider mb-4" style="color: {{ $primaryColor }}; font-family: '{{ $bodyFont }}', sans-serif;">Bel ons</h3>
+                <h3 class="text-sm font-bold uppercase tracking-wider mb-4" style="color: {{ $primaryColor }}; font-family: '{{ $bodyFont }}', sans-serif;">{{ __('Call us') }}</h3>
                 <a
                     href="tel:{{ preg_replace('/[^0-9+]/', '', $phone) }}"
                     class="text-2xl font-bold block mb-3 transition-opacity hover:opacity-80"
@@ -124,13 +124,13 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
                     </svg>
                 </div>
-                <h3 class="text-sm font-bold uppercase tracking-wider mb-4" style="color: {{ $headingColor }}; font-family: '{{ $bodyFont }}', sans-serif;">Openingstijden</h3>
+                <h3 class="text-sm font-bold uppercase tracking-wider mb-4" style="color: {{ $headingColor }}; font-family: '{{ $bodyFont }}', sans-serif;">{{ __('Opening Hours') }}</h3>
                 <div class="space-y-2">
                     @foreach($openingHours as $entry)
                         @php
                             $day = is_array($entry) ? ($entry['day'] ?? '') : $entry;
                             $hours = is_array($entry) ? ($entry['hours'] ?? '') : '';
-                            $isClosed = str_contains(strtolower($hours), 'gesloten');
+                            $isClosed = str_contains(strtolower($hours), 'closed') || str_contains(strtolower($hours), 'gesloten');
                         @endphp
                         <div class="flex justify-between items-center">
                             <span style="color: {{ $textColor }}; font-family: '{{ $bodyFont }}', sans-serif;">{{ $day }}</span>

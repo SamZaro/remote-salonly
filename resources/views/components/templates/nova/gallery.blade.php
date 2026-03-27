@@ -12,7 +12,7 @@
 
 @php
     $title = $content['title'] ?? 'Portfolio';
-    $subtitle = $content['subtitle'] ?? 'Onze creaties';
+    $subtitle = $content['subtitle'] ?? __('Our creations');
     $images = $section?->getMedia('images') ?? collect();
 
     // Theme kleuren - consistent met color scheme

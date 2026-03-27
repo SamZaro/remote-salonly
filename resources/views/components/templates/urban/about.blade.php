@@ -10,15 +10,15 @@
 ])
 
 @php
-    $title        = $content['title'] ?? 'Ons Verhaal';
-    $subtitle     = $content['subtitle'] ?? 'Sinds 2015 de vaste stek voor de moderne man';
-    $description  = $content['description'] ?? 'Wat begon als een passie voor het vak, groeide uit tot een plek waar mannen terecht kunnen voor meer dan alleen een knipbeurt. Bij ons draait alles om vakmanschap, aandacht voor detail en een moment van rust.';
-    $description2 = $content['description2'] ?? 'Onze barbers zijn opgeleid in zowel klassieke technieken als moderne trends. Of je nu komt voor een strakke fade, een traditionele scheerbeurt of gewoon een goed gesprek — je bent welkom.';
+    $title        = $content['title'] ?? __('Our Story');
+    $subtitle     = $content['subtitle'] ?? __('The go-to spot for the modern man since 2015');
+    $description  = $content['description'] ?? __('What started as a passion for the craft grew into a place where men can come for more than just a haircut. Everything we do is about craftsmanship, attention to detail and a moment of calm.');
+    $description2 = $content['description2'] ?? __('Our barbers are trained in both classic techniques and modern trends. Whether you come for a sharp fade, a traditional shave or just a good conversation, you are always welcome.');
     $image        = $section?->getFirstMediaUrl('background') ?: ($content['image'] ?? null);
     $stats        = $content['stats'] ?? [
-        ['value' => '8+',   'label' => 'Jaar ervaring'],
-        ['value' => '5k+',  'label' => 'Tevreden klanten'],
-        ['value' => '4',    'label' => 'Vakbekwame barbers'],
+        ['value' => '8+',   'label' => __('Years of experience')],
+        ['value' => '5k+',  'label' => __('Satisfied clients')],
+        ['value' => '4',    'label' => __('Skilled barbers')],
     ];
 
     $primaryColor    = $theme['primary_color'] ?? '#C8B88A';
@@ -63,7 +63,7 @@
             <div class="flex items-center gap-4 mb-8">
                 <div class="w-10 h-px" style="background-color: {{ $primaryColor }};"></div>
                 <span class="text-xs font-bold uppercase tracking-[0.35em]" style="color: {{ $primaryColor }}; font-family: '{{ $bodyFont }}';">
-                    Over Ons
+                    {{ __('About Us') }}
                 </span>
             </div>
 
@@ -92,7 +92,7 @@
                     class="group inline-flex items-center gap-3 font-bold uppercase tracking-widest text-sm transition-colors"
                     style="color: {{ $headingColor }}; font-family: '{{ $bodyFont }}';"
                 >
-                    Maak kennis
+                    {{ __('Get acquainted') }}
                     <span class="w-8 h-px transition-all duration-300 group-hover:w-14" style="background-color: {{ $primaryColor }};"></span>
                 </a>
             </div>

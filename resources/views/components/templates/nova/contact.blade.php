@@ -23,13 +23,13 @@
 
     if (empty($openingHours)) {
         $openingHours = [
-            ['day' => 'Maandag', 'hours' => '09:00 - 18:00'],
-            ['day' => 'Dinsdag', 'hours' => '09:00 - 18:00'],
-            ['day' => 'Woensdag', 'hours' => '09:00 - 18:00'],
-            ['day' => 'Donderdag', 'hours' => '09:00 - 18:00'],
-            ['day' => 'Vrijdag', 'hours' => '09:00 - 21:00'],
-            ['day' => 'Zaterdag', 'hours' => '09:00 - 18:00'],
-            ['day' => 'Zondag', 'hours' => 'Gesloten'],
+            ['day' => __('Monday'), 'hours' => '09:00 - 18:00'],
+            ['day' => __('Tuesday'), 'hours' => '09:00 - 18:00'],
+            ['day' => __('Wednesday'), 'hours' => '09:00 - 18:00'],
+            ['day' => __('Thursday'), 'hours' => '09:00 - 18:00'],
+            ['day' => __('Friday'), 'hours' => '09:00 - 21:00'],
+            ['day' => __('Saturday'), 'hours' => '09:00 - 18:00'],
+            ['day' => __('Sunday'), 'hours' => __('Closed')],
         ];
     }
 
@@ -71,7 +71,7 @@
 
             {{-- Adres & Contact --}}
             <div class="rounded p-8" style="background-color: {{ $primaryColor }};">
-                <h3 class="text-2xl font-medium text-white mb-4">Adres & Contact</h3>
+                <h3 class="text-2xl font-medium text-white mb-4">{{ __('Address & Contact') }}</h3>
                 <div class="text-white text-lg space-y-1">
                     @foreach(explode(',', $address) as $line)
                         <p>{{ trim($line) }}</p>
@@ -99,7 +99,7 @@
 
             {{-- Openingstijden --}}
             <div class="rounded p-8" style="background-color: {{ $primaryColor }};">
-                <h3 class="text-2xl font-medium text-white mb-4">Openingstijden</h3>
+                <h3 class="text-2xl font-medium text-white mb-4">{{ __('Opening Hours') }}</h3>
                 <div class="space-y-1">
                     @foreach($openingHours as $entry)
                         <p class="text-white text-lg">

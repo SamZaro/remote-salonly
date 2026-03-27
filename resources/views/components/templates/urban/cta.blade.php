@@ -10,9 +10,9 @@
 ])
 
 @php
-    $title           = $content['title'] ?? 'Klaar voor een nieuwe look?';
-    $subtitle        = $content['subtitle'] ?? 'Boek vandaag nog je afspraak en ervaar het verschil';
-    $ctaText         = $content['cta_text'] ?? 'Maak Afspraak';
+    $title           = $content['title'] ?? __('Ready for a new look?');
+    $subtitle        = $content['subtitle'] ?? __('Book your appointment today and experience the difference');
+    $ctaText         = $content['cta_text'] ?? __('Book Appointment');
     $ctaLink         = $content['cta_link'] ?? '#contact';
     $phone           = $content['phone'] ?? '';
     $backgroundImage = $section?->getFirstMediaUrl('background') ?: ($content['background_image'] ?? null);
@@ -47,7 +47,7 @@
         >
             <div class="w-10 h-px" style="background-color: {{ $primaryColor }};"></div>
             <span class="text-xs font-bold uppercase tracking-[0.35em]" style="color: {{ $primaryColor }}; font-family: '{{ $bodyFont }}';">
-                Boek nu
+                {{ __('Book now') }}
             </span>
         </div>
 
@@ -101,7 +101,7 @@
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
                     </svg>
-                    Bel direct
+                    {{ __('Call directly') }}
                 </a>
             @endif
         </div>

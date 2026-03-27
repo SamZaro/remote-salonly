@@ -10,8 +10,8 @@
 ])
 
 @php
-    $title        = $content['title'] ?? 'Ons Team';
-    $subtitle     = $content['subtitle'] ?? 'De mensen achter de schaar';
+    $title        = $content['title'] ?? __('Our Team');
+    $subtitle     = $content['subtitle'] ?? __('The people behind the scissors');
     $members      = $content['members'] ?? [];
     $memberPhotos = $section?->getMedia('images') ?? collect();
 
@@ -118,7 +118,7 @@
             </div>
         @else
             <p class="text-base font-light" style="color: rgba(255,255,255,0.5); font-family: '{{ $bodyFont }}';">
-                {{ __('Voeg teamleden toe via het dashboard.') }}
+                {{ __('Add team members via the dashboard.') }}
             </p>
         @endif
 
@@ -131,7 +131,7 @@
                 onmouseover="this.style.color='{{ $primaryColor }}'"
                 onmouseout="this.style.color='rgba(255,255,255,0.7)'"
             >
-                Maak een afspraak
+                {{ __('Book an appointment') }}
                 <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                 </svg>

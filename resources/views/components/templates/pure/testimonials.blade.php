@@ -10,15 +10,15 @@
 ])
 
 @php
-    $title = $content['title'] ?? 'Wat Klanten Zeggen';
-    $subtitle = $content['subtitle'] ?? 'Ervaringen van onze bezoekers';
+    $title = $content['title'] ?? __('What Customers Say');
+    $subtitle = $content['subtitle'] ?? __('Experiences from our visitors');
     $rating = $content['rating'] ?? '4.9';
     $totalReviews = $content['total_reviews'] ?? '150';
     $reviews = $content['reviews'] ?? [
-        ['name' => 'Anna de Jong', 'date' => '1 week geleden', 'rating' => 5, 'text' => 'Eindelijk een salon die écht natuurlijk werkt. Mijn haar is gezonder dan ooit en de sfeer is zo rustgevend.', 'service' => 'Organic Cut'],
-        ['name' => 'Marloes Bakker', 'date' => '2 weken geleden', 'rating' => 5, 'text' => 'De plantaardige kleuring is geweldig! Geen chemische geuren, prachtig resultaat en mijn haar voelt zo zacht.', 'service' => 'Plant-Based Color'],
-        ['name' => 'Sanne van Dijk', 'date' => '3 weken geleden', 'rating' => 5, 'text' => 'Meer dan een kapper - het is een wellness ervaring. De hoofdhuidmassage is echt een moment van rust.', 'service' => 'Scalp Wellness'],
-        ['name' => 'Lisa Vermeer', 'date' => '1 maand geleden', 'rating' => 5, 'text' => 'De kruidenbehandeling heeft mijn haar getransformeerd. Nooit meer terug naar chemische producten!', 'service' => 'Herbal Treatment'],
+        ['name' => 'Anna de Jong', 'date' => __('1 week ago'), 'rating' => 5, 'text' => __('Finally a salon that truly works naturally. My hair is healthier than ever, and the atmosphere is so calming.'), 'service' => 'Organic Cut'],
+        ['name' => 'Marloes Bakker', 'date' => __('2 weeks ago'), 'rating' => 5, 'text' => __('The plant-based coloring is amazing! No chemical smells, beautiful results, and my hair feels so soft.'), 'service' => 'Plant-Based Color'],
+        ['name' => 'Sanne van Dijk', 'date' => __('3 weeks ago'), 'rating' => 5, 'text' => __('More than a hair salon, it is a wellness experience. The scalp massage is a true moment of peace.'), 'service' => 'Scalp Wellness'],
+        ['name' => 'Lisa Vermeer', 'date' => __('1 month ago'), 'rating' => 5, 'text' => __('The herbal treatment transformed my hair. I will never go back to chemical products!'), 'service' => 'Herbal Treatment'],
     ];
 
     $primaryColor = $theme['primary_color'] ?? '#14b8a6';

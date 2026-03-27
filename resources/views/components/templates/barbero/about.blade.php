@@ -12,13 +12,13 @@
 
 @php
     // Content met defaults
-    $title = $content['title'] ?? 'Ons Verhaal';
-    $subtitle = $content['subtitle'] ?? 'Traditie ontmoet moderne stijl';
-    $description = $content['description'] ?? 'Al generaties lang bieden wij de beste barberdiensten aan. Onze barbers combineren klassieke technieken met hedendaagse trends voor de perfecte look.';
+    $title = $content['title'] ?? __('Our Story');
+    $subtitle = $content['subtitle'] ?? __('Tradition meets modern style');
+    $description = $content['description'] ?? __('For generations we have offered the finest barbering services. Our barbers combine classic techniques with contemporary trends for the perfect look.');
     $items = $content['items'] ?? [
-        ['title' => 'Ervaren Barbers', 'description' => 'Gecertificeerde vakmannen', 'icon' => 'users'],
-        ['title' => 'Premium Producten', 'description' => 'Alleen de beste merken', 'icon' => 'star'],
-        ['title' => 'Relaxte Sfeer', 'description' => 'Waar mannen mannen zijn', 'icon' => 'home'],
+        ['title' => __('Experienced Barbers'), 'description' => __('Certified craftsmen'), 'icon' => 'users'],
+        ['title' => __('Premium Products'),    'description' => __('Only the best brands'),  'icon' => 'star'],
+        ['title' => __('Relaxed Atmosphere'),  'description' => __('Where men can be men'),  'icon' => 'home'],
     ];
     // Get featured image from Spatie Media Library or fallback to content
     $featuredImage = $section?->getFirstMediaUrl('background') ?: ($content['featured_image'] ?? null);
@@ -53,7 +53,7 @@
                     <div class="relative">
                         <img
                             src="{{ $featuredImage }}"
-                            alt="Over ons"
+                            alt="{{ __('About us') }}"
                             class="w-full h-[600px] object-cover"
                         />
                         {{-- Gold frame overlay --}}
@@ -81,7 +81,7 @@
                     style="background-color: {{ $primaryColor }}; opacity: 0; transform: translateY(10px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.3s;"
                 >
                     <span class="block text-4xl font-bold" style="color: {{ $secondaryColor }}; font-family: '{{ $headingFont }}', Georgia, serif;">15+</span>
-                    <span class="block text-xs font-bold uppercase tracking-widest" style="color: {{ $secondaryColor }};">Jaar</span>
+                    <span class="block text-xs font-bold uppercase tracking-widest" style="color: {{ $secondaryColor }};">{{ __('Years') }}</span>
                 </div>
             </div>
 
@@ -93,7 +93,7 @@
                 {{-- Header ornament --}}
                 <div class="flex items-center gap-4 mb-6">
                     <div class="w-8 h-px" style="background-color: {{ $primaryColor }};"></div>
-                    <span class="text-xs font-bold uppercase tracking-[0.3em]" style="color: {{ $primaryColor }};">Over Ons</span>
+                    <span class="text-xs font-bold uppercase tracking-[0.3em]" style="color: {{ $primaryColor }};">{{ __('About Us') }}</span>
                 </div>
 
                 <h2
@@ -155,7 +155,7 @@
                     class="inline-flex items-center gap-3 px-8 py-4 font-bold uppercase tracking-widest text-sm transition-all duration-300 hover:scale-105"
                     style="background-color: {{ $secondaryColor }}; color: {{ $primaryColor }}; border: 2px solid {{ $primaryColor }};"
                 >
-                    Maak een afspraak
+                    {{ __('Book an appointment') }}
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                     </svg>

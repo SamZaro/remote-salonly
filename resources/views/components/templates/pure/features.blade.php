@@ -11,13 +11,13 @@
 ])
 
 @php
-    $title = $content['title'] ?? 'Waarom Ons Kiezen';
-    $subtitle = $content['subtitle'] ?? 'Onze kwaliteiten';
+    $title = $content['title'] ?? __('Why Choose Us');
+    $subtitle = $content['subtitle'] ?? __('Our qualities');
     $items = $content['items'] ?? [
-        ['title' => 'Biologische Producten', 'description' => 'Wij werken uitsluitend met gecertificeerde biologische en plantaardige producten', 'icon' => 'sparkles'],
-        ['title' => 'Persoonlijke Aanpak', 'description' => 'Elk bezoek begint met een persoonlijk gesprek afgestemd op jouw wensen', 'icon' => 'heart'],
-        ['title' => 'Duurzaam & Bewust', 'description' => 'Van waterbesparende technieken tot recyclebare verpakkingen', 'icon' => 'shield'],
-        ['title' => 'Ontspannen Sfeer', 'description' => 'Een rustgevende omgeving waar je volledig tot rust kunt komen', 'icon' => 'star'],
+        ['title' => __('Organic Products'), 'description' => __('We work exclusively with certified organic and plant-based products'), 'icon' => 'sparkles'],
+        ['title' => __('Personal Approach'), 'description' => __('Every visit starts with a personal consultation tailored to your needs'), 'icon' => 'heart'],
+        ['title' => __('Sustainable and Conscious'), 'description' => __('From water-saving techniques to recyclable packaging'), 'icon' => 'shield'],
+        ['title' => __('Relaxed Atmosphere'), 'description' => __('A calming environment where you can fully unwind'), 'icon' => 'star'],
     ];
 
     $primaryColor = $theme['primary_color'] ?? '#14b8a6';
@@ -58,7 +58,7 @@
                 {{ $title }}
             </h2>
             <p class="text-lg max-w-2xl mx-auto" style="color: {{ $textColor }}; font-family: '{{ $bodyFont }}', sans-serif;">
-                Ontdek wat ons onderscheidt van de rest
+                {{ __('Discover what sets us apart') }}
             </p>
         </div>
 

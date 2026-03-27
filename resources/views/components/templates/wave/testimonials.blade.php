@@ -9,38 +9,38 @@
 ])
 
 @php
-    $title = $content['title'] ?? 'Wat Klanten Zeggen';
-    $subtitle = $content['subtitle'] ?? 'Ervaringen';
+    $title = $content['title'] ?? __('What Customers Say');
+    $subtitle = $content['subtitle'] ?? __('Reviews');
     $googleRating = $content['google_rating'] ?? '4.9';
     $totalReviews = $content['total_reviews'] ?? '180';
     $reviews = $content['reviews'] ?? [
         [
             'name' => 'Charlotte van den Berg',
-            'date' => '2 weken geleden',
+            'date' => __('2 weeks ago'),
             'rating' => 5,
-            'text' => 'Een oase van rust in de stad. Het team heeft niet alleen oog voor detail, maar ook voor wie je bent. Mijn balayage is precies geworden zoals ik wilde - natuurlijk en elegant.',
+            'text' => __('An oasis of calm in the city. The team not only has an eye for detail, but also for who you are. My balayage turned out exactly as I wanted — natural and elegant.'),
             'service' => 'Balayage',
         ],
         [
             'name' => 'Sophie de Vries',
-            'date' => '1 maand geleden',
+            'date' => __('1 month ago'),
             'rating' => 5,
-            'text' => 'Eindelijk een salon die écht luistert. De sfeer is heerlijk en het resultaat overtreft elke keer mijn verwachtingen. Premium kwaliteit.',
-            'service' => 'Knippen & Stylen',
+            'text' => __('Finally a salon that truly listens. The atmosphere is wonderful and the result exceeds my expectations every time. Premium quality.'),
+            'service' => __('Cut & Style'),
         ],
         [
             'name' => 'Emma Jansen',
-            'date' => '3 weken geleden',
+            'date' => __('3 weeks ago'),
             'rating' => 5,
-            'text' => 'Van het moment dat je binnenkomt voel je je welkom. De aandacht voor detail en het persoonlijke advies maken dit tot mijn favoriete salon.',
-            'service' => 'Kleuren',
+            'text' => __('From the moment you walk in you feel welcome. The attention to detail and the personal advice make this my favourite salon.'),
+            'service' => __('Colouring'),
         ],
         [
             'name' => 'Isabelle Bakker',
-            'date' => '1 week geleden',
+            'date' => __('1 week ago'),
             'rating' => 5,
-            'text' => 'Professioneel, vriendelijk en vakkundig. Mijn bruidskapsel was adembenemend. Kan deze salon niet genoeg aanbevelen!',
-            'service' => 'Bruidskapsel',
+            'text' => __('Professional, friendly and skilled. My bridal hairstyle was breathtaking. Cannot recommend this salon enough!'),
+            'service' => __('Bridal Hairstyle'),
         ],
     ];
 
@@ -193,7 +193,7 @@
                 class="group inline-flex items-center gap-3 px-6 py-3 text-sm font-semibold rounded-full transition-all duration-300 hover:shadow-md hover:-translate-y-0.5"
                 style="color: {{ $primaryColor }}; border: 1px solid {{ $primaryColor }}30;"
             >
-                Bekijk alle reviews
+                {{ __('View all reviews') }}
                 <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
                 </svg>

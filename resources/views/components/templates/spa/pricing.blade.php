@@ -10,8 +10,8 @@
 ])
 
 @php
-    $title = $content['title'] ?? 'Prijslijst';
-    $subtitle = $content['subtitle'] ?? 'Onze behandelingen en tarieven';
+    $title = $content['title'] ?? __('Price List');
+    $subtitle = $content['subtitle'] ?? __('Our treatments and rates');
     $categories = $content['categories'] ?? [
         [
             'name' => 'Massages',
@@ -39,11 +39,11 @@
             'name' => 'Lash & Brow',
             'icon' => 'lash',
             'items' => [
-                ['service' => 'Brow Design', 'description' => 'Wax, epileren & shapen', 'price' => '€25'],
-                ['service' => 'Brow Lamination', 'description' => 'Volle, gedefinieerde wenkbrauwen', 'price' => '€45', 'popular' => true],
-                ['service' => 'Lash Lift', 'description' => 'Natuurlijke wimper-lift', 'price' => '€55'],
-                ['service' => 'Wimperextensions Classic', 'description' => 'Natuurlijke look', 'price' => '€85'],
-                ['service' => 'Wimperextensions Volume', 'description' => 'Volle, dramatische look', 'price' => '€110'],
+                ['service' => 'Brow Design', 'description' => __('Wax, threading & shaping'), 'price' => '€25'],
+                ['service' => 'Brow Lamination', 'description' => __('Full, defined brows'), 'price' => '€45', 'popular' => true],
+                ['service' => 'Lash Lift', 'description' => __('Natural lash lift'), 'price' => '€55'],
+                ['service' => __('Lash Extensions Classic'), 'description' => __('Natural look'), 'price' => '€85'],
+                ['service' => __('Lash Extensions Volume'), 'description' => __('Full, dramatic look'), 'price' => '€110'],
             ],
         ],
     ];
@@ -72,7 +72,7 @@
             >Pricing</span>
 
             <span class="text-xs font-semibold uppercase tracking-[0.25em] mb-4 block" style="color: {{ $primaryColor }}; font-family: '{{ $bodyFont }}', sans-serif;">
-                Prijzen
+                {{ __('Prices') }}
             </span>
             <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-5" style="color: {{ $headingColor }}; font-family: '{{ $headingFont }}', serif;">
                 {{ $title }}
@@ -113,7 +113,7 @@
                                                 class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded"
                                                 style="background-color: {{ $primaryColor }}; color: {{ $secondaryColor }}; font-family: '{{ $bodyFont }}', sans-serif;"
                                             >
-                                                Populair
+                                                {{ __('Popular') }}
                                             </span>
                                         @endif
                                     </div>
@@ -136,7 +136,7 @@
                         onmouseover="this.style.backgroundColor='{{ $primaryColor }}';"
                         onmouseout="this.style.backgroundColor='{{ $accentColor }}';"
                     >
-                        Afspraak maken
+                        {{ __('Make Appointment') }}
                     </a>
                 </div>
             @endforeach
@@ -144,7 +144,7 @@
 
         {{-- Footer note --}}
         <p class="mt-10 text-center text-sm" style="color: {{ $textColor }}; font-family: '{{ $bodyFont }}', sans-serif;">
-            Alle prijzen zijn inclusief BTW. Combinatiebehandelingen op aanvraag.
+            {{ __('All prices include VAT. Combination treatments on request.') }}
         </p>
     </div>
 </section>

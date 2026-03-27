@@ -11,15 +11,15 @@
 
 @php
     // Content met defaults
-    $title = $content['title'] ?? 'Onze Behandelingen';
-    $subtitle = $content['subtitle'] ?? 'Verfijnde beauty services voor de moderne vrouw';
+    $title = $content['title'] ?? __('Our Treatments');
+    $subtitle = $content['subtitle'] ?? __('Refined beauty services for the modern woman');
     $items = $content['items'] ?? [
-        ['title' => 'Balayage & Highlights', 'description' => 'Natuurlijke kleurverloop en dimensie', 'price' => 'Vanaf €145', 'icon' => 'color'],
-        ['title' => 'Bridal Styling', 'description' => 'Jouw perfecte bruidsdag look', 'price' => 'Vanaf €195', 'icon' => 'heart'],
-        ['title' => 'Precision Cut', 'description' => 'Vakkundig knippen en vormgeven', 'price' => 'Vanaf €65', 'icon' => 'scissors'],
-        ['title' => 'Luxe Treatments', 'description' => 'Intensieve haar- en hoofdhuidverzorging', 'price' => 'Vanaf €55', 'icon' => 'sparkles'],
-        ['title' => 'Extensions', 'description' => 'Natuurlijke volume en lengte', 'price' => 'Op aanvraag', 'icon' => 'extensions'],
-        ['title' => 'Styling & Finish', 'description' => 'Blow-dry, updo\'s en gelegenheidskapsels', 'price' => 'Vanaf €45', 'icon' => 'styling'],
+        ['title' => 'Balayage & Highlights', 'description' => __('Natural color gradient and dimension'), 'price' => __('From') . ' €145', 'icon' => 'color'],
+        ['title' => 'Bridal Styling', 'description' => __('Your perfect wedding day look'), 'price' => __('From') . ' €195', 'icon' => 'heart'],
+        ['title' => 'Precision Cut', 'description' => __('Expert cutting and shaping'), 'price' => __('From') . ' €65', 'icon' => 'scissors'],
+        ['title' => __('Luxury Treatments'), 'description' => __('Intensive hair and scalp care'), 'price' => __('From') . ' €55', 'icon' => 'sparkles'],
+        ['title' => 'Extensions', 'description' => __('Natural volume and length'), 'price' => __('On request'), 'icon' => 'extensions'],
+        ['title' => 'Styling & Finish', 'description' => __('Blow-dry, updos and occasion hairstyles'), 'price' => __('From') . ' €45', 'icon' => 'styling'],
     ];
 
     // Theme kleuren - Soft Luxury palette
@@ -121,7 +121,7 @@
                             class="inline-flex items-center gap-1 text-xs font-medium uppercase tracking-wider transition-all duration-300 group-hover:gap-2"
                             style="color: {{ $secondaryColor }};"
                         >
-                            Boeken
+                            {{ __('Book') }}
                             <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                             </svg>
@@ -141,7 +141,7 @@
                 class="inline-flex items-center gap-3 px-8 py-4 text-sm font-medium uppercase tracking-widest border transition-all duration-300 hover:bg-white"
                 style="border-color: {{ $secondaryColor }}30; color: {{ $secondaryColor }};"
             >
-                Bekijk volledige prijslijst
+                {{ __('View full price list') }}
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"/>
                 </svg>

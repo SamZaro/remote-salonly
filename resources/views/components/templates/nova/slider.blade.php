@@ -11,9 +11,9 @@
 ])
 
 @php
-    $title = $content['title'] ?? 'Welkom bij ons bedrijf';
-    $subtitle = $content['subtitle'] ?? 'Wij helpen u met professionele dienstverlening';
-    $ctaText = $content['cta_text'] ?? 'Maak een afspraak';
+    $title = $content['title'] ?? __('Welcome to our company');
+    $subtitle = $content['subtitle'] ?? __('We help you with professional services');
+    $ctaText = $content['cta_text'] ?? __('Make an appointment');
     $ctaLink = $content['cta_link'] ?? '#contact';
     $autoplay = (bool) ($content['autoplay'] ?? true);
     $interval = (int) ($content['interval'] ?? 5000);
@@ -88,7 +88,7 @@
             style="opacity: 0; transform: translateY(10px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.45s;"
         >
             @if($ctaText)<a href="{{ $ctaLink }}" class="inline-flex items-center justify-center px-8 py-4 text-lg rounded-sm font-medium transition-all duration-300 hover:scale-105" style="background-color: {{ $primaryColor }}; color: #ffffff;">{{ $ctaText }}</a>@endif
-            <a href="#services" class="inline-flex items-center justify-center px-8 py-4 text-lg rounded-sm font-medium border-2 transition-all duration-300 hover:bg-white/10" style="border-color: {{ $textColor }}; color: {{ $textColor }};">Onze diensten</a>
+            <a href="#services" class="inline-flex items-center justify-center px-8 py-4 text-lg rounded-sm font-medium border-2 transition-all duration-300 hover:bg-white/10" style="border-color: {{ $textColor }}; color: {{ $textColor }};">{{ __('Our services') }}</a>
         </div>
     </div>
 

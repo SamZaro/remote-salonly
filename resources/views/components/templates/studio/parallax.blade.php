@@ -12,7 +12,7 @@
 
 @php
     $title = $content['title'] ?? 'Create & Inspire';
-    $subtitle = $content['subtitle'] ?? 'Waar creativiteit geen grenzen kent';
+    $subtitle = $content['subtitle'] ?? __('Where creativity knows no boundaries');
     $backgroundImage = $section?->getFirstMediaUrl('background') ?: ($content['background_image'] ?? null);
 
     // Theme kleuren - dynamisch met Peach defaults

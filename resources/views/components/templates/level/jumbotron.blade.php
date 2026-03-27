@@ -10,9 +10,9 @@
 ])
 
 @php
-    $title           = $content['title'] ?? 'Jouw stijl.<br>Jouw identiteit.';
-    $subtitle        = $content['subtitle'] ?? 'Tijdloze looks, moderne technieken';
-    $ctaText         = $content['cta_text'] ?? 'Plan je bezoek';
+    $title           = $content['title'] ?? __('Your Style.<br>Your Identity.');
+    $subtitle        = $content['subtitle'] ?? __('Timeless looks, modern techniques');
+    $ctaText         = $content['cta_text'] ?? __('Plan your visit');
     $ctaLink         = $content['cta_link'] ?? '#contact';
     $backgroundImage = $section?->getFirstMediaUrl('background') ?: ($content['background_image'] ?? null);
 

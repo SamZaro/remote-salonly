@@ -11,8 +11,8 @@
 ])
 
 @php
-    $title = $content['title'] ?? 'Puur & Natuurlijk';
-    $subtitle = $content['subtitle'] ?? 'Ontdek de kracht van natuurlijke schoonheid';
+    $title = $content['title'] ?? __('Pure and Natural');
+    $subtitle = $content['subtitle'] ?? __('Discover the power of natural beauty');
     $backgroundImage = $section?->getFirstMediaUrl('background') ?: ($content['background_image'] ?? null);
 
     $primaryColor = $theme['primary_color'] ?? '#14b8a6';

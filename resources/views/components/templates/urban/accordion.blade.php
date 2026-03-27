@@ -10,13 +10,13 @@
 ])
 
 @php
-    $title    = $content['title'] ?? 'Veelgestelde Vragen';
-    $subtitle = $content['subtitle'] ?? 'Alles wat je wilt weten';
+    $title    = $content['title'] ?? __('Frequently Asked Questions');
+    $subtitle = $content['subtitle'] ?? __('Everything you want to know');
     $items    = $content['items'] ?? [
-        ['question' => 'Moet ik vooraf reserveren?',       'answer' => 'Reserveren wordt aanbevolen, maar walk-ins zijn altijd welkom. Met een reservering ben je verzekerd van je plek.'],
-        ['question' => 'Hoe lang duurt een behandeling?',  'answer' => 'Een standaard knipbeurt duurt 30-45 minuten. Een hot towel shave neemt ongeveer 45 minuten in beslag.'],
-        ['question' => 'Bieden jullie ook baardverzorging?', 'answer' => 'Jazeker. Van trimmen tot een volledige hot towel shave — we verzorgen je baard met precisie.'],
-        ['question' => 'Wat zijn de betaalmogelijkheden?', 'answer' => 'We accepteren contant, pin en alle gangbare creditcards. Contactloos betalen is ook mogelijk.'],
+        ['question' => __('Do I need to book in advance?'),        'answer' => __('Booking is recommended, but walk-ins are always welcome. With a reservation you are guaranteed your spot.')],
+        ['question' => __('How long does a treatment take?'),      'answer' => __('A standard haircut takes 30 to 45 minutes. A hot towel shave takes about 45 minutes.')],
+        ['question' => __('Do you also offer beard grooming?'),    'answer' => __('Absolutely. From trimming to a full hot towel shave, we take care of your beard with precision.')],
+        ['question' => __('What payment methods do you accept?'),  'answer' => __('We accept cash, debit card, and all major credit cards. Contactless payment is also available.')],
     ];
 
     $primaryColor    = $theme['primary_color'] ?? '#C8B88A';
@@ -112,13 +112,13 @@
 
         {{-- CTA --}}
         <div class="mt-14 flex flex-wrap items-center gap-6">
-            <span class="text-xs uppercase tracking-widest" style="color: rgba(255,255,255,0.3); font-family: '{{ $bodyFont }}';">Nog vragen?</span>
+            <span class="text-xs uppercase tracking-widest" style="color: rgba(255,255,255,0.3); font-family: '{{ $bodyFont }}';">{{ __('Still have questions?') }}</span>
             <a
                 href="#contact"
                 class="group inline-flex items-center gap-3 font-bold uppercase tracking-widest text-sm"
                 style="color: {{ $primaryColor }}; font-family: '{{ $bodyFont }}';"
             >
-                Neem Contact Op
+                {{ __('Get in Touch') }}
                 <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                 </svg>

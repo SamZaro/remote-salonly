@@ -20,11 +20,11 @@
     $bodyFont = $theme['font_family'] ?? 'Raleway';
 
     $ctaLabel = $content['cta_label'] ?? __('Contact');
-    $ctaHeading = $content['cta_heading'] ?? __('We horen graag van je');
-    $ctaHighlight = $content['cta_highlight'] ?? __('graag');
+    $ctaHeading = $content['cta_heading'] ?? __('We would love to hear from you');
+    $ctaHighlight = $content['cta_highlight'] ?? __('love');
     $backgroundImage = $section?->getFirstMediaUrl('background') ?: null;
 
-    $formTitle = $content['title'] ?? __('Stuur ons een bericht');
+    $formTitle = $content['title'] ?? __('Send us a message');
 @endphp
 
 <section id="contact-form" class="py-20 lg:py-28" style="background-color: {{ $backgroundColor }}; font-family: '{{ $bodyFont }}', sans-serif;">

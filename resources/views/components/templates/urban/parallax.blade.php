@@ -11,7 +11,7 @@
 
 @php
     $title           = $content['title'] ?? 'Sharp & Clean';
-    $subtitle        = $content['subtitle'] ?? 'Traditioneel vakmanschap, moderne stijl';
+    $subtitle        = $content['subtitle'] ?? __('Traditional craftsmanship, modern style');
     $backgroundImage = $section?->getFirstMediaUrl('background') ?: ($content['background_image'] ?? null);
 
     $primaryColor   = $theme['primary_color'] ?? '#C8B88A';

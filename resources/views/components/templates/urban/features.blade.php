@@ -10,13 +10,13 @@
 ])
 
 @php
-    $title    = $content['title'] ?? 'Waarom Kiezen Voor Ons';
-    $subtitle = $content['subtitle'] ?? 'Wat ons onderscheidt van de rest';
+    $title    = $content['title'] ?? __('Why Choose Us');
+    $subtitle = $content['subtitle'] ?? __('What sets us apart from the rest');
     $items    = $content['items'] ?? [
-        ['title' => 'Traditioneel Vakmanschap', 'description' => 'Klassieke barbertechnieken gecombineerd met hedendaagse stijlen voor het perfecte resultaat.', 'icon' => 'scissors'],
-        ['title' => 'Persoonlijke Service',     'description' => 'Elk bezoek begint met een persoonlijk consult om jouw wensen helder te krijgen.', 'icon' => 'chat'],
-        ['title' => 'Premium Producten',        'description' => 'Uitsluitend professionele producten van de hoogste kwaliteit voor het beste resultaat.', 'icon' => 'sparkles'],
-        ['title' => 'Ontspannen Sfeer',         'description' => 'Een relaxte omgeving waar je even helemaal tot rust kunt komen en jezelf bent.', 'icon' => 'heart'],
+        ['title' => __('Traditional Craftsmanship'), 'description' => __('Classic barber techniques combined with contemporary styles for the perfect result.'), 'icon' => 'scissors'],
+        ['title' => __('Personal Service'),          'description' => __('Every visit starts with a personal consultation to understand exactly what you want.'), 'icon' => 'chat'],
+        ['title' => __('Premium Products'),          'description' => __('Only professional products of the highest quality for the best possible result.'), 'icon' => 'sparkles'],
+        ['title' => __('Relaxed Atmosphere'),        'description' => __('A laid-back environment where you can truly unwind and feel completely at ease.'), 'icon' => 'heart'],
     ];
 
     $primaryColor    = $theme['primary_color'] ?? '#C8B88A';
@@ -44,7 +44,7 @@
             <div class="flex items-center gap-4 mb-6">
                 <div class="w-10 h-px" style="background-color: {{ $primaryColor }};"></div>
                 <span class="text-xs font-bold uppercase tracking-[0.35em]" style="color: {{ $primaryColor }}; font-family: '{{ $bodyFont }}';">
-                    Onze kenmerken
+                    {{ __('Our features') }}
                 </span>
             </div>
             <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4">

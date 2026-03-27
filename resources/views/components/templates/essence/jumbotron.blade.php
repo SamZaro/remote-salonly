@@ -12,9 +12,9 @@
 
 @php
     // Content met defaults
-    $title = $content['title'] ?? 'Ontdek Je Stralende Zelf';
-    $subtitle = $content['subtitle'] ?? 'Luxury treatments die jouw natuurlijke schoonheid versterken';
-    $ctaText = $content['cta_text'] ?? 'Bekijk Treatments';
+    $title = $content['title'] ?? __('Discover Your Radiant Self');
+    $subtitle = $content['subtitle'] ?? __('Luxury treatments that enhance your natural beauty');
+    $ctaText = $content['cta_text'] ?? __('View Treatments');
     $ctaLink = $content['cta_link'] ?? '#services';
     $backgroundImage = $section?->getFirstMediaUrl('background') ?: ($content['background_image'] ?? null);
 

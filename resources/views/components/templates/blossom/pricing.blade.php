@@ -11,30 +11,30 @@
 
 @php
     // Content met defaults
-    $title = $content['title'] ?? 'Onze Prijzen';
-    $subtitle = $content['subtitle'] ?? 'Luxe behandelingen voor elke gelegenheid';
+    $title = $content['title'] ?? __('Our Prices');
+    $subtitle = $content['subtitle'] ?? __('Luxury treatments for every occasion');
     $categories = $content['categories'] ?? [
         [
-            'name' => 'Haar',
+            'name' => __('Hair'),
             'icon' => 'hair',
             'items' => [
-                ['service' => 'Knippen & Föhnen', 'description' => 'Inclusief wasbeurt en styling', 'price' => '€55'],
-                ['service' => 'Knippen & Stylen Deluxe', 'description' => 'Met behandeling en finishing', 'price' => '€75'],
-                ['service' => 'Kleuren Uitgroei', 'description' => 'Bijwerken van de aanzet', 'price' => '€65'],
-                ['service' => 'Full Colour', 'description' => 'Volledige haarkleuring', 'price' => '€85'],
-                ['service' => 'Balayage / Highlights', 'description' => 'Hand-painted highlights', 'price' => 'Vanaf €120', 'popular' => true],
-                ['service' => 'Keratine Behandeling', 'description' => 'Glad, glanzend haar', 'price' => 'Vanaf €150'],
+                ['service' => __('Cut & Blowdry'), 'description' => __('Including wash and styling'), 'price' => '€55'],
+                ['service' => __('Cut & Style Deluxe'), 'description' => __('With treatment and finishing'), 'price' => '€75'],
+                ['service' => __('Root Color'), 'description' => __('Touching up the roots'), 'price' => '€65'],
+                ['service' => __('Full Color'), 'description' => __('Complete hair coloring'), 'price' => '€85'],
+                ['service' => 'Balayage / Highlights', 'description' => __('Hand-painted highlights'), 'price' => __('From') . ' €120', 'popular' => true],
+                ['service' => __('Keratin Treatment'), 'description' => __('Smooth, shiny hair'), 'price' => __('From') . ' €150'],
             ],
         ],
         [
-            'name' => 'Nagels',
+            'name' => __('Nails'),
             'icon' => 'nails',
             'items' => [
-                ['service' => 'Manicure Classic', 'description' => 'Verzorging en lakken', 'price' => '€35'],
-                ['service' => 'Manicure Deluxe', 'description' => 'Met scrub en masker', 'price' => '€50'],
-                ['service' => 'Gel Nagels', 'description' => 'Nieuw set of bijwerken', 'price' => 'Vanaf €55'],
-                ['service' => 'Nail Art', 'description' => 'Creatieve designs', 'price' => 'Vanaf €15'],
-                ['service' => 'Pedicure Spa', 'description' => 'Complete voetverzorging', 'price' => '€55'],
+                ['service' => __('Classic Manicure'), 'description' => __('Care and polish'), 'price' => '€35'],
+                ['service' => __('Deluxe Manicure'), 'description' => __('With scrub and mask'), 'price' => '€50'],
+                ['service' => __('Gel Nails'), 'description' => __('New set or infill'), 'price' => __('From') . ' €55'],
+                ['service' => 'Nail Art', 'description' => __('Creative designs'), 'price' => __('From') . ' €15'],
+                ['service' => __('Spa Pedicure'), 'description' => __('Complete foot care'), 'price' => '€55'],
             ],
         ],
         [
@@ -85,7 +85,7 @@
                 <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
                 </svg>
-                Prijslijst
+                {{ __('Price list') }}
             </span>
             <h2
                 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6"
@@ -142,7 +142,7 @@
                                             class="absolute -top-2 right-4 px-3 py-1 rounded-full text-xs font-bold text-white"
                                             style="background: linear-gradient(135deg, {{ $gradient['from'] }}, {{ $gradient['to'] }});"
                                         >
-                                            Populair
+                                            {{ __('Popular') }}
                                         </span>
                                     @endif
 
@@ -172,7 +172,7 @@
                             class="mt-6 w-full inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl font-semibold transition-all duration-300 hover:shadow-lg"
                             style="background: linear-gradient(135deg, {{ $gradient['from'] }}15, {{ $gradient['to'] }}15); color: {{ $gradient['from'] }};"
                         >
-                            Boek nu
+                            {{ __('Book now') }}
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                             </svg>
@@ -192,7 +192,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
                 </svg>
                 <p class="text-sm" style="color: {{ $textColor }};">
-                    Alle prijzen zijn inclusief BTW. Lang haar vanaf +€10.
+                    {{ __('All prices include VAT. Long hair from +€10.') }}
                 </p>
             </div>
         </div>

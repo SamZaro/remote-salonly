@@ -14,8 +14,8 @@
 @php
     // Content with defaults
     $title = $content['title'] ?? 'Sharp Looks.<br>Clean Cuts.';
-    $subtitle = $content['subtitle'] ?? 'Traditioneel vakmanschap met moderne flair';
-    $ctaText = $content['cta_text'] ?? 'Maak Afspraak';
+    $subtitle = $content['subtitle'] ?? __('Traditional craftsmanship with modern flair');
+    $ctaText = $content['cta_text'] ?? __('Make Appointment');
     $ctaLink = $content['cta_link'] ?? '#contact';
     $autoplay = (bool) ($content['autoplay'] ?? true);
     $interval = (int) ($content['interval'] ?? 5000);
@@ -197,7 +197,7 @@
                     class="inline-flex items-center justify-center px-10 py-5 text-base font-bold uppercase tracking-widest border-2 transition-all duration-300 hover:bg-white/5"
                     style="border-color: {{ $primaryColor }}40; color: {{ $textColor }};"
                 >
-                    Bekijk Diensten
+                    {{ __('View Services') }}
                 </a>
             </div>
         @endif

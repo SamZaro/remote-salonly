@@ -12,9 +12,9 @@
 
 @php
     // Content met defaults
-    $title = $content['title'] ?? 'Welkom bij ons bedrijf';
-    $subtitle = $content['subtitle'] ?? 'Wij helpen u met professionele dienstverlening';
-    $ctaText = $content['cta_text'] ?? 'Maak een afspraak';
+    $title = $content['title'] ?? __('Welcome to our company');
+    $subtitle = $content['subtitle'] ?? __('We help you with professional services');
+    $ctaText = $content['cta_text'] ?? __('Make an appointment');
     $ctaLink = $content['cta_link'] ?? '#contact';
     // Get background image from Spatie Media Library or fallback to content
     $backgroundImage = $section?->getFirstMediaUrl('background') ?: ($content['background_image'] ?? null);
@@ -94,7 +94,7 @@
                 class="inline-flex items-center justify-center px-8 py-4 text-lg rounded-sm font-medium border-2 transition-all duration-300 hover:bg-white/10"
                 style="border-color: {{ $textColor }}; color: {{ $textColor }};"
             >
-                Onze diensten
+                {{ __('Our services') }}
             </a>
         </div>
     </div>

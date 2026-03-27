@@ -11,8 +11,8 @@
 ])
 
 @php
-    $title = $content['title'] ?? 'Galerij';
-    $subtitle = $content['subtitle'] ?? 'Ons werk';
+    $title = $content['title'] ?? __('Gallery');
+    $subtitle = $content['subtitle'] ?? __('Our work');
     $images = $section?->getMedia('images') ?? collect();
 
     $primaryColor = $theme['primary_color'] ?? '#14b8a6';
@@ -53,7 +53,7 @@
                         {{ $title }}
                     </h2>
                     <p class="text-lg max-w-2xl mx-auto" style="color: {{ $textColor }}; font-family: '{{ $bodyFont }}', sans-serif;">
-                        Bekijk een selectie van ons werk
+                        {{ __('View a selection of our work') }}
                     </p>
                 </div>
 

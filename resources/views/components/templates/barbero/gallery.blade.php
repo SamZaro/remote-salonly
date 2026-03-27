@@ -11,8 +11,8 @@
 ])
 
 @php
-    $title = $content['title'] ?? 'Ons Werk';
-    $subtitle = $content['subtitle'] ?? 'Craftsmanship in elk detail';
+    $title = $content['title'] ?? __('Our Work');
+    $subtitle = $content['subtitle'] ?? __('Craftsmanship in every detail');
     $images = $section?->getMedia('images') ?? collect();
 
     // Theme kleuren - vintage barbershop

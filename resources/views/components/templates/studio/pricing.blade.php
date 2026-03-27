@@ -11,33 +11,33 @@
 
 @php
     // Content met defaults
-    $title = $content['title'] ?? 'Onze Prijzen';
-    $subtitle = $content['subtitle'] ?? 'Transparant & fair - geen verrassingen';
+    $title = $content['title'] ?? __('Our Prices');
+    $subtitle = $content['subtitle'] ?? __('Transparent & fair - no surprises');
     $categories = $content['categories'] ?? [
         [
-            'name' => 'Knippen',
+            'name' => __('Haircuts'),
             'items' => [
-                ['service' => 'Dames knippen', 'price' => '€45'],
-                ['service' => 'Heren knippen', 'price' => '€35'],
-                ['service' => 'Kinderen (t/m 12)', 'price' => '€25'],
-                ['service' => 'Pony bijknippen', 'price' => '€15'],
+                ['service' => __('Ladies haircut'), 'price' => '€45'],
+                ['service' => __("Men's haircut"), 'price' => '€35'],
+                ['service' => __('Children (up to 12)'), 'price' => '€25'],
+                ['service' => __('Fringe trim'), 'price' => '€15'],
             ],
         ],
         [
-            'name' => 'Kleuren',
+            'name' => __('Colouring'),
             'items' => [
-                ['service' => 'Balayage', 'price' => 'Vanaf €120'],
-                ['service' => 'Highlights', 'price' => 'Vanaf €95'],
-                ['service' => 'Full color', 'price' => 'Vanaf €75'],
-                ['service' => 'Vivid colors', 'price' => 'Op aanvraag'],
+                ['service' => 'Balayage', 'price' => __('From €120')],
+                ['service' => 'Highlights', 'price' => __('From €95')],
+                ['service' => __('Full colour'), 'price' => __('From €75')],
+                ['service' => __('Vivid colours'), 'price' => __('On request')],
             ],
         ],
         [
             'name' => 'Styling',
             'items' => [
                 ['service' => 'Blow-dry', 'price' => '€35'],
-                ['service' => 'Updo / Opsteek', 'price' => '€55'],
-                ['service' => 'Bridal styling', 'price' => 'Vanaf €95'],
+                ['service' => __('Updo / Upstyle'), 'price' => '€55'],
+                ['service' => 'Bridal styling', 'price' => __('From €95')],
                 ['service' => 'Waves & curls', 'price' => '€45'],
             ],
         ],
@@ -130,7 +130,7 @@
                             class="block text-center py-3 rounded-full font-bold transition-all hover:scale-105"
                             style="background: {{ $secondaryColor }}; color: white;"
                         >
-                            Boek nu
+                            {{ __('Book now') }}
                         </a>
                     </div>
                 </div>
@@ -143,7 +143,7 @@
                 <svg class="w-5 h-5" style="color: {{ $primaryColor }};" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
                 </svg>
-                <span class="font-medium">Prijzen zijn indicatief. Vraag naar onze packages voor extra voordeel!</span>
+                <span class="font-medium">{{ __('Prices are indicative. Ask about our packages for extra value!') }}</span>
             </p>
         </div>
     </div>

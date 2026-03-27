@@ -9,15 +9,15 @@
 ])
 
 @php
-    $title        = $content['title'] ?? 'Wat Klanten Zeggen';
-    $subtitle     = $content['subtitle'] ?? 'Beoordeeld met 4.9 sterren';
+    $title        = $content['title'] ?? __('What Customers Say');
+    $subtitle     = $content['subtitle'] ?? __('Rated 4.9 stars');
     $googleRating = $content['google_rating'] ?? '4.9';
     $totalReviews = $content['total_reviews'] ?? '203';
     $reviews      = $content['reviews'] ?? [
-        ['name' => 'Lisa van den Berg',  'date' => '2 weken geleden',  'rating' => 5, 'text' => 'Eindelijk een kapper die echt luistert. Ze begreep precies wat ik wilde en het resultaat was nog beter dan verwacht. Ik kom hier zeker vaker!'],
-        ['name' => 'Sophie Janssen',    'date' => '1 maand geleden',  'rating' => 5, 'text' => 'Geweldige ervaring van begin tot eind. De sfeer is super fijn en mijn haar ziet er prachtig uit. Echt aanrader!'],
-        ['name' => 'Emma de Boer',      'date' => '1 maand geleden',  'rating' => 5, 'text' => 'Beste kapsalon in de buurt! De highlights zijn precies zoals ik het wilde — warm, naturel en zo mooi. Zeker terugkomen.'],
-        ['name' => 'Maaike Peters',     'date' => '2 maanden geleden','rating' => 5, 'text' => 'Professioneel team, ontspannen sfeer en top kwaliteit. Ze adviseren je eerlijk over wat bij je past. Ik ben superblij!'],
+        ['name' => 'Lisa van den Berg',  'date' => __('2 weeks ago'),   'rating' => 5, 'text' => __('Finally a stylist who truly listens. She understood exactly what I wanted and the result was even better than expected. I will definitely be back!')],
+        ['name' => 'Sophie Janssen',     'date' => __('1 month ago'),   'rating' => 5, 'text' => __('Amazing experience from start to finish. The atmosphere is great and my hair looks beautiful. Highly recommended!')],
+        ['name' => 'Emma de Boer',       'date' => __('1 month ago'),   'rating' => 5, 'text' => __('Best salon in the area! The highlights are exactly what I wanted — warm, natural and so beautiful. Definitely coming back.')],
+        ['name' => 'Maaike Peters',      'date' => __('2 months ago'),  'rating' => 5, 'text' => __('Professional team, relaxed atmosphere and top quality. They give honest advice on what suits you. I am so happy!')],
     ];
 
     $primaryColor    = $theme['primary_color'] ?? '#f97316';
@@ -126,7 +126,7 @@
                 onmouseover="this.style.color='{{ $primaryColor }}'"
                 onmouseout="this.style.color='rgba(255,255,255,0.7)'"
             >
-                Bekijk alle reviews op Google
+                {{ __('View all reviews on Google') }}
                 <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                 </svg>

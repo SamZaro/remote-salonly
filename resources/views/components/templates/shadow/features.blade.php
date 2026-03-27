@@ -11,12 +11,12 @@
 
 @php
     // Content met defaults
-    $title = $content['title'] ?? 'Onze Diensten';
-    $subtitle = $content['subtitle'] ?? 'Van fundament tot afwerking, wij bouwen uw droomproject';
+    $title = $content['title'] ?? __('Our Services');
+    $subtitle = $content['subtitle'] ?? __('From foundation to finish, we build your dream project');
     $items = $content['items'] ?? [
-        ['title' => 'Nieuwbouw', 'description' => 'Complete nieuwbouwprojecten van A tot Z', 'icon' => 'home'],
-        ['title' => 'Verbouwingen', 'description' => 'Renovaties en uitbreidingen op maat', 'icon' => 'refresh'],
-        ['title' => 'Dakwerken', 'description' => 'Dakconstructies en dakreparaties', 'icon' => 'shield'],
+        ['title' => __('New Build'), 'description' => __('Complete new build projects from A to Z'), 'icon' => 'home'],
+        ['title' => __('Renovations'), 'description' => __('Custom renovations and extensions'), 'icon' => 'refresh'],
+        ['title' => __('Roofing'), 'description' => __('Roof constructions and repairs'), 'icon' => 'shield'],
     ];
 
     // Theme kleuren met defaults
@@ -53,7 +53,7 @@
                 class="inline-block px-4 py-1 text-sm font-semibold uppercase tracking-wider rounded-sm mb-4"
                 style="background-color: {{ $primaryColor }}20; color: {{ $primaryColor }};"
             >
-                Van strategie tot uitvoering
+                {{ __('From strategy to execution') }}
             </span>
             <h2
                 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4"

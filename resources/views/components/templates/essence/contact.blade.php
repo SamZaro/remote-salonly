@@ -12,15 +12,15 @@
 @php
     // Content met defaults
     $title = $content['title'] ?? 'Contact';
-    $subtitle = $content['subtitle'] ?? 'Wij horen graag van je';
+    $subtitle = $content['subtitle'] ?? __('We would love to hear from you');
     $address = $content['address'] ?? "Keizersgracht 123\n1015 CJ Amsterdam";
     $phone = $content['phone'] ?? '+31 20 123 4567';
     $email = $content['email'] ?? 'info@essence-salon.nl';
     $openingHours = $content['opening_hours'] ?? [
-        ['day' => 'Maandag', 'hours' => 'Gesloten'],
-        ['day' => 'Dinsdag - Vrijdag', 'hours' => '09:00 - 20:00'],
-        ['day' => 'Zaterdag', 'hours' => '09:00 - 17:00'],
-        ['day' => 'Zondag', 'hours' => 'Op afspraak'],
+        ['day' => __('Monday'), 'hours' => __('Closed')],
+        ['day' => __('Tuesday - Friday'), 'hours' => '09:00 - 20:00'],
+        ['day' => __('Saturday'), 'hours' => '09:00 - 17:00'],
+        ['day' => __('Sunday'), 'hours' => __('By appointment')],
     ];
 
     // Theme kleuren - Soft Luxury palette
@@ -70,7 +70,7 @@
                             </svg>
                         </div>
                         <div>
-                            <h4 class="text-sm font-medium uppercase tracking-wider mb-2" style="color: {{ $secondaryColor }};">Adres</h4>
+                            <h4 class="text-sm font-medium uppercase tracking-wider mb-2" style="color: {{ $secondaryColor }};">{{ __('Address') }}</h4>
                             <p class="text-sm whitespace-pre-line" style="color: {{ $textColor }}; opacity: 0.8;">{{ $address }}</p>
                         </div>
                     </div>
@@ -88,7 +88,7 @@
                             </svg>
                         </div>
                         <div>
-                            <h4 class="text-sm font-medium uppercase tracking-wider mb-2" style="color: {{ $secondaryColor }};">Telefoon</h4>
+                            <h4 class="text-sm font-medium uppercase tracking-wider mb-2" style="color: {{ $secondaryColor }};">{{ __('Phone') }}</h4>
                             <a href="tel:{{ preg_replace('/\s+/', '', $phone) }}" class="text-sm hover:opacity-70 transition-opacity" style="color: {{ $textColor }};">
                                 {{ $phone }}
                             </a>
@@ -119,7 +119,7 @@
 
             {{-- Opening hours --}}
             <div class="lg:col-span-2 bg-white p-8 lg:p-10 h-fit" style="box-shadow: 0 2px 20px {{ $secondaryColor }}05;">
-                <h4 class="text-sm font-medium uppercase tracking-wider mb-6" style="color: {{ $secondaryColor }};">Openingstijden</h4>
+                <h4 class="text-sm font-medium uppercase tracking-wider mb-6" style="color: {{ $secondaryColor }};">{{ __('Opening Hours') }}</h4>
                 <div class="space-y-4">
                     @foreach($openingHours as $time)
                         <div class="flex items-center justify-between py-3 border-b" style="border-color: {{ $primaryColor }}40;">

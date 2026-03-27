@@ -12,13 +12,13 @@
 
 @php
     // Content met defaults
-    $title = $content['title'] ?? 'Waarom Kiezen Voor Ons';
-    $subtitle = $content['subtitle'] ?? 'Wat ons onderscheidt van de rest';
+    $title = $content['title'] ?? __('Why Choose Us');
+    $subtitle = $content['subtitle'] ?? __('What sets us apart');
     $items = $content['items'] ?? [
-        ['title' => 'Traditioneel Vakmanschap', 'description' => 'Wij combineren klassieke barbertechnieken met moderne stijlen voor het perfecte resultaat', 'icon' => 'scissors'],
-        ['title' => 'Persoonlijke Service', 'description' => 'Elk bezoek begint met een persoonlijk consult om jouw wensen te bespreken', 'icon' => 'chat'],
-        ['title' => 'Premium Producten', 'description' => 'Wij werken uitsluitend met professionele producten van topkwaliteit', 'icon' => 'sparkles'],
-        ['title' => 'Ontspannen Sfeer', 'description' => 'Geniet van een relaxte omgeving waar je even helemaal tot rust kunt komen', 'icon' => 'heart'],
+        ['title' => __('Traditional Craftsmanship'), 'description' => __('We combine classic barber techniques with modern styles for the perfect result'), 'icon' => 'scissors'],
+        ['title' => __('Personal Service'), 'description' => __('Every visit starts with a personal consultation to discuss your wishes'), 'icon' => 'chat'],
+        ['title' => __('Premium Products'), 'description' => __('We work exclusively with professional products of the highest quality'), 'icon' => 'sparkles'],
+        ['title' => __('Relaxed Atmosphere'), 'description' => __('Enjoy a relaxed environment where you can fully unwind'), 'icon' => 'heart'],
     ];
 
     // Theme kleuren met defaults (consistent met razor pattern)
@@ -50,7 +50,7 @@
             style="opacity: 0; transform: translateY(16px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);"
         >
             <span class="inline-block text-xs font-bold uppercase tracking-[0.3em] mb-4" style="color: {{ $primaryColor }};">
-                Onze kenmerken
+                {{ __('Our features') }}
             </span>
             <h2
                 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6"

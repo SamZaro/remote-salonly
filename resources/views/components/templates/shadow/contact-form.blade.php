@@ -21,12 +21,12 @@
 
     // CTA content (left column)
     $ctaLabel = $content['cta_label'] ?? __('Contact');
-    $ctaHeading = $content['cta_heading'] ?? __('Laat een bericht achter');
-    $ctaHighlight = $content['cta_highlight'] ?? __('bericht');
+    $ctaHeading = $content['cta_heading'] ?? __('Leave us a message');
+    $ctaHighlight = $content['cta_highlight'] ?? __('message');
     $backgroundImage = $section?->getFirstMediaUrl('background') ?: null;
 
     // Form content (right column)
-    $formTitle = $content['title'] ?? __('Stuur ons een bericht');
+    $formTitle = $content['title'] ?? __('Send us a message');
 @endphp
 
 <section id="contact-form" class="py-20 lg:py-28 bg-gray-100" style="font-family: '{{ $bodyFont }}', sans-serif;">
@@ -88,12 +88,12 @@
                             :class="shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'"
                         >
                             <div class="p-3" style="background-color: {{ $primaryColor }}10; border-left: 3px solid {{ $primaryColor }};">
-                                <div class="text-xs font-semibold uppercase tracking-wider" style="color: {{ $primaryColor }};">{{ __('Snel') }}</div>
-                                <div class="text-sm text-white opacity-70 mt-1">{{ __('Binnen 24u reactie') }}</div>
+                                <div class="text-xs font-semibold uppercase tracking-wider" style="color: {{ $primaryColor }};">{{ __('Fast') }}</div>
+                                <div class="text-sm text-white opacity-70 mt-1">{{ __('Reply within 24h') }}</div>
                             </div>
                             <div class="p-3" style="background-color: {{ $primaryColor }}10; border-left: 3px solid {{ $primaryColor }};">
                                 <div class="text-xs font-semibold uppercase tracking-wider" style="color: {{ $primaryColor }};">{{ __('Direct') }}</div>
-                                <div class="text-sm text-white opacity-70 mt-1">{{ __('Persoonlijk advies') }}</div>
+                                <div class="text-sm text-white opacity-70 mt-1">{{ __('Personal advice') }}</div>
                             </div>
                         </div>
                     @endif

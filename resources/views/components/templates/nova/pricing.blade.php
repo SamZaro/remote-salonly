@@ -4,34 +4,34 @@
 ])
 
 @php
-    $title = $content['title'] ?? 'Prijslijst';
+    $title = $content['title'] ?? __('Price List');
     $subtitle = $content['subtitle'] ?? null;
     $categories = $content['categories'] ?? [
         [
-            'name' => 'Dames',
+            'name' => __('Ladies'),
             'items' => [
-                ['service' => 'Knippen', 'description' => 'Inclusief wasbeurt & styling', 'price' => '€55'],
-                ['service' => 'Knippen & Föhnen', 'description' => 'Volledige behandeling', 'price' => '€65'],
-                ['service' => 'Föhnen / Brushen', 'description' => 'Wassen & stylen', 'price' => '€35'],
-                ['service' => 'Bruidskapsel', 'description' => 'Op afspraak', 'price' => 'Op aanvraag'],
+                ['service' => __('Haircut'), 'description' => __('Including wash & styling'), 'price' => '€55'],
+                ['service' => __('Cut & Blowdry'), 'description' => __('Full treatment'), 'price' => '€65'],
+                ['service' => __('Blowdry / Brush'), 'description' => __('Wash & style'), 'price' => '€35'],
+                ['service' => __('Bridal style'), 'description' => __('By appointment'), 'price' => __('On request')],
             ],
         ],
         [
-            'name' => 'Kleuring',
+            'name' => __('Coloring'),
             'items' => [
-                ['service' => 'Uitgroei bijwerken', 'description' => 'Tot 2cm uitgroei', 'price' => '€65'],
-                ['service' => 'Volledige kleuring', 'description' => 'Hele lengte', 'price' => '€85'],
-                ['service' => 'Balayage / Highlights', 'description' => 'Handgeschilderd of folies', 'price' => 'Vanaf €95'],
-                ['service' => 'Toner / Gloss', 'description' => 'Kleurverfrissing', 'price' => '€40'],
+                ['service' => __('Root touch-up'), 'description' => __('Up to 2cm regrowth'), 'price' => '€65'],
+                ['service' => __('Full color'), 'description' => __('Full length'), 'price' => '€85'],
+                ['service' => __('Balayage / Highlights'), 'description' => __('Hand-painted or foils'), 'price' => __('From') . ' €95'],
+                ['service' => __('Toner / Gloss'), 'description' => __('Color refresh'), 'price' => '€40'],
             ],
         ],
         [
-            'name' => 'Heren',
+            'name' => __('Men'),
             'items' => [
-                ['service' => 'Knippen', 'description' => 'Wassen & knippen', 'price' => '€35'],
-                ['service' => 'Knippen & Baard', 'description' => 'Volledige behandeling', 'price' => '€48'],
-                ['service' => 'Baard trimmen', 'description' => 'Vormgeven & verzorgen', 'price' => '€18'],
-                ['service' => 'Kids (t/m 12)', 'description' => 'Kinderknippen', 'price' => '€25'],
+                ['service' => __('Haircut'), 'description' => __('Wash & cut'), 'price' => '€35'],
+                ['service' => __('Cut & Beard'), 'description' => __('Full treatment'), 'price' => '€48'],
+                ['service' => __('Beard trim'), 'description' => __('Shape & groom'), 'price' => '€18'],
+                ['service' => __('Kids (up to 12)'), 'description' => __('Children\'s haircut'), 'price' => '€25'],
             ],
         ],
     ];

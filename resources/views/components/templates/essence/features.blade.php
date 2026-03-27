@@ -12,27 +12,27 @@
 
 @php
     // Content met defaults
-    $title = $content['title'] ?? 'Waarom Wij';
-    $subtitle = $content['subtitle'] ?? 'De kenmerken die ons onderscheiden';
+    $title = $content['title'] ?? __('Why Us');
+    $subtitle = $content['subtitle'] ?? __('The qualities that set us apart');
     $items = $content['items'] ?? [
         [
-            'title' => 'Verfijnde Expertise',
-            'description' => 'Jarenlange ervaring en voortdurende bijscholing garanderen een onberispelijk resultaat',
+            'title' => __('Refined Expertise'),
+            'description' => __('Years of experience and continuous training guarantee an impeccable result'),
             'icon' => 'sparkles',
         ],
         [
-            'title' => 'Luxe Producten',
-            'description' => 'Uitsluitend geselecteerde premium producten voor de meest veeleisende huid en haar',
+            'title' => __('Luxury Products'),
+            'description' => __('Only selected premium products for the most demanding skin and hair'),
             'icon' => 'star',
         ],
         [
-            'title' => 'Persoonlijke Benadering',
-            'description' => 'Elke behandeling wordt zorgvuldig afgestemd op jouw individuele wensen',
+            'title' => __('Personal Approach'),
+            'description' => __('Every treatment is carefully tailored to your individual wishes'),
             'icon' => 'heart',
         ],
         [
-            'title' => 'Ontspannen Sfeer',
-            'description' => 'Een serene omgeving waar je volledig tot rust kunt komen en kunt genieten',
+            'title' => __('Relaxing Atmosphere'),
+            'description' => __('A serene environment where you can completely unwind and enjoy'),
             'icon' => 'shield',
         ],
     ];
@@ -65,7 +65,7 @@
         >
             <div class="flex items-center justify-center gap-4 mb-8">
                 <div class="w-12 h-px" style="background-color: {{ $secondaryColor }}40;"></div>
-                <span class="text-xs font-medium uppercase tracking-[0.3em]" style="color: {{ $secondaryColor }};">Kenmerken</span>
+                <span class="text-xs font-medium uppercase tracking-[0.3em]" style="color: {{ $secondaryColor }};">{{ __('Features') }}</span>
                 <div class="w-12 h-px" style="background-color: {{ $secondaryColor }}40;"></div>
             </div>
             <h2

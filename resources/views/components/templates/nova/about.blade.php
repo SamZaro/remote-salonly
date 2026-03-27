@@ -6,11 +6,11 @@
 
 @php
     // Content met defaults
-    $title = $content['title'] ?? 'Alle stijlen en snel geknipt';
-    $subtitle = $content['subtitle'] ?? 'De beste kapperszaak van de omgeving.';
+    $title = $content['title'] ?? __('All styles cut quickly');
+    $subtitle = $content['subtitle'] ?? __('The best hair salon in the area.');
     $image = $section?->getFirstMediaUrl('background') ?: ($content['image'] ?? null);
-    $ctaPrimary = $content['cta_primary'] ?? ['text' => 'Maak een afspraak', 'url' => '#contact'];
-    $ctaSecondary = $content['cta_secondary'] ?? ['text' => 'Openingstijden', 'url' => '#contact'];
+    $ctaPrimary = $content['cta_primary'] ?? ['text' => __('Make an appointment'), 'url' => '#contact'];
+    $ctaSecondary = $content['cta_secondary'] ?? ['text' => __('Opening Hours'), 'url' => '#contact'];
 
     // Theme kleuren
     $primaryColor = $theme['primary_color'] ?? '#14B8A6';       // teal-500 equivalent

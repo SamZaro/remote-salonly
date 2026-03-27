@@ -108,8 +108,8 @@
                 <h4 class="text-xs font-medium uppercase tracking-widest mb-6" style="color: {{ $primaryColor }};">Menu</h4>
                 <nav class="space-y-3">
                     <a href="#services" class="block text-sm transition-opacity hover:opacity-70" style="color: {{ $backgroundColor }}; opacity: 0.8;">Services</a>
-                    <a href="#pricing" class="block text-sm transition-opacity hover:opacity-70" style="color: {{ $backgroundColor }}; opacity: 0.8;">Prijzen</a>
-                    <a href="#about" class="block text-sm transition-opacity hover:opacity-70" style="color: {{ $backgroundColor }}; opacity: 0.8;">Over ons</a>
+                    <a href="#pricing" class="block text-sm transition-opacity hover:opacity-70" style="color: {{ $backgroundColor }}; opacity: 0.8;">{{ __('Prices') }}</a>
+                    <a href="#about" class="block text-sm transition-opacity hover:opacity-70" style="color: {{ $backgroundColor }}; opacity: 0.8;">{{ __('About us') }}</a>
                     <a href="#contact" class="block text-sm transition-opacity hover:opacity-70" style="color: {{ $backgroundColor }}; opacity: 0.8;">Contact</a>
                 </nav>
             </div>
@@ -118,11 +118,11 @@
         {{-- Bottom bar --}}
         <div class="mt-16 pt-8 border-t flex flex-col sm:flex-row items-center justify-between gap-4" style="border-color: {{ $backgroundColor }}15;">
             <p class="text-xs" style="color: {{ $backgroundColor }}; opacity: 0.5;">
-                © {{ date('Y') }} {{ $companyName }}. Alle rechten voorbehouden.
+                © {{ date('Y') }} {{ $companyName }}. {{ __('All rights reserved.') }}
             </p>
             <div class="flex items-center gap-6">
                 <a href="#" class="text-xs transition-opacity hover:opacity-70" style="color: {{ $backgroundColor }}; opacity: 0.5;">Privacy</a>
-                <a href="#" class="text-xs transition-opacity hover:opacity-70" style="color: {{ $backgroundColor }}; opacity: 0.5;">Voorwaarden</a>
+                <a href="#" class="text-xs transition-opacity hover:opacity-70" style="color: {{ $backgroundColor }}; opacity: 0.5;">{{ __('Terms') }}</a>
             </div>
         </div>
     </div>

@@ -11,13 +11,13 @@
 
 @php
     // Content met defaults
-    $title = $content['title'] ?? 'Onze Diensten';
-    $subtitle = $content['subtitle'] ?? 'Vakmanschap voor de moderne gentleman';
+    $title = $content['title'] ?? __('Our Services');
+    $subtitle = $content['subtitle'] ?? __('Craftsmanship for the modern gentleman');
     $items = $content['items'] ?? [
-        ['title' => 'Klassiek Knippen', 'description' => 'Traditioneel geknipt met schaar en tondeuse', 'icon' => 'scissors', 'price' => '€25'],
-        ['title' => 'Baard Trimmen', 'description' => 'Perfecte baard met het mes', 'icon' => 'razor', 'price' => '€20'],
-        ['title' => 'Hot Towel Shave', 'description' => 'Luxe scheerbeurt met warme handdoeken', 'icon' => 'towel', 'price' => '€35'],
-        ['title' => 'The Full Experience', 'description' => 'Knippen, baard én gezichtsbehandeling', 'icon' => 'star', 'price' => '€55'],
+        ['title' => __('Classic Haircut'), 'description' => __('Traditional cut with scissors and clippers'), 'icon' => 'scissors', 'price' => '€25'],
+        ['title' => __('Beard Trim'), 'description' => __('Perfect beard with the blade'), 'icon' => 'razor', 'price' => '€20'],
+        ['title' => __('Hot Towel Shave'), 'description' => __('Luxury shave with warm towels'), 'icon' => 'towel', 'price' => '€35'],
+        ['title' => __('The Full Experience'), 'description' => __('Haircut, beard and facial treatment'), 'icon' => 'star', 'price' => '€55'],
     ];
 
     // Theme kleuren met defaults
@@ -145,7 +145,7 @@
                 class="inline-flex items-center justify-center px-10 py-4 text-sm font-bold uppercase tracking-widest border-2 transition-all duration-300 hover:bg-opacity-100"
                 style="border-color: {{ $primaryColor }}; color: {{ $primaryColor }}; background-color: transparent;"
             >
-                Bekijk alle diensten
+                {{ __('View all services') }}
             </a>
         </div>
     </div>

@@ -11,9 +11,9 @@
 ])
 
 @php
-    $title = $content['title'] ?? 'Puur vakmanschap';
-    $subtitle = $content['subtitle'] ?? 'Eenvoud en elegantie in elk detail';
-    $ctaText = $content['cta_text'] ?? 'Maak een afspraak';
+    $title = $content['title'] ?? __('Pure craftsmanship');
+    $subtitle = $content['subtitle'] ?? __('Simplicity and elegance in every detail');
+    $ctaText = $content['cta_text'] ?? __('Book an appointment');
     $ctaLink = $content['cta_link'] ?? '#contact';
     $backgroundImage = $section?->getFirstMediaUrl('background') ?: ($content['background_image'] ?? null);
 
@@ -87,7 +87,7 @@
                     class="inline-flex items-center justify-center px-10 py-4 text-sm font-semibold tracking-widest uppercase transition-all duration-300 rounded-none hover:bg-white/10"
                     style="border: 1.5px solid rgba(255,255,255,0.3); color: #ffffff; font-family: '{{ $bodyFont }}', sans-serif;"
                 >
-                    Onze diensten
+                    {{ __('Our services') }}
                 </a>
             </div>
         </div>

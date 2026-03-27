@@ -12,11 +12,11 @@
 
 @php
     // Content met defaults
-    $title = $content['title'] ?? 'Klaar voor een nieuwe look?';
-    $subtitle = $content['subtitle'] ?? 'Boek vandaag nog je afspraak en ervaar het verschil';
-    $ctaText = $content['cta_text'] ?? 'Maak Afspraak';
+    $title = $content['title'] ?? __('Ready for a new look?');
+    $subtitle = $content['subtitle'] ?? __('Book your appointment today and experience the difference');
+    $ctaText = $content['cta_text'] ?? __('Make Appointment');
     $ctaLink = $content['cta_link'] ?? '#contact';
-    $secondaryCtaText = $content['secondary_cta_text'] ?? 'Bel direct';
+    $secondaryCtaText = $content['secondary_cta_text'] ?? __('Call directly');
     $phone = $content['phone'] ?? '';
     $backgroundImage = $section?->getFirstMediaUrl('background') ?: ($content['background_image'] ?? null);
 
@@ -113,7 +113,7 @@
                     class="inline-flex items-center justify-center px-10 py-5 text-base font-bold uppercase tracking-widest border-2 transition-all duration-300 hover:bg-white/5"
                     style="border-color: {{ $primaryColor }}40; color: white;"
                 >
-                    Bekijk Diensten
+                    {{ __('View Services') }}
                 </a>
             @endif
         </div>
@@ -124,21 +124,21 @@
                 <svg class="w-5 h-5" style="color: {{ $primaryColor }};" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                 </svg>
-                Walk-ins welkom
+                {{ __('Walk-ins welcome') }}
             </div>
             <div class="hidden sm:block w-px h-4" style="background-color: {{ $lightTextColor }}; opacity: 0.2;"></div>
             <div class="flex items-center gap-2 text-sm" style="color: {{ $lightTextColor }}; opacity: 0.6;">
                 <svg class="w-5 h-5" style="color: {{ $primaryColor }};" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                 </svg>
-                Gratis parkeren
+                {{ __('Free parking') }}
             </div>
             <div class="hidden sm:block w-px h-4" style="background-color: {{ $lightTextColor }}; opacity: 0.2;"></div>
             <div class="flex items-center gap-2 text-sm" style="color: {{ $lightTextColor }}; opacity: 0.6;">
                 <svg class="w-5 h-5" style="color: {{ $primaryColor }};" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                 </svg>
-                Koffie van het huis
+                {{ __('House coffee') }}
             </div>
         </div>
     </div>

@@ -25,7 +25,7 @@
     $address      = $content['address'] ?? '';
     $phone        = $content['phone'] ?? '';
     $email        = $content['email'] ?? '';
-    $copyright    = $content['copyright'] ?? '© ' . date('Y') . ' ' . $companyName . '. Alle rechten voorbehouden.';
+    $copyright    = $content['copyright'] ?? '© ' . date('Y') . ' ' . $companyName . '. ' . __('All rights reserved.');
     $socialLinks  = $content['social_links'] ?? [];
     $facebookUrl  = $socialLinks['facebook'] ?? '';
     $instagramUrl = $socialLinks['instagram'] ?? '';
@@ -64,7 +64,7 @@
                 class="group inline-flex items-center gap-3 px-8 py-4 font-semibold uppercase tracking-widest text-sm transition-all hover:opacity-85 shrink-0 self-start"
                 style="background-color: {{ $primaryColor }}; color: #ffffff; font-family: '{{ $bodyFont }}';"
             >
-                Maak afspraak
+                {{ __('Book appointment') }}
                 <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                 </svg>
@@ -133,7 +133,7 @@
             {{-- Social --}}
             <div>
                 <h4 class="text-xs font-semibold uppercase tracking-[0.35em] mb-6" style="color: rgba(255,255,255,0.2); font-family: '{{ $bodyFont }}';">
-                    {{ __('Volg ons') }}
+                    {{ __('Follow us') }}
                 </h4>
                 <div class="flex gap-3">
                     @if($facebookUrl)
@@ -176,7 +176,7 @@
                 {{ $copyright }}
             </p>
             <p class="text-xs font-light uppercase tracking-[0.3em]" style="color: rgba(255,255,255,0.18); font-family: '{{ $bodyFont }}';">
-                Kapsalon Level
+                {{ __('Level Hair Salon') }}
             </p>
         </div>
     </div>

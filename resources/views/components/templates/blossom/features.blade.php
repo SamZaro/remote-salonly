@@ -12,27 +12,27 @@
 
 @php
     // Content met defaults
-    $title = $content['title'] ?? 'Waarom Kiezen Voor Ons';
-    $subtitle = $content['subtitle'] ?? 'Ervaar het verschil van echte vakmanschap en persoonlijke aandacht';
+    $title = $content['title'] ?? __('Why Choose Us');
+    $subtitle = $content['subtitle'] ?? __('Experience the difference of true craftsmanship and personal attention');
     $items = $content['items'] ?? [
         [
-            'title' => 'Luxe Ervaring',
-            'description' => 'Vanaf het moment dat je binnenstapt, word je ondergedompeld in een wereld van luxe en comfort',
+            'title' => __('Luxury Experience'),
+            'description' => __('From the moment you walk in, you are immersed in a world of luxury and comfort'),
             'icon' => 'sparkles',
         ],
         [
-            'title' => 'Gecertificeerd Team',
-            'description' => 'Ons team van vakmensen is volledig gecertificeerd en blijft continu bijscholen',
+            'title' => __('Certified Team'),
+            'description' => __('Our team of professionals is fully certified and continuously keeps up with the latest training'),
             'icon' => 'shield',
         ],
         [
-            'title' => 'Premium Producten',
-            'description' => 'Wij werken uitsluitend met hoogwaardige, professionele producten voor het beste resultaat',
+            'title' => __('Premium Products'),
+            'description' => __('We work exclusively with high-quality, professional products for the best possible results'),
             'icon' => 'star',
         ],
         [
-            'title' => 'Persoonlijke Aandacht',
-            'description' => 'Elke behandeling wordt afgestemd op jouw unieke wensen en behoeften',
+            'title' => __('Personal Attention'),
+            'description' => __('Every treatment is tailored to your unique wishes and needs'),
             'icon' => 'heart',
         ],
     ];
@@ -78,7 +78,7 @@
                 <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
                 </svg>
-                Onze Kenmerken
+                {{ __('Our Features') }}
             </span>
             <h2
                 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6"

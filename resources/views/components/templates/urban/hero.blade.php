@@ -11,8 +11,8 @@
 
 @php
     $title = $content['title'] ?? 'Sharp Looks.<br>Clean Cuts.';
-    $subtitle = $content['subtitle'] ?? 'Traditioneel vakmanschap met moderne flair';
-    $ctaText = $content['cta_text'] ?? 'Maak Afspraak';
+    $subtitle = $content['subtitle'] ?? __('Traditional craftsmanship with modern flair');
+    $ctaText = $content['cta_text'] ?? __('Book Appointment');
     $ctaLink = $content['cta_link'] ?? '#contact';
     $backgroundImage = $section?->getFirstMediaUrl('background') ?: ($content['background_image'] ?? null);
 
@@ -119,7 +119,7 @@
                         class="inline-flex items-center gap-3 px-10 py-5 font-bold uppercase tracking-widest text-sm border transition-all duration-300 hover:bg-white/5"
                         style="border-color: {{ $primaryColor }}50; color: #ffffff; font-family: '{{ $bodyFont }}';"
                     >
-                        Bekijk Diensten
+                        {{ __('View Services') }}
                     </a>
                 </div>
             </div>

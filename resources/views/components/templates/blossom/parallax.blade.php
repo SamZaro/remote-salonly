@@ -12,7 +12,7 @@
 
 @php
     $title = $content['title'] ?? 'Bloom Into Beauty';
-    $subtitle = $content['subtitle'] ?? 'Ontdek jouw unieke schoonheid bij ons';
+    $subtitle = $content['subtitle'] ?? __('Discover your unique beauty with us');
     $backgroundImage = $section?->getFirstMediaUrl('background') ?: ($content['background_image'] ?? null);
 
     // Theme kleuren - luxe vrouwelijke bloemen/spa kleuren

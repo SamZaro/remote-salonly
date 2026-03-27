@@ -10,9 +10,9 @@
 ])
 
 @php
-    $title = $content['title'] ?? 'Welkom bij ons bedrijf';
-    $subtitle = $content['subtitle'] ?? 'Wij helpen u met professionele dienstverlening';
-    $ctaText = $content['cta_text'] ?? 'Maak een afspraak';
+    $title = $content['title'] ?? __('Welcome to our company');
+    $subtitle = $content['subtitle'] ?? __('We help you with professional services');
+    $ctaText = $content['cta_text'] ?? __('Make an Appointment');
     $ctaLink = $content['cta_link'] ?? '#contact';
     $backgroundImage = $section?->getFirstMediaUrl('background') ?: ($content['background_image'] ?? null);
     $overlayOpacity = $content['overlay_opacity'] ?? 0.7;
@@ -71,7 +71,7 @@
                 class="inline-block px-5 py-2 text-[11px] uppercase tracking-[0.25em] font-medium rounded-full"
                 style="color: {{ $backgroundColor }}; background: {{ $primaryColor }}25; border: 1px solid {{ $primaryColor }}40; backdrop-filter: blur(8px);"
             >
-                Kapsalon & Hairstyling
+                {{ __('Hair Salon & Styling') }}
             </span>
         </div>
 
@@ -114,7 +114,7 @@
                 class="inline-flex items-center justify-center px-8 py-4 text-sm font-medium tracking-wide rounded-full transition-all duration-300 hover:bg-white/10"
                 style="color: {{ $backgroundColor }}; border: 1px solid {{ $backgroundColor }}30;"
             >
-                Onze diensten
+                {{ __('Our services') }}
             </a>
         </div>
     </div>

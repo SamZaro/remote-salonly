@@ -11,14 +11,14 @@
 
 @php
     $title = $content['title'] ?? 'What Our Clients Say';
-    $subtitle = $content['subtitle'] ?? 'Ervaringen van onze bezoekers';
+    $subtitle = $content['subtitle'] ?? __('Experiences from our visitors');
     $rating = $content['rating'] ?? '4.9';
     $totalReviews = $content['total_reviews'] ?? '312';
     $reviews = $content['reviews'] ?? [
-        ['name' => 'Sophie van Dijk', 'date' => '1 week geleden', 'rating' => 5, 'text' => 'Absoluut de beste salon waar ik ooit ben geweest! De massage was hemels en de sfeer is ongelooflijk ontspannend. Ik kom zeker terug.', 'service' => 'Relaxing Massage'],
-        ['name' => 'Emma Bakker', 'date' => '2 weken geleden', 'rating' => 5, 'text' => 'Heerlijk ontspannen tijdens mijn gezichtsbehandeling. De producten zijn luxe en het resultaat is fantastisch. Aanrader!', 'service' => 'Supreme Skincare'],
-        ['name' => 'Lisa de Groot', 'date' => '3 weken geleden', 'rating' => 5, 'text' => 'De hot stone massage was precies wat ik nodig had. Professioneel team en prachtige ambiance. Vijf sterren!', 'service' => 'Hot Stone Massage'],
-        ['name' => 'Anna Visser', 'date' => '1 maand geleden', 'rating' => 5, 'text' => 'De aromatherapy facial is een ware verwennerij. Mijn huid voelt zo zacht en stralend. Ik ben verslaafd!', 'service' => 'Aromatherapy Facial'],
+        ['name' => 'Sophie van Dijk', 'date' => __('1 week ago'), 'rating' => 5, 'text' => __('Absolutely the best salon I have ever visited! The massage was heavenly and the atmosphere is incredibly relaxing. I will definitely be back.'), 'service' => 'Relaxing Massage'],
+        ['name' => 'Emma Bakker', 'date' => __('2 weeks ago'), 'rating' => 5, 'text' => __('Wonderfully relaxed during my facial. The products are luxurious and the results are fantastic. Highly recommended!'), 'service' => 'Supreme Skincare'],
+        ['name' => 'Lisa de Groot', 'date' => __('3 weeks ago'), 'rating' => 5, 'text' => __('The hot stone massage was exactly what I needed. Professional team and beautiful ambiance. Five stars!'), 'service' => 'Hot Stone Massage'],
+        ['name' => 'Anna Visser', 'date' => __('1 month ago'), 'rating' => 5, 'text' => __('The aromatherapy facial is a true treat. My skin feels so soft and radiant. I am hooked!'), 'service' => 'Aromatherapy Facial'],
     ];
 
     $primaryColor = $theme['primary_color'] ?? '#E8D8D3';

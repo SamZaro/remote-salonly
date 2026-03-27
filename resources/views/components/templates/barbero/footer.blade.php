@@ -27,7 +27,7 @@
     $address = $content['address'] ?? '';
     $phone = $content['phone'] ?? '';
     $email = $content['email'] ?? '';
-    $copyright = $content['copyright'] ?? '© ' . date('Y') . ' ' . $companyName . '. Alle rechten voorbehouden.';
+    $copyright = $content['copyright'] ?? '© ' . date('Y') . ' ' . $companyName . '. ' . __('All rights reserved.');
 
     // Social media links
     $socialLinks = $content['social_links'] ?? [];
@@ -71,7 +71,7 @@
             {{-- Quick Links --}}
             <div>
                 <h4 class="text-xs font-bold uppercase tracking-[0.2em] mb-6" style="color: {{ $primaryColor }};">
-                    {{ __('Navigatie') }}
+                    {{ __('Navigation') }}
                 </h4>
                 <ul class="space-y-3">
                     @foreach($navigation as $item)
@@ -134,7 +134,7 @@
             {{-- Social & CTA --}}
             <div>
                 <h4 class="text-xs font-bold uppercase tracking-[0.2em] mb-6" style="color: {{ $primaryColor }};">
-                    {{ __('Volg Ons') }}
+                    {{ __('Follow Us') }}
                 </h4>
                 <div class="flex items-center gap-3 mb-8">
                     @if($facebookUrl)
@@ -169,7 +169,7 @@
                     class="inline-flex items-center gap-2 px-6 py-3 text-sm font-bold uppercase tracking-wider transition-all duration-300 hover:scale-105"
                     style="background-color: {{ $primaryColor }}; color: {{ $secondaryColor }};"
                 >
-                    {{ __('Afspraak maken') }}
+                    {{ __('Book appointment') }}
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                     </svg>

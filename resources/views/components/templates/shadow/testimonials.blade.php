@@ -14,13 +14,13 @@
 
 @php
     // Content met defaults
-    $title = $content['title'] ?? 'Klantervaringen';
-    $subtitle = $content['subtitle'] ?? 'Wat anderen zeggen';
+    $title = $content['title'] ?? __('Customer Reviews');
+    $subtitle = $content['subtitle'] ?? __('What others say');
 
     $defaultItems = [
-        ['name' => 'Mark de Boer', 'role' => 'Vaste klant', 'quote' => 'Beste barbershop in de stad. De sfeer is top en mijn fade zit altijd perfect. Kom hier al jaren en ga niet meer weg.'],
-        ['name' => 'Thomas Visser', 'role' => 'Vaste klant', 'quote' => 'Eindelijk een barbershop die begrijpt wat ik wil. Goede service, scherpe prijzen en altijd een goed gesprek.'],
-        ['name' => 'Kevin Bakker', 'role' => 'Nieuwe klant', 'quote' => 'Op aanraden van een vriend hier geweest. De hot towel shave was een geweldige ervaring. Zeker een aanrader!'],
+        ['name' => 'Mark de Boer', 'role' => __('Regular client'), 'quote' => __('Best barbershop in town. The atmosphere is great and my fade is always perfect. Been coming here for years and not going anywhere else.')],
+        ['name' => 'Thomas Visser', 'role' => __('Regular client'), 'quote' => __('Finally a barbershop that gets what I want. Great service, fair prices and always a good chat.')],
+        ['name' => 'Kevin Bakker', 'role' => __('New client'), 'quote' => __('Came here on a friend\'s recommendation. The hot towel shave was an amazing experience. Highly recommended!')],
     ];
     $items = !empty($content['items']) ? $content['items'] : $defaultItems;
 

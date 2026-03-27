@@ -11,8 +11,8 @@
 ])
 
 @php
-    $title = $content['title'] ?? 'Kwaliteit & Vakmanschap';
-    $subtitle = $content['subtitle'] ?? 'Uw project in vertrouwde handen';
+    $title = $content['title'] ?? __('Quality & Craftsmanship');
+    $subtitle = $content['subtitle'] ?? __('Your project in trusted hands');
     $backgroundImage = $section?->getFirstMediaUrl('background') ?: ($content['background_image'] ?? null);
 
     // Theme kleuren
@@ -68,17 +68,17 @@
         <div class="flex items-center justify-center gap-8 mt-12">
             <div class="text-center">
                 <div class="text-3xl font-bold" style="color: {{ $primaryColor }};">25+</div>
-                <div class="text-sm text-white/60 uppercase tracking-wider">Jaar ervaring</div>
+                <div class="text-sm text-white/60 uppercase tracking-wider">{{ __('Years of experience') }}</div>
             </div>
             <div class="w-px h-12 bg-white/20"></div>
             <div class="text-center">
                 <div class="text-3xl font-bold" style="color: {{ $primaryColor }};">500+</div>
-                <div class="text-sm text-white/60 uppercase tracking-wider">Projecten</div>
+                <div class="text-sm text-white/60 uppercase tracking-wider">{{ __('Projects') }}</div>
             </div>
             <div class="w-px h-12 bg-white/20"></div>
             <div class="text-center">
                 <div class="text-3xl font-bold" style="color: {{ $primaryColor }};">100%</div>
-                <div class="text-sm text-white/60 uppercase tracking-wider">Tevreden</div>
+                <div class="text-sm text-white/60 uppercase tracking-wider">{{ __('Satisfied') }}</div>
             </div>
         </div>
     </div>

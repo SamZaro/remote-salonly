@@ -12,8 +12,8 @@
 
 @php
     // Content met defaults
-    $title = $content['title'] ?? 'Ons Werk';
-    $subtitle = $content['subtitle'] ?? 'Een selectie van onze creaties';
+    $title = $content['title'] ?? __('Our Work');
+    $subtitle = $content['subtitle'] ?? __('A selection of our creations');
 
     // Get images from Spatie Media Library
     $mediaItems = $section?->getMedia('images') ?? collect();
@@ -104,7 +104,7 @@
                 class="inline-flex items-center gap-3 text-sm font-medium uppercase tracking-widest transition-all duration-300 group"
                 style="color: {{ $secondaryColor }};"
             >
-                <span class="border-b" style="border-color: {{ $secondaryColor }};">Bekijk meer op Instagram</span>
+                <span class="border-b" style="border-color: {{ $secondaryColor }};">{{ __('View more on Instagram') }}</span>
                 <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                 </svg>

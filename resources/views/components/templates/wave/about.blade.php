@@ -10,15 +10,15 @@
 ])
 
 @php
-    $title = $content['title'] ?? 'Over Onze Salon';
-    $subtitle = $content['subtitle'] ?? 'Waar creativiteit en vakmanschap samenkomen';
-    $description = $content['description'] ?? 'Bij ons draait alles om jou. Ons team van ervaren stylisten combineert de nieuwste trends met tijdloze technieken om een look te creëren die perfect bij jou past.';
-    $description2 = $content['description2'] ?? 'Met jarenlange ervaring en een passie voor ons vak zorgen we ervoor dat je onze salon altijd verlaat met een glimlach en fantastisch haar.';
+    $title = $content['title'] ?? __('About Our Salon');
+    $subtitle = $content['subtitle'] ?? __('Where creativity and craftsmanship meet');
+    $description = $content['description'] ?? __('Everything revolves around you. Our team of experienced stylists combines the latest trends with timeless techniques to create a look that perfectly suits your personality.');
+    $description2 = $content['description2'] ?? __('With years of experience and a passion for our craft, we make sure you always leave our salon with a smile and great hair.');
     $image = $section?->getFirstMediaUrl('background') ?: ($content['image'] ?? null);
     $stats = $content['stats'] ?? [
-        ['value' => '10+', 'label' => 'Jaar ervaring'],
-        ['value' => '5000+', 'label' => 'Tevreden klanten'],
-        ['value' => '6', 'label' => 'Stylisten'],
+        ['value' => '10+', 'label' => __('Years of experience')],
+        ['value' => '5000+', 'label' => __('Happy clients')],
+        ['value' => '6', 'label' => __('Stylists')],
     ];
 
     $primaryColor = $theme['primary_color'] ?? '#0077b6';
@@ -59,7 +59,7 @@
 
                         <img
                             src="{{ $image }}"
-                            alt="Over ons"
+                            alt="{{ __('About us') }}"
                             class="relative w-full h-[420px] lg:h-[540px] object-cover rounded-2xl"
                             style="box-shadow: 0 20px 50px {{ $secondaryColor }}15;"
                         />
@@ -127,7 +127,7 @@
                 <div class="flex items-center gap-3 mb-6">
                     <div class="w-8 h-[2px] rounded-full" style="background: linear-gradient(to right, {{ $primaryColor }}, {{ $accentColor }});"></div>
                     <span class="uppercase text-[11px] tracking-[0.2em] font-semibold" style="color: {{ $primaryColor }};">
-                        Over Ons
+                        {{ __('About Us') }}
                     </span>
                 </div>
 
@@ -157,7 +157,7 @@
 
                 {{-- Feature highlights --}}
                 <div class="grid sm:grid-cols-2 gap-3 mb-8">
-                    @foreach(['Gecertificeerde stylisten', 'Premium producten', 'Persoonlijk advies', 'Ontspannen sfeer'] as $index => $feature)
+                    @foreach([__('Certified stylists'), __('Premium products'), __('Personal advice'), __('Relaxed atmosphere')] as $index => $feature)
                         <div
                             class="flex items-center gap-3 px-4 py-3 rounded-lg"
                             x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateX(0)'"
@@ -177,7 +177,7 @@
                     class="group inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold rounded-full transition-all duration-300 hover:shadow-md hover:-translate-y-0.5"
                     style="background-color: {{ $primaryColor }}; color: #ffffff; box-shadow: 0 2px 12px {{ $primaryColor }}30;"
                 >
-                    Maak kennis met ons team
+                    {{ __('Meet our team') }}
                     <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                     </svg>

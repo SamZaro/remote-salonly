@@ -10,15 +10,15 @@
 ])
 
 @php
-    $title = $content['title'] ?? 'Onze Diensten';
-    $subtitle = $content['subtitle'] ?? 'Wat wij bieden';
+    $title = $content['title'] ?? __('Our Services');
+    $subtitle = $content['subtitle'] ?? __('What we offer');
     $items = $content['items'] ?? [
-        ['title' => 'Organic Cut', 'description' => 'Knippen met biologische styling producten', 'price' => 'Vanaf €55', 'icon' => 'scissors'],
-        ['title' => 'Plant-Based Color', 'description' => 'Kleuring met 100% plantaardige verven', 'price' => 'Vanaf €85', 'icon' => 'color'],
-        ['title' => 'Scalp Wellness', 'description' => 'Hoofdhuidbehandeling met essentiële oliën', 'price' => 'Vanaf €45', 'icon' => 'spa'],
-        ['title' => 'Herbal Treatment', 'description' => 'Intensieve kruidenbehandeling voor haar', 'price' => 'Vanaf €65', 'icon' => 'leaf'],
-        ['title' => 'Mindful Styling', 'description' => 'Ontspannen föhnen en stylen', 'price' => 'Vanaf €40', 'icon' => 'heart'],
-        ['title' => 'Detox Ritual', 'description' => 'Zuiverende haardetox behandeling', 'price' => 'Vanaf €55', 'icon' => 'sparkle'],
+        ['title' => __('Organic Cut'), 'description' => __('Cut using organic styling products'), 'price' => __('From €55'), 'icon' => 'scissors'],
+        ['title' => __('Plant-Based Color'), 'description' => __('Coloring with 100% plant-based dyes'), 'price' => __('From €85'), 'icon' => 'color'],
+        ['title' => __('Scalp Wellness'), 'description' => __('Scalp treatment with essential oils'), 'price' => __('From €45'), 'icon' => 'spa'],
+        ['title' => __('Herbal Treatment'), 'description' => __('Intensive herbal treatment for your hair'), 'price' => __('From €65'), 'icon' => 'leaf'],
+        ['title' => __('Mindful Styling'), 'description' => __('Relaxing blow-dry and styling session'), 'price' => __('From €40'), 'icon' => 'heart'],
+        ['title' => __('Detox Ritual'), 'description' => __('Purifying hair detox treatment'), 'price' => __('From €55'), 'icon' => 'sparkle'],
     ];
 
     $primaryColor = $theme['primary_color'] ?? '#14b8a6';
@@ -60,7 +60,7 @@
                 {{ $title }}
             </h2>
             <p class="text-lg max-w-2xl mx-auto" style="color: {{ $textColor }}; font-family: '{{ $bodyFont }}', sans-serif;">
-                Natuurlijke verzorging voor lichaam en geest
+                {{ __('Natural care for body and mind') }}
             </p>
         </div>
 
@@ -108,7 +108,7 @@
                         onmouseover="this.style.backgroundColor='{{ $primaryColor }}'; this.style.color='#ffffff';"
                         onmouseout="this.style.backgroundColor='transparent'; this.style.color='{{ $primaryColor }}';"
                     >
-                        <span>Boeken</span>
+                        <span>{{ __('Book') }}</span>
                         <svg class="w-3.5 h-3.5 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                         </svg>
@@ -134,7 +134,7 @@
                 class="group/link inline-flex items-center text-sm font-semibold tracking-widest uppercase transition-opacity hover:opacity-70"
                 style="color: {{ $secondaryColor }}; font-family: '{{ $bodyFont }}', sans-serif;"
             >
-                Bekijk volledige prijslijst
+                {{ __('View full price list') }}
                 <svg class="w-4 h-4 ml-2 transition-transform duration-300 group-hover/link:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                 </svg>

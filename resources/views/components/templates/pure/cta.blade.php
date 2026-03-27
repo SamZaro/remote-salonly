@@ -11,12 +11,12 @@
 ])
 
 @php
-    $title = $content['title'] ?? 'Klaar Voor Pure Verzorging?';
-    $subtitle = $content['subtitle'] ?? 'Boek nu je natuurlijke beauty moment';
-    $description = $content['description'] ?? 'Ervaar het verschil van 100% natuurlijke haarverzorging. Goed voor jou, goed voor de planeet.';
-    $ctaText = $content['cta_text'] ?? 'Maak Een Afspraak';
+    $title = $content['title'] ?? __('Ready for Pure Care?');
+    $subtitle = $content['subtitle'] ?? __('Book your natural beauty moment today');
+    $description = $content['description'] ?? __('Experience the difference of 100% natural hair care. Good for you, good for the planet.');
+    $ctaText = $content['cta_text'] ?? __('Book an Appointment');
     $ctaLink = $content['cta_link'] ?? '#contact';
-    $secondaryCtaText = $content['secondary_cta_text'] ?? 'Bel Ons';
+    $secondaryCtaText = $content['secondary_cta_text'] ?? __('Call Us');
     $secondaryCtaLink = $content['secondary_cta_link'] ?? 'tel:+31612345678';
     $backgroundImage = $section?->getFirstMediaUrl('background') ?: ($content['background_image'] ?? null);
 
@@ -109,19 +109,19 @@
                 <svg class="w-4 h-4" style="color: {{ $primaryColor }};" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                 </svg>
-                Vegan
+                {{ __('Vegan') }}
             </div>
             <div class="flex items-center gap-2 text-sm" style="color: {{ $textColor }}; font-family: '{{ $bodyFont }}', sans-serif;">
                 <svg class="w-4 h-4" style="color: {{ $primaryColor }};" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                 </svg>
-                Cruelty-free
+                {{ __('Cruelty-free') }}
             </div>
             <div class="flex items-center gap-2 text-sm" style="color: {{ $textColor }}; font-family: '{{ $bodyFont }}', sans-serif;">
                 <svg class="w-4 h-4" style="color: {{ $primaryColor }};" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                 </svg>
-                Duurzaam
+                {{ __('Sustainable') }}
             </div>
         </div>
     </div>

@@ -9,15 +9,15 @@
 ])
 
 @php
-    $title = $content['title'] ?? 'Onze Behandelingen';
-    $subtitle = $content['subtitle'] ?? 'Ontdek ons aanbod';
+    $title = $content['title'] ?? __('Our Treatments');
+    $subtitle = $content['subtitle'] ?? __('Discover our range');
     $items = $content['items'] ?? [
-        ['title' => 'Knippen & Stylen', 'description' => 'Van klassiek tot trendy — jouw perfecte coupe', 'price' => 'Vanaf €55', 'icon' => 'scissors'],
-        ['title' => 'Kleuren & Highlights', 'description' => 'Balayage, ombre, full colour & meer', 'price' => 'Vanaf €85', 'icon' => 'color'],
-        ['title' => 'Krullen & Styling', 'description' => 'Permanenten, krulbehandelingen & blowouts', 'price' => 'Vanaf €75', 'icon' => 'curls'],
-        ['title' => 'Manicure & Pedicure', 'description' => 'Verzorging voor mooie handen en voeten', 'price' => 'Vanaf €35', 'icon' => 'nails'],
-        ['title' => 'Nagelstyling', 'description' => 'Gel, acryl, nail art & extensions', 'price' => 'Vanaf €45', 'icon' => 'polish'],
-        ['title' => 'Lash & Brow', 'description' => 'Wimperextensions, lifting & brow design', 'price' => 'Vanaf €40', 'icon' => 'lash'],
+        ['title' => __('Cut & Style'), 'description' => __('From classic to trendy, your perfect cut'), 'price' => __('From €55'), 'icon' => 'scissors'],
+        ['title' => __('Colour & Highlights'), 'description' => __('Balayage, ombre, full colour and more'), 'price' => __('From €85'), 'icon' => 'color'],
+        ['title' => __('Curls & Styling'), 'description' => __('Perms, curl treatments and blowouts'), 'price' => __('From €75'), 'icon' => 'curls'],
+        ['title' => __('Manicure & Pedicure'), 'description' => __('Care for beautiful hands and feet'), 'price' => __('From €35'), 'icon' => 'nails'],
+        ['title' => __('Nail Styling'), 'description' => __('Gel, acrylic, nail art and extensions'), 'price' => __('From €45'), 'icon' => 'polish'],
+        ['title' => 'Lash & Brow', 'description' => __('Lash extensions, lifting and brow design'), 'price' => __('From €40'), 'icon' => 'lash'],
     ];
 
     $primaryColor = $theme['primary_color'] ?? '#E8D8D3';
@@ -53,7 +53,7 @@
             style="opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out;"
         >
             <span class="text-xs font-semibold uppercase tracking-[0.2em] mb-4 block" style="color: {{ $secondaryColor }};">
-                Behandelingen
+                {{ __('Treatments') }}
             </span>
             <h2 class="text-4xl sm:text-5xl font-bold mb-5" style="color: {{ $headingColor }}; font-family: '{{ $headingFont }}', sans-serif;">
                 {{ $title }}
@@ -99,7 +99,7 @@
                             class="text-xs font-semibold uppercase tracking-wider transition-opacity hover:opacity-70"
                             style="color: {{ $secondaryColor }};"
                         >
-                            Boeken &rarr;
+                            {{ __('Book') }} &rarr;
                         </a>
                     </div>
                 </div>
@@ -117,7 +117,7 @@
                 class="inline-flex items-center text-sm font-semibold tracking-wide uppercase transition-opacity hover:opacity-70"
                 style="color: {{ $secondaryColor }};"
             >
-                Bekijk volledige prijslijst
+                {{ __('View full price list') }}
                 <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                 </svg>

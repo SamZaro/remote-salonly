@@ -10,13 +10,13 @@
 ])
 
 @php
-    $title = $content['title'] ?? 'Veelgestelde Vragen';
-    $subtitle = $content['subtitle'] ?? 'Goed om te weten';
+    $title = $content['title'] ?? __('Frequently Asked Questions');
+    $subtitle = $content['subtitle'] ?? __('Good to know');
     $items = $content['items'] ?? [
-        ['question' => 'Moet ik vooraf reserveren?', 'answer' => 'Reserveren is aan te raden, vooral in het weekend. Je kunt eenvoudig online of telefonisch een afspraak maken.'],
-        ['question' => 'Wat kost een knipbeurt?', 'answer' => 'Onze prijzen variëren afhankelijk van de behandeling. Bekijk onze prijslijst of neem contact op voor meer informatie.'],
-        ['question' => 'Doen jullie ook kleuren?', 'answer' => 'Ja, we bieden een uitgebreid assortiment aan kleurbehandelingen, van highlights tot volledige kleuring.'],
-        ['question' => 'Hoe kan ik mijn afspraak wijzigen?', 'answer' => 'Je kunt je afspraak tot 24 uur van tevoren kosteloos wijzigen of annuleren via telefoon of online.'],
+        ['question' => __('Do I need to book in advance?'), 'answer' => __('Booking in advance is recommended, especially on weekends. You can easily make an appointment online or by phone.')],
+        ['question' => __('How much does a haircut cost?'), 'answer' => __('Our prices vary depending on the treatment. Check our price list or contact us for more information.')],
+        ['question' => __('Do you also do colouring?'), 'answer' => __('Yes, we offer an extensive range of colour treatments, from highlights to full colouring.')],
+        ['question' => __('How can I change my appointment?'), 'answer' => __('You can change or cancel your appointment free of charge up to 24 hours in advance by phone or online.')],
     ];
 
     $primaryColor = $theme['primary_color'] ?? '#0077b6';

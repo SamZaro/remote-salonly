@@ -11,9 +11,9 @@
 ])
 
 @php
-    $title = $content['title'] ?? 'Tijd voor een<br>nieuwe look?';
-    $subtitle = $content['subtitle'] ?? 'Boek vandaag nog je afspraak en ervaar het verschil';
-    $ctaText = $content['cta_text'] ?? 'Reserveer Nu';
+    $title = $content['title'] ?? __('Time for a<br>new look?');
+    $subtitle = $content['subtitle'] ?? __('Book your appointment today and experience the difference');
+    $ctaText = $content['cta_text'] ?? __('Reserve Now');
     $ctaLink = $content['cta_link'] ?? '#contact';
     $backgroundImage = $section?->getFirstMediaUrl('background') ?: ($content['background_image'] ?? null);
 
