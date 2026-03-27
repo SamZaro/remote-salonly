@@ -4,7 +4,7 @@
         <a
             href="{{ $this->bookingUrl }}"
             class="inline-flex items-center px-4 py-2 rounded font-medium transition-all duration-300 hover:opacity-90 hover:scale-105"
-            style="background-color: {{ $backgroundColor ?? '#c9a227' }}; color: {{ $textColor ?? '#1a1a1a' }};"
+            style="background-color: {{ $backgroundColor ?? '#c9a227' }}; color: {{ $textColor ?? '#ffffff' }};"
         >
             {{ $label }}
         </a>
@@ -13,7 +13,7 @@
         <a
             href="{{ $this->bookingUrl }}"
             class="block mx-3 my-2 px-4 py-3 rounded text-center font-medium transition-all duration-300"
-            style="background-color: {{ $backgroundColor ?? '#c9a227' }}; color: {{ $textColor ?? '#1a1a1a' }};"
+            style="background-color: {{ $backgroundColor ?? '#c9a227' }}; color: {{ $textColor ?? '#ffffff' }};"
         >
             {{ $label }}
         </a>

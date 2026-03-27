@@ -13,7 +13,7 @@ class BookingTrigger extends Component
 
     public ?string $backgroundColor = null;
 
-    public string $label = 'Afspraak maken';
+    public string $label = 'Book Appointment';
 
     public function mount(
         string $style = 'button',
@@ -24,7 +24,7 @@ class BookingTrigger extends Component
         $this->style = $style;
         $this->textColor = $textColor;
         $this->backgroundColor = $backgroundColor;
-        $this->label = $label ?? __('Afspraak maken');
+        $this->label = $label ?? __('Book Appointment');
     }
 
     public function getBookingUrlProperty(): string

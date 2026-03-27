@@ -129,26 +129,26 @@ class TemplateSeeder extends Seeder
                 'footer' => ['title' => 'Your Barbershop Name',    'subtitle' => 'Traditional craftsmanship, modern style'],
             ],
             'schoonheidssalons' => [
-                'cta_text' => 'Boek een behandeling',
-                'slider' => ['title' => 'Onze Behandelingen',     'subtitle' => 'Bekijk de resultaten'],
-                'about' => ['title' => 'Over Ons',               'subtitle' => 'Onze visie',        'description' => 'Wij geloven dat iedereen het verdient om te stralen. Ons team van ervaren schoonheidsspecialisten staat klaar om jou te verwennen met de beste behandelingen.'],
-                'features' => ['title' => 'Waarom Ons Kiezen',      'subtitle' => 'Onze expertise'],
-                'jumbotron' => ['title' => 'Verwennerij op zijn Best', 'subtitle' => 'Luxueuze behandelingen voor een stralende uitstraling'],
-                'services' => ['title' => 'Onze Behandelingen',     'subtitle' => 'Wat wij bieden'],
-                'gallery' => ['title' => 'Galerij',                'subtitle' => 'Resultaten'],
-                'pricing' => ['title' => 'Prijzen',                'subtitle' => 'Onze tarieven'],
-                'parallax' => ['title' => 'Ontdek Onze Wereld',     'subtitle' => 'Sfeerimpressie'],
-                'accordion' => ['title' => 'Veelgestelde Vragen',    'subtitle' => 'FAQ'],
-                'cta' => ['title' => 'Klaar om te stralen?',   'subtitle' => 'Boek vandaag nog een behandeling', 'cta_text' => 'Boek een behandeling', 'cta_url' => '#contact'],
-                'team' => ['title' => 'Ons Team',               'subtitle' => 'Maak kennis met onze specialisten', 'members' => [
-                    ['name' => 'Lisa Vermeer',      'role' => 'Schoonheidsspecialist', 'bio' => 'Expert in gezichtsbehandelingen en huidverzorging met een holistische aanpak.'],
-                    ['name' => 'Noa van den Berg',  'role' => 'Nagelstyliste',         'bio' => 'Creatief in nail art en gespecialiseerd in gel en acryl technieken.'],
-                    ['name' => 'Fleur Mulder',      'role' => 'Massagetherapeut',      'bio' => 'Brengt lichaam en geest in balans met ontspannende en therapeutische massages.'],
+                'cta_text' => 'Book a Treatment',
+                'slider' => ['title' => 'Our Treatments',          'subtitle' => 'View our results'],
+                'about' => ['title' => 'About Us',                'subtitle' => 'Our vision',        'description' => 'We believe everyone deserves to feel radiant. Our team of experienced beauty specialists is ready to pamper you with the finest treatments.'],
+                'features' => ['title' => 'Why Choose Us',          'subtitle' => 'Our expertise'],
+                'jumbotron' => ['title' => 'Pampering at its Best',  'subtitle' => 'Luxury treatments for a radiant appearance'],
+                'services' => ['title' => 'Our Treatments',         'subtitle' => 'What we offer'],
+                'gallery' => ['title' => 'Gallery',                'subtitle' => 'Results'],
+                'pricing' => ['title' => 'Prices',                 'subtitle' => 'Our rates'],
+                'parallax' => ['title' => 'Discover Our World',     'subtitle' => 'Atmosphere impression'],
+                'accordion' => ['title' => 'Frequently Asked Questions', 'subtitle' => 'FAQ'],
+                'cta' => ['title' => 'Ready to glow?',         'subtitle' => 'Book a treatment today', 'cta_text' => 'Book a Treatment', 'cta_url' => '#contact'],
+                'team' => ['title' => 'Our Team',               'subtitle' => 'Meet our specialists', 'members' => [
+                    ['name' => 'Lisa Vermeer',      'role' => 'Beauty Specialist',  'bio' => 'Expert in facial treatments and skin care with a holistic approach.'],
+                    ['name' => 'Noa van den Berg',  'role' => 'Nail Stylist',       'bio' => 'Creative in nail art and specialised in gel and acrylic techniques.'],
+                    ['name' => 'Fleur Mulder',      'role' => 'Massage Therapist',  'bio' => 'Brings body and mind into balance with relaxing and therapeutic massages.'],
                 ]],
-                'testimonials' => ['title' => 'Wat Klanten Zeggen',     'subtitle' => 'Ervaringen'],
-                'contact' => ['title' => 'Contact',                'subtitle' => 'Neem contact op'],
-                'contact-form' => ['title' => 'Stuur ons een bericht', 'subtitle' => 'Heeft u een vraag? Wij helpen u graag verder.'],
-                'footer' => ['title' => 'Jouw Salon Naam',        'subtitle' => 'Schoonheid en zelfzorg op zijn best'],
+                'testimonials' => ['title' => 'What Customers Say',  'subtitle' => 'Experiences'],
+                'contact' => ['title' => 'Contact',                'subtitle' => 'Get in touch'],
+                'contact-form' => ['title' => 'Send us a message',  'subtitle' => 'Have a question? We are happy to help.'],
+                'footer' => ['title' => 'Your Salon Name',         'subtitle' => 'Beauty and self-care at its best'],
             ],
         ];
     }
@@ -157,19 +157,19 @@ class TemplateSeeder extends Seeder
     private function colorSchemes(): array
     {
         return [
-            'luxury' => ['primary_color' => '#C8B88A', 'secondary_color' => '#0F0F0F', 'accent_color' => '#D4C4A0', 'background_color' => '#F5F3EF', 'text_color' => '#6B6B6B', 'heading_color' => '#0F0F0F', 'navbar_background' => '#0F0F0F', 'navbar_text_color' => '#f0eeeb', 'navbar_underline_color' => '#C8B88A'],
-            'vintage' => ['primary_color' => '#8B4513', 'secondary_color' => '#3E2723', 'accent_color' => '#D2691E', 'background_color' => '#FDF5E6', 'text_color' => '#6D4C41', 'heading_color' => '#3E2723', 'navbar_background' => '#3E2723', 'navbar_text_color' => '#FDF5E6', 'navbar_underline_color' => '#8B4513'],
-            'modern' => ['primary_color' => '#2563eb', 'secondary_color' => '#1e293b', 'accent_color' => '#3b82f6', 'background_color' => '#f8fafc', 'text_color' => '#64748b', 'heading_color' => '#0f172a', 'navbar_background' => '#1e293b', 'navbar_text_color' => '#f8fafc', 'navbar_underline_color' => '#2563eb'],
-            'trendy' => ['primary_color' => '#8b5cf6', 'secondary_color' => '#18181b', 'accent_color' => '#a78bfa', 'background_color' => '#fafafa', 'text_color' => '#71717a', 'heading_color' => '#18181b', 'navbar_background' => '#18181b', 'navbar_text_color' => '#fafafa', 'navbar_underline_color' => '#8b5cf6'],
-            'rose' => ['primary_color' => '#e11d48', 'secondary_color' => '#1f1f1f', 'accent_color' => '#fb7185', 'background_color' => '#fafafa', 'text_color' => '#737373', 'heading_color' => '#171717', 'navbar_background' => '#1f1f1f', 'navbar_text_color' => '#fafafa', 'navbar_underline_color' => '#e11d48'],
+            'luxury' => ['primary_color' => '#C8B88A', 'secondary_color' => '#0F0F0F', 'accent_color' => '#D4C4A0', 'background_color' => '#F5F3EF', 'text_color' => '#6B6B6B', 'heading_color' => '#0F0F0F', 'navbar_background' => '#0F0F0F', 'navbar_text_color' => '#f0eeeb', 'navbar_underline_color' => '#C8B88A', 'navbar_cta_text_color' => '#ffffff'],
+            'vintage' => ['primary_color' => '#8B4513', 'secondary_color' => '#3E2723', 'accent_color' => '#D2691E', 'background_color' => '#FDF5E6', 'text_color' => '#6D4C41', 'heading_color' => '#3E2723', 'navbar_background' => '#3E2723', 'navbar_text_color' => '#FDF5E6', 'navbar_underline_color' => '#8B4513', 'navbar_cta_text_color' => '#ffffff'],
+            'modern' => ['primary_color' => '#2563eb', 'secondary_color' => '#1e293b', 'accent_color' => '#3b82f6', 'background_color' => '#f8fafc', 'text_color' => '#64748b', 'heading_color' => '#0f172a', 'navbar_background' => '#1e293b', 'navbar_text_color' => '#f8fafc', 'navbar_underline_color' => '#2563eb', 'navbar_cta_text_color' => '#ffffff'],
+            'trendy' => ['primary_color' => '#8b5cf6', 'secondary_color' => '#18181b', 'accent_color' => '#a78bfa', 'background_color' => '#fafafa', 'text_color' => '#71717a', 'heading_color' => '#18181b', 'navbar_background' => '#18181b', 'navbar_text_color' => '#fafafa', 'navbar_underline_color' => '#8b5cf6', 'navbar_cta_text_color' => '#ffffff'],
+            'rose' => ['primary_color' => '#e11d48', 'secondary_color' => '#1f1f1f', 'accent_color' => '#fb7185', 'background_color' => '#fafafa', 'text_color' => '#737373', 'heading_color' => '#171717', 'navbar_background' => '#1f1f1f', 'navbar_text_color' => '#fafafa', 'navbar_underline_color' => '#e11d48', 'navbar_cta_text_color' => '#ffffff'],
             'beauty' => ['primary_color' => '#B5908A', 'secondary_color' => '#6E5F5B', 'accent_color' => '#E8D8D3', 'background_color' => '#FBF9F8', 'text_color' => '#8A7B76', 'heading_color' => '#6E5F5B', 'navbar_background' => '#6E5F5B', 'navbar_text_color' => '#FBF9F8', 'navbar_underline_color' => '#B5908A', 'navbar_cta_background' => '#FBF9F8', 'navbar_cta_text_color' => '#6E5F5B'],
-            'peach' => ['primary_color' => '#FF6F61', 'secondary_color' => '#2B2B2B', 'accent_color' => '#FFD6C9', 'background_color' => '#FAFAFA', 'text_color' => '#6B6B6B', 'heading_color' => '#2B2B2B', 'navbar_background' => '#2B2B2B', 'navbar_text_color' => '#FAFAFA', 'navbar_underline_color' => '#FF6F61'],
-            'minimal' => ['primary_color' => '#171717', 'secondary_color' => '#0a0a0a', 'accent_color' => '#404040', 'background_color' => '#FAFAFA', 'text_color' => '#737373', 'heading_color' => '#171717', 'navbar_background' => '#0a0a0a', 'navbar_text_color' => '#FAFAFA', 'navbar_underline_color' => '#171717'],
+            'peach' => ['primary_color' => '#FF6F61', 'secondary_color' => '#2B2B2B', 'accent_color' => '#FFD6C9', 'background_color' => '#FAFAFA', 'text_color' => '#6B6B6B', 'heading_color' => '#2B2B2B', 'navbar_background' => '#2B2B2B', 'navbar_text_color' => '#FAFAFA', 'navbar_underline_color' => '#FF6F61', 'navbar_cta_text_color' => '#ffffff'],
+            'minimal' => ['primary_color' => '#171717', 'secondary_color' => '#0a0a0a', 'accent_color' => '#404040', 'background_color' => '#FAFAFA', 'text_color' => '#737373', 'heading_color' => '#171717', 'navbar_background' => '#0a0a0a', 'navbar_text_color' => '#FAFAFA', 'navbar_underline_color' => '#171717', 'navbar_cta_text_color' => '#ffffff'],
             'natural' => ['primary_color' => '#14b8a6', 'secondary_color' => '#1c1917', 'accent_color' => '#99f6e4', 'background_color' => '#f0f0f0', 'text_color' => '#57534e', 'heading_color' => '#1c1917', 'navbar_background' => '#1c1917', 'navbar_text_color' => '#ffffff', 'navbar_underline_color' => '#14b8a6', 'navbar_cta_background' => '#14b8a6', 'navbar_cta_text_color' => '#ffffff'],
-            'ocean' => ['primary_color' => '#0077b6', 'secondary_color' => '#0d1b2a', 'accent_color' => '#48cae4', 'background_color' => '#f0f7ff', 'text_color' => '#4a6a8a', 'heading_color' => '#0d1b2a', 'navbar_background' => '#0d1b2a', 'navbar_text_color' => '#f0f7ff', 'navbar_underline_color' => '#0077b6'],
-            'forest' => ['primary_color' => '#2d6a4f', 'secondary_color' => '#1b1b1b', 'accent_color' => '#52b788', 'background_color' => '#f9faf8', 'text_color' => '#6b7280', 'heading_color' => '#1b1b1b', 'navbar_background' => '#1b1b1b', 'navbar_text_color' => '#f9faf8', 'navbar_underline_color' => '#2d6a4f'],
-            'orange' => ['primary_color' => '#f97316', 'secondary_color' => '#1c1917', 'accent_color' => '#ffedd5', 'background_color' => '#fafaf9', 'text_color' => '#78716c', 'heading_color' => '#1c1917', 'navbar_background' => '#1c1917', 'navbar_text_color' => '#fafaf9', 'navbar_underline_color' => '#f97316'],
-            'dark' => ['primary_color' => '#6366f1', 'secondary_color' => '#0f0f0f', 'accent_color' => '#818cf8', 'background_color' => '#111111', 'text_color' => '#a1a1aa', 'heading_color' => '#f4f4f5', 'navbar_background' => '#0a0a0a', 'navbar_text_color' => '#f4f4f5', 'navbar_underline_color' => '#6366f1'],
+            'ocean' => ['primary_color' => '#0077b6', 'secondary_color' => '#0d1b2a', 'accent_color' => '#48cae4', 'background_color' => '#f0f7ff', 'text_color' => '#4a6a8a', 'heading_color' => '#0d1b2a', 'navbar_background' => '#0d1b2a', 'navbar_text_color' => '#f0f7ff', 'navbar_underline_color' => '#0077b6', 'navbar_cta_text_color' => '#ffffff'],
+            'forest' => ['primary_color' => '#2d6a4f', 'secondary_color' => '#1b1b1b', 'accent_color' => '#52b788', 'background_color' => '#f9faf8', 'text_color' => '#6b7280', 'heading_color' => '#1b1b1b', 'navbar_background' => '#1b1b1b', 'navbar_text_color' => '#f9faf8', 'navbar_underline_color' => '#2d6a4f', 'navbar_cta_text_color' => '#ffffff'],
+            'orange' => ['primary_color' => '#f97316', 'secondary_color' => '#1c1917', 'accent_color' => '#ffedd5', 'background_color' => '#fafaf9', 'text_color' => '#78716c', 'heading_color' => '#1c1917', 'navbar_background' => '#1c1917', 'navbar_text_color' => '#fafaf9', 'navbar_underline_color' => '#f97316', 'navbar_cta_text_color' => '#ffffff'],
+            'dark' => ['primary_color' => '#6366f1', 'secondary_color' => '#0f0f0f', 'accent_color' => '#818cf8', 'background_color' => '#111111', 'text_color' => '#a1a1aa', 'heading_color' => '#f4f4f5', 'navbar_background' => '#0a0a0a', 'navbar_text_color' => '#f4f4f5', 'navbar_underline_color' => '#6366f1', 'navbar_cta_text_color' => '#ffffff'],
         ];
     }
 
@@ -207,8 +207,8 @@ class TemplateSeeder extends Seeder
     {
         return [
             ['label' => 'Home',       'target' => '#hero',         'icon' => null, 'is_active' => true],
-            ['label' => 'Over Ons',   'target' => '#about',        'icon' => null, 'is_active' => true],
-            ['label' => 'Diensten',   'target' => '#services',     'icon' => null, 'is_active' => true],
+            ['label' => 'About',      'target' => '#about',        'icon' => null, 'is_active' => true],
+            ['label' => 'Services',   'target' => '#services',     'icon' => null, 'is_active' => true],
             ['label' => 'Reviews',    'target' => '#testimonials', 'icon' => null, 'is_active' => true],
             ['label' => 'Contact',    'target' => '#contact',      'icon' => null, 'is_active' => true],
         ];
