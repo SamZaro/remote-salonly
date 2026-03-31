@@ -80,10 +80,10 @@
                     @endphp
                     <div
                         class="text-center p-8 rounded-3xl transition-all duration-300 hover:scale-105 {{ $rotation }} hover:rotate-0 group"
-                        style="background: white; box-shadow: 6px 6px 0 {{ $shadowColor }};"
+                        style="background: {{ $secondaryColor }}; box-shadow: 6px 6px 0 {{ $shadowColor }};"
                     >
                         {{-- Photo --}}
-                        <div class="mx-auto mb-6 w-32 h-32 rounded-full overflow-hidden ring-4" style="--tw-ring-color: {{ $primaryColor }}30;">
+                        <div class="mx-auto mb-6 w-44 h-44 rounded-full overflow-hidden ring-4" style="ring-color: {{ $primaryColor }};">
                             @if($photoUrl)
                                 <img
                                     src="{{ $photoUrl }}"
@@ -93,9 +93,9 @@
                             @else
                                 <div
                                     class="w-full h-full flex items-center justify-center text-white"
-                                    style="background: {{ $index % 2 === 0 ? $primaryColor : $secondaryColor }};"
+                                    style="background: {{ $index % 2 === 0 ? $primaryColor : $accentColor }};"
                                 >
-                                    <svg class="w-14 h-14 opacity-70" fill="currentColor" viewBox="0 0 24 24">
+                                    <svg class="w-16 h-16 opacity-70" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/>
                                     </svg>
                                 </div>
@@ -103,7 +103,7 @@
                         </div>
 
                         {{-- Name --}}
-                        <h3 class="text-lg font-bold mb-1" style="color: {{ $headingColor }};">
+                        <h3 class="text-lg font-bold mb-1" style="color: white;">
                             {{ $member['name'] ?? '' }}
                         </h3>
 
@@ -116,7 +116,7 @@
 
                         {{-- Bio --}}
                         @if(!empty($member['bio']))
-                            <p class="mt-3 text-sm leading-relaxed" style="color: {{ $textColor }};">
+                            <p class="mt-3 text-sm leading-relaxed" style="color: white; opacity: 0.7;">
                                 {{ $member['bio'] }}
                             </p>
                         @endif

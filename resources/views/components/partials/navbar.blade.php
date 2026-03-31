@@ -79,7 +79,7 @@
                         <livewire:booking.booking-trigger
                             style="navbar"
                             :background-color="$theme['navbar_cta_background'] ?? $theme['primary_color'] ?? '#3b82f6'"
-                            :text-color="$theme['navbar_cta_text_color'] ?? $theme['secondary_color'] ?? '#ffffff'"
+                            :text-color="$theme['navbar_cta_text_color'] ?? '#ffffff'"
                         />
                     </div>
                 @endbookingEnabled

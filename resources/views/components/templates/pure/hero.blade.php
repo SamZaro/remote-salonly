@@ -11,7 +11,7 @@
 ])
 
 @php
-    $title = $content['title'] ?? __('Pure craftsmanship');
+    $title = $content['title'] ?? __('Naturally Crafted. Beautifully You.');
     $subtitle = $content['subtitle'] ?? __('Simplicity and elegance in every detail');
     $ctaText = $content['cta_text'] ?? __('Book an appointment');
     $ctaLink = $content['cta_link'] ?? '#contact';
@@ -54,7 +54,7 @@
     <div class="relative z-10 mx-auto max-w-7xl w-full px-4 sm:px-6 lg:px-8 py-20">
         <div class="max-w-3xl mx-auto text-center">
             <h2
-                class="text-base md:text-lg font-bold mb-6 leading-tight transition-all duration-1000 delay-200"
+                class="text-5xl md:text-7xl font-bold mb-6 leading-tight transition-all duration-1000 delay-200"
                 :class="loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'"
                 style="color: #ffffff; font-family: '{{ $headingFont }}', serif;"
             >

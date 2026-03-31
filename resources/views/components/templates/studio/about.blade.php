@@ -15,11 +15,6 @@
     $title = $content['title'] ?? __('This Is Us');
     $subtitle = $content['subtitle'] ?? __('A team of creative minds with a passion for hair');
     $description = $content['description'] ?? __('At Studio everything revolves around your unique style. Our team of trendsetters and hair artists is ready to create the perfect look with you. Whether you come for a bold transformation or a fresh-up, we make it an experience!');
-    $features = $content['features'] ?? [
-        ['icon' => 'sparkles', 'title' => __('Creative Team'), 'description' => __('Award-winning stylists')],
-        ['icon' => 'trending-up', 'title' => __('Trendsetting'), 'description' => __('Always up-to-date')],
-        ['icon' => 'heart', 'title' => __('Good Vibes'), 'description' => __('Relaxed atmosphere')],
-    ];
     $aboutImage = $section?->getFirstMediaUrl('background') ?: ($content['image'] ?? null);
 
     // Theme kleuren - dynamisch met Peach defaults
@@ -31,14 +26,6 @@
     $headingColor = $theme['heading_color'] ?? '#2B2B2B';
     $headingFont = $theme['heading_font_family'] ?? 'Abril Fatface';
     $bodyFont = $theme['font_family'] ?? 'Nunito';
-
-    // Icons mapping
-    $icons = [
-        'sparkles' => '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>',
-        'trending-up' => '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>',
-        'heart' => '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>',
-        'users' => '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>',
-    ];
 @endphp
 
 <section id="about" class="py-24 lg:py-32 relative overflow-hidden" style="background-color: {{ $backgroundColor }};">
@@ -69,17 +56,6 @@
                         </div>
                     </div>
                 @endif
-
-                {{-- Stats badge --}}
-                <div
-                    class="absolute -bottom-6 -right-6 p-6 rounded-2xl bg-white hidden lg:block transform rotate-3"
-                    style="box-shadow: 4px 4px 0 {{ $primaryColor }};"
-                >
-                    <div class="text-center">
-                        <p class="text-4xl font-black" style="color: {{ $primaryColor }};">10+</p>
-                        <p class="text-sm font-bold" style="color: {{ $headingColor }};">{{ __('Years of experience') }}</p>
-                    </div>
-                </div>
             </div>
 
             {{-- Content side --}}
@@ -112,36 +88,6 @@
                 <p class="text-lg mb-10 leading-relaxed" style="color: {{ $textColor }};">
                     {{ $description }}
                 </p>
-
-                {{-- Features --}}
-                <div class="grid sm:grid-cols-3 gap-6 mb-10">
-                    @foreach($features as $index => $feature)
-                        <div
-                            class="p-4 rounded-2xl text-center transform transition-transform hover:scale-105 hover:-rotate-2"
-                            style="background: {{ $index === 0 ? $primaryColor : ($index === 1 ? $secondaryColor : $accentColor) }}; box-shadow: 4px 4px 0 {{ $index === 2 ? $secondaryColor : $accentColor }};"
-                        >
-                            <div class="w-12 h-12 rounded-xl mx-auto mb-3 flex items-center justify-center" style="background: {{ $index === 2 ? $primaryColor : 'white' }}20;">
-                                <svg class="w-6 h-6" style="color: {{ $index === 2 ? $headingColor : 'white' }};" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    {!! $icons[$feature['icon']] ?? $icons['sparkles'] !!}
-                                </svg>
-                            </div>
-                            <h4 class="font-bold mb-1" style="color: {{ $index === 2 ? $headingColor : 'white' }};">{{ $feature['title'] }}</h4>
-                            <p class="text-sm" style="color: {{ $index === 2 ? $textColor : 'white' }}; opacity: 0.9;">{{ $feature['description'] }}</p>
-                        </div>
-                    @endforeach
-                </div>
-
-                {{-- CTA --}}
-                <a
-                    href="#team"
-                    class="inline-flex items-center gap-2 px-6 py-3 rounded-full font-bold transition-all hover:scale-105"
-                    style="background: {{ $secondaryColor }}; color: white; box-shadow: 4px 4px 0 {{ $primaryColor }};"
-                >
-                    Meet the Team
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                    </svg>
-                </a>
             </div>
         </div>
     </div>

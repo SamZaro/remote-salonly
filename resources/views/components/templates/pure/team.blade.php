@@ -80,11 +80,11 @@
                                 <img
                                     src="{{ $photoUrl }}"
                                     alt="{{ $member['name'] ?? '' }}"
-                                    class="w-full h-72 object-cover transition-transform duration-700 group-hover:scale-105"
+                                    class="w-full h-96 object-cover transition-transform duration-700 group-hover:scale-105"
                                 />
                             @else
                                 <div
-                                    class="w-full h-72 flex items-center justify-center text-3xl font-bold"
+                                    class="w-full h-96 flex items-center justify-center text-3xl font-bold"
                                     style="background-color: {{ $accentColor }}30; color: {{ $primaryColor }}; font-family: '{{ $headingFont }}', serif;"
                                 >
                                     {{ $initials }}

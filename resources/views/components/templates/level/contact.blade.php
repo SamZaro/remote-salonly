@@ -14,7 +14,6 @@
     $address      = $content['address'] ?? 'Style Street 45, 1012 AB Amsterdam';
     $phone        = $content['phone'] ?? '020 - 123 4567';
     $email        = $content['email'] ?? '';
-    $mapEmbed     = $content['map_embed'] ?? '';
     $openingHours = $content['opening_hours'] ?? [
         ['day' => __('Monday'),    'hours' => __('Closed')],
         ['day' => __('Tuesday'),   'hours' => '09:00 - 18:00'],
@@ -79,18 +78,6 @@
                 <p class="text-base leading-relaxed mb-6 font-light" style="color: rgba(255,255,255,0.6); font-family: '{{ $bodyFont }}';">
                     {{ $address }}
                 </p>
-                <a
-                    href="https://maps.google.com/?q={{ urlencode($address) }}"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="group inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest transition-colors"
-                    style="color: {{ $primaryColor }}; font-family: '{{ $bodyFont }}';"
-                >
-                    {{ __('Get directions') }}
-                    <svg class="w-3 h-3 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
-                    </svg>
-                </a>
             </div>
 
             {{-- Phone — orange highlight --}}

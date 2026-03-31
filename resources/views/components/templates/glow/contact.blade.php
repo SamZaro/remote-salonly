@@ -23,8 +23,6 @@
         ['day' => __('Saturday'), 'hours' => '09:00 - 17:00'],
         ['day' => __('Sunday'), 'hours' => __('Closed')],
     ];
-    $mapEmbed = $content['map_embed'] ?? '';
-
     $primaryColor = $theme['primary_color'] ?? '#E8D8D3';
     $secondaryColor = $theme['secondary_color'] ?? '#6E5F5B';
     $accentColor = $theme['accent_color'] ?? '#F2E7E4';
@@ -58,15 +56,6 @@
             <div class="p-8" style="background-color: white; border-radius: 12px;">
                 <h3 class="text-sm font-bold uppercase tracking-wider mb-4" style="color: {{ $headingColor }};">{{ __('Address') }}</h3>
                 <p class="text-lg mb-4 leading-relaxed" style="color: {{ $textColor }};">{{ $address }}</p>
-                <a
-                    href="https://maps.google.com/?q={{ urlencode($address) }}"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="text-sm font-semibold transition-opacity hover:opacity-70"
-                    style="color: {{ $secondaryColor }};"
-                >
-                    {{ __('Plan route') }} &rarr;
-                </a>
             </div>
 
             {{-- Phone --}}
@@ -102,25 +91,5 @@
             </div>
         </div>
 
-        {{-- Map --}}
-        <div>
-            @if($mapEmbed)
-                <div class="overflow-hidden min-h-[320px]" style="border-radius: 12px;">
-                    <div class="h-full w-full">{!! $mapEmbed !!}</div>
-                </div>
-            @else
-                <div
-                    class="w-full min-h-[320px] flex items-center justify-center"
-                    style="background-color: {{ $primaryColor }}; border-radius: 12px;"
-                >
-                    <div class="text-center">
-                        <svg class="w-12 h-12 mx-auto mb-3" style="color: {{ $secondaryColor }}30;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>
-                        </svg>
-                        <span class="text-sm" style="color: {{ $textColor }};">Google Maps</span>
-                    </div>
-                </div>
-            @endif
-        </div>
     </div>
 </section>

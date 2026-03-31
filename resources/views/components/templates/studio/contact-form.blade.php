@@ -108,7 +108,8 @@
 
             {{-- Right: Contact Form --}}
             <div
-                class="relative p-8 lg:p-12 flex flex-col justify-center bg-white"
+                class="relative p-8 lg:p-12 flex flex-col justify-center"
+                style="background-color: {{ $secondaryColor }};"
                 x-data="{ shown: false }"
                 x-intersect.once="shown = true"
             >
@@ -119,7 +120,7 @@
                     <div class="mb-8">
                         <h4
                             class="text-2xl sm:text-3xl font-black mb-2"
-                            style="color: {{ $headingColor }}; font-family: '{{ $headingFont }}', 'Poppins', sans-serif;"
+                            style="color: white; font-family: '{{ $headingFont }}', 'Poppins', sans-serif;"
                         >
                             {{ $formTitle }}
                         </h4>
@@ -127,11 +128,11 @@
 
                     <livewire:contact-form :theme="[
                         'primary_color' => $primaryColor,
-                        'secondary_color' => $secondaryColor,
+                        'secondary_color' => $accentColor,
                         'accent_color' => $accentColor,
-                        'background_color' => $backgroundColor,
-                        'text_color' => $textColor,
-                        'heading_color' => $headingColor,
+                        'background_color' => 'rgba(255,255,255,0.07)',
+                        'text_color' => 'rgba(255,255,255,0.9)',
+                        'heading_color' => '#ffffff',
                         'heading_font_family' => $headingFont,
                         'font_family' => $bodyFont,
                     ]" />

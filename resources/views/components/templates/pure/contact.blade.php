@@ -24,8 +24,6 @@
         ['day' => __('Saturday'), 'hours' => '09:00 - 17:00'],
         ['day' => __('Sunday'), 'hours' => __('Closed')],
     ];
-    $mapEmbed = $content['map_embed'] ?? '';
-
     $primaryColor = $theme['primary_color'] ?? '#14b8a6';
     $secondaryColor = $theme['secondary_color'] ?? '#1c1917';
     $accentColor = $theme['accent_color'] ?? '#99f6e4';
@@ -130,21 +128,6 @@
                     </p>
                 </div>
 
-                {{-- Route button --}}
-                <a
-                    href="https://maps.google.com/?q={{ urlencode($address) }}"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="inline-flex items-center justify-center px-8 py-4 text-sm font-semibold tracking-widest uppercase transition-all duration-300 rounded-none"
-                    style="border: 1.5px solid {{ $primaryColor }}; color: {{ $primaryColor }}; font-family: '{{ $bodyFont }}', sans-serif;"
-                    onmouseover="this.style.backgroundColor='{{ $primaryColor }}'; this.style.color='#ffffff';"
-                    onmouseout="this.style.backgroundColor='transparent'; this.style.color='{{ $primaryColor }}';"
-                >
-                    {{ __('Get directions') }}
-                    <svg class="w-4 h-4 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                    </svg>
-                </a>
             </div>
 
             {{-- Right: Opening hours on white --}}

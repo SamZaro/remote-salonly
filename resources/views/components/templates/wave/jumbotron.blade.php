@@ -39,16 +39,15 @@
 
     {{-- Wave top --}}
     <div class="absolute top-0 left-0 right-0">
-        <svg class="w-full h-12 sm:h-16" viewBox="0 0 1440 60" preserveAspectRatio="none" fill="{{ $secondaryColor }}">
-            <path d="M0,60 L0,20 C360,0 720,40 1080,20 C1260,10 1380,30 1440,20 L1440,60 Z" fill="{{ $backgroundColor }}"/>
+        <svg class="w-full h-16 sm:h-20" viewBox="0 0 1440 80" preserveAspectRatio="none">
+            <path d="M0,0 L1440,0 L1440,30 C1080,80 360,0 0,50 Z" fill="#ffffff"/>
         </svg>
     </div>
 
     {{-- Wave bottom --}}
     <div class="absolute bottom-0 left-0 right-0">
-        <svg class="w-full h-12 sm:h-16" viewBox="0 0 1440 60" preserveAspectRatio="none">
-            <path d="M0,40 C360,0 720,60 1080,40 C1260,30 1380,50 1440,40 L1440,60 L0,60 Z" fill="{{ $backgroundColor }}" opacity="0.6"/>
-            <path d="M0,45 C180,30 360,55 540,42 C720,30 900,55 1080,42 C1260,30 1380,48 1440,45 L1440,60 L0,60 Z" fill="{{ $backgroundColor }}"/>
+        <svg class="w-full h-16 sm:h-20" viewBox="0 0 1440 80" preserveAspectRatio="none">
+            <path d="M0,50 C360,0 1080,80 1440,30 L1440,80 L0,80 Z" fill="#ffffff"/>
         </svg>
     </div>
 

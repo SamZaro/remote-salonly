@@ -25,8 +25,6 @@
         ['day' => __('Saturday'), 'hours' => '09:00 - 17:00'],
         ['day' => __('Sunday'), 'hours' => __('Closed')],
     ];
-    $mapEmbed = $content['map_embed'] ?? '';
-
     // Theme kleuren — Warm Atelier palette
     $primaryColor = $theme['primary_color'] ?? '#c9a227';
     $secondaryColor = $theme['secondary_color'] ?? '#1a1a1a';
@@ -100,18 +98,6 @@
                 <p class="text-[14px] leading-[1.7] mb-5" style="color: {{ $textColor }};">
                     {{ $address }}
                 </p>
-                <a
-                    href="https://maps.google.com/?q={{ urlencode($address) }}"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="group/link inline-flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.15em] transition-all duration-300 hover:gap-3"
-                    style="color: {{ $primaryColor }};"
-                >
-                    {{ __('Plan route') }}
-                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
-                    </svg>
-                </a>
             </div>
 
             {{-- Phone card (dark variant) --}}
@@ -200,31 +186,6 @@
                     @endforeach
                 </div>
             </div>
-        </div>
-
-        {{-- Map --}}
-        <div
-            class="mb-16"
-            x-data x-intersect.once="$el.style.opacity = 1; $el.style.transform = 'translateY(0)'"
-            style="opacity: 0; transform: translateY(14px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.1s;"
-        >
-            @if($mapEmbed)
-                <div class="overflow-hidden min-h-[350px]" style="border: 1px solid {{ $headingColor }}06; box-shadow: 0 1px 8px rgba(0,0,0,0.05);">
-                    <div class="h-full w-full">{!! $mapEmbed !!}</div>
-                </div>
-            @else
-                <div
-                    class="w-full min-h-[350px] flex items-center justify-center"
-                    style="background-color: {{ $primaryColor }}15; border: 1px solid {{ $primaryColor }}25;"
-                >
-                    <div class="text-center">
-                        <svg class="w-14 h-14 mx-auto mb-3" style="color: {{ $primaryColor }}50;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>
-                        </svg>
-                        <span class="text-[11px] uppercase tracking-[0.2em]" style="color: {{ $textColor }}90;">Google Maps</span>
-                    </div>
-                </div>
-            @endif
         </div>
 
         {{-- Bottom note --}}

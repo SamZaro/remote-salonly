@@ -33,13 +33,6 @@
 
 <section id="about" class="relative py-24 lg:py-36 overflow-hidden" style="background-color: {{ $backgroundColor }}; font-family: '{{ $bodyFont }}', sans-serif;">
 
-    {{-- Decorative wave accent top-right --}}
-    <div class="absolute top-0 right-0 w-1/3 h-full pointer-events-none opacity-[0.03]">
-        <svg class="w-full h-full" viewBox="0 0 400 800" preserveAspectRatio="none" fill="none">
-            <path d="M200,0 C350,100 100,200 300,300 C500,400 50,500 250,600 C450,700 100,800 400,800 L400,0 Z" fill="{{ $primaryColor }}"/>
-        </svg>
-    </div>
-
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
         <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 

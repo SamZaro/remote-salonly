@@ -25,8 +25,6 @@
         ['day' => __('Saturday'), 'hours' => '09:00 - 17:00'],
         ['day' => __('Sunday'), 'hours' => __('Closed')],
     ];
-    $mapEmbed = $content['map_embed'] ?? '';
-
     // Theme kleuren
     $primaryColor = $theme['primary_color'] ?? '#d4919d';
     $secondaryColor = $theme['secondary_color'] ?? '#c9b8d4';
@@ -93,18 +91,6 @@
                 <p class="mb-4" style="color: {{ $textColor }}; opacity: 0.7;">
                     {{ $address }}
                 </p>
-                <a
-                    href="https://maps.google.com/?q={{ urlencode($address) }}"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="inline-flex items-center gap-1 text-sm font-semibold transition-colors"
-                    style="color: {{ $primaryColor }};"
-                >
-                    {{ __('Plan route') }}
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
-                    </svg>
-                </a>
             </div>
 
             {{-- Telefoon --}}
@@ -183,27 +169,6 @@
                     @endforeach
                 </div>
             </div>
-        </div>
-
-        {{-- Map --}}
-        <div class="mb-8">
-            @if($mapEmbed)
-                <div class="rounded-2xl overflow-hidden min-h-[350px]" style="box-shadow: 0 10px 40px {{ $primaryColor }}10;">
-                    <div class="h-full w-full">{!! $mapEmbed !!}</div>
-                </div>
-            @else
-                <div
-                    class="rounded-2xl w-full min-h-[350px] flex items-center justify-center relative overflow-hidden"
-                    style="background: linear-gradient(135deg, {{ $primaryColor }}25, {{ $secondaryColor }}25);"
-                >
-                    <div class="text-center relative">
-                        <svg class="w-16 h-16 mx-auto mb-4" style="color: {{ $primaryColor }}40;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>
-                        </svg>
-                        <span style="color: {{ $primaryColor }}60;">Google Maps</span>
-                    </div>
-                </div>
-            @endif
         </div>
 
         {{-- Bottom note --}}

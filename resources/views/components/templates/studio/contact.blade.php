@@ -66,7 +66,7 @@
                 {{-- Address --}}
                 <div
                     class="p-6 rounded-3xl transform -rotate-1 hover:rotate-0 transition-transform"
-                    style="background: white; box-shadow: 6px 6px 0 {{ $primaryColor }};"
+                    style="background: {{ $secondaryColor }}; box-shadow: 6px 6px 0 {{ $primaryColor }};"
                 >
                     <div class="flex items-start gap-4">
                         <div
@@ -79,8 +79,8 @@
                             </svg>
                         </div>
                         <div>
-                            <h4 class="font-bold text-lg mb-2" style="color: {{ $headingColor }};">Location</h4>
-                            <p class="whitespace-pre-line" style="color: {{ $textColor }};">{{ $address }}</p>
+                            <h4 class="font-bold text-lg mb-2" style="color: white;">Location</h4>
+                            <p class="whitespace-pre-line" style="color: white; opacity: 0.75;">{{ $address }}</p>
                         </div>
                     </div>
                 </div>
@@ -88,19 +88,19 @@
                 {{-- Phone --}}
                 <div
                     class="p-6 rounded-3xl transform rotate-1 hover:rotate-0 transition-transform"
-                    style="background: white; box-shadow: 6px 6px 0 {{ $secondaryColor }};"
+                    style="background: {{ $secondaryColor }}; box-shadow: 6px 6px 0 {{ $accentColor }};"
                 >
                     <div class="flex items-start gap-4">
                         <div
                             class="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0"
-                            style="background: {{ $secondaryColor }};"
+                            style="background: {{ $primaryColor }};"
                         >
                             <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
                             </svg>
                         </div>
                         <div>
-                            <h4 class="font-bold text-lg mb-2" style="color: {{ $headingColor }};">Call Us</h4>
+                            <h4 class="font-bold text-lg mb-2" style="color: white;">Call Us</h4>
                             <a href="tel:{{ preg_replace('/\s+/', '', $phone) }}" class="text-lg font-medium hover:opacity-70 transition-opacity" style="color: {{ $primaryColor }};">
                                 {{ $phone }}
                             </a>
@@ -111,19 +111,19 @@
                 {{-- Email --}}
                 <div
                     class="p-6 rounded-3xl transform -rotate-1 hover:rotate-0 transition-transform"
-                    style="background: white; box-shadow: 6px 6px 0 {{ $accentColor }};"
+                    style="background: {{ $secondaryColor }}; box-shadow: 6px 6px 0 {{ $primaryColor }};"
                 >
                     <div class="flex items-start gap-4">
                         <div
                             class="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0"
                             style="background: {{ $accentColor }};"
                         >
-                            <svg class="w-7 h-7" style="color: {{ $headingColor }};" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="w-7 h-7" style="color: {{ $secondaryColor }};" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                             </svg>
                         </div>
                         <div>
-                            <h4 class="font-bold text-lg mb-2" style="color: {{ $headingColor }};">Email</h4>
+                            <h4 class="font-bold text-lg mb-2" style="color: white;">Email</h4>
                             <a href="mailto:{{ $email }}" class="text-lg font-medium hover:opacity-70 transition-opacity" style="color: {{ $primaryColor }};">
                                 {{ $email }}
                             </a>
@@ -162,9 +162,9 @@
                 {{-- Opening hours --}}
                 <div
                     class="p-8 rounded-3xl"
-                    style="background: white; box-shadow: 8px 8px 0 {{ $secondaryColor }};"
+                    style="background: {{ $secondaryColor }}; box-shadow: 8px 8px 0 {{ $primaryColor }};"
                 >
-                    <h4 class="font-bold text-xl mb-6 flex items-center gap-2" style="color: {{ $headingColor }};">
+                    <h4 class="font-bold text-xl mb-6 flex items-center gap-2" style="color: white;">
                         <svg class="w-6 h-6" style="color: {{ $primaryColor }};" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
                         </svg>
@@ -174,9 +174,9 @@
                         @foreach($openingHours as $index => $time)
                             <div
                                 class="flex items-center justify-between py-3 border-b-2 border-dashed"
-                                style="border-color: {{ $accentColor }};"
+                                style="border-color: {{ $primaryColor }}40;"
                             >
-                                <span class="font-medium" style="color: {{ $headingColor }};">{{ $time['day'] }}</span>
+                                <span class="font-medium" style="color: white; opacity: 0.85;">{{ $time['day'] }}</span>
                                 <span
                                     class="px-3 py-1 rounded-full text-sm font-bold"
                                     @php $isClosed = str_contains(strtolower($time['hours']), 'closed') || str_contains(strtolower($time['hours']), 'gesloten'); @endphp

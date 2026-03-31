@@ -7,6 +7,7 @@
 @props([
     'content' => [],
     'theme' => [],
+    'section' => null,
 ])
 
 @php
@@ -27,9 +28,16 @@
     $headingColor = $theme['heading_color'] ?? '#2B2B2B';
     $headingFont = $theme['heading_font_family'] ?? 'Abril Fatface';
     $bodyFont = $theme['font_family'] ?? 'Nunito';
+    $backgroundImage = $section?->getFirstMediaUrl('background') ?: null;
 @endphp
 
 <section id="cta" class="py-24 lg:py-32 relative overflow-hidden" style="background: {{ $primaryColor }};">
+    {{-- Background image --}}
+    @if($backgroundImage)
+        <div class="absolute inset-0 z-0">
+            <img src="{{ $backgroundImage }}" alt="" class="w-full h-full object-cover opacity-30" />
+        </div>
+    @endif
     {{-- Geometric patterns --}}
     <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(white 3px, transparent 3px); background-size: 50px 50px;"></div>
 

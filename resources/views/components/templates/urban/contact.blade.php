@@ -76,18 +76,6 @@
                 <p class="text-base leading-relaxed mb-6" style="color: rgba(255,255,255,0.65); font-family: '{{ $bodyFont }}';">
                     {{ $address }}
                 </p>
-                <a
-                    href="https://maps.google.com/?q={{ urlencode($address) }}"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="group inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest transition-opacity hover:opacity-70"
-                    style="color: {{ $primaryColor }}; font-family: '{{ $bodyFont }}';"
-                >
-                    {{ __('Get directions') }}
-                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
-                    </svg>
-                </a>
             </div>
 
             {{-- Phone --}}

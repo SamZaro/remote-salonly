@@ -59,11 +59,40 @@
 
         {{-- Gallery grid --}}
         @if($mediaItems->count() > 0)
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <div
+                class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+                x-data="{
+                    open: false,
+                    currentSrc: '',
+                    currentAlt: '',
+                    images: {{ json_encode($mediaItems->map(fn($m) => ['src' => $m->getUrl(), 'alt' => $m->name])->values()) }},
+                    currentIndex: 0,
+                    openLightbox(index) {
+                        this.currentIndex = index;
+                        this.currentSrc = this.images[index].src;
+                        this.currentAlt = this.images[index].alt;
+                        this.open = true;
+                    },
+                    prev() {
+                        this.currentIndex = (this.currentIndex - 1 + this.images.length) % this.images.length;
+                        this.currentSrc = this.images[this.currentIndex].src;
+                        this.currentAlt = this.images[this.currentIndex].alt;
+                    },
+                    next() {
+                        this.currentIndex = (this.currentIndex + 1) % this.images.length;
+                        this.currentSrc = this.images[this.currentIndex].src;
+                        this.currentAlt = this.images[this.currentIndex].alt;
+                    }
+                }"
+                @keydown.escape.window="open = false"
+                @keydown.arrow-left.window="if(open) prev()"
+                @keydown.arrow-right.window="if(open) next()"
+            >
                 @foreach($mediaItems as $index => $media)
                     <div
                         class="group relative aspect-square overflow-hidden rounded-3xl cursor-pointer transform transition-all duration-300 hover:scale-105 hover:rotate-0 {{ $rotations[$index % 8] }}"
                         style="box-shadow: 6px 6px 0 {{ $index % 2 === 0 ? $primaryColor : $secondaryColor }};"
+                        @click="openLightbox({{ $index }})"
                     >
                         <img
                             src="{{ $media->getUrl() }}"
@@ -81,6 +110,67 @@
                         </div>
                     </div>
                 @endforeach
+
+                {{-- Lightbox modal --}}
+                <template x-teleport="body">
+                <div
+                    x-show="open"
+                    x-transition:enter="transition ease-out duration-200"
+                    x-transition:enter-start="opacity-0"
+                    x-transition:enter-end="opacity-100"
+                    x-transition:leave="transition ease-in duration-150"
+                    x-transition:leave-start="opacity-100"
+                    x-transition:leave-end="opacity-0"
+                    class="fixed inset-0 z-[100] flex items-center justify-center p-4"
+                    style="background: rgba(0,0,0,0.9);"
+                    @click.self="open = false"
+                >
+                    {{-- Close button --}}
+                    <button
+                        @click="open = false"
+                        class="absolute top-4 right-4 hover:opacity-70 transition-opacity z-10"
+                        style="color: {{ $primaryColor }};"
+                    >
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+
+                    {{-- Prev button --}}
+                    <button
+                        @click="prev()"
+                        class="absolute left-4 top-1/2 -translate-y-1/2 hover:opacity-70 transition-opacity z-10"
+                        style="color: {{ $primaryColor }};"
+                    >
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                        </svg>
+                    </button>
+
+                    {{-- Image --}}
+                    <img
+                        :src="currentSrc"
+                        :alt="currentAlt"
+                        class="max-h-[85vh] max-w-[85vw] object-contain rounded-2xl"
+                    />
+
+                    {{-- Next button --}}
+                    <button
+                        @click="next()"
+                        class="absolute right-4 top-1/2 -translate-y-1/2 hover:opacity-70 transition-opacity z-10"
+                        style="color: {{ $primaryColor }};"
+                    >
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+
+                    {{-- Counter --}}
+                    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 text-white/70 text-sm">
+                        <span x-text="currentIndex + 1"></span> / <span x-text="images.length"></span>
+                    </div>
+                </div>
+                </template>
             </div>
         @else
             {{-- Placeholder grid --}}
@@ -97,19 +187,5 @@
                 @endfor
             </div>
         @endif
-
-        {{-- Instagram CTA --}}
-        <div class="text-center mt-12">
-            <a
-                href="#"
-                class="inline-flex items-center gap-3 px-8 py-4 rounded-full font-bold text-lg transition-all hover:scale-105 hover:-rotate-1"
-                style="background: {{ $secondaryColor }}; color: white; box-shadow: 6px 6px 0 {{ $primaryColor }};"
-            >
-                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                </svg>
-                {{ __('Follow us on Instagram') }}
-            </a>
-        </div>
     </div>
 </section>

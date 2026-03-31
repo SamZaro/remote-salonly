@@ -102,7 +102,7 @@
             @foreach($services as $index => $service)
                 <div
                     class="group p-6 rounded-3xl transition-all duration-300 hover:scale-105 {{ $rotations[$index % 4] }} hover:rotate-0"
-                    style="background: {{ $index === 0 ? $primaryColor : ($index === 1 ? $accentColor : ($index === 2 ? 'white' : $primaryColor)) }}; box-shadow: 6px 6px 0 {{ $index === 1 || $index === 2 ? $secondaryColor : $accentColor }};"
+                    style="background: {{ $index === 0 ? $primaryColor : ($index === 1 ? $accentColor : ($index === 2 ? $accentColor : $primaryColor)) }}; box-shadow: 6px 6px 0 {{ $index === 1 || $index === 2 ? $secondaryColor : $accentColor }};"
                 >
                     {{-- Icon --}}
                     <div

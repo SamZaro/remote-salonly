@@ -74,14 +74,14 @@
             @foreach($items as $index => $item)
                 <div
                     class="rounded-3xl overflow-hidden transition-all duration-300 transform hover:scale-[1.02]"
-                    style="background: white; box-shadow: 6px 6px 0 {{ $index % 2 === 0 ? $primaryColor : $secondaryColor }};"
+                    style="background: {{ $secondaryColor }}; box-shadow: 6px 6px 0 {{ $index % 2 === 0 ? $primaryColor : $accentColor }};"
                     :class="{ 'rotate-0': openItem === {{ $index }}, '{{ $index % 2 === 0 ? '-rotate-1' : 'rotate-1' }}': openItem !== {{ $index }} }"
                 >
                     <button
                         @click="openItem = openItem === {{ $index }} ? null : {{ $index }}"
                         class="w-full px-6 py-5 flex items-center justify-between text-left"
                     >
-                        <span class="font-bold text-lg pr-8" style="color: {{ $headingColor }};">
+                        <span class="font-bold text-lg pr-8" style="color: white;">
                             {{ $item['question'] }}
                         </span>
                         <span
@@ -99,8 +99,8 @@
                         x-collapse
                     >
                         <div class="px-6 pb-6">
-                            <div class="pt-4 border-t-2 border-dashed" style="border-color: {{ $accentColor }};">
-                                <p class="text-lg leading-relaxed" style="color: {{ $textColor }};">
+                            <div class="pt-4 border-t-2 border-dashed" style="border-color: {{ $primaryColor }};">
+                                <p class="text-lg leading-relaxed" style="color: white; opacity: 0.75;">
                                     {{ $item['answer'] }}
                                 </p>
                             </div>

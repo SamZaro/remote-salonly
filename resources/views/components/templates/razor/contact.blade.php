@@ -25,8 +25,6 @@
         ['day' => __('Saturday'), 'hours' => '09:00 - 17:00'],
         ['day' => __('Sunday'), 'hours' => __('Closed')],
     ];
-    $mapEmbed = $content['map_embed'] ?? '';
-
     // Theme kleuren met defaults (consistent met shadow pattern)
     $primaryColor = $theme['primary_color'] ?? '#b8860b';
     $secondaryColor = $theme['secondary_color'] ?? '#0f0f0f';
@@ -87,18 +85,6 @@
                 <p class="leading-relaxed" style="color: {{ $lightTextColor }}; opacity: 0.8;">
                     {{ $address }}
                 </p>
-                <a
-                    href="https://maps.google.com/?q={{ urlencode($address) }}"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="inline-flex items-center gap-2 mt-6 text-sm font-bold uppercase tracking-wider transition-colors hover:opacity-80"
-                    style="color: {{ $primaryColor }};"
-                >
-                    {{ __('Plan route') }}
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
-                    </svg>
-                </a>
             </div>
 
             {{-- Telefoon --}}
@@ -162,28 +148,6 @@
                 </div>
             </div>
         </div>
-
-        {{-- Map embed --}}
-        @if($mapEmbed)
-            <div class="mt-12">
-                <div class="aspect-[21/9] w-full">
-                    {!! $mapEmbed !!}
-                </div>
-            </div>
-        @else
-            {{-- Placeholder map --}}
-            <div
-                class="mt-12 aspect-[21/9] w-full flex items-center justify-center"
-                style="background-color: {{ $secondaryColor }};"
-            >
-                <div class="text-center">
-                    <svg class="w-16 h-16 mx-auto mb-4 opacity-50" style="color: {{ $primaryColor }};" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>
-                    </svg>
-                    <span class="text-sm uppercase tracking-widest" style="color: {{ $lightTextColor }}; opacity: 0.6;">Google Maps</span>
-                </div>
-            </div>
-        @endif
 
         {{-- Bottom note --}}
         <div class="mt-12 text-center">

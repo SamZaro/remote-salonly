@@ -40,22 +40,8 @@
         </div>
     @endif
 
-    {{-- Geometric patterns --}}
-    <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(white 2px, transparent 2px); background-size: 40px 40px;"></div>
 
     <div class="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
-        {{-- Badge --}}
-        <div class="flex justify-center mb-8">
-            <div
-                class="inline-flex items-center gap-2 px-5 py-2 rounded-full text-sm font-bold transform -rotate-2 animate-pulse"
-                style="background: {{ $primaryColor }}; color: white;"
-            >
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                </svg>
-                HOT RIGHT NOW
-            </div>
-        </div>
 
         {{-- Title --}}
         <h2
