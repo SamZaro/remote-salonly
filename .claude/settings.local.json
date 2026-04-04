@@ -65,7 +65,12 @@
       "Bash(for template:*)",
       "Bash(where.exe php:*)",
       "Bash(C:/Users/Samir/.config/herd/bin/php.bat:*)",
-      "Bash([ -d \"resources/lang/vendor/$pkg/$lang\" ])"
+      "Bash([ -d \"resources/lang/vendor/$pkg/$lang\" ])",
+      "Bash(cp -r C:/Users/Samir/Herd/remote-salonly/lang/nl C:/Users/Samir/Herd/remote-salonly/resources/lang/nl)",
+      "Bash(cp -r C:/Users/Samir/Herd/remote-salonly/lang/de C:/Users/Samir/Herd/remote-salonly/resources/lang/de)",
+      "Bash(cp -r C:/Users/Samir/Herd/remote-salonly/lang/fr C:/Users/Samir/Herd/remote-salonly/resources/lang/fr)",
+      "Bash(cp -r C:/Users/Samir/Herd/remote-salonly/lang/es C:/Users/Samir/Herd/remote-salonly/resources/lang/es)",
+      "Bash(cp -r C:/Users/Samir/Herd/remote-salonly/lang/it C:/Users/Samir/Herd/remote-salonly/resources/lang/it)"
     ],
     "deny": [],
     "ask": []
