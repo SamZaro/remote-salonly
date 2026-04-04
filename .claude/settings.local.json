@@ -64,7 +64,8 @@
       "Bash(cd C:/Users/Samir/Herd/remote-salonly && \"C:\\\\Users\\\\Samir\\\\.config\\\\herd\\\\bin\\\\php.bat\" artisan app:seed-template-images pure --dry-run 2>&1)",
       "Bash(for template:*)",
       "Bash(where.exe php:*)",
-      "Bash(C:/Users/Samir/.config/herd/bin/php.bat:*)"
+      "Bash(C:/Users/Samir/.config/herd/bin/php.bat:*)",
+      "Bash([ -d \"resources/lang/vendor/$pkg/$lang\" ])"
     ],
     "deny": [],
     "ask": []
