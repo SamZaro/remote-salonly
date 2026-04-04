@@ -21,17 +21,17 @@ class ManageBookingSettings extends SettingsPage
 
     public static function getNavigationGroup(): ?string
     {
-        return __('Boekingen');
+        return __('Bookings');
     }
 
     public static function getNavigationLabel(): string
     {
-        return __('Instellingen');
+        return __('Settings');
     }
 
     public function getTitle(): string
     {
-        return __('Boeking Instellingen');
+        return __('Booking Settings');
     }
 
     public static function canAccess(): bool
@@ -44,51 +44,51 @@ class ManageBookingSettings extends SettingsPage
     {
         return $schema
             ->components([
-                Section::make(__('Boekingen Status'))
-                    ->description(__('Bepaal of klanten boekingen kunnen maken'))
+                Section::make(__('Booking Status'))
+                    ->description(__('Determine whether customers can make bookings'))
                     ->schema([
                         Toggle::make('is_active')
-                            ->label(__('Boekingen actief'))
-                            ->helperText(__('Als dit uit staat, is de boekingspagina niet bereikbaar voor bezoekers'))
+                            ->label(__('Bookings Active'))
+                            ->helperText(__('When disabled, the booking page is not accessible to visitors'))
                             ->onColor('success')
                             ->offColor('danger'),
                     ]),
 
-                Section::make(__('Tijdslot Instellingen'))
-                    ->description(__('Configureer de standaard tijdslot instellingen voor boekingen'))
+                Section::make(__('Time Slot Settings'))
+                    ->description(__('Configure the default time slot settings for bookings'))
                     ->schema([
                         Select::make('default_slot_duration')
-                            ->label(__('Standaard slot duur'))
+                            ->label(__('Default Slot Duration'))
                             ->options([
-                                15 => '15 minuten',
-                                30 => '30 minuten',
-                                60 => '60 minuten',
+                                15 => __(':count minutes', ['count' => 15]),
+                                30 => __(':count minutes', ['count' => 30]),
+                                60 => __(':count minutes', ['count' => 60]),
                             ])
                             ->required()
-                            ->helperText(__('De standaard duur van een tijdslot in minuten')),
+                            ->helperText(__('The default duration of a time slot in minutes')),
                     ])
                     ->columns(1),
 
-                Section::make(__('Boekingsregels'))
-                    ->description(__('Configureer de regels voor wanneer klanten kunnen boeken'))
+                Section::make(__('Booking Rules'))
+                    ->description(__('Configure the rules for when customers can book'))
                     ->schema([
                         TextInput::make('booking_lead_time')
-                            ->label(__('Minimale voorsprong (uren)'))
+                            ->label(__('Minimum Lead Time (hours)'))
                             ->numeric()
                             ->minValue(0)
                             ->maxValue(168)
                             ->required()
-                            ->suffix(__('uren'))
-                            ->helperText(__('Hoeveel uur van tevoren moet een boeking minimaal worden gemaakt')),
+                            ->suffix(__('hours'))
+                            ->helperText(__('How many hours in advance a booking must be made')),
 
                         TextInput::make('max_advance_booking_days')
-                            ->label(__('Maximum aantal dagen vooruit'))
+                            ->label(__('Maximum Advance Booking Days'))
                             ->numeric()
                             ->minValue(1)
                             ->maxValue(365)
                             ->required()
-                            ->suffix(__('dagen'))
-                            ->helperText(__('Hoeveel dagen van tevoren kan een klant maximaal boeken')),
+                            ->suffix(__('days'))
+                            ->helperText(__('How many days in advance a customer can book')),
                     ])
                     ->columns(2),
             ]);
@@ -97,7 +97,7 @@ class ManageBookingSettings extends SettingsPage
     protected function afterSave(): void
     {
         Notification::make()
-            ->title(__('Instellingen opgeslagen'))
+            ->title(__('Settings saved'))
             ->success()
             ->send();
     }

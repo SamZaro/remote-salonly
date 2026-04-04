@@ -22,15 +22,15 @@ class ViewBooking extends ViewRecord
     {
         return [
             Action::make('confirm')
-                ->label(__('Bevestigen'))
+                ->label(__('Confirm'))
                 ->icon('heroicon-o-check-circle')
                 ->color('success')
                 ->visible(fn () => $this->record->status === BookingStatus::Pending
                     && auth()->user()?->hasPermissionTo('booking.update'))
                 ->requiresConfirmation()
-                ->modalHeading(__('Reservering bevestigen'))
-                ->modalDescription(__('Weet je zeker dat je deze reservering wilt bevestigen?'))
-                ->modalSubmitActionLabel(__('Bevestigen'))
+                ->modalHeading(__('Confirm Booking'))
+                ->modalDescription(__('Are you sure you want to confirm this booking?'))
+                ->modalSubmitActionLabel(__('Confirm'))
                 ->action(function () {
                     $this->record->update(['status' => BookingStatus::Confirmed]);
                     Mail::to($this->record->customer_email)->send(new BookingStatusConfirmed($this->record));
@@ -38,15 +38,15 @@ class ViewBooking extends ViewRecord
                 }),
 
             Action::make('cancel')
-                ->label(__('Annuleren'))
+                ->label(__('Cancel'))
                 ->icon('heroicon-o-x-circle')
                 ->color('danger')
                 ->visible(fn () => in_array($this->record->status, [BookingStatus::Pending, BookingStatus::Confirmed])
                     && auth()->user()?->hasPermissionTo('booking.update'))
                 ->requiresConfirmation()
-                ->modalHeading(__('Reservering annuleren'))
-                ->modalDescription(__('Weet je zeker dat je deze reservering wilt annuleren? Dit kan niet ongedaan worden gemaakt.'))
-                ->modalSubmitActionLabel(__('Annuleren'))
+                ->modalHeading(__('Cancel Booking'))
+                ->modalDescription(__('Are you sure you want to cancel this booking? This cannot be undone.'))
+                ->modalSubmitActionLabel(__('Cancel'))
                 ->action(function () {
                     $this->record->update(['status' => BookingStatus::Cancelled]);
                     Mail::to($this->record->customer_email)->send(new BookingStatusCancelled($this->record));
@@ -54,7 +54,7 @@ class ViewBooking extends ViewRecord
                 }),
 
             DeleteAction::make()
-                ->label(__('Verwijderen'))
+                ->label(__('Delete'))
                 ->visible(fn () => auth()->user()?->hasPermissionTo('booking.delete')),
         ];
     }
@@ -63,13 +63,13 @@ class ViewBooking extends ViewRecord
     {
         return $schema
             ->components([
-                Section::make(__('Reserveringsgegevens'))
+                Section::make(__('Booking Details'))
                     ->schema([
                         TextEntry::make('booking_date')
-                            ->label(__('Datum'))
+                            ->label(__('Date'))
                             ->date('d-m-Y'),
                         TextEntry::make('booking_time')
-                            ->label(__('Tijd'))
+                            ->label(__('Time'))
                             ->formatStateUsing(fn ($state) => \Carbon\Carbon::parse($state)->format('H:i')),
                         TextEntry::make('status')
                             ->label(__('Status'))
@@ -79,29 +79,29 @@ class ViewBooking extends ViewRecord
                     ])
                     ->columns(3),
 
-                Section::make(__('Klantgegevens'))
+                Section::make(__('Customer Details'))
                     ->schema([
                         TextEntry::make('customer_name')
-                            ->label(__('Naam')),
+                            ->label(__('Name')),
                         TextEntry::make('customer_email')
-                            ->label(__('E-mail')),
+                            ->label(__('Email')),
                         TextEntry::make('customer_phone')
-                            ->label(__('Telefoon'))
+                            ->label(__('Phone'))
                             ->placeholder('-'),
                     ])
                     ->columns(3),
 
-                Section::make(__('Extra informatie'))
+                Section::make(__('Additional Information'))
                     ->schema([
                         TextEntry::make('notes')
-                            ->label(__('Notities'))
+                            ->label(__('Notes'))
                             ->placeholder('-')
                             ->columnSpanFull(),
                         TextEntry::make('created_at')
-                            ->label(__('Aangemaakt op'))
+                            ->label(__('Created at'))
                             ->dateTime(config('app.datetime_format')),
                         TextEntry::make('updated_at')
-                            ->label(__('Laatst bijgewerkt'))
+                            ->label(__('Last updated'))
                             ->dateTime(config('app.datetime_format')),
                     ])
                     ->columns(2),

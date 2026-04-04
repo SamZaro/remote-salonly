@@ -11,9 +11,9 @@ enum BookingStatus: string
     public function label(): string
     {
         return match ($this) {
-            self::Pending => __('In afwachting'),
-            self::Confirmed => __('Bevestigd'),
-            self::Cancelled => __('Geannuleerd'),
+            self::Pending => __('Pending'),
+            self::Confirmed => __('Confirmed'),
+            self::Cancelled => __('Cancelled'),
         };
     }
 

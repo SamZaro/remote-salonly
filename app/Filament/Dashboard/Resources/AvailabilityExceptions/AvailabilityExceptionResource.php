@@ -31,22 +31,22 @@ class AvailabilityExceptionResource extends Resource
 
     public static function getNavigationGroup(): ?string
     {
-        return __('Boekingen');
+        return __('Bookings');
     }
 
     public static function getPluralModelLabel(): string
     {
-        return __('Uitzonderingen');
+        return __('Exceptions');
     }
 
     public static function getModelLabel(): string
     {
-        return __('Uitzondering');
+        return __('Exception');
     }
 
     public static function getNavigationLabel(): string
     {
-        return __('Uitzonderingen');
+        return __('Exceptions');
     }
 
     public static function canAccess(): bool
@@ -75,29 +75,29 @@ class AvailabilityExceptionResource extends Resource
         return $schema
             ->components([
                 DatePicker::make('date')
-                    ->label(__('Datum'))
+                    ->label(__('Date'))
                     ->required()
                     ->unique(ignoreRecord: true)
                     ->minDate(now())
                     ->native(false)
                     ->displayFormat('d-m-Y'),
                 Toggle::make('is_available')
-                    ->label(__('Beschikbaar'))
-                    ->helperText(__('Schakel in als deze dag beschikbaar is met aangepaste tijden'))
+                    ->label(__('Available'))
+                    ->helperText(__('Enable if this day is available with custom hours'))
                     ->default(false)
                     ->live(),
                 TimePicker::make('custom_open_time')
-                    ->label(__('Aangepaste openingstijd'))
+                    ->label(__('Custom Opening Time'))
                     ->seconds(false)
                     ->visible(fn ($get) => $get('is_available')),
                 TimePicker::make('custom_close_time')
-                    ->label(__('Aangepaste sluitingstijd'))
+                    ->label(__('Custom Closing Time'))
                     ->seconds(false)
                     ->visible(fn ($get) => $get('is_available')),
                 TextInput::make('reason')
-                    ->label(__('Reden'))
+                    ->label(__('Reason'))
                     ->maxLength(255)
-                    ->helperText(__('Bijv. Feestdag, Vakantie, Verbouwing')),
+                    ->helperText(__('E.g. Holiday, Vacation, Renovation')),
             ]);
     }
 
@@ -106,35 +106,35 @@ class AvailabilityExceptionResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('date')
-                    ->label(__('Datum'))
+                    ->label(__('Date'))
                     ->date('d-m-Y')
                     ->sortable(),
                 IconColumn::make('is_available')
-                    ->label(__('Beschikbaar'))
+                    ->label(__('Available'))
                     ->boolean(),
                 TextColumn::make('custom_open_time')
-                    ->label(__('Openingstijd'))
+                    ->label(__('Opening Time'))
                     ->placeholder('-'),
                 TextColumn::make('custom_close_time')
-                    ->label(__('Sluitingstijd'))
+                    ->label(__('Closing Time'))
                     ->placeholder('-'),
                 TextColumn::make('reason')
-                    ->label(__('Reden'))
+                    ->label(__('Reason'))
                     ->limit(30)
                     ->placeholder('-'),
                 TextColumn::make('created_at')
-                    ->label(__('Aangemaakt'))
+                    ->label(__('Created'))
                     ->dateTime(config('app.datetime_format'))
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 Filter::make('upcoming')
-                    ->label(__('Komende'))
+                    ->label(__('Upcoming'))
                     ->query(fn (Builder $query) => $query->where('date', '>=', now()))
                     ->default(),
                 Filter::make('closed')
-                    ->label(__('Gesloten dagen'))
+                    ->label(__('Closed Days'))
                     ->query(fn (Builder $query) => $query->where('is_available', false)),
             ])
             ->recordActions([

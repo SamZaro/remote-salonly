@@ -29,7 +29,7 @@ class BookingStatusCancelled extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: __('Uw reservering is geannuleerd - :date', [
+            subject: __('Your booking has been cancelled - :date', [
                 'date' => $this->booking->booking_date->format('d-m-Y'),
             ]),
         );

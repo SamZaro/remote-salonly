@@ -9,13 +9,13 @@
             </div>
             <div class="flex-1 min-w-0">
                 <h3 class="text-base font-semibold text-gray-900 dark:text-white">
-                    {{ __('E-mailprovider niet geconfigureerd') }}
+                    {{ __('Email provider not configured') }}
                 </h3>
                 <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
-                    {{ __('Je hebt nog geen eigen e-mailprovider ingesteld. Hierdoor worden e-mails (zoals wachtwoord reset) verstuurd via de standaard systeemconfiguratie.') }}
+                    {{ __('You have not yet configured your own email provider. As a result, emails (such as password resets) are sent via the default system configuration.') }}
                 </p>
                 <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
-                    {{ __('Voor een professionele uitstraling met je eigen afzenderadres, configureer je eigen SMTP-server of e-mailprovider.') }}
+                    {{ __('For a professional appearance with your own sender address, configure your own SMTP server or email provider.') }}
                 </p>
                 <div class="mt-4">
                     <x-filament::button
@@ -24,7 +24,7 @@
                         color="warning"
                         icon="heroicon-m-cog-6-tooth"
                     >
-                        {{ __('E-mailprovider instellen') }}
+                        {{ __('Configure Email Provider') }}
                     </x-filament::button>
                 </div>
             </div>

@@ -29,7 +29,7 @@ class BookingStatusConfirmed extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: __('Uw reservering is bevestigd - :date', [
+            subject: __('Your booking has been confirmed - :date', [
                 'date' => $this->booking->booking_date->format('d-m-Y'),
             ]),
         );

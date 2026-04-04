@@ -27,22 +27,22 @@ class BusinessHoursResource extends Resource
 
     public static function getNavigationGroup(): ?string
     {
-        return __('Boekingen');
+        return __('Bookings');
     }
 
     public static function getPluralModelLabel(): string
     {
-        return __('Openingstijden');
+        return __('Business Hours');
     }
 
     public static function getModelLabel(): string
     {
-        return __('Openingstijd');
+        return __('Business Hour');
     }
 
     public static function getNavigationLabel(): string
     {
-        return __('Openingstijden');
+        return __('Business Hours');
     }
 
     public static function canCreate(): bool
@@ -61,35 +61,35 @@ class BusinessHoursResource extends Resource
         return $schema
             ->components([
                 Select::make('day_of_week')
-                    ->label(__('Dag'))
+                    ->label(__('Day'))
                     ->options([
-                        0 => __('Zondag'),
-                        1 => __('Maandag'),
-                        2 => __('Dinsdag'),
-                        3 => __('Woensdag'),
-                        4 => __('Donderdag'),
-                        5 => __('Vrijdag'),
-                        6 => __('Zaterdag'),
+                        0 => __('Sunday'),
+                        1 => __('Monday'),
+                        2 => __('Tuesday'),
+                        3 => __('Wednesday'),
+                        4 => __('Thursday'),
+                        5 => __('Friday'),
+                        6 => __('Saturday'),
                     ])
                     ->disabled()
                     ->required(),
                 TimePicker::make('open_time')
-                    ->label(__('Openingstijd'))
+                    ->label(__('Opening Time'))
                     ->seconds(false)
                     ->required(),
                 TimePicker::make('close_time')
-                    ->label(__('Sluitingstijd'))
+                    ->label(__('Closing Time'))
                     ->seconds(false)
                     ->required(),
                 Toggle::make('is_open')
-                    ->label(__('Geopend'))
+                    ->label(__('Open'))
                     ->default(true),
                 Select::make('slot_duration')
-                    ->label(__('Slot duur'))
+                    ->label(__('Slot Duration'))
                     ->options([
-                        15 => '15 minuten',
-                        30 => '30 minuten',
-                        60 => '60 minuten',
+                        15 => __(':count minutes', ['count' => 15]),
+                        30 => __(':count minutes', ['count' => 30]),
+                        60 => __(':count minutes', ['count' => 60]),
                     ])
                     ->default(30)
                     ->required(),
@@ -101,23 +101,23 @@ class BusinessHoursResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('day_name')
-                    ->label(__('Dag'))
+                    ->label(__('Day'))
                     ->sortable(query: fn ($query, $direction) => $query->orderBy('day_of_week', $direction)),
                 TextInputColumn::make('open_time')
-                    ->label(__('Openingstijd'))
+                    ->label(__('Opening Time'))
                     ->type('time')
                     ->rules(['required', 'date_format:H:i'])
                     ->disabled(fn () => ! auth()->user()?->hasPermissionTo('availability.manage')),
                 TextInputColumn::make('close_time')
-                    ->label(__('Sluitingstijd'))
+                    ->label(__('Closing Time'))
                     ->type('time')
                     ->rules(['required', 'date_format:H:i'])
                     ->disabled(fn () => ! auth()->user()?->hasPermissionTo('availability.manage')),
                 ToggleColumn::make('is_open')
-                    ->label(__('Geopend'))
+                    ->label(__('Open'))
                     ->disabled(fn () => ! auth()->user()?->hasPermissionTo('availability.manage')),
                 SelectColumn::make('slot_duration')
-                    ->label(__('Slot duur'))
+                    ->label(__('Slot Duration'))
                     ->options([
                         15 => '15 min',
                         30 => '30 min',

@@ -30,7 +30,7 @@ class BookingConfirmation extends Mailable implements ShouldQueue
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: __('Bevestiging van uw reservering - :date', [
+            subject: __('Confirmation of your booking - :date', [
                 'date' => $this->booking->booking_date->format('d-m-Y'),
             ]),
         );

@@ -29,13 +29,13 @@ class BusinessHours extends Model
     public function getDayNameAttribute(): string
     {
         $days = [
-            0 => __('Zondag'),
-            1 => __('Maandag'),
-            2 => __('Dinsdag'),
-            3 => __('Woensdag'),
-            4 => __('Donderdag'),
-            5 => __('Vrijdag'),
-            6 => __('Zaterdag'),
+            0 => __('Sunday'),
+            1 => __('Monday'),
+            2 => __('Tuesday'),
+            3 => __('Wednesday'),
+            4 => __('Thursday'),
+            5 => __('Friday'),
+            6 => __('Saturday'),
         ];
 
         return $days[$this->day_of_week] ?? '';

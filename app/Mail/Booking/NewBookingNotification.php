@@ -34,7 +34,7 @@ class NewBookingNotification extends Mailable implements ShouldQueue
             replyTo: [
                 new Address($this->booking->customer_email, $this->booking->customer_name),
             ],
-            subject: __('Nieuwe reservering van :name - :date :time', [
+            subject: __('New booking from :name - :date :time', [
                 'name' => $this->booking->customer_name,
                 'date' => $this->booking->booking_date->format('d-m-Y'),
                 'time' => $this->booking->booking_time,

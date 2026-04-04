@@ -33,9 +33,9 @@ class BookingSection extends Component
         ?string $textColor = null,
         string $buttonStyle = 'primary'
     ): void {
-        $this->title = $title ?? __('Maak een afspraak');
-        $this->description = $description ?? __('Plan direct uw afspraak in onze online agenda. Kies een datum en tijd die u het beste uitkomt.');
-        $this->buttonText = $buttonText ?? __('Reserveer nu');
+        $this->title = $title ?? __('Book an Appointment');
+        $this->description = $description ?? __('Schedule your appointment directly in our online calendar. Choose a date and time that suits you best.');
+        $this->buttonText = $buttonText ?? __('Book Now');
         $this->alignment = $alignment;
         $this->showIcon = $showIcon;
         $this->backgroundColor = $backgroundColor;
