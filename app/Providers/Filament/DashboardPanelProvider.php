@@ -4,6 +4,7 @@ namespace App\Providers\Filament;
 
 use App\Constants\AnnouncementPlacement;
 use App\Filament\Dashboard\Pages\TwoFactorAuth\TwoFactorAuth;
+use App\Http\Middleware\SetLocale;
 use App\Http\Middleware\UpdateUserLastSeenAt;
 use App\Livewire\AddressForm;
 use Filament\Actions\Action;
@@ -24,6 +25,7 @@ use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
+use Illuminate\View\View;
 use Jeffgreco13\FilamentBreezy\BreezyCore;
 
 class DashboardPanelProvider extends PanelProvider
@@ -71,10 +73,15 @@ class DashboardPanelProvider extends PanelProvider
                 ShareErrorsFromSession::class,
                 VerifyCsrfToken::class,
                 SubstituteBindings::class,
+                SetLocale::class,
                 DisableBladeIconComponents::class,
                 DispatchServingFilamentEvent::class,
                 UpdateUserLastSeenAt::class,
             ])
+            ->renderHook(
+                PanelsRenderHook::USER_MENU_BEFORE,
+                fn (): View => view('filament.components.language-switcher'),
+            )
             ->renderHook('panels::head.start', function () {
                 return view('components.layouts.partials.analytics');
             })

@@ -20,6 +20,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/locale/{locale}', function (string $locale) {
+    if (in_array($locale, ['en', 'nl', 'de', 'fr', 'es', 'it'])) {
+        session()->put('locale', $locale);
+    }
+
+    return redirect()->back();
+})->name('locale.switch');
+
 Route::get('/demo/{slug}', [DemoController::class, 'show'])
     ->name('demo.show');
 
