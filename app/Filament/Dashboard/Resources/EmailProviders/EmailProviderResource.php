@@ -10,7 +10,6 @@ use App\Filament\Dashboard\Resources\EmailProviders\Pages\PostmarkSettings;
 use App\Filament\Dashboard\Resources\EmailProviders\Pages\ResendSettings;
 use App\Filament\Dashboard\Resources\EmailProviders\Pages\SmtpSettings;
 use App\Models\EmailProvider;
-use App\Services\ConfigService;
 use Filament\Actions\EditAction;
 use Filament\Forms\Components\TextInput;
 use Filament\Resources\Resource;
@@ -128,11 +127,7 @@ class EmailProviderResource extends Resource
 
     public static function canAccess(): bool
     {
-        $configService = app()->make(ConfigService::class);
-
-        return $configService->isAdminSettingsEnabled()
-            && auth()->user()
-            && auth()->user()->hasPermissionTo('manage email providers');
+        return false;
     }
 
     public static function getNavigationLabel(): string

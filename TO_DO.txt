@@ -1,0 +1,50 @@
+TE DOEN:
+--------------
+
+
+salonblaze-resend:
+
+Verbergen of aanpassen tekst:
+Dit is jouw persoonlijke tenant-dashboard. Hier kun je bijvoorbeeld statistieken, abonnement-info of een overzicht van je projecten tonen.
+Statistieken
+Aantal gebruikers: 1
+Laatste login: Onbekend
+
+Ik zou willen zien: 
+
+- Bedrijfsnaam
+- url is van de website van de klant
+- Of het onboarding proces is voltooid, is de website succesvol online?
+- Zo nee, welke stappen er nog moeten gezet worden.
+
+Verberg tekst workspace #1 en in profile menu Workspace Settings
+
+
+
+remote-salonly: 
+
+Bij eerste login nog de gele alert weghalen:
+
+Dashboard
+Email provider not configured
+You have not yet configured your own email provider. As a result, emails (such as password resets) are sent via the default system configuration.
+
+For a professional appearance with your own sender address, configure your own SMTP server or email provider.
+
+Configure Email Provider
+
+- General Settings: Verbergen onder E-Mail -> Default Email Provider*
+verbergen: Verification 
+verbergen: Analytics & Cookies
+Verbergen: Social Links -> Github, Discord. Set Tik Tok.
+
+
+- Verbergen in dashboard Instellingen -> Email Providers -> Volledig verbergen
+
+
+- Vertalen van de woorden in menu: 
+
+Instellingen
+General Settings
+Authentication & Security
+Social Links
