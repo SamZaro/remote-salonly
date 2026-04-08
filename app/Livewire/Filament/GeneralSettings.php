@@ -6,6 +6,7 @@ use App\Models\EmailProvider;
 use App\Models\VerificationProvider;
 use App\Services\ConfigService;
 use Closure;
+use Filament\Facades\Filament;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
@@ -56,8 +57,7 @@ class GeneralSettings extends Component implements HasForms
             'social_links_linkedin' => $this->configService->get('app.social_links.linkedin-openid') ?? '',
             'social_links_instagram' => $this->configService->get('app.social_links.instagram') ?? '',
             'social_links_youtube' => $this->configService->get('app.social_links.youtube') ?? '',
-            'social_links_github' => $this->configService->get('app.social_links.github') ?? '',
-            'social_links_discord' => $this->configService->get('app.social_links.discord') ?? '',
+            'social_links_tiktok' => $this->configService->get('app.social_links.tiktok') ?? '',
             'recaptcha_enabled' => $this->configService->get('app.recaptcha_enabled', false),
             'recaptcha_api_site_key' => $this->configService->get('recaptcha.api_site_key', ''),
             'recaptcha_api_secret_key' => $this->configService->get('recaptcha.api_secret_key', ''),
@@ -134,7 +134,8 @@ class GeneralSettings extends Component implements HasForms
                                 })
                                 ->helperText(__('This is the email provider that will be used for all emails.'))
                                 ->required()
-                                ->searchable(),
+                                ->searchable()
+                                ->hidden(fn () => Filament::getCurrentPanel()?->getId() === 'dashboard'),
                             TextInput::make('default_email_from_name')
                                 ->label(__('Default "From" Email Name'))
                                 ->helperText(__('This is the name that will be used as the "From" name for all emails.'))
@@ -147,6 +148,7 @@ class GeneralSettings extends Component implements HasForms
                         ]),
                     Tab::make(__('Verification'))
                         ->icon('heroicon-o-chat-bubble-oval-left-ellipsis')
+                        ->hidden(fn () => Filament::getCurrentPanel()?->getId() === 'dashboard')
                         ->schema([
                             Select::make('default_verification_provider')
                                 ->label(__('Default Verification Provider'))
@@ -165,6 +167,7 @@ class GeneralSettings extends Component implements HasForms
                         ]),
                     Tab::make(__('Analytics & Cookies'))
                         ->icon('heroicon-o-squares-2x2')
+                        ->hidden(fn () => Filament::getCurrentPanel()?->getId() === 'dashboard')
                         ->schema([
                             Toggle::make('cookie_consent_enabled')
                                 ->label(__('Cookie Consent Bar Enabled'))
@@ -208,20 +211,18 @@ class GeneralSettings extends Component implements HasForms
                     Tab::make(__('Social Links'))
                         ->icon('heroicon-o-heart')
                         ->schema([
+                            TextInput::make('social_links_instagram')
+                                ->label(__('Instagram')),
+                            TextInput::make('social_links_tiktok')
+                                ->label(__('TikTok')),
                             TextInput::make('social_links_facebook')
                                 ->label(__('Facebook')),
                             TextInput::make('social_links_x')
                                 ->label(__('X (Twitter)')),
                             TextInput::make('social_links_linkedin')
                                 ->label(__('LinkedIn')),
-                            TextInput::make('social_links_instagram')
-                                ->label(__('Instagram')),
                             TextInput::make('social_links_youtube')
                                 ->label(__('YouTube')),
-                            TextInput::make('social_links_github')
-                                ->label(__('GitHub')),
-                            TextInput::make('social_links_discord')
-                                ->label(__('Discord')),
                         ]),
                 ])
                     ->persistTabInQueryString('settings-tab'),
@@ -240,7 +241,9 @@ class GeneralSettings extends Component implements HasForms
         $this->configService->set('app.datetime_format', $data['datetime_format']);
         $this->configService->set('app.google_tracking_id', $data['google_tracking_id'] ?? '');
         $this->configService->set('app.tracking_scripts', $data['tracking_scripts'] ?? '');
-        $this->configService->set('mail.default', $data['default_email_provider']);
+        if (isset($data['default_email_provider'])) {
+            $this->configService->set('mail.default', $data['default_email_provider']);
+        }
         $this->configService->set('mail.from.name', $data['default_email_from_name']);
         $this->configService->set('mail.from.address', $data['default_email_from_email']);
         $this->configService->set('app.social_links.facebook', $data['social_links_facebook']);
@@ -248,8 +251,7 @@ class GeneralSettings extends Component implements HasForms
         $this->configService->set('app.social_links.linkedin-openid', $data['social_links_linkedin']);
         $this->configService->set('app.social_links.instagram', $data['social_links_instagram']);
         $this->configService->set('app.social_links.youtube', $data['social_links_youtube']);
-        $this->configService->set('app.social_links.github', $data['social_links_github']);
-        $this->configService->set('app.social_links.discord', $data['social_links_discord']);
+        $this->configService->set('app.social_links.tiktok', $data['social_links_tiktok']);
         $this->configService->set('app.recaptcha_enabled', $data['recaptcha_enabled']);
         $this->configService->set('recaptcha.api_site_key', $data['recaptcha_api_site_key']);
         $this->configService->set('recaptcha.api_secret_key', $data['recaptcha_api_secret_key']);
