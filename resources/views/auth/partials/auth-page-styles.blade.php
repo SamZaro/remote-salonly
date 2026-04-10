@@ -3,7 +3,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-    /* ── Page background ── */
+    body { margin: 0; padding: 0; }
+
     .lp-bg {
         min-height: 100vh;
         background-color: #f9fafb;
@@ -15,7 +16,6 @@
         position: relative;
     }
 
-    /* ── Back link ── */
     .lp-back {
         position: absolute;
         top: 1.5rem;
@@ -31,7 +31,6 @@
     }
     .lp-back:hover { color: #374151; }
 
-    /* ── Card ── */
     .lp-card {
         width: 100%;
         max-width: 420px;
@@ -46,20 +45,12 @@
         to   { opacity: 1; transform: translateY(0);    }
     }
 
-    /* ── Card header ── */
     .lp-header {
         padding: 2.25rem 2.5rem 1.875rem;
         border-bottom: 1px solid #f1f1f3;
-    }
-    .lp-brand {
-        font-family: 'Cormorant Garamond', serif;
-        font-size: 2rem;
-        font-weight: 300;
-        letter-spacing: .025em;
-        color: #0b0c0e;
-        text-decoration: none;
-        display: block;
-        line-height: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     .lp-sub {
         font-family: 'Outfit', sans-serif;
@@ -68,14 +59,13 @@
         letter-spacing: .11em;
         text-transform: uppercase;
         margin-top: .5rem;
+        text-align: center;
     }
 
-    /* ── Card body ── */
     .lp-body {
         padding: 2rem 2.5rem 2.5rem;
     }
 
-    /* ── Form overrides ── */
     .lp-body label,
     .lp-body .label span,
     .lp-body .form-control label {
@@ -135,17 +125,13 @@
         transition: background .2s ease, transform .1s ease !important;
     }
     .lp-body .btn:hover,
-    .lp-body button[type="submit"]:hover {
-        background: #ea580c !important;
-    }
+    .lp-body button[type="submit"]:hover { background: #ea580c !important; }
     .lp-body .btn:active,
-    .lp-body button[type="submit"]:active {
-        transform: scale(.99) !important;
-    }
+    .lp-body button[type="submit"]:active { transform: scale(.99) !important; }
     .lp-body .checkbox {
         border-radius: 0 !important;
         border-color: #d4d4d8 !important;
-        accent-color: #0b0c0e;
+        accent-color: #f97316;
     }
     .lp-body .divider {
         font-family: 'Outfit', sans-serif;
@@ -155,7 +141,6 @@
         color: #a1a1aa;
     }
 
-    /* ── Footer ── */
     .lp-footer {
         font-family: 'Outfit', sans-serif;
         font-size: .625rem;
@@ -166,32 +151,3 @@
     }
 </style>
 @endpush
-
-<x-layouts.auth-minimal>
-    <div class="lp-bg">
-
-        <a href="{{ url('/') }}" class="lp-back">← {{ __('Home') }}</a>
-
-        <div class="lp-card">
-
-            <div class="lp-header">
-                <a href="{{ url('/') }}" class="flex justify-center">
-                    <img src="{{ url('/images/logos/salon-blaze-black.png') }}" alt="{{ config('app.name') }}" class="h-20">
-                </a>
-                <p class="lp-sub" style="text-align:center;">{{ __('Sign in to your account') }}</p>
-            </div>
-
-            <div class="lp-body">
-                @if($isOtpLoginEnabled)
-                    <livewire:auth.login.one-time-password-login />
-                @else
-                    @include('auth.partials.traditional-login-form')
-                @endif
-            </div>
-
-        </div>
-
-        <p class="lp-footer">© {{ date('Y') }} SalonBlaze</p>
-
-    </div>
-</x-layouts.auth-minimal>
